@@ -7,7 +7,7 @@ eduActiv8 is a compilation of simple educational activities covering a wide rang
 
 It has been written in python/pygame and the application can be run from source on Windows and Linux machines, there is also a 'compiled' version available for Windows that does not require any additional software.
 
-To find out more please visit: www.eduactiv8.org and http://www.facebook.com/eduActiv8
+To find out more please visit: www.eduactiv8.org and http://www.facebook.com/eduactiv8
 
 The installation guide for both Windows and Linux is available at the following address: www.eduactiv8.org/installation/
 
