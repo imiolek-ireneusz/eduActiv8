@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=eduActiv8
+_GenericName=Educational Activities for Kids
+_Comment=A collection of educational activities for kids
+Exec=eduactiv8
+Icon=eduactiv8
+Terminal=false
+Type=Application
+Categories=Game;KidsGame;

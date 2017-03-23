@@ -1,0 +1,1250 @@
+# eduActiv8 - Educational Activity Pack - translation file.
+# Copyright (C) 2012 - 2014 Ireneusz Imiolek
+# This file is distributed under the same license as the eduactiv8 package.
+# Initially translated by Anton Kayukov, 2012
+# Updated and retranslated by Алексей Логинов, 2013-2014
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.31.105\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"POT-Creation-Date: 2013-11-01 15:33+0000\n"
+"PO-Revision-Date: 2016-11-18 23:13+0000\n"
+"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
+"Language-Team: Russian <imiolek.i@gmail.com>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0: n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "зелёное яблоко"
+msgstr[1] "зелёных яблока"
+msgstr[2] "зелёных яблок"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "красное яблоко"
+msgstr[1] "красных яблока"
+msgstr[2] "красных яблок"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "клубника"
+msgstr[1] "клубники"
+msgstr[2] "клубник"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "груша"
+msgstr[1] "груши"
+msgstr[2] "груш"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] "апельсин"
+msgstr[1] "апельсина"
+msgstr[2] "апельсинов"
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "луковица"
+msgstr[1] "луковицы"
+msgstr[2] "луковиц"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "томат"
+msgstr[1] "томата"
+msgstr[2] "томатов"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "лимон"
+msgstr[1] "лимона"
+msgstr[2] "лимонов"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "вишня"
+msgstr[1] "вишни"
+msgstr[2] "вишен"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "перец"
+msgstr[1] "перца"
+msgstr[2] "перцев"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "морковка"
+msgstr[1] "морковки"
+msgstr[2] "морковок"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "банан"
+msgstr[1] "банана"
+msgstr[2] "бананов"
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "арбуз"
+msgstr[1] "арбуза"
+msgstr[2] "арбузов"
+
+msgid "Equilateral Triangle"
+msgstr "Равносторонний треугольник"
+
+msgid "Isosceles Triangle"
+msgstr "Равнобедренный треугольник"
+
+msgid "Obtuse Triangle"
+msgstr "Тупоугольный треугольник"
+
+msgid "Right Triangle"
+msgstr "Прямоугольный треугольник"
+
+msgid "Acute Triangle"
+msgstr "Остроугольный треугольник"
+
+msgid "Square"
+msgstr "Квадрат"
+
+msgid "Rectangle"
+msgstr "Прямоугольник"
+
+msgid "Right Trapezium"
+msgstr "Правильная трапеция"
+
+msgid "Isosceles Trapezium"
+msgstr "Равнобедренная трапеция"
+
+msgid "Rhombus"
+msgstr "Ромб"
+
+msgid "Parallelogram"
+msgstr "Параллелограмм"
+
+msgid "Pentagon"
+msgstr "Пятиугольник"
+
+msgid "Hexagon"
+msgstr "Шестиугольник"
+
+msgid "Circle"
+msgstr "Круг"
+
+msgid "Ellipse"
+msgstr "Эллипс"
+
+msgid "Cube"
+msgstr "Куб"
+
+msgid "Square Prism"
+msgstr "Квадратная призма"
+
+msgid "Triangular Prism"
+msgstr "Треугольная призма"
+
+msgid "Square Pyramid"
+msgstr "Квадратная пирамида"
+
+msgid "Triangular Pyramid"
+msgstr "Треугольная пирамида"
+
+msgid "Sphere"
+msgstr "Сфера"
+
+msgid "Cylinder"
+msgstr "Цилиндр"
+
+msgid "Cone"
+msgstr "Конус"
+
+msgid "Torus"
+msgstr "Тор"
+
+msgid "Default Language:"
+msgstr "Язык по умолчанию:"
+
+msgid "Guest"
+msgstr "Гость"
+
+msgid "Hi Stranger :) Would you like to log in so we know who you are?"
+msgstr "Привет, Незнакомец :) Не могли бы вы войти, чтобы мы знали кто Вы?"
+
+msgid "Log in:"
+msgstr "Войти:"
+
+msgid "user name:"
+msgstr "имя пользователя:"
+
+msgid "password:"
+msgstr "пароль:"
+
+msgid "remember me"
+msgstr "запомнить"
+
+msgid "Login"
+msgstr "Войти"
+
+msgid "Add new user:"
+msgstr "Добавить нового пользователя:"
+
+msgid "confirm password:"
+msgstr "подтвердить пароль:"
+
+msgid "Register new user"
+msgstr "Зарегистрировать"
+
+msgid "Administrator Login:"
+msgstr "Войти под администратором:"
+
+msgid "User Management"
+msgstr "Управление пользователями:"
+
+msgid "Please select a user from the list."
+msgstr "Пожалуйста, выберите пользователя из списка."
+
+msgid "Delete user"
+msgstr "Удалить пользователя"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+#, python-format
+msgid "%s deleted from database."
+msgstr "%s удалён из базы."
+
+msgid "Failed to delete the user."
+msgstr "Не удалось удалить пользователя."
+
+msgid "Preferences"
+msgstr "Предпочтения:"
+
+msgid "switch to full screen after login"
+msgstr "переключаться в полноэкранный режим после входа"
+
+msgid "allow adding new users on login screen"
+msgstr "позволить добавлять новых пользователей в экране входа"
+
+msgid "display languages with uncompleted translations"
+msgstr "отображать языки с незавершёнными переводами"
+
+msgid "require password to log in"
+msgstr "требовать пароль на вход"
+
+msgid "require password to access admin area"
+msgstr "требовать пароль для доступа к зоне администратора"
+
+msgid "Update admin's password:"
+msgstr "Обновить пароль администратора:"
+
+msgid "previous password:"
+msgstr "предыдущий пароль:"
+
+msgid "new password:"
+msgstr "новый пароль:"
+
+msgid "confirm new password:"
+msgstr "подтвердить новый пароль:"
+
+msgid "Create admin's account:"
+msgstr "Создать аккаунт администратора:"
+
+msgid "admin's user name:"
+msgstr "имя администратора:"
+
+msgid "admin's password:"
+msgstr "пароль администратора:"
+
+msgid "confirm admin's password:"
+msgstr "подтвердить пароль администратора:"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Please enter user name (at least 3 characters long)"
+msgstr "Пожалуйста, введите имя пользователя (не менее 3 символов)"
+
+msgid "Please enter password (at least 4 characters long)"
+msgstr "Пожалуйста, введите пароль (не менее 4 символов)"
+
+msgid "This username and password combination doesn't exist."
+msgstr "Такая комбинация имени пользователя и пароля не существует."
+
+msgid "This username doesn't exist."
+msgstr "Такой пользователь не существует"
+
+msgid "Passwords don't match"
+msgstr "Пароли не совпадают"
+
+#, python-format
+msgid "%s added"
+msgstr "%s добавлен"
+
+msgid "This user name already exists, please choose a different one"
+msgstr "Такое имя пользователя уже существует, пожалуйста, выберите другое"
+
+msgid "Admin's password has been updated"
+msgstr "Пароль администратора был обновлён"
+
+msgid "ERROR: This operation is not allowed at this point"
+msgstr "ОШИБКА: В этом месте такая операция не позволяется"
+
+msgid "Please enter previous password (at least 4 characters long)"
+msgstr "Пожалуйста, введите предыдущий пароль (не менее 4 символов)"
+
+msgid "Please enter new password (at least 4 characters long)"
+msgstr "Пожалуйста, введите новый пароль (не менее 4 символов)"
+
+msgid "Previous password doesn't seem to be in the database"
+msgstr "Кажется, предыдущего пароля нет в базе"
+
+msgid "Registered:"
+msgstr "Зарегистрирован:"
+
+msgid "Last login:"
+msgstr "Последний вход:"
+
+msgid "Preferences saved..."
+msgstr "Предпочтения сохранены..."
+
+msgid "Score: "
+msgstr "Счёт: "
+
+msgid "Logged in as: "
+msgstr "Вы вошли как: "
+
+msgid "(Log out)"
+msgstr "(Выйти)"
+
+msgid "Addition Table"
+msgstr "Таблица сложения"
+
+msgid "Hello"
+msgstr "Привет"
+
+msgid "Welcome back in the game."
+msgstr "Добро пожаловать в игру."
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Translations"
+msgstr "Переводы"
+
+msgid "Info & Settings"
+msgstr "Информация и параметры"
+
+msgid "Keyboard & Mouse"
+msgstr "Клавиатура и мышь"
+
+msgid "Discover Letters"
+msgstr "Изучение букв"
+
+msgid "Learn New Words"
+msgstr "Учите новые слова"
+
+msgid "Mathematics"
+msgstr "Математика"
+
+msgid "Numbers & Basic Operations"
+msgstr "Числа и основные операции"
+
+msgid "Basic Operations - Exercises"
+msgstr "Основные операции - упражнения"
+
+msgid "Sorting and Comparing"
+msgstr "Сортировка и сравнение"
+
+msgid "Geometry and Shape Recognition"
+msgstr "Геометрия, сравнение фигур"
+
+msgid "Art and Colour"
+msgstr "Художество и цвет"
+
+msgid "Memory"
+msgstr "Память"
+
+msgid "Games & Mazes"
+msgstr "Игры и лабиринты"
+
+msgid "Multiplayer Games"
+msgstr "Многопользовательские игры"
+
+msgid "About."
+msgstr "О программе."
+
+msgid "Game info..."
+msgstr "Информация об игре..."
+
+msgid "Copyright & Credits"
+msgstr "Авторские права и титры"
+
+msgid "Hit the Mole"
+msgstr "Поймайте крота"
+
+msgid "Letters"
+msgstr "Буквы"
+
+msgid "Learn Letters with Flashcards"
+msgstr "Учите буквы по карточкам"
+
+msgid "Learn to Write"
+msgstr "Учитесь писать"
+
+msgid "Trace Letters and Numbers"
+msgstr "Обведите буквы и цифры"
+
+msgid "Complete the ABC"
+msgstr "Заполните алфавит"
+
+msgid "English"
+msgstr "английский"
+
+msgid "Your language"
+msgstr "Русский"
+
+msgid "Sorting Letters"
+msgstr "Сортировка букв"
+
+msgid "Lowercase Letters"
+msgstr "Строчные буквы"
+
+msgid "Uppercase Letters"
+msgstr "Прописные буквы"
+
+msgid "Word Builder"
+msgstr "Словопостроитель"
+
+msgid "Word Maze"
+msgstr "Словесный лабиринт"
+
+msgid "Collect all letters in the right order"
+msgstr "Соберите все буквы в правильном порядке"
+
+msgid "Word Maze + 4"
+msgstr "Словесный лабиринт + 4"
+
+msgid "Numbers"
+msgstr "Числа"
+
+msgid "Learn Numbers with Flashcards"
+msgstr "Учите числа по карточкам"
+
+msgid "Learn to Count"
+msgstr "Учитесь считать"
+
+msgid "Basic Addition"
+msgstr "Сложение"
+
+msgid "Basic Subtraction"
+msgstr "Вычитание"
+
+msgid "Shopping List"
+msgstr "Список покупок"
+
+msgid "Plus or Minus"
+msgstr "Плюс или минус"
+
+msgid "Basic Operations"
+msgstr "Основные операции"
+
+msgid "Multiplication Table"
+msgstr "Таблица умножения"
+
+msgid "Find the product"
+msgstr "Найдите произведение"
+
+msgid "Find the multiplier"
+msgstr "Найдите множитель"
+
+msgid "Division"
+msgstr "Деление"
+
+msgid "Sorting Numbers"
+msgstr "Сортировка чисел"
+
+msgid "Number Comparison"
+msgstr "Сравнение чисел"
+
+msgid "Addition & Subtraction"
+msgstr "Сложение и вычитание"
+
+msgid "Comparison"
+msgstr "Сравнение"
+
+msgid "Fractions"
+msgstr "Обыкновенные дроби"
+
+msgid "Decimal Fractions"
+msgstr "Десятичные дроби"
+
+msgid "Even or Odd"
+msgstr "Чётные или нечётные числа"
+
+msgid "Shapes"
+msgstr "Фигуры"
+
+msgid "Learn Shapes with Flashcards"
+msgstr "Учите геометрические фигуры по карточкам"
+
+msgid "Solids"
+msgstr "Геометрические телa"
+
+msgid "Solid Geometry with Flashcards"
+msgstr "Пространственная геометрия по карточкам"
+
+msgid "Shape Matching"
+msgstr "Сравнение фигур"
+
+msgid "help me find my shadow"
+msgstr "Помогите мне найти мою тень"
+
+msgid "Paint"
+msgstr "Рисование"
+
+msgid "Colour Matching"
+msgstr "Соответствие цветов"
+
+msgid "label the colours"
+msgstr "Названия цветов"
+
+msgid "Follow the Arrows"
+msgstr "Следуйте по стрелкам"
+
+msgid "remember the directions"
+msgstr "Запоминайте направления"
+
+msgid "Photographic Memory"
+msgstr "Фотографическая память"
+
+msgid "Training"
+msgstr "Обучение"
+
+msgid "Automatic Levels"
+msgstr "Автоматические уровни"
+
+msgid "Mouse Maze"
+msgstr "Мышиный лабиринт"
+
+msgid "Let's have some cheese"
+msgstr "Дайте мышке немного сыра"
+
+msgid "Sheep Maze"
+msgstr "Овечий лабиринт"
+
+msgid "Find the rest of the herd"
+msgstr "Найдите остальное стадо"
+
+msgid "Connect"
+msgstr "Соединить"
+
+msgid "Balloons with threads"
+msgstr "Воздушные шары с нитками"
+
+msgid "Fifteen"
+msgstr "Пятнашки"
+
+msgid "With a Twist"
+msgstr "С завихрением"
+
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Перетащите ползунок вверх или вниз так, чтобы правильный знак оказался в красном квадрате."
+
+msgid "Take your sheep to the rest of the herd."
+msgstr "Приведите овцу к остальному стаду."
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr "Проверьте список покупок и перетащите все необходимые предметы в корзину."
+
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Перетащите один из <, > или = (меньше, больше или равно) в красный квадрат."
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr "Перетащите один из меньше, больше или равно в красный квадрат."
+
+msgid "Re-arrange the above numbers so they are in the right order"
+msgstr "Переставьте цифры, чтобы они были в правильном порядке"
+
+msgid "Complete the abc using the letters above."
+msgstr "Заполните алфавит с помощью букв"
+
+msgid "Write a word:"
+msgstr "Напишите слово:"
+
+msgid "Build the following word using the letters below."
+msgstr "Постройте следующее слово, используя приведённые ниже буквы."
+
+msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgstr "Найдите и отделите чётные числа от нечётных чисел в указанной последовательности."
+
+msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgstr "Переставьте буквы, чтобы они были в алфавитном порядке."
+
+msgid "Re-arrange the above numbers so they are in the ascending order."
+msgstr "Переставьте цифры, чтобы они были в порядке возрастания."
+
+msgid "Please try again."
+msgstr "Пожалуйста, попробуйте ещё раз."
+
+msgid "Sorry! It is wrong."
+msgstr "Извините! Это неправильно."
+
+msgid "Perfect! Task solved!"
+msgstr "Великолепно! Задача решена!"
+
+msgid "You need to work a little bit harder next time."
+msgstr "В следующий раз постарайтесь работать лучше."
+
+msgid "Game Over!"
+msgstr "Игра проиграна!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Поздравляем! Вы выполнили все задачи в этой игре."
+
+msgid "Great job!"
+msgstr "Отличная работа!"
+
+msgid "Perfect!!!"
+msgstr "Великолепно!"
+
+msgid "Awesome!"
+msgstr "Потрясающе!"
+
+msgid "Fantastic job!"
+msgstr "Фантастическая работа!"
+
+msgid "Well done!"
+msgstr "Молодец!"
+
+msgid "Perfect! Level completed!"
+msgstr "Великолепно! Уровень завершён!"
+
+msgid "area:"
+msgstr "площадь:"
+
+msgid "perimeter:"
+msgstr "периметр:"
+
+msgid "circumference:"
+msgstr "окружность:"
+
+msgid "surface area:"
+msgstr "площадь поверхности:"
+
+msgid "volume:"
+msgstr "объём"
+
+msgid "Perfect!"
+msgstr "Великолепно!"
+
+msgid "divided by"
+msgstr "делённое на"
+
+msgid "times"
+msgstr "умноженное на"
+
+msgid "equals"
+msgstr "равно"
+
+msgid "Even"
+msgstr "Чётные"
+
+msgid "Odd"
+msgstr "Нечётные"
+
+msgid "white"
+msgstr "Белый"
+
+msgid "black"
+msgstr "Чёрный"
+
+msgid "grey"
+msgstr "Серый"
+
+msgid "red"
+msgstr "Красный"
+
+msgid "orange [color]"
+msgstr "Оранжевый"
+
+msgid "yellow"
+msgstr "Жёлтый"
+
+msgid "olive"
+msgstr "Оливковый"
+
+msgid "green"
+msgstr "Зелёный"
+
+msgid "sea green"
+msgstr "Морской волны"
+
+msgid "teal"
+msgstr "Сине-зелёный"
+
+msgid "blue"
+msgstr "Синий"
+
+msgid "navy"
+msgstr "Тёмно-синий"
+
+msgid "purple"
+msgstr "Фиолетовый"
+
+# msgid "violet"
+# msgstr "Лиловый"
+msgid "magenta"
+msgstr "Пурпурный"
+
+msgid "indigo"
+msgstr "Индиго"
+
+msgid "pink"
+msgstr "Розовый"
+
+msgid "maroon"
+msgstr "Бордовый"
+
+msgid "brown"
+msgstr "Коричневый"
+
+msgid "aqua"
+msgstr "Голубой"
+
+msgid "lime"
+msgstr "Лайм"
+
+msgid "Rainbow Keyboard"
+msgstr "Радужная клавиатура"
+
+msgid "Touch Typing Tutor"
+msgstr "Обучение слепой печати"
+
+msgid "Translators"
+msgstr "Переводчики"
+
+msgid "English Alphabet"
+msgstr "Английский алфавит"
+
+msgid "Your Alphabet"
+msgstr "Русский алфавит"
+
+msgid "Mixing Colours for Painting"
+msgstr "Смешение цветов для рисования"
+
+msgid "Mix red, yellow, blue, black and white paint"
+msgstr "Смешайте красную, жёлтую, синюю, чёрную и белую краски"
+
+msgid "Additive Colour Mixing - Light"
+msgstr "Аддитивное смешение цветов - свет"
+
+msgid "Mix red, green and blue light to get other colours"
+msgstr "Смешайте красный, зелёный и синий свет, получив другие цвета"
+
+msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
+msgstr "Субтрактивное смешение цветов - краски, красители, чернила"
+
+msgid "Mix cyan, magenta and yellow paint to get other colours"
+msgstr "Смешайте голубую, пурпурную и жёлтую краску, получив другие цвета"
+
+msgid "Find the colour of the circle"
+msgstr "Найдите цвет круга"
+
+msgid "Adjust the amount of cyan, magenta and yellow paint"
+msgstr "Отрегулируйте количество голубой, пурпурной и жёлтой краски"
+
+msgid "Adjust the intensity of red, green and blue light"
+msgstr "Отрегулируйте интенсивность красного, зелёного и синего света"
+
+msgid "brush size"
+msgstr "размер кисти"
+
+msgid "Noughts and Crosses 2"
+msgstr "Крестики-нолики 2"
+
+msgid "Noughts and Crosses 3"
+msgstr "Крестики-нолики 3"
+
+msgid "Get as many lines of 3 as possible to win"
+msgstr "Чтобы победить, сделайте тройные линии, насколько это будет возможно"
+
+msgid "Player"
+msgstr "Игрок"
+
+msgid "Won"
+msgstr "Победил"
+
+msgid "Draw"
+msgstr "Ничья"
+
+msgid "User Name"
+msgstr "Имя пользователя"
+
+msgid "Match Animals"
+msgstr "Соответствие животных"
+
+msgid "Match Animals - Memory Game"
+msgstr "Соответствие животных"
+
+msgid "Match Fruits - Memory Game"
+msgstr "Соответствие фруктов"
+
+msgid "Match Vegetables - Memory Game"
+msgstr "Соответствие овощей"
+
+msgid "Match Numbers - Memory Game"
+msgstr "Соответствие цифр"
+
+msgid "Find matching pairs of the same image"
+msgstr "Найдите пары одинаковых изображений"
+
+msgid "Image Slider"
+msgstr "Разрезанные изображения"
+
+msgid "Animal Slider"
+msgstr "Животные"
+
+msgid "Fruit Slider"
+msgstr "Фрукты"
+
+msgid "Number Slider"
+msgstr "Цифры"
+
+msgid "Fraction Groups"
+msgstr "Обыкновенные дроби"
+
+msgid "Percentages"
+msgstr "Проценты"
+
+msgid "Ratios"
+msgstr "Отношения"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr "Установите соответствие дробей справа и дробей слева"
+
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Установите соответствие дробей справа дробям слева"
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr "Установите соответствие дробей справа дробям слева"
+
+msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+msgstr "Установите соответствие дробей и десятичных дробей справа их процентному представлению слева"
+
+msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
+msgstr "Установите соответствие отношений слева отношениям справа. Отношения показаны как отношения цветных частей к белым частям"
+
+msgid "Maths Matching Game"
+msgstr "Математическая логическая игра"
+
+msgid "Addition"
+msgstr "Сложение"
+
+msgid "Subtraction"
+msgstr "Вычитание"
+
+msgid "Multiplication"
+msgstr "Умножение"
+
+msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
+msgstr "Проверьте новую версию, сообщите о переводах, ошибках, идеях на сайте проекта:"
+
+msgid "Match numbers to their spelling"
+msgstr "Сопоставьте цифры их написанию словами"
+
+msgid "Number Spelling"
+msgstr "Напишите цифры словами"
+
+msgid "Find all matching animals"
+msgstr "Найдите всех соответствующих животных"
+
+msgid "Match animals to their shadows"
+msgstr "Соответствие животных их теням"
+
+msgid "Shape Maker"
+msgstr "Создание фигур"
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Нарисовать фигуру: %s"
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "так, чтобы длины оснований были равны %d и %d, а высота %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr "так, чтобы длины сторон были равны %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr "так, чтобы длины сторон были равны %d и %d"
+
+#, python-format
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "так, чтобы длины двух параллельных оснований были равны %d, а высота %d"
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr "так, чтобы длина основания была равна %d, а высота %d"
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr "так, чтобы длины катетов были равны %d и %d"
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr "так, чтобы длины обоих катетов были равны %d"
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr "так, чтобы длина гипотенузы была равна %d"
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr "так, чтобы длина одной из сторон была равна %d, а высота %d"
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr "так, чтобы длина радиуса была равна %d"
+
+msgid "Quadrilateral"
+msgstr "Четырёхугольник"
+
+msgid "Trapezium"
+msgstr "Трапеция"
+
+msgid "Trapezium "
+msgstr "Трапеция "
+
+msgid "Triangle"
+msgstr "Треугольник"
+
+msgid "Ouch... squished quadrilateral"
+msgstr "Ой... Сплющенный четырехугольник"
+
+msgid "Right isosceles triangle"
+msgstr "Прямой равнобедренный треугольник"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Тупой равнобедренный треугольник"
+
+msgid "Acute isosceles triangle"
+msgstr "Острый равнобедренный треугольник"
+
+msgid "Ouch... squished triangle"
+msgstr "Ой... Сплющенный треугольник"
+
+msgid "Triangle? Well, not really..."
+msgstr "Треугольник? Не очень похоже..."
+
+msgid "Test yourself"
+msgstr "Проверьте себя"
+
+msgid "Clock"
+msgstr "Часы"
+
+msgid "learn to read the time"
+msgstr "научитесь читать время"
+
+msgid "learn to set the clock"
+msgstr "научитесь устанавливать часы"
+
+msgid "Set the clock to:"
+msgstr "Установите часы на:"
+
+msgid "Drag the clock hands to set the time"
+msgstr "Перетащите стрелки часов чтобы установить время"
+
+msgid "What time is it?"
+msgstr "Сколько времени?"
+
+msgid "Click again to exit"
+msgstr "Нажмите ещё раз для выхода"
+
+msgid "Type your answer and hit enter"
+msgstr "Введите Ваш ответ и нажмите Enter"
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Turn the clock hands and see what happens."
+msgstr "Поверните стрелки часов и посмотрите, что произойдёт."
+
+msgid "Let's see what shapes you can draw"
+msgstr "Давайте посмотрим, какие фигуры вы умеете рисовать"
+
+msgid "Time in text version only"
+msgstr "Время, написанное только словами"
+
+msgid "How clock works?"
+msgstr "Как работают часы?"
+
+msgid "Columnar addition"
+msgstr "Сложение столбиком"
+
+msgid "Columnar subtraction"
+msgstr "Вычитание столбиком"
+
+msgid "Long multiplication"
+msgstr "Длинное умножение"
+
+msgid "Long division"
+msgstr "Длинное деление"
+
+msgid "borrow 10"
+msgstr "занять 10"
+
+msgid "carry"
+msgstr "перенести"
+
+msgid "Start >>"
+msgstr "Старт >>"
+
+msgid "Next example >>"
+msgstr "Следующий пример >>"
+
+msgid "Next step >>"
+msgstr "Следующий шаг >>"
+
+msgid "write "
+msgstr "написать "
+
+msgid "Demonstration"
+msgstr "Демонстрация"
+
+msgid "Do it yourself"
+msgstr "Сделайте это сами"
+
+msgid "Ratio"
+msgstr "Отношение"
+
+msgid "Working with large numbers"
+msgstr "Работа с большими цифрами"
+
+msgid "rewrite "
+msgstr "переписать "
+
+msgid "remainder"
+msgstr "остаток"
+
+msgid "result"
+msgstr "результат"
+
+msgid "Time Matching"
+msgstr "Соответствие времени"
+
+msgid "Add some red"
+msgstr "ещё красного"
+
+msgid "Add some green"
+msgstr "ещё зелёного"
+
+msgid "Add some blue"
+msgstr "ещё синего"
+
+msgid "Add some cyan"
+msgstr "ещё голубого"
+
+msgid "Add some magenta"
+msgstr "ещё пурпурного"
+
+msgid "Add some yellow"
+msgstr "ещё жёлтого"
+
+msgid "Too much red"
+msgstr "поменьше красного"
+
+msgid "Too much green"
+msgstr "поменьше зелёного"
+
+msgid "Too much blue"
+msgstr "поменьше синего"
+
+msgid "Too much cyan"
+msgstr "поменьше голубого"
+
+msgid "Too much magenta"
+msgstr "поменьше пурпурного"
+
+msgid "Too much yellow"
+msgstr "поменьше жёлтого"
+
+msgid "red is spot on"
+msgstr "красного нормально"
+
+msgid "green is spot on"
+msgstr "зелёного нормально"
+
+msgid "blue is spot on"
+msgstr "синего нормально"
+
+msgid "cyan is spot on"
+msgstr "голубого нормально"
+
+msgid "magenta is spot on"
+msgstr "пурпурного нормально"
+
+msgid "yellow is spot on"
+msgstr "жёлтого нормально"
+
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+msgstr ""
+"Laby, 2010 год, автор Mehdi Cherti (mehdidc) \n"
+" Звуки от различных авторов, опубликовавших свои работы на freesound.org. \n"
+" Изображения от различных авторов, опубликовавших свои работы на openclipart.org (публичный домен) и на http://www.art4apps.org/ - Art4Apps от Smart4Kids - под "
+"лицензией Creative Commons License (CC BY-SA). \n"
+" Пожалуйста, посмотрите credits.txt для более подробной информации об авторах медиафайлов, использованных в этом проекте"
+
+msgid "Licence"
+msgstr "Лицензия"
+
+msgid ""
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
+"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
+"not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+"Эта программа является свободной: Вы можете распространять её и/или изменять в соответствии с лицензией GNU General Public License, опубликованной Free Software "
+"Foundation, или версией 3 лицензии, или (по Вашему желанию) любой более поздней. Вы должны были получить копию GNU General Public License вместе с этой программой.  "
+"Если нет, то смотрите <http://www.gnu.org/licenses/>."
+
+msgid "A collection of educational activities for kids"
+msgstr "Небольшой набор образовательных программ для детей"
+
+msgid "Word Builder - Animals"
+msgstr "Словопостроитель - животные"
+
+msgid "Word Builder - Sports"
+msgstr "Словопостроитель - спорт"
+
+msgid "Word Builder - Body"
+msgstr "Словопостроитель - тело"
+
+msgid "Word Builder - People"
+msgstr "Словопостроитель - люди"
+
+msgid "Word Builder - Actions"
+msgstr "Словопостроитель - действия"
+
+msgid "Word Builder - Constructions"
+msgstr "Словопостроитель - конструкции"
+
+msgid "Word Builder - Nature"
+msgstr "Словопостроитель - природа"
+
+msgid "Word Builder - Jobs"
+msgstr "Словопостроитель - работа и занятия"
+
+msgid "Word Builder - Clothes and Accessories"
+msgstr "Словопостроитель - одежда и аксессуары"
+
+msgid "Word Builder - Fruits and Vegetables"
+msgstr "Словопостроитель - фрукты и овощи"
+
+msgid "Word Builder - Transport"
+msgstr "Словопостроитель - транспорт"
+
+msgid "Word Builder - Food"
+msgstr "Словопостроитель - пища"
+
+msgid "Complete the word"
+msgstr "Заполните слово"
+
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr "Изображения с сайта: http://www.art4apps.org/ - Art4Apps by Smart4Kids - лицензия Creative Commons License (CC BY-SA)"
+
+msgid "Decimals and Fractions"
+msgstr "Десятичные и обычные дроби"
+
+msgid "Decimals, fractions and percentages"
+msgstr "Десятичные, обычные дроби и проценты"
+
+msgid "Decimals, fractions, ratios and percentages"
+msgstr "Десятичные, обычные дроби, соотношения и проценты"
+
+msgid "Shapes and Solids"
+msgstr "Фигуры и тела"
+
+msgid "Translation Credits"
+msgstr "Переводчики"
+
+msgid "Level"
+msgstr "Уровень"
+
+msgid "Find solution"
+msgstr "Найти решение"
+
+msgid "Find missing number"
+msgstr "Найти отсутствующее число"
+
+msgid "Achievements"
+msgstr "Достижения"
+
+msgid "Select age group:"
+msgstr "Выберите возрастную группу:"
+
+msgid "show activities for:"
+msgstr "Показать деятельность для:"
+
+msgid "preschool"
+msgstr "Дошкольный"
+
+msgid "Year 1"
+msgstr "1-ый класс"
+
+msgid "Year 2"
+msgstr "2-ой класс"
+
+msgid "Year 3"
+msgstr "3-ий класс"
+
+msgid "Year 4"
+msgstr "4-ый класс"
+
+msgid "Year 5"
+msgstr "5-ый класс"
+
+msgid "Year 6"
+msgstr "6-ой класс"
+
+msgid "show all"
+msgstr "Показать все"
+
+msgid "Do you want to exit the game?"
+msgstr "Вы уверены, что хотите выйти из программы?"
+
+msgid "Do you want to log out of the game?"
+msgstr "Вы уверены, что хотите покинуть игру?"
+
+msgid "Ready to go to the next level?"
+msgstr "Готовы перейти на новый уровень?"
+
+msgid "Language arts"
+msgstr "Искусство языка"
+
+msgid "Other"
+msgstr "Разное"
+
+msgid "Educational Activities for Kids"
+msgstr "Образовательный пакет для детей"
+
+msgid ""
+"You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
+"http://espeak.sourceforge.net/"
+msgstr ""

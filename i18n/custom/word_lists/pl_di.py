@@ -1,0 +1,121 @@
+# -*- coding: utf-8 -*-
+
+# this is a list of words used by the word builder and word maze games and possibly
+# other games built in the future
+# these words are mainly most commonly used words in English + some other words
+# in each sub-list in the list di first number is a number of words in the sublist
+# to aviod counting it every time list is selected
+# the sublists are consisting of words with len() of 3 - 10
+# I think the way of going about internationalization here would be to create a new list
+# with words most commonly used in your language rather than translating this
+
+# ta lista jest bezpośrednim tłumaczeniem z angielskiego przy pomocy google translate - usunięte duplikaty, nie przetłumaczone słowa i przesortowana.
+
+di = [
+    [61, 'akt', 'ale', 'ani', 'bez', 'boi', 'być', 'coś', 'cud', 'czy', 'dać', 'dał', 'dno', 'dom', 'dwa', 'dym', 'dół',
+     'gaz', 'gra', 'ich', 'jak', 'jej', 'już', 'jęk', 'koc', 'kot', 'koń', 'kto', 'kup', 'kąt', 'luz', 'lód', 'maj',
+     'moc', 'mój', 'nic', 'nie', 'nić', 'niż', 'nos', 'ona', 'oni', 'pan', 'pas', 'pić', 'pod', 'raz', 'rok', 'ryk',
+     'róg', 'sam', 'sen', 'się', 'snu', 'sos', 'sto', 'syn', 'sęk', 'tak', 'typ', 'wąż', 'źle']
+    , [128, 'albo', 'baza', 'blef', 'blok', 'brać', 'brąz', 'buty', 'było', 'były', 'cała', 'cena', 'chcę', 'cios',
+       'ciąg', 'czas', 'czuć', 'czuł', 'dość', 'drut', 'duch', 'duma', 'dużo', 'duży', 'dzyń', 'fakt', 'fale', 'figa',
+       'flet', 'grać', 'góry', 'głos', 'inne', 'inny', 'jego', 'jeść', 'klan', 'klej', 'klif', 'klin', 'klub', 'koło',
+       'krab', 'kraj', 'krok', 'król', 'ktoś', 'kula', 'kurs', 'lasu', 'lato', 'lewo', 'linę', 'mapa', 'małe', 'mało',
+       'mały', 'małż', 'miał', 'mieć', 'mila', 'miły', 'mowa', 'może', 'mrok', 'mróz', 'musi', 'mąka', 'nici', 'noga',
+       'nogi', 'nowy', 'obcy', 'obok', 'oczy', 'ogon', 'okno', 'opis', 'owoc', 'ołów', 'padł', 'pani', 'para', 'pies',
+       'pisk', 'pięć', 'pled', 'poza', 'puch', 'pług', 'rama', 'rano', 'rasa', 'ruch', 'rura', 'ryba', 'rytm', 'ręce',
+       'ręka', 'sens', 'siła', 'skok', 'skos', 'spać', 'stać', 'suma', 'słup', 'taca', 'temu', 'tlen', 'trop', 'twój',
+       'tępy', 'tłum', 'usta', 'uszy', 'użyj', 'wada', 'waga', 'wiek', 'woda', 'wzór', 'zima', 'znak', 'złom', 'łódź',
+       'żaba', 'żona', 'żywo']
+    , [219, 'akcja', 'biały', 'blask', 'brzęk', 'bęben', 'błoto', 'błysk', 'cegły', 'chleb', 'chwyt', 'ciało', 'cichy',
+       'cyfra', 'czaru', 'część', 'deska', 'dobry', 'dodaj', 'dolar', 'dowód', 'droga', 'drzwi', 'dumny', 'dusić',
+       'dzień', 'dziki', 'dzwon', 'długi', 'efekt', 'ekran', 'farba', 'firma', 'flaga', 'flota', 'gdzie', 'glina',
+       'gracz', 'grupa', 'grupy', 'grypa', 'gąbka', 'głowa', 'głowy', 'ilość', 'iskra', 'jajka', 'jasne', 'jasny',
+       'jazda', 'jeden', 'język', 'każdy', 'kiedy', 'kilka', 'klapa', 'klasa', 'klaun', 'klucz', 'kolor', 'kopia',
+       'koszt', 'końcu', 'kości', 'krowy', 'krzyk', 'krzyż', 'kupił', 'kwiat', 'kółka', 'latać', 'linia', 'marka',
+       'matka', 'mazać', 'minut', 'mięso', 'mleko', 'mniej', 'morze', 'mówić', 'mądry', 'młody', 'nagle', 'napar',
+       'naród', 'nasze', 'nauka', 'nawet', 'nazwa', 'niebo', 'niech', 'nigdy', 'niska', 'nocne', 'nosić', 'nosze',
+       'obraz', 'obrót', 'ogród', 'około', 'osiem', 'osoba', 'ostry', 'owady', 'palce', 'panna', 'parku', 'pazur',
+       'pchła', 'pewne', 'pełny', 'piegi', 'pieśń', 'pisze', 'plama', 'pobyt', 'pokój', 'potem', 'praca', 'prasa',
+       'prawo', 'przed', 'przód', 'ptaki', 'punkt', 'puste', 'płyta', 'ramię', 'razem', 'rondo', 'rosną', 'rosła',
+       'ruszt', 'rzeka', 'równy', 'różne', 'rękaw', 'sanki', 'serce', 'silny', 'skala', 'skała', 'sklep', 'skóry',
+       'skąpy', 'smuga', 'sobie', 'sonda', 'stado', 'stary', 'stała', 'stało', 'stały', 'suchy', 'szafa', 'szare',
+       'szary', 'szefa', 'sześć', 'szkic', 'szkło', 'szyna', 'słaby', 'słowa', 'takie', 'temat', 'teraz', 'trawa',
+       'tulić', 'tutaj', 'tułów', 'twarz', 'tylko', 'uczyć', 'ulewa', 'ulica', 'umysł', 'urwis', 'urząd', 'uwaga',
+       'uważa', 'ważny', 'wiatr', 'widok', 'wiele', 'wieża', 'winić', 'wolny', 'wrona', 'wujek', 'wybór', 'wydać',
+       'wynik', 'wypas', 'wyspa', 'wziął', 'wzrok', 'włosy', 'zapis', 'zboże', 'zegar', 'ziemi', 'zimno', 'znany',
+       'zwany', 'ząbek', 'złoty', 'łaska', 'łatwy', 'łyżkę', 'łyżwy', 'ślepy', 'śmiał', 'śnieg', 'śruba', 'świat',
+       'żuraw', 'życie', 'żółty']
+    ,
+    [227, 'bardzo', 'biedny', 'biznes', 'blisko', 'bluzka', 'bogaty', 'bulion', 'będzie', 'chcieć', 'chmura', 'chusta',
+     'chwała', 'chylić', 'ciemny', 'cienki', 'ciepło', 'ciężki', 'czarne', 'czarny', 'czekać', 'cztery', 'czysty',
+     'czytać', 'często', 'daleko', 'deszcz', 'dobrze', 'dolina', 'dostał', 'drewno', 'drzewa', 'drzewo', 'dzieci',
+     'dziura', 'dziwne', 'dzięki', 'dźwięk', 'gorąco', 'gotowy', 'groszy', 'gładki', 'głośny', 'główny', 'jabłko',
+     'jednak', 'kaczor', 'kapłan', 'klamra', 'klepać', 'klimat', 'koniec', 'korona', 'korzeń', 'krakać', 'kryzys',
+     'krzyża', 'krótki', 'książę', 'kwiaty', 'lekarz', 'lekkie', 'lepiej', 'lepkie', 'liczba', 'liczyć', 'litery',
+     'ludzie', 'ludzki', 'marzec', 'metoda', 'miasto', 'miotłę', 'miękki', 'miłość', 'modlić', 'muzyka', 'myślał',
+     'należą', 'napisz', 'obecny', 'obiekt', 'obszar', 'oddech', 'odkrył', 'odpływ', 'odzież', 'ogólne', 'ojciec',
+     'opieka', 'osiadł', 'osobny', 'papier', 'partia', 'parzyć', 'pastel', 'pasuje', 'pewien', 'pełzać', 'piękne',
+     'piętro', 'plemię', 'plytki', 'podróż', 'poemat', 'pogoda', 'pomnik', 'ponury', 'postać', 'poszło', 'powoli',
+     'powrót', 'powódż', 'poziom', 'połysk', 'pranie', 'prawda', 'prawie', 'precel', 'proces', 'prosty', 'proszę',
+     'przodu', 'pstrąg', 'północ', 'płacić', 'płaska', 'płatki', 'płynna', 'pływak', 'pływać', 'pływał', 'raczej',
+     'raport', 'reszta', 'rodzaj', 'rozmaz', 'rządów', 'sekcja', 'siebie', 'siedem', 'silnik', 'skleić', 'skrypt',
+     'skuter', 'spacer', 'spadek', 'spisek', 'sportu', 'stacja', 'statek', 'strach', 'strajk', 'strona', 'strony',
+     'surowe', 'sweter', 'sylaby', 'szalik', 'szansa', 'szkoła', 'szopka', 'szpieg', 'sztuka', 'szybko', 'sądzić',
+     'sławny', 'służyć', 'taniec', 'trochę', 'trudny', 'trzask', 'trzeba', 'trąbka', 'twardy', 'upadek', 'uprawy',
+     'użycia', 'wielki', 'wioska', 'wiosna', 'więcej', 'wojsko', 'wschód', 'wspiął', 'wszedł', 'wydaje', 'wykres',
+     'wyrwać', 'wysoki', 'wyślij', 'wzrost', 'wąchać', 'własna', 'zabawa', 'zachód', 'zacisk', 'zaczął', 'zaimek',
+     'zajęty', 'zakres', 'zapach', 'zastaw', 'zawsze', 'zdanie', 'zespół', 'zestaw', 'zgrzyt', 'ziarno', 'ziemia',
+     'zmiana', 'zrobić', 'zrzęda', 'zwykle', 'zwykły', 'złamać', 'złamał', 'złapać', 'łabędź', 'ślimak', 'śliska',
+     'śliwka', 'śmigło', 'śpiący', 'środka', 'świerk', 'świeże', 'żelazo']
+    ,
+    [177, 'bawełna', 'bodziec', 'brązowy', 'budować', 'budynek', 'cebulka', 'centrum', 'chociaż', 'chodził', 'chrapać',
+     'chronić', 'cieszyć', 'czasami', 'czaszka', 'dodatek', 'dostawa', 'dotacja', 'dziecko', 'dziobek', 'długość',
+     'ekspres', 'energii', 'fabryki', 'frakcja', 'gałązka', 'gniazdo', 'godzina', 'gwiazda', 'hamulec', 'hodowli',
+     'interes', 'jeszcze', 'jezioro', 'kapitan', 'kapitał', 'kobiece', 'kobieta', 'kobiety', 'kolumna', 'komórki',
+     'kołysać', 'kołyski', 'kościół', 'krawędź', 'krwawić', 'książka', 'księżyc', 'kształt', 'których', 'kucharz',
+     'latarka', 'maleńka', 'maszynę', 'materia', 'melodia', 'miejsce', 'miesiąc', 'mnóstwo', 'mosiądz', 'możliwe',
+     'nagroda', 'napawać', 'nasiona', 'odcinek', 'oddział', 'odległy', 'odmiana', 'odważny', 'odziany', 'oglądać',
+     'okruchy', 'okrągły', 'ostatni', 'oznacza', 'patelni', 'piszczą', 'planeta', 'planety', 'plaster', 'podczas',
+     'podmuch', 'podobny', 'podpiec', 'podróże', 'podskok', 'podział', 'pokazać', 'pokryty', 'pominąć', 'poniżej',
+     'posypać', 'poważne', 'powiedz', 'powolny', 'powyżej', 'położyć', 'poślizg', 'produkt', 'projekt', 'przeciw',
+     'przyjść', 'pułapka', 'pułapki', 'pytania', 'pytanie', 'później', 'płaszcz', 'płomień', 'rodzina', 'rolnicy',
+     'rozmiar', 'roślina', 'rośliny', 'rysunek', 'również', 'równiny', 'różnica', 'samolot', 'sekunda', 'siostra',
+     'skoczył', 'skorupa', 'skrobia', 'skręcać', 'spotkać', 'sprawdź', 'stadion', 'stracił', 'strumyk', 'symbole',
+     'szalony', 'szczery', 'szeroka', 'szeroki', 'szmatki', 'słownik', 'słuchać', 'słyszeć', 'tablica', 'trzpień',
+     'trzymaj', 'trzymać', 'trójkąt', 'tydzień', 'tysiące', 'tłuszcz', 'uczucie', 'uruchom', 'ustalić', 'usterka',
+     'uśmiech', 'warkocz', 'wartość', 'warunki', 'wieczny', 'wieczór', 'wkrótce', 'wskazać', 'wspólny', 'wtyczka',
+     'wymawia', 'wysłane', 'wzgórze', 'wędrują', 'zamiast', 'zarówno', 'zawiera', 'zgadnąć', 'zielony', 'zjechał',
+     'znaleźć', 'związek', 'złamane', 'ścianie', 'średnim', 'światło', 'żołądek']
+    , [113, 'aktualny', 'artykuły', 'bazgroły', 'chłopiec', 'czerwony', 'czynniki', 'człowiek', 'dlaczego', 'dmuchnął',
+       'dołączył', 'durszlak', 'dyskusja', 'dziesięć', 'elementy', 'gdakanie', 'głębokie', 'historia', 'jaskółka',
+       'jedzenie', 'kapelusz', 'kichanie', 'kierunek', 'kontrola', 'krzemień', 'krzyknął', 'metalowe', 'modlitwa',
+       'muszelka', 'nadzieja', 'najmniej', 'napisane', 'naprawdę', 'następny', 'naukowcy', 'niektóre', 'niszczyć',
+       'oddziały', 'odwrotny', 'osiągnął', 'oszustem', 'otrzymał', 'pamiętam', 'pantofel', 'paragraf', 'pierwszy',
+       'pochodni', 'początek', 'pojechał', 'pokazane', 'poleciał', 'pomiędzy', 'ponieważ', 'poprawny', 'poruszyć',
+       'powinien', 'powtarza', 'południe', 'praktyka', 'produkty', 'profesor', 'przemysł', 'przepływ', 'przykład',
+       'prędkość', 'pustynia', 'północne', 'płyniemy', 'równanie', 'samochód', 'siedział', 'siedziba', 'siedzieć',
+       'skrzydeł', 'sprzedać', 'sprzęgło', 'spódnica', 'stabilny', 'stocznia', 'straszyć', 'strumień', 'strzałka',
+       'strzemię', 'studenci', 'sukienka', 'szczotka', 'szczupły', 'szprychy', 'towarowe', 'urodzony', 'urzędnik',
+       'wcześnie', 'wewnątrz', 'wiedział', 'wiedzieć', 'wszystko', 'wybrzeże', 'wydawało', 'wyjaśnić', 'wypalone',
+       'wzrośnie', 'własność', 'zachodni', 'zaklęcia', 'zapasowy', 'zaufanie', 'zdzierać', 'zlepiają', 'znajduje',
+       'zobaczyć', 'zostawić', 'zraszacz', 'zszywacz', 'związany']
+    , [77, 'czasownik', 'dokładnie', 'dopasować', 'dorosłego', 'drukowane', 'elegancki', 'jednostka', 'kiełkować',
+       'kompletna', 'konieczne', 'kroplówka', 'kręgosłup', 'mieszanki', 'możliwość', 'najlepszy', 'naturalny',
+       'niebieski', 'obietnica', 'oczekiwać', 'odpowiedź', 'odwiedzić', 'ostrożnie', 'pieniądze', 'pierścień',
+       'pociągnął', 'polowanie', 'potomstwa', 'powietrze', 'powitalny', 'pozostaje', 'prezydent', 'produkcji',
+       'prowadził', 'przeszedł', 'przyczyna', 'przynieść', 'przyniósł', 'przypadek', 'przyszedł', 'przytulny',
+       'pęknięcie', 'rozumiesz', 'rozwiązać', 'rumieniec', 'specjalny', 'spożywcze', 'szczegóły', 'szczelina',
+       'szlifować', 'szorstkim', 'słodzenia', 'słyszałem', 'truskawka', 'uderzenie', 'udowodnić', 'warczenie',
+       'wciśnięty', 'widziałem', 'wiewiórka', 'winogrona', 'winogrono', 'większość', 'wspaniały', 'wyciągnąć',
+       'wyciągnął', 'wyrażenie', 'zamrożone', 'zapowiedź', 'zbudowany', 'zderzenie', 'zniesiony', 'zszywanie',
+       'zwierzęta', 'zwłaszcza', 'ćwiczenia', 'śpiewania', 'żołnierzy']
+    ,
+    [57, 'bezpieczny', 'ciężarówka', 'cząsteczki', 'członkowie', 'deklaracja', 'dziesiętny', 'dziewczyny', 'energiczny',
+     'faktycznie', 'kliknięcie', 'kwadratowa', 'materiałem', 'nakrzyczeć', 'nauczyciel', 'niedźwiedź', 'nowoczesny',
+     'obserwować', 'podzielone', 'porównanie', 'powiedział', 'powiedzieć', 'pozdrawiam', 'przeglądać', 'przestrzeń',
+     'przeszczep', 'przeszłość', 'przyjaciel', 'przyjechał', 'przyrostek', 'przystawki', 'roszczenie', 'rozgwiazda',
+     'rozlewania', 'rozwinięte', 'rzeczownik', 'rękawiczka', 'samogłoskę', 'silniejszy', 'skanowanie', 'spojrzenie',
+     'spuchnięta', 'spółgłoska', 'strumykiem', 'stworzenie', 'substancje', 'szczęśliwy', 'szlachetny', 'uzgodniony',
+     'uśmiechnął', 'wszystkich', 'wypełnione', 'wypróbować', 'zadowolony', 'zamrożenie', 'zamówienie', 'zawieszona',
+     'świerszcza']
+    ]

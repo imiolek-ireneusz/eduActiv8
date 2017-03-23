@@ -1,0 +1,1237 @@
+# eduActiv8 - Educational Activity Pack - translation file.
+# Copyright (C) 2012 - 2014 Ireneusz Imiolek
+# This file is distributed under the same license as the eduactiv8 package.
+# Transalted by Aapo Rantalainen
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.31.105\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"POT-Creation-Date: 2013-11-01 15:33+0000\n"
+"PO-Revision-Date: 2016-11-18 23:14+0000\n"
+"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
+"Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "vihreä omena"
+msgstr[1] "vihreää omenaa"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "punainen omena"
+msgstr[1] "punaista omenaa"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "mansikka"
+msgstr[1] "mansikkaa"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "päärynä"
+msgstr[1] "päärynää"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] "appelsiini"
+msgstr[1] "appelsiiniä"
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "sipuli"
+msgstr[1] "sipulia"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "tomaatti"
+msgstr[1] "tomaattia"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "sitruuna"
+msgstr[1] "sitruunaa"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "kirsikka"
+msgstr[1] "kirsikkaa"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "pippuri"
+msgstr[1] "pippuria"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "porkkana"
+msgstr[1] "porkkanaa"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "banaani"
+msgstr[1] "banaania"
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "vesimeloni"
+msgstr[1] "vesimelonia"
+
+msgid "Equilateral Triangle"
+msgstr "Tasasivuinen kolmio"
+
+msgid "Isosceles Triangle"
+msgstr "Tasakylkinen kolmio"
+
+msgid "Obtuse Triangle"
+msgstr "Tylppäkärkinen kolmio"
+
+msgid "Right Triangle"
+msgstr "Suorakulmainen kolmio"
+
+msgid "Acute Triangle"
+msgstr "Teräväkärkinen kolmio"
+
+msgid "Square"
+msgstr "Neliö"
+
+msgid "Rectangle"
+msgstr "Suorakulmio"
+
+msgid "Right Trapezium"
+msgstr "Suorakulmainen puolisuunnikas"
+
+msgid "Isosceles Trapezium"
+msgstr "Tasakylkinen puolisuunnikas"
+
+msgid "Rhombus"
+msgstr "Vinoneliö"
+
+msgid "Parallelogram"
+msgstr "Suunnikas"
+
+msgid "Pentagon"
+msgstr "Viisikulmio"
+
+msgid "Hexagon"
+msgstr "Kuusikulmio"
+
+msgid "Circle"
+msgstr "Ympyrä"
+
+msgid "Ellipse"
+msgstr "Ellipsi"
+
+msgid "Cube"
+msgstr "Kuutio"
+
+msgid "Square Prism"
+msgstr "Neliöpohjainen särmiö"
+
+msgid "Triangular Prism"
+msgstr "Kolmiopohjainen särmiö"
+
+msgid "Square Pyramid"
+msgstr "Neliöpohjainen pyramidi"
+
+msgid "Triangular Pyramid"
+msgstr "Kolmiopohjainen pyramidi"
+
+msgid "Sphere"
+msgstr "Pallo"
+
+msgid "Cylinder"
+msgstr "Sylinteri"
+
+msgid "Cone"
+msgstr "Kartio"
+
+msgid "Torus"
+msgstr "Torus"
+
+msgid "Default Language:"
+msgstr "Oletuskieli"
+
+msgid "Guest"
+msgstr "Vieras"
+
+msgid "Hi Stranger :) Would you like to log in so we know who you are?"
+msgstr "Hei muukalainen :) Haluaisitko kirjautua, jotta tietäisimme kuka olet?"
+
+msgid "Log in:"
+msgstr "Kirjaudu"
+
+msgid "user name:"
+msgstr "käyttäjänimi:"
+
+msgid "password:"
+msgstr "salasana:"
+
+msgid "Login"
+msgstr "Kirjaudu"
+
+msgid "Add new user:"
+msgstr "Lisää uusi käyttäjä"
+
+msgid "confirm password:"
+msgstr "salasana uudestaan:"
+
+msgid "Register new user"
+msgstr "Luo uusi käyttäjä"
+
+msgid "Administrator Login:"
+msgstr "Pääkäyttäjän kirjautuminen:"
+
+msgid "User Management"
+msgstr "Käyttäjien hallinta"
+
+msgid "Please select a user from the list."
+msgstr "Valitse käyttäjä listasta"
+
+msgid "Delete user"
+msgstr "Poista käyttäjä"
+
+msgid "Delete"
+msgstr "Poista"
+
+msgid "Cancel"
+msgstr "Peru"
+
+#, python-format
+msgid "%s deleted from database."
+msgstr "%s poistettu tietokannasta."
+
+msgid "Failed to delete the user."
+msgstr "Käyttäjän poistaminen epäonnistui."
+
+msgid "Preferences"
+msgstr "Asetukset"
+
+msgid "switch to full screen after login"
+msgstr "vaihda kirjautumisen jälkeen kokoruututilaan"
+
+msgid "allow adding new users on login screen"
+msgstr "salli käyttäjien lisääminen kirjautumisnäkymässä"
+
+msgid "display languages with uncompleted translations"
+msgstr "näytä keskeneräiset käännökset kielivalikossa"
+
+msgid "require password to log in"
+msgstr "vaadi salasana kirjautumisessa"
+
+msgid "require password to access admin area"
+msgstr "vaadi salasana ylläpitonäkymään"
+
+msgid "Update admin's password:"
+msgstr "Päivitä pääkäyttäjän salasana"
+
+msgid "previous password:"
+msgstr "edellinen salasana:"
+
+msgid "new password:"
+msgstr "uusi salasana:"
+
+msgid "confirm new password:"
+msgstr "vahvista salasana"
+
+msgid "Create admin's account:"
+msgstr "Luo pääkäyttäjätunnus:"
+
+msgid "admin's user name:"
+msgstr "pääkäyttäjän käyttäjänimi:"
+
+msgid "admin's password:"
+msgstr "pääkäyttäjän salasana:"
+
+msgid "confirm admin's password:"
+msgstr "pääkäyttäjän salasana uudestaan:"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Please enter user name (at least 3 characters long)"
+msgstr "Syötä käyttäjänimi (vähintään 3 merkkiä)"
+
+msgid "Please enter password (at least 4 characters long)"
+msgstr "Syötä salasana (vähintään 4 merkkiä)"
+
+msgid "This username and password combination doesn't exist."
+msgstr "Käyttäjäni ja salasana eivät täsmää."
+
+msgid "This username doesn't exist."
+msgstr "Tätä käyttäjänimeä ei ole."
+
+msgid "Passwords don't match"
+msgstr "Salasanat eivät olleet samat."
+
+#, python-format
+msgid "%s added"
+msgstr "%s lisätty"
+
+msgid "This user name already exists, please choose a different one"
+msgstr "Tämä käyttäjäni on jo käytössä, valitse toinen"
+
+msgid "Admin's password has been updated"
+msgstr "Pääkäyttäjän salasana päivitetty"
+
+msgid "ERROR: This operation is not allowed at this point"
+msgstr "VIRHE: Tämä toiminto ei ole sallittu"
+
+msgid "Please enter previous password (at least 4 characters long)"
+msgstr "Syötä edellinen salasana (vähintään 4 merkkiä)"
+
+msgid "Please enter new password (at least 4 characters long)"
+msgstr "Syötä uusi salasana (vähintään 4 merkkiä)"
+
+msgid "Previous password doesn't seem to be in the database"
+msgstr "Vanha salasana ei ollut tietokannassa"
+
+msgid "Registered:"
+msgstr "Luotu:"
+
+msgid "Last login:"
+msgstr "Viimeisin kirjautuminen:"
+
+msgid "Preferences saved..."
+msgstr "Asetukset tallennettu..."
+
+msgid "Score: "
+msgstr "Pisteet:"
+
+msgid "Logged in as: "
+msgstr "Käyttäjä:"
+
+msgid "(Log out)"
+msgstr "(Kirjaudu ulos)"
+
+msgid "Addition Table"
+msgstr "Yhteenlaskutaulu"
+
+msgid "Hello"
+msgstr "Hei"
+
+msgid "Welcome back in the game."
+msgstr "Tervetuloa takaisin peliin."
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Translations"
+msgstr "Käännökset"
+
+msgid "Info & Settings"
+msgstr "Info & asetukset"
+
+msgid "Keyboard & Mouse"
+msgstr "Näppäimistö & hiiri"
+
+msgid "Discover Letters"
+msgstr "Tutki kirjaimia"
+
+msgid "Learn New Words"
+msgstr "Opettele sanoja"
+
+msgid "Mathematics"
+msgstr "Matematiikka"
+
+msgid "Numbers & Basic Operations"
+msgstr "Luvut & Peruslaskutoimitukset"
+
+msgid "Basic Operations - Exercises"
+msgstr "Harjoittele peruslaskutoimituksia"
+
+msgid "Sorting and Comparing"
+msgstr "Järjestäminen ja vertaileminen"
+
+msgid "Geometry and Shape Recognition"
+msgstr "Geometria ja muotojen tunnistaminen"
+
+msgid "Art and Colour"
+msgstr "Taide ja värit"
+
+msgid "Memory"
+msgstr "Muisti"
+
+msgid "Games & Mazes"
+msgstr "Pelit & Labyrintit"
+
+msgid "Multiplayer Games"
+msgstr "Moninpelit"
+
+msgid "About."
+msgstr "Tietoja."
+
+msgid "Game info..."
+msgstr "Tietoja pelistä..."
+
+msgid "Copyright & Credits"
+msgstr "Tekijänoikeustiedot"
+
+msgid "Hit the Mole"
+msgstr "Mätki myyrää"
+
+msgid "Letters"
+msgstr "Kirjaimet"
+
+msgid "Learn Letters with Flashcards"
+msgstr "Opettele kirjaimia muistikorteilla"
+
+msgid "Learn to Write"
+msgstr "Opettele kirjoittamaan"
+
+msgid "Build the following word using the letters below."
+msgstr "Muodosto seuraavat sanat käyttäen alla olevia kirjaimia."
+
+msgid "Trace Letters and Numbers"
+msgstr "Jäljennä kirjaimia ja numeroita"
+
+msgid "Complete the ABC"
+msgstr "Täydennä aakkoset"
+
+msgid "English"
+msgstr "Englanti"
+
+msgid "Your language"
+msgstr "Suomi"
+
+msgid "Sorting Letters"
+msgstr "Kirjainten järjestäminen"
+
+msgid "Lowercase Letters"
+msgstr "Pienaakkoset"
+
+msgid "Uppercase Letters"
+msgstr "Suuraakkoset"
+
+msgid "Word Builder"
+msgstr "Sanojen rakentaminen"
+
+msgid "Word Maze"
+msgstr "Sanalabyrintti"
+
+msgid "Collect all letters in the right order"
+msgstr "Kerää kirjaimet oikeassa järjestyksessä"
+
+msgid "Word Maze + 4"
+msgstr "Sanalabyrintti + 4"
+
+msgid "Numbers"
+msgstr "Luvut"
+
+msgid "Learn Numbers with Flashcards"
+msgstr "Opettele lukuja muistikorteilla"
+
+msgid "Learn to Count"
+msgstr "Opettele laskemaan"
+
+msgid "Basic Addition"
+msgstr "Yhteenlasku"
+
+msgid "Basic Subtraction"
+msgstr "Vähennyslasku"
+
+msgid "Shopping List"
+msgstr "Ostoslista"
+
+msgid "Plus or Minus"
+msgstr "Plus vai miinus"
+
+msgid "Basic Operations"
+msgstr "Peruslaskutoimitukset"
+
+msgid "Multiplication Table"
+msgstr "Kertotaulu"
+
+msgid "Find the product"
+msgstr "Löydä tulo"
+
+msgid "Find the multiplier"
+msgstr "Löydä kertoja"
+
+msgid "Division"
+msgstr "Jakolasku"
+
+msgid "Sorting Numbers"
+msgstr "Lukujen järjestäminen"
+
+msgid "Number Comparison"
+msgstr "Lukujen vertaileminen"
+
+msgid "Addition & Subtraction"
+msgstr "Yhteen- ja vähennyslasku"
+
+msgid "Comparison"
+msgstr "Vertaileminen"
+
+msgid "Fractions"
+msgstr "Jakaminen"
+
+msgid "Decimal Fractions"
+msgstr "Murtoluvut"
+
+msgid "Even or Odd"
+msgstr "Parillinen vai partion"
+
+msgid "Shapes"
+msgstr "Muodot"
+
+msgid "Learn Shapes with Flashcards"
+msgstr "Opettele muotoja muistikorteilla"
+
+msgid "Solids"
+msgstr "Kappaleet"
+
+msgid "Solid Geometry with Flashcards"
+msgstr "Opettele kappaleita muistikorteilla"
+
+msgid "Shape Matching"
+msgstr "Muotojen sovittaminen"
+
+msgid "help me find my shadow"
+msgstr "Auta minua löytämään varjoni"
+
+msgid "Paint"
+msgstr "Piirrä"
+
+msgid "Colour Matching"
+msgstr "Värien sovittaminen"
+
+msgid "label the colours"
+msgstr "Nimeä värit"
+
+msgid "Follow the Arrows"
+msgstr "Seuraa nuolia"
+
+msgid "remember the directions"
+msgstr "Muista suunta"
+
+msgid "Photographic Memory"
+msgstr "Valokuvamuisti"
+
+msgid "Training"
+msgstr "Harjoittelu"
+
+msgid "Automatic Levels"
+msgstr "Automaattiset kentät"
+
+msgid "Mouse Maze"
+msgstr "Hiirilabyrintti"
+
+msgid "Let's have some cheese"
+msgstr "Etsitäänpä vähän juustoa"
+
+msgid "Sheep Maze"
+msgstr "Lammaslabyrintti"
+
+msgid "Find the rest of the herd"
+msgstr "Löydä loput laumasta"
+
+msgid "Connect"
+msgstr "Yhdistäminen"
+
+msgid "Balloons with threads"
+msgstr "Ilmapallot ja narut"
+
+msgid "Fifteen"
+msgstr "Viisitoista"
+
+msgid "With a Twist"
+msgstr "Nyrjähtäneenä"
+
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Raahaa liukusäädintä ylös ja alas."
+
+msgid "Take your sheep to the rest of the herd."
+msgstr "Vie lampaasi loppulauman luokse."
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr "Katso ostoslistasta mitä sinun pitää raahata koriin."
+
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Raahaa oikea merkki punaiseen ruutuun: <, > tai =."
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr "Raahaa punaiseen ruutuun pienempi, suurempi tai yhtäsuuri."
+
+msgid "Re-arrange the above numbers so they are in the right order"
+msgstr "Järjestä luvut oikeaan järjestykseen"
+
+msgid "Complete the abc using the letters above."
+msgstr "Täydennä aakkoset."
+
+msgid "Write a word:"
+msgstr "Kirjoita sana:"
+
+msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgstr "Erottele parittomat ja parilliset luvut toisistaan."
+
+msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgstr "Järjestä kirjaimet aakkosjärjestykseen."
+
+msgid "Re-arrange the above numbers so they are in the ascending order."
+msgstr "Järjestä luvut oikeaan järjestykseen."
+
+msgid "Please try again."
+msgstr "Yritä uudestaan."
+
+msgid "Sorry! It is wrong."
+msgstr "Se on valitettavasti väärin."
+
+msgid "Perfect! Task solved!"
+msgstr "Täydellistä! Tehtävä suoritettu!"
+
+msgid "You need to work a little bit harder next time."
+msgstr "Ensi kerralla sinun täytyy yrittää hiukan kovemmin."
+
+msgid "Game Over!"
+msgstr "Peli loppu!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Onnittelut! Olet suorittanut kaikki tämän pelin tehtävät."
+
+msgid "Great job!"
+msgstr "Hyvää työtä!"
+
+msgid "Perfect!!!"
+msgstr "Täydellistä!"
+
+msgid "Awesome!"
+msgstr "Mahtavaa!"
+
+msgid "Fantastic job!"
+msgstr "Superia!"
+
+msgid "Well done!"
+msgstr "Hienosti tehty!"
+
+msgid "Perfect! Level completed!"
+msgstr "Täydellistä! Kenttä suoritettu!"
+
+msgid "area:"
+msgstr "pinta-ala:"
+
+msgid "perimeter:"
+msgstr "piiri:"
+
+msgid "circumference:"
+msgstr "ympärysmitta:"
+
+msgid "surface area:"
+msgstr "pinnan pinta-ala:"
+
+msgid "volume:"
+msgstr "tilavuus:"
+
+msgid "Perfect!"
+msgstr "Täydellistä!"
+
+msgid "divided by"
+msgstr "jaettuna"
+
+msgid "times"
+msgstr "kertaa"
+
+msgid "equals"
+msgstr "on yhtäsuuri kuin"
+
+msgid "Even"
+msgstr "Parillinen"
+
+msgid "Odd"
+msgstr "Pariton"
+
+msgid "white"
+msgstr "valkoinen"
+
+msgid "black"
+msgstr "musta"
+
+msgid "grey"
+msgstr "harmaa"
+
+msgid "red"
+msgstr "punainen"
+
+msgid "orange [color]"
+msgstr "oranssi"
+
+msgid "yellow"
+msgstr "keltainen"
+
+msgid "olive"
+msgstr "oliivi"
+
+msgid "green"
+msgstr "vihreä"
+
+msgid "sea green"
+msgstr "merenvihreä"
+
+msgid "teal"
+msgstr "turkoosi"
+
+msgid "blue"
+msgstr "sininen"
+
+msgid "navy"
+msgstr "laivastonsininen"
+
+msgid "purple"
+msgstr "purppura"
+
+msgid "violet"
+msgstr "violetti"
+
+msgid "magenta"
+msgstr "magenta"
+
+msgid "indigo"
+msgstr "indigo"
+
+msgid "pink"
+msgstr "pinkki"
+
+msgid "maroon"
+msgstr "kastanja"
+
+msgid "brown"
+msgstr "ruskea"
+
+msgid "aqua"
+msgstr "aqua"
+
+msgid "lime"
+msgstr "lime"
+
+msgid "Rainbow Keyboard"
+msgstr "Sateenkaarinäppäimistö"
+
+msgid "Touch Typing Tutor"
+msgstr "Kirjoitusharjoitus"
+
+msgid "Translators"
+msgstr "Kääntäjät"
+
+msgid "English Alphabet"
+msgstr "Englantilaiset aakkoset"
+
+msgid "Your Alphabet"
+msgstr "Suomalaiset aakkoset"
+
+msgid "Mixing Colours for Painting"
+msgstr "Sekoita maaleja"
+
+msgid "Mix red, yellow, blue, black and white paint"
+msgstr "Sekoita punaista, keltaista, sinistä, mustaa ja valkoista maalia"
+
+msgid "Additive Colour Mixing - Light"
+msgstr "Sekoita värillisiä valoja - Lisäävä värien sekoittaminen"
+
+msgid "Mix red, green and blue light to get other colours"
+msgstr "Sekoita punaista, vihreää ja sinistä valoa"
+
+msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
+msgstr "Sävytä maaleja ja musteita"
+
+msgid "Mix cyan, magenta and yellow paint to get other colours"
+msgstr "Sekoita syaania, magentaa ja keltaista"
+
+msgid "Find the colour of the circle"
+msgstr "Löydä ympyrän väri"
+
+msgid "Adjust the amount of cyan, magenta and yellow paint"
+msgstr "Säädä syaanin, magentan ja keltaisen maalin määrää"
+
+msgid "Adjust the intensity of red, green and blue light"
+msgstr "Säädä punaisen, vihreän ja sinisen valon määrää"
+
+msgid "brush size"
+msgstr "pensselin koko"
+
+msgid "Noughts and Crosses 2"
+msgstr "Ristinolla 2"
+
+msgid "Noughts and Crosses 3"
+msgstr "Ristinolla 3"
+
+msgid "Get as many lines of 3 as possible to win"
+msgstr "Yritä saada mahdollisimman monta kolmen riviä"
+
+msgid "Player"
+msgstr "Pelaaja"
+
+msgid "Won"
+msgstr "Voitti"
+
+msgid "Draw"
+msgstr "Tasapeli"
+
+msgid "User Name"
+msgstr "Pelaajan nimi"
+
+msgid "Match Animals"
+msgstr "Etsi eläimet"
+
+msgid "Match Animals - Memory Game"
+msgstr "Etsi eläinparit"
+
+msgid "Match Fruits - Memory Game"
+msgstr "Etsi hedelmäparit"
+
+msgid "Match Vegetables - Memory Game"
+msgstr "Etsi vihannesparit"
+
+msgid "Match Numbers - Memory Game"
+msgstr "Etsi numeroparit"
+
+msgid "Find matching pairs of the same image"
+msgstr "Etsi kuvaparit"
+
+msgid "Image Slider"
+msgstr "Viipaloidut kuvat"
+
+msgid "Animal Slider"
+msgstr "Eläimet"
+
+msgid "Fruit Slider"
+msgstr "Hedelmät"
+
+msgid "Number Slider"
+msgstr "Numerot"
+
+msgid "Fraction Groups"
+msgstr "Murtolukuryhmät"
+
+msgid "Percentages"
+msgstr "Prosentit"
+
+msgid "Ratios"
+msgstr "Suhteet"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr "Etsi vasemmanpuoleisille kuvioille samansuuruiset palaset"
+
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Etsi vasemmanpuoleisille kuvioille samansuuruiset palaset"
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr "Etsi murtoluvulle samansuuruiset kuviot"
+
+msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+msgstr "Etsi prosenteille samansuuruiset kuviot, murtoluvut ja desimaaliluvut"
+
+msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
+msgstr "Etsi suhteille samansuuruiset kuviot. Suhteet ovat värillisen suhde valkoiseen"
+
+msgid "Maths Matching Game"
+msgstr "Yhdistä matemaattisesti samat"
+
+msgid "Addition"
+msgstr "Yhteenlasku"
+
+msgid "Subtraction"
+msgstr "Vähennyslasku"
+
+msgid "Multiplication"
+msgstr "Kertolasku"
+
+msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
+msgstr "Tarkista uusin versio, ilmoita virheistä, keskustele ja käännä omalle kielellesi osoitteessa:"
+
+msgid "Match numbers to their spelling"
+msgstr "Etsi luvut"
+
+msgid "Number Spelling"
+msgstr "Lukujen kirjoittaminen"
+
+msgid "Find all matching animals"
+msgstr "Etsi kaikki samat eläimet"
+
+msgid "Match animals to their shadows"
+msgstr "Etsi eläinten varjot"
+
+msgid "Shape Maker"
+msgstr "Tee muotoja"
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Piirrä muoto: %s"
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "kannat ovat %d ja %d, sekä korkeus %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr "sivut ovat %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr "sivut ovat %d ja %d"
+
+#, python-format
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "samansuuntaiset sivut ovat %d ja korkeus on %d"
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr "kanta on %d ja korkeus %d"
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr "kateetit ovat %d ja %d"
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr "molemmat kateetit ovat %d"
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr "hypotenuusa on %d"
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr "yksi sivu on %d ja korkeus on %d"
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr "säde on %d"
+
+msgid "Quadrilateral"
+msgstr "Nelikulmio"
+
+msgid "Trapezium"
+msgstr "Puolisuunnikas"
+
+msgid "Trapezium "
+msgstr "Puolisuunnikas"
+
+msgid "Triangle"
+msgstr "Kolmio"
+
+msgid "Ouch... squished quadrilateral"
+msgstr "Auts... surkastunut nelikulmio"
+
+msgid "Right isosceles triangle"
+msgstr "Suorakulmainen tasakylkinen kolmio"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Tasakylkinen tylppäkärkinen kolmio"
+
+msgid "Acute isosceles triangle"
+msgstr "Tasakylkinen teräväkärkinen kolmio"
+
+msgid "Ouch... squished triangle"
+msgstr "Auts... surkastunut kolmio"
+
+msgid "Triangle? Well, not really..."
+msgstr "Kolmio? No ei oikeastaan..."
+
+msgid "Test yourself"
+msgstr "Testaa itseäsi"
+
+msgid "Clock"
+msgstr "Kello"
+
+msgid "learn to read the time"
+msgstr "Opettele lukemaan kelloa"
+
+msgid "learn to set the clock"
+msgstr "Opettele asettamaan kello aikaan"
+
+msgid "Set the clock to:"
+msgstr "Aseta kello aikaan:"
+
+msgid "Drag the clock hands to set the time"
+msgstr "Tartu viisareihin ja aseta aika"
+
+msgid "What time is it?"
+msgstr "Paljonko kello on?"
+
+msgid "Click again to exit"
+msgstr "Paina uudestaan lopettaaksesi"
+
+msgid "Type your answer and hit enter"
+msgstr "Kirjoita vastaus ja paina 'enter'"
+
+msgid "Time"
+msgstr "Kellonajat"
+
+msgid "Turn the clock hands and see what happens."
+msgstr "Käännä viisareita ja katso mitä tapahtuu."
+
+msgid "Let's see what shapes you can draw"
+msgstr "Katsotaan mitä muotoja osaat piirtää"
+
+msgid "Time in text version only"
+msgstr "Aika vain tekstinä"
+
+msgid "How clock works?"
+msgstr "Kuinka kello toimii?"
+
+msgid "Columnar addition"
+msgstr "Allekkain yhteenlasku"
+
+msgid "Columnar subtraction"
+msgstr "Allekkain vähennyslasku"
+
+msgid "Long multiplication"
+msgstr "Pitkä kertolasku"
+
+msgid "Long division"
+msgstr "Jakokulma"
+
+msgid "borrow 10"
+msgstr "lainaa 10"
+
+msgid "carry"
+msgstr "muistiin"
+
+msgid "Start >>"
+msgstr "Käynnistä >>"
+
+msgid "Next example >>"
+msgstr "Seuraava esimerkki >>"
+
+msgid "Next step >>"
+msgstr "Seuraava askel >>"
+
+msgid "write "
+msgstr "kirjoita "
+
+msgid "Demonstration"
+msgstr "Havainnollistus"
+
+msgid "Do it yourself"
+msgstr "Laske itse"
+
+msgid "Ratio"
+msgstr "Suhde"
+
+msgid "Working with large numbers"
+msgstr "Isojen lukujen työstäminen"
+
+msgid "rewrite "
+msgstr "kirjoita "
+
+msgid "remainder"
+msgstr "jää"
+
+msgid "result"
+msgstr "vastaus"
+
+msgid "Time Matching"
+msgstr "Etsi kellonajat"
+
+msgid "Add some red"
+msgstr "enemmän punaista"
+
+msgid "Add some green"
+msgstr "enemmän vihreää"
+
+msgid "Add some blue"
+msgstr "enemmän sinistä"
+
+msgid "Add some cyan"
+msgstr "enemmän syaania"
+
+msgid "Add some magenta"
+msgstr "enemmän magentaa"
+
+msgid "Add some yellow"
+msgstr "enemmän keltaista"
+
+msgid "Too much red"
+msgstr "vähemmän punaista"
+
+msgid "Too much green"
+msgstr "vähemmän vihreää"
+
+msgid "Too much blue"
+msgstr "vähemmän sinistä"
+
+msgid "Too much cyan"
+msgstr "vähemmän syaania"
+
+msgid "Too much magenta"
+msgstr "vähemmän magentaa"
+
+msgid "Too much yellow"
+msgstr "vähemmän keltaista"
+
+msgid "red is spot on"
+msgstr "punainen on oikein"
+
+msgid "green is spot on"
+msgstr "vihreä on oikein"
+
+msgid "blue is spot on"
+msgstr "sininen on oikein"
+
+msgid "cyan is spot on"
+msgstr "syaani on oikein"
+
+msgid "magenta is spot on"
+msgstr "magenta on oikein"
+
+msgid "yellow is spot on"
+msgstr "keltainen on oikein"
+
+msgid "remember me"
+msgstr "muista minut"
+
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+msgstr ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Äänet, monia tekijöitä, jotka ovat osallistuneet: freesound.org. \n"
+" Kuvat, monia tekijöitä, jotka ovat osallistuneet: openclipart.org (Public Domain) ja http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: Creative Commons (CC "
+"BY-SA). \n"
+" Tiedostosta credits.txt löydät lisää tietoa tämän projektin käyttämistä mediatiedostoista."
+
+msgid "Licence"
+msgstr "Licence"
+
+msgid ""
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
+"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
+"not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+"Tämä on vapaa ohjelma: tätä ohjelmaa saa levittää edelleen ja muuttaa Free Software Foundationin julkaiseman GNU General Public Licensen (GPL-lisenssi) version 3 tai "
+"(valinnan mukaan) myöhemmän version ehtojen mukaisestiTämän ohjelman mukana pitäisi tulla kopio GPL-lisenssistä. Jos näin ei ole, katso <http://www.gnu.org/licenses/>. "
+"(Epävirallinen suomennos: <http://www.turre.com/licenses/gpl_fi.html>)."
+
+msgid "A collection of educational activities for kids"
+msgstr "Pieni kokoelmia opettavaisia sovelluksia lapsille"
+
+msgid "Word Builder - Animals"
+msgstr "Sananrakennus - Eläimet"
+
+msgid "Complete the word"
+msgstr "Täydennä sana"
+
+msgid "Word Builder - Sports"
+msgstr "Sananrakennus - Urheilu"
+
+msgid "Word Builder - Body"
+msgstr "Sananrakennus - Keho"
+
+msgid "Word Builder - People"
+msgstr "Sananrakennus - Ihmiset"
+
+msgid "Word Builder - Actions"
+msgstr "Sananrakennus - Toiminnat"
+
+msgid "Word Builder - Constructions"
+msgstr "Sananrakennus - Rakennukset"
+
+msgid "Word Builder - Nature"
+msgstr "Sananrakennus - Luonto"
+
+msgid "Word Builder - Jobs"
+msgstr "Sananrakennus - Ammatit"
+
+msgid "Word Builder - Clothes and Accessories"
+msgstr "Sananrakennus - Vaatetus"
+
+msgid "Word Builder - Fruits and Vegetables"
+msgstr "Sananrakennus - Hedelmät ja vihannekset"
+
+msgid "Word Builder - Transport"
+msgstr "Sananrakennus - Matkustaminen"
+
+msgid "Word Builder - Food"
+msgstr "Sananrakennus - Ruoka"
+
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr "Kuvat: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: Creative Commons (CC BY-SA)"
+
+msgid "Decimals and Fractions"
+msgstr "Desimaalit ja murtoluvut"
+
+msgid "Decimals, fractions and percentages"
+msgstr "Desimaalit, murtoluvut ja prosentit"
+
+msgid "Decimals, fractions, ratios and percentages"
+msgstr "Desimaalit, murtoluvut, suhteet ja prosentit"
+
+msgid "Shapes and Solids"
+msgstr "Muodot ja kappaleet"
+
+msgid "Translation Credits"
+msgstr "Käännöstiedot"
+
+msgid "Level"
+msgstr "Taso"
+
+msgid "Find solution"
+msgstr "Etsi ratkaisu"
+
+msgid "Find missing number"
+msgstr "Etsi puuttuva luku"
+
+msgid "Achievements"
+msgstr "Saavutukset"
+
+msgid "Select age group:"
+msgstr "Valitse ikäryhmä:"
+
+msgid "show activities for:"
+msgstr "Näytä pelit:"
+
+msgid "preschool"
+msgstr "esikoulu"
+
+msgid "Year 1"
+msgstr "1. luokka"
+
+msgid "Year 2"
+msgstr "2. luokka"
+
+msgid "Year 3"
+msgstr "3. luokka"
+
+msgid "Year 4"
+msgstr "4. luokka"
+
+msgid "Year 5"
+msgstr "5. luokka"
+
+msgid "Year 6"
+msgstr "6. luokka"
+
+msgid "show all"
+msgstr "näytä kaiki"
+
+msgid "Do you want to exit the game?"
+msgstr "Haluatko sammuttaa pelin?"
+
+msgid "Do you want to log out of the game?"
+msgstr "Haluatko kirjautua ulos?"
+
+msgid "Ready to go to the next level?"
+msgstr "Valmis siirtymään seuraavalle tasolle?"
+
+msgid "Language arts"
+msgstr "Kielipelit"
+
+msgid "Other"
+msgstr "Muut"
+
+msgid "Educational Activities for Kids"
+msgstr ""
+
+msgid ""
+"You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
+"http://espeak.sourceforge.net/"
+msgstr ""

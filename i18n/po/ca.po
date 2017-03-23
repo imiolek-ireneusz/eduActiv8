@@ -1,0 +1,1230 @@
+# eduActiv8 - Educational Activity Pack - translation file.
+# Copyright (C) 2012 - 2013 Ireneusz Imiolek
+# This file is distributed under the same license as the eduactiv8 package.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2013.
+# Transalted by Guillem Jover
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.31.105\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"POT-Creation-Date: 2013-11-01 15:33+0000\n"
+"PO-Revision-Date: 2016-11-18 23:14+0000\n"
+"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
+"Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "poma verda"
+msgstr[1] "pomes verdes"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "poma vermella"
+msgstr[1] "pomes vermelles"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "maduixa"
+msgstr[1] "maduixes"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "pera"
+msgstr[1] "peres"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] "taronja"
+msgstr[1] "taronges"
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "ceba"
+msgstr[1] "cebes"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "tomàquet"
+msgstr[1] "tomàquets"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "llimona"
+msgstr[1] "llimones"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "cirera"
+msgstr[1] "cireres"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "pebrot"
+msgstr[1] "pebrots"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "pastanaga"
+msgstr[1] "pastanagues"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "plàtan"
+msgstr[1] "plàtans"
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "síndria"
+msgstr[1] "síndries"
+
+msgid "Equilateral Triangle"
+msgstr "Triangle equilàter"
+
+msgid "Isosceles Triangle"
+msgstr "Triangle isòsceles"
+
+msgid "Obtuse Triangle"
+msgstr "Triangle obtús"
+
+msgid "Right Triangle"
+msgstr "Triangle rectangle"
+
+msgid "Acute Triangle"
+msgstr "Triangle agut"
+
+msgid "Square"
+msgstr "Quadrat"
+
+msgid "Rectangle"
+msgstr "Rectangle"
+
+msgid "Right Trapezium"
+msgstr "Trapezoide rectangle"
+
+msgid "Isosceles Trapezium"
+msgstr "Trapezoide isòsceles"
+
+msgid "Rhombus"
+msgstr "Rombe"
+
+msgid "Parallelogram"
+msgstr "Paral·lelogram"
+
+msgid "Pentagon"
+msgstr "Pentàgon"
+
+msgid "Hexagon"
+msgstr "Hexàgon"
+
+msgid "Circle"
+msgstr "Cercle"
+
+msgid "Ellipse"
+msgstr "El·lipse"
+
+msgid "Cube"
+msgstr "Cub"
+
+msgid "Square Prism"
+msgstr "Prisma quadrat"
+
+msgid "Triangular Prism"
+msgstr "Prisma triangular"
+
+msgid "Square Pyramid"
+msgstr "Piràmide quadrada"
+
+msgid "Triangular Pyramid"
+msgstr "Piràmide triangular"
+
+msgid "Sphere"
+msgstr "Esfera"
+
+msgid "Cylinder"
+msgstr "Cilindre"
+
+msgid "Cone"
+msgstr "Con"
+
+msgid "Torus"
+msgstr "Torus"
+
+msgid "Guest"
+msgstr "Convidat"
+
+msgid "Hi Stranger :) Would you like to log in so we know who you are?"
+msgstr "Hola foraster :) Vols iniciar la sessió per a saber qui ets?"
+
+msgid "Log in:"
+msgstr "Inici de sessió:"
+
+msgid "user name:"
+msgstr "nom d'usuari:"
+
+msgid "password:"
+msgstr "paraula clau:"
+
+msgid "remember me"
+msgstr "recorda-ho"
+
+msgid "Login"
+msgstr "Inici de sessió"
+
+msgid "Add new user:"
+msgstr "Afegeix nou usuari:"
+
+msgid "confirm password:"
+msgstr "confirma paraula clau:"
+
+msgid "Register new user"
+msgstr "Registra nou usuari"
+
+msgid "Administrator Login:"
+msgstr "Inici de sessió de l'administrador:"
+
+msgid "User Management"
+msgstr "Administració d'usuaris"
+
+msgid "Please select a user from the list."
+msgstr "Selecciona un usuari de la llista."
+
+msgid "Delete user"
+msgstr "Esborra l'usuari"
+
+msgid "Delete"
+msgstr "Esborra"
+
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#, python-format
+msgid "%s deleted from database."
+msgstr "s'ha esborrat %s de la base de dades."
+
+msgid "Failed to delete the user."
+msgstr "No s'ha pogut esborrar l'usuari."
+
+msgid "Preferences"
+msgstr "Preferències"
+
+msgid "switch to full screen after login"
+msgstr "canvia a pantalla completa després d'iniciar sessió"
+
+msgid "allow adding new users on login screen"
+msgstr "permet afegir usuaris nous a la pantalla d'inici de sessió"
+
+msgid "display languages with uncompleted translations"
+msgstr "mostra les llengües amb traduccions incompletes"
+
+msgid "require password to log in"
+msgstr "exigeix contrasenya per iniciar sessió"
+
+msgid "require password to access admin area"
+msgstr "exigeix contrasenya per accedir a l'àrea d'administració"
+
+msgid "Update admin's password:"
+msgstr "Modifica la contrasenya de l'administrador:"
+
+msgid "previous password:"
+msgstr "contrasenya antiga:"
+
+msgid "new password:"
+msgstr "contrasenya nova:"
+
+msgid "confirm new password:"
+msgstr "confirma contrasenya nova:"
+
+msgid "Create admin's account:"
+msgstr "Crea el compte de l'administrador:"
+
+msgid "admin's user name:"
+msgstr "nom d'usuari de l'administrador:"
+
+msgid "admin's password:"
+msgstr "contrasenya de l'administrador:"
+
+msgid "confirm admin's password:"
+msgstr "confirma contrasenya de l'administrador:"
+
+msgid "Save"
+msgstr "Desa"
+
+msgid "Please enter user name (at least 3 characters long)"
+msgstr "Introdueix el nom d'usuari (de com a mínim tres caràcters)"
+
+msgid "Please enter password (at least 4 characters long)"
+msgstr "Introdueix la paraula clau (de com a mínim quatre caràcters)"
+
+msgid "This username and password combination doesn't exist."
+msgstr "Aquesta combinació d'usuari i contrasenya no existeix."
+
+msgid "This username doesn't exist."
+msgstr "Aquest usuari no existeix."
+
+msgid "Passwords don't match"
+msgstr "Les contrasenyes no concorden"
+
+#, python-format
+msgid "%s added"
+msgstr "s'ha afegit %s"
+
+msgid "This user name already exists, please choose a different one"
+msgstr "Aquest nom d'usuari ja existeix, tria'n un diferent"
+
+msgid "Admin's password has been updated"
+msgstr "S'ha modificat la contrasenya de l'administrador"
+
+msgid "ERROR: This operation is not allowed at this point"
+msgstr "ERROR: Aquesta operació no és permesa en aquest punt"
+
+msgid "Please enter previous password (at least 4 characters long)"
+msgstr "Introdueix la contrasenya anterior (de com a mínim 4 caràcters)"
+
+msgid "Please enter new password (at least 4 characters long)"
+msgstr "Introdueix la contrasenya nova (de com a mínim 4 caràcters)"
+
+msgid "Previous password doesn't seem to be in the database"
+msgstr "La contrasenya anterior no sembla estar a la base de dades"
+
+msgid "Registered:"
+msgstr "Registrat/ada:"
+
+msgid "Last login:"
+msgstr "Última sessió:"
+
+msgid "Preferences saved..."
+msgstr "S'han desat les preferències…"
+
+msgid "Score: "
+msgstr "Puntuació: "
+
+msgid "Logged in as: "
+msgstr "Sessió iniciada com: "
+
+msgid "(Log out)"
+msgstr "(Finalitza la sessió)"
+
+msgid "Addition Table"
+msgstr "Taula de sumes"
+
+msgid "Hello"
+msgstr "Hola"
+
+msgid "Welcome back in the game."
+msgstr "Benvingut una altra vegada al joc."
+
+msgid "Language"
+msgstr "Llengua"
+
+msgid "Translations"
+msgstr "Traduccions"
+
+msgid "Info & Settings"
+msgstr "Informació i preferències"
+
+msgid "Keyboard & Mouse"
+msgstr "Teclat i ratolí"
+
+msgid "Discover Letters"
+msgstr "Descobreix lletres"
+
+msgid "Learn New Words"
+msgstr "Aprèn paraules noves"
+
+msgid "Mathematics"
+msgstr "Matemàtiques"
+
+msgid "Numbers & Basic Operations"
+msgstr "Números i operacions bàsiques"
+
+msgid "Basic Operations - Exercises"
+msgstr "Operacions bàsiques; Exercicis"
+
+msgid "Sorting and Comparing"
+msgstr "Ordena i compara"
+
+msgid "Geometry and Shape Recognition"
+msgstr "Geometria i formes"
+
+msgid "Art and Colour"
+msgstr "Art i color"
+
+msgid "Memory"
+msgstr "Memòria"
+
+msgid "Games & Mazes"
+msgstr "Jocs i laberints"
+
+msgid "Multiplayer Games"
+msgstr "Jocs multi-jugador"
+
+msgid "About."
+msgstr "Sobre el joc."
+
+msgid "Game info..."
+msgstr "Informació del joc…"
+
+msgid "Copyright & Credits"
+msgstr "Drets de còpia i crèdits"
+
+msgid "Hit the Mole"
+msgstr ""
+
+msgid "Letters"
+msgstr "Lletres"
+
+msgid "Learn Letters with Flashcards"
+msgstr ""
+
+msgid "Learn to Write"
+msgstr "Aprèn a escriure"
+
+msgid "Trace Letters and Numbers"
+msgstr ""
+
+msgid "Complete the ABC"
+msgstr "Completa l'abecedari"
+
+msgid "English"
+msgstr "Anglès"
+
+msgid "Your language"
+msgstr "Català"
+
+msgid "Sorting Letters"
+msgstr "Ordenar lletres"
+
+msgid "Lowercase Letters"
+msgstr "Lletres minúscules"
+
+msgid "Uppercase Letters"
+msgstr "Lletres majúscules"
+
+msgid "Word Builder"
+msgstr "Construeix paraules"
+
+msgid "Word Maze"
+msgstr "Laberint de paraules"
+
+msgid "Collect all letters in the right order"
+msgstr ""
+
+msgid "Word Maze + 4"
+msgstr "Laberint de paraules + 4"
+
+msgid "Numbers"
+msgstr "Números"
+
+msgid "Learn Numbers with Flashcards"
+msgstr ""
+
+msgid "Learn to Count"
+msgstr "Aprèn a contar"
+
+msgid "Basic Addition"
+msgstr "Suma bàsica"
+
+msgid "Basic Subtraction"
+msgstr "Resta bàsica"
+
+msgid "Shopping List"
+msgstr "Llista de la compra"
+
+msgid "Plus or Minus"
+msgstr "Suma o resta"
+
+msgid "Basic Operations"
+msgstr "Operacions bàsiques"
+
+msgid "Multiplication Table"
+msgstr "Taula de multiplicar"
+
+msgid "Find the product"
+msgstr "Troba el producte"
+
+msgid "Find the multiplier"
+msgstr "Troba el multiplicador"
+
+msgid "Division"
+msgstr "Divisió"
+
+msgid "Sorting Numbers"
+msgstr "Ordena els números"
+
+msgid "Number Comparison"
+msgstr "Compara els números"
+
+msgid "Addition & Subtraction"
+msgstr "Sumes i restes"
+
+msgid "Comparison"
+msgstr "Comparació"
+
+msgid "Fractions"
+msgstr "Fraccions"
+
+msgid "Decimal Fractions"
+msgstr "Fraccions decimals"
+
+msgid "Even or Odd"
+msgstr "Parell o senar"
+
+msgid "Shapes"
+msgstr "Formes"
+
+msgid "Learn Shapes with Flashcards"
+msgstr ""
+
+msgid "Solids"
+msgstr "Sòlids"
+
+msgid "Solid Geometry with Flashcards"
+msgstr ""
+
+msgid "Shape Matching"
+msgstr ""
+
+msgid "help me find my shadow"
+msgstr "ajuda'm a trobar la meva ombra"
+
+msgid "Paint"
+msgstr "Pinta"
+
+msgid "Colour Matching"
+msgstr ""
+
+msgid "label the colours"
+msgstr "etiqueta els colors"
+
+msgid "Follow the Arrows"
+msgstr "Segueix les fletxes"
+
+msgid "remember the directions"
+msgstr "recorda les direccions"
+
+msgid "Photographic Memory"
+msgstr "Memòria fotogràfica"
+
+msgid "Training"
+msgstr "Entrenament"
+
+msgid "Automatic Levels"
+msgstr "Nivells automàtics"
+
+msgid "Mouse Maze"
+msgstr "Laberint del ratolí"
+
+msgid "Let's have some cheese"
+msgstr "Mengem formatge"
+
+msgid "Sheep Maze"
+msgstr "Laberint de l'ovella"
+
+msgid "Find the rest of the herd"
+msgstr "Troba la resta del ramat"
+
+msgid "Connect"
+msgstr "Connecta"
+
+msgid "Balloons with threads"
+msgstr "Globus amb fils"
+
+msgid "Fifteen"
+msgstr "Quinze"
+
+msgid "With a Twist"
+msgstr ""
+
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr ""
+
+msgid "Take your sheep to the rest of the herd."
+msgstr ""
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr ""
+
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr ""
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr ""
+
+msgid "Re-arrange the above numbers so they are in the right order"
+msgstr ""
+
+msgid "Complete the abc using the letters above."
+msgstr ""
+
+msgid "Build the following word using the letters below."
+msgstr ""
+
+msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgstr ""
+
+msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgstr ""
+
+msgid "Re-arrange the above numbers so they are in the ascending order."
+msgstr ""
+
+msgid "Please try again."
+msgstr "Torna-ho a provar."
+
+msgid "Sorry! It is wrong."
+msgstr "Ho sento! És incorrecte."
+
+msgid "Perfect! Task solved!"
+msgstr "Perfecte! La feina està resolta!"
+
+msgid "Game Over!"
+msgstr "Fi del joc!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Enhorabona! Has completat totes les tasques d'aquest joc."
+
+msgid "Great job!"
+msgstr "Bona feina!"
+
+msgid "Perfect!!!"
+msgstr "Perfecte!"
+
+msgid "Awesome!"
+msgstr "Meravellós!"
+
+msgid "Fantastic job!"
+msgstr "Genial!"
+
+msgid "Well done!"
+msgstr "Fantàstic!"
+
+msgid "Perfect! Level completed!"
+msgstr "Perfecte! Nivell completat!"
+
+msgid "area:"
+msgstr "àrea:"
+
+msgid "perimeter:"
+msgstr "perímetre:"
+
+msgid "circumference:"
+msgstr "circumferència:"
+
+msgid "surface area:"
+msgstr "superfície de l'àrea:"
+
+msgid "volume:"
+msgstr "volum:"
+
+msgid "Perfect!"
+msgstr "Perfecte!"
+
+msgid "divided by"
+msgstr "dividit per"
+
+msgid "times"
+msgstr "cops"
+
+msgid "equals"
+msgstr "igual a"
+
+msgid "Even"
+msgstr "Parell"
+
+msgid "Odd"
+msgstr "Senar"
+
+msgid "white"
+msgstr "blanc"
+
+msgid "black"
+msgstr "negre"
+
+msgid "grey"
+msgstr "gris"
+
+msgid "red"
+msgstr "vermell"
+
+msgid "orange [color]"
+msgstr "taronja"
+
+msgid "yellow"
+msgstr "groc"
+
+msgid "olive"
+msgstr "verd oliva"
+
+msgid "green"
+msgstr "verd"
+
+msgid "sea green"
+msgstr "verd mar"
+
+msgid "teal"
+msgstr "verd blavós"
+
+msgid "blue"
+msgstr "blau"
+
+msgid "navy"
+msgstr "blau marí"
+
+msgid "purple"
+msgstr "porpra"
+
+msgid "violet"
+msgstr "violeta"
+
+msgid "magenta"
+msgstr "magenta"
+
+msgid "indigo"
+msgstr "anyil"
+
+msgid "pink"
+msgstr "rosa"
+
+msgid "maroon"
+msgstr "granat"
+
+msgid "brown"
+msgstr "marró"
+
+msgid "aqua"
+msgstr "aiguamarí"
+
+msgid "lime"
+msgstr "llima"
+
+msgid "Rainbow Keyboard"
+msgstr "Teclat d'arc de Sant Martí"
+
+msgid "Touch Typing Tutor"
+msgstr ""
+
+msgid "Translators"
+msgstr "Traductors"
+
+msgid "English Alphabet"
+msgstr "Alfabet anglès"
+
+msgid "Your Alphabet"
+msgstr "Alfabet català"
+
+msgid "Mixing Colours for Painting"
+msgstr ""
+
+msgid "Mix red, yellow, blue, black and white paint"
+msgstr ""
+
+msgid "Additive Colour Mixing - Light"
+msgstr ""
+
+msgid "Mix red, green and blue light to get other colours"
+msgstr ""
+
+msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
+msgstr ""
+
+msgid "Mix cyan, magenta and yellow paint to get other colours"
+msgstr ""
+
+msgid "Find the colour of the circle"
+msgstr ""
+
+msgid "Adjust the amount of cyan, magenta and yellow paint"
+msgstr ""
+
+msgid "Adjust the intensity of red, green and blue light"
+msgstr ""
+
+msgid "brush size"
+msgstr "mida del pinzell"
+
+msgid "Noughts and Crosses 2"
+msgstr "Tres en ratlla 2"
+
+msgid "Noughts and Crosses 3"
+msgstr "Tres en ratlla 3"
+
+msgid "Get as many lines of 3 as possible to win"
+msgstr "Per guanyar aconsegueix el major numero de línies de 3"
+
+msgid "Player"
+msgstr "Participant"
+
+msgid "Won"
+msgstr "Ha guanyat"
+
+msgid "Draw"
+msgstr "Empat"
+
+msgid "User Name"
+msgstr "El teu nom"
+
+msgid "Match Animals"
+msgstr ""
+
+msgid "Match Animals - Memory Game"
+msgstr ""
+
+msgid "Match Fruits - Memory Game"
+msgstr ""
+
+msgid "Match Vegetables - Memory Game"
+msgstr ""
+
+msgid "Match Numbers - Memory Game"
+msgstr ""
+
+msgid "Find matching pairs of the same image"
+msgstr ""
+
+msgid "Image Slider"
+msgstr "Imatges tallades"
+
+msgid "Animal Slider"
+msgstr "Animals"
+
+msgid "Fruit Slider"
+msgstr "Fruites"
+
+msgid "Number Slider"
+msgstr "Números"
+
+msgid "Fraction Groups"
+msgstr "Grups de fraccions"
+
+msgid "Percentages"
+msgstr "Percentatges"
+
+msgid "Ratios"
+msgstr "Proporcions"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr ""
+
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr ""
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr ""
+
+msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+msgstr ""
+
+msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
+msgstr ""
+
+msgid "Maths Matching Game"
+msgstr ""
+
+msgid "Addition"
+msgstr "Suma"
+
+msgid "Subtraction"
+msgstr "Resta"
+
+msgid "Multiplication"
+msgstr "Multiplicació"
+
+msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
+msgstr ""
+
+msgid "Match numbers to their spelling"
+msgstr ""
+
+msgid "Number Spelling"
+msgstr ""
+
+msgid "Find all matching animals"
+msgstr ""
+
+msgid "Match animals to their shadows"
+msgstr ""
+
+msgid "Shape Maker"
+msgstr ""
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Forma a dibuixar: %s"
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr ""
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr ""
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr ""
+
+#, python-format
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr ""
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr ""
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr ""
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr ""
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr ""
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr ""
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr ""
+
+msgid "Quadrilateral"
+msgstr "Quadrilàter"
+
+msgid "Trapezium"
+msgstr "Trapezoide"
+
+msgid "Trapezium "
+msgstr "Trapezoide"
+
+msgid "Triangle"
+msgstr "Triangle"
+
+msgid "Ouch... squished quadrilateral"
+msgstr "Ai... quadrilàter aixafat"
+
+msgid "Right isosceles triangle"
+msgstr "Triangle rectangle isòsceles"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Triangle obtús isòsceles"
+
+msgid "Acute isosceles triangle"
+msgstr "Triangle agut isòsceles"
+
+msgid "Ouch... squished triangle"
+msgstr "Ai… quadrilàter aixafat"
+
+msgid "Triangle? Well, not really..."
+msgstr "Triangle? No ben bé…"
+
+msgid "Test yourself"
+msgstr ""
+
+msgid "Clock"
+msgstr "Rellotge"
+
+msgid "learn to read the time"
+msgstr "aprèn a llegit l'hora"
+
+msgid "learn to set the clock"
+msgstr "aprèn a posar el rellotge"
+
+msgid "Set the clock to:"
+msgstr "Posa el rellotge a:"
+
+msgid "Drag the clock hands to set the time"
+msgstr ""
+
+msgid "What time is it?"
+msgstr "Quina hora és?"
+
+msgid "Click again to exit"
+msgstr "Fes clic un altre cop per sortir"
+
+msgid "Type your answer and hit enter"
+msgstr "Escriu la teva resposta i prem Intro"
+
+msgid "Time"
+msgstr "Temps"
+
+msgid "Turn the clock hands and see what happens."
+msgstr ""
+
+msgid "Let's see what shapes you can draw"
+msgstr ""
+
+msgid "Time in text version only"
+msgstr ""
+
+msgid "How clock works?"
+msgstr "Com funciona un rellotge?"
+
+msgid "Columnar addition"
+msgstr "Suma de la columna"
+
+msgid "Columnar subtraction"
+msgstr "Resta de la columna"
+
+msgid "Long multiplication"
+msgstr "Multiplicació llarga"
+
+msgid "Long division"
+msgstr "Divisió llarga"
+
+msgid "borrow 10"
+msgstr "en prenc 10"
+
+msgid "carry"
+msgstr "en porto"
+
+msgid "Start >>"
+msgstr "Comença >>"
+
+msgid "Next example >>"
+msgstr "Següent exemple >>"
+
+msgid "Next step >>"
+msgstr "Següent pas >>"
+
+msgid "write "
+msgstr "escriu "
+
+msgid "Demonstration"
+msgstr "Demostració"
+
+msgid "Do it yourself"
+msgstr "Fes-ho tu"
+
+msgid "Ratio"
+msgstr "Proporció"
+
+msgid "Working with large numbers"
+msgstr "Treballar amb números grans"
+
+msgid "rewrite "
+msgstr "reescriu "
+
+msgid "remainder"
+msgstr "recordatori"
+
+msgid "result"
+msgstr "resultat"
+
+msgid "Time Matching"
+msgstr ""
+
+msgid "Add some red"
+msgstr "Afegeix més vermell"
+
+msgid "Add some green"
+msgstr "Afegeix més verd"
+
+msgid "Add some blue"
+msgstr "Afegeix més blau"
+
+msgid "Add some cyan"
+msgstr "Afegeix més cian"
+
+msgid "Add some magenta"
+msgstr "Afegeix més magenta"
+
+msgid "Add some yellow"
+msgstr "Afegeix més groc"
+
+msgid "Too much red"
+msgstr "Massa vermell"
+
+msgid "Too much green"
+msgstr "Massa verd"
+
+msgid "Too much blue"
+msgstr "Massa blau"
+
+msgid "Too much cyan"
+msgstr "Massa cian"
+
+msgid "Too much magenta"
+msgstr "Massa magenta"
+
+msgid "Too much yellow"
+msgstr "Massa groc"
+
+msgid "red is spot on"
+msgstr "el vermell està bé"
+
+msgid "green is spot on"
+msgstr "el verd està bé"
+
+msgid "blue is spot on"
+msgstr "el blau està bé"
+
+msgid "cyan is spot on"
+msgstr "el cian està bé"
+
+msgid "magenta is spot on"
+msgstr "el magenta està bé"
+
+msgid "yellow is spot on"
+msgstr "el groc està bé"
+
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+
+msgstr ""
+"Laby, 2010 per Mehdi Cherti (mehdidc) \n"
+" Sons per diversos autors qui van contribuir les seves obres a freesound.org. \n"
+" Imatges per diversos autors qui van contribuir les seves obres a openclipart.org (domini públic) i http://www.art4apps.org/ - Art4Apps by Smart4Kids - sota una llicència Creative Commons (CC BY-SA). \n"
+" Vegeu credits.txt per obtenir-ne més informació sobre els autors dels fitxers multimèdia emprats a aquest projecte"
+ 
+
+msgid "Licence"
+msgstr "Llicència"
+
+msgid ""
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
+"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
+"not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+
+msgid "A collection of educational activities for kids"
+msgstr "Un petit conjunt d'aplicacions educatives per a nens"
+
+msgid "Word Builder - Animals"
+msgstr ""
+
+msgid "Complete the word"
+msgstr "Completa la paraula"
+
+msgid "Word Builder - Sports"
+msgstr ""
+
+msgid "Word Builder - Body"
+msgstr ""
+
+msgid "Word Builder - People"
+msgstr ""
+
+msgid "Word Builder - Actions"
+msgstr ""
+
+msgid "Word Builder - Constructions"
+msgstr ""
+
+msgid "Word Builder - Nature"
+msgstr ""
+
+msgid "Word Builder - Jobs"
+msgstr ""
+
+msgid "Word Builder - Clothes and Accessories"
+msgstr ""
+
+msgid "Word Builder - Fruits and Vegetables"
+msgstr ""
+
+msgid "Word Builder - Transport"
+msgstr ""
+
+msgid "Word Builder - Food"
+msgstr ""
+
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr "Imatges de: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Llicència Creative Commons (CC BY-SA)"
+
+msgid "Decimals and Fractions"
+msgstr "Decimals i fraccions"
+
+msgid "Decimals, fractions and percentages"
+msgstr "Decimals, fraccions i percentatges"
+
+msgid "Decimals, fractions, ratios and percentages"
+msgstr "Decimals, fraccions, proporcions i percentatges"
+
+msgid "Shapes and Solids"
+msgstr "Formes i sòlids"
+
+msgid "Translation Credits"
+msgstr "Crèdits de traducció"
+
+msgid "Level"
+msgstr "Nivell"
+
+msgid "Find solution"
+msgstr "Troba una solució"
+
+msgid "Find missing number"
+msgstr "Troba el número que falta"
+
+msgid "Achievements"
+msgstr "Èxits"
+
+msgid "Select age group:"
+msgstr "Selecciona grup d'edat:"
+
+msgid "show activities for:"
+msgstr "mostra activitats per a:"
+
+msgid "preschool"
+msgstr "preescolar"
+
+msgid "Year 1"
+msgstr "1r any"
+
+msgid "Year 2"
+msgstr "2n any"
+
+msgid "Year 3"
+msgstr "3r any"
+
+msgid "Year 4"
+msgstr "4t any"
+
+msgid "Year 5"
+msgstr "5è any"
+
+msgid "Year 6"
+msgstr "6è any"
+
+msgid "show all"
+msgstr "mostra tots"
+
+msgid "Do you want to exit the game?"
+msgstr "Vols sortir del joc?"
+
+msgid "Do you want to log out of the game?"
+msgstr "Vols finalitzar la sessió del joc?"
+
+msgid "Ready to go to the next level?"
+msgstr "Vols anar al nivell següent?"
+
+msgid "Language arts"
+msgstr "Arts del llenguatge"
+
+msgid "Other"
+msgstr "Altres"
+
+msgid "Educational Activities for Kids"
+msgstr "Paquet d'activitats educatives per nens i nenes"
+
+msgid "Catalan clock"
+msgstr "Rellotge amb horari en català"
+
+msgid ""
+"You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
+"http://espeak.sourceforge.net/"
+msgstr ""

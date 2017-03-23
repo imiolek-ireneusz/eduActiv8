@@ -1,0 +1,6 @@
+#!/bin/bash
+
+OLD_DIR="`pwd`"
+cd "/usr/share/eduactiv8"
+python /usr/share/eduactiv8/eduactiv8.py "$@"
+cd "$OLD_DIR"

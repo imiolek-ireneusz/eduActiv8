@@ -1,0 +1,1237 @@
+# eduActiv8 - Educational Activity Pack - translation file.
+# Copyright (C) 2012 - 2013 Ireneusz Imiolek
+# This file is distributed under the same license as the eduactiv8 package.
+# Translated by Giuliano, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.31.105\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"POT-Creation-Date: 2013-11-01 15:33+0000\n"
+"PO-Revision-Date: 2016-11-18 23:13+0000\n"
+"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
+"Language-Team: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "mela verde"
+msgstr[1] "mele verdi"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "mela rossa"
+msgstr[1] "mele rosse"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "fragola"
+msgstr[1] "fragole"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "pera"
+msgstr[1] "pere"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] "arancia"
+msgstr[1] "arance"
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "cipolla"
+msgstr[1] "cipolle"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "pomodoro"
+msgstr[1] "pomodori"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "limone"
+msgstr[1] "limoni"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "ciliegia"
+msgstr[1] "ciliegie"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "pepeone"
+msgstr[1] "peperoni"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "carota"
+msgstr[1] "carote"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "banana "
+msgstr[1] "banane "
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "anguria"
+msgstr[1] "angurie"
+
+msgid "Equilateral Triangle"
+msgstr "Triangolo equilatero"
+
+msgid "Isosceles Triangle"
+msgstr "Triangolo isoscele"
+
+msgid "Obtuse Triangle"
+msgstr "Triangolo ottuso"
+
+msgid "Right Triangle"
+msgstr "Triangolo rettangolo"
+
+msgid "Acute Triangle"
+msgstr "Triangolo acuto"
+
+msgid "Square"
+msgstr "Quadrato"
+
+msgid "Rectangle"
+msgstr "Rettangolo"
+
+msgid "Right Trapezium"
+msgstr "Trapezio rettangolo"
+
+msgid "Isosceles Trapezium"
+msgstr "Trapezio isoscele"
+
+msgid "Rhombus"
+msgstr "Rombo"
+
+msgid "Parallelogram"
+msgstr "Parallelogramma"
+
+msgid "Pentagon"
+msgstr "Pentagono"
+
+msgid "Hexagon"
+msgstr "Esagono"
+
+msgid "Circle"
+msgstr "Cerchio"
+
+msgid "Ellipse"
+msgstr "Ellisse"
+
+msgid "Cube"
+msgstr "Cubo"
+
+msgid "Square Prism"
+msgstr "Prisma a base quadrata"
+
+msgid "Triangular Prism"
+msgstr "Prisma a base triangolare"
+
+msgid "Square Pyramid"
+msgstr "Piramide"
+
+msgid "Triangular Pyramid"
+msgstr "Piramide a base triangolare"
+
+msgid "Sphere"
+msgstr "Sfera"
+
+msgid "Cylinder"
+msgstr "Cilindro"
+
+msgid "Cone"
+msgstr "Cono"
+
+msgid "Torus"
+msgstr "Toro"
+
+msgid "Default Language:"
+msgstr "Lingua di default:"
+
+msgid "Guest"
+msgstr "Guest"
+
+msgid "Hi Stranger :) Would you like to log in so we know who you are?"
+msgstr "Salve straniero :) Vuoi connetterti così sappiamo chi sei?"
+
+msgid "Log in:"
+msgstr "Accesso:"
+
+msgid "user name:"
+msgstr "nome utente:"
+
+msgid "password:"
+msgstr "password:"
+
+msgid "Login"
+msgstr "Entra:"
+
+msgid "Add new user:"
+msgstr "Aggiungi un nuovo utente:"
+
+msgid "confirm password:"
+msgstr "conferma la tua password:"
+
+msgid "Register new user"
+msgstr "Memorizza il nuovo utente"
+
+msgid "Administrator Login:"
+msgstr "Accesso amministrativo:"
+
+msgid "User Management"
+msgstr "Gestione degli utenti:"
+
+msgid "Please select a user from the list."
+msgstr "Scegli un utente dell'elenco"
+
+msgid "Delete user"
+msgstr "Elimina l'utente selezionato"
+
+msgid "Delete"
+msgstr "Si, eliminalo!"
+
+msgid "Cancel"
+msgstr "Non eliminarlo!"
+
+#, python-format
+msgid "%s deleted from database."
+msgstr "%s è stato cancellato dal database."
+
+msgid "Failed to delete the user."
+msgstr "L'eliminazione dell'utente non è riuscita"
+
+msgid "Preferences"
+msgstr "Preferenze:"
+
+msgid "switch to full screen after login"
+msgstr "passa in modalità full screen dopo l'accesso"
+
+msgid "allow adding new users on login screen"
+msgstr "consenti l'inserimento di nuovi utente dalla schermata di accesso"
+
+msgid "display languages with uncompleted translations"
+msgstr "mostra le lingue che hanno una traduzione incompleta"
+
+msgid "require password to log in"
+msgstr "chiedi la password per consentire l'accesso"
+
+msgid "require password to access admin area"
+msgstr "chiedi la password per accedere nell'area amministrativa"
+
+msgid "Update admin's password:"
+msgstr "Aggiorna la password dell'amministratore"
+
+msgid "previous password:"
+msgstr "password attuale:"
+
+msgid "new password:"
+msgstr "nuova password:"
+
+msgid "confirm new password:"
+msgstr "confermare la nuova password:"
+
+msgid "Create admin's account:"
+msgstr "Crea un account di amministrazione:"
+
+msgid "admin's user name:"
+msgstr "nome utente dell'amministratore:"
+
+msgid "admin's password:"
+msgstr "password dell'amministratore:"
+
+msgid "confirm admin's password:"
+msgstr "confermare la password:"
+
+msgid "Save"
+msgstr "Salva"
+
+msgid "Please enter user name (at least 3 characters long)"
+msgstr "Inserisci un nome utente (di almeno 4 caratteri)"
+
+msgid "Please enter password (at least 4 characters long)"
+msgstr "Inserisci una password (di almeno 4 caratteri)"
+
+msgid "This username and password combination doesn't exist."
+msgstr "Non esiste l'accoppiata di questo nome utente e questa password"
+
+msgid "This username doesn't exist."
+msgstr "Questo nome utente non esiste."
+
+msgid "Passwords don't match"
+msgstr "Le due password non coincidono"
+
+#, python-format
+msgid "%s added"
+msgstr "aggiunto %s"
+
+msgid "This user name already exists, please choose a different one"
+msgstr "Questo nome utente esiste già, scegline un altro diverso"
+
+msgid "Admin's password has been updated"
+msgstr "La password di amministrazione è stata cambiata"
+
+msgid "ERROR: This operation is not allowed at this point"
+msgstr "ERRORE: Questa operazione adesso non è possibile"
+
+msgid "Please enter previous password (at least 4 characters long)"
+msgstr "Inserisci la password attuale (di almeno 4 caratteri)"
+
+msgid "Please enter new password (at least 4 characters long)"
+msgstr "Inserisci la nuova password (di almeno 4 caratteri)"
+
+msgid "Previous password doesn't seem to be in the database"
+msgstr "Sembra che la password attuale non esista nel database"
+
+msgid "Registered:"
+msgstr "Registrato il:"
+
+msgid "Last login:"
+msgstr "Ultimo accesso il:"
+
+msgid "Preferences saved..."
+msgstr "Preferenze salvate..."
+
+msgid "Score: "
+msgstr "Punteggio:"
+
+msgid "Logged in as: "
+msgstr "Entrato come: "
+
+msgid "(Log out)"
+msgstr "(Uscita)"
+
+msgid "Addition Table"
+msgstr "Tabella di addizione"
+
+msgid "Hello"
+msgstr "Ciao"
+
+msgid "Welcome back in the game."
+msgstr "Bentornato nel gioco."
+
+msgid "Language"
+msgstr "Lingua"
+
+msgid "Translations"
+msgstr "Traduzioni"
+
+msgid "Info & Settings"
+msgstr "Informazioni e impostazioni"
+
+msgid "Keyboard & Mouse"
+msgstr "Tastiera e mouse"
+
+msgid "Discover Letters"
+msgstr "Scoprire le lettere"
+
+msgid "Learn New Words"
+msgstr "Imparare nuove parole"
+
+msgid "Mathematics"
+msgstr "Matematica"
+
+msgid "Numbers & Basic Operations"
+msgstr "Numeri e principali operazioni"
+
+msgid "Basic Operations - Exercises"
+msgstr "Principali operazioni - Esercizi"
+
+msgid "Sorting and Comparing"
+msgstr "Ordinamento e confronto"
+
+msgid "Geometry and Shape Recognition"
+msgstr "Geometria e riconoscimento della forma"
+
+msgid "Art and Colour"
+msgstr "Arte e colori"
+
+msgid "Memory"
+msgstr "Memoria"
+
+msgid "Games & Mazes"
+msgstr "Giochi e labirinti"
+
+msgid "Multiplayer Games"
+msgstr "Giochi per più giocatori"
+
+msgid "About."
+msgstr "Caratteristiche."
+
+msgid "Game info..."
+msgstr "Informazioni sul gioco..."
+
+msgid "Copyright & Credits"
+msgstr "Diritti e riconoscimenti"
+
+msgid "Hit the Mole"
+msgstr "Colpisci la talpa"
+
+msgid "Letters"
+msgstr "Lettere"
+
+msgid "Learn Letters with Flashcards"
+msgstr "Impara le lettere con le schede"
+
+msgid "Learn to Write"
+msgstr "Impara a scrivere"
+
+msgid "Trace Letters and Numbers"
+msgstr "Riconosci lettere e numeri"
+
+msgid "Complete the ABC"
+msgstr "Completa l'alfabeto"
+
+msgid "English"
+msgstr "Inglese"
+
+msgid "Your language"
+msgstr "Italiano"
+
+msgid "Sorting Letters"
+msgstr "Riordina le lettere"
+
+msgid "Lowercase Letters"
+msgstr "Lettere minuscole"
+
+msgid "Uppercase Letters"
+msgstr "Lettere maiuscole"
+
+msgid "Word Builder"
+msgstr "Il costruttore di parole"
+
+msgid "Word Maze"
+msgstr "Labirinto di parole"
+
+msgid "Collect all letters in the right order"
+msgstr "Raggruppa le lettere nel giusto ordine"
+
+msgid "Word Maze + 4"
+msgstr "Labirinto di parole +4"
+
+msgid "Numbers"
+msgstr "Numeri"
+
+msgid "Learn Numbers with Flashcards"
+msgstr "Impara i numeri con le schede"
+
+msgid "Learn to Count"
+msgstr "Impara a contare"
+
+msgid "Basic Addition"
+msgstr "Addizione di base"
+
+msgid "Basic Subtraction"
+msgstr "Sottrazione di base"
+
+msgid "Shopping List"
+msgstr "Lista della spesa"
+
+msgid "Plus or Minus"
+msgstr "Più o meno"
+
+msgid "Basic Operations"
+msgstr "Operazioni di base"
+
+msgid "Multiplication Table"
+msgstr "Tabella di moltiplicazione"
+
+msgid "Find the product"
+msgstr "Trova il prodotto"
+
+msgid "Find the multiplier"
+msgstr "Trova il moltiplicatore"
+
+msgid "Division"
+msgstr "Divisione"
+
+msgid "Sorting Numbers"
+msgstr "Ordinare i numeri"
+
+msgid "Number Comparison"
+msgstr "Confronto di numeri"
+
+msgid "Addition & Subtraction"
+msgstr "Addizione e sottrazione"
+
+msgid "Comparison"
+msgstr "Confronto"
+
+msgid "Fractions"
+msgstr "Frazioni"
+
+msgid "Decimal Fractions"
+msgstr "Frazioni decimali"
+
+msgid "Even or Odd"
+msgstr "Pari o dispari"
+
+msgid "Shapes"
+msgstr "Forme"
+
+msgid "Learn Shapes with Flashcards"
+msgstr "Impara le forme con le schede"
+
+msgid "Solids"
+msgstr "Solidi"
+
+msgid "Solid Geometry with Flashcards"
+msgstr "Geometria solida con le schede"
+
+msgid "Shape Matching"
+msgstr "Forme che corrispondono"
+
+msgid "help me find my shadow"
+msgstr "aiutami a trovare la mia ombra"
+
+msgid "Paint"
+msgstr "Colora"
+
+msgid "Colour Matching"
+msgstr "Colori che corrispondono"
+
+msgid "label the colours"
+msgstr "etichetta i colori"
+
+msgid "Follow the Arrows"
+msgstr "Segui le frecce"
+
+msgid "remember the directions"
+msgstr "ricorda le direzioni"
+
+msgid "Photographic Memory"
+msgstr "Memoria fotografica"
+
+msgid "Training"
+msgstr "Allenamento"
+
+msgid "Automatic Levels"
+msgstr "Livelli automatici"
+
+msgid "Mouse Maze"
+msgstr "Labirinto con il mouse"
+
+msgid "Let's have some cheese"
+msgstr "Diamo un po 'di formaggio"
+
+msgid "Sheep Maze"
+msgstr "Labirinto con le pecore"
+
+msgid "Find the rest of the herd"
+msgstr "Trova il resto della mandria"
+
+msgid "Connect"
+msgstr "Connettiti"
+
+msgid "Balloons with threads"
+msgstr "Palloncini col filo"
+
+msgid "Fifteen"
+msgstr "Quindici"
+
+msgid "With a Twist"
+msgstr "Con una torsione"
+
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Trascina il dispositivo di scorrimento verso l'alto o verso il basso in modo che il segno giusto si trovi nel quadrato rosso"
+
+msgid "Take your sheep to the rest of the herd."
+msgstr "Unisci la tua pecora al resto del gregge"
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr "Controlla la lista della spesa e metti nel cesto tutti gli oggetti che servono."
+
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Trascina uno tra <, > o = (minore, maggiore o uguale) dentro il riquadro rosso."
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr "Trascina uno dei minore, maggiore o uguale dentro il riquadro rosso."
+
+msgid "Re-arrange the above numbers so they are in the right order"
+msgstr "Riporta i numeri sovrastanti nell'ordine giusto"
+
+msgid "Complete the abc using the letters above."
+msgstr "Completa l'alfabeto usando le lettere sovrastanti"
+
+msgid "Write a word:"
+msgstr "Scrivi una parola:"
+
+msgid "Build the following word using the letters below."
+msgstr "Forma la seguente parola usando le lettere qui sotto."
+
+msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgstr "Trova e separa i numeri pari da quelli dispari nelle serie sovrastanti."
+
+msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgstr "Riposiziona le lettere sovrastanti in ordine alfabetico."
+
+msgid "Re-arrange the above numbers so they are in the ascending order."
+msgstr "Riposiziona i numeri sovrastanti in ordine ascendente."
+
+msgid "Please try again."
+msgstr "Ritenta."
+
+msgid "Sorry! It is wrong."
+msgstr "Mi spiace! E' sbagliato."
+
+msgid "Perfect! Task solved!"
+msgstr "Perfetto! Compito eseguito!"
+
+msgid "You need to work a little bit harder next time."
+msgstr "La prossima volta impegnati di più."
+
+msgid "Game Over!"
+msgstr "Fine del gioco!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Congratulazioni! Hai completato tutte le prove di questo gioco."
+
+msgid "Great job!"
+msgstr "Grandioso!"
+
+msgid "Perfect!!!"
+msgstr "Perfetto!"
+
+msgid "Awesome!"
+msgstr "Imponente!"
+
+msgid "Fantastic job!"
+msgstr "Super!"
+
+msgid "Well done!"
+msgstr "Ben fatto!"
+
+msgid "Perfect! Level completed!"
+msgstr "Perfetto! Livello completato!"
+
+msgid "area:"
+msgstr "area:"
+
+msgid "perimeter:"
+msgstr "perimetro:"
+
+msgid "circumference:"
+msgstr "circonferenza:"
+
+msgid "surface area:"
+msgstr "area di superficie:"
+
+msgid "volume:"
+msgstr "volume:"
+
+msgid "Perfect!"
+msgstr "Perfetto!"
+
+msgid "divided by"
+msgstr "diviso da"
+
+msgid "times"
+msgstr "volte"
+
+msgid "equals"
+msgstr "uguale"
+
+msgid "Even"
+msgstr "Pari"
+
+msgid "Odd"
+msgstr "Dispari"
+
+msgid "white"
+msgstr "bianco"
+
+msgid "black"
+msgstr "nero"
+
+msgid "grey"
+msgstr "grigio"
+
+msgid "red"
+msgstr "rosso"
+
+msgid "orange [color]"
+msgstr "arancione"
+
+msgid "yellow"
+msgstr "giallo"
+
+msgid "olive"
+msgstr "oliva"
+
+msgid "green"
+msgstr "verde"
+
+msgid "sea green"
+msgstr "verde mare"
+
+msgid "teal"
+msgstr "verde blu"
+
+msgid "blue"
+msgstr "blu"
+
+msgid "navy"
+msgstr "blu scuro"
+
+msgid "purple"
+msgstr "porpora"
+
+msgid "violet"
+msgstr "violetto"
+
+msgid "magenta"
+msgstr "magenta"
+
+msgid "indigo"
+msgstr "indaco"
+
+msgid "pink"
+msgstr "rosa"
+
+msgid "maroon"
+msgstr "marroncino"
+
+msgid "brown"
+msgstr "marrone"
+
+msgid "aqua"
+msgstr "verde blu"
+
+msgid "lime"
+msgstr "giallo verde"
+
+msgid "Rainbow Keyboard"
+msgstr "Tastiera arcobaleno"
+
+msgid "Touch Typing Tutor"
+msgstr "Insegnante a scrivere con il tocco"
+
+msgid "Translators"
+msgstr "Traduttori"
+
+msgid "English Alphabet"
+msgstr "Alfabeto inglese"
+
+msgid "Your Alphabet"
+msgstr "Alfabeto italiano"
+
+msgid "Mixing Colours for Painting"
+msgstr "Miscelare i colori per dipingere"
+
+msgid "Mix red, yellow, blue, black and white paint"
+msgstr "Miscelare pittura rossa, gialla, blu, nera e bianca"
+
+msgid "Additive Colour Mixing - Light"
+msgstr "Miscelare un colore aggiuntivo - Leggero"
+
+msgid "Mix red, green and blue light to get other colours"
+msgstr "Miscelare rosso, verde e blu chiaro per ottenere altri colori"
+
+msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
+msgstr "Miscela sottrattiva di colori - Pitture, tinte, inchiostri"
+
+msgid "Mix cyan, magenta and yellow paint to get other colours"
+msgstr "Miscelare pitture ciano, magenta e gialla per ottenere altri colori"
+
+msgid "Find the colour of the circle"
+msgstr "Scopri il colore del cerchio"
+
+msgid "Adjust the amount of cyan, magenta and yellow paint"
+msgstr "Correggi il dosaggio della pittura ciano, magenta e gialla"
+
+msgid "Adjust the intensity of red, green and blue light"
+msgstr "Correggi l'intensità del rosso, verde e blu chiaro"
+
+msgid "brush size"
+msgstr "dimensioni"
+
+msgid "Noughts and Crosses 2"
+msgstr "Tic Tac Toe 2"
+
+msgid "Noughts and Crosses 3"
+msgstr "Tic Tac Toe 3"
+
+msgid "Get as many lines of 3 as possible to win"
+msgstr "Ottieni più linee di 3 che sia possibile per vincere"
+
+msgid "Player"
+msgstr "Giocatore"
+
+msgid "Won"
+msgstr "Vinto"
+
+msgid "Draw"
+msgstr "Disegno"
+
+msgid "User Name"
+msgstr "Nome dell'utente"
+
+msgid "Match Animals"
+msgstr "Confronta gli animali"
+
+msgid "Match Animals - Memory Game"
+msgstr "Fai corrispondere gli animali"
+
+msgid "Match Fruits - Memory Game"
+msgstr "Fai corrispondere i frutti"
+
+msgid "Match Vegetables - Memory Game"
+msgstr "Fai corrispondere le verdure"
+
+msgid "Match Numbers - Memory Game"
+msgstr "Fai corrispondere i numeri"
+
+msgid "Find matching pairs of the same image"
+msgstr "Scopri le immagini uguali"
+
+msgid "Image Slider"
+msgstr "Immagini affettate"
+
+msgid "Animal Slider"
+msgstr "Animali"
+
+msgid "Fruit Slider"
+msgstr "Frutti"
+
+msgid "Number Slider"
+msgstr "Numeri"
+
+msgid "Fraction Groups"
+msgstr "Gruppi di frazioni"
+
+msgid "Percentages"
+msgstr "Percentuali"
+
+msgid "Ratios"
+msgstr "Rapporti"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr "Confronta le carte delle frazioni sulla destra con quelle sulla sinistra"
+
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Confronta le carte e le frazioni sulla destra con le carte delle frazioni sulla sinistra"
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr "Confronta le carte delle frazioni con le frazioni sulla sinistra"
+
+msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+msgstr "Confronta le carte delle frazioni, le frazioni e le frazioni decimali sulla destra con le loro rappresentazioni in percentuale"
+
+msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
+msgstr "Confronta le carte con i rapporti sulla sinistra. I rapporti sono espressi come rapporto di pezzi colorati con pezzi bianchi"
+
+msgid "Maths Matching Game"
+msgstr "Gioco di confronto matematico"
+
+msgid "Addition"
+msgstr "Addizione"
+
+msgid "Subtraction"
+msgstr "Sottrazione"
+
+msgid "Multiplication"
+msgstr "Moltiplicazione"
+
+msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
+msgstr "Controlla la presenza di versioni più nuove, riferisci sui bug, discuti, traduci o revisiona questo progetto su:"
+
+msgid "Match numbers to their spelling"
+msgstr "Confronta i numeri con la loro pronuncia"
+
+msgid "Number Spelling"
+msgstr "Pronuncia dei numeri"
+
+msgid "Find all matching animals"
+msgstr "Trova gli animali corrispondenti"
+
+msgid "Match animals to their shadows"
+msgstr "Confronta gli animali con le loro ombre"
+
+msgid "Shape Maker"
+msgstr "Creatore di forme"
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Forma da disegnare: %s "
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "così che le lunghezze delle loro basi siano uguali a %d e %d e l'altezza a %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr "così che le lunghezze dei loro lati siano uguali a %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr "così che le lunghezze dei loro lati siano uguali a %d e %d"
+
+#, python-format
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "così che le lunghezze delle loro 2 basi parallele siano uguali a %d e l'altezza a %d"
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr "così che la lunghezza della sua base sia uguale a %d e l'altezza a %d"
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr "così che le lunghezze dei suoi catati siano uguali a %d e %d"
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr "così che le lunghezze di entrambi i suoi cateti siano uguali a %d"
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr "così che la lunghezza della sua ipotenusa sia uguale a %d"
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr "così che la lunghezza di uno dei suoi lati sia uguale a %d e l'altezza a %d"
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr "così che la lunghezza del suo raggio sia uguale a %d"
+
+msgid "Quadrilateral"
+msgstr "quadrilatero"
+
+msgid "Trapezium"
+msgstr "Trapezio"
+
+msgid "Trapezium "
+msgstr "Trapezio"
+
+msgid "Triangle"
+msgstr "Triangolo"
+
+msgid "Ouch... squished quadrilateral"
+msgstr "Ouch... quadrilatero schiacciato"
+
+msgid "Right isosceles triangle"
+msgstr "Triangolo isoscele rettangolo"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Triangolo isoscele ottuso"
+
+msgid "Acute isosceles triangle"
+msgstr "Triangolo isoscele acuto"
+
+msgid "Ouch... squished triangle"
+msgstr "Ouch... triangolo schiacciato"
+
+msgid "Triangle? Well, not really..."
+msgstr "Triangolo? Beh, no davvero..."
+
+msgid "Test yourself"
+msgstr "Provaci tu stesso"
+
+msgid "Clock"
+msgstr "Orologio"
+
+msgid "learn to read the time"
+msgstr "impare a leggere l'ora"
+
+msgid "learn to set the clock"
+msgstr "impara a regolare l'orologio"
+
+msgid "Set the clock to:"
+msgstr "Imposta l'ora a:"
+
+msgid "Drag the clock hands to set the time"
+msgstr "Trascina le lancette dell'orologio per regolare l'orario"
+
+msgid "What time is it?"
+msgstr "Che ora è?"
+
+msgid "Click again to exit"
+msgstr "Clicca ancora per uscire"
+
+msgid "Type your answer and hit enter"
+msgstr "Scrivi la tua risposta e premi invio"
+
+msgid "Time"
+msgstr "Ora"
+
+msgid "Turn the clock hands and see what happens."
+msgstr "Gira le lancette dell'orologio e guarda cosa succede."
+
+msgid "Let's see what shapes you can draw"
+msgstr "Vediamo quali forme puoi disegnare"
+
+msgid "Time in text version only"
+msgstr "Orario soltanto nella versione testuale"
+
+msgid "How clock works?"
+msgstr "Come funziona l'orologio?"
+
+msgid "Columnar addition"
+msgstr "Addizione in colonna"
+
+msgid "Columnar subtraction"
+msgstr "Sottrazione in colonna"
+
+msgid "Long multiplication"
+msgstr "Moltiplicazione lunga"
+
+msgid "Long division"
+msgstr "Divisione lunga"
+
+msgid "borrow 10"
+msgstr "prendere in prestito 10"
+
+msgid "carry"
+msgstr "riporto"
+
+msgid "Start >>"
+msgstr "Partenza >>"
+
+msgid "Next example >>"
+msgstr "Prossimo esempio >>"
+
+msgid "Next step >>"
+msgstr "Prossimo passo >>"
+
+msgid "write "
+msgstr "scrivi"
+
+msgid "Demonstration"
+msgstr "Dimostrazione"
+
+msgid "Do it yourself"
+msgstr "Fallo da te"
+
+msgid "Ratio"
+msgstr "Rapporto"
+
+msgid "Working with large numbers"
+msgstr "Lavorare con numeri grandi"
+
+msgid "rewrite "
+msgstr "riscrivere "
+
+msgid "remainder"
+msgstr "resto"
+
+msgid "result"
+msgstr "risultato"
+
+msgid "Time Matching"
+msgstr "Orologi che corrispondono"
+
+msgid "Add some red"
+msgstr "di più rosso"
+
+msgid "Add some green"
+msgstr "di più verde"
+
+msgid "Add some blue"
+msgstr "di più blu"
+
+msgid "Add some cyan"
+msgstr "di più ciano"
+
+msgid "Add some magenta"
+msgstr "di più magenta"
+
+msgid "Add some yellow"
+msgstr "di più giallo"
+
+msgid "Too much red"
+msgstr "di meno rosso"
+
+msgid "Too much green"
+msgstr "di meno verde"
+
+msgid "Too much blue"
+msgstr "di meno blu"
+
+msgid "Too much cyan"
+msgstr "di meno ciano"
+
+msgid "Too much magenta"
+msgstr "di meno magenta"
+
+msgid "Too much yellow"
+msgstr "di meno giallo"
+
+msgid "red is spot on"
+msgstr "rosso va bene"
+
+msgid "green is spot on"
+msgstr "verde va bene"
+
+msgid "blue is spot on"
+msgstr "blu va bene"
+
+msgid "cyan is spot on"
+msgstr "ciano va bene"
+
+msgid "magenta is spot on"
+msgstr "magenta va bene"
+
+msgid "yellow is spot on"
+msgstr "giallo va bene"
+
+msgid "remember me"
+msgstr "ricordati di me"
+
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+msgstr ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+
+msgid "Licence"
+msgstr "Licence"
+
+msgid ""
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
+"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
+"not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
+"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
+"not, see <http://www.gnu.org/licenses/>."
+
+msgid "A collection of educational activities for kids"
+msgstr "Una piccola raccolta di applicazioni educative per ragazzi"
+
+msgid "Word Builder - Animals"
+msgstr "Creatore di parole - Animali"
+
+msgid "Complete the word"
+msgstr "Completa la parola"
+
+msgid "Word Builder - Sports"
+msgstr "Creatore di parole - Sport"
+
+msgid "Word Builder - Body"
+msgstr "Creatore di parole - Corpo"
+
+msgid "Word Builder - People"
+msgstr "Creatore di parole - Gente"
+
+msgid "Word Builder - Actions"
+msgstr "Creatore di parole - Azioni"
+
+msgid "Word Builder - Constructions"
+msgstr "Creatore di parole - Costruzioni"
+
+msgid "Word Builder - Nature"
+msgstr "Creatore di parole - Natura"
+
+msgid "Word Builder - Jobs"
+msgstr "Creatore di parole - Lavori"
+
+msgid "Word Builder - Clothes and Accessories"
+msgstr "Creatore di parole - Vestiti e Accessori"
+
+msgid "Word Builder - Fruits and Vegetables"
+msgstr "Creatore di parole - Frutta e Verdura"
+
+msgid "Word Builder - Transport"
+msgstr "Creatore di parole - Trasporti"
+
+msgid "Word Builder - Food"
+msgstr "Creatore di parole - Cibo"
+
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr "Immagini da: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+
+msgid "Decimals and Fractions"
+msgstr "Decimali e Frazioni"
+
+msgid "Decimals, fractions and percentages"
+msgstr "Decimali, frazioni e percentuali"
+
+msgid "Decimals, fractions, ratios and percentages"
+msgstr "Decimali, frazioni, rapporti e percentuali"
+
+msgid "Shapes and Solids"
+msgstr "Forme e Solidi"
+
+msgid "Translation Credits"
+msgstr "Ringraziamenti per la traduzione"
+
+msgid "Level"
+msgstr "Livello"
+
+msgid "Find solution"
+msgstr "Trova una soluzione"
+
+msgid "Find missing number"
+msgstr "Trova il numero mancante"
+
+msgid "Achievements"
+msgstr "Risultati"
+
+msgid "Select age group:"
+msgstr "Scegliere il gruppo di età"
+
+msgid "show activities for:"
+msgstr "mostra le attività per:"
+
+msgid "preschool"
+msgstr "asilo infantile"
+
+msgid "Year 1"
+msgstr "Classe I^"
+
+msgid "Year 2"
+msgstr "Classe II^"
+
+msgid "Year 3"
+msgstr "Classe III^"
+
+msgid "Year 4"
+msgstr "Classe IV^"
+
+msgid "Year 5"
+msgstr "Classe V^"
+
+msgid "Year 6"
+msgstr "Classe VI^ (In Italy do not exists!)"
+
+msgid "show all"
+msgstr "mostra tutto"
+
+msgid "Do you want to exit the game?"
+msgstr "Vuoi chiudere il gioco?"
+
+msgid "Do you want to log out of the game?"
+msgstr "Vuoi uscire dal gioco?"
+
+msgid "Ready to go to the next level?"
+msgstr "Sei pronto ad andare al prossimo livello?"
+
+msgid "Language arts"
+msgstr "Arti del linguaggio"
+
+msgid "Other"
+msgstr "Altro"
+
+msgid "Educational Activities for Kids"
+msgstr ""
+
+msgid ""
+"You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
+"http://espeak.sourceforge.net/"
+msgstr ""

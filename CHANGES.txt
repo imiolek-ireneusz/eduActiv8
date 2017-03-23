@@ -1,0 +1,5 @@
+Changelog:
+eduActiv8 - 3.70.xxx:
+    - Serbian language added by Miroslav Nikolic (Мирослав Николић)
+    - minor changes to menu to enable scrolling on drag
+    - Catalan translation updated with a patch from Jordi Mallach and Guillem Jover

@@ -1,0 +1,387 @@
+Translations:
+    Catalan - Guillem Jover - http://www.hadrons.org/~guillem/
+            - updated by Jordi Mallach
+    English UK - Ireneusz Imiolek (some corrections needed)
+    English US - Ireneusz Imiolek (some corrections needed)
+    Finnish - Aapo Rantalainen
+    French - Gino Ingras
+           - updated by Johnny Jazeix
+    German - Oliver van der Bürie
+    Greek - Στέλιος, versys650gr, sdim, lucinos and other members of the Official Greek Community of Linux Mint - http://linuxmint.gr
+          - recently updated by Alexandros Moskofidis (Αλέξανδρος Μοσκοφίδης)
+    Hebrew - Ori Hoch
+    Italian - Giuliano
+    Polish - Kamila Roszak-Imiolek
+           - Ireneusz Imiolek
+    Portuguese - Américo Monteiro
+    Russian - Anton Kayukov (Антон Каюков)
+            - Alexey Loginov (Алексей Логинов)
+    Serbian - Miroslav Nikolic (Мирослав Николић)
+    Spanish - Miriam Ruiz - http://www.miriamruiz.es
+            - updated by: Mario Izquierdo
+    Ukrainian - Yuri Chornoivan (Юрій Чорноіван)
+
+Game Ideas:
+    Kamila Roszak-Imiolek & Ireneusz Imiolek
+
+Usability Testing:
+    Elisabete Cunha
+
+Windows Setup Script (eduactiv82exe):
+    Gino Ingras
+    
+Thanks to creators of python and pygame - without their work this program would never exist.
+Thanks to everyone sending various bug reports and fixes.
+
+Below is a list of links to media files used in this game (or shortlisted for later use):
+For more information about authors please visit their profiles on either openclipart.org or freesound.org
+
+Thanks to everyone who shared their hard work on those sites - making project like this is much easier with so much stuff freely available.
+
+Fonts:
+    eduactiv8Fonts/* - by Ireneusz Imiolek - GPL + Font Exception.
+    FreeSans, FreeSansBold - GPL
+    LinBiolinum_RBah - LinuxLibertine - GPL - https://sourceforge.net/projects/linuxlibertine/
+    KacstOne - KACST holds the copyright of the included Arabic font which is donated under GPL by KACST.
+
+Sounds Licence - Public Domain:
+    Most of the sounds were created with help of: http://www.superflashbros.net/as3sfxr/ these are being released under Public Domain licence:
+    http://creativecommons.org/publicdomain/zero/1.0/
+
+    Sounds downloaded from freesound.org also under Public Domain - http://creativecommons.org/publicdomain/zero/1.0/:
+        by various authors:
+            object moves - 2 sounds created from:
+                http://www.freesound.org/people/Robinhood76/sounds/104874/
+            hit the mole - section of:
+                http://www.freesound.org/people/AntumDeluge/sounds/188043/
+            game lost - created from:
+                http://www.freesound.org/people/fins/sounds/146731/
+
+Large amount of images used from http://www.art4apps.org/
+    "Art4Apps is a database of images and audio files of words created by Smart4Kids under a Creative Common License (CC BY-SA)"
+
+Some icons used from Tango Project:
+    http://tango.freedesktop.org/Tango_Icon_Library
+
+Images from openclipart.org by various authors:
+    http://openclipart.org/detail/166862/go-next-orange-by-rygle
+    http://openclipart.org/detail/17056/tick-by-jean_victor_balin
+    http://openclipart.org/detail/33685/tango-view-refresh-by-warszawianka
+    http://openclipart.org/detail/18315/photorealistic-red-apple-by-peileppe
+    http://openclipart.org/detail/4641/photorealistic-green-apple-by-chrisdesign
+    http://openclipart.org/detail/88675/slice-of-an-orange-by-netalloy
+    http://openclipart.org/detail/88753/lemon-photorealistic-by-netalloy
+    http://openclipart.org/detail/12999/strawberry-by-nicubunu
+    http://openclipart.org/detail/20544/strawberry-by-rg1024
+    http://openclipart.org/detail/131845/water-melon-by-gnokii
+    http://openclipart.org/detail/16975/cerise-by-jean_victor_balin
+    http://openclipart.org/detail/84217/banana-by-doofi
+    http://openclipart.org/detail/4785/pepper--red-by-chrisdesign-4785
+    http://openclipart.org/detail/4783/tomato-by-chrisdesign-4783
+    http://openclipart.org/detail/4778/carrot-by-chrisdesign-4778
+    http://openclipart.org/detail/88753/lemon-photorealistic-by-netalloy
+    http://openclipart.org/detail/4748/onion-by-chrisdesign-4748
+    http://openclipart.org/detail/31375/broccoli-by-skarg
+    http://openclipart.org/detail/12997/plum-by-nicubunu
+    http://openclipart.org/detail/87391/pera-by-raul
+    http://openclipart.org/detail/2817/bug-buddy-vector-by-valessiobrito-2817
+    http://openclipart.org/detail/29653/lightning-bug-buddy-by-treblac
+    http://openclipart.org/detail/12807/home-by-anonymous-12807
+    http://openclipart.org/detail/17558/simple-cartoon-mouse-by-lemmling
+    http://openclipart.org/detail/2609/cheese-by-machovka
+    http://openclipart.org/detail/138277/blue-web-button-by-cameltech
+    http://openclipart.org/detail/166867/stop-orange-by-rygle
+    http://openclipart.org/detail/17920/party-balloons-by-aj
+    http://openclipart.org/detail/7488/maze-by-any_ono_mous
+    http://openclipart.org/detail/237/water-drop-by-tomas_arad
+    http://openclipart.org/detail/33733/info-sign-by-ernes
+    http://openclipart.org/detail/34567/tango-input-mouse-by-warszawianka
+    http://openclipart.org/detail/865/grass-blades-and-clumps-by-eady
+    http://openclipart.org/detail/21212/grass-texture-by-rg1024-21212
+    http://openclipart.org/detail/102157/manja-by-netalloy
+    http://openclipart.org/detail/5416/tablet-pen-by-tonyk
+    http://openclipart.org/detail/2338/tablet-by-machovka
+    http://openclipart.org/detail/35425/tango-desktop-peripherals-by-warszawianka
+    http://openclipart.org/detail/71269/ink-splash-by-voyeg3r
+    http://openclipart.org/detail/35431/tango-preferences-system-by-warszawianka
+    http://openclipart.org/detail/75799/registry-book-by-wakro
+    http://openclipart.org/detail/131899/balanza-by-enhy
+    http://openclipart.org/detail/26277/slate-&-apple-by-anonymous
+    http://openclipart.org/detail/167374/raised-hand-in-silhouette-by-dripsandcastle-167374
+    http://openclipart.org/detail/16558/color-tubes-by-chrisdesign-16558
+    http://openclipart.org/detail/133873/french-artist-dragon-by-americanknight
+    http://openclipart.org/detail/16148/whirlpool-by-andy
+    http://openclipart.org/detail/1301/paint-brush-by-johnny_automatic
+
+    Flags:
+    http://openclipart.org/detail/76507/united-kingdom-flag-by-shokunin
+    http://openclipart.org/detail/22700/flag-of-the-united-states-by-papapishu
+    http://openclipart.org/detail/59149/spain-by-anonymous
+    http://openclipart.org/detail/17736/flag-of-france-by-tobias
+    http://openclipart.org/detail/17737/flag-of-italy-by-tobias
+    http://openclipart.org/detail/12785/flag-of-germany-by-anonymous-12785
+    http://openclipart.org/detail/13125/flag-of-portugal-by-anonymous-13125
+    http://openclipart.org/detail/13147/flag-of-the-russian-federation-by-anonymous
+    http://openclipart.org/detail/17744/flag-of-finland-by-tobias
+    http://openclipart.org/detail/17745/flag-of-greece-by-tobias
+
+    Paint:
+    http://openclipart.org/detail/167325/color-bucket-blue-by-frankes
+    http://openclipart.org/detail/167519/color-bucket-yellow-by-frankes
+    http://openclipart.org/detail/167327/color-bucket-red-by-frankes
+    http://openclipart.org/detail/116953/artists-paintbrush-by-jlawrence
+    http://openclipart.org/detail/25595/brush-by-anonymous-25595
+    http://openclipart.org/detail/25438/graphics-by-anonymous-25438
+    http://openclipart.org/detail/118915/paint-brush-costea-bogda-01-by-anonymous
+    http://openclipart.org/detail/3297/pencil-by-barretr
+    http://openclipart.org/detail/3981/eraser-by-lmproulx
+    http://openclipart.org/detail/166897/fill-by-roshellin
+
+    Other:
+    http://openclipart.org/detail/35383/tango-applications-graphics-by-warszawianka
+    http://openclipart.org/detail/34561/tango-input-keyboard-by-warszawianka
+    http://openclipart.org/detail/158347/blue-squeegee-by-cavscout
+    http://openclipart.org/detail/106747/palette-juliane-krug-01-by-anonymous
+    http://openclipart.org/detail/3326/construction-cone-by-midkiffaries
+    http://openclipart.org/detail/99841/dice-icon-by-netalloy-by-netalloy
+    http://openclipart.org/detail/168496/cartoon-mole-by-magnesus
+    http://openclipart.org/detail/105385/fantasy-mallet-by-geraintluff
+    http://openclipart.org/detail/140683/brain-2colors-by-trubinial-guru
+    http://openclipart.org/detail/18690/15-game-by-babayasin
+    http://openclipart.org/detail/61201/red-racing-car-top-view-by-qubodup
+    http://openclipart.org/detail/4421/aquarela-colors-by-valessiobrito-4421
+    http://openclipart.org/detail/4070/green-sea-turtle-by-valessiobrito-4070
+
+
+    Fish:
+    http://openclipart.org/detail/3753/gold-fish-by-tomas_arad
+    http://openclipart.org/detail/15731/aquarium-fish---xiphophorus-maculatus-by-mystica
+    http://openclipart.org/detail/15748/aquarium-fish---cirrhilabrus-jordani-by-mystica
+    http://openclipart.org/detail/15746/aquarium-fish---amphiprion-percula-by-mystica
+    http://openclipart.org/detail/10779/pez-dorado-%28gold-fish%29-by-pepinux-10779
+    http://openclipart.org/detail/3753/gold-fish-by-tomas_arad
+    http://openclipart.org/detail/122389/angel-fish-by-cgillis73
+    http://openclipart.org/detail/1335/codfish-by-molumen
+    http://openclipart.org/detail/33079/architetto----pescetto-by-anonymous
+    http://openclipart.org/detail/38017/clown-loach-by-anonymous
+    http://openclipart.org/detail/38041/yellow-gourami-by-anonymous
+    http://openclipart.org/detail/40453/goldfish-by-gingercoons
+    http://openclipart.org/detail/38005/angelfish-by-anonymous
+    http://openclipart.org/detail/38023/giraffe-cichlid-by-anonymous
+    http://openclipart.org/detail/82159/decor-09-by-waferd
+    http://openclipart.org/detail/8230/crawfish-by-gerald_g-8230
+    http://openclipart.org/detail/8233/crawfish-by-gerald_g-8233
+    http://openclipart.org/detail/3006/flowerhorn-fish-by-danz
+
+
+
+    Letter Flashcards:
+    http://openclipart.org/detail/1581/ant-by-aurium
+    http://openclipart.org/detail/167245/boat-by-gustavorezende
+    http://openclipart.org/detail/26972/architetto----gatto-04-by-anonymous
+    http://openclipart.org/detail/31975/architetto----leone-02-by-anonymous
+    http://openclipart.org/detail/40441/duck-by-gingercoons
+    http://openclipart.org/detail/26443/architetto----elefante-01-by-anonymous
+    http://openclipart.org/detail/3657/grapes-by-stuuf
+    http://openclipart.org/detail/76411/house-by-inky2010
+    http://openclipart.org/detail/1053/igloo-by-johnny_automatic
+    http://openclipart.org/detail/162139/honey-jar-by-printerkiller
+    http://openclipart.org/detail/25384/architetto----canguro-by-anonymous-25384
+    http://openclipart.org/detail/9277/key-by-koliberek
+    http://openclipart.org/detail/165758/mouse-by-tzunghaor
+    http://openclipart.org/detail/3169/notebook-by-nlyl
+    http://openclipart.org/detail/166364/owl-by-karthikeyan
+    http://openclipart.org/detail/2701/parrot-by-machovka
+    http://openclipart.org/detail/76513/queens-head-by-gammillian
+    http://openclipart.org/detail/16432/coelho-rabbit-by-ricardo-16432
+    http://openclipart.org/detail/4152/friendly-rabbit-by-danko
+    http://openclipart.org/detail/65389/sun-by-laobc-65389
+    http://openclipart.org/detail/150307/teapot-by-tatica
+    http://openclipart.org/detail/22442/umbrella-by-nicubunu
+    http://openclipart.org/detail/148831/window-with-plants-by-moini
+    http://openclipart.org/detail/8238/xylophone-%28colourful%29-by-gerald_g-8238
+    http://openclipart.org/detail/23398/pink-ball-of-yarn-by-adam_lowe
+    http://openclipart.org/detail/100297/cebra-by-ha1flosse
+    http://openclipart.org/detail/4802/violin-by-papapishu
+
+    http://openclipart.org/detail/155773/hedgehog-by-tzunghaor
+    http://openclipart.org/detail/28555/sapin_01-by-jean_victor_balin
+    http://openclipart.org/detail/155125/yogurt-by-mazeo
+    http://openclipart.org/detail/126877/indian-flute-by-gsagri04
+    http://openclipart.org/detail/1038/loaf-of-bread-by-johnny_automatic
+    http://openclipart.org/detail/29301/grayscale-chimpanzee-by-papapishu
+    http://openclipart.org/detail/7101/pike-by-johnny_automatic-7101
+    http://openclipart.org/detail/1032/man-with-a-camera-by-johnny_automatic
+    http://openclipart.org/detail/6678/lcd-screen-by-ampeddesign
+    http://openclipart.org/detail/3647/top-and-skirt-by-freedo
+    http://openclipart.org/detail/82771/skirt-by-mireille
+    http://openclipart.org/detail/34993/architetto----yoga-by-anonymous
+    http://openclipart.org/detail/3610/-by--3610
+    http://openclipart.org/detail/107239/camera-mount-by-anonymous
+    http://openclipart.org/detail/25476/architetto----cavallo-20-by-anonymous-25476
+    http://openclipart.org/detail/44023/small-trees-/-bushes-by-gerald_g
+    http://openclipart.org/detail/77683/blue-hoodie-by-shokunin
+    http://openclipart.org/detail/77605/t-shirt-white-by-shokunin
+    http://openclipart.org/detail/5197/child-sleeping-by-johnny_automatic
+    http://openclipart.org/detail/24872/-by--24872
+    http://openclipart.org/detail/24870/-by--24870
+    http://openclipart.org/detail/95533/clock-with-wood-frame-by-rg1024
+    http://openclipart.org/detail/19660/moth-%28smerinthus-geminatus%29-top-view-by-jbruce
+    http://openclipart.org/detail/37963/daffodil-by-anonymous-37963
+    http://openclipart.org/detail/10682/flower-16-by-yves_guillou-10682
+    http://openclipart.org/detail/151537/solar-system-by-gustavorezende
+    http://openclipart.org/detail/10485/cavalinho-by-newtonguarinof
+    http://openclipart.org/detail/169370/village-by-gustavorezende
+    http://openclipart.org/detail/40459/kids-wagon-by-gerald_g
+    http://openclipart.org/detail/51301/bowling-pin-by-mazeo-51301
+    http://openclipart.org/detail/20923/palm-tree-by-rg1024
+    http://openclipart.org/detail/166552/night-sky-with-moon-and-stars-by-navaneethks
+    http://openclipart.org/detail/18947/ice-train-by-mbs
+    http://openclipart.org/detail/2257/shoes-by-machovka
+    http://openclipart.org/detail/25875/delphin_delfin_dolphin-by-ha1flosse
+    http://openclipart.org/detail/148153/stove-by-gustavorezende
+    http://openclipart.org/detail/5418/sea-scene-with-boat-by-chrisdesign
+    http://openclipart.org/detail/167299/windsurfing-by-gnokii
+    http://openclipart.org/detail/166284/snail-escargot-decroissance-by-martouf
+    http://openclipart.org/detail/35551/hockey-puck-by-j_alves
+    http://openclipart.org/detail/38065/hockey-goal-by-j_alves
+    http://openclipart.org/detail/24366/tiger-by-anonymous-24366
+    http://openclipart.org/detail/2218/bus-by-drunken_duck
+
+
+    Shapes:
+    http://openclipart.org/detail/68527/cube-by-buggi
+    http://openclipart.org/detail/151285/sphere-by-lemonade_jo
+    http://openclipart.org/detail/82747/brown-cone-by-mireille
+
+    Cartoon Characters:
+    http://openclipart.org/detail/137851/umbrella-panda-by-shu
+    http://openclipart.org/user-cliparts/StudioFibonacci - author's profile - multiple images used
+    http://openclipart.org/user-detail/lemmling - author's profile - multiple images used
+    http://openclipart.org/user-detail/14thWarrior - author's profile - multiple images used
+
+    Kindergarden:
+    http://openclipart.org/detail/17506/jigsaw-puzzle-by-ben
+
+    Collections:
+    http://openclipart.org/user-detail/ha1flosse - multiple images
+    http://openclipart.org/user-detail/TheStructorr - multiple images
+    http://openclipart.org/user-detail/TheresaKnott - multiple images
+    http://openclipart.org/user-cliparts/horse50 - multiple images - rebuilt from - http://openclipart.org/detail/27962/number-animals-by-kablam
+
+    Other:
+    http://openclipart.org/detail/170834/hen-and-chicks-cartoon-style-by-qubodup-170834
+    http://openclipart.org/detail/17922/books-by-aj
+    http://openclipart.org/detail/17506/jigsaw-puzzle-by-ben
+
+    Memory Games:
+    http://openclipart.org/detail/170794/alternative-pineapple-by-qubodup-170794
+    http://openclipart.org/detail/131485/mango-fruit-by-netalloy
+    http://openclipart.org/detail/131485/mango-fruit-by-netalloy
+    http://openclipart.org/detail/14695/fruit-cherries-by-rocket000
+    http://openclipart.org/detail/4359/avocado-by-pipo
+    http://openclipart.org/detail/106411/kiwi-by-deluge
+    http://openclipart.org/detail/86449/redcurrant-by-mireille
+    http://openclipart.org/detail/131119/papaya-by-gnokii
+    http://openclipart.org/detail/131383/grapefruit-by-gnokii
+    http://openclipart.org/detail/131743/strawberry-by-gnokii
+    http://openclipart.org/detail/132013/peach-by-gnokii
+    http://openclipart.org/detail/134341/guava-by-netalloy
+    http://openclipart.org/detail/134839/durian-by-gnokii
+    http://openclipart.org/detail/142843/guanabana-colombiana-by-pelu-6
+    http://openclipart.org/detail/8150/grapes-by-nicubunu
+    http://openclipart.org/detail/12987/bananas-by-nicubunu
+    http://openclipart.org/detail/31381/blueberry-by-skarg
+    http://openclipart.org/detail/157789/green-gooseberrys-by-marauder
+    http://openclipart.org/detail/149869/coconut-by-gsagri04
+    http://openclipart.org/detail/23332/onion-by-boobaloo
+    http://openclipart.org/detail/64795/zucchini-by-deluge
+    http://openclipart.org/detail/84079/turnip-by-feraliminal
+    http://openclipart.org/detail/130117/bell-peppers-by-bogaut
+    http://openclipart.org/detail/170520/cabbage-by-ycteo-170520
+    http://openclipart.org/detail/170751/potato-by-hatalar205-170751
+    http://openclipart.org/detail/21348/vegetables-set-by-mekonee_29-21348
+    http://openclipart.org/detail/26145/garlic-by-johnny_automatic-26145
+    http://openclipart.org/detail/6197/parsnip-by-johnny_automatic-6197
+    http://openclipart.org/detail/6547/beets-by-johnny_automatic-6547
+    http://openclipart.org/detail/3629/-by--3629
+    http://openclipart.org/detail/21068/garlic-by-mekonee_29
+    http://openclipart.org/detail/6585/asparagus-spear-by-johnny_automatic-6585
+    http://openclipart.org/detail/26141/broccoli-by-johnny_automatic
+    http://openclipart.org/detail/606/carrot-by-johnny_automatic
+    http://openclipart.org/detail/148765/healthy-by-amyleerobinson
+    http://openclipart.org/detail/23086/beet-root-by-warszawianka-23086
+    http://openclipart.org/detail/29827/grape-red-by-vinkafe
+
+    Other:
+    http://openclipart.org/detail/140677/sveglia-by-emilie.rollandin
+    http://openclipart.org/detail/25516/architetto----clessidra-by-anonymous-25516
+    http://openclipart.org/detail/179359/owl-by-rematuche-179359
+
+    http://openclipart.org/detail/167095/secure-gold-by-rygle
+
+    http://openclipart.org/detail/171109/filter--funnel-icon-by-mlampret-171109
+
+    http://openclipart.org/detail/48937/trophy-by-sheikh_tuhin
+    http://openclipart.org/detail/170859/trophy-by-hatalar205-170859
+    http://openclipart.org/detail/25414/architetto----cassa-negozio-by-anonymous-25414
+    http://openclipart.org/detail/173984/pretty-coin-golden-by-qubodup-173984
+
+    http://openclipart.org/detail/167328/jaguar-by-frankes
+    http://openclipart.org/detail/3469/-by--3469
+    http://openclipart.org/detail/171184/interactive-language-button-by-gmcglinn-171184
+    http://openclipart.org/detail/58735/cat-paw-print-by-j_alves
+
+    http://openclipart.org/detail/2163/jogging-by-machovka
+    http://openclipart.org/detail/2838/bike-by-machovka
+    http://openclipart.org/detail/138967/people-by-netalloy
+    http://openclipart.org/detail/17436/mechanic-by-jonata
+    http://openclipart.org/detail/9075/fast-food-lunch-dinner-chicken-burger-by-gerald_g
+    http://openclipart.org/detail/142771/t-shirt-outline-by-andy
+    http://openclipart.org/detail/60649/ballet-dancer-by-laobc
+    http://openclipart.org/detail/149353/hand-by-lantaire
+    http://openclipart.org/detail/2026/stylized-house-by-paolo_savini
+    http://openclipart.org/detail/61933/maple-leaf-by-rones
+    http://openclipart.org/detail/131689/apples-by-gnokii
+
+    https://openclipart.org/detail/166368/thumb-up-by-nikitan
+
+New images for version 3:
+    https://openclipart.org/detail/76339/books-by-inky2010
+    https://openclipart.org/detail/35365/tango-applications-accessories-by-warszawianka
+    https://openclipart.org/detail/22089/quill-by-nicubunu
+    https://openclipart.org/detail/191524/clock-by-agomjo-191524
+    https://openclipart.org/detail/5247/sack-by-jonata
+    https://openclipart.org/detail/189958/rabbit-by-peterm-189958
+
+New images added to flashcard game for Serbian language:
+    https://openclipart.org/detail/195939/child-on-a-swing
+    https://openclipart.org/detail/166640/nail
+    https://openclipart.org/detail/225681/pacifier-brown
+    https://openclipart.org/detail/266220/cartoon-turkey
+    https://openclipart.org/detail/188192/turkey
+    https://openclipart.org/detail/227553/student-asking-question
+    https://openclipart.org/detail/154981/sack
+    https://openclipart.org/detail/3631/happy-pig
+
+Images for new icons:
+    https://openclipart.org/detail/209572/food-fancy-cheese
+    https://openclipart.org/detail/209581/food-fruit-salad
+    https://openclipart.org/detail/167880/finger-point-nog
+    https://openclipart.org/detail/79933/roman-clock
+    https://openclipart.org/detail/227434/relogio-digital
+
+Wikipedia images:
+    http://de.wikipedia.org/wiki/Datei:Koala.svg
+
+Laby code based on:
+    Laby, 2010 by Mehdi Cherti(mehdidc):
+        http://www.pythonfrance.com/codes/GENERATION-LABYRINTHE-AVEC-RECHERCHE-CHEMIN-PLUS-COURT-AVEC_51293.aspx
+
+Cinderella in the Touch Typing Tutor:
+	Cinderella - Brothers Grim - http://www.thegrimmtales.com/cinderella/
+	Kopciuszek - Bracia Grim - http://www.gutenberg.org/files/28044/28044-h/28044-h.htm
+	Золушка - Шарль Перро - Charles Perrault -  http://sheba.spb.ru/libra/perro_zolushka.htm
+	Cendrillon par Charles Perrault - http://www.alyon.org/litterature/livres/XVIII/esprit_salon/perrault/cendrillon.html
+	
+        Schneewittchen (Snowwhite) by Brothers Grimm - http://gutenberg.spiegel.de/buch/-6248/150
