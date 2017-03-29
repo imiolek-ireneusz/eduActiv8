@@ -206,6 +206,7 @@ class PCheckbox(pygame.sprite.Sprite):
         self.bg_color = self.ls.bg_col
         self.cb_color = (255, 210, 171)
         self.cb_focus = (255, 250, 200)
+        self.visible = True
 
         if self.ls.lang.ltr_text:
             self.right_align = False
@@ -225,7 +226,7 @@ class PCheckbox(pygame.sprite.Sprite):
         self.rect.topleft = [l, t]
 
     def update(self):
-        if self.update_me:
+        if self.visible and self.update_me:
             # self.update_me = False
             if self.focused:
                 self.image.fill(self.bg_color)
@@ -269,14 +270,17 @@ class PCheckbox(pygame.sprite.Sprite):
             # font_x = 30
             font_y = (self.h - self.ls.font_2.size(val)[1]) // 2
             self.image.blit(text, (font_x, font_y))
+        elif self.update_me:
+            self.image.fill(self.bg_color)
 
     def handle(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            self.onMouseButtonDown()
-        if event.type == pygame.MOUSEBUTTONUP:
-            self.onMouseButtonUp()
-        if event.type == pygame.KEYDOWN:
-            self.onKeyDown(event)
+        if self.visible:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                self.onMouseButtonDown()
+            if event.type == pygame.MOUSEBUTTONUP:
+                self.onMouseButtonUp()
+            if event.type == pygame.KEYDOWN:
+                self.onKeyDown(event)
 
     def onKeyDown(self, event):
         pass
@@ -1217,9 +1221,10 @@ class LoginScreen:
                 self.in_focus.onFocus()
 
     def recheck(self):
-        self.cb0.checked = self.full_screen
-        # self.cb1.checked = self.register_enabled
-        self.cb2.checked = self.extra_langs
+        if self.mainloop.android is not None:
+            self.cb0.checked = self.full_screen
+            # self.cb1.checked = self.register_enabled
+            self.cb2.checked = self.extra_langs
         self.cb3.checked = self.require_pass
         self.cb4.checked = self.require_adminpass
 
@@ -1230,22 +1235,27 @@ class LoginScreen:
         self.edit_list.add(self.hlb1)
 
         self.db_status = ""
-        self.cb0 = PCheckbox(self, 665, 30, self.left + 20, self.top + 60, False,
+        #positions - 60, 90, 120, 150
+        self.cb0 = PCheckbox(self, 665, 30, self.left + 20, self.top + 120, False,
                              self.lang.b["switch to full screen after login"])
+        if self.mainloop.android is not None:
+            self.cb0.visible = False
         self.edit_list.add(self.cb0)
 
         # self.cb1 = PCheckbox(self,665,30,self.left+20,self.top+90,False, self.lang.b["allow adding new users on login screen"])
         # self.edit_list.add(self.cb1)
 
-        self.cb2 = PCheckbox(self, 665, 30, self.left + 20, self.top + 90, False,
+        self.cb2 = PCheckbox(self, 665, 30, self.left + 20, self.top + 150, False,
                              self.lang.b["display languages with uncompleted translations"])
+        if self.mainloop.android is not None:
+            self.cb2.visible = False
         self.edit_list.add(self.cb2)
 
-        self.cb3 = PCheckbox(self, 665, 30, self.left + 20, self.top + 120, False,
+        self.cb3 = PCheckbox(self, 665, 30, self.left + 20, self.top + 60, False,
                              self.lang.b["require password to log in"])
         self.edit_list.add(self.cb3)
 
-        self.cb4 = PCheckbox(self, 665, 30, self.left + 20, self.top + 150, False,
+        self.cb4 = PCheckbox(self, 665, 30, self.left + 20, self.top + 90, False,
                              self.lang.b["require password to access admin area"])
         self.edit_list.add(self.cb4)
 
