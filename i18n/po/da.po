@@ -1108,43 +1108,7 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr ""
 
-msgid "Word Builder - Animals"
-msgstr ""
-
 msgid "Complete the word"
-msgstr ""
-
-msgid "Word Builder - Sports"
-msgstr ""
-
-msgid "Word Builder - Body"
-msgstr ""
-
-msgid "Word Builder - People"
-msgstr ""
-
-msgid "Word Builder - Actions"
-msgstr ""
-
-msgid "Word Builder - Constructions"
-msgstr ""
-
-msgid "Word Builder - Nature"
-msgstr ""
-
-msgid "Word Builder - Jobs"
-msgstr ""
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr ""
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr ""
-
-msgid "Word Builder - Transport"
-msgstr ""
-
-msgid "Word Builder - Food"
 msgstr ""
 
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
@@ -1228,4 +1192,61 @@ msgstr ""
 msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
+msgstr ""
+
+msgid "Decimals (Category)"
+msgstr ""
+
+msgid "Fractions (Category)"
+msgstr ""
+
+msgid "Ratios (Category)"
+msgstr ""
+
+msgid "Percentages (Category)"
+msgstr ""
+
+msgid "Word Builders"
+msgstr ""
+
+msgid "Word Matchers"
+msgstr ""
+
+msgid "Match images to words"
+msgstr ""
+
+msgid "Animals"
+msgstr ""
+
+msgid "Sports"
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
+msgid "People"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Constructions"
+msgstr ""
+
+msgid "Nature"
+msgstr ""
+
+msgid "Jobs"
+msgstr ""
+
+msgid "Clothes and Accessories"
+msgstr ""
+
+msgid "Fruits and Vegetables"
+msgstr ""
+
+msgid "Transport"
+msgstr ""
+
+msgid "Food"
 msgstr ""

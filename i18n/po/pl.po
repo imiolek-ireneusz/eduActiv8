@@ -828,7 +828,7 @@ msgid "Percentages"
 msgstr "Procenty"
 
 msgid "Ratios"
-msgstr "Stosunki"
+msgstr "Proporcje"
 
 msgid "Match fraction charts on the right to the ones on the left"
 msgstr "Dopasuj graficzne reprezentacje ułamków po prawej do tych po lewej"
@@ -1032,7 +1032,7 @@ msgid "Do it yourself"
 msgstr "Zrób to sam"
 
 msgid "Ratio"
-msgstr "Stosunek"
+msgstr "Proporcja"
 
 msgid "Working with large numbers"
 msgstr "Działania na dużych liczbach"
@@ -1183,10 +1183,10 @@ msgid "Decimals, fractions and percentages"
 msgstr "Procenty, ułamki zwykłe i dziesiętne"
 
 msgid "Decimals, fractions, ratios and percentages"
-msgstr "Stosunki, procenty, ułamki zwykłe i dziesiętne"
+msgstr "Ułamki zwykłe i dziesiętne, proporcje i procenty"
 
 msgid "Shapes and Solids"
-msgstr "Kształty i figury"
+msgstr "Kształty i figury geometryczne"
 
 msgid "Translation Credits"
 msgstr "Translatorzy"
@@ -1255,5 +1255,62 @@ msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
-"Prosze zainstalować program espeak by używać funkcji syntezatora mowy, nie jest to jednak konieczne by skutecznie korzystać z gry: \n"
+"Prosze zainstalować program espeak by używać funkcji syntezatora mowy, nie jest to jednak konieczne by skutecznie korzystać z programu: \n"
 "http: //espeak.sourceforge.net/"
+
+msgid "Decimals (Category)"
+msgstr "Ułamki dziesiętne"
+
+msgid "Fractions (Category)"
+msgstr "Ułamki zwykłe"
+
+msgid "Ratios (Category)"
+msgstr "Proporcje"
+
+msgid "Percentages (Category)"
+msgstr "Procenty"
+
+msgid "Word Builders"
+msgstr "Słowna układanka"
+
+msgid "Word Matchers"
+msgstr "Słowna dopasowanka"
+
+msgid "Match images to words"
+msgstr "Dopasuj obrazki do ich nazw"
+
+msgid "Animals"
+msgstr "Zwierzęta"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Body"
+msgstr "Ciało"
+
+msgid "People"
+msgstr "Ludzie"
+
+msgid "Actions"
+msgstr "Czynności"
+
+msgid "Constructions"
+msgstr "Budynki"
+
+msgid "Nature"
+msgstr "Natura"
+
+msgid "Jobs"
+msgstr "Zawody"
+
+msgid "Clothes and Accessories"
+msgstr "Ubrania i akcesoria"
+
+msgid "Fruits and Vegetables"
+msgstr "Owoce i warzywa"
+
+msgid "Transport"
+msgstr "Środki transportu"
+
+msgid "Food"
+msgstr "Żywność"

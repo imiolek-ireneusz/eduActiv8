@@ -1110,44 +1110,8 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "יישומים לימודיים לילדים"
 
-msgid "Word Builder - Animals"
-msgstr "בניית מילים - בעלי חיים"
-
 msgid "Complete the word"
 msgstr "השלימו את המילה"
-
-msgid "Word Builder - Sports"
-msgstr "בונה מילה - ספורט"
-
-msgid "Word Builder - Body"
-msgstr "בונה מילה - גוף"
-
-msgid "Word Builder - People"
-msgstr "בונה מילה - אנשים"
-
-msgid "Word Builder - Actions"
-msgstr "מילה בונה - פעולות"
-
-msgid "Word Builder - Constructions"
-msgstr "מילה בונה - קונסטרוקציות"
-
-msgid "Word Builder - Nature"
-msgstr "בונה מילה - טבע"
-
-msgid "Word Builder - Jobs"
-msgstr "מילה בונה - משרות"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "מילה בונה - בגדים ואבזרים"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "מילה בונה - פירות וירקות"
-
-msgid "Word Builder - Transport"
-msgstr "בונה מילה - תחבורה"
-
-msgid "Word Builder - Food"
-msgstr "בונה מילה - מזון"
 
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 msgstr ""
@@ -1231,3 +1195,60 @@ msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
+
+msgid "Decimals (Category)"
+msgstr "ספרות"
+
+msgid "Fractions (Category)"
+msgstr "שברים"
+
+msgid "Ratios (Category)"
+msgstr "יחסים"
+
+msgid "Percentages (Category)"
+msgstr "אחוזים"
+
+msgid "Word Builders"
+msgstr "בונה מילה"
+
+msgid "Word Matchers"
+msgstr "התאמת תמונות למילים"
+
+msgid "Match images to words"
+msgstr "התאמת תמונות למילים"
+
+msgid "Animals"
+msgstr "בעלי חיים"
+
+msgid "Sports"
+msgstr "ספורט"
+
+msgid "Body"
+msgstr "גוף"
+
+msgid "People"
+msgstr "אנשים"
+
+msgid "Actions"
+msgstr "פעולות"
+
+msgid "Constructions"
+msgstr "קונסטרוקציות"
+
+msgid "Nature"
+msgstr "טבע"
+
+msgid "Jobs"
+msgstr "משרות"
+
+msgid "Clothes and Accessories"
+msgstr "בגדים ואבזרים"
+
+msgid "Fruits and Vegetables"
+msgstr "פירות וירקות"
+
+msgid "Transport"
+msgstr "תחבורה"
+
+msgid "Food"
+msgstr "מזון"

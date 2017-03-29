@@ -1127,42 +1127,6 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "Небольшой набор образовательных программ для детей"
 
-msgid "Word Builder - Animals"
-msgstr "Словопостроитель - животные"
-
-msgid "Word Builder - Sports"
-msgstr "Словопостроитель - спорт"
-
-msgid "Word Builder - Body"
-msgstr "Словопостроитель - тело"
-
-msgid "Word Builder - People"
-msgstr "Словопостроитель - люди"
-
-msgid "Word Builder - Actions"
-msgstr "Словопостроитель - действия"
-
-msgid "Word Builder - Constructions"
-msgstr "Словопостроитель - конструкции"
-
-msgid "Word Builder - Nature"
-msgstr "Словопостроитель - природа"
-
-msgid "Word Builder - Jobs"
-msgstr "Словопостроитель - работа и занятия"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Словопостроитель - одежда и аксессуары"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Словопостроитель - фрукты и овощи"
-
-msgid "Word Builder - Transport"
-msgstr "Словопостроитель - транспорт"
-
-msgid "Word Builder - Food"
-msgstr "Словопостроитель - пища"
-
 msgid "Complete the word"
 msgstr "Заполните слово"
 
@@ -1248,3 +1212,60 @@ msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
+
+msgid "Decimals (Category)"
+msgstr "Десятичные"
+
+msgid "Fractions (Category)"
+msgstr "Обычные дроби"
+
+msgid "Ratios (Category)"
+msgstr "Соотношения"
+
+msgid "Percentages (Category)"
+msgstr "Проценты"
+
+msgid "Word Builders"
+msgstr "Словопостроитель"
+
+msgid "Word Matchers"
+msgstr "Сопоставьте изображения с словами"
+
+msgid "Match images to words"
+msgstr "Сопоставьте изображения с словами"
+
+msgid "Animals"
+msgstr "животные"
+
+msgid "Sports"
+msgstr "спорт"
+
+msgid "Body"
+msgstr "тело"
+
+msgid "People"
+msgstr "люди"
+
+msgid "Actions"
+msgstr "действия"
+
+msgid "Constructions"
+msgstr "конструкции"
+
+msgid "Nature"
+msgstr "природа"
+
+msgid "Jobs"
+msgstr "работа и занятия"
+
+msgid "Clothes and Accessories"
+msgstr "одежда и аксессуары"
+
+msgid "Fruits and Vegetables"
+msgstr "фрукты и овощи"
+
+msgid "Transport"
+msgstr "транспорт"
+
+msgid "Food"
+msgstr "пища"

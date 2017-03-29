@@ -1090,7 +1090,6 @@ msgstr ""
 " Sons per diversos autors qui van contribuir les seves obres a freesound.org. \n"
 " Imatges per diversos autors qui van contribuir les seves obres a openclipart.org (domini públic) i http://www.art4apps.org/ - Art4Apps by Smart4Kids - sota una llicència Creative Commons (CC BY-SA). \n"
 " Vegeu credits.txt per obtenir-ne més informació sobre els autors dels fitxers multimèdia emprats a aquest projecte"
- 
 
 msgid "Licence"
 msgstr "Llicència"
@@ -1104,44 +1103,8 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "Un petit conjunt d'aplicacions educatives per a nens"
 
-msgid "Word Builder - Animals"
-msgstr ""
-
 msgid "Complete the word"
 msgstr "Completa la paraula"
-
-msgid "Word Builder - Sports"
-msgstr ""
-
-msgid "Word Builder - Body"
-msgstr ""
-
-msgid "Word Builder - People"
-msgstr ""
-
-msgid "Word Builder - Actions"
-msgstr ""
-
-msgid "Word Builder - Constructions"
-msgstr ""
-
-msgid "Word Builder - Nature"
-msgstr ""
-
-msgid "Word Builder - Jobs"
-msgstr ""
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr ""
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr ""
-
-msgid "Word Builder - Transport"
-msgstr ""
-
-msgid "Word Builder - Food"
-msgstr ""
 
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 msgstr "Imatges de: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Llicència Creative Commons (CC BY-SA)"
@@ -1227,4 +1190,61 @@ msgstr "Rellotge amb horari en català"
 msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
+msgstr ""
+
+msgid "Decimals (Category)"
+msgstr "Decimals"
+
+msgid "Fractions (Category)"
+msgstr "Fraccions"
+
+msgid "Ratios (Category)"
+msgstr "Proporcions"
+
+msgid "Percentages (Category)"
+msgstr "Percentatges"
+
+msgid "Word Builders"
+msgstr ""
+
+msgid "Word Matchers"
+msgstr ""
+
+msgid "Match images to words"
+msgstr ""
+
+msgid "Animals"
+msgstr ""
+
+msgid "Sports"
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
+msgid "People"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Constructions"
+msgstr ""
+
+msgid "Nature"
+msgstr ""
+
+msgid "Jobs"
+msgstr ""
+
+msgid "Clothes and Accessories"
+msgstr ""
+
+msgid "Fruits and Vegetables"
+msgstr ""
+
+msgid "Transport"
+msgstr ""
+
+msgid "Food"
 msgstr ""

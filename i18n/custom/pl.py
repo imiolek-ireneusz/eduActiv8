@@ -181,12 +181,12 @@ d["a4a_nature"] = ["ziemia", "klif", "wzgórze", "kanion", "skała", "morze", "j
                    "staw", "szczyt", "lawa", "jaskinia", "wydma", "wyspa", "las", "pustynia", "góra lodowa"]
 
 # d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "police", "plumber", "badge", "queen", "farmer", "magic", "knight", "doctor", "bricklayer", "cleaner", "teacher", "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun", "chief", "pirate", "cowboy", "electrician", "nurse", "king", "president", "office", "carpenter", "jockey", "worker", "mechanic", "pilot", "actor", "cook", "student", "butcher", "accountant", "prince", "pope", "sailor", "boxer", "ballet", "coach", "astronaut", "painter", "anaesthesiologist", "scientist"]
-d["a4a_jobs"] = ['klaun', 'inżynier', 'ksiądz', 'weterynarz', 'sędzia', 'kucharz', 'sportowiec', 'bibliotekarz',
-                 'żongler', 'policja', 'hydraulik', 'znaczek', 'królowa', 'rolnik', 'magia', 'rycerz', 'lekarz',
+d["a4a_jobs"] = ['klaun', 'inżynier', 'ksiądz', 'weterynarz', 'sędzia', 'szef kuchni', 'sportowiec', 'bibliotekarz',
+                 'żongler', 'policjant', 'hydraulik', 'medal', 'królowa', 'rolnik', 'magia', 'rycerz', 'lekarz',
                  'murarz', 'sprzątaczka', 'nauczyciel', 'myśliwy', 'żołnierz', 'muzyk', 'prawnik', 'wędkarz',
                  'księżniczka', 'strażak', 'zakonnica', 'wódz', 'pirat', 'kowboj', 'elektryk', 'pielęgniarka', 'król',
-                 'prezydent', 'biuro', 'stolarz', 'jockey', 'pracownik', 'mechanik', 'pilot', 'aktor', 'ugotować',
-                 'student', 'rzeźnik', 'księgowy', 'książę', 'papież', 'marynarz', 'bokser', 'balet', 'trener',
+                 'prezydent', 'pracownik biurowy', 'stolarz', 'dżokej', 'pracownik', 'mechanik', 'pilot', 'aktor', 'kucharz',
+                 'student', 'rzeźnik', 'księgowy', 'książę', 'papież', 'marynarz', 'bokser', 'baletnica', 'trener',
                  'astronauta', 'malarz', 'anestezjolog', 'naukowiec']
 
 # d["a4a_fruit_n_veg"] = ["carrot", "blackberries", "celery", "turnip", "cacao", "peach", "melon", "grapefruit", "broccoli", "grapes", "spinach", "fig", "kernel", "radish", "tomato", "kiwi", "asparagus", "olives", "cucumbers", "beans", "strawberry", "peppers", "raspberry", "apricot", "potatoes", "peas", "cabbage", "cherries", "squash", "blueberries", "pear", "orange", "pumpkin", "avocado", "garlic", "onion", "apple", "lime", "cauliflower", "mango", "lettuce", "lemon", "aubergine", "artichokes", "plums", "leek", "bananas", "papaya"]

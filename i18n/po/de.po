@@ -1108,44 +1108,8 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "Eine kleine Auswahl an Lernprogrammen für Kinder"
 
-msgid "Word Builder - Animals"
-msgstr "Wörter bauen - Tiere"
-
 msgid "Complete the word"
 msgstr "Vervollständige das Wort"
-
-msgid "Word Builder - Sports"
-msgstr "Wörter bauen - Sport"
-
-msgid "Word Builder - Body"
-msgstr "Wörter bauen - Körper"
-
-msgid "Word Builder - People"
-msgstr "Wörter bauen - Leute"
-
-msgid "Word Builder - Actions"
-msgstr "Wörter bauen - Aktivitäten"
-
-msgid "Word Builder - Constructions"
-msgstr "Wörter bauen - Konstruktionen"
-
-msgid "Word Builder - Nature"
-msgstr "Wörter bauen - Natur"
-
-msgid "Word Builder - Jobs"
-msgstr "Wörter bauen - Berufe"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Wörter bauen - Kleidung"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Wörter bauen - Obst und Gemüse"
-
-msgid "Word Builder - Transport"
-msgstr "Wörter bauen - Transport"
-
-msgid "Word Builder - Food"
-msgstr "Wörter bauen - Essen"
 
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 msgstr ""
@@ -1229,3 +1193,60 @@ msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
+
+msgid "Decimals (Category)"
+msgstr "Dezimalzahlen"
+
+msgid "Fractions (Category)"
+msgstr "Brüche"
+
+msgid "Ratios (Category)"
+msgstr "Verhältnisse"
+
+msgid "Percentages (Category)"
+msgstr "Prozente"
+
+msgid "Word Builders"
+msgstr "Wörter bauen"
+
+msgid "Word Matchers"
+msgstr "Ordne die Bilder zu ihren Worten"
+
+msgid "Match images to words"
+msgstr "Ordne die Bilder zu ihren Worten"
+
+msgid "Animals"
+msgstr "Tiere"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Body"
+msgstr "Körper"
+
+msgid "People"
+msgstr "Leute"
+
+msgid "Actions"
+msgstr "Aktivitäten"
+
+msgid "Constructions"
+msgstr "Konstruktionen"
+
+msgid "Nature"
+msgstr "Natur"
+
+msgid "Jobs"
+msgstr "Berufe"
+
+msgid "Clothes and Accessories"
+msgstr "Kleidung"
+
+msgid "Fruits and Vegetables"
+msgstr "Obst und Gemüse"
+
+msgid "Transport"
+msgstr "Transport"
+
+msgid "Food"
+msgstr "Essen"

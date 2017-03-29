@@ -1114,44 +1114,8 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "Pieni kokoelmia opettavaisia sovelluksia lapsille"
 
-msgid "Word Builder - Animals"
-msgstr "Sananrakennus - Eläimet"
-
 msgid "Complete the word"
 msgstr "Täydennä sana"
-
-msgid "Word Builder - Sports"
-msgstr "Sananrakennus - Urheilu"
-
-msgid "Word Builder - Body"
-msgstr "Sananrakennus - Keho"
-
-msgid "Word Builder - People"
-msgstr "Sananrakennus - Ihmiset"
-
-msgid "Word Builder - Actions"
-msgstr "Sananrakennus - Toiminnat"
-
-msgid "Word Builder - Constructions"
-msgstr "Sananrakennus - Rakennukset"
-
-msgid "Word Builder - Nature"
-msgstr "Sananrakennus - Luonto"
-
-msgid "Word Builder - Jobs"
-msgstr "Sananrakennus - Ammatit"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Sananrakennus - Vaatetus"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Sananrakennus - Hedelmät ja vihannekset"
-
-msgid "Word Builder - Transport"
-msgstr "Sananrakennus - Matkustaminen"
-
-msgid "Word Builder - Food"
-msgstr "Sananrakennus - Ruoka"
 
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 msgstr "Kuvat: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: Creative Commons (CC BY-SA)"
@@ -1235,3 +1199,60 @@ msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
+
+msgid "Decimals (Category)"
+msgstr "Desimaalit"
+
+msgid "Fractions (Category)"
+msgstr "Murtoluvut"
+
+msgid "Ratios (Category)"
+msgstr "Suhteet"
+
+msgid "Percentages (Category)"
+msgstr "Prosentit"
+
+msgid "Word Builders"
+msgstr "Sananrakennus"
+
+msgid "Word Matchers"
+msgstr ""
+
+msgid "Match images to words"
+msgstr ""
+
+msgid "Animals"
+msgstr "Eläimet"
+
+msgid "Sports"
+msgstr "Urheilu"
+
+msgid "Body"
+msgstr "Keho"
+
+msgid "People"
+msgstr "Ihmiset"
+
+msgid "Actions"
+msgstr "Toiminnat"
+
+msgid "Constructions"
+msgstr "Rakennukset"
+
+msgid "Nature"
+msgstr "Luonto"
+
+msgid "Jobs"
+msgstr "Ammatit"
+
+msgid "Clothes and Accessories"
+msgstr "Vaatetus"
+
+msgid "Fruits and Vegetables"
+msgstr "Hedelmät ja vihannekset"
+
+msgid "Transport"
+msgstr "Matkustaminen"
+
+msgid "Food"
+msgstr "Ruoka"

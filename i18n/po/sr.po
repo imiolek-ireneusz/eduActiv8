@@ -1159,44 +1159,8 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "Малени скуп образовних програма за дечицу"
 
-msgid "Word Builder - Animals"
-msgstr "Градитељ речи — животиње"
-
 msgid "Complete the word"
 msgstr "Доврши реч"
-
-msgid "Word Builder - Sports"
-msgstr "Градитељ речи — спортови"
-
-msgid "Word Builder - Body"
-msgstr "Градитељ речи — тело"
-
-msgid "Word Builder - People"
-msgstr "Градитељ речи — људи"
-
-msgid "Word Builder - Actions"
-msgstr "Градитељ речи — радње"
-
-msgid "Word Builder - Constructions"
-msgstr "Градитељ речи — изградња"
-
-msgid "Word Builder - Nature"
-msgstr "Градитељ речи — природа"
-
-msgid "Word Builder - Jobs"
-msgstr "Градитељ речи — послови"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Градитељ речи — одећа и помагала"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Градитељ речи — воће и поврће"
-
-msgid "Word Builder - Transport"
-msgstr "Градитељ речи — превоз"
-
-msgid "Word Builder - Food"
-msgstr "Градитељ речи — храна"
 
 msgid ""
 "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
@@ -1295,3 +1259,59 @@ msgstr ""
 "текста, али није толико ни неопходно за успешно коришћење игре: \n"
 "http://espeak.sourceforge.net/"
 
+msgid "Decimals (Category)"
+msgstr "Децимални бројеви"
+
+msgid "Fractions (Category)"
+msgstr "Разломци"
+
+msgid "Ratios (Category)"
+msgstr "Односи"
+
+msgid "Percentages (Category)"
+msgstr "Проценти"
+
+msgid "Word Builders"
+msgstr "Градитељ речи"
+
+msgid "Word Matchers"
+msgstr ""
+
+msgid "Match images to words"
+msgstr ""
+
+msgid "Animals"
+msgstr "животиње"
+
+msgid "Sports"
+msgstr "спортови"
+
+msgid "Body"
+msgstr "тело"
+
+msgid "People"
+msgstr "људи"
+
+msgid "Actions"
+msgstr "радње"
+
+msgid "Constructions"
+msgstr "изградња"
+
+msgid "Nature"
+msgstr "природа"
+
+msgid "Jobs"
+msgstr "послови"
+
+msgid "Clothes and Accessories"
+msgstr "одећа и помагала"
+
+msgid "Fruits and Vegetables"
+msgstr "воће и поврће"
+
+msgid "Transport"
+msgstr "превоз"
+
+msgid "Food"
+msgstr "храна"

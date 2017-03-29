@@ -1112,44 +1112,8 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "Un petit ensemble d'applications éducatives pour les enfants"
 
-msgid "Word Builder - Animals"
-msgstr "Écris les mots - Animaux"
-
 msgid "Complete the word"
 msgstr "Complète le mot"
-
-msgid "Word Builder - Sports"
-msgstr "Écris les mots - Sport"
-
-msgid "Word Builder - Body"
-msgstr "Écris les mots - Corps"
-
-msgid "Word Builder - People"
-msgstr "Écris les mots - Personnes"
-
-msgid "Word Builder - Actions"
-msgstr "Écris les mots - Actions"
-
-msgid "Word Builder - Constructions"
-msgstr "Écris les mots - Constructions"
-
-msgid "Word Builder - Nature"
-msgstr "Écris les mots - Nature"
-
-msgid "Word Builder - Jobs"
-msgstr "Écris les mots - Travails"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Écris les mots - Vêtements et accessoires"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Écris les mots - Fruits et légumes"
-
-msgid "Word Builder - Transport"
-msgstr "Écris les mots - Transports"
-
-msgid "Word Builder - Food"
-msgstr "Écris les mots - Nourriture"
 
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 msgstr "Images de : http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
@@ -1233,3 +1197,60 @@ msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
+
+msgid "Decimals (Category)"
+msgstr "Fractions décimales"
+
+msgid "Fractions (Category)"
+msgstr "Fractions"
+
+msgid "Ratios (Category)"
+msgstr "Rapports"
+
+msgid "Percentages (Category)"
+msgstr "Pourcentages"
+
+msgid "Word Builders"
+msgstr "Écris les mots"
+
+msgid "Word Matchers"
+msgstr "Correspondre les images aux mots"
+
+msgid "Match images to words"
+msgstr "Correspondre les images aux mots"
+
+msgid "Animals"
+msgstr "Animaux"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Body"
+msgstr "Corps"
+
+msgid "People"
+msgstr "Personnes"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Constructions"
+msgstr "Constructions"
+
+msgid "Nature"
+msgstr "Nature"
+
+msgid "Jobs"
+msgstr "Travails"
+
+msgid "Clothes and Accessories"
+msgstr "Vêtements et accessoires"
+
+msgid "Fruits and Vegetables"
+msgstr "Fruits et légumes"
+
+msgid "Transport"
+msgstr "Transports"
+
+msgid "Food"
+msgstr "Nourriture"

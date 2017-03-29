@@ -1115,44 +1115,8 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "Un conjunto de aplicaciones educativas para niños"
 
-msgid "Word Builder - Animals"
-msgstr "Constructor de palabras - Animales"
-
 msgid "Complete the word"
 msgstr "Completar la palabra"
-
-msgid "Word Builder - Sports"
-msgstr "Constructor de palabras - Deportes"
-
-msgid "Word Builder - Body"
-msgstr "Constructor de palabras - El cuerpo"
-
-msgid "Word Builder - People"
-msgstr "Constructor de palabras - Gente"
-
-msgid "Word Builder - Actions"
-msgstr "Constructor de palabras - Acciones"
-
-msgid "Word Builder - Constructions"
-msgstr "\"Constructor de palabras - Construcciones"
-
-msgid "Word Builder - Nature"
-msgstr "Constructor de palabras - Naturaleza"
-
-msgid "Word Builder - Jobs"
-msgstr "Constructor de palabras - Trabajos"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Constructor de palabras - Ropa y accesorios"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Constructor de palabras - Frutas y vegetales"
-
-msgid "Word Builder - Transport"
-msgstr "Constructor de palabras - Transporte"
-
-msgid "Word Builder - Food"
-msgstr "Constructor de palabras - Comida"
 
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 msgstr "Imágenes de: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Licencia Creative Commons (CC BY-SA)"
@@ -1235,4 +1199,61 @@ msgstr "Paquete de actividades educativas para niños"
 msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
-msgstr ""
+msgstr "Es posible, que desee, instalar espeak para utilizar su funcionalidad de texto a voz, sin embargo esto no es necesario para usar correctamente la aplicación: http://espeak.sourceforge.net/"
+
+msgid "Decimals (Category)"
+msgstr "Decimales"
+
+msgid "Fractions (Category)"
+msgstr "Fracciones"
+
+msgid "Ratios (Category)"
+msgstr "Proporciones"
+
+msgid "Percentages (Category)"
+msgstr "Porcentajes"
+
+msgid "Word Builders"
+msgstr "Constructor de palabras"
+
+msgid "Word Matchers"
+msgstr "El significado de las imágenes"
+
+msgid "Match images to words"
+msgstr "Empareja imágenes con las palabras"
+
+msgid "Animals"
+msgstr "Animales"
+
+msgid "Sports"
+msgstr "Deportes"
+
+msgid "Body"
+msgstr "El cuerpo"
+
+msgid "People"
+msgstr "Gente"
+
+msgid "Actions"
+msgstr "Acciones"
+
+msgid "Constructions"
+msgstr "Construcciones"
+
+msgid "Nature"
+msgstr "Naturaleza"
+
+msgid "Jobs"
+msgstr "Trabajos"
+
+msgid "Clothes and Accessories"
+msgstr "Ropa y accesorios"
+
+msgid "Fruits and Vegetables"
+msgstr "Frutas y vegetales"
+
+msgid "Transport"
+msgstr "Transporte"
+
+msgid "Food"
+msgstr "Comida"

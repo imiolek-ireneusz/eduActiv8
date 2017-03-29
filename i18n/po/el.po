@@ -1115,42 +1115,6 @@ msgstr "Ένα μικρό σετ εκπαιδευτικών εφαρμογών �
 msgid "Complete the word"
 msgstr "Ολοκλήρωσε τη λέξη"
 
-msgid "Word Builder - Animals"
-msgstr "Σχηματισμός λέξεων - Ζώα"
-
-msgid "Word Builder - Sports"
-msgstr "Σχηματισμός λέξεων - Αθλήματα"
-
-msgid "Word Builder - Body"
-msgstr "Σχηματισμός λέξεων - Σώμα"
-
-msgid "Word Builder - People"
-msgstr "Σχηματισμός λέξεων - Άνθρωποι"
-
-msgid "Word Builder - Actions"
-msgstr "Σχηματισμός λέξεων - Ενέργειες"
-
-msgid "Word Builder - Constructions"
-msgstr "Σχηματισμός λέξεων - Κατασκευές"
-
-msgid "Word Builder - Nature"
-msgstr "Σχηματισμός λέξεων - Φύση"
-
-msgid "Word Builder - Jobs"
-msgstr "Σχηματισμός λέξεων - Δουλειές"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Σχηματισμός λέξεων - Ρούχα και αξεσουάρ"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Σχηματισμός λέξεων - Φρούτα και λαχανικά"
-
-msgid "Word Builder - Transport"
-msgstr "Σχηματισμός λέξεων - Μεταφορικά μέσα"
-
-msgid "Word Builder - Food"
-msgstr "Σχηματισμός λέξεων - Φαγητό"
-
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 msgstr "Εικόνες από: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 
@@ -1235,3 +1199,60 @@ msgid ""
 msgstr ""
 "Μπορείτε να εγκαταστήσετε το espeak ώστε να χρησιμοποιήσετε τις δυνατότητες μετατροπής κειμένου σε ομιλία που παρέχει, αυτό όμως δεν είναι απαραίτητο για τη χρήση του παιχνιδιού: \n"
 " http://espeak.sourceforge.net/"
+
+msgid "Decimals (Category)"
+msgstr "Δεκαδικοί"
+
+msgid "Fractions (Category)"
+msgstr "Κλάσματα"
+
+msgid "Ratios (Category)"
+msgstr "Λόγοι"
+
+msgid "Percentages (Category)"
+msgstr "Ποσοστά"
+
+msgid "Word Builders"
+msgstr "Σχηματισμός λέξεων"
+
+msgid "Word Matchers"
+msgstr "Συνδέστε τις λέξεις"
+
+msgid "Match images to words"
+msgstr "Ταιριάξτε τις εικόνες σε λέξεις"
+
+msgid "Animals"
+msgstr "Ζώα"
+
+msgid "Sports"
+msgstr "Αθλήματα"
+
+msgid "Body"
+msgstr "Σώμα"
+
+msgid "People"
+msgstr "Άνθρωποι"
+
+msgid "Actions"
+msgstr "Ενέργειες"
+
+msgid "Constructions"
+msgstr "Κατασκευές"
+
+msgid "Nature"
+msgstr "Φύση"
+
+msgid "Jobs"
+msgstr "Δουλειές"
+
+msgid "Clothes and Accessories"
+msgstr "Ρούχα και αξεσουάρ"
+
+msgid "Fruits and Vegetables"
+msgstr "Φρούτα και λαχανικά"
+
+msgid "Transport"
+msgstr "Μεταφορικά μέσα"
+
+msgid "Food"
+msgstr "Φαγητό"

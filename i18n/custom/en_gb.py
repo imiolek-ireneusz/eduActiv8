@@ -108,7 +108,7 @@ d["a4a_animals"] = ["cow", "turkey", "shrimp", "wolf", "panther", "panda", "magp
                     "giraffe", "spider", "puppy", "jay", "seal", "rooster", "turtle", "bull", "cat", "rat",
                     "slug", "buffalo", "blackbird", "swan", "lobster", "dog", "mosquito", "snake", "chicken",
                     "anteater"]
-d["a4a_sport"] = ["judo", "pool", "ride", "stretch", "helmet", "ice skating", "walk", "ran", "run", "swim", "hop",
+d["a4a_sport"] = ["judo", "pool", "ride", "stretch", "helmet", "ice skating", "walk", "run", "run", "swim", "hop",
                   "hike", "boxing", "hockey", "race", "throw", "skate", "win", "squat", "ski", "golf", "whistle",
                   "torch", "sailing", "stand", "tennis", "jump", "rowing", "jog", "rope"]
 d["a4a_body"] = ["teeth", "cheek", "ankle", "knee", "toe", "muscle", "mouth", "feet", "hand", "elbow", "hair",
@@ -143,12 +143,12 @@ d["a4a_construction"] = ["lighthouse", "door", "circus", "church", "kennel", "te
                          "mosque", "hospital", "tent", "house", "wall", "bank", "shutter", "hut"]
 d["a4a_nature"] = ["land", "cliff", "hill", "canyon", "rock", "sea", "lake", "coast", "shore", "mountain", "pond",
                    "peak", "lava", "cave", "dune", "island", "forest", "desert", "iceberg"]
-d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "police",
+d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "policeman",
                  "plumber", "badge", "queen", "farmer", "magic", "knight", "doctor", "bricklayer", "cleaner", "teacher",
                  "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun", "chief",
-                 "pirate", "cowboy", "electrician", "nurse", "king", "president", "office", "carpenter", "jockey",
+                 "pirate", "cowboy", "electrician", "nurse", "king", "president", "office worker", "carpenter", "jockey",
                  "worker", "mechanic", "pilot", "actor", "cook", "student", "butcher", "accountant", "prince", "pope",
-                 "sailor", "boxer", "ballet", "coach", "astronaut", "painter", "anaesthesiologist", "scientist"]
+                 "sailor", "boxer", "ballet dancer", "coach", "astronaut", "painter", "anaesthesiologist", "scientist"]
 d["a4a_fruit_n_veg"] = ["carrot", "blackberries", "celery", "turnip", "cacao", "peach", "melon", "grapefruit",
                         "broccoli", "grapes", "spinach", "fig", "kernel", "radish", "tomato", "kiwi", "asparagus",
                         "olives", "cucumbers", "beans", "strawberry", "peppers", "raspberry", "apricot", "potatoes",

@@ -1111,42 +1111,6 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "A collection of educational activities for kids"
 
-msgid "Word Builder - Animals"
-msgstr "Word Builder - Animals"
-
-msgid "Word Builder - Sports"
-msgstr "Word Builder - Sports"
-
-msgid "Word Builder - Body"
-msgstr "Word Builder - Body"
-
-msgid "Word Builder - People"
-msgstr "Word Builder - People"
-
-msgid "Word Builder - Actions"
-msgstr "Word Builder - Actions"
-
-msgid "Word Builder - Constructions"
-msgstr "Word Builder - Constructions"
-
-msgid "Word Builder - Nature"
-msgstr "Word Builder - Nature"
-
-msgid "Word Builder - Jobs"
-msgstr "Word Builder - Jobs"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Word Builder - Clothes and Accessories"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Word Builder - Fruits and Vegetables"
-
-msgid "Word Builder - Transport"
-msgstr "Word Builder - Transport"
-
-msgid "Word Builder - Food"
-msgstr "Word Builder - Food"
-
 msgid "Complete the word"
 msgstr "Complete the word"
 
@@ -1231,4 +1195,61 @@ msgstr "Educational Activities for Kids"
 msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
+msgstr ""
+
+msgid "Decimals (Category)"
+msgstr ""
+
+msgid "Fractions (Category)"
+msgstr ""
+
+msgid "Ratios (Category)"
+msgstr ""
+
+msgid "Percentages (Category)"
+msgstr ""
+
+msgid "Word Builders"
+msgstr ""
+
+msgid "Word Matchers"
+msgstr ""
+
+msgid "Match images to words"
+msgstr ""
+
+msgid "Animals"
+msgstr ""
+
+msgid "Sports"
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
+msgid "People"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Constructions"
+msgstr ""
+
+msgid "Nature"
+msgstr ""
+
+msgid "Jobs"
+msgstr ""
+
+msgid "Clothes and Accessories"
+msgstr ""
+
+msgid "Fruits and Vegetables"
+msgstr ""
+
+msgid "Transport"
+msgstr ""
+
+msgid "Food"
 msgstr ""

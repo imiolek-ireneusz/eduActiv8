@@ -1112,42 +1112,6 @@ msgstr ""
 msgid "A collection of educational activities for kids"
 msgstr "A collection of educational activities for kids"
 
-msgid "Word Builder - Animals"
-msgstr "Word Builder - Animals"
-
-msgid "Word Builder - Sports"
-msgstr "Word Builder - Sports"
-
-msgid "Word Builder - Body"
-msgstr "Word Builder - Body"
-
-msgid "Word Builder - People"
-msgstr "Word Builder - People"
-
-msgid "Word Builder - Actions"
-msgstr "Word Builder - Actions"
-
-msgid "Word Builder - Constructions"
-msgstr "Word Builder - Constructions"
-
-msgid "Word Builder - Nature"
-msgstr "Word Builder - Nature"
-
-msgid "Word Builder - Jobs"
-msgstr "Word Builder - Jobs"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Word Builder - Clothes and Accessories"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Word Builder - Fruits and Vegetables"
-
-msgid "Word Builder - Transport"
-msgstr "Word Builder - Transport"
-
-msgid "Word Builder - Food"
-msgstr "Word Builder - Food"
-
 msgid "Complete the word"
 msgstr "Complete the word"
 
@@ -1233,3 +1197,60 @@ msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
+
+msgid "Decimals (Category)"
+msgstr "Decimals"
+
+msgid "Fractions (Category)"
+msgstr "Fractions"
+
+msgid "Ratios (Category)"
+msgstr "Ratios"
+
+msgid "Percentages (Category)"
+msgstr "Percentages"
+
+msgid "Word Builders"
+msgstr "Word Builders"
+
+msgid "Word Matchers"
+msgstr "Word Matchers"
+
+msgid "Match images to words"
+msgstr "Match images to words"
+
+msgid "Animals"
+msgstr "Animals"
+
+msgid "Sports"
+msgstr "Sports"
+
+msgid "Body"
+msgstr "Body"
+
+msgid "People"
+msgstr "People"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Constructions"
+msgstr "Constructions"
+
+msgid "Nature"
+msgstr "Nature"
+
+msgid "Jobs"
+msgstr "Jobs"
+
+msgid "Clothes and Accessories"
+msgstr "Clothes and Accessories"
+
+msgid "Fruits and Vegetables"
+msgstr "Fruits and Vegetables"
+
+msgid "Transport"
+msgstr "Transport"
+
+msgid "Food"
+msgstr "Food"
