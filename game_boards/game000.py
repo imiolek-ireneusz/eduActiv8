@@ -25,16 +25,13 @@ class Board(gd.BoardGame):
             if self.mainloop.scheme.dark:
                 self.scheme_dir = "black"
                 color = (0, 0, 0)
-                color2 = (0, 0, 2)
                 ver_color = (255, 255, 0)
             else:
                 self.scheme_dir = "white"
                 color = (255, 255, 255)
-                color2 = (254, 254, 255)
         else:
             self.scheme_dir = "white"
             color = (255, 255, 255)
-            color2 = (254, 254, 255)
 
         # (234,218,225) #ex.hsv_to_rgb(225,15,235)
         self.color = color
@@ -61,7 +58,6 @@ class Board(gd.BoardGame):
         self.board.add_unit(data[0]-4, 0, 4, 1, classes.board.Label, ["v.%s" % self.mainloop.config.version, " ", " "],
                             color, "", 5)
         self.board.units[-1].align = 2
-        #self.board.units[-1].valign = 1
         self.board.units[-1].font_color = ver_color
 
         img_src = os.path.join("schemes", self.scheme_dir, 'home_logo.png')
@@ -77,15 +73,18 @@ class Board(gd.BoardGame):
         x = self.canvas.img_rect.width - self.canvas.font.size(val)[0]# - (self.canvas.img_rect.width//100)
         self.canvas.img.blit(text, (x, y))
         """
+        if self.mainloop.android is None:
+            self.board.add_unit(0, 6, data[0], 1, classes.board.Label,
+                                [self.lang.d["Check for newer version..."]], color, "", 4)
+            self.board.units[-1].font_color = font_color2
 
-        self.board.add_unit(0, 6, data[0], 1, classes.board.Label,
-                            [self.lang.d["Check for newer version..."]], color, "", 4)
-
-        self.board.add_unit(0, 7, data[0], 1, classes.board.Label, ["http://sourceforge.net/projects/eduactiv8/",
-                                                                    "https://github.com/imiolek-ireneusz/eduactiv8"],
-                            color, "", 4)
+            self.board.add_unit(0, 7, data[0], 1, classes.board.Label, ["http://sourceforge.net/projects/eduactiv8/",
+                                                                        "https://github.com/imiolek-ireneusz/eduactiv8"],
+                                color, "", 4)
+            self.board.units[-1].font_color = font_color
 
         self.board.add_unit(0, 5, data[0], 1, classes.board.Label, ["www.facebook.com/eduactiv8", ""], color, "", 4)
+        self.board.units[-1].font_color = font_color
 
         self.board.add_unit(0, 4, data[0], 1, classes.board.Label, "www.eduactiv8.org", color, "", 2)
         self.board.units[-1].font_color = font_color
@@ -112,12 +111,9 @@ class Board(gd.BoardGame):
         self.btn_tra.readable = False
         """
 
-        self.board.units[1].font_color = font_color2
-        self.board.units[2].font_color = font_color
-        self.board.units[3].font_color = font_color
-
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
+        """
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 active = self.board.active_ship
@@ -126,6 +122,7 @@ class Board(gd.BoardGame):
                         self.start_game(1)
                     elif self.board.ships[active] == self.btn_tra:
                         self.start_game(2)
+        """
 
     def start_game(self, gameid):
         self.mainloop.m.start_hidden_game(gameid)
