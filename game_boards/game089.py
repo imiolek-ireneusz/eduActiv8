@@ -51,16 +51,16 @@ class Board(gd.BoardGame):
                          'antelope', 'lemur', 'pigeon', 'lama', 'mole', 'ray', 'ram', 'skunk', 'jellyfish', 'sheep',
                          'shark', 'kitten', 'deer', 'snail', 'flamingo', 'rabbit', 'oyster', 'beaver', 'sparrow',
                          'dove', 'eagle', 'beetle', 'hippopotamus', 'owl', 'cobra', 'salamander', 'goose', 'kangaroo',
-                         'dragonfly', 'toad', 'pelican', 'squid', 'lion_cub', 'jaguar', 'duck', 'lizard', 'rhinoceros',
+                         'dragonfly', '', 'pelican', 'squid', 'lion_cub', 'jaguar', 'duck', 'lizard', 'rhinoceros',
                          'hyena', 'ox', 'peacock', 'parrot', 'elk', 'alligator', 'ant', 'goat', 'baby_rabbit', 'lion',
                          'squirrel', 'opossum', 'chimp', 'doe', 'gopher', 'elephant', 'giraffe', 'spider', 'puppy',
                          'jay', 'seal', 'rooster', 'turtle', 'bull', 'cat', 'rat', 'slug', 'buffalo',
                          'blackbird', 'swan', 'lobster', 'dog', 'mosquito', 'snake', 'chicken', 'anteater']
         elif gv == 1:
             category = "sport"
-            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'helmet', 'ice_skating', 'walk', 'ran', 'run', 'swim',
-                         'hop', 'hike', 'boxing', 'hockey', 'race', 'throw', 'skate', 'win', 'squat', 'ski', 'golf',
-                         'whistle', 'torch', 'sailing', 'stand', 'tennis', 'jump', 'rowing', 'jog', 'rope']
+            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'helmet', 'ice_skating', 'walk', '', 'run', 'swim',
+                         '', '', 'boxing', 'hockey', 'race', 'throw', 'skate', 'win', 'squat', 'ski', 'golf',
+                         'whistle', 'torch', 'sailing', 'stand', 'tennis', 'jump', 'rowing', '', 'rope']
         elif gv == 2:
             category = "body"
             self.imgs = ['teeth', 'cheek', 'ankle', 'knee', 'toe', 'muscle', 'mouth', 'feet', 'hand', 'elbow', 'hair',
@@ -87,7 +87,7 @@ class Board(gd.BoardGame):
             category = "construction"
             self.imgs = ['lighthouse', 'door', 'circus', 'church', 'kennel', 'temple', 'smoke', 'chimney', 'brick',
                          'well', 'street', 'castle', 'store', 'staircase', 'school', 'farm', 'bridge', 'dam', 'pyramid',
-                         'barn', 'mill', 'window', 'cabin', 'step', 'shop', 'shed', 'roof', 'steeple', 'garage',
+                         'barn', 'mill', 'window', '', 'step', 'shop', 'shed', 'roof', 'steeple', 'garage',
                          'mosque', 'hospital', 'tent', 'house', 'wall', 'bank', 'shutter', 'hut']
         elif gv == 6:
             category = "nature"
@@ -95,8 +95,8 @@ class Board(gd.BoardGame):
                          'peak', 'lava', 'cave', 'dune', 'island', 'forest', 'desert', 'iceberg']
         elif gv == 7:
             category = "jobs"
-            self.imgs = ['clown', 'engineer', 'priest', 'vet', 'judge', 'chef', 'athlete', 'librarian', 'juggler',
-                         'police', 'plumber', 'badge', 'queen', 'farmer', 'magic', 'knight', 'doctor', 'bricklayer',
+            self.imgs = ['clown', 'engineer', 'priest', 'vet', 'judge', '', 'athlete', 'librarian', 'juggler',
+                         'police', 'plumber', '', 'queen', 'farmer', 'magic', 'knight', 'doctor', 'bricklayer',
                          'cleaner', 'teacher', 'hunter', 'soldier', 'musician', 'lawyer', 'fisherman', 'princess',
                          'fireman', 'nun', 'chief', 'pirate', 'cowboy', 'electrician', 'nurse', 'king', 'president',
                          'office', 'carpenter', 'jockey', 'worker', 'mechanic', 'pilot', 'actor', 'cook', 'student',
