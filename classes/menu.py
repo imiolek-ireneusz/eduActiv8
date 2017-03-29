@@ -973,43 +973,6 @@ class Menu:
         # spare game spots - 048
         # spare_ids - 119 - 130
         self.id2icon = dict()
-        """
-        self.id2icon = {0: 'ico_g_0000.png', 1: 'ico_g_0001.png', 2: 'ico_g_0001.png', 3: 'ico_g_0003.png',
-                        4: 'ico_g_0101.png', 5: 'ico_g_0100.png', 11: 'ico_g_0103.png', 12: 'ico_g_0105.png',
-                        13: 'ico_g_0106.png', 14: 'ico_g_0107.png', 15: 'ico_g_0107.png', 17: 'ico_g_0200.png',
-                        18: 'ico_g_0201.png', 19: 'ico_g_0202.png', 20: 'ico_g_0300.png', 21: 'ico_g_0323.png',
-                        22: 'ico_g_0301.png', 23: 'ico_g_0317.png', 24: 'ico_g_0318.png', 25: 'ico_g_0302.png',
-                        26: 'ico_g_0303.png', 27: 'ico_g_0306.png', 28: 'ico_g_0307.png', 29: 'ico_g_0308.png',
-                        30: 'ico_g_0324.png', 31: 'ico_g_0319.png', 32: 'ico_g_0320.png', 33: 'ico_g_0321.png',
-                        34: 'ico_g_0322.png', 35: 'ico_g_0309.png', 36: 'ico_g_0310.png', 37: 'ico_g_0311.png',
-                        38: 'ico_g_0312.png', 39: 'ico_g_0313.png', 40: 'ico_g_0314.png', 41: 'ico_g_0315.png',
-                        42: 'ico_g_0316.png', 43: 'ico_g_0400.png', 44: 'ico_g_0405.png', 45: 'ico_g_0401.png',
-                        46: 'ico_g_0402.png', 47: 'ico_g_0403.png', 48: 'ico_g_0404.png', 49: 'ico_g_0406.png',
-                        50: 'ico_g_0407.png', 51: 'ico_g_0408.png', 52: 'ico_g_0409.png', 53: 'ico_g_0410.png',
-                        54: 'ico_g_1100.png', 55: 'ico_g_1101.png', 56: 'ico_g_1102.png', 57: 'ico_g_1103.png',
-                        58: 'ico_g_1104.png', 59: 'ico_g_1105.png', 60: 'ico_g_1106.png', 61: 'ico_g_1107.png',
-                        62: 'ico_g_0500.png', 63: 'ico_g_0501.png', 64: 'ico_g_0502.png', 65: 'ico_g_0503.png',
-                        66: 'ico_g_1000.png', 67: 'ico_g_1001.png', 68: 'ico_g_1002.png', 69: 'ico_g_1003.png',
-                        70: 'ico_g_1004.png', 71: 'ico_g_0600.png', 72: 'ico_g_0601.png', 73: 'ico_g_0602.png',
-                        74: 'ico_g_0603.png', 75: 'ico_g_0605.png', 76: 'ico_g_0607.png', 77: 'ico_g_0604.png',
-                        78: 'ico_g_0606.png', 79: 'ico_g_0700.png', 80: 'ico_g_0701.png', 81: 'ico_g_0702.png',
-                        82: 'ico_g_0703.png', 83: 'ico_g_0704.png', 84: 'ico_g_0705.png', 85: 'ico_g_0706.png',
-                        86: 'ico_g_0800.png', 87: 'ico_g_0801.png', 88: 'ico_g_0811.png', 89: 'ico_g_0812.png',
-                        90: 'ico_g_0813.png', 91: 'ico_g_0803.png', 92: 'ico_g_0802.png', 93: 'ico_g_0806.png',
-                        94: 'ico_g_0804.png', 95: 'ico_g_0807.png', 96: 'ico_g_0808.png', 97: 'ico_g_0809.png',
-                        98: 'ico_g_0810.png', 102: 'ico_g_0325.png', 103: 'ico_g_0326.png', 107: 'ico_g_0203.png',
-                        108: 'ico_g_0204.png', 109: 'ico_g_0205.png', 110: 'ico_g_0206.png', 111: 'ico_g_0209.png',
-                        112: 'ico_g_0210.png', 113: 'ico_g_0211.png', 114: 'ico_g_0212.png', 115: 'ico_g_0208.png',
-                        116: 'ico_g_0213.png', 117: 'ico_g_0214.png', 118: 'ico_g_0207.png', 135: 'ico_g_1008.png',
-                        140: 'ico_g_0104.png', 141: 'ico_g_0004.png', 142: "ico_g_1000.png", 143: 'ico_g_0327.png',
-                        144: "ico_g_0328.png", 145: "ico_g_0329.png", 146: "ico_g_0107.png", 147: "ico_g_1008.png",
-                        148: "ico_g_1000.png", 149: "ico_g_1000.png", 150: "ico_g_1001.png", 151: "ico_g_1002.png",
-                        152: "ico_g_1003.png", 153: "ico_g_1004.png", 154: "ico_g_1004.png"}
-        """
-
-        # a dictionary of unique icons (ie. language specific) for use in achievements - only those activities that are graded
-        # unique_ico = {15: "ico_g_0107.png", 106: "ico_g_1007.png"}
-        # self.id2icon.update(unique_ico)
 
         self.lang_customized_icons = (11, 140, 12, 13)
         c_id = 0  # Add the home screens
@@ -1037,7 +1000,9 @@ class Menu:
                 cat_add = True
 
                 # check for languages included/excluded
-                if cat.attrib['lang_incl'] != "":
+                if cat.attrib['disp_code'] == "0":
+                    cat_add = False
+                elif cat.attrib['lang_incl'] != "":
                     lin = ast.literal_eval(cat.attrib['lang_incl'])
                     if self.mainloop.lang.lang[0:2] not in lin:
                         cat_add = False
@@ -1047,9 +1012,9 @@ class Menu:
                         cat_add = False
 
                 # check the age range
-                if self.uage < ast.literal_eval(cat.attrib['min_age']):
+                elif self.uage < ast.literal_eval(cat.attrib['min_age']):
                     cat_add = False
-                if self.uage > ast.literal_eval(cat.attrib['max_age']):
+                elif self.uage > ast.literal_eval(cat.attrib['max_age']):
                     cat_add = False
 
                 if cat_add:
@@ -1065,28 +1030,33 @@ class Menu:
                         # add games in current category
                         add = True
 
-                        # check for languages included/excluded
-                        if game.attrib['lang_incl'] != "":
-                            lin = ast.literal_eval(game.attrib['lang_incl'])
-                            if self.mainloop.lang.lang[0:2] not in lin:
+                        # check the age range and display code
+                        if game.attrib['disp_code'] == "1":
+                            if self.uage < int(game.attrib['min_age']):
                                 add = False
-                        elif game.attrib['lang_excl'] != "":
-                            lex = ast.literal_eval(game.attrib['lang_excl'])
-                            if self.mainloop.lang.lang[0:2] in lex:
+                            elif self.uage > int(game.attrib['max_age']):
                                 add = False
 
-                        # check the age range
-                        if self.uage < int(game.attrib['min_age']):
-                            add = False
-                        elif self.uage > int(game.attrib['max_age']):
-                            add = False
-                        # check if the game requires the alphabet to have upper case
-                        elif self.lang.has_uc is False and ast.literal_eval(
-                                game.attrib['require_uc']) is True:
-                            add = False
-                        elif self.mainloop.android is not None and ast.literal_eval(
-                                game.attrib['android']) is False:
-                            add = False
+                        if add:
+                            if game.attrib['disp_code'] == "0":
+                                add = False
+                            # check for languages included/excluded
+                            elif game.attrib['lang_incl'] != "":
+                                lin = ast.literal_eval(game.attrib['lang_incl'])
+                                if self.mainloop.lang.lang[0:2] not in lin:
+                                    add = False
+                            elif game.attrib['lang_excl'] != "":
+                                lex = ast.literal_eval(game.attrib['lang_excl'])
+                                if self.mainloop.lang.lang[0:2] in lex:
+                                    add = False
+
+                            # check if the game requires the alphabet to have upper case
+                            elif self.lang.has_uc is False and ast.literal_eval(
+                                    game.attrib['require_uc']) is True:
+                                add = False
+                            elif self.mainloop.android is not None and ast.literal_eval(
+                                    game.attrib['android']) is False:
+                                add = False
 
                         if add:
                             # dbgameid, cat_id, min_age, max_age, constructor, title, subtitle, img_src, variant=0, var2=0
@@ -1118,101 +1088,13 @@ class Menu:
                 else:
                     for game in cat:
                         self.id2icon[int(game.attrib['dbid'])] = game.attrib['icon']
-
-        # print(time.clock() - t1)
-
-
         self.update_panel_height()
 
-    def add_top_categoriesx(self):
-        cat_groups = self.xml.get_cat_groups()
-        for each in cat_groups:
-            self.add_top_category(ast.literal_eval(each.attrib['id']), self.lang.d[each.attrib['title']], "", each.attrib['icon'])
-        # self.add_top_category(1, self.lang.d["Language arts"], "", "ico_t_00.png")
-        # self.add_top_category(2, self.lang.d["Maths"], "", "ico_t_01.png")
-        # self.add_top_category(4, self.lang.d["Other"], "", "ico_t_03.png")
 
     def add_category(self, top_id, title, subtitle, img_src):
         new_category = MenuCategory(self, top_id, len(self.categories), title, subtitle, self.cat_icon_size, img_src)
         self.categories.append(new_category)
         self.categories_list.add(new_category)
-
-    def add_categoriesx(self):
-        self.add_category(0, self.lang.d["Info Category"], "", "ico_c_00.png")
-
-        # id="" title="" subtitle="" icon="" min_age="" max_age="" android="True" lang_incl="" lang_excl=""
-
-        for top_cat in self.xml.root:
-            for cat in top_cat:
-                add = True
-
-                #check for languages included/excluded
-
-
-                if cat.attrib['lang_incl'] != "":
-                    lin = ast.literal_eval(cat.attrib['lang_incl'])
-                    if self.mainloop.lang.lang[0:2] not in lin:
-                        add = False
-                elif cat.attrib['lang_excl'] != "":
-                    lex = ast.literal_eval(cat.attrib['lang_excl'])
-                    if self.mainloop.lang.lang[0:2] in lex:
-                        add = False
-
-                #check the age range
-                if self.uage < ast.literal_eval(cat.attrib['min_age']):
-                    add = False
-                if self.uage > ast.literal_eval(cat.attrib['max_age']):
-                    add = False
-
-                if add:
-                    if ast.literal_eval(cat.attrib["icosuffix"]):
-                        ico = cat.attrib['icon'][0:8] + self.lang.ico_suffix + cat.attrib['icon'][8:]
-                        self.add_category(ast.literal_eval(top_cat.attrib['id']), self.lang.d[cat.attrib['title']],
-                                          self.lang.d[cat.attrib['subtitle']], ico)
-                    else:
-                        self.add_category(ast.literal_eval(top_cat.attrib['id']), self.lang.d[cat.attrib['title']],
-                                          self.lang.d[cat.attrib['subtitle']], cat.attrib['icon'])
-
-
-
-
-        """
-        self.add_category(1, self.lang.d["Discover Letters"], "", "ico_c_01%s.png" % self.lang.ico_suffix)
-
-        if self.mainloop.lang.lang[0:2] not in ["ar", "he"]:
-            self.add_category(1, self.lang.d["Learn Words"], "", "ico_c_02.png")
-
-        if self.uage < 4 or self.uage == 7:
-            self.add_category(2, self.lang.d["Learn to Count"], "", "ico_c_03.png")
-        self.add_category(2, self.lang.d["Addition"], "", "ico_c_04.png")
-        self.add_category(2, self.lang.d["Subtraction"], "", "ico_c_05.png")
-        if self.uage > 1:
-            self.add_category(2, self.lang.d["Multiplication"], "", "ico_c_06.png")
-            self.add_category(2, self.lang.d["Division"], "", "ico_c_07.png")
-        if self.uage > 0:
-            if self.uage < 4:
-                lbl = self.lang.d["Fractions"]
-            elif self.uage < 5:
-                lbl = self.lang.d["Decimals and Fractions"]
-            elif self.uage < 6:
-                lbl = self.lang.d["Decimals, fractions and percentages"]
-            else:
-                lbl = self.lang.d["Decimals, fractions, ratios and percentages"]
-            self.add_category(2, lbl, "", "ico_c_10.png")
-            self.add_category(2, self.lang.d["Shapes and Solids"], "", "ico_c_14.png")
-
-        if self.mainloop.lang.lang == 'sr':
-            self.add_category(2, self.lang.d["Clock_cat"], self.lang.d["long form"], "ico_c_15.png")
-            self.add_category(2, self.lang.d["Clock_cat"], self.lang.d["short form"], "ico_c_15.png")
-        else:
-            self.add_category(2, self.lang.d["Clock_cat"], "", "ico_c_15.png")
-
-        self.add_category(3, self.lang.d["Art"], "", "ico_c_16.png")
-        self.add_category(3, self.lang.d["Memory"], "", "ico_c_17.png")
-        self.add_category(3, self.lang.d["Games & Mazes"], "", "ico_c_18.png")
-        """
-
-        self.update_panel_height()
 
     def add_game(self, dbgameid, cat_id, min_age, max_age, constructor, title, subtitle, img_src, variant=0, var2=0):
         if min_age <= self.uage <= max_age or self.uage == 7:
@@ -1220,406 +1102,6 @@ class Menu:
                                 img_src, variant, var2)
             self.games.append(new_game)
         self.saved_levels[dbgameid] = 1
-
-        # TO DO - uncomment this when recreating the list
-        # self.id2icon[dbgameid] = img_src
-
-    def add_gamesx(self):
-        'creates all menu buttons'
-        """
-
-        self.badge_count = self.mainloop.db.get_completion_count(self.mainloop.userid)
-        # [0   1   2   3   4   5   6   7]
-        # pre, y1, y2, y3, y4, y5, y6, all
-        # spare game spots - 048
-        # max id 153
-        # spare_ids - 119 - 130
-        # TO DO !!!!!!!!!!!!!!!!!!!!!!
-        # when adding new game regenerate this list and add extra games that are only used in a specific language
-        self.id2icon = {0: 'ico_g_0000.png', 1: 'ico_g_0001.png', 2: 'ico_g_0001.png', 3: 'ico_g_0003.png',
-                        4: 'ico_g_0101.png', 5: 'ico_g_0100.png', 11: 'ico_g_0103.png', 12: 'ico_g_0105.png',
-                        13: 'ico_g_0106.png', 14: 'ico_g_0107.png', 15: 'ico_g_0107.png', 17: 'ico_g_0200.png',
-                        18: 'ico_g_0201.png', 19: 'ico_g_0202.png', 20: 'ico_g_0300.png', 21: 'ico_g_0323.png',
-                        22: 'ico_g_0301.png', 23: 'ico_g_0317.png', 24: 'ico_g_0318.png', 25: 'ico_g_0302.png',
-                        26: 'ico_g_0303.png', 27: 'ico_g_0306.png', 28: 'ico_g_0307.png', 29: 'ico_g_0308.png',
-                        30: 'ico_g_0324.png', 31: 'ico_g_0319.png', 32: 'ico_g_0320.png', 33: 'ico_g_0321.png',
-                        34: 'ico_g_0322.png', 35: 'ico_g_0309.png', 36: 'ico_g_0310.png', 37: 'ico_g_0311.png',
-                        38: 'ico_g_0312.png', 39: 'ico_g_0313.png', 40: 'ico_g_0314.png', 41: 'ico_g_0315.png',
-                        42: 'ico_g_0316.png', 43: 'ico_g_0400.png', 44: 'ico_g_0405.png', 45: 'ico_g_0401.png',
-                        46: 'ico_g_0402.png', 47: 'ico_g_0403.png', 48: 'ico_g_0404.png', 49: 'ico_g_0406.png',
-                        50: 'ico_g_0407.png', 51: 'ico_g_0408.png', 52: 'ico_g_0409.png', 53: 'ico_g_0410.png',
-                        54: 'ico_g_1100.png', 55: 'ico_g_1101.png', 56: 'ico_g_1102.png', 57: 'ico_g_1103.png',
-                        58: 'ico_g_1104.png', 59: 'ico_g_1105.png', 60: 'ico_g_1106.png', 61: 'ico_g_1107.png',
-                        62: 'ico_g_0500.png', 63: 'ico_g_0501.png', 64: 'ico_g_0502.png', 65: 'ico_g_0503.png',
-                        66: 'ico_g_1000.png', 67: 'ico_g_1001.png', 68: 'ico_g_1002.png', 69: 'ico_g_1003.png',
-                        70: 'ico_g_1004.png', 71: 'ico_g_0600.png', 72: 'ico_g_0601.png', 73: 'ico_g_0602.png',
-                        74: 'ico_g_0603.png', 75: 'ico_g_0605.png', 76: 'ico_g_0607.png', 77: 'ico_g_0604.png',
-                        78: 'ico_g_0606.png', 79: 'ico_g_0700.png', 80: 'ico_g_0701.png', 81: 'ico_g_0702.png',
-                        82: 'ico_g_0703.png', 83: 'ico_g_0704.png', 84: 'ico_g_0705.png', 85: 'ico_g_0706.png',
-                        86: 'ico_g_0800.png', 87: 'ico_g_0801.png', 88: 'ico_g_0811.png', 89: 'ico_g_0812.png',
-                        90: 'ico_g_0813.png', 91: 'ico_g_0803.png', 92: 'ico_g_0802.png', 93: 'ico_g_0806.png',
-                        94: 'ico_g_0804.png', 95: 'ico_g_0807.png', 96: 'ico_g_0808.png', 97: 'ico_g_0809.png',
-                        98: 'ico_g_0810.png', 102: 'ico_g_0325.png', 103: 'ico_g_0326.png', 107: 'ico_g_0203.png',
-                        108: 'ico_g_0204.png', 109: 'ico_g_0205.png', 110: 'ico_g_0206.png', 111: 'ico_g_0209.png',
-                        112: 'ico_g_0210.png', 113: 'ico_g_0211.png', 114: 'ico_g_0212.png', 115: 'ico_g_0208.png',
-                        116: 'ico_g_0213.png', 117: 'ico_g_0214.png', 118: 'ico_g_0207.png', 135: 'ico_g_1008.png',
-                        140: 'ico_g_0104.png', 141: 'ico_g_0004.png', 142: "ico_g_1000.png", 143: 'ico_g_0327.png',
-                        144: "ico_g_0328.png", 145: "ico_g_0329.png", 146: "ico_g_0107.png", 147: "ico_g_1008.png",
-                        148: "ico_g_1000.png", 149: "ico_g_1000.png", 150: "ico_g_1001.png", 151: "ico_g_1002.png",
-                        152: "ico_g_1003.png", 153: "ico_g_1004.png"}
-
-        # a dictionary of unique icons (ie. language specific) for use in achievements - only those activities that are graded
-        unique_ico = {15: "ico_g_0107.png", 106: "ico_g_1007.png"}
-        self.id2icon.update(unique_ico)
-
-        self.lang_customized_icons = (11, 140, 12, 13)
-        c_id = 0  # Add the home screens
-        self.add_game(0, c_id, 0, 7, game000.Board, self.lang.d["About."], self.lang.d["Game info..."],
-                      "ico_g_0000.png")
-        self.games[-1].hidden = True
-        #if self.badge_count > 0:
-        self.add_game(141, c_id, 0, 7, game084.Board, self.lang.d["Achievements"], "", "ico_g_0004.png")
-        self.add_game(3, c_id, 0, 7, game003.Board, self.lang.d["Language"], "", "ico_g_0003.png")
-        self.add_game(1, c_id, 0, 7, game001.Board, self.lang.d["Credits"], "", "ico_g_0001.png")
-        self.games[-1].hidden = True
-        self.add_game(2, c_id, 0, 7, game002.Board, self.lang.d["Translators"], "", "ico_g_0001.png")
-        self.games[-1].hidden = True
-        """
-
-
-
-
-        """
-        c_id = 1  # alphabet games
-        # if self.mainloop.lang.lang in ['en_gb','en_us','el','ru']:
-        self.add_game(5, c_id, 0, 1, game017.Board, self.lang.d["Your Alphabet"], self.lang.d["Letter Flashcards"],
-                      "ico_g_0100%s.png" % self.lang.ico_suffix)
-        if self.mainloop.lang.lang[0:2] == "en":
-            self.add_game(4, c_id, 0, 1, game037.Board, self.lang.d["English Alphabet"],
-                          self.lang.d["Letter Flashcards"], "ico_g_0101.png")
-        if self.mainloop.lang.lang[0:2] in ["en", "it", "pt", "de"]:
-            # hardcoded label below since it only appears in English version of the game
-            self.add_game(6, c_id, 0, 2, game068.Board, self.lang.d["Learn to Write"] + " - 1",
-                          self.lang.d["Trace Letters"], "ico_g_0109.png")
-            self.add_game(7, c_id, 0, 2, game010.Board, self.lang.d["Learn to Write"] + " - 2",
-                          self.lang.d["Trace Letters"], "ico_g_0110.png")
-        if self.mainloop.lang.lang == 'ru':
-            self.add_game(8, c_id, 0, 2, game022.Board, self.lang.d["Learn to Write"], self.lang.d["local_kbrd"],
-                          "ico_g_0111.png")
-        if self.mainloop.lang.lang == 'el':
-            self.add_game(9, c_id, 0, 2, game067.Board, self.lang.d["Learn to Write"], self.lang.d["local_kbrd"],
-                          "ico_g_0112.png")
-        # if self.mainloop.lang.lang not in self.lang.alphabet_26:
-        # if self.mainloop.lang.lang[0:2] == "en":
-        #    self.add_game(10,c_id, 0, 7, game014.Board,self.lang.d["Complete the ABC"]+ " - " + self.lang.d["English"],self.lang.d["Complete abc"],"ico_g_0103.png")
-        self.add_game(11, c_id, 0, 1, game049.Board, self.lang.d["Complete the ABC"], self.lang.d["Lowercase Letters"],
-                      "ico_g_0103%s.png" % self.lang.ico_suffix, variant=0)
-        if self.lang.has_uc:
-            self.add_game(140, c_id, 0, 1, game049.Board, self.lang.d["Complete the ABC"],
-                          self.lang.d["Uppercase Letters"], "ico_g_0104%s.png" % self.lang.ico_suffix, variant=1)
-
-
-
-
-        self.add_game(12, c_id, 0, 3, game047.Board, self.lang.d["Sorting Letters"], self.lang.d["Lowercase Letters"],
-                      "ico_g_0105%s.png" % self.lang.ico_suffix, variant=0)
-        if self.lang.has_uc:
-            self.add_game(13, c_id, 0, 3, game047.Board, self.lang.d["Sorting Letters"] + " ",
-                          self.lang.d["Uppercase Letters"], "ico_g_0106%s.png" % self.lang.ico_suffix, variant=1)
-
-
-
-        if self.mainloop.lang.lang in ["en_GB", "en_US", "pl", "ru", "uk", "de"] and self.mainloop.fs_size[1] > 440:
-            self.add_game(14, c_id, 0, 7, game016.Board, self.lang.d["Keyboard Skills"], self.lang.d["Touch Typing"],
-                          "ico_g_0107.png")
-        elif self.mainloop.fs_size[1] > 440:  # and self.mainloop.lang.lang not in ["en_gb","en_us","pl","ru"]:
-            if self.mainloop.lang.lang == 'el':
-                self.add_game(15, c_id, 0, 7, game077.Board, self.lang.d["Keyboard Skills"],
-                              self.lang.d["Touch Typing"], "ico_g_0107.png")
-            elif self.mainloop.lang.lang == "fr":
-                self.add_game(146, c_id, 0, 7, game088.Board, self.lang.d["Keyboard Skills"],
-                              self.lang.d["Touch Typing"], "ico_g_0107.png")
-
-        if self.mainloop.lang.lang[0:2] not in ["ar", "he"]:
-            c_id = 2  # word games
-            self.add_game(17, c_id, 0, 1, game013.Board, self.lang.d["Word Builder"], "", "ico_g_0200.png")
-            self.add_game(18, c_id, 0, 7, game023.Board, self.lang.d["Word Maze"], self.lang.d["Collect all"],
-                          "ico_g_0201.png")
-            self.add_game(19, c_id, 0, 7, game025.Board, self.lang.d["Word Maze + 4"], self.lang.d["Collect all"],
-                          "ico_g_0202.png")
-            if self.mainloop.lang.lang[0:2] in ["en", "pl", "uk", "ru", "fr", "de", "el", "sr"]:
-                self.add_game(107, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Animals"],
-                              self.lang.d["Complete the word"], "ico_g_0203.png", variant=0)
-                self.add_game(110, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - People"],
-                              self.lang.d["Complete the word"], "ico_g_0206.png", variant=3)
-                self.add_game(114, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Jobs"],
-                              self.lang.d["Complete the word"], "ico_g_0212.png", variant=7)
-                self.add_game(109, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Body"],
-                              self.lang.d["Complete the word"], "ico_g_0205.png", variant=2)
-                self.add_game(115, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Clothes and Accessories"],
-                              self.lang.d["Complete the word"], "ico_g_0208.png", variant=8)
-                self.add_game(108, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Sports"],
-                              self.lang.d["Complete the word"], "ico_g_0204.png", variant=1)
-                self.add_game(111, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Actions"],
-                              self.lang.d["Complete the word"], "ico_g_0209.png", variant=4)
-                self.add_game(113, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Nature"],
-                              self.lang.d["Complete the word"], "ico_g_0211.png", variant=6)
-                self.add_game(116, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Fruits and Vegetables"],
-                              self.lang.d["Complete the word"], "ico_g_0213.png", variant=9)
-                self.add_game(118, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Food"],
-                              self.lang.d["Complete the word"], "ico_g_0207.png", variant=11)
-                self.add_game(117, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Transport"],
-                              self.lang.d["Complete the word"], "ico_g_0214.png", variant=10)
-                self.add_game(112, c_id, 0, 7, game082.Board, self.lang.d["Word Builder - Constructions"],
-                              self.lang.d["Complete the word"], "ico_g_0210.png", variant=5)
-
-        # tmpd = {17:"ico_g_0200.png",18:"ico_g_0201.png",19:"ico_g_0202.png",107:"ico_g_0203.png",110:"ico_g_0206.png"}
-        # self.id2icon.update(tmpd)
-
-        # "Learn to count"
-        if self.uage < 4 or self.uage == 7:
-            c_id += 1
-            self.add_game(20, c_id, 0, 1, game038.Board, self.lang.d["Numbers"], self.lang.d["Number Flashcards"],
-                          "ico_g_0300.png")
-            self.add_game(22, c_id, 0, 1, game046.Board, self.lang.d["Learn to Count"], "", "ico_g_0301.png", variant=0)
-            self.add_game(25, c_id, 0, 1, game027.Board, self.lang.d["Shopping List"], "", "ico_g_0302.png")
-            self.add_game(43, c_id, 0, 3, game005.Board, self.lang.d["Sorting Numbers"], "", "ico_g_0400.png")
-            self.add_game(45, c_id, 0, 3, game032.Board, self.lang.d["Number Comparison"], "", "ico_g_0401.png")
-            self.add_game(44, c_id, 0, 2, game011.Board, self.lang.d["Even or Odd"], "", "ico_g_0405.png")
-            self.add_game(102, c_id, 0, 3, game079.Board, self.lang.d["Number Spelling"], "", "ico_g_0325.png")
-            self.add_game(21, c_id, 0, 3, game061.Board, self.lang.d["Number Spelling"],
-                          self.lang.d["Match numbers to their spelling"], "ico_g_0323.png", variant=0)
-
-        # "Addition"
-        c_id += 1
-        self.add_game(23, c_id, 0, 1, game046.Board, self.lang.d["Learn to Count"], self.lang.d["Basic Addition"],
-                      "ico_g_0317.png", variant=1)
-        self.add_game(35, c_id, 0, 5, game039.Board, self.lang.d["Find solution"], "", "ico_g_0309.png", variant=0)
-        self.add_game(39, c_id, 0, 5, game019.Board, self.lang.d["Find missing number"], "", "ico_g_0313.png",
-                      variant=0)
-        self.add_game(31, c_id, 0, 6, game060.Board, self.lang.d["Maths Matching Game"], "", "ico_g_0319.png",
-                      variant=0)  # 2
-        self.add_game(26, c_id, 1, 4, game036.Board, self.lang.d["Plus or Minus"], "", "ico_g_0303.png")
-        self.add_game(46, c_id, 1, 2, game033.Board, self.lang.d["Addition & Subtraction"], self.lang.d["Comparison"],
-                      "ico_g_0402.png")
-        self.add_game(103, c_id, 0, 7, game080.Board, self.lang.d["Addition Table"] + "  ", self.lang.d["answer_enter"],
-                      "ico_g_0326.png")
-        self.add_game(54, c_id, 3, 7, game073.Board, self.lang.d["Columnar addition"], self.lang.d["Demonstration"],
-                      "ico_g_1100.png")
-        self.add_game(55, c_id, 3, 7, game069.Board, self.lang.d["Columnar addition"], self.lang.d["DIY"],
-                      "ico_g_1101.png")
-
-        # "Subtraction"
-        c_id += 1
-        self.add_game(24, c_id, 0, 1, game046.Board, self.lang.d["Learn to Count"], self.lang.d["Basic Subtraction"],
-                      "ico_g_0318.png", variant=2)
-        self.add_game(36, c_id, 0, 7, game039.Board, self.lang.d["Find solution"], "", "ico_g_0310.png", variant=1)
-        self.add_game(40, c_id, 0, 7, game019.Board, self.lang.d["Find missing number"], "", "ico_g_0314.png",
-                      variant=1)
-        self.add_game(32, c_id, 0, 7, game060.Board, self.lang.d["Maths Matching Game"], "", "ico_g_0320.png",
-                      variant=1)  # 3
-        self.add_game(26, c_id, 1, 4, game036.Board, self.lang.d["Plus or Minus"], "", "ico_g_0303.png")
-        self.add_game(46, c_id, 1, 2, game033.Board, self.lang.d["Addition & Subtraction"], self.lang.d["Comparison"],
-                      "ico_g_0402.png")
-        self.add_game(56, c_id, 3, 7, game074.Board, self.lang.d["Columnar subtraction"], self.lang.d["Demonstration"],
-                      "ico_g_1102.png")
-        self.add_game(57, c_id, 3, 7, game070.Board, self.lang.d["Columnar subtraction"], self.lang.d["DIY"],
-                      "ico_g_1103.png")
-
-        # "Multiplication"
-        if self.uage > 1:
-            c_id += 1
-        self.add_game(143, c_id, 2, 7, game085.Board, self.lang.d["Multiplication Table"],
-                      self.lang.d["Find the product"], "ico_g_0327.png")
-        self.add_game(27, c_id, 2, 7, game004.Board, self.lang.d["Multiplication Table"],
-                      self.lang.d["Find the product"], "ico_g_0306.png")
-        self.add_game(28, c_id, 2, 7, game034.Board, self.lang.d["Multiplication Table"] + " ",
-                      self.lang.d["Find the multiplier"], "ico_g_0307.png")
-        self.add_game(37, c_id, 2, 7, game039.Board, self.lang.d["Find solution"], "", "ico_g_0311.png", variant=2)
-        self.add_game(41, c_id, 2, 7, game019.Board, self.lang.d["Find missing number"], "", "ico_g_0315.png",
-                      variant=2)
-        self.add_game(33, c_id, 2, 7, game060.Board, self.lang.d["Maths Matching Game"], "", "ico_g_0321.png",
-                      variant=2)  # 4
-        self.add_game(30, c_id, 2, 7, game031.Board, self.lang.d["Multiplication Table"] + "  ",
-                      self.lang.d["answer_enter"], "ico_g_0324.png")
-        self.add_game(144, c_id, 2, 7, game086.Board, self.lang.d["Multiplication Table"] + "  ",
-                      self.lang.d["answer_enter"], "ico_g_0328.png")
-        self.add_game(58, c_id, 3, 7, game075.Board, self.lang.d["Long multiplication"], self.lang.d["Demonstration"],
-                      "ico_g_1104.png")
-        self.add_game(59, c_id, 3, 7, game071.Board, self.lang.d["Long multiplication"], self.lang.d["DIY"],
-                      "ico_g_1105.png")
-
-        # "Division"
-        if self.uage > 1:
-            c_id += 1
-        self.add_game(145, c_id, 2, 7, game087.Board, self.lang.d["Division"], " ", "ico_g_0329.png")
-        self.add_game(29, c_id, 2, 7, game035.Board, self.lang.d["Division"], "", "ico_g_0308.png")
-        self.add_game(38, c_id, 2, 7, game039.Board, self.lang.d["Find solution"], "", "ico_g_0312.png", variant=3)
-        self.add_game(42, c_id, 2, 7, game019.Board, self.lang.d["Find missing number"], "", "ico_g_0316.png",
-                      variant=3)
-        self.add_game(34, c_id, 2, 7, game060.Board, self.lang.d["Maths Matching Game"], "", "ico_g_0322.png",
-                      variant=3)  # 5
-        self.add_game(60, c_id, 3, 7, game076.Board, self.lang.d["Long division"], self.lang.d["Demonstration"],
-                      "ico_g_1106.png")
-        self.add_game(61, c_id, 3, 7, game072.Board, self.lang.d["Long division"], self.lang.d["DIY"], "ico_g_1107.png")
-
-        # "Decimals and fractions"
-        if self.uage > 0:
-            c_id += 1
-        self.add_game(47, c_id, 1, 7, game026.Board, self.lang.d["Fractions"], self.lang.d["Comparison"],
-                      "ico_g_0403.png")
-        self.add_game(48, c_id, 4, 7, game020.Board, self.lang.d["Decimal Fractions"], self.lang.d["Comparison"],
-                      "ico_g_0404.png")
-        self.add_game(49, c_id, 1, 7, game056.Board, self.lang.d["Fraction Groups"], "", "ico_g_0406.png",
-                      variant=0)  # new game
-        self.add_game(50, c_id, 1, 7, game056.Board, self.lang.d["Fraction Groups"], "", "ico_g_0407.png",
-                      variant=1)  # new game
-        self.add_game(51, c_id, 1, 7, game056.Board, self.lang.d["Fraction Groups"], "", "ico_g_0408.png",
-                      variant=2)  # new game
-
-        self.add_game(53, c_id, 6, 7, game056.Board, self.lang.d["Ratios"], "", "ico_g_0410.png", variant=4)  # new game
-
-        self.add_game(52, c_id, 5, 7, game056.Board, self.lang.d["Percentages"], "", "ico_g_0409.png",
-                      variant=3)  # new game
-
-        # "Shapes and Solids"
-        if self.uage > 0:
-            c_id += 1
-        self.add_game(62, c_id, 1, 7, game009.Board, self.lang.d["Shapes"], self.lang.d["Shape Flashcards"],
-                      "ico_g_0500.png")
-        self.add_game(63, c_id, 1, 7, game043.Board, self.lang.d["Solids"], self.lang.d["Solid Flashcards"],
-                      "ico_g_0501.png")
-        self.add_game(64, c_id, 1, 7, game059.Board, self.lang.d["ShapeMaker"], self.lang.d["lets_see_what_you_draw"],
-                      "ico_g_0502.png")
-        self.add_game(65, c_id, 1, 7, game024.Board, self.lang.d["ShapeMaker"], self.lang.d["test_yourself"],
-                      "ico_g_0503.png")
-
-        # "Clock games"
-        c_id += 1
-        if self.mainloop.lang.lang == 'ca':
-            self.add_game(104, c_id, 0, 7, game081.Board, "Rellotge amb horari en català", self.lang.d["Play_w_clock"],
-                          "ico_g_1005.png")
-        else:
-            self.add_game(135, c_id, 0, 7, game081.Board, self.lang.d["Clock0"], self.lang.d["Play_w_clock"],
-                          "ico_g_1008.png")
-        self.add_game(66, c_id, 0, 7, game066.Board, self.lang.d["Clock0"], self.lang.d["Play_w_clock"],
-                      "ico_g_1000.png", variant=0)
-        self.add_game(142, c_id, 0, 7, game066.Board, self.lang.d["Clock0"], self.lang.d["Play_w_clock"],
-                      "ico_g_1000.png", variant=2)
-        self.add_game(67, c_id, 0, 7, game063.Board, self.lang.d["Clock1"] + " - " + self.lang.d["Read time"], "",
-                      "ico_g_1001.png")
-        self.add_game(68, c_id, 0, 7, game064.Board, self.lang.d["Clock2"] + " - " + self.lang.d["Set time"], "",
-                      "ico_g_1002.png")
-        self.add_game(69, c_id, 0, 7, game065.Board, self.lang.d["Clock2"] + " - " + self.lang.d["Set time"],
-                      self.lang.d["txt_only"], "ico_g_1003.png", variant=0)
-
-        self.add_game(70, c_id, 0, 7, game078.Board, self.lang.d["TimeMatching"], "", "ico_g_1004.png")
-
-        if self.mainloop.lang.lang == 'ru':
-            self.add_game(105, c_id, 0, 7, game066.Board, self.lang.d["Clock0 - Russian official time"],
-                          self.lang.d["Russian official - subtitle"], "ico_g_1006.png", variant=1)
-            self.add_game(106, c_id, 0, 7, game065.Board, self.lang.d["Clock2 - Russian official time"],
-                          self.lang.d["Russian official - txt_only"], "ico_g_1007.png", variant=1)
-
-        if self.mainloop.lang.lang == 'sr':
-            c_id += 1
-            self.add_game(147, c_id, 0, 7, game081.Board, self.lang.d["Clock0"], self.lang.d["Play_w_clock"],
-                          "ico_g_1008.png", var2=1)
-            self.add_game(148, c_id, 0, 7, game066.Board, self.lang.d["Clock0"], self.lang.d["Play_w_clock"],
-                          "ico_g_1000.png", variant=0, var2=1)
-            self.add_game(149, c_id, 0, 7, game066.Board, self.lang.d["Clock0"], self.lang.d["Play_w_clock"],
-                          "ico_g_1000.png", variant=2, var2=1)
-            self.add_game(150, c_id, 0, 7, game063.Board, self.lang.d["Clock1"] + " - " + self.lang.d["Read time"], "",
-                          "ico_g_1001.png", var2=1)
-            self.add_game(151, c_id, 0, 7, game064.Board, self.lang.d["Clock2"] + " - " + self.lang.d["Set time"], "",
-                          "ico_g_1002.png", var2=1)
-            self.add_game(152, c_id, 0, 7, game065.Board, self.lang.d["Clock2"] + " - " + self.lang.d["Set time"],
-                          self.lang.d["txt_only"], "ico_g_1003.png", variant=0, var2=1)
-
-            self.add_game(153, c_id, 0, 7, game078.Board, self.lang.d["TimeMatching"], "", "ico_g_1004.png")
-
-        # "Art"
-        c_id += 1
-        self.add_game(71, c_id, 0, 7, game021.Board, self.lang.d["Paint"], "", "ico_g_0600.png")
-        self.add_game(72, c_id, 0, 7, game042.Board, self.lang.d["Colour Matching"], self.lang.d["label the colours"],
-                      "ico_g_0601.png")
-
-        self.add_game(73, c_id, 0, 7, game062.Board, self.lang.d["Colour Matching"], "", "ico_g_0602.png")
-        self.add_game(74, c_id, 0, 7, game051.Board, self.lang.d["Paint Mixer"], self.lang.d["Mixing RYB"],
-                      "ico_g_0603.png")
-        self.add_game(75, c_id, 2, 7, game052.Board, self.lang.d["Ink Mixer"], self.lang.d["Mixing CMY"],
-                      "ico_g_0605.png")
-        self.add_game(76, c_id, 2, 7, game055.Board, self.lang.d["Find the colour of the circle"],
-                      self.lang.d["Adjust CMY"], "ico_g_0607.png")
-        self.add_game(77, c_id, 2, 7, game053.Board, self.lang.d["Light Mixer"], self.lang.d["Mixing RGB"],
-                      "ico_g_0604.png")
-        self.add_game(78, c_id, 2, 7, game054.Board, self.lang.d["Find the colour of the circle"],
-                      self.lang.d["Adjust RGB"], "ico_g_0606.png")
-
-        # "Memory"
-        c_id += 1
-        self.add_game(79, c_id, 0, 7, game012.Board, self.lang.d["Follow the Arrows"],
-                      self.lang.d["remember the directions"], "ico_g_0700.png")
-        self.add_game(80, c_id, 0, 7, game006.Board, self.lang.d["Photographic Memory"], self.lang.d["Training"],
-                      "ico_g_0701.png")
-        self.add_game(81, c_id, 0, 7, game007.Board, self.lang.d["Photographic Memory"] + " ",
-                      self.lang.d["Automatic Levels"], "ico_g_0702.png")
-        self.add_game(82, c_id, 0, 7, game018.Board, self.lang.d["Match Animals Memory"], self.lang.d["Find pairs"],
-                      "ico_g_0703.png", variant=0)
-        self.add_game(83, c_id, 0, 7, game018.Board, self.lang.d["Match Fruits"], self.lang.d["Find pairs"],
-                      "ico_g_0704.png", variant=1)
-        self.add_game(84, c_id, 0, 7, game018.Board, self.lang.d["Match Vegetables"], self.lang.d["Find pairs"],
-                      "ico_g_0705.png", variant=2)
-        self.add_game(85, c_id, 0, 7, game018.Board, self.lang.d["Match Numbers"], self.lang.d["Find pairs"],
-                      "ico_g_0706.png", variant=3)
-
-        # "Games & Mazes"
-        c_id += 1
-        self.add_game(86, c_id, 0, 7, game029.Board, self.lang.d["Mouse Maze"], self.lang.d["Let's have some cheese"],
-                      "ico_g_0800.png")
-        self.add_game(87, c_id, 0, 7, game028.Board, self.lang.d["Sheep Maze"], self.lang.d["Find the rest"],
-                      "ico_g_0801.png")
-
-        self.add_game(88, c_id, 0, 7, game060.Board, self.lang.d["Match Animals"],
-                      self.lang.d["Find all matching animals"], "ico_g_0811.png", variant=4)  # 0
-        self.add_game(89, c_id, 0, 7, game060.Board, self.lang.d["Match Animals"] + " 2",
-                      self.lang.d["Match animals to their shadows"], "ico_g_0812.png", variant=5)  # 1
-        self.add_game(90, c_id, 0, 7, game008.Board, self.lang.d["Match Animals"] + " 3",
-                      self.lang.d["help me find my shadow"], "ico_g_0813.png")
-
-        self.add_game(91, c_id, 0, 7, game041.Board, self.lang.d["Connect"] + " ", self.lang.d["Balloons with threads"],
-                      "ico_g_0803.png")
-        self.add_game(92, c_id, 0, 7, game040.Board, self.lang.d["Connect"], self.lang.d["Numbers"], "ico_g_0802.png")
-        self.add_game(93, c_id, 0, 7, game050.Board, self.lang.d["Connect"], self.lang.d["Numbers"] + " 2",
-                      "ico_g_0806.png")
-        self.add_game(94, c_id, 0, 7, game015.Board, self.lang.d["Fifteen"], self.lang.d["With a Twist"],
-                      "ico_g_0804.png")
-        self.add_game(95, c_id, 0, 7, game045.Board, self.lang.d["Fifteen"], self.lang.d["With a Twist"],
-                      "ico_g_0807.png")
-
-        self.add_game(96, c_id, 0, 7, game044.Board, self.lang.d["Sliced Images"], self.lang.d["Sliced Animals"],
-                      "ico_g_0808.png", variant=0)
-        self.add_game(97, c_id, 0, 7, game044.Board, self.lang.d["Sliced Images"], self.lang.d["Sliced Fruits"],
-                      "ico_g_0809.png", variant=1)
-        self.add_game(98, c_id, 0, 7, game044.Board, self.lang.d["Sliced Images"], self.lang.d["Sliced Numbers"],
-                      "ico_g_0810.png", variant=2)
-
-        # self.find_duplicates()
-        """
-
-    def find_duplicates(self):
-        mx = 0
-        for each in self.games:
-            if each.dbgameid > mx:
-                mx = each.dbgameid
-            for every in self.games:
-                if each.dbgameid == every.dbgameid:
-                    if each != every:
-                        print(each.dbgameid)
-        print("max = %i" % mx)
-
-        # new_game = MenuItem(self,dbgameid,len(self.games),cat_id,title,subtitle,constructor,self.icon_size,img_src,variant)
-        # self.games.append(new_game)
 
     def draw_menu(self, menu, menu_l, menu_r, l):
         mw = l.menu_r_w
