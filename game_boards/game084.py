@@ -48,7 +48,7 @@ class Board(gd.BoardGame):
         self.results = self.mainloop.db.completion_book(self.mainloop.userid, offset=self.offset)
 
 
-        self.ages = [self.lang.b["preschool"], self.lang.b["Year 1"], self.lang.b["Year 2"], self.lang.b["Year 3"], self.lang.b["Year 4"], self.lang.b["Year 5"], self.lang.b["Year 6"], self.lang.b["all groups"]]
+        self.ages = [self.lang.b["preschool"], self.lang.b["Year 1"], self.lang.b["Year 2"], self.lang.b["Year 3"], self.lang.b["Year 4"], self.lang.b["Year 5"], self.lang.b["Year 6"], self.lang.b["Year 6"]]  # , self.lang.b["all groups"]
 
         # print(self.results)
         # [(1, 85, 1, 1, 1), (1, 85, 2, 1, 1), (1, 85, 3, 1, 1), (1, 11, 1, 1, 1),
