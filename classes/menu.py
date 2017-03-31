@@ -160,7 +160,8 @@ class MenuCategoryGroup(pygame.sprite.Sprite):
 
         self.menu.mainloop.redraw_needed[1] = True
         self.menu.mainloop.redraw_needed[2] = True
-        self.menu.mainloop.info.title_only()
+        if self.menu.mainloop.android is None:
+            self.menu.mainloop.info.title_only()
 
     def on_mouse_out(self):
         if self.mouse_over:
@@ -315,7 +316,8 @@ class MenuCategory(pygame.sprite.Sprite):
 
         self.menu.mainloop.redraw_needed[1] = True
         self.menu.mainloop.redraw_needed[2] = True
-        self.menu.mainloop.info.title_only()
+        if self.menu.mainloop.android is None:
+            self.menu.mainloop.info.title_only()
 
     def on_mouse_over(self):
         if not self.mouse_over:
@@ -435,7 +437,8 @@ class MenuItem(pygame.sprite.Sprite):
 
         self.menu.mainloop.redraw_needed[1] = True
         self.menu.mainloop.redraw_needed[2] = True
-        self.menu.mainloop.info.title_only()
+        if self.menu.mainloop.android is None:
+            self.menu.mainloop.info.title_only()
 
     def on_mouse_over(self):
         if not self.mouse_over:
@@ -784,7 +787,8 @@ class Menu:
                     for each in self.elements:
                         each.on_mouse_out()
                     if self.mainloop.info.hidden == False and pos[0] < self.l.menu_w:
-                        self.mainloop.info.title_only()
+                        if self.mainloop.android is None:
+                            self.mainloop.info.title_only()
                     found = False
                     for each in self.games_current:
                         if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and \
