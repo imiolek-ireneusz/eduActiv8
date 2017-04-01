@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <menu>
     <!-- max cat id = 16, max game id = 166 -->
-    <!-- display codes 0 - hide, 1 - show, 2 - show including in shaw all -->
+    <!-- display codes 0 - hide, 1 - show (but hide in shaw all - used to hide age adjusted duplicates), 2 - show including in shaw all -->
     <cat_group id="1" title="Language arts" icon="ico_t_00.png">
         <cat id="1" title="Discover Letters" subtitle="" 
              icon="ico_c_01.png" min_age="0" max_age="7" disp_code="2" lang_incl="" lang_excl="" icosuffix="True" android="True">

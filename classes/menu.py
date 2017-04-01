@@ -983,8 +983,8 @@ class Menu:
         self.add_game(0, c_id, 0, 7, game000.Board, self.lang.d["About."], self.lang.d["Game info..."],
                       "ico_g_0000.png")
         self.games[-1].hidden = True
-        # if self.badge_count > 0:
-        self.add_game(141, c_id, 0, 7, game084.Board, self.lang.d["Achievements"], "", "ico_g_0004.png")
+        if self.badge_count > 0:
+            self.add_game(141, c_id, 0, 7, game084.Board, self.lang.d["Achievements"], "", "ico_g_0004.png")
         self.add_game(3, c_id, 0, 7, game003.Board, self.lang.d["Language"], "", "ico_g_0003.png")
 
         self.add_game(2, c_id, 0, 7, game002.Board, self.lang.d["Translators"], "", "ico_g_0002.png")
@@ -1003,10 +1003,20 @@ class Menu:
                 #add categories
                 cat_add = True
 
-                # check for languages included/excluded
                 if cat.attrib['disp_code'] == "0":
                     cat_add = False
-                elif cat.attrib['lang_incl'] != "":
+                # check the age range if not in display all
+                elif self.uage != 7:
+                    if self.uage < ast.literal_eval(cat.attrib['min_age']):
+                        cat_add = False
+                    elif self.uage > ast.literal_eval(cat.attrib['max_age']):
+                        cat_add = False
+                #if in shaw all and display code == 1 which eliminates this category from show all
+                elif self.uage == 7 and cat.attrib['disp_code'] == "1":
+                    cat_add = False
+
+                # check for languages included/excluded
+                if cat.attrib['lang_incl'] != "":
                     lin = ast.literal_eval(cat.attrib['lang_incl'])
                     if self.mainloop.lang.lang[0:2] not in lin:
                         cat_add = False
@@ -1014,12 +1024,6 @@ class Menu:
                     lex = ast.literal_eval(cat.attrib['lang_excl'])
                     if self.mainloop.lang.lang[0:2] in lex:
                         cat_add = False
-
-                # check the age range
-                elif self.uage < ast.literal_eval(cat.attrib['min_age']):
-                    cat_add = False
-                elif self.uage > ast.literal_eval(cat.attrib['max_age']):
-                    cat_add = False
 
                 if cat_add:
                     if ast.literal_eval(cat.attrib["icosuffix"]):
@@ -1034,18 +1038,20 @@ class Menu:
                         # add games in current category
                         add = True
 
+                        if game.attrib['disp_code'] == "0":
+                            add = False
                         # check the age range and display code
-                        if game.attrib['disp_code'] == "1":
+                        elif self.uage != 7:
                             if self.uage < int(game.attrib['min_age']):
                                 add = False
                             elif self.uage > int(game.attrib['max_age']):
                                 add = False
+                        elif self.uage == 7 and game.attrib['disp_code'] == "1":
+                            add = False
 
                         if add:
-                            if game.attrib['disp_code'] == "0":
-                                add = False
                             # check for languages included/excluded
-                            elif game.attrib['lang_incl'] != "":
+                            if game.attrib['lang_incl'] != "":
                                 lin = ast.literal_eval(game.attrib['lang_incl'])
                                 if self.mainloop.lang.lang[0:2] not in lin:
                                     add = False
