@@ -540,3 +540,7 @@ class I18n():
         self.d["Fruits and Vegetables"] = _("Fruits and Vegetables")
         self.d["Transport"] = _("Transport")
         self.d["Food"] = _("Food")
+
+        #new games
+        self.d["Listening Exercises"] = _("Listening Exercises")
+        self.d["Match sounds to words"] = _("Match sounds to words")

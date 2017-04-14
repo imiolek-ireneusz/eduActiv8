@@ -12,11 +12,11 @@ import classes.extras as ex
 from game_boards import game000, game001, game002, game003, game004, game005, game006, game007, game008, game009, \
     game010, game011, game012, game013, game015, game016, game017, game018, game019, game020, game021, game022, \
     game023, game024, game025, game026, game027, game028, game029, game031, game032, game033, game034, game035, \
-    game036, game037, game038, game039, game040, game041, game042, game043, game044, game045, game046, game047, game049, game050, game051, game052, game053, game054, game055, game056, \
-    game059, game060, game061, \
-    game062, game063, game064, game065, game066, game067, game068, game069, game070, game071, game072, game073, game074, \
+    game036, game037, game038, game039, game040, game041, game042, game043, game044, game045, game046, game047, \
+    game049, game050, game051, game052, game053, game054, game055, game056, game059, game060, game061, game062, \
+    game063, game064, game065, game066, game067, game068, game069, game070, game071, game072, game073, game074, \
     game075, game076, game077, game078, game079, game080, game081, game082, game084, game085, game086, game087, \
-    game088, game089, game090
+    game088, game089, game090, game091, game092
 
 
 class MenuCategoryGroup(pygame.sprite.Sprite):
@@ -1024,6 +1024,9 @@ class Menu:
                     lex = ast.literal_eval(cat.attrib['lang_excl'])
                     if self.mainloop.lang.lang[0:2] in lex:
                         cat_add = False
+                # check if the activity requires espeak to work correctly
+                if self.mainloop.speaker.started is False and ast.literal_eval(cat.attrib['listening']) is True:
+                    cat_add = False
 
                 if cat_add:
                     if ast.literal_eval(cat.attrib["icosuffix"]):
@@ -1066,6 +1069,9 @@ class Menu:
                                 add = False
                             elif self.mainloop.android is not None and ast.literal_eval(
                                     game.attrib['android']) is False:
+                                add = False
+                            elif self.mainloop.speaker.started is False and ast.literal_eval(
+                                    game.attrib['listening']) is True:
                                 add = False
 
                         if add:

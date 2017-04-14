@@ -550,6 +550,7 @@ class ImgShip(Ship):
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 157, 23), img_src='',
                  alpha=False, **kwargs):
         Ship.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha, **kwargs)
+        self.img_src2 = None
         self.change_image(img_src)
 
     def change_image(self, img_src):

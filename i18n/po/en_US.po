@@ -1187,7 +1187,7 @@ msgid "Ready to go to the next level?"
 msgstr ""
 
 msgid "Language arts"
-msgstr ""
+msgstr "English"
 
 msgid "Other"
 msgstr ""
