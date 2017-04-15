@@ -338,7 +338,10 @@ class Board(gd.BoardGame):
                             #self.history[1].image.set_alpha(75)
                             self.history[0].update_me = True
                             self.history[1].update_me = True
-                            self.history[0].change_image(self.history[0].img_src2)
+                            if self.history[0].hasimg:
+                                self.history[0].change_image(self.history[0].img_src2)
+                            elif self.history[1].hasimg:
+                                self.history[1].change_image(self.history[1].img_src2)
                             self.found += 2
                             if self.found == self.square_count:
                                 self.completed_mode = True
