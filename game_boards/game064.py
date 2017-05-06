@@ -127,27 +127,14 @@ class Board(gd.BoardGame):
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], self.layout.scale)
 
+        gv = self.mainloop.m.game_variant
+
         self.size = self.board.scale * 10
         ans_offset = 10 + (data[0] - 15) // 2
         self.board.add_unit(10, 0, data[0] - 10, 2, classes.board.Label, self.lang.d["Set_clock"], white, "", 2)
         self.board.units[-1].font_color = gray
         self.board.add_unit(10, 5, data[0] - 10, 2, classes.board.Label, self.lang.d["Set_clock_instr"], white, "", 4)
         self.board.units[-1].font_color = gray
-        self.board.add_unit(ans_offset, 2, 2, 1, classes.board.Label, "%02d" % self.target_time[0], white, "", 0)
-        self.ans_h = self.board.units[-1]
-
-        self.board.add_unit(ans_offset + 2, 2, 1, 1, classes.board.Label, ":", white, "", 0)
-        self.board.add_unit(ans_offset + 3, 2, 2, 1, classes.board.Label, "%02d" % self.target_time[1], white, "", 0)
-        self.ans_m = self.board.units[-1]
-
-        self.ans_h.align = 2
-        self.ans_m.align = 1
-
-        self.ans_h.immobilize()
-        self.ans_m.immobilize()
-
-        self.ans_h.font_color = color3
-        self.ans_m.font_color = color4
 
         self.center = [self.size // 2, self.size // 2]
         self.board.add_unit(0, 0, 10, 10, classes.board.Ship, "", white, "", self.font_size)
@@ -158,13 +145,6 @@ class Board(gd.BoardGame):
         self.clock_canvas.font3 = self.clock_canvas.board.font_sizes[26]
         self.clock_canvas.immobilize()
 
-        self.board.add_unit(10, 3, data[0] - 10, 2, classes.board.Letter, self.text_string, white, "", 2)
-        self.board.ships[-1].immobilize()
-        self.board.ships[-1].font_color = gray
-        if self.lang.lang in ["ru", "he"]:
-            spk_txt = self.lang.time2spk(tt[0], tt[1])
-            self.board.ships[-1].speaker_val = spk_txt
-            self.board.ships[-1].speaker_val_update = False
         self.canvas = pygame.Surface([self.size, self.size - 1])
         if self.mainloop.scheme is not None:
             self.canvas.fill(self.mainloop.scheme.u_color)
@@ -176,6 +156,38 @@ class Board(gd.BoardGame):
         self.clock_canvas.hidden_value = [2, 3]  # numbers[i]
         self.clock_canvas.font_color = color2
         self.clock_canvas.painting = self.canvas.copy()
+
+        if gv == 0:
+            self.board.add_unit(ans_offset, 2, 2, 1, classes.board.Label, "%02d" % self.target_time[0], white, "", 0)
+            self.ans_h = self.board.units[-1]
+
+            self.board.add_unit(ans_offset + 2, 2, 1, 1, classes.board.Label, ":", white, "", 0)
+            self.board.add_unit(ans_offset + 3, 2, 2, 1, classes.board.Label, "%02d" % self.target_time[1], white, "", 0)
+            self.ans_m = self.board.units[-1]
+
+            self.ans_h.align = 2
+            self.ans_m.align = 1
+
+            self.ans_h.immobilize()
+            self.ans_m.immobilize()
+
+            self.ans_h.font_color = color3
+            self.ans_m.font_color = color4
+            self.board.add_unit(10, 3, data[0] - 10, 2, classes.board.Letter, self.text_string, white, "", 2)
+            self.board.ships[-1].immobilize()
+            self.board.ships[-1].font_color = gray
+            if self.lang.lang in ["ru", "he"]:
+                spk_txt = self.lang.time2spk(tt[0], tt[1])
+                self.board.ships[-1].speaker_val = spk_txt
+                self.board.ships[-1].speaker_val_update = False
+        elif gv == 1:
+            img_src = "speaker_icon.png"
+            self.board.add_unit(ans_offset+1, 2, 3, 3, classes.board.ImgShip, self.text_string, white, img_src, alpha=True)
+            self.board.ships[-1].immobilize()
+            self.board.ships[-1].highlight = False
+            self.board.ships[-1].outline_highlight = False
+            self.board.ships[-1].animable = False
+            self.board.ships[-1].outline = False
 
     def hands_vars(self):
         numbers = [2, 2]

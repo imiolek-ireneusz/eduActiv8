@@ -938,6 +938,13 @@
                   icon="ico_g_1004.png" icosuffix="False"
                   disp_code="2" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
+            <game dbid="206" variant="1" var2="0"  min_age="0" max_age="7"
+                  constructor_id="64"
+                  title="Clock2"
+                  subtitle="Set time"
+                  icon="ico_g_1004.png" icosuffix="False"
+                  disp_code="2" lang_incl="" lang_excl="" require_uc="False" listening="True" android="True">
+            </game>
             <game dbid="69" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="65"
                   title="Clock2"
