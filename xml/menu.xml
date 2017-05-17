@@ -14,8 +14,6 @@
                   subtitle="Letter Flashcards"
                   icon="ico_g_0100.png" icosuffix="True"
                   disp_code="2" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
-                <chapters data="[1]" />
-                <level n="1" data="" />
             </game>
             <game dbid="4" variant="0" var2="0" min_age="0" max_age="1"
                   constructor_id="37"
@@ -73,19 +71,6 @@
                   subtitle="Lowercase Letters"
                   icon="ico_g_0105.png" icosuffix="True"
                   disp_code="2" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <levels count="10" games_per_level="5">
-                    <level n="1" data="[11, 6, 3, True, 1]" />
-                    <level n="2" data="[11, 6, 3, False, 1]" />
-                    <level n="3" data="[11, 6, 5, True, 1]" />
-                    <level n="4" data="[11, 6, 5, False, 1]" />
-                    <level n="5" data="[11, 6, 7, True, 1]" />
-                    <level n="6" data="[11, 6, 7, False, 1]" />
-                    <level n="7" data="[11, 6, 9, True, 1]" />
-                    <level n="8" data="[11, 6, 9, False, 1]" />
-                    <level n="9" data="[11, 6, 11, True, 1]" />
-                    <level n="10" data="[11, 6, 11, False, 1]" />
-                </levels>
             </game>
             <game dbid="13" variant="1" var2="0"  min_age="0" max_age="3"
                   constructor_id="47"
@@ -93,19 +78,6 @@
                   subtitle="Uppercase Letters"
                   icon="ico_g_0106.png" icosuffix="True"
                   disp_code="2" lang_incl="" lang_excl="" require_uc="True" listening="False" android="True">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <levels count="10" games_per_level="5">
-                    <level n="1" data="[11, 6, 3, True, 1]" />
-                    <level n="2" data="[11, 6, 3, False, 1]" />
-                    <level n="3" data="[11, 6, 5, True, 1]" />
-                    <level n="4" data="[11, 6, 5, False, 1]" />
-                    <level n="5" data="[11, 6, 7, True, 1]" />
-                    <level n="6" data="[11, 6, 7, False, 1]" />
-                    <level n="7" data="[11, 6, 9, True, 1]" />
-                    <level n="8" data="[11, 6, 9, False, 1]" />
-                    <level n="9" data="[11, 6, 11, True, 1]" />
-                    <level n="10" data="[11, 6, 11, False, 1]" />
-                </levels>
             </game>
             <game dbid="17" variant="0" var2="0"  min_age="0" max_age="1"
                   constructor_id="13"
@@ -1305,115 +1277,4 @@
             </game>
         </cat>
     </cat_group>
-
-
-
-<!--
-    self.add_category(0, self.lang.d["Info Category"], "", "ico_c_00.png")
-        self.add_category(1, self.lang.d["Discover Letters"], "", "ico_c_01%s.png" % self.lang.ico_suffix)
-
-        if self.mainloop.lang.lang[0:2] not in ["ar", "he"]:
-            self.add_category(1, self.lang.d["Learn Words"], "", "ico_c_02.png")
-
-        if self.uage < 4 or self.uage == 7:
-            self.add_category(2, self.lang.d["Learn to Count"], "", "ico_c_03.png")
-        self.add_category(2, self.lang.d["Addition"], "", "ico_c_04.png")
-        self.add_category(2, self.lang.d["Subtraction"], "", "ico_c_05.png")
-        if self.uage > 1:
-            self.add_category(2, self.lang.d["Multiplication"], "", "ico_c_06.png")
-            self.add_category(2, self.lang.d["Division"], "", "ico_c_07.png")
-        if self.uage > 0:
-            if self.uage < 4:
-                lbl = self.lang.d["Fractions"]
-            elif self.uage < 5:
-                lbl = self.lang.d["Decimals and Fractions"]
-            elif self.uage < 6:
-                lbl = self.lang.d["Decimals, fractions and percentages"]
-            else:
-                lbl = self.lang.d["Decimals, fractions, ratios and percentages"]
-            self.add_category(2, lbl, "", "ico_c_10.png")
-            self.add_category(2, self.lang.d["Shapes and Solids"], "", "ico_c_14.png")
-
-        if self.mainloop.lang.lang == 'sr':
-            self.add_category(2, self.lang.d["Clock_cat"], "полная форма", "ico_c_15.png")
-            self.add_category(2, self.lang.d["Clock_cat"], "краткая форма", "ico_c_15.png")
-        else:
-            self.add_category(2, self.lang.d["Clock_cat"], "", "ico_c_15.png")
-
-        self.add_category(3, self.lang.d["Art"], "", "ico_c_16.png")
-        self.add_category(3, self.lang.d["Memory"], "", "ico_c_17.png")
-        self.add_category(3, self.lang.d["Games & Mazes"], "", "ico_c_18.png")
-    -->
-    <!--
-    <cat_group id="1" title="Language Arts" subtitle="st2" img_src="">
-        <cat id="" title="" subtitle="" img_src="">
-            <game dbid="1" variant="0" var2="0" constructor_id="" min_age="" max_age="" listening="False" android="True"  title="tt1" subtitle="" img_src="" disp_code="2" lang_incl="" lang_excl="" require_uc="False">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <level n="1" data="[11, 6, 3, 9, True, 1]" />
-                <level n="2" data="[125, 5, 7, 10]" />
-                <level n="3" data="[3, 5, 7, 10]" />
-            </game>
-            <game dbid="2" min_age="" max_age="" listening="False" android="True" constructor_id="" title="tt2" subtitle="" img_src="" variant="0" var2="0" disp_code="2" lang_incl="" lang_excl="" require_uc="False">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <level n="1" data="[12, 6, 3, 9, True, 1]" />
-            </game>
-        </cat>
-        <cat id="" title="" subtitle="" img_src="">
-            <game dbid="3" min_age="" max_age="" listening="False" android="True" constructor_id="" title="tt3" subtitle="" img_src="" variant="0" var2="0" disp_code="2" lang_incl="" lang_excl="" require_uc="False">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <level n="1" data="[13, 6, 3, 9, True, 1]" />
-            </game>
-            <game dbid="4" min_age="" max_age="" listening="False" android="True" constructor_id="" title="tt4" subtitle="" img_src="" variant="2" var2="0" disp_code="2" lang_incl="" lang_excl="" require_uc="False">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <level n="1" data="[14, 6, 3, 9, True, 1]" />
-            </game>
-        </cat>
-    </cat_group>
-    <cat_group id="2" title="tt2" subtitle="st2" img_src="">
-        <cat id="" title="" subtitle="" img_src="">
-            <game dbid="5" min_age="" max_age="" listening="False" android="True" constructor_id="" title="tt5" subtitle="" img_src="" variant="0" var2="0" disp_code="2" lang_incl="" lang_excl="" require_uc="False">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <level n="1" data="[15, 6, 3, 9, True, 1]" />
-            </game>
-            <game dbid="6" min_age="" max_age="" listening="False" android="True" constructor_id="" title="tt6" subtitle="" img_src="" variant="0" var2="0" disp_code="2" lang_incl="" lang_excl="" require_uc="False">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <level n="1" data="[16, 6, 3, 9, True, 1]" />
-            </game>
-        </cat>
-        <cat id="" title="" subtitle="" img_src="">
-            <game dbid="7" min_age="" max_age="" listening="False" android="True" constructor_id="" title="tt7" subtitle="" img_src="" variant="0" var2="0" disp_code="2" lang_incl="" lang_excl="" require_uc="False">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <level n="1" data="[17, 6, 3, 9, True, 1]" />
-                <level n="1" data="[17, 6, 3, 9, True, 1]" />
-                <level n="3" data="[27, 6, 3, 9, True, 1]" />
-            </game>
-            <game dbid="8" min_age="" max_age="" listening="False" android="True" constructor_id="" title="tt8" subtitle="" img_src="" variant="2" var2="0" disp_code="2" lang_incl="" lang_excl="" require_uc="False">
-                <chapters data="[1, 3, 5, 7, 9, 10]" />
-                <level n="1" data="[18, 6, 3, 9, True, 1]" />
-            </game>
-        </cat>
-    </cat_group>
-
-
-    <country name="Liechtenstein">
-        <rank>1</rank>
-        <year>2008</year>
-        <gdppc>141100</gdppc>
-        <neighbor name="Austria" direction="E"/>
-        <neighbor name="Switzerland" direction="W"/>
-    </country>
-    <country name="Singapore">
-        <rank>4</rank>
-        <year>2011</year>
-        <gdppc>59900</gdppc>
-        <neighbor name="Malaysia" direction="N"/>
-    </country>
-    <country name="Panama">
-        <rank>68</rank>
-        <year>2011</year>
-        <gdppc>13600</gdppc>
-        <neighbor name="Costa Rica" direction="W"/>
-        <neighbor name="Colombia" direction="E"/>
-    </country>
-    -->
 </menu>

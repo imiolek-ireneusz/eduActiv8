@@ -995,7 +995,7 @@ class Menu:
                           2: "ico_g_0002.png"}
         self.id2icon.update(home_cat_icons)
 
-        for top_cat in self.xml.root:
+        for top_cat in self.xml.menu_root:
             #add category groups
             self.add_top_category(ast.literal_eval(top_cat.attrib['id']), self.lang.d[top_cat.attrib['title']], "",
                                   top_cat.attrib['icon'])
