@@ -11,7 +11,7 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid)
+        lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
         self.level = lc.Level(self, mainloop, lvlc[0], lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 6)
 
@@ -26,8 +26,8 @@ class Board(gd.BoardGame):
         font_color = ex.hsv_to_rgb(h, 255, 140)
 
         # data = [x_count, y_count, letter_count, ordered]
-        data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.level.lvl)
-        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid)  # [1, 3, 5, 7, 9, 10]
+        data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group, self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group)  # [1, 3, 5, 7, 9, 10]
         """
         if self.level.lvl == 1:
             data = [11, 6, 3, True, 1]

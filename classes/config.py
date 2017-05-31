@@ -22,8 +22,8 @@ class Config:
         self.fs_height = 768
         self.debug_screen_size = None  # [900,600]
         # size_limits - don't let window resizing get out of hand [min_w, min_h, max_w, max_h]
-        self.size_limits = [800, 480, 2000,
-                            2000]  # [670,480,2000,2000] #800 - minimum to fit all buttons, 2000 - with over 2000 pixels each way pygame is not redrawing very well
+        self.size_limits = [800, 480, 2000, 2000]
+        # [670,480,2000,2000] #800 - minimum to fit all buttons, 2000 - with over 2000 pixels each way pygame is not redrawing very well
         # set total size of OS panels and window decorations on both sides - used in windowed version. Not so much important now with resizing enabled.
         # this will not be auto-detected
         self.os_panels_w = 2  # sum of widths of non-hiding vertical Panels (if any) and window border (1px on each side).
@@ -42,6 +42,7 @@ class Config:
         self.google_trans_languages = False
 
         self.user_age_group = 0  # default group - showing all games - TO DO: will be overridden by data stored in database
+        self.max_age = 7
 
         # Window title
         self.window_caption = "eduActiv8 - v " + self.version

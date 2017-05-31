@@ -351,7 +351,7 @@ class MenuCategory(pygame.sprite.Sprite):
 
 class MenuItem(pygame.sprite.Sprite):
     def __init__(self, menu, dbgameid, item_id, cat_id, title, subtitle, constructor, icon_size, img_src, variant=0,
-                 var2=0):
+                 var2=0, max_age=7):
         # Call the parent's constructor
         pygame.sprite.Sprite.__init__(self)
         self.menu = menu
@@ -369,6 +369,8 @@ class MenuItem(pygame.sprite.Sprite):
 
         self.title = ex.unival(title)
         self.subtitle = ex.unival(subtitle)
+
+        self.max_age = max_age
 
         self.color = (245, 0, 245)
 
@@ -870,6 +872,8 @@ class Menu:
                     else:
                         self.play_sound(4)
                     self.active_o = each
+
+                    self.mainloop.config.max_age = each.max_age
                     self.game_constructor = each.game_constructor
                     self.game_dbid = each.dbgameid
                     self.game_variant = each.variant
@@ -1003,7 +1007,7 @@ class Menu:
                 #add categories
                 cat_add = True
 
-                if cat.attrib['disp_code'] == "0":
+                if cat.attrib['visible'] == "0":
                     cat_add = False
                 # check the age range if not in display all
                 elif self.uage != 7:
@@ -1011,9 +1015,6 @@ class Menu:
                         cat_add = False
                     elif self.uage > ast.literal_eval(cat.attrib['max_age']):
                         cat_add = False
-                #if in shaw all and display code == 1 which eliminates this category from show all
-                elif self.uage == 7 and cat.attrib['disp_code'] == "1":
-                    cat_add = False
 
                 # check for languages included/excluded
                 if cat.attrib['lang_incl'] != "":
@@ -1041,7 +1042,7 @@ class Menu:
                         # add games in current category
                         add = True
 
-                        if game.attrib['disp_code'] == "0":
+                        if game.attrib['visible'] == "0":
                             add = False
                         # check the age range and display code
                         elif self.uage != 7:
@@ -1049,8 +1050,6 @@ class Menu:
                                 add = False
                             elif self.uage > int(game.attrib['max_age']):
                                 add = False
-                        elif self.uage == 7 and game.attrib['disp_code'] == "1":
-                            add = False
 
                         if add:
                             # check for languages included/excluded
@@ -1115,7 +1114,7 @@ class Menu:
     def add_game(self, dbgameid, cat_id, min_age, max_age, constructor, title, subtitle, img_src, variant=0, var2=0):
         if min_age <= self.uage <= max_age or self.uage == 7:
             new_game = MenuItem(self, dbgameid, len(self.games), cat_id, title, subtitle, constructor, self.icon_size,
-                                img_src, variant, var2)
+                                img_src, variant, var2, max_age)
             self.games.append(new_game)
         self.saved_levels[dbgameid] = 1
 

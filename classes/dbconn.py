@@ -17,6 +17,7 @@ class DBConnection():
         db_version = 1
         self.connect()
         if self.db_connected:
+            #self.db_fix()
             self.c.execute("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'admin'")
             self.conn.commit()
             count = self.c.fetchone()
@@ -227,27 +228,43 @@ class DBConnection():
                                (lastlvl, userid, gameid))
             self.conn.commit()
 
+    def get_age(self):
+        if self.mainloop.config.user_age_group < 7:
+            return self.mainloop.config.user_age_group
+        else:
+            return self.mainloop.config.max_age
+
+    def db_fix(self):
+        #self.c.execute("SELECT num_completed FROM completions WHERE (gameid = ?)", (26,))
+        #self.conn.commit()
+        #count = self.c.fetchone()
+        self.c.execute("DELETE FROM completions WHERE (gameid = ?)", (26,))
+        self.conn.commit()
+
     def update_completion(self, userid, gameid, lvl):
         if self.db_connected:
+            age = self.get_age()
             self.c.execute(
                 "SELECT num_completed FROM completions WHERE (userid = ? AND gameid = ? AND lvl_completed = ? AND lang_id = ? AND age = ?)",
-                (userid, gameid, lvl, self.mainloop.lang.lang_id, self.mainloop.config.user_age_group))
+                (userid, gameid, lvl, self.mainloop.lang.lang_id, age))
             self.conn.commit()
             count = self.c.fetchone()
+
             if count is None:
                 self.c.execute("INSERT INTO completions VALUES (?, ?, ?, ?, ?, ?)",
-                               (userid, gameid, lvl, self.mainloop.lang.lang_id, 1, self.mainloop.config.user_age_group))
+                               (userid, gameid, lvl, self.mainloop.lang.lang_id, 1, age))
             else:
                 self.c.execute(
                     "UPDATE completions SET num_completed = ?  WHERE (userid = ? AND gameid = ? AND lang_id = ? AND lvl_completed = ? AND age = ?)",
-                    (count[0] + 1, userid, gameid, self.mainloop.lang.lang_id, lvl, self.mainloop.config.user_age_group))
+                    (count[0] + 1, userid, gameid, self.mainloop.lang.lang_id, lvl, age))
             self.conn.commit()
 
     def query_completion(self, userid, gameid, lvl):
         if self.db_connected:
+            age = self.get_age()
             self.c.execute(
                 "SELECT num_completed FROM completions WHERE (userid = ? AND gameid = ? AND lang_id = ? AND lvl_completed = ? AND age = ?)",
-                (userid, gameid, self.mainloop.lang.lang_id, lvl, self.mainloop.config.user_age_group))
+                (userid, gameid, self.mainloop.lang.lang_id, lvl, age))
             self.conn.commit()
             count = self.c.fetchone()
             if count is None:
