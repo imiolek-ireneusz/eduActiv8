@@ -37,6 +37,12 @@ class MenuCategoryGroup(pygame.sprite.Sprite):
         self.w = w
         self.h = h
 
+        # top and bottom used to detect clicks for collapsing a group
+        self.t = 0
+        self.b = 0
+        self.th = 78
+        self.bh = 40
+
         self.selected = False
         self.animating = False
         self.mouse_over = False
@@ -103,7 +109,9 @@ class MenuCategoryGroup(pygame.sprite.Sprite):
 
             if not found:
                 if self.mouse_dn:
-                    self.on_click()
+                    # collapse a group only if the mouse is over top or bottom part of the slider and not between icons
+                    if self.t < pos[1] < self.t + self.th or self.b > pos[1] > self.b - self.bh:
+                        self.on_click()
 
         elif event.type == pygame.MOUSEMOTION:
             pos = event.pos
@@ -178,7 +186,7 @@ class MenuCategoryGroup(pygame.sprite.Sprite):
 
     def toggle_select(self):
         if not self.menu.ldrag:
-            if self.selected == True:
+            if self.selected:
                 self.hide_icons()
                 self.play_sound(6)
                 pygame.event.post(
@@ -1133,6 +1141,8 @@ class Menu:
 
         for each_item in self.top_categories:
             each_item.rect.topleft = [x, y]
+            each_item.t = y
+            each_item.b = y + each_item.h
             y += each_item.h + self.y_margin
 
             each_item.update()
