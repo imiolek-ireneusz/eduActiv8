@@ -100,10 +100,10 @@ class GamePlay(threading.Thread):
 
         if android is not None:
             infoObject = pygame.display.Info()
-            if infoObject.current_w < 900:
-                self.android_screen_size = [900, int(infoObject.current_h * 900 / infoObject.current_w)]
-            else:
-                self.android_screen_size = [infoObject.current_w, infoObject.current_h]
+            h = 770
+            login_h = 500
+            self.android_screen_size = [int(infoObject.current_w * h / infoObject.current_h), h]
+            self.android_login_size = [int(infoObject.current_w * login_h / infoObject.current_h), login_h]
 
     def set_init_vals(self):
         self.redraw_needed = [True, True, True]
@@ -314,7 +314,7 @@ class GamePlay(threading.Thread):
                     else:
                         self.size = self.wn_size
                 else:
-                    self.size = self.android_screen_size
+                    self.size = self.android_login_size
                 self.screen = pygame.display.set_mode(self.size)
 
                 pygame.display.set_caption(self.config.window_caption)
