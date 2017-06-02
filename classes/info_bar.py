@@ -104,20 +104,27 @@ class Button(BaseButton):
         # book 3
         text = self.font3.render("%s" % (self.panel.title), 1, self.panel.font_color)
         text2 = self.font4.render("%s" % (self.panel.subtitle), 1, self.panel.font_color1)
+        text3 = self.font4.render("%s" % (self.panel.game_id), 1, self.panel.font_color1)
         # print text.rect.w
         tw1 = self.font3.size(self.panel.title)[0]
         tw2 = self.font4.size(self.panel.subtitle)[0]
+        tw3 = self.font4.size(self.panel.game_id)[0]
         if self.panel.mainloop.lang.ltr_text:
             ttx = 0
             stx = 0
+            idx = self.panel.title_space - tw3 - 10
         else:
             ttx = self.panel.title_space - tw1 - 10
             stx = self.panel.title_space - tw2 - 10
+            idx = 0
 
         if self.panel.title_space == 0 or tw1 < self.panel.title_space:
             self.image.blit(text, (ttx, 2))
             if tw2 < self.panel.title_space:
                 self.image.blit(text2, (stx, 39))
+
+        # display game id
+        self.image.blit(text3, (idx, 39))
 
     def update(self):
         self.image.fill(self.color)
@@ -168,6 +175,7 @@ class InfoBar():
         self.title_space = 0
         self.title = ""
         self.subtitle = ""
+        self.game_id = ""
         self.btn_list = pygame.sprite.LayeredUpdates()
         self.reset_buttons()
         self.update_fonts()
@@ -314,10 +322,7 @@ class InfoBar():
             btn = self.hover(pos, layout)
             if btn != False:
                 if btn.hasimg:
-                    if not (((
-                                     btn.btn_id == 1 or btn.btn_id == 7) and self.level.lvl == self.mainloop.game_board.min_level) or (
-                        (
-                                btn.btn_id == 3 or btn.btn_id == 8) and self.level.lvl == self.level.lvl_count)):  # or (btn.btn_id == 0)):# and self.game_board.changed_since_check == False)):
+                    if not (((btn.btn_id == 1 or btn.btn_id == 7) and self.level.lvl == self.mainloop.game_board.min_level) or ((btn.btn_id == 3 or btn.btn_id == 8) and self.level.lvl == self.level.lvl_count)):
                         self.resetbtns()
                         btn.img = btn.img_1
             else:
@@ -353,9 +358,11 @@ class InfoBar():
             if self.mainloop.m.game_constructor != game000.Board:
                 self.title = self.mainloop.m.games[self.mainloop.m.active_game_id].title
                 self.subtitle = self.mainloop.m.games[self.mainloop.m.active_game_id].subtitle
+                self.game_id = "#%s/%03i" % (str(self.mainloop.m.games[self.mainloop.m.active_game_id].game_constructor)[16:19], self.mainloop.m.games[self.mainloop.m.active_game_id].dbgameid)
             else:
                 self.title = ""
                 self.subtitle = ""
+                self.game_id = ""
             self.mainloop.redraw_needed[1] = True
             self.mainloop.m.mouseenter = -1
             self.mainloop.m.mouseenter_cat = -1
@@ -562,9 +569,9 @@ class InfoBar():
         self.rescale_title_space()
 
     def rescale_title_space(self):
-        if self.hidden == False or self.close_dialog:
+        if self.hidden is False or self.close_dialog:
             self.title_space = self.btns[13].rect.left - self.btns[6].rect.left
-        elif self.hidden == True and self.close_dialog == False:
+        elif self.hidden is True and self.close_dialog is False:
             self.title_space = self.width - 10
 
     def draw(self, screen):

@@ -165,6 +165,7 @@ class MenuCategoryGroup(pygame.sprite.Sprite):
 
         self.menu.mainloop.info.title = self.title
         self.menu.mainloop.info.subtitle = self.subtitle
+        self.menu.mainloop.info.game_id = "#%03i" % self.unit_id
 
         self.menu.mainloop.redraw_needed[1] = True
         self.menu.mainloop.redraw_needed[2] = True
@@ -333,6 +334,7 @@ class MenuCategory(pygame.sprite.Sprite):
 
         self.menu.mainloop.info.title = self.title
         self.menu.mainloop.info.subtitle = self.subtitle
+        self.menu.mainloop.info.game_id = "#%03i" % self.cat_id
         self.mouse_over = True
 
     def on_mouse_out(self):
@@ -456,6 +458,7 @@ class MenuItem(pygame.sprite.Sprite):
 
         self.menu.mainloop.info.title = self.title
         self.menu.mainloop.info.subtitle = self.subtitle
+        self.menu.mainloop.info.game_id = "#%s/%03i" % (str(self.game_constructor)[16:19], self.dbgameid)
         self.mouse_over = True
 
     def on_mouse_out(self):
