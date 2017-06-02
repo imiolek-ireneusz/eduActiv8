@@ -92,6 +92,10 @@ class Board(gd.BoardGame):
             self.board.add_unit(0, 8, data[0], 2, classes.board.Label, self.lang.d["please install espeak"], color, "",
                                 5)
             self.board.units[-1].font_color = font_color
+        else:
+            self.board.add_unit(0, 9, data[0], 1, classes.board.Label, "info@eduactiv8.org   |   bugs@eduactiv8.org",
+                                color, "", 5)
+            self.board.units[-1].font_color = font_color
 
         self.board.add_unit(0, 10, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2017  Ireneusz Imiolek",
                             color, "", 6)
