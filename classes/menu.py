@@ -1040,16 +1040,17 @@ class Menu:
                     cat_add = False
 
                 if cat_add:
+                    c_id = ast.literal_eval(cat.attrib['id'])
                     if ast.literal_eval(cat.attrib["icosuffix"]):
                         ico = cat.attrib['icon'][0:8] + self.lang.ico_suffix + cat.attrib['icon'][8:]
-                        self.add_category(ast.literal_eval(top_cat.attrib['id']), ast.literal_eval(cat.attrib['id']),
+                        self.add_category(ast.literal_eval(top_cat.attrib['id']), c_id,
                                           self.lang.d[cat.attrib['title']], self.lang.d[cat.attrib['subtitle']],
                                           ico)
                     else:
-                        self.add_category(ast.literal_eval(top_cat.attrib['id']), ast.literal_eval(cat.attrib['id']),
+                        self.add_category(ast.literal_eval(top_cat.attrib['id']), c_id,
                                           self.lang.d[cat.attrib['title']], self.lang.d[cat.attrib['subtitle']],
                                           cat.attrib['icon'])
-                    c_id += 1
+
                     for game in cat:
                         # add games in current category
                         add = True
