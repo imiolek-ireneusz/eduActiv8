@@ -43,16 +43,16 @@ class Board(gd.BoardGame):
         if gv == 0:
             category = "animals"
             self.imgs = ['cow', 'turkey', 'shrimp', 'wolf', 'panther', 'panda', 'magpie', 'clam', 'pony', 'mouse',
-                         'pug', 'koala', 'frog', 'ladybug', 'gorilla', 'llama', 'vulture', 'hamster', 'bird',
+                         'pug', 'koala', 'frog', 'ladybug', 'gorilla', 'llama', 'vulture', 'hamster', '',
                          'starfish', 'crow', 'parakeet', 'caterpillar', 'tiger', 'hummingbird', 'piranha', 'pig',
                          'scorpion', 'fox', 'leopard', 'iguana', 'dolphin', 'bat', 'chick', 'crab', 'hen', 'wasp',
                          'chameleon', 'whale', 'hedgehog', 'fawn', 'moose', 'bee', 'viper', 'shrike', 'donkey',
                          'guinea_pig', 'sloth', 'horse', 'penguin', 'otter', 'bear', 'zebra', 'ostrich', 'camel',
-                         'antelope', 'lemur', 'pigeon', 'lama', 'mole', 'ray', 'ram', 'skunk', 'jellyfish', 'sheep',
+                         'antelope', 'lemur', 'pigeon', '', 'mole', 'ray', 'ram', 'skunk', 'jellyfish', 'sheep',
                          'shark', 'kitten', 'deer', 'snail', 'flamingo', 'rabbit', 'oyster', 'beaver', 'sparrow',
                          'dove', 'eagle', 'beetle', 'hippopotamus', 'owl', 'cobra', 'salamander', 'goose', 'kangaroo',
                          'dragonfly', '', 'pelican', 'squid', 'lion_cub', 'jaguar', 'duck', 'lizard', 'rhinoceros',
-                         'hyena', 'ox', 'peacock', 'parrot', 'elk', 'alligator', 'ant', 'goat', 'baby_rabbit', 'lion',
+                         'hyena', 'ox', 'peacock', 'parrot', '', 'alligator', 'ant', 'goat', 'baby_rabbit', 'lion',
                          'squirrel', 'opossum', 'chimp', 'doe', 'gopher', 'elephant', 'giraffe', 'spider', 'puppy',
                          'jay', 'seal', 'rooster', 'turtle', 'bull', 'cat', 'rat', 'slug', 'buffalo',
                          'blackbird', 'swan', 'lobster', 'dog', 'mosquito', 'snake', 'chicken', 'anteater']
