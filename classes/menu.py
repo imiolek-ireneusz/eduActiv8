@@ -983,7 +983,7 @@ class Menu:
 
     def add_all(self):
         #t1 = time.clock()
-        self.add_category(0, self.lang.d["Info Category"], "", "ico_c_00.png")
+        self.add_category(0, 0, self.lang.d["Info Category"], "", "ico_c_00.png")
 
         self.badge_count = self.mainloop.db.get_completion_count(self.mainloop.userid)
         # [0   1   2   3   4   5   6   7]
@@ -1042,11 +1042,13 @@ class Menu:
                 if cat_add:
                     if ast.literal_eval(cat.attrib["icosuffix"]):
                         ico = cat.attrib['icon'][0:8] + self.lang.ico_suffix + cat.attrib['icon'][8:]
-                        self.add_category(ast.literal_eval(top_cat.attrib['id']), self.lang.d[cat.attrib['title']],
-                                          self.lang.d[cat.attrib['subtitle']], ico)
+                        self.add_category(ast.literal_eval(top_cat.attrib['id']), ast.literal_eval(cat.attrib['id']),
+                                          self.lang.d[cat.attrib['title']], self.lang.d[cat.attrib['subtitle']],
+                                          ico)
                     else:
-                        self.add_category(ast.literal_eval(top_cat.attrib['id']), self.lang.d[cat.attrib['title']],
-                                          self.lang.d[cat.attrib['subtitle']], cat.attrib['icon'])
+                        self.add_category(ast.literal_eval(top_cat.attrib['id']), ast.literal_eval(cat.attrib['id']),
+                                          self.lang.d[cat.attrib['title']], self.lang.d[cat.attrib['subtitle']],
+                                          cat.attrib['icon'])
                     c_id += 1
                     for game in cat:
                         # add games in current category
@@ -1115,9 +1117,8 @@ class Menu:
                         self.id2icon[int(game.attrib['dbid'])] = game.attrib['icon']
         self.update_panel_height()
 
-
-    def add_category(self, top_id, title, subtitle, img_src):
-        new_category = MenuCategory(self, top_id, len(self.categories), title, subtitle, self.cat_icon_size, img_src)
+    def add_category(self, top_id, cat_id, title, subtitle, img_src):
+        new_category = MenuCategory(self, top_id, cat_id, title, subtitle, self.cat_icon_size, img_src)
         self.categories.append(new_category)
         self.categories_list.add(new_category)
 

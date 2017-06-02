@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- max cat id = 16, max game id = 205 -->
+<!-- max cat id = 18, max game id = 205 -->
 <!-- title and subtitle must match already existing string from .po file so these can't just be changed here -->
 <!-- visible 0 - hide, 1 - show, use to temporarily hide activities -->
 <!-- "listening" used to mark which activities are listening activities that require TTS engine to work - if not available the activities will be hidden -->
@@ -210,8 +210,7 @@
                   visible="1" lang_incl="['en', 'pl', 'uk', 'ru', 'fr', 'de', 'el']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-
-        <cat id="2" title="Word Builders" subtitle="Listening Exercises"
+        <cat id="3" title="Word Builders" subtitle="Listening Exercises"
              icon="ico_c_20.png" min_age="0" max_age="7" listening="True" android="True"
              visible="1" lang_incl="['en', 'pl', 'uk', 'ru', 'fr', 'de', 'el']" lang_excl="" icosuffix="False">
             <game dbid="182" variant="0" var2="0"  min_age="0" max_age="7"
@@ -299,8 +298,7 @@
                   visible="1" lang_incl="['en', 'pl', 'uk', 'ru', 'fr', 'de', 'el']" lang_excl="" require_uc="False" listening="True" android="True">
             </game>
         </cat>
-
-        <cat id="16" title="Word Matchers" subtitle=""
+        <cat id="4" title="Word Matchers" subtitle=""
              icon="ico_c_16.png" min_age="0" max_age="7" listening="False" android="True"
              visible="1" lang_incl="['en', 'pl', 'uk', 'ru', 'fr', 'de', 'el']" lang_excl="" icosuffix="False">
             <!-- matching games using arts4apps -->
@@ -389,9 +387,7 @@
                   visible="1" lang_incl="['en', 'pl', 'uk', 'ru', 'fr', 'de', 'el']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-
-
-        <cat id="16" title="Word Matchers" subtitle="Listening Exercises"
+        <cat id="5" title="Word Matchers" subtitle="Listening Exercises"
              icon="ico_c_21.png" min_age="0" max_age="7" listening="True" android="True"
              visible="1" lang_incl="['en', 'pl', 'uk', 'ru', 'fr', 'de', 'el']" lang_excl="" icosuffix="False">
             <!-- matching games using arts4apps -->
@@ -482,7 +478,7 @@
         </cat>
     </cat_group>
     <cat_group id="2" title="Maths" icon="ico_t_01.png">
-        <cat id="3" title="Learn to Count" subtitle="" icon="ico_c_03.png" min_age="0" max_age="4" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="6" title="Learn to Count" subtitle="" icon="ico_c_03.png" min_age="0" max_age="4" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="20" variant="0" var2="0"  min_age="0" max_age="1"
                   constructor_id="38"
                   title="Numbers"
@@ -540,7 +536,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="4" title="Addition" subtitle="" icon="ico_c_04.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="7" title="Addition" subtitle="" icon="ico_c_04.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="23" variant="1" var2="0"  min_age="0" max_age="1"
                   constructor_id="46"
                   title="Learn to Count"
@@ -605,7 +601,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="5" title="Subtraction" subtitle="" icon="ico_c_05.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="8" title="Subtraction" subtitle="" icon="ico_c_05.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="24" variant="2" var2="0"  min_age="0" max_age="1"
                   constructor_id="46"
                   title="Learn to Count"
@@ -663,7 +659,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="6" title="Multiplication" subtitle="" icon="ico_c_06.png" min_age="2" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="9" title="Multiplication" subtitle="" icon="ico_c_06.png" min_age="2" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="143" variant="0" var2="0"  min_age="2" max_age="7"
                   constructor_id="85"
                   title="Multiplication Table"
@@ -735,7 +731,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="7" title="Division" subtitle="" icon="ico_c_07.png" min_age="2" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="10" title="Division" subtitle="" icon="ico_c_07.png" min_age="2" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="145" variant="0" var2="0"  min_age="2" max_age="7"
                   constructor_id="87"
                   title="Division"
@@ -786,7 +782,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="8" title="Decimals, fractions, ratios and percentages" subtitle="" icon="ico_c_10.png" min_age="1" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="11" title="Decimals, fractions, ratios and percentages" subtitle="" icon="ico_c_10.png" min_age="1" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="47" variant="0" var2="0"  min_age="1" max_age="7"
                   constructor_id="26"
                   title="Fractions"
@@ -837,7 +833,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="9" title="Shapes and Solids" subtitle="" icon="ico_c_14.png" min_age="1" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="12" title="Shapes and Solids" subtitle="" icon="ico_c_14.png" min_age="1" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="62" variant="0" var2="0"  min_age="1" max_age="7"
                   constructor_id="9"
                   title="Shapes"
@@ -867,7 +863,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="10" title="Clock_cat" subtitle="" icon="ico_c_15.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="['sr']" icosuffix="False" listening="False" android="True">
+        <cat id="13" title="Clock_cat" subtitle="" icon="ico_c_15.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="['sr']" icosuffix="False" listening="False" android="True">
             <game dbid="66" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="66"
                   title="Clock0"
@@ -955,7 +951,7 @@
                   visible="1" lang_incl="['ru']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="11" title="Clock_cat" subtitle="long form" icon="ico_c_15.png" min_age="0" max_age="7" listening="False" android="True" visible="1" lang_incl="['sr']" lang_excl="" icosuffix="False">
+        <cat id="14" title="Clock_cat" subtitle="long form" icon="ico_c_15.png" min_age="0" max_age="7" listening="False" android="True" visible="1" lang_incl="['sr']" lang_excl="" icosuffix="False">
             <game dbid="167" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="66"
                   title="Clock0"
@@ -1013,7 +1009,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="12" title="Clock_cat" subtitle="short form" icon="ico_c_15.png" min_age="0" max_age="7" visible="1" lang_incl="['sr']" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="15" title="Clock_cat" subtitle="short form" icon="ico_c_15.png" min_age="0" max_age="7" visible="1" lang_incl="['sr']" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="174" variant="0" var2="1"  min_age="0" max_age="7"
                   constructor_id="66"
                   title="Clock0"
@@ -1074,7 +1070,7 @@
     </cat_group>
 
     <cat_group id="3" title="Other" icon="ico_t_03.png">
-        <cat id="13" title="Art" subtitle="" icon="ico_c_13.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="16" title="Art" subtitle="" icon="ico_c_13.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="71" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="21"
                   title="Paint"
@@ -1132,7 +1128,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="14" title="Memory" subtitle="" icon="ico_c_17.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="17" title="Memory" subtitle="" icon="ico_c_17.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="79" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="12"
                   title="Follow the Arrows"
@@ -1183,7 +1179,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="15" title="Games &amp; Mazes" subtitle="" icon="ico_c_18.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
+        <cat id="18" title="Games &amp; Mazes" subtitle="" icon="ico_c_18.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True">
             <game dbid="86" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="29"
                   title="Mouse Maze"
