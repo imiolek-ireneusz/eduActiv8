@@ -151,18 +151,16 @@ class MenuCategoryGroup(pygame.sprite.Sprite):
         self.menu.mainloop.sfx.play(sound_id)
 
     def on_mouse_over(self):
-        if not self.mouse_over:
-            self.on_mouse_enter()
-
-        if self.state < 2:
-            self.state = 1
-
-        self.mouse_over = True
+        if not (self.menu.lswipe_mouse_dn or self.menu.rswipe_mouse_dn):
+            if not self.mouse_over:
+                self.on_mouse_enter()
+            if self.state < 2:
+                self.state = 1
+            self.mouse_over = True
 
     def on_mouse_enter(self):
         if self.state < 2:
             self.image.set_alpha(255)
-
         self.menu.mainloop.info.title = self.title
         self.menu.mainloop.info.subtitle = self.subtitle
         self.menu.mainloop.info.game_id = "#%03i" % self.unit_id
@@ -329,13 +327,13 @@ class MenuCategory(pygame.sprite.Sprite):
             self.menu.mainloop.info.title_only()
 
     def on_mouse_over(self):
-        if not self.mouse_over:
-            self.on_mouse_enter()
-
-        self.menu.mainloop.info.title = self.title
-        self.menu.mainloop.info.subtitle = self.subtitle
-        self.menu.mainloop.info.game_id = "#%03i" % self.cat_id
-        self.mouse_over = True
+        if not (self.menu.lswipe_mouse_dn or self.menu.rswipe_mouse_dn):
+            if not self.mouse_over:
+                self.on_mouse_enter()
+            self.menu.mainloop.info.title = self.title
+            self.menu.mainloop.info.subtitle = self.subtitle
+            self.menu.mainloop.info.game_id = "#%03i" % self.cat_id
+            self.mouse_over = True
 
     def on_mouse_out(self):
         if self.mouse_over:
@@ -453,13 +451,13 @@ class MenuItem(pygame.sprite.Sprite):
             self.menu.mainloop.info.title_only()
 
     def on_mouse_over(self):
-        if not self.mouse_over:
-            self.on_mouse_enter()
-
-        self.menu.mainloop.info.title = self.title
-        self.menu.mainloop.info.subtitle = self.subtitle
-        self.menu.mainloop.info.game_id = "#%s/%03i" % (str(self.game_constructor)[16:19], self.dbgameid)
-        self.mouse_over = True
+        if not (self.menu.lswipe_mouse_dn or self.menu.rswipe_mouse_dn):
+            if not self.mouse_over:
+                self.on_mouse_enter()
+            self.menu.mainloop.info.title = self.title
+            self.menu.mainloop.info.subtitle = self.subtitle
+            self.menu.mainloop.info.game_id = "#%s/%03i" % (str(self.game_constructor)[16:19], self.dbgameid)
+            self.mouse_over = True
 
     def on_mouse_out(self):
         if self.mouse_over:
@@ -967,6 +965,7 @@ class Menu:
     def reset_titles(self):
         self.mainloop.info.title = ""
         self.mainloop.info.subtitle = ""
+        self.mainloop.info.game_id = ""
         self.mainloop.redraw_needed[1] = True
         self.mainloop.redraw_needed[2] = True
         self.mouseenter = -1
