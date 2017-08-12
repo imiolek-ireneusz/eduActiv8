@@ -257,7 +257,7 @@ class Language:
             self.n2spk = self.lang_file.n2spk
             self.ico_suffix = "ar"
             self.lang_id = 2
-        elif self.lang == 'cn':  # Arabic
+        elif self.lang == 'cn':
             import i18n.custom.cn
             import i18n.custom.word_lists.cn_di
             self.voice = None
@@ -267,6 +267,18 @@ class Language:
             # self.n2spk = self.lang_file.n2spk
             self.ico_suffix = ""
             self.lang_id = 18
+
+        elif self.lang == 'lkt':
+            import i18n.custom.lkt
+            import i18n.custom.word_lists.lkt_di
+            self.voice = None
+            self.has_cursive = False
+            self.di = i18n.custom.word_lists.lkt_di.di
+            self.lang_file = i18n.custom.lkt
+            # self.alpha = i18n.custom.cn.alpha
+            # self.n2spk = self.lang_file.n2spk
+            self.ico_suffix = ""
+            self.lang_id = 20
 
         elif self.lang == 'te_ST':
             import i18n.custom.te_st
