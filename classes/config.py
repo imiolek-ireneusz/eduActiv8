@@ -22,7 +22,7 @@ class Config:
         self.fs_height = 768
         self.debug_screen_size = None  # [900,600]
         # size_limits - don't let window resizing get out of hand [min_w, min_h, max_w, max_h]
-        self.size_limits = [800, 480, 2000, 2000]
+        self.size_limits = [800, 570, 2000, 2000]
         # [670,480,2000,2000] #800 - minimum to fit all buttons, 2000 - with over 2000 pixels each way pygame is not redrawing very well
         # set total size of OS panels and window decorations on both sides - used in windowed version. Not so much important now with resizing enabled.
         # this will not be auto-detected
@@ -122,26 +122,26 @@ class Config:
         self.set_font_family()
 
         if self.fribidi_loaded:
-            self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano",
+            self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano", "Lakȟótiyapi",
                                 "Polski", "Português", "Suomalainen", "Ελληνικά", "Русский", "Српски", "Українська",
                                 "תירבע", self.arabic, "Dansk", "Nederlands", "Slovenčina", "Test Language"]
-            self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "pl", "pt_PT", "fi", "el", "ru", "sr",
+            self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
                             "uk", "he", "ar", "da", "nl", "sk", "te_ST"]
-            self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "pl", "pt_PT", "fi", "el", "ru", "sr",
+            self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
                            "uk", "he"]
         else:
-            self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano",
+            self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano", "Lakȟótiyapi",
                                 "Polski", "Português", "Suomalainen", "Ελληνικά", "Русский", "Српски", "Українська",
                                 "תירבע", "Dansk", "Nederlands", "Slovenčina", "Test Language"]
-            self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "pl", "pt_PT", "fi", "el", "ru", "sr",
+            self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
                             "uk", "he", "da", "nl", "sk", "te_ST"]
-            self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "pl", "pt_PT", "fi", "el", "ru", "sr",
+            self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
                            "uk", "he"]
 
         self.id2lng = {1: "English", 5: "Català", 19: "Српски", 12: "Deutsch", 8: "Español", 16: "Ελληνικά",
-                       17: "תירבע", 11: "Italiano", 3: "Polski", 9: "Português", 13: "Русский", 15: "Suomalainen",
+                       17: "תירבע", 11: "Italiano", 20:  "Lakȟótiyapi", 3: "Polski", 9: "Português", 13: "Русский", 15: "Suomalainen",
                        14: "Українська", 2: self.arabic, 6: "Dansk", 10: "Français", 7: "Nederlands", 4: "Slovenčina"}
-        self.id2imgsuffix = {1: "", 5: "", 18: "ru", 12: "", 8: "", 16: "el", 17: "he", 11: "", 3: "", 9: "", 13: "ru",
+        self.id2imgsuffix = {1: "", 5: "", 18: "ru", 12: "", 8: "", 16: "el", 17: "he", 11: "", 20: "", 3: "", 9: "", 13: "ru",
                              15: "", 14: "ru", 2: "ar", 6: "", 10: "", 7: "", 4: ""}
 
     def set_font_family(self, variant=0):
