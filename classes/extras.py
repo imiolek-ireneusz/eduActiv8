@@ -32,6 +32,10 @@ def hsv_to_rgb(h, s, v):
     rgb = colorsys.hsv_to_rgb(*hsv_clean)
     return [int(each * 255) for each in rgb]
 
+def hsva_to_rgba(h, s, v, a):
+    rgb = hsv_to_rgb(h, s, v)
+    rgb.append(a)
+    return rgb
 
 def rgb_to_hsv(r, g, b, a=255):
     hsv = colorsys.rgb_to_hsv(r / 255.0, g / 255.0, b / 255.0)
