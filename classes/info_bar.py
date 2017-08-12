@@ -104,7 +104,7 @@ class Button(BaseButton):
         # book 3
         text = self.font3.render("%s" % (self.panel.title), 1, self.panel.font_color)
         text2 = self.font4.render("%s" % (self.panel.subtitle), 1, self.panel.font_color1)
-        text3 = self.font4.render("%s" % (self.panel.game_id), 1, self.panel.font_color1)
+        text3 = self.font4.render("%s" % (self.panel.game_id), 1, self.panel.font_color4)
         # print text.rect.w
         tw1 = self.font3.size(self.panel.title)[0]
         tw2 = self.font4.size(self.panel.subtitle)[0]
@@ -149,6 +149,7 @@ class InfoBar():
         # self.font_color1 = (255,220,0,0)
         self.font_color = (255, 125, 0, 0)
         self.font_color1 = (255, 220, 0, 0)
+        self.font_color4 = (125, 125, 125, 0)
 
         self.font_color2 = (255, 75, 0, 0)
         self.font_color3 = (255, 220, 0, 0)
