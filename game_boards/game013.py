@@ -50,10 +50,13 @@ class Board(gd.BoardGame):
             data = [15, 9, 30, 7, 3]
         self.points = data[4]
         letter_table = []
-        letter_table.extend(self.lang.alphabet_lc)
-        letter_table.extend(self.lang.alphabet_uc)
-        letter_table.extend(self.lang.accents_lc)
-        letter_table.extend(self.lang.accents_uc)
+        if self.lang.lang != "lkt":
+            letter_table.extend(self.lang.alphabet_lc)
+            letter_table.extend(self.lang.alphabet_uc)
+            letter_table.extend(self.lang.accents_lc)
+            letter_table.extend(self.lang.accents_uc)
+        else:
+            letter_table = ['a', 'b', 'č', 'e', 'g', 'ǧ', 'h', 'ȟ', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 's', 'š', 't', 'u', 'w', 'y', 'z', 'ž', 'A', 'B', 'Č', 'E', 'G', 'Ǧ', 'H', 'Ȟ', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'S', 'Š', 'T', 'U', 'W', 'Y', 'Z', 'Ž', 'á', 'é', 'í', 'ó', 'ú', 'Á', 'ŋ']
 
         self.words = self.lang.di[data[3]]
         self.data = data
@@ -72,17 +75,20 @@ class Board(gd.BoardGame):
                 for i in range(len(letter_table)):
                     if each == unicode(letter_table[i], "utf-8"):
                         self.word_l.append(letter_table[i])
+                        #self.word_l.append(unicode(letter_table[i], "utf-8"))
         else:
             word_len = len(self.word)
             self.word_l = self.word
 
         self.num_list = []
-
-        choice_list = self.lang.alphabet_lc + self.lang.alphabet_uc
+        if self.lang.lang != "lkt":
+            choice_list = self.lang.alphabet_lc + self.lang.alphabet_uc
+        else:
+            choice_list = ['a', 'b', 'č', 'e', 'g', 'ǧ', 'h', 'ȟ', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 's', 'š', 't', 'u', 'w', 'y', 'z', 'ž', 'A', 'B', 'Č', 'E', 'G', 'Ǧ', 'H', 'Ȟ', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'S', 'Š', 'T', 'U', 'W', 'Y', 'Z', 'Ž']
         for i in range(data[2] - word_len):  # adding noice letters
             index = random.randrange(0, len(choice_list))
             self.num_list.append(choice_list[index])
-
+        #print("%s, %s - %d" % (self.word, self.word_l, word_len))
         shuffled = self.num_list[:]
         for i in range(word_len):
             shuffled.append(self.word_l[i])

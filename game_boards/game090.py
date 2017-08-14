@@ -22,7 +22,7 @@ class Board(gd.BoardGame):
 
         self.ai_enabled = False
         self.board.draw_grid = False
-        h = random.randrange(0, 255, 5)
+        h = random.randrange(150, 240, 5)
         bg_col = (255, 255, 255)
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
@@ -230,6 +230,10 @@ class Board(gd.BoardGame):
 
         random.shuffle(wide_slots)
         switch = self.square_count // 2
+        if self.lang.lang == "lkt":
+            text_font_size = 10
+        else:
+            text_font_size = 8
         for i in range(self.square_count):
             if i < switch:
                 position_list = small_slots
@@ -249,7 +253,7 @@ class Board(gd.BoardGame):
                 pos = i - switch
                 xw = 3
                 self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, 1, classes.board.Letter, caption,
-                                    color0, "", 8)
+                                    color0, "", text_font_size)
                 self.board.ships[-1].font_color = self.font_color
 
 

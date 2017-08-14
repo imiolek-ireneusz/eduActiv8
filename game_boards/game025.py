@@ -65,10 +65,14 @@ class Board(gd.BoardGame):
         self.solution = [data[0] - 2, data[1] - 2]
 
         letter_table = []
-        letter_table.extend(self.lang.alphabet_lc)
-        letter_table.extend(self.lang.accents_lc)
-        letter_table.extend(self.lang.alphabet_uc)
-        letter_table.extend(self.lang.accents_uc)
+
+        if self.lang.lang != "lkt":
+            letter_table.extend(self.lang.alphabet_lc)
+            letter_table.extend(self.lang.alphabet_uc)
+            letter_table.extend(self.lang.accents_lc)
+            letter_table.extend(self.lang.accents_uc)
+        else:
+            letter_table = ['a', 'b', 'č', 'e', 'g', 'ǧ', 'h', 'ȟ', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 's', 'š', 't', 'u', 'w', 'y', 'z', 'ž', 'A', 'B', 'Č', 'E', 'G', 'Ǧ', 'H', 'Ȟ', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'S', 'Š', 'T', 'U', 'W', 'Y', 'Z', 'Ž', 'á', 'é', 'í', 'ó', 'ú', 'Á', 'ŋ']
 
         self.word = self.lang.di[data[4]][random.randrange(1, self.lang.di[data[4]][0])]
         if sys.version_info < (3, 0):

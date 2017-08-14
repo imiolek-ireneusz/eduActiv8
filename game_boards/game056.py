@@ -166,8 +166,14 @@ class Board(gd.BoardGame):
                     capt[i - f_index * 5][1] *= multi
                 disp = ["", str(capt[i - f_index * 5][0]), str(capt[i - f_index * 5][1]), ""]
             elif drawing_f[f_index] == self.draw_ratios:
-                disp = [self.d["Ratio"], str(capt[i - f_index * 5][0]) + " : " + str(
-                    capt[i - f_index * 5][1] - capt[i - f_index * 5][0])]
+
+                if self.lang.lang == "lkt":
+                    self.font_size = 5
+                    disp = str(capt[i - f_index * 5][0]) + " : " + str(capt[i - f_index * 5][1] - capt[i - f_index * 5][0])
+                else:
+                    disp = [self.d["Ratio"], str(capt[i - f_index * 5][0]) + " : " + str(
+                        capt[i - f_index * 5][1] - capt[i - f_index * 5][0])]
+                    self.font_size = 7
             elif drawing_f[f_index] == self.draw_percents:
                 percent = (float(capt[i - f_index * 5][0]) / float(capt[i - f_index * 5][1])) * 100
                 intperc = int(percent)
@@ -370,7 +376,8 @@ class Board(gd.BoardGame):
                          [center[0] + size // 7, center[1] - lh // 2 + la], lh)
 
     def draw_ratios(self, numbers, canvas, size, center, color):
-        pygame.draw.line(canvas, self.color2, [center[0], center[1]], [center[0] * 3, center[1]], 1)
+        if self.lang.lang != "lkt":
+            pygame.draw.line(canvas, self.color2, [center[0], center[1]], [center[0] * 3, center[1]], 1)
 
     def draw_decimals(self, numbers, canvas, size, center, color):
         pass
