@@ -66,29 +66,37 @@ def n2txt(n, twoliner=False):
     return ""
 
 
+"""
+time - mázaškaŋškaŋ
+hour - oápȟe
+minute - oápȟe čík’ala
+second - okpí
+o’clock - mázaškaŋškaŋ # (e.g. mázaškaŋškaŋ waŋží = 1:00)
+quarter past - mázaškaŋškaŋ # sáŋm šókela (e.g. mázaškaŋškaŋ waŋží sáŋm šókela = 1:15)
+half past - mázaškaŋškaŋ # sáŋm okhíse (e.g. mázaškaŋškaŋ waŋží sáŋm okhíse = 1:30)
+3 quarters past - mázaškaŋškaŋ # sáŋm šókela yámni (e.g. mázaškaŋškaŋ waŋží sáŋm šókela yámni = 1:45)
+X minutes past #:00 - mázaškaŋškaŋ # sáŋm oápȟe čík’ala X (e.g. mázaškaŋškaŋ waŋží sáŋm oápȟe čík’ala tópa = 1:04)
+X minutes before #:00 - mázaškaŋškaŋ # itȟókab oápȟe čík’ala X (e.g. mázaškaŋškaŋ waŋží itȟókab oápȟe čík’ala tópa = 12:56)
+"""
 def time2str(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
-    if m > 30:
+    if m > 30 and not m == 45:
         if h == 12:
             h = 1
         else:
             h += 1
     if m == 0:
-        return "%s o'clock" % n2txt(h)
-    elif m == 1:
-        return "one minute past %s" % n2txt(h)
+        return "mázaškaŋškaŋ %s" % n2txt(h)
     elif m == 15:
-        return "quarter past %s" % n2txt(h)
+        return "mázaškaŋškaŋ %s sáŋm šókela" % n2txt(h)
     elif m == 30:
-        return "half past %s" % n2txt(h)
+        return "mázaškaŋškaŋ %s sáŋm okhíse" % n2txt(h)
     elif m == 45:
-        return "quarter to %s" % n2txt(h)
-    elif m == 59:
-        return "one minute to %s" % n2txt(h)
+        return "mázaškaŋškaŋ %s sáŋm šókela yámni" % n2txt(h)
     elif m < 30:
-        return "%s past %s" % (n2txt(m), n2txt(h))
+        return "mázaškaŋškaŋ %s sáŋm oápȟe čík’ala %s" % (n2txt(h), n2txt(m))
     elif m > 30:
-        return "%s to %s" % (n2txt(60 - m), n2txt(h))
+        return "mázaškaŋškaŋ %s itȟókab oápȟe čík’ala %s" % (n2txt(h), n2txt(60 - m))
     return ""
 
 
