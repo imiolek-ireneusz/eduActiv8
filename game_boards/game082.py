@@ -69,7 +69,7 @@ class Board(gd.BoardGame):
                          'dragonfly', 'toad', 'pelican', 'squid', 'lion_cub', 'jaguar', 'duck', 'lizard', 'rhinoceros',
                          'hyena', 'ox', 'peacock', 'parrot', 'elk', 'alligator', 'ant', 'goat', 'baby_rabbit', 'lion',
                          'squirrel', 'opossum', 'chimp', 'doe', 'gopher', 'elephant', 'giraffe', 'spider', 'puppy',
-                         'jay', 'seal', 'rooster', 'turtle', 'bull', 'cat', 'lamb', 'rat', 'slug', 'buffalo',
+                         'jay', 'seal', 'rooster', 'turtle', 'bull', 'cat', 'rat', 'slug', 'buffalo',
                          'blackbird', 'swan', 'lobster', 'dog', 'mosquito', 'snake', 'chicken', 'anteater']
         elif gv == 1:
             category = "sport"
