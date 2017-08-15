@@ -184,7 +184,7 @@ d["a4a_nature"] = ["ziemia", "klif", "wzgórze", "kanion", "skała", "morze", "j
 d["a4a_jobs"] = ['klaun', 'inżynier', 'ksiądz', 'weterynarz', 'sędzia', 'szef kuchni', 'sportowiec', 'bibliotekarz',
                  'żongler', 'policjant', 'hydraulik', 'medal', 'królowa', 'rolnik', 'magia', 'rycerz', 'lekarz',
                  'murarz', 'sprzątaczka', 'nauczyciel', 'myśliwy', 'żołnierz', 'muzyk', 'prawnik', 'wędkarz',
-                 'księżniczka', 'strażak', 'zakonnica', 'wódz', 'pirat', 'kowboj', 'elektryk', 'pielęgniarka', 'król',
+                 'księżniczka', 'strażak', 'zakonnica', 'pirat', 'kowboj', 'elektryk', 'pielęgniarka', 'król',
                  'prezydent', 'pracownik biurowy', 'stolarz', 'dżokej', 'pracownik', 'mechanik', 'pilot', 'aktor', 'kucharz',
                  'student', 'rzeźnik', 'księgowy', 'książę', 'papież', 'marynarz', 'bokser', 'baletnica', 'trener',
                  'astronauta', 'malarz', 'anestezjolog', 'naukowiec']

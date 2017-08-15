@@ -151,7 +151,7 @@ d["a4a_nature"] = ["makȟóčhe", "mayá", "pahá", "ósmaka", "íŋyaŋ", "mniw
                    "ipȟá", "íŋyaŋšlo", "iǧúǧa oȟlóka", "čhasmú pahá", "wíta", "čhúŋšoke", "čhasmú makȟóčhe", "čháǧa wíta"]
 d["a4a_jobs"] = ["heyókȟa", "thikáǧA", "wačhékiye wičháša", "wamákȟaškaŋ aphíyA", "wayásu", "wóhela", "khiíŋyaŋke s’a", "wówapi awáŋyaŋkA", "tȟápa oštéšteya waŋkáyeyA", "čhaŋksáyuha",
                  "mní oíŋyaŋka aphíyA", "čhešká máza", "wíŋyaŋyatápi", "wóžu wičháša", "wakȟáŋȟ’aŋ wičháša", "mas’ákičhita", "waákisniyA", "makȟá špáŋpi awáŋyaŋkA", "thiyúžaža wíŋyaŋ", "waúŋspewičhákhiyA",
-                 "wakhúwa", "akíčhita", "olówaŋ káǧA", "waákhiya wičháša", "hokhúwa s’a", "wíŋyaŋyatápila", "pȟelkásni wičháša", "witȟáŋšna úŋ", "***chief***",
+                 "wakhúwa", "akíčhita", "olówaŋ káǧA", "waákhiya wičháša", "hokhúwa s’a", "wíŋyaŋyatápila", "pȟelkásni wičháša", "witȟáŋšna úŋ",
                  "mniwáŋča wamánuŋ s’a", "pteóle", "wakȟáŋgli awáŋyaŋkA", "wayázaŋ awáŋyaŋkA", "wičhášayatápi", "tȟuŋkášilayapi", "wówaši oyáŋke", "čhaŋkážipA", "šuŋk’ákaŋyaŋkA",
                  "wówaši", "iyéčhiŋkíŋyaŋka aphíyA", "kiŋyékhiyapi kaȟápA", "škáte s’a", "lol’íȟ’aŋ wičháša", "wayáwa", "wapȟáte s’a", "oíčazo owá", "wičhášayatápila", "pope",
                  "mniwáŋča akíčhita", "napé uŋ kičhízapi", "wačhí wíŋyaŋ", "škalwíčhakhiyA", "wičháȟpi ománi", "itówapi káǧA", "ištíŋmat’ewíčhayA", "wapásikA"]

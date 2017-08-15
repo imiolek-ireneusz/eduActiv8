@@ -160,7 +160,7 @@ d["a4a_nature"] = ["Land", "Klippe", "Hügel", "Schlucht", "Felsen", "Meer", "Se
 d["a4a_jobs"] = ["Clown", "Ingenieur", "Priester", "Veterinär", "Richter", "Koch", "Athlet", "Bibliothekar", "juggler",
                  "Polizei", "Klempner", "Dienstmarke", "Königin", "Farmer", "Magier", "Ritter", "Arzt", "Maurer",
                  "Reiniger", "Lehrer", "Jäger", "Soldat", "Musiker", "Anwalt", "Fischer", "Prinzessin", "Feuerwehrmann",
-                 "Nonne", "Chef", "Pirat", "Cowboy", "Elektriker", "Krankenschwester", "König", "Präsident", "Sekretär",
+                 "Nonne", "Pirat", "Cowboy", "Elektriker", "Krankenschwester", "König", "Präsident", "Sekretär",
                  "Zimmermann", "Jockey", "Arbeiter", "Mechaniker", "Pilot", "Schauspieler", "Koch", "Student",
                  "Schlachter", "Verkäufer", "Prinz", "Papst", "Matrose", "Boxer", "Tänzer", "Trainer", "Astronaut",
                  "Maler", "Anestesist", "Wissenschaftler"]

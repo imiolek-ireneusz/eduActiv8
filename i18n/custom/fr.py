@@ -210,7 +210,7 @@ d["a4a_nature"] = ["terre", "falaise", "colline", "canyon", "rocher", "mer", "la
 d["a4a_jobs"] = ["clown", "ingénieur", "prêtre", "vétérinaire", "juge", "chef", "athlète", "libraire", "jongleur",
                  "police", "plombier", "insigne", "reine", "agriculteur", "magie", "chevalier", "docteur", "maçon",
                  "nettoyeur", "enseignant", "chasseur", "soldat", "musicien", "avocat", "pêcheur", "princesse",
-                 "pompier", "nounou", "chef", "pirate", "cowboy", "électricien", "infirmière", "roi", "président",
+                 "pompier", "nounou", "pirate", "cowboy", "électricien", "infirmière", "roi", "président",
                  "bureau", "charpentier", "jockey", "travailleur", "mécanicien", "pilote", "acteur", "cuisinier",
                  "étudiant", "boucher", "comptable", "prince", "pape", "marin", "boxeur", "ballet", "coach",
                  "astronaute", "peintre", "anesthésiste", "scientifique"]

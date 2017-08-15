@@ -290,10 +290,8 @@ dp["yellow is ok"] = "[[tsahov mat'im]]"
 dp["Fract instr0"] = "Match fraction charts on the right to the ones on the left"
 dp["Fract instr1"] = "Match fraction charts and fractions on the right to the fraction charts on the left"
 dp["Fract instr2"] = "Match fraction charts to the fractions on the left"
-dp[
-    "Fract instr3"] = "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
-dp[
-    "Fract instr4"] = "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
+dp["Fract instr3"] = "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+dp["Fract instr4"] = "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
 
 d["a4a_animals"] = ["cow", "turkey", "shrimp", "wolf", "panther", "panda", "magpie", "clam", "pony", "mouse", "pug",
                     "koala", "frog", "ladybug", "gorilla", "llama", "vulture", "hamster", "bird", "starfish", "crow",
@@ -346,7 +344,7 @@ d["a4a_nature"] = ["land", "cliff", "hill", "canyon", "rock", "sea", "lake", "co
                    "peak", "lava", "cave", "dune", "island", "forest", "desert", "iceberg"]
 d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "police",
                  "plumber", "badge", "queen", "farmer", "magic", "knight", "doctor", "bricklayer", "cleaner", "teacher",
-                 "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun", "chief",
+                 "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun",
                  "pirate", "cowboy", "electrician", "nurse", "king", "president", "office", "carpenter", "jockey",
                  "worker", "mechanic", "pilot", "actor", "cook", "student", "butcher", "accountant", "prince", "pope",
                  "sailor", "boxer", "ballet", "coach", "astronaut", "painter", "anaesthesiologist", "scientist"]
