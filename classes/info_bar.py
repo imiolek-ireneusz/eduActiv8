@@ -13,16 +13,17 @@ class BaseButton(pygame.sprite.Sprite):
         self.width = width
         self.height = height
         self.pos = [pos_x, pos_y]
+        self.panel = panel
+        self.color = self.panel.bg_color
+
         if self.panel.mainloop.scheme is not None:
             if self.panel.mainloop.scheme.dark:
-                self.color = (40, 40, 40)
                 self.scheme_dir = "black"
             else:
-                self.color = (40, 40, 40)
                 self.scheme_dir = "black"
         else:
-            self.color = (40, 40, 40)
             self.scheme_dir = "black"
+
 
         self.update_size(width, height)
 
@@ -45,7 +46,7 @@ class BaseButton(pygame.sprite.Sprite):
             self.font4 = self.panel.fonts[3]
 
     def update_size(self, width, height):
-        self.image = pygame.Surface([width, height])
+        self.image = pygame.Surface([width, height], flags=pygame.SRCALPHA)
         self.image.fill(self.color)
         self.rect = self.image.get_rect()
         self.rect.topleft = self.pos
@@ -63,13 +64,10 @@ class Button(BaseButton):
     def load_images(self, rev):
         self.img_pos = (0, 0)
         try:
-            self.img_1 = pygame.image.load(
-                os.path.join('res', 'images', "schemes", self.scheme_dir, self.img_src_1)).convert()
-            self.img_2 = pygame.image.load(
-                os.path.join('res', 'images', "schemes", self.scheme_dir, self.img_src_2)).convert()
+            self.img_1 = pygame.image.load(os.path.join('res', 'images', "info_bar", self.img_src_1)).convert_alpha()
+            self.img_2 = pygame.image.load(os.path.join('res', 'images', "info_bar", self.img_src_2)).convert_alpha()
             if self.img_src_3 != "":
-                self.img_3 = pygame.image.load(
-                    os.path.join('res', 'images', "schemes", self.scheme_dir, self.img_src_3)).convert()
+                self.img_3 = pygame.image.load(os.path.join('res', 'images', "info_bar", self.img_src_3)).convert_alpha()
             if rev:
                 self.img_1 = pygame.transform.flip(self.img_1, 1, 0)
                 self.img_2 = pygame.transform.flip(self.img_2, 1, 0)
@@ -147,26 +145,26 @@ class InfoBar():
         # orange
         # self.font_color = (255,75,0,0)
         # self.font_color1 = (255,220,0,0)
-        self.font_color = (255, 125, 0, 0)
-        self.font_color1 = (255, 220, 0, 0)
-        self.font_color4 = (125, 125, 125, 0)
+        self.font_color = (255, 75, 0, 0)
+        self.font_color1 = (255, 125, 0, 0)
+        self.font_color4 = (255, 175, 0, 0)
 
-        self.font_color2 = (255, 75, 0, 0)
-        self.font_color3 = (255, 220, 0, 0)
+        self.font_color2 = (225, 75, 0, 0)
+        self.font_color3 = (255, 175, 0, 0)
 
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                self.font_color = self.mainloop.scheme.info_font_color0
-                self.font_color1 = self.mainloop.scheme.info_font_color1
+                self.bg_color = (40, 40, 40)
 
-                self.font_color2 = self.mainloop.scheme.info_font_color2
-                self.font_color3 = self.mainloop.scheme.info_font_color3
             else:
-                self.font_color = (255, 255, 255, 0)
-                self.font_color1 = (220, 220, 220, 0)
+                self.bg_color = (255, 255, 255)
+            self.font_color = self.mainloop.scheme.info_font_color0
+            self.font_color1 = self.mainloop.scheme.info_font_color1
 
-                self.font_color2 = (255, 255, 255, 0)
-                self.font_color3 = (150, 150, 150, 0)
+            self.font_color2 = self.mainloop.scheme.info_font_color2
+            self.font_color3 = self.mainloop.scheme.info_font_color3
+        else:
+            self.bg_color = (255, 255, 255)
 
         self.hidden = False
         self.close_dialog = False
@@ -589,8 +587,9 @@ class InfoBar():
                 (255, 255, 255), (255, 255, 255), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0),
                 (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0))
                 hs = 80
-        color = (40, 40, 40)
-        screen.fill(color)
+        #color = (40, 40, 40)
+        #color = self.def_bg_col
+        screen.fill(self.bg_color)
         # colors = ((250,250,250),(233,233,233),(192,192,192),(141,141,141),(137,137,137))#,(255,255,255),(240,223,238),(133,0,116),(148,31,133))
         # colors = ((250,250,250),(233,233,233),(233,233,233),(192,192,192),(192,192,192),(141,141,141),(141,141,141),(137,137,137),(137,137,137))#,(255,255,255),(240,223,238),(133,0,116),(148,31,133))
 
