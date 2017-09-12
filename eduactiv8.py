@@ -40,7 +40,7 @@ import gc
 import os
 import pygame
 import sys
-import threading
+#import threading
 import time
 
 import classes.config
@@ -65,13 +65,11 @@ import classes.dialogwnd
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 os.chdir(path)
 
-class GamePlay(threading.Thread):
+class GamePlay():
     """The top most class - subclasses the Thread to keep the game and speaker in two different processes
     holds main loop"""
 
     def __init__(self, speaker, lang, configo):
-        threading.Thread.__init__(self)
-
         # Create / set additional top level game objects and mainloop variables
         self.speaker = speaker
         self.lang = lang
@@ -80,6 +78,7 @@ class GamePlay(threading.Thread):
         self.game_board = None
         self.cl = classes.colors.Color()
         self.sfx = classes.sound.SoundFX(self)
+        self.m = None
 
         self.userid = -1
 
@@ -101,7 +100,7 @@ class GamePlay(threading.Thread):
         if android is not None:
             infoObject = pygame.display.Info()
             h = 770
-            login_h = 500
+            login_h = 570
             self.android_screen_size = [int(infoObject.current_w * h / infoObject.current_h), h]
             self.android_login_size = [int(infoObject.current_w * login_h / infoObject.current_h), login_h]
 
@@ -203,7 +202,7 @@ class GamePlay(threading.Thread):
                 size[1] = self.config.size_limits[3]
                 repost = True
 
-            if size != self.fs_size:
+            if size != self.fs_size or self.config.platform == "macos":
                 self.wn_size = size[:]
                 self.size = size[:]
             self.config.settings["screenw"] = self.size[0]
@@ -288,8 +287,9 @@ class GamePlay(threading.Thread):
     def run(self):
         # start of this Thread
         if android is None:
-            self.speaker.join()  # join speaker Thread
-        # self.speaker.start_server_en()
+            #self.speaker.join()  # join speaker Thread
+            # initialize pygame
+            pygame.init()
 
         self.db = classes.dbconn.DBConnection(self.config.file_db, self)
         self.scheme = None  # classes.colors.BYScheme() #BW, WB, BY
@@ -310,7 +310,7 @@ class GamePlay(threading.Thread):
                     self.config.window_pos[0], self.config.window_pos[1])
                 if android is None:
                     if not self.logged_out:
-                        self.size = [800, 480]
+                        self.size = [800, 570]  # [800, 570]
                     else:
                         self.size = self.wn_size
                 else:
@@ -360,14 +360,15 @@ class GamePlay(threading.Thread):
                 self.set_init_vals()
                 # if self.config.platform != "windows":
                 if android is None:
-                    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (
-                    self.config.window_pos[0], self.config.window_pos[1])
+                    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (self.config.window_pos[0], self.config.window_pos[1])
                 self.config.fs_width = self.display_info.current_w
                 self.config.fs_height = self.display_info.current_h
 
-                # check if there's a size available from previous session
-                if self.config.settings["screenw"] >= self.config.size_limits[0] and self.config.settings["screenh"] >= \
-                        self.config.size_limits[1] and self.config.settings["screenw"] <= self.config.size_limits[2] and \
+                # check if there's a size available from previous session, but not on MacOS
+                if self.config.platform != "macos" and \
+                                self.config.settings["screenw"] >= self.config.size_limits[0] and \
+                                self.config.settings["screenh"] >= self.config.size_limits[1] and \
+                                self.config.settings["screenw"] <= self.config.size_limits[2] and \
                                 self.config.settings["screenh"] <= self.config.size_limits[3]:
                     self.wn_size = [self.config.settings["screenw"], self.config.settings["screenh"]]
                 else:
@@ -413,7 +414,7 @@ class GamePlay(threading.Thread):
                     pygame.draw.aaline = pygame.draw.line
 
                 # create game menu / game manager
-                self.xml_conn = classes.xml_conn.XMLConn()
+                self.xml_conn = classes.xml_conn.XMLConn(self)
                 m = classes.menu.Menu(self)
                 self.m = m
 
@@ -686,9 +687,9 @@ def main():
     # create configuration object
     if android is not None or len(sys.argv) == 1:
         # Map the back button to the escape key.
-        # initialize pygame
-        pygame.init()
+
         if android is not None:
+            pygame.init()
             android.init()
             android.map_key(android.KEYCODE_BACK, pygame.K_ESCAPE)
         configo = classes.config.Config(android)
@@ -702,9 +703,7 @@ def main():
         app = GamePlay(speaker, lang, configo)
         if android is None:
             speaker.start()
-            app.start()
-        else:
-            app.run()
+        app.run()
     elif len(sys.argv) == 2:
         if sys.argv[1] == "v" or sys.argv[1] == "version":
             from classes.cversion import ver

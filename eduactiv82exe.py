@@ -57,10 +57,10 @@ class BuildExe:
         self.script = "eduactiv8.py"
 
         # Name of program
-        self.project_name = "eduActiv8_V1"
+        self.project_name = "eduActiv8"
 
         # Project url
-        self.project_url = "about:none"
+        self.project_url = "https://www.eduactiv8.org"
 
         # Version of program
         self.project_version = "1.0"
@@ -80,7 +80,7 @@ class BuildExe:
         self.icon_file = os.path.join("res", "icon", "eduactiv8.ico")
 
         # Extra files/dirs copied to game
-        self.extra_datas = ["classes", "game_boards", "i18n", "locale", "res"]
+        self.extra_datas = ["classes", "game_boards", "i18n", "locale", "res", "xml"]
 
         # Extra/excludes python modules
         self.extra_modules = []

@@ -68,6 +68,33 @@ Windows installation of required software to run from source.
     C:\python27\python.exe C:\eduactiv8\eduactiv8.py
 
 ----------------------------------------------
+Mac running from source:
+
+Run the following commands in Terminal to get the dependencies sorted:
+    sudo easy_install pip
+    sudo -H pip install pygame
+
+    navigate to the eduactiv8 directory:
+    cd path/to/game/
+
+    and run the app:
+    python eduactiv8.py
+
+
+    to enable espeak functionality:
+    instal homebrew via Terminal:
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+    and then install espeak:
+    brew install espeak
+
+
+Mac app:
+Download the "compiled" app for MacOS 12.10.3 and above from https://sourceforge.net/projects/eduactiv8/
+Unzip and double click on the eduActiv8.app to run it. Alternatively copy it over to the Applications for ease.
+The compiled version currently does not work with espeak.
+
+______________________________________________
 
 The first time the application is run will be in normal windowed mode (not in fullscreen).
 To display it in fullscreen press Ctrl+F at the start of the or go to Preferences (in login screen) and enable full screen.

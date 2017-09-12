@@ -30,8 +30,8 @@ def findNremove(path, file_patterns, dir_patterns, maxdepth=1):
                                 # print "Removing %s" % (os.path.join(r,files))
                                 count += 1
                                 os.remove(os.path.join(r, files))
-                            except Exception, e:
-                                print e
+                            except Exception as e:
+                                print(e)
     print("%d file(s) removed." % count)
 
     # removing all matching directories
@@ -46,8 +46,8 @@ def findNremove(path, file_patterns, dir_patterns, maxdepth=1):
                                 # print "Removing %s" % (os.path.join(r,dirs))
                                 count += 1
                                 shutil.rmtree(os.path.join(r, dirs))
-                            except Exception, e:
-                                print e
+                            except Exception as e:
+                                print(e)
     print("%d directories removed." % count)
 
 
@@ -65,14 +65,14 @@ def distribute_mo(hpath, path, pattern):
                         dst = os.path.join(hpath, "locale", code, "LC_MESSAGES", "eduactiv8.mo")
                         shutil.copyfile(src, dst)  # copy
                         os.remove(os.path.join(r, files))  # remove
-                    except Exception, e:
-                        print e
+                    except Exception as e:
+                        print(e)
                     else:
                         count += 1
     print("%d %s file(s) distributed." % (count, pattern))
 
 
-if __name__ == "__main__":
+def main():
     # path = os.path.dirname(os.path.abspath(__file__))
     path = os.path.abspath(os.path.dirname(sys.argv[0]))
     os.chdir(path)
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     if len(s[-1]) > 9:
         dir_patterns = ["__pycache__", ".idea"]
         v = s[-1][10:]
-        if v[0] in ["1", "2", "3"]:
+        if v[0] in ["0", "1", "2", "3"]:
             with open(os.path.join(path, "classes", "cversion.py"), "w") as s_file:
                 s_file.write('ver = "%s"' % v)
                 print("\nVersion number updated.\n")
@@ -97,7 +97,7 @@ if __name__ == "__main__":
         dir_patterns = ["__pycache__"]
         t = datetime.date.today()
         c = t.strftime('%Y%m%d')
-        v = "3.%s.%s" % (c[3:5], c[5:])
+        v = "3.%s.%s-beta" % (c[3:5], c[5:])
 
         with open(os.path.join(path, "classes", "cversion.py"), "w") as s_file:
             s_file.write('ver = "%s"' % v)
@@ -111,3 +111,6 @@ if __name__ == "__main__":
     findNremove(path, file_patterns, dir_patterns, 5)
 
     print("Done!\n")
+
+if __name__ == "__main__":
+    main()

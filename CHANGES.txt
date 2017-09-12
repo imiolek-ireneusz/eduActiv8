@@ -1,5 +1,12 @@
 Changelog:
-eduActiv8 - 3.70.xxx:
+eduActiv8 - 3.70.9xx::
     - Serbian language added by Miroslav Nikolic (Мирослав Николић)
-    - minor changes to menu to enable scrolling on drag
+    - Lakota Language added by Peter Hill, Derek Lackaff and Matthew Rama
     - Catalan translation updated with a patch from Jordi Mallach and Guillem Jover
+    - compatibility with MacOS added
+    - minor changes to menu to enable scrolling on drag
+    - login screen redesigned
+    - menu moved to xml file
+    - levels moved from game files to levels.xml file allowing customization of levels after deployment (mainly maths games covered so far)
+    - minor improvements across a number of activities
+    - some images replaced

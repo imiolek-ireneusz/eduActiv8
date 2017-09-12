@@ -11,6 +11,7 @@ Translations:
           - recently updated by Alexandros Moskofidis (Αλέξανδρος Μοσκοφίδης)
     Hebrew - Ori Hoch
     Italian - Giuliano
+    Lakota - Peter Hill, Derek Lackaff and Matthew Rama
     Polish - Kamila Roszak-Imiolek
            - Ireneusz Imiolek
     Portuguese - Américo Monteiro
@@ -370,6 +371,9 @@ Images for new icons:
     https://openclipart.org/detail/167880/finger-point-nog
     https://openclipart.org/detail/79933/roman-clock
     https://openclipart.org/detail/227434/relogio-digital
+
+New images in eduActiv8:
+    https://openclipart.org/detail/95431/star
 
 Wikipedia images:
     http://de.wikipedia.org/wiki/Datei:Koala.svg
