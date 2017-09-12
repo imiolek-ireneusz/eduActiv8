@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.70.807\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2017-08-13 06:09+0100\n"
+"PO-Revision-Date: 2017-09-11 16:48+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: lkt\n"
@@ -301,10 +301,10 @@ msgid "Preferences saved..."
 msgstr "Tȟokáhekhiyapi kiŋ patáŋpi..."
 
 msgid "Score: "
-msgstr "Wóiglamna"
+msgstr "Wóiglamna: "
 
 msgid "Logged in as: "
-msgstr "Ničháže kiŋ:"
+msgstr "Ničháže kiŋ: "
 
 msgid "(Log out)"
 msgstr "(Iyáya yo/ye)"
@@ -838,7 +838,7 @@ msgid "Multiplication"
 msgstr "Wayúotapi"
 
 msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
-msgstr "Wóškate kiŋ lé yuwáštepi kiŋ hé él ónipȟa yačhíŋ héči, lél iwóyaglakiŋ naíŋš lawášte naíŋš lašíčiŋ naíŋš él takúku luíyeska oyákihi (na tȟéča ȟče kiŋ khulwóyakšu oyákíhi):"
+msgstr "Wóškate kiŋ lé yuwáštepi kiŋ hé él ónipȟa yačhíŋ héči, lél iwóyaglakiŋ naíŋš lawáštenaíŋš lašíčiŋ naíŋš él takúku luíyeska oyákihi (na tȟéča ȟče kiŋ khulwóyakšu oyákíhi):"
 
 msgid "Match numbers to their spelling"
 msgstr "Wóiyawa kiŋ čhažé isákhibkhib égnaka yo/ye"
@@ -1087,10 +1087,10 @@ msgid "Word Builders"
 msgstr "Wičhóiye Káǧapi"
 
 msgid "Word Matchers"
-msgstr ""
+msgstr "Wičhóiye Káǧapi 2"
 
 msgid "Match images to words"
-msgstr ""
+msgstr " "
 
 msgid "Animals"
 msgstr "Wamákȟaškaŋ"

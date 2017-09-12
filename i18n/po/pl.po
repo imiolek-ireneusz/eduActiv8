@@ -169,7 +169,7 @@ msgid "Torus"
 msgstr "Torus"
 
 msgid "Default Language:"
-msgstr "Język Domyślny:"
+msgstr "Domyślny język:"
 
 msgid "Guest"
 msgstr "Gość"
@@ -199,7 +199,7 @@ msgid "Register new user"
 msgstr "Zarejestruj użytkownika"
 
 msgid "Administrator Login:"
-msgstr "Logowanie Administratora:"
+msgstr "Logowanie administratora:"
 
 msgid "User Management"
 msgstr "Zarządzanie użytkownikami"
