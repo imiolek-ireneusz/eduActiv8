@@ -11,7 +11,8 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 5, 7)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 11)
 
     def create_game_objects(self, level=1):
@@ -33,27 +34,11 @@ class Board(gd.BoardGame):
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.bg_col = (0, 0, 0)
-        self.level.games_per_lvl = 5
-        if self.level.lvl == 1:
-            rngs = [11, 50, 11, 20]
-            self.level.games_per_lvl = 3
-        elif self.level.lvl == 2:
-            rngs = [20, 50, 20, 30]
-            self.level.games_per_lvl = 3
-        elif self.level.lvl == 3:
-            rngs = [50, 150, 30, 75]
-            self.level.games_per_lvl = 3
-        elif self.level.lvl == 4:
-            rngs = [150, 500, 50, 75]
-        elif self.level.lvl == 5:
-            rngs = [500, 1000, 75, 100]
-        elif self.level.lvl == 6:
-            rngs = [1000, 2500, 100, 299]
-        elif self.level.lvl == 7:
-            rngs = [2500, 9999, 250, 999]
-
+        rngs = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                     self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
         data = [39, 24]
-        self.points = self.level.lvl
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=None)
         if x_count > 39:
@@ -61,7 +46,7 @@ class Board(gd.BoardGame):
 
         self.data = data
 
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -139,7 +124,6 @@ class Board(gd.BoardGame):
         self.board.add_unit(data[0] - 3 - i * 3, 6, 3, 3, classes.board.Label, "×", self.bg_col, "", 21)
         self.plus_label = self.board.units[-1]
         # line
-        # line = "―" * (self.sumn1n2sl*2)
         self.board.add_unit(data[0] - self.sumn1n2sl * 3, 9, self.sumn1n2sl * 3, 1, classes.board.Label, "",
                             self.bg_col, "", 21)
         self.draw_hori_line(self.board.units[-1])
@@ -164,7 +148,6 @@ class Board(gd.BoardGame):
         self.board.add_unit(data[0] - self.sumn1n2sl * 3, 10 + self.n2sl * 3 + 1, self.sumn1n2sl * 3, 1,
                             classes.board.Label, "", self.bg_col, "", 21)
         self.draw_hori_line(self.board.units[-1])
-        # self.board.units[-1].text_wrap = False
         self.board.add_unit(data[0] - (self.sumn1n2sl + 1) * 3, 7 + self.n2sl * 3 + 1, 3, 3, classes.board.Label, " + ",
                             self.bg_col, "", 21)
         self.plus2_label = self.board.units[-1]
@@ -181,7 +164,7 @@ class Board(gd.BoardGame):
 
         self.all_count = sum(self.semiresultlengths) + self.n1sl + self.n2sl + self.sumn1n2sl * 2 - 2 + (
                                                                                                         self.sumn1n2sl - 1) * self.n2sl
-        self.all_a_count = len(self.board.ships)  # self.all_count - self.n1sl - self.n2sl
+        self.all_a_count = len(self.board.ships)
 
         for each in self.board.ships:
             each.immobilize()
@@ -279,7 +262,6 @@ class Board(gd.BoardGame):
         self.plus_label.font_color = self.font_hl
         self.board.units[0].font_color = self.task_str_color
         if self.home_square in self.carrylall:
-            # self.home_square.font_color = self.font_hl
             self.nums1l[self.home_square.pos_id].font_color = self.font_hl
             self.nums2l[self.home_square.posy_id].font_color = self.font_hl
             self.semiresultl[self.home_square.posy_id][self.home_square.pos_id].font_color = self.font_hl
@@ -331,9 +313,6 @@ class Board(gd.BoardGame):
             s += each.value
 
         if s == self.sumn1n2s:
-            # self.update_score(self.points)
             self.level.next_board()
         else:
-            if self.points > 0:
-                self.points -= 1
             self.level.try_again()

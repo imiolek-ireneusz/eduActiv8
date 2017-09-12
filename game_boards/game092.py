@@ -16,7 +16,7 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 9)
 
     def create_game_objects(self, level=1):
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.ai_enabled = False
@@ -28,7 +28,6 @@ class Board(gd.BoardGame):
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 bg_col = (0, 0, 0)
-        #color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
         color0 = ex.hsv_to_rgb(h, 1, 255)  # highlight 1
         self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
         self.font_color = self.color2
@@ -98,7 +97,7 @@ class Board(gd.BoardGame):
             self.imgs = ['clown', 'engineer', 'priest', 'vet', 'judge', '', 'athlete', 'librarian', 'juggler',
                          'police', 'plumber', '', 'queen', 'farmer', 'magic', 'knight', 'doctor', 'bricklayer',
                          'cleaner', 'teacher', 'hunter', 'soldier', 'musician', 'lawyer', 'fisherman', 'princess',
-                         'fireman', 'nun', 'chief', 'pirate', 'cowboy', 'electrician', 'nurse', 'king', 'president',
+                         'fireman', 'nun', 'pirate', 'cowboy', 'electrician', 'nurse', 'king', 'president',
                          'office', 'carpenter', 'jockey', 'worker', 'mechanic', 'pilot', 'actor', 'cook', 'student',
                          'butcher', 'accountant', 'prince', 'pope', 'sailor', 'boxer', 'ballet', 'coach', 'astronaut',
                          'painter', 'anaesthesiologist', 'scientist']
@@ -175,58 +174,6 @@ class Board(gd.BoardGame):
             if r not in drawn_numbers:
                 if self.imgs[r] != '':
                     drawn_numbers.append(r)
-                #print(self.imgs[r])
-
-        #print(drawn_numbers)
-
-        """
-        if self.level.lvl == 1:  # addition
-            draw_data = [1, 10, 1, 5, 8]
-        elif self.level.lvl == 2:
-            draw_data = [1, 15, 1, 5, 8]
-        elif self.level.lvl == 3:
-            draw_data = [1, 20, 3, 9, 8]
-        elif self.level.lvl == 4:
-            draw_data = [20, 50, 3, 9, 8]
-        elif self.level.lvl == 5:
-            draw_data = [20, 75, 3, 9, 8]
-        elif self.level.lvl == 6:
-            draw_data = [1, 99, 3, 9, 8]
-
-        while len(texts1) < self.square_count // 2:
-            num = random.randrange(draw_data[0], draw_data[1] + 1)
-
-            if str(num) not in texts1:
-                ns = self.lang.n2txt(num)
-                texts1.append(str(num))
-                if len(ns) < 20:
-                    texts2.append(ns)
-                else:
-                    texts2.append(self.lang.n2txt(num, twoliner=True))
-
-        if self.mainloop.m.game_variant == 1:
-            if self.level.lvl == 1:  # addition
-                draw_data = [1, 5, 1, 5, 6]
-            elif self.level.lvl == 2:
-                draw_data = [3, 9, 1, 5, 6]
-            elif self.level.lvl == 3:
-                draw_data = [5, 15, 3, 9, 7]
-            elif self.level.lvl == 4:
-                draw_data = [5, 15, 5, 15, 8]
-            elif self.level.lvl == 5:
-                draw_data = [15, 55, 5, 35, 9]
-            elif self.level.lvl == 6:
-                draw_data = [35, 75, 15, 25, 9]
-            elif self.level.lvl == 7:
-                draw_data = [55, 99, 55, 99, 9]
-            while len(texts1) < self.square_count // 2:
-                first_num = random.randrange(draw_data[0], draw_data[1] + 1)
-                second_num = random.randrange(draw_data[2], draw_data[3] + 1)
-                my_sum = str(first_num + second_num)
-                if my_sum not in texts1:
-                    texts1.append(str(my_sum))
-                    texts2.append("%d + %d" % (first_num, second_num))
-        """
 
         self.completed_mode = False
 
@@ -256,10 +203,8 @@ class Board(gd.BoardGame):
         switch = self.square_count // 2
         for i in range(self.square_count):
             if i < switch:
-                #caption = self.imgs[drawn_numbers[i]]
                 caption = self.captions[drawn_numbers[i]]
                 img = "%s.jpg" % self.imgs[drawn_numbers[i]]
-                #img_src = os.path.join('art4apps', category, img)
                 img_src ="speaker_icon.png"
                 position_list = small_slots
                 pos = i
@@ -276,37 +221,11 @@ class Board(gd.BoardGame):
                                     color0, "", 8)
                 self.board.ships[-1].font_color = self.font_color
                 self.board.ships[i].readable = False
-            """
-            if self.mainloop.m.game_variant in [4, 5]:
-                if i < switch:
-                    src = image_src1[self.chosen[i]]
-                else:
-                    src = image_src2[self.chosen[i - switch]]
-                self.board.add_unit(slots[i][0], slots[i][1], 1, 1, classes.board.ImgShip, "", white, src)
-            else:
-                if i < switch:
-                    caption = texts1[self.chosen[i]]
-                    position_list = small_slots
-                    pos = i
-                    xw = 1
-                else:
-                    caption = texts2[self.chosen[i - switch]]
-                    position_list = wide_slots
-                    pos = i - switch
-                    xw = 4
-                self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, 1, classes.board.Letter, caption,
-                                    color0, "", draw_data[4])
-                self.board.ships[-1].font_color = self.font_color
-            """
 
             self.board.ships[i].immobilize()
             self.board.ships[i].perm_outline = True
             self.board.ships[i].uncovered = False
         self.outline_all(self.color2, 1)
-
-        #self.board.add_door(0, data[1] - 1, data[0], 1, classes.board.Door, "0/0", bg_col, "", font_size=3)
-        #self.counter = self.board.units[-1]
-        #self.counter.font_color = (80, 80, 80)
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
@@ -334,8 +253,6 @@ class Board(gd.BoardGame):
                             self.history[1].uncovered = True
                             self.history[0].perm_outline_color = self.color2  # [50,255,50]
                             self.history[1].perm_outline_color = self.color2
-                            #self.history[0].image.set_alpha(50)
-                            #self.history[1].image.set_alpha(75)
                             self.history[0].update_me = True
                             self.history[1].update_me = True
                             if self.history[0].hasimg:
@@ -348,8 +265,6 @@ class Board(gd.BoardGame):
                                 self.ai_enabled = True
                             self.history = [None, None]
                     active.update_me = True
-                    #self.counter.value = "%i/%i" % (self.found, self.clicks)
-                    #self.counter.update_me = True
 
     def update(self, game):
         game.fill((255, 255, 255))
@@ -361,7 +276,6 @@ class Board(gd.BoardGame):
         else:
             if self.completed_mode:
                 self.history = [None, None]
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
                 self.history[0].perm_outline_width = 1

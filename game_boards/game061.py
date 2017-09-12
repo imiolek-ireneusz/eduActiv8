@@ -15,7 +15,7 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 9)
 
     def create_game_objects(self, level=1):
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.ai_enabled = False
@@ -184,10 +184,6 @@ class Board(gd.BoardGame):
             self.board.ships[i].uncovered = False
         self.outline_all(self.color2, 1)
 
-        #self.board.add_door(0, data[1] - 1, data[0], 1, classes.board.Door, "0/0", bg_col, "", font_size=3)
-        #self.counter = self.board.units[-1]
-        #self.counter.font_color = (80, 80, 80)
-
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if event.type == pygame.MOUSEBUTTONDOWN and self.history[
@@ -224,8 +220,6 @@ class Board(gd.BoardGame):
                                 self.ai_enabled = True
                             self.history = [None, None]
                     active.update_me = True
-                    #self.counter.value = "%i/%i" % (self.found, self.clicks)
-                    #self.counter.update_me = True
 
     def update(self, game):
         game.fill((255, 255, 255))
@@ -237,7 +231,6 @@ class Board(gd.BoardGame):
         else:
             if self.completed_mode:
                 self.history = [None, None]
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
                 self.history[0].perm_outline_width = 1

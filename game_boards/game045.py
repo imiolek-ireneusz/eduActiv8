@@ -11,14 +11,14 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 99, 10)
+        self.level = lc.Level(self, mainloop, 1, 10)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 9)
 
     def create_game_objects(self, level=1):
         self.allow_unit_animations = False
         self.allow_teleport = False
         self.board.decolorable = False
-        self.vis_buttons = [4, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.board.draw_grid = False
@@ -58,7 +58,6 @@ class Board(gd.BoardGame):
             data = [12, 7, 17, 6, 3]
 
         self.chapters = [1, 5, 10]
-        self.points = (data[3] * data[4]) // 2
 
         # rescale the number of squares horizontally to better match the screen width
         m = data[0] % 2
@@ -154,9 +153,6 @@ class Board(gd.BoardGame):
             current[pos] = int(self.board.ships[i].value)
         del (current[-1])
         if self.choice_list == current:
-            # self.update_score(self.points)
             self.level.next_board()
         else:
-            if self.points > 0:
-                self.points -= 1
             self.level.try_again()

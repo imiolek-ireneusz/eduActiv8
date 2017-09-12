@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
         self.board.decolorable = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         if self.mainloop.scheme is None:
             s = 100
@@ -188,13 +188,11 @@ class Board(gd.BoardGame):
         if self.board.grid[4][18]:
             sol = self.board.ships[self.multi[str(self.solution[2])]]
             if sol.grid_x == 18 and sol.grid_y == 4:
-                # self.update_score(self.points)
                 self.passed()
             else:
                 self.failed()
         else:
             if self.home_square.value != "" and (int(self.home_square.value) == self.solution[2]):
-                # self.update_score(self.points)
                 self.quick_passed()
             else:
                 self.failed()

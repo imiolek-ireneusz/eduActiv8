@@ -11,7 +11,8 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 10, 10)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 11)
 
     def create_game_objects(self, level=1):
@@ -34,35 +35,12 @@ class Board(gd.BoardGame):
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.bg_col = (0, 0, 0)
-        self.level.games_per_lvl = 5
-        self.auto_select = True
-        if self.level.lvl == 1:
-            self.level.games_per_lvl = 3
-            rngs = [2, 5, 20, 50]
-        elif self.level.lvl == 2:
-            self.level.games_per_lvl = 3
-            rngs = [3, 9, 20, 50]
-        elif self.level.lvl == 3:
-            self.level.games_per_lvl = 3
-            rngs = [3, 9, 50, 99]
-        elif self.level.lvl == 4:
-            rngs = [3, 9, 100, 150]
-        elif self.level.lvl == 5:
-            rngs = [3, 9, 200, 500]
-        elif self.level.lvl == 6:
-            rngs = [3, 9, 500, 999]
-        elif self.level.lvl == 7:
-            rngs = [20, 50, 21, 99]
-        elif self.level.lvl == 8:
-            rngs = [3, 9, 200, 500]
-            self.auto_select = False
-        elif self.level.lvl == 9:
-            rngs = [3, 9, 500, 999]
-            self.auto_select = False
-        elif self.level.lvl == 10:
-            rngs = [20, 50, 21, 99]
-            self.auto_select = False
 
+        self.auto_select = True
+        rngs = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                     self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
         if self.lang.lang == 'pl':
             self.divisor_pos = 1
         else:
@@ -70,7 +48,6 @@ class Board(gd.BoardGame):
 
         data = [39, 25]
 
-        self.points = self.level.lvl
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=None)
         if x_count > 39:
@@ -78,7 +55,7 @@ class Board(gd.BoardGame):
 
         self.data = data
 
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -145,14 +122,11 @@ class Board(gd.BoardGame):
         self.num2 = self.board.units[-1]
         self.num2.align = num2_align
 
-        # line = "―" * (self.n1sl*2)
-
         self.board.add_unit(data[0] - self.n1sl * 2 - r_offset, 2, self.n1sl * 2, 1, classes.board.Label, "",
                             self.bg_col, "", 21)
         self.line_unit = self.board.units[-1]
         self.draw_hori_line(self.line_unit)
 
-        # self.board.units[-1].text_wrap = False
         if self.divisor_pos == 0:
             self.board.add_unit(data[0] - self.n1sl * 2 - 1 + ds_offset, 2, 1, d_h, classes.board.Label, "",
                                 self.bg_col, "", 21)
@@ -224,7 +198,6 @@ class Board(gd.BoardGame):
 
             self.board.add_unit(xp[4] + (2 - len(str(nbr[i])) * 2) - r_offset, yp[4], len(str(nbr[i])) * 2, 1,
                                 classes.board.Label, "", self.bg_col, "", 21)
-            # self.board.units[-1].text_wrap = False
             self.draw_hori_line(self.board.units[-1])
             for i in range(5):
                 xp[i] += 2
@@ -390,11 +363,8 @@ class Board(gd.BoardGame):
             s += each.value
         if len(s) > 0:
             if int(s) == self.sumn1n2:
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
-                if self.points > 0:
-                    self.points -= 1
                 self.level.try_again()
         else:
             self.level.try_again()

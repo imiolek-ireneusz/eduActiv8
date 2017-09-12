@@ -53,7 +53,7 @@ class Board(gd.BoardGame):
 
         self.data = data
         self.points = (data[0] + data[1]) // 5
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])

@@ -11,7 +11,8 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 1, 10)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 18, 9)
 
     def create_game_objects(self, level=1):
@@ -21,35 +22,18 @@ class Board(gd.BoardGame):
 
         white = (255, 255, 255)
 
-        numbero = 5
-        if self.level.lvl == 1:
-            numbero = 6
-        elif self.level.lvl == 2:
-            numbero = 7
-        elif self.level.lvl == 3:
-            numbero = 8
-        elif self.level.lvl == 4:
-            numbero = 9
-        elif self.level.lvl == 5:
-            numbero = 10
-        elif self.level.lvl == 6:
-            numbero = 11
-        elif self.level.lvl == 7:
-            numbero = 12
-        elif self.level.lvl == 8:
-            numbero = 13
-        elif self.level.lvl == 9:
-            numbero = 14
-        elif self.level.lvl == 10:
-            numbero = 15
-        if self.level.lvl < 5:
+        level_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid,
+                                                           self.mainloop.config.user_age_group,
+                                                           self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
+
+        if self.level.lvl < 14:
             self.max_len = 2
         else:
             self.max_len = 3
 
-        self.points = 1
-        self.bonus = numbero * numbero
-        data = [numbero * 2, numbero]
+        data = [level_data[1] * 2, level_data[0]]
         self.data = data
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
@@ -87,14 +71,13 @@ class Board(gd.BoardGame):
             color2 = ex.hsv_to_rgb(h, s, v)  # normal color
             color3 = ex.hsv_to_rgb(h, 230, 100)
         else:
-            s = 200  # random.randrange(150, 225, 5)
-            v = 200  # random.randrange(190, 225, 5)
-            h = 170  # random.randrange(0, 255, 5)
+            s = 200
+            v = 200
+            h = 170
             color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
             color1 = ex.hsv_to_rgb(h, 70, v)  # highlight 2
             color2 = ex.hsv_to_rgb(h, s, v)  # normal color
-            color3 = (0, 0, 0)  # ex.hsv_to_rgb(h,230,100)
-        self.points = 1
+            color3 = (0, 0, 0)
         ln = len(self.number_hat)
         if ln > 0:
             index = random.randrange(0, ln)
@@ -134,7 +117,6 @@ class Board(gd.BoardGame):
 
             self.mainloop.redraw_needed[0] = True
         else:
-            # self.update_score(self.bonus)
             self.level.next_board()
 
     def handle(self, event):
@@ -163,18 +145,12 @@ class Board(gd.BoardGame):
     def check_result(self):
         if self.changed_since_check:
             if self.home_square.value != "" and (int(self.home_square.value) == self.solution[2]):
-                # self.update_score(self.points)
                 self.quick_passed()
-
             else:
-                if self.bonus > 0:
-                    self.bonus -= 1
-                if self.points > 0:
-                    self.points = 0
                 self.failed()
 
     def passed(self):
-        self.level.next_board(tts)
+        self.level.next_board("")
 
     def quick_passed(self):
         self.level.game_step += 1

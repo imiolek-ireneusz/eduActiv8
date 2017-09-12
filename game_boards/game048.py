@@ -28,7 +28,7 @@ class Board(gd.BoardGame):
         outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
 
         if self.mainloop.scheme is not None:
-            card_color = self.mainloop.scheme.u_color  # (0,0,0)#(255,255,255)#ex.hsv_to_rgb(h+10,s-25,v)
+            card_color = self.mainloop.scheme.u_color
             if self.mainloop.scheme.dark:
                 font_colors = ((200, 0, 0), (255, 255, 255))
         else:
@@ -90,7 +90,6 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
-        # self.prev_item = None
         # self.base26 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
         self.font_size = 17
 
@@ -133,7 +132,6 @@ class Board(gd.BoardGame):
         l = dv * 3 + 1
         if max_w > 7:
             w = 7
-            # l = l + (max_w - w) // 2
         else:
             w = max_w
         self.board.add_unit(l, 0, data[0] - l - 1, 1, classes.board.Label, "/sh/", card_color, "", 0)
@@ -141,7 +139,6 @@ class Board(gd.BoardGame):
             if i < ln:
                 word = phonics_words[0][i]
                 img_src = os.path.join('art4apps', phonics_imgs[0][i][0], phonics_imgs[0][i][1])
-            # self.board.add_unit(l,y+i*2,2,2,classes.board.Label,img_src,card_color,"",2)
             self.board.add_unit(l + 2, y + i * 2, w, 2, classes.board.MultiColorLetters, word, card_color, "", 0)
             self.board.ships[-1].align = 1
             self.board.ships[-1].set_font_colors(font_colors[0], font_colors[1])
@@ -178,9 +175,6 @@ class Board(gd.BoardGame):
                     self.prev_item.color = (255, 255, 255)
 
     def create_card(self, active):
-        # val = ex.unival(active.value)
-        # self.board.units[0].update_me = True
-        # self.board.active_ship = -1
         self.mainloop.redraw_needed[0] = True
 
     def update(self, game):

@@ -18,7 +18,7 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
 
-        color = (234, 218, 225)  # ex.hsv_to_rgb(225,15,235)
+        color = (234, 218, 225)
         self.color = color
         border_color = (105, 12, 100)
         letter_bg = (255, 230, 255)
@@ -43,7 +43,7 @@ class Board(gd.BoardGame):
 
         self.board.set_animation_constraints(0, data[0], 0, data[1])
 
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -113,7 +113,7 @@ class Board(gd.BoardGame):
             self.imgs = ['clown', 'engineer', 'priest', 'vet', 'judge', 'chef', 'athlete', 'librarian', 'juggler',
                          'police', 'plumber', 'badge', 'queen', 'farmer', 'magic', 'knight', 'doctor', 'bricklayer',
                          'cleaner', 'teacher', 'hunter', 'soldier', 'musician', 'lawyer', 'fisherman', 'princess',
-                         'fireman', 'nun', 'chief', 'pirate', 'cowboy', 'electrician', 'nurse', 'king', 'president',
+                         'fireman', 'nun', 'pirate', 'cowboy', 'electrician', 'nurse', 'king', 'president',
                          'office', 'carpenter', 'jockey', 'worker', 'mechanic', 'pilot', 'actor', 'cook', 'student',
                          'butcher', 'accountant', 'prince', 'pope', 'sailor', 'boxer', 'ballet', 'coach', 'astronaut',
                          'painter', 'anaesthesiologist', 'scientist']
@@ -151,7 +151,6 @@ class Board(gd.BoardGame):
 
         self.w_index = random.randint(0, len(self.words) - 1)
         self.word = ex.unival(self.words[self.w_index])
-        # print(len(self.dp["a4a_animals"]))
         if self.mainloop.lang.lang == "ru" and gv > 12:
             self.wordsp = eval("self.dp['a4a_%s']" % category)
             self.wordp = ex.unival(self.wordsp[self.w_index])
@@ -183,12 +182,10 @@ class Board(gd.BoardGame):
         self.board.add_door(img_left - 1, 1, img_size + 2, img_size + 3, classes.board.Door, "", white, "", font_size=2)
         self.board.units[-1].image.set_colorkey(None)
         self.board.units[-1].is_door = False
-        # self.board.units[-1].set_outline(color = border_color, width = 1)
 
         self.board.add_door(1, img_size + 3, base_len, 3, classes.board.Door, "", clx, "", font_size=2)
         self.board.units[-1].image.set_colorkey(None)
         self.board.units[-1].is_door = False
-        # self.board.units[-1].set_outline(color = border_color, width = 1)
 
         # temp frame around word
         w = len(self.word)
@@ -262,9 +259,6 @@ class Board(gd.BoardGame):
             x += 1
         for i in range(3, 3 + n_letters):
             self.board.all_sprites_list.move_to_front(self.board.units[i])
-        # footer_caption = self.lang.d["art4apps"]
-        # self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Label, footer_caption, white, "", 27)
-        # self.board.units[-1].font_color = footer_font
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
@@ -281,15 +275,12 @@ class Board(gd.BoardGame):
 
         result = [" " for i in range(self.data[0])]
         if self.board.grid[self.sol_grid_y] == self.solution_grid:
-            # print(self.board.grid[self.sol_grid_y])
-            # print(self.solution_grid)
             for i in range(1, len(self.board.ships)):
                 if self.board.ships[i].grid_y == self.sol_grid_y:
                     result[self.board.ships[i].grid_x] = self.board.ships[i].value
             re = "".join(result)
             re = re.strip()
             if self.word == re:
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
                 if self.points > 0:

@@ -62,7 +62,7 @@ class Board(gd.BoardGame):
         self.game_state = [[0 for x in range(0, data[1])] for y in range(0, data[0])]
         self.lookaround = [[-1, -1], [0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0]]
 
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])

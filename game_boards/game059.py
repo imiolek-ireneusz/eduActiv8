@@ -15,7 +15,8 @@ import classes.simple_vector as sv
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 1, 1)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 9)
         self.max_size = 99
 
@@ -43,6 +44,11 @@ class Board(gd.BoardGame):
                 color = (0, 0, 0)
                 self.guides_color = (30, 30, 30)
 
+        lvl_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                         self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
+
         data = [15, 12]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=None)
@@ -53,8 +59,8 @@ class Board(gd.BoardGame):
             data[1] = y_count - 1
         self.data = data
 
-        self.mainloop.info.hide_buttons(0, 0, 0, 0, 1, 1, 1, 0, 0)
-        self.vis_buttons = [0, 0, 0, 0, 1, 1, 1, 0, 0]
+        self.mainloop.info.hide_buttons(0, 0, 0, 0, 1, 0, 1, 0, 0)
+        self.vis_buttons = [0, 0, 0, 0, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -62,7 +68,12 @@ class Board(gd.BoardGame):
         self.board.level_start(data[0], data[1], scale)
         self.reset()
 
-        self.guide_scale = self.board.scale // 2
+        if self.mainloop.android is None:
+            self.grid_density_div = lvl_data[0]
+        else:
+            self.grid_density_div = 1
+
+        self.guide_scale = self.board.scale // self.grid_density_div
         self.left_padding = 2
         self.px_padding = self.left_padding * scale + self.layout.game_left
         # canvas

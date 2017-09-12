@@ -48,7 +48,6 @@ class Board(gd.BoardGame):
             data = [15, 11, 9, 6, 1, 20, 4, self.bezier2x_lines]
 
         self.chapters = [1, 5, 9, 12]
-        self.points = self.level.lvl // 2 + 1
         # rescale the number of squares horizontally to better match the screen width
         data[0] = self.get_x_count(data[1], even=False)
         data[3] = data[0] - 4
@@ -237,9 +236,6 @@ class Board(gd.BoardGame):
         else:
             correct = False
         if correct == True:
-            # self.update_score(self.points)
             self.level.next_board()
         else:
-            if self.points > 0:
-                self.points -= 1
             self.level.try_again()

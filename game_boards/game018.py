@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.allow_unit_animations = False
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.ai_enabled = False
@@ -58,7 +58,6 @@ class Board(gd.BoardGame):
 
         self.chapters = [1, 5, 10]
 
-        self.points = (data[3] * data[4]) // 2
         # rescale the number of squares horizontally to better match the screen width
         m = data[0] % 2
         if m == 0:
@@ -126,9 +125,6 @@ class Board(gd.BoardGame):
             else:
                 x += 1
         self.outline_all([200, 200, 200], 1)
-        #self.board.add_door(0, data[1] - 1, data[0], 1, classes.board.Door, "0/0", bg_col, "", font_size=3)
-        #self.counter = self.board.units[-1]
-        #self.counter.font_color = (80, 80, 80)
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
@@ -154,14 +150,10 @@ class Board(gd.BoardGame):
                             self.history[1].uncovered = True
                             self.found += 2
                             if self.found == self.square_count:
-                                p = ((self.points * self.found) * 2) // self.clicks + 1
-                                # self.update_score(p)
                                 self.completed_mode = True
                                 self.ai_enabled = True
                             self.history = [None, None]
                     active.update_me = True
-                    #self.counter.value = "%i/%i" % (self.found, self.clicks)
-                    #self.counter.update_me = True
 
     def update(self, game):
         game.fill((255, 255, 255))

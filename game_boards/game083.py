@@ -16,7 +16,7 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 10, 7)
 
     def create_game_objects(self, level=1):
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         # s = random.randrange(30, 80)
         # v = random.randrange(200, 255)
@@ -31,7 +31,6 @@ class Board(gd.BoardGame):
         # data = [0-x_count, 1-y_count, 2-bottom_range1, 3-top_range1, 4-bottom_range2, 5-top_range2, 6-operator, 7-font_size]
 
         if self.mainloop.m.game_variant == 0:
-            self.points = self.level.lvl
             self.level.lvl_count = 11
             if self.level.lvl == 1:  # addition - ch0
                 data = [20, 14, 1, 5, 1, 5, "+", 2]
@@ -56,7 +55,6 @@ class Board(gd.BoardGame):
             elif self.level.lvl == 11:
                 data = [20, 14, 500, 850, 100, 149, "+", 4]
         elif self.mainloop.m.game_variant == 1:
-            self.points = self.level.lvl
             self.level.lvl_count = 11
             if self.level.lvl == 1:  # subtraction  - ch1
                 data = [20, 14, 3, 10, 1, 0, "-", 2]
@@ -81,7 +79,6 @@ class Board(gd.BoardGame):
             elif self.level.lvl == 11:
                 data = [20, 14, 499, 999, 99, 0, "-", 4]
         elif self.mainloop.m.game_variant == 2:
-            self.points = self.level.lvl * 2
             self.level.lvl_count = 7
             if self.level.lvl > 7:
                 self.level.lvl = 7
@@ -100,7 +97,6 @@ class Board(gd.BoardGame):
             elif self.level.lvl == 7:
                 data = [20, 14, 2, 20, 2, 20, "*", 4]
         elif self.mainloop.m.game_variant == 3:
-            self.points = self.level.lvl * 2
             self.level.lvl_count = 7
             if self.level.lvl > 7:
                 self.level.lvl = 7
@@ -130,9 +126,7 @@ class Board(gd.BoardGame):
 
         self.num_list = []
         self.num_list2 = []
-        # self.solution = []
 
-        # for i in range(1):
         if data[6] == "+":
             first_num = random.randrange(data[2], data[3] + 1)
             second_num = random.randrange(data[4], data[5] + 1)
@@ -156,9 +150,6 @@ class Board(gd.BoardGame):
 
         self.num_list.append(first_num)
         self.num_list2.append(second_num)
-
-        # self.shuffled = self.solution[:]
-        # random.shuffle(self.shuffled)
 
         # create objects
         if data[6] == "*":
@@ -192,49 +183,7 @@ class Board(gd.BoardGame):
         self.home_square = self.board.ships[-1]
         self.home_square.immobilize()
         self.home_square.set_outline(color3, 5)
-        """
-        #adding possible answers
-        if self.solution < 7:
-            answers = [i for i in range(7)]
-        else:
-            shift = random.randrange(0,7)
-            answers = [i for i in range(self.solution-shift,self.solution-shift+7)]
-        for i in range(7):
-            self.board.add_unit(x-1+i*2,y+5,2,2,classes.board.Letter,str(answers[i]),color1,"",0)
-            self.board.ships[-1].immobilize()
-        """
-        # self.board.add_unit(x+2,y,1,1,classes.board.Label,"=",color1,"",data[7])
-        # self.board.add_door(x+3,y,1,1,classes.board.Door,"",color1,"")
-        # self.board.units[-1].door_outline = True
-        # self.board.add_unit(x+5,y,1,1,classes.board.Letter,str(self.shuffled[i]),color2,"",data[7])
-        # self.board.ships[-1].audible = False
-        # self.board.ships[-1].readable = False
-        # self.outline_all(1,1)
 
-        """
-        #calculating positions for lights around the task
-        fx1 = [x+5 - i for i in range(0,6)] + [x-1 for i in range(5)] + [x + i for i in range(0,6)]
-        fx2 = [x+i for i in range(6,12)] + [x+12 for i in range(5)] + [x+12 - i for i in range(1,7)]
-        fy0 = [y-1 for i in range(7)] + [y + i for i in range(0,3)] + [y+3 for i in range(7)] 
-        #fh0 = [85 - i for i in range(0,85,5)]
-        fh0 = [68 - i for i in range(0,68,4)]
-        #adding the lights
-        for i in range(17):
-            bg_color = ex.hsv_to_rgb(fh0[i],255,255)
-            self.board.add_unit(fx1[i],fy0[i],1,1,classes.board.Label,"",bg_color,"",2)
-            self.board.units[-1].decolorable = False
-            self.board.units[-1].bg_color = bg_color
-            
-        for i in range(17):
-            bg_color = ex.hsv_to_rgb(fh0[i],255,255)
-            self.board.add_unit(fx2[i],fy0[i],1,1,classes.board.Label,"",bg_color,"",2)
-            self.board.units[-1].decolorable = False
-            self.board.units[-1].bg_color = bg_color
-        """
-        # y += 1
-
-        # for i in range(2,15,3):
-        #    self.board.all_sprites_list.move_to_front(self.board.units[i])
         for each in self.board.units:
             each.font_color = color3
         for each in self.board.ships:
@@ -255,11 +204,7 @@ class Board(gd.BoardGame):
                         self.home_square.value += char
                 self.home_square.update_me = True
                 self.mainloop.redraw_needed[0] = True
-                """
-            elif event.type == pygame.KEYDOWN and (event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER) and self.board.active_ship == self.ans_h.unit_id:
-                if len(self.ans_h.value.strip()) > 0 and self.time[0] == int(self.ans_h.value):
-                    self.next_field()
-                """
+
             elif event.type == pygame.MOUSEBUTTONUP:
                 self.home_square.update_me = True
                 if self.board.active_ship == self.home_square.unit_id:
@@ -280,22 +225,3 @@ class Board(gd.BoardGame):
         else:
             self.home_square.value = ""
             self.home_square.update_me = True
-        """
-        for i in range(2):
-            if self.board.ships[i].grid_x == self.board.units[-1].grid_x and 0 < self.board.ships[i].grid_y < 6:
-                #if position from the left is in line with target squares
-                if self.board.ships[i].value != str(self.solution[self.board.ships[i].grid_y-1]):
-                    correct = False
-                    break
-            else:
-                correct = False
-                break
-        if correct:
-            tts = self.d["Perfect! Task solved!"]
-            #self.update_score(self.points)
-            self.level.next_board(tts)
-        else:
-            if self.points > 0:
-                self.points -= 1
-            self.level.try_again()
-        """

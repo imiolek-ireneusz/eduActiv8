@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.allow_unit_animations = False
         self.board.decolorable = False
-        self.vis_buttons = [0, 1, 1, 0, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 0, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.ai_enabled = True
@@ -180,12 +180,12 @@ class Board(gd.BoardGame):
                 else:
                     active.initcolor = (255, 0, 0)
                     active.color = (255, 0, 0)
-                    self.game_over_mode = True  # self.game_over()
+                    self.game_over_mode = True
                     self.ai_enabled = True
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def draw_nums(self):
         choice = [x for x in range(self.square_count)]
@@ -198,8 +198,6 @@ class Board(gd.BoardGame):
 
     def game_over(self):
         self.level.game_restart()
-        #self.current_count = self.data[5]
-        #self.level.load_level()
 
     def highlight_colors(self):
         for each in self.board.ships:
@@ -230,16 +228,15 @@ class Board(gd.BoardGame):
                 self.disp_counter = 0
         elif self.completed_mode:
             self.disp_counter += 1
-            if self.disp_counter > 1:  # self.disp_len:
+            if self.disp_counter > 1:
                 self.completed_mode = False
-                # self.update_score(self.level.lvl * 2)
                 self.mainloop.db.update_completion(self.mainloop.userid, self.active_game.dbgameid, self.level.lvl)
                 self.disp_counter = 0
                 self.next_level()
         elif self.game_over_mode:
             self.disp_counter += 1
             self.highlight_colors()
-            if self.disp_counter > 2:  # self.disp_len:
+            if self.disp_counter > 2:
                 self.game_over_mode = False
                 self.disp_counter = 0
                 self.game_over()

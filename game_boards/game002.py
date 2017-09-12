@@ -53,10 +53,10 @@ class Board(gd.BoardGame):
         left = 0
         colors = [color1, color2]
 
-        self.board.add_unit(0, 0, data[0], 1, classes.board.Label, self.lang.d["Translators"], colors[1], "", 4)
+        #self.board.add_unit(0, 0, data[0], 1, classes.board.Label, self.lang.d["Translators"], colors[1], "", 4)
 
         # column 1
-        top = 1
+        top = 0
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Catalan", "Català"], colors[top % 2], "",
                             6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
@@ -96,8 +96,12 @@ class Board(gd.BoardGame):
                             "", 6)
 
         # column 2
-        top = 1
+        top = 0
         left = middle
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Lakota", "Lakȟótiyapi"], colors[top % 2], "", 6)
+        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
+                            ["Peter Hill, Derek Lackaff and Matthew Rama"], colors[top % 2], "", 6)
+        top += 1
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Polish", "Polski"], colors[top % 2], "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
                             ["Kamila Roszak-Imiolek", "Ireneusz Imiolek"], colors[top % 2], "", 6)
@@ -132,7 +136,7 @@ class Board(gd.BoardGame):
 
         # due to the number of people working on this one - it stays at the bottom and spreads across 2 columns
         # update top - to the height of the tallest column
-        top = 8
+        top = 7
         left = 0
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Greek", "Ελληνικά"], colors[top % 2], "",
                             6)
@@ -140,33 +144,13 @@ class Board(gd.BoardGame):
             "Στέλιος, versys650gr, sdim, lucinos and other members of The Official Greek Community of Linux Mint,",
             "updated by Alexandros Moskofidis (Αλέξανδρος Μοσκοφίδης)"], colors[top % 2], "", 6)
 
-        #top += 1
-        #self.board.add_unit(0, top, data[0], 1, classes.board.Letter, "<<", colors[top % 2], "", 0)
-        #self.btn_back = self.board.ships[-1]
-
-
-        # self.outline_all(1,1)
         for each in self.board.units:
             each.font_color = font_color
             each.align = 1
-        self.board.units[0].align = 0
-        """
-        self.btn_back.font_color = (255, 0, 0)
-        self.btn_back.highlight = False
-        self.btn_back.readable = False
-        """
+
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        """
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                active = self.board.active_ship
-                if active >= 0:
-                    if self.board.ships[active] == self.btn_back:
-                        self.mainloop.m.start_hidden_game(0)
-        """
-
 
     def update(self, game):
         game.fill((255, 255, 255))

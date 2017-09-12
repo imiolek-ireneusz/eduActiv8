@@ -11,7 +11,8 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 99, 7)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 11)
 
     def create_game_objects(self, level=1):
@@ -35,20 +36,12 @@ class Board(gd.BoardGame):
             if self.mainloop.scheme.dark:
                 self.bg_col = (0, 0, 0)
 
-        if self.level.lvl == 1:
-            rngs = [150, 500, 50, 100]
-        elif self.level.lvl == 2:
-            rngs = [500, 1000, 100, 500]
-        elif self.level.lvl == 3:
-            rngs = [700, 1500, 500, 999]
-        elif self.level.lvl == 4:
-            rngs = [1500, 2500, 500, 1500]
-        elif self.level.lvl == 5:
-            rngs = [2500, 5000, 1500, 2500]
-        elif self.level.lvl == 6:
-            rngs = [5000, 10000, 2500, 5000]
-        elif self.level.lvl == 7:
-            rngs = [10000, 84999, 5000, 15000]
+        rngs = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                     self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
+        self.level.games_per_lvl = 99
+
         data = [39, 18]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=None)
@@ -63,8 +56,10 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
-        self.n1 = random.randrange(rngs[0], rngs[1])
-        self.n2 = random.randrange(rngs[2], rngs[3])
+        n1 = random.randrange(rngs[0], rngs[1])
+        n2 = random.randrange(rngs[2], rngs[3])
+        self.n1 = max(n1, n2)
+        self.n2 = min(n1, n2)
         self.sumn1n2 = self.n1 + self.n2
         self.n1s = str(self.n1)
         self.n2s = str(self.n2)
@@ -120,11 +115,9 @@ class Board(gd.BoardGame):
         self.board.add_unit(data[0] - 3 - i * 3, 5, 3, 3, classes.board.Label, "+", self.bg_col, "", 21)
         self.plus_label = self.board.units[-1]
         # line
-        # line = "―" * (self.sumn1n2sl*2)
         self.board.add_unit(data[0] - self.sumn1n2sl * 3, 8, self.sumn1n2sl * 3, 1, classes.board.Label, "",
                             self.bg_col, "", 21)
         self.draw_hori_line(self.board.units[-1])
-        # self.board.units[-1].text_wrap = False
 
         # result
         for i in range(self.sumn1n2sl):

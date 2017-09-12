@@ -35,7 +35,6 @@ class Board(gd.BoardGame):
             data[0] = x_count
 
         self.data = data
-        self.points = 20
         self.vis_buttons = [1, 0, 0, 0, 1, 1, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
@@ -105,16 +104,6 @@ class Board(gd.BoardGame):
         self.board.units[-1].image.set_colorkey(None)
         self.board.add_door(7, 0, 2, data[1], classes.board.Door, "", self.col_k, "", 0, door_alpha=False)
         self.board.units[-1].image.set_colorkey(None)
-
-        """
-        # guides
-        self.board.add_door(1, data[1] - 2, 2, 2, classes.board.Label, "", color2, "", 21)
-        self.guides.append(self.board.units[-1])
-        self.board.add_door(4, data[1] - 2, 2, 2, classes.board.Label, "", color2, "", 21)
-        self.guides.append(self.board.units[-1])
-        self.board.add_door(7, data[1] - 2, 2, 2, classes.board.Label, "", color2, "", 21)
-        self.guides.append(self.board.units[-1])
-        """
 
         for each in self.guides:
             each.image.set_colorkey(each.initcolor)
@@ -224,13 +213,10 @@ class Board(gd.BoardGame):
                 self.guides[2].value = "★"
                 help += self.dp['blue is ok'] + ". "
             self.say(help)
-            if self.points > 0:
-                self.points -= 1
             self.level.try_again(silent=self.mainloop.speaker.talkative)
 
             for each in self.guides:
                 each.update_me = True
             self.mainloop.redraw_needed[0] = True
         else:
-            # self.update_score(self.points)
             self.level.next_board()

@@ -165,7 +165,6 @@ class Board(gd.BoardGame):
                     pygame.mouse.set_cursor(*pygame.cursors.broken_x)
                 elif 0 < active < 61:
                     self.active_letter = self.board.ships[self.board.active_ship].value
-                    # self.active_word = self.word_list[self.board.active_ship-1]
                     self.tool_door.set_pos(self.board.active_ship_pos)
                     self.paint_bg_letter()
                 elif active > 60:

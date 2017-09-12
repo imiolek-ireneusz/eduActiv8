@@ -19,7 +19,7 @@ class Board(gd.BoardGame):
         self.allow_unit_animations = False
         self.allow_teleport = False
         self.board.decolorable = False
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.board.draw_grid = False
@@ -37,8 +37,6 @@ class Board(gd.BoardGame):
         data[0] = self.get_x_count(data[1], even=False)
 
         self.data = data
-
-        self.points = 9
 
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
@@ -173,7 +171,6 @@ class Board(gd.BoardGame):
                 current[pos] = int(self.board.ships[i].value)
             del (current[-1])
             if self.choice_list == current:
-                # self.update_score(self.points)
                 self.mainloop.db.update_completion(self.mainloop.userid, self.active_game.dbgameid, self.level.lvl)
                 self.level.update_level_dictx()
                 self.mainloop.redraw_needed[1] = True

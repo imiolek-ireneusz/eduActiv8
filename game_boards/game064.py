@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 19, 10)
 
     def create_game_objects(self, level=1):
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.hand_id = 0
@@ -90,8 +90,6 @@ class Board(gd.BoardGame):
             h_pool = range(1, 13)
             m_pool = range(0, 60)
 
-        self.points = self.level.lvl // 2 + 1
-
         # visual display properties
         self.show_outer_ring = data[2]
         self.show_minutes = data[3]
@@ -133,7 +131,7 @@ class Board(gd.BoardGame):
         ans_offset = 10 + (data[0] - 15) // 2
         self.board.add_unit(10, 0, data[0] - 10, 2, classes.board.Label, self.lang.d["Set_clock"], white, "", 2)
         self.board.units[-1].font_color = gray
-        self.board.add_unit(10, 5, data[0] - 10, 2, classes.board.Label, self.lang.d["Set_clock_instr"], white, "", 4)
+        self.board.add_unit(10, 8, data[0] - 10, 2, classes.board.Label, self.lang.d["Set_clock_instr"], white, "", 4)
         self.board.units[-1].font_color = gray
 
         self.center = [self.size // 2, self.size // 2]
@@ -157,30 +155,67 @@ class Board(gd.BoardGame):
         self.clock_canvas.font_color = color2
         self.clock_canvas.painting = self.canvas.copy()
 
+        # if gv < 3:
+        top = 5
+        top_offset = 1
+        h = "??"
+        m = "??"
+        if self.lang.lang == "gr":
+            h = ";;"
+            m = ";;"
         if gv == 0:
-            self.board.add_unit(ans_offset, 2, 2, 1, classes.board.Label, "%02d" % self.target_time[0], white, "", 0)
-            self.ans_h = self.board.units[-1]
+            h = "%02d" % self.target_time[0]
+            m = "%02d" % self.target_time[1]
+        elif gv == 2:
+            top = 6
+            top_offset = 2
+        self.board.add_unit(ans_offset+1, top, 1, 1, classes.board.Label, h, white, "", 0)
+        self.ans_h = self.board.units[-1]
 
-            self.board.add_unit(ans_offset + 2, 2, 1, 1, classes.board.Label, ":", white, "", 0)
-            self.board.add_unit(ans_offset + 3, 2, 2, 1, classes.board.Label, "%02d" % self.target_time[1], white, "", 0)
-            self.ans_m = self.board.units[-1]
+        self.board.add_unit(ans_offset + 2, top, 1, 1, classes.board.Label, ":", white, "", 0)
+        self.board.add_unit(ans_offset + 3, top, 1, 1, classes.board.Label, m, white, "", 0)
+        self.ans_m = self.board.units[-1]
 
-            self.ans_h.align = 2
-            self.ans_m.align = 1
+        self.ans_h.align = 2
+        self.ans_m.align = 1
 
-            self.ans_h.immobilize()
-            self.ans_m.immobilize()
+        self.ans_h.immobilize()
+        self.ans_m.immobilize()
 
-            self.ans_h.font_color = color3
-            self.ans_m.font_color = color4
-            self.board.add_unit(10, 3, data[0] - 10, 2, classes.board.Letter, self.text_string, white, "", 2)
+        self.ans_h.font_color = color3
+        self.ans_m.font_color = color4
+
+
+        self.board.add_unit(ans_offset + 1, top_offset + 3, 1, 1, classes.board.Letter, "+", white, "", 25)
+        self.board.ships[-1].readable = False
+        self.h_plus = self.board.ships[-1]
+        self.h_plus.font_color = color3
+        self.board.add_unit(ans_offset + 3, top_offset + 3, 1, 1, classes.board.Letter, "+", white, "", 25)
+        self.board.ships[-1].readable = False
+        self.m_plus = self.board.ships[-1]
+        self.m_plus.font_color = color4
+        self.board.add_unit(ans_offset + 1, top_offset + 5, 1, 1, classes.board.Letter, "-", white, "", 25)
+        self.board.ships[-1].readable = False
+        self.h_min = self.board.ships[-1]
+        self.h_min.font_color = color3
+        self.board.add_unit(ans_offset + 3, top_offset + 5, 1, 1, classes.board.Letter, "-", white, "", 25)
+        self.board.ships[-1].readable = False
+        self.m_min = self.board.ships[-1]
+        self.m_min.font_color = color4
+        lst = [self.h_plus, self.h_min, self.m_plus, self.m_min]
+        for each in lst:
+            each.immobilize()
+
+
+        if gv < 2:
+            self.board.add_unit(10, 2, data[0] - 10, 2, classes.board.Letter, self.text_string, white, "", 2)
             self.board.ships[-1].immobilize()
             self.board.ships[-1].font_color = gray
-            if self.lang.lang in ["ru", "he"]:
-                spk_txt = self.lang.time2spk(tt[0], tt[1])
-                self.board.ships[-1].speaker_val = spk_txt
-                self.board.ships[-1].speaker_val_update = False
-        elif gv == 1:
+        if gv == 0 and self.lang.lang in ["ru", "he"]:
+            spk_txt = self.lang.time2spk(tt[0], tt[1])
+            self.board.ships[-1].speaker_val = spk_txt
+            self.board.ships[-1].speaker_val_update = False
+        if gv == 2:
             img_src = "speaker_icon.png"
             self.board.add_unit(ans_offset+1, 2, 3, 3, classes.board.ImgShip, self.text_string, white, img_src, alpha=True)
             self.board.ships[-1].immobilize()
@@ -445,6 +480,20 @@ class Board(gd.BoardGame):
                 else:
                     m = (self.current_angle(pos, r)) / self.angle_step_60
                     self.tm[1] = int(m)
+            elif active == 1:
+                self.change_time_btn(1, 0)
+            elif active == 2:
+                self.change_time_btn(0, 1)
+            elif active == 3:
+                self.change_time_btn(-1, 0)
+            elif active == 4:
+                self.change_time_btn(0, -1)
+            """
+            elif active == 5:
+                self.change_time_btn(0, 10)
+            elif active == 6:
+                self.change_time_btn(3, 0)
+            """
 
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             self.hand_id = 0
@@ -453,15 +502,37 @@ class Board(gd.BoardGame):
             self.draw_hands()
             self.clock_canvas.painting = self.canvas.copy()
 
+    def change_time_btn(self, h, m):
+        if h != 0:
+            if h == 1 and self.tm[0] == 12:
+                self.tm[0] = 1
+            elif h == -1 and self.tm[0] == 1:
+                self.tm[0] = 12
+
+            elif h > 1 and self.tm[0] > 12 - h:
+                self.tm[0] = (self.tm[0] + h) - 12
+            else:
+                self.tm[0] += h
+        if m != 0:
+            if m == 1 and self.tm[1] == 59:
+                self.tm[1] = 0
+                self.change_time_btn(1, 0)
+            elif m == -1 and self.tm[1] == 0:
+                self.tm[1] = 59
+                self.change_time_btn(-1, 0)
+
+            elif m > 1 and self.tm[1] > 59 - m:
+                self.change_time_btn(1, 0)
+                self.tm[1] = (self.tm[1] + m) - 60
+            else:
+                self.tm[1] += m
+
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
     def check_result(self):
         if self.time == self.target_time:
-            # self.update_score(self.points)
             self.level.next_board()
         else:
-            if self.points > 0:
-                self.points -= 1
             self.level.try_again()

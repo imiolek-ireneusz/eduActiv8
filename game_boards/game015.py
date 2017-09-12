@@ -10,14 +10,14 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 99, 14)
+        self.level = lc.Level(self, mainloop, 1, 14)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 9)
 
     def create_game_objects(self, level=1):
         self.allow_unit_animations = False
         self.allow_teleport = False
         self.board.decolorable = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.board.draw_grid = False
@@ -68,7 +68,6 @@ class Board(gd.BoardGame):
         elif self.level.lvl == 14:
             data = [12, 9, 35, 6, 6]
 
-        self.points = (data[3] * data[4]) // 2
         self.chapters = [1, 3, 6, 10, 14]
         # rescale the number of squares horizontally to better match the screen width
         m = data[0] % 2
@@ -139,8 +138,6 @@ class Board(gd.BoardGame):
         self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, color0, "", 5)  # bottom 2
         self.board.ships[-1].font_color = instr_font_col
         self.board.ships[-1].immobilize()
-        # if self.mainloop.scheme is not None:
-        #    self.board.ships[-1].font_color = self.mainloop.scheme.u_font_color
 
         self.board.ships[-1].speaker_val = self.dp["Re-arrange right"]
         self.board.ships[-1].speaker_val_update = False
@@ -175,11 +172,8 @@ class Board(gd.BoardGame):
             current[pos] = int(self.board.ships[i].value)
         del (current[-1])
         if self.choice_list == current:
-            # self.update_score(self.points)
             self.level.next_board()
         else:
-            if self.points > 0:
-                self.points -= 1
             self.level.try_again()
 
 

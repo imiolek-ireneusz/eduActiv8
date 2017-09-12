@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.allow_unit_animations = False
         self.change_count = 0
@@ -183,7 +183,6 @@ class Board(gd.BoardGame):
                     self.letter_pos[i] = [-1, -1]
                     if self.remaining == 0:
                         self.say(self.s_word + ".")
-                        # self.update_score(self.points)
                         self.level.next_board()
                     else:
                         self.searched_letter = self.word[self.word_len - self.remaining]
@@ -209,7 +208,7 @@ class Board(gd.BoardGame):
                     break
 
     def after_keydown_move(self):
-        pass  # self.walk_through()
+        pass
 
     def check_result(self):
         if self.changed_since_check:

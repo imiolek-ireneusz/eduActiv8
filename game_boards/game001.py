@@ -49,27 +49,11 @@ class Board(gd.BoardGame):
             self.board.add_unit(0, 9, data[0], 6, classes.board.Label, self.lang.d["Lic_desc"], self.color, "", 2)
             self.board.units[-1].valign = 1
 
-        #self.board.add_unit(0, 15, data[0], 1, classes.board.Letter, "<<", self.color, "", 0)
-        #self.btn_back = self.board.ships[-1]
-
         for each in self.board.units:
             each.font_color = font_color
-        """
-        self.btn_back.font_color = (255, 0, 0)
-        self.btn_back.highlight = False
-        self.btn_back.readable = False
-        """
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        """
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                active = self.board.active_ship
-                if active >= 0:
-                    if self.board.ships[active] == self.btn_back:
-                        self.mainloop.m.start_hidden_game(0)
-        """
 
     def update(self, game):
         game.fill(self.color)

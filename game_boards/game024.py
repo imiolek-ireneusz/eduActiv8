@@ -15,7 +15,8 @@ import classes.simple_vector as sv
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 99, 2)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 9)
         self.max_size = 99
 
@@ -44,20 +45,21 @@ class Board(gd.BoardGame):
                 color = (0, 0, 0)
                 self.guides_color = (30, 30, 30)
             txt_color = self.mainloop.scheme.u_font_color
+
+        lvl_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                         self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
+
         self.shape_names = [self.lang.d["quadrilateral"], self.lang.d["trapezium"], self.lang.d["parallelogram"],
                             self.lang.d["rhombus"], self.lang.d["square"], self.lang.d["rectangle"],
                             self.lang.d["right_trapezium"], self.lang.d["iso_trapezium"], self.lang.d["u_trapezium"],
                             "", self.lang.d["triangle"], self.lang.d["right_iso_tria"], self.lang.d["right_tria"],
                             self.lang.d["equi_tria"], self.lang.d["acute_iso_tria"], self.lang.d["acute_tria"],
                             self.lang.d["obtuse_iso_tria"], self.lang.d["obtuse_tria"], self.lang.d["circle"]]
-        if self.level.lvl == 1:
-            self.choice = [1, 2, 4, 5, 6, 7, 10, 11, 12, 14, 15, 16, 17, 18]
-            self.check_sizes = False
-            self.pointsx = 3
-        if self.level.lvl == 2:
-            self.choice = [1, 2, 4, 5, 6, 7, 10, 11, 12, 14, 15, 17, 18]
-            self.check_sizes = True
-            self.pointsx = 6
+
+        self.choice = lvl_data[2:]
+        self.check_sizes = lvl_data[1]
 
         self.chosen_shape_name = ""
         self.chosen = 0
@@ -86,7 +88,18 @@ class Board(gd.BoardGame):
             size_instr_font_size = 2
         else:
             size_instr_font_size = 2
-        self.guide_scale = self.board.scale // 2
+
+        if self.mainloop.android is None:
+            self.grid_density_div = lvl_data[0]
+        else:
+            self.grid_density_div = 1
+
+        if self.grid_density_div == 1:
+            self.max_side_len = 9
+        else:
+            self.max_side_len = 11
+
+        self.guide_scale = self.board.scale // self.grid_density_div
         self.left_padding = 2
         self.px_padding = self.left_padding * scale + self.layout.game_left
         # canvas
@@ -157,12 +170,6 @@ class Board(gd.BoardGame):
         self.reset()
 
     def pick_shape(self):
-
-        if self.level.lvl == 1:
-            self.pointsx = 3
-        if self.level.lvl == 2:
-            self.pointsx = 6
-
         prev_chosen = self.chosen
         while (self.chosen == prev_chosen):
             self.chosen = random.choice(self.choice)
@@ -179,73 +186,73 @@ class Board(gd.BoardGame):
             self.shape_sizes = [4, 4, 4, 4]
 
             if self.chosen in [1, 6]:  # non special case trapeziums and right trapeziums
-                b1 = random.randrange(4, 11)
+                b1 = random.randrange(4, self.max_side_len)
                 b2 = random.randrange(2, b1)  # make it shorter than b1
-                h = random.randrange(2, 9)
+                h = random.randrange(2, self.max_side_len - 2)
                 self.shape_sizes = [b1, b2, h]
                 self.size_instr.value = self.lang.d["size_instr_0"] % (
                 self.shape_sizes[0], self.shape_sizes[1], self.shape_sizes[2])
 
             elif self.chosen == 7:  # iso_trapezium
-                b1 = random.randrange(4, 11, 2)
+                b1 = random.randrange(4, self.max_side_len, 2)
                 b2 = random.randrange(2, b1, 2)
-                h = random.randrange(2, 8)
+                h = random.randrange(2, self.max_side_len - 3)
                 self.shape_sizes = [b1, b2, h]
                 self.size_instr.value = self.lang.d["size_instr_0"] % (
                 self.shape_sizes[0], self.shape_sizes[1], self.shape_sizes[2])
 
             elif self.chosen == 2:  # parallelogram
-                b1 = random.randrange(4, 11)
-                h = random.randrange(2, 7)
+                b1 = random.randrange(4, self.max_side_len)
+                h = random.randrange(2, self.max_side_len-3)
                 self.shape_sizes = [b1, h]
                 self.size_instr.value = self.lang.d["size_instr_3"] % (self.shape_sizes[0], self.shape_sizes[1])
 
             elif self.chosen == 4:  # square
-                b1 = random.randrange(2, 11)
+                b1 = random.randrange(2, self.max_side_len)
                 self.shape_sizes = [b1]
                 self.size_instr.value = self.lang.d["size_instr_1"] % (self.shape_sizes[0])
 
             elif self.chosen == 5:  # rectangle - make sure it's not a square
-                b1 = random.randrange(3, 11)
+                b1 = random.randrange(3, self.max_side_len)
                 b2_choice = list(range(2, b1))
-                b2_choice.extend(range(b1 + 1, 11))
+                b2_choice.extend(range(b1 + 1, self.max_side_len))
                 b2 = random.choice(b2_choice)
                 self.shape_sizes = [b1, b2]
                 self.size_instr.value = self.lang.d["size_instr_2"] % (self.shape_sizes[0], self.shape_sizes[1])
 
             elif self.chosen == 11:  # right iso tria
-                b1 = random.randrange(2, 11)
+                b1 = random.randrange(2, self.max_side_len)
                 self.shape_sizes = [b1, b1]
                 self.size_instr.value = self.lang.d["size_instr_6"] % (self.shape_sizes[0])
 
             elif self.chosen == 12:  # right tria - force it to be non iso
                 self.tria_variant = random.randrange(0, 2)
                 if self.tria_variant == 0:
-                    b1 = random.randrange(4, 10)
+                    b1 = random.randrange(4, self.max_side_len-1)
                     b2_choice = list(range(2, b1))
-                    b2_choice.extend(range(b1 + 1, 11))
+                    b2_choice.extend(range(b1 + 1, self.max_side_len))
                     b2 = random.choice(b2_choice)
                     self.shape_sizes = [b1, b2]
                     self.size_instr.value = self.lang.d["size_instr_5"] % (self.shape_sizes[0], self.shape_sizes[1])
                 else:
-                    b1 = random.randrange(4, 11, 2)
+                    b1 = random.randrange(4, self.max_side_len, 2)
                     self.shape_sizes = [b1]
                     self.size_instr.value = self.lang.d["size_instr_7"] % (self.shape_sizes[0])
 
             elif self.chosen in [10, 14, 15, 17]:
                 if self.chosen == 14:  # acute iso tria
-                    b1 = random.randrange(4, 11, 2)
-                    h = random.randrange(b1 // 2 + 1, 11)
+                    b1 = random.randrange(4, self.max_side_len, 2)
+                    h = random.randrange(b1 // 2 + 1, self.max_side_len)
                 elif self.chosen == 15:  # acute tria
-                    b1 = random.randrange(4, 11)
-                    h = random.randrange(b1 // 2 + 1, 11)
+                    b1 = random.randrange(4, self.max_side_len)
+                    h = random.randrange(b1 // 2 + 1, self.max_side_len)
                 elif self.chosen in [10, 17]:  # other triangles + obtuse ones
-                    b1 = random.randrange(2, 11)
-                    h = random.randrange(2, 11)
+                    b1 = random.randrange(2, self.max_side_len)
+                    h = random.randrange(2, self.max_side_len)
                 self.shape_sizes = [b1, h]
                 self.size_instr.value = self.lang.d["size_instr_4"] % (self.shape_sizes[0], self.shape_sizes[1])
             elif self.chosen == 18:  # circle
-                r = random.randrange(2, 10)
+                r = random.randrange(2, self.max_side_len)
                 self.shape_sizes = [r]
                 self.size_instr.value = self.lang.d["size_instr_9"] % (self.shape_sizes[0])
 
@@ -329,8 +336,6 @@ class Board(gd.BoardGame):
                 self.canvas_block.value = [random.choice(self.lang.d["Great job!"]), "", "", ""]
                 self.canvas_block.update_me = True
                 self.next_btn.keyable = True
-                # self.update_score(self.pointsx)
-                self.pointsx = 0
                 self.show_next()
 
     def show_next(self):
@@ -468,12 +473,7 @@ class Board(gd.BoardGame):
                     self.paint_line(1)
 
     def next_shape(self):
-        # self.level.next_board()
-        # """
-        self.next_btn.keyable = False
-        self.pick_shape()
-        self.mainloop.redraw_needed[0] = True
-        # """
+        self.level.next_board()
 
     def change_tool(self, tool):
         self.max_points = tool

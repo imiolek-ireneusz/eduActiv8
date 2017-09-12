@@ -12,13 +12,15 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 15, 3)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 9, 5)
 
     def create_game_objects(self, level=1):
         self.board.decolorable = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
+        self.board.draw_grid = False
         if self.mainloop.scheme is None:
             s = random.randrange(100, 150, 5)
             v = random.randrange(230, 255, 5)
@@ -44,13 +46,13 @@ class Board(gd.BoardGame):
                 self.color2 = (0, 0, 200)
                 color3 = (254, 254, 255)
 
-        if self.level.lvl == 1:
-            data = [9, 5, 3, 5, 2, 5]
-        elif self.level.lvl == 2:
-            data = [9, 5, 3, 7, 2, 5]
-        elif self.level.lvl == 3:
-            data = [9, 5, 3, 10, 2, 5]
-        self.points = 1
+        data = [9, 5, 3]
+        data.extend(
+            self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                  self.level.lvl))
+        data.append(5)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
         self.data = data
         self.board.set_animation_constraints(3, data[0] - 3, 0, data[1] - 1)
         self.board.level_start(data[0], data[1], self.layout.scale)
@@ -60,9 +62,9 @@ class Board(gd.BoardGame):
 
         sign = "/"
         numbers = []
-        for i in range(data[4]):
-            num1 = random.randrange(1, data[3] - 1)
-            num2 = random.randrange(num1 + 1, data[3])
+        for i in range(2):
+            num1 = random.randrange(1, data[3])
+            num2 = random.randrange(num1 + 1, data[3] + 1)
             numbers.append([num1, num2])
             expr = str(float(num1)) + sign + str(float(num2))
             disp = ["", str(num1), str(num2), ""]
@@ -76,25 +78,25 @@ class Board(gd.BoardGame):
         xd = (data[0] - data[2]) // 2
 
         # add objects to the board
-        self.board.add_unit(0, 1, 3, 3, classes.board.Label, "", self.bg_col, "", data[5])
-        self.board.add_unit(6, 1, 3, 3, classes.board.Label, "", self.bg_col, "", data[5])
+        self.board.add_unit(0, 1, 3, 3, classes.board.Label, "", self.bg_col, "", data[4])
+        self.board.add_unit(6, 1, 3, 3, classes.board.Label, "", self.bg_col, "", data[4])
 
         size = self.board.scale
         center = [size // 2, size // 2]
 
-        for i in range(0, data[4]):
+        for i in range(0, 2):
             x2 = xd + i * 2
             caption = self.num_list2[i]
-            self.board.add_unit(x2, 2, 1, 1, classes.board.Label, caption, color3, "", data[5])
+            self.board.add_unit(x2, 2, 1, 1, classes.board.Label, caption, color3, "", data[4])
             self.board.units[-1].font_color = self.font_color
             self.board.units[i + 2].set_outline(self.font_color, 1)
             self.draw_fractions(self.board.units[i + 2].painting, size, center, color1)
             self.board.units[i + 2].image = self.board.units[i + 2].painting.copy()
             self.expression[x2] = str(self.num_list[i])
-            if i < data[4] - 1:
+            if i < 1:
                 self.solution_grid[x2 + 1] = 1
 
-        signs = [" < ", " = ", " > "] * (data[4] - 1)
+        signs = [" < ", " = ", " > "]
         if self.level.lvl > 12: signs.append(" < ")  # just for the symetry
 
         for i in range(len(signs)):
@@ -113,17 +115,15 @@ class Board(gd.BoardGame):
                     x = ((data[0] - (len(signs) - data[0])) // 2) - data[0]
                     y = 3
 
-            self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, signs[i], color3, "", data[5])
+            self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, signs[i], color3, "", data[4])
             self.board.ships[-1].font_color = self.font_color
             self.board.ships[i].readable = False
             self.board.ships[i].set_outline(self.font_color, 1)
 
-        # self.outline_all(0,1)
         ind = len(self.board.units)
-        for i in range(0, data[4] - 1):
-            self.board.add_door(xd + i * 2 + 1, 2, 1, 1, classes.board.Door, "", self.bg_col, "")
-            self.board.units[ind + i].door_outline = True
-            self.board.all_sprites_list.move_to_front(self.board.units[ind + i])
+        self.board.add_door(xd + 1, 2, 1, 1, classes.board.Door, "", self.bg_col, "")
+        self.board.units[ind].door_outline = True
+        self.board.all_sprites_list.move_to_front(self.board.units[ind])
 
         instruction = self.d["Drag lt"]
         self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, self.bg_col, "", 9)
@@ -213,11 +213,8 @@ class Board(gd.BoardGame):
             eval_string = ''.join(self.expression)
             eval_string.strip()
             if eval(eval_string) == True:
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
-                self.points = 0
                 self.level.try_again()
         else:
-            self.points = 0
             self.level.try_again()

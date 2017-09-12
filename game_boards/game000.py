@@ -65,68 +65,34 @@ class Board(gd.BoardGame):
         self.canvas = self.board.ships[-1]
         self.canvas.immobilize()
         self.canvas.outline = False
-        """
-        self.canvas.font = self.canvas.board.font_sizes[4]
-        val = "v.%s " % self.mainloop.config.version
-        text = self.canvas.font.render(val, 1, ver_color)
-        y = self.canvas.img_rect.height - self.canvas.font.size(val)[1] - 1
-        x = self.canvas.img_rect.width - self.canvas.font.size(val)[0]# - (self.canvas.img_rect.width//100)
-        self.canvas.img.blit(text, (x, y))
-        """
-        if self.mainloop.android is None:
-            self.board.add_unit(0, 6, data[0], 1, classes.board.Label,
-                                [self.lang.d["Check for newer version..."]], color, "", 4)
-            self.board.units[-1].font_color = font_color2
 
-            self.board.add_unit(0, 7, data[0], 1, classes.board.Label, ["http://sourceforge.net/projects/eduactiv8/",
-                                                                        "https://github.com/imiolek-ireneusz/eduactiv8"],
-                                color, "", 4)
+        if self.mainloop.android is None:
+            self.board.add_unit(0, 6, data[0], 1, classes.board.Label, self.lang.d["Check for newer version..."], color, "", 6)
+            self.board.units[-1].font_color = font_color
+            self.board.add_unit(0, 7, data[0], 1, classes.board.Label, "www.sourceforge.net/projects/eduactiv8   |   www.github.com/imiolek-ireneusz/eduactiv8",
+                                color, "", 6)
+            self.board.units[-1].font_color = font_color
+
+            # self.board.add_unit(0, 7, data[0], 1, classes.board.Label, ["http://sourceforge.net/projects/eduactiv8/",
+            #                                                            "https://github.com/imiolek-ireneusz/eduactiv8"],color, "", 6)
             self.board.units[-1].font_color = font_color
 
         self.board.add_unit(0, 5, data[0], 1, classes.board.Label, ["www.facebook.com/eduactiv8", ""], color, "", 4)
-        self.board.units[-1].font_color = font_color
+        self.board.units[-1].font_color = font_color2
 
-        self.board.add_unit(0, 4, data[0], 1, classes.board.Label, "www.eduactiv8.org", color, "", 2)
+        self.board.add_unit(0, 4, data[0], 1, classes.board.Label, "www.eduactiv8.org", color, "", 1)
+        self.board.units[-1].font_color = font_color2
+
+        self.board.add_unit(0, 9, data[0], 1, classes.board.Label,
+                            "info%seduactiv8%sorg   |   bugs%seduactiv8%sorg" % ("@", ".", "@", "."), color, "", 6)
         self.board.units[-1].font_color = font_color
-        if not self.mainloop.speaker.started and self.mainloop.android is None:
-            self.board.add_unit(0, 8, data[0], 2, classes.board.Label, self.lang.d["please install espeak"], color, "",
-                                5)
-            self.board.units[-1].font_color = font_color
-        else:
-            self.board.add_unit(0, 9, data[0], 1, classes.board.Label, "info@eduactiv8.org   |   bugs@eduactiv8.org",
-                                color, "", 5)
-            self.board.units[-1].font_color = font_color
 
         self.board.add_unit(0, 10, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2017  Ireneusz Imiolek",
                             color, "", 6)
         self.board.units[-1].font_color = font_color
-        """
-        centre = data[0] // 2
-        self.board.add_unit(0, 10, centre, 1, classes.board.Letter, ">> %s <<" % self.lang.d["Credits"], color2, "", 3)
-        self.btn_lic = self.board.ships[-1]
-        self.btn_lic.font_color = (255, 0, 0)
-        self.btn_lic.highlight = False
-        self.btn_lic.readable = False
-        self.board.add_unit(centre + 1, 10, centre, 1, classes.board.Letter,
-                            ">> %s <<" % self.lang.d["Translation Credits"], color2, "", 3)
-        self.btn_tra = self.board.ships[-1]
-        self.btn_tra.font_color = (255, 0, 0)
-        self.btn_tra.highlight = False
-        self.btn_tra.readable = False
-        """
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        """
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                active = self.board.active_ship
-                if active > 0:
-                    if self.board.ships[active] == self.btn_lic:
-                        self.start_game(1)
-                    elif self.board.ships[active] == self.btn_tra:
-                        self.start_game(2)
-        """
 
     def start_game(self, gameid):
         self.mainloop.m.start_hidden_game(gameid)

@@ -369,12 +369,11 @@ class Board(gd.BoardGame):
         else:
             self.current_line = (self.t_string[0] * self.t_multi[0]).strip()
 
-        self.pointsx = len(self.current_line) // 15 + 1
         self.level.games_per_lvl = len(self.t_string)
         self.level.game_step = 1
         label_w = self.data[0] // 2
 
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -425,8 +424,6 @@ class Board(gd.BoardGame):
                             each.update_me = True
                     else:
                         self.mainloop.sfx.play(16)
-                        if self.pointsx > 0:
-                            self.pointsx -= 1
 
                 self.mainloop.redraw_needed[0] = True
 
@@ -452,7 +449,6 @@ class Board(gd.BoardGame):
             self.kbrd.get_btns_to_hl(self.current_line[0])
             self.mainloop.redraw_needed[1] = True
         else:
-            # self.update_score(self.pointsx)
             self.level.next_board()
 
     def check_result(self):

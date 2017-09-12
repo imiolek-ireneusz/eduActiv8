@@ -11,7 +11,8 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 99, 6)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 11)
 
     def create_game_objects(self, level=1):
@@ -37,19 +38,10 @@ class Board(gd.BoardGame):
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.bg_col = (0, 0, 0)
-        if self.level.lvl == 1:
-            rngs = [3, 9, 20, 50]
-        elif self.level.lvl == 2:
-            rngs = [3, 9, 50, 99]
-        elif self.level.lvl == 3:
-            rngs = [3, 9, 100, 150]
-        elif self.level.lvl == 4:
-            rngs = [3, 9, 200, 500]
-        elif self.level.lvl == 5:
-            rngs = [3, 9, 500, 999]
-        elif self.level.lvl == 6:
-            rngs = [20, 50, 21, 99]
-
+        rngs = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                     self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
         if self.lang.lang == 'pl':
             self.divisor_pos = 1
         else:
@@ -140,14 +132,11 @@ class Board(gd.BoardGame):
         self.num2 = self.board.units[-1]
         self.num2.align = num2_align
 
-        # line = "―" * (self.n1sl*2)
-
         self.board.add_unit(data[0] - self.n1sl * 2 - r_offset, 2, self.n1sl * 2, 1, classes.board.Label, "",
                             self.bg_col, "", 21)
         self.line_unit = self.board.units[-1]
         self.draw_hori_line(self.line_unit)
 
-        # self.board.units[-1].text_wrap = False
         if self.divisor_pos == 0:
             self.board.add_unit(data[0] - self.n1sl * 2 - 1 + ds_offset, 2, 1, d_h, classes.board.Label, "",
                                 self.bg_col, "", 21)
@@ -180,7 +169,7 @@ class Board(gd.BoardGame):
                 nbr[i] = sub[i - 1] * 10 + int(self.n1s[i])
                 nbe[i] = int(self.n1s[i])
                 self.board.add_unit(xp[1] - r_offset, yp[1], 2, 2, classes.board.Letter, "", self.bg_col, "",
-                                    21)  # str(nbe[i])
+                                    21)
                 self.nbel.append(self.board.ships[-1])
                 self.nbel[-1].pos_id = i
                 self.activables += 1
@@ -189,7 +178,7 @@ class Board(gd.BoardGame):
                 nbe[i] = int(self.n1s[i])
             res[i] = nbr[i] / self.n2
             self.board.add_unit(xp[0] - r_offset, yp[0], 2, 2, classes.board.Letter, "", self.bg_col, "",
-                                21)  # str(res[i])
+                                21)
             self.resl.append(self.board.ships[-1])
             self.resl[-1].pos_id = i
             self.activables += 1
@@ -203,7 +192,7 @@ class Board(gd.BoardGame):
             self.mpll.append([])
             for j in range(mplsl):
                 self.board.add_unit(xp[2] - mplsl * 2 + j * 2 - r_offset, yp[2], 2, 2, classes.board.Letter, "",
-                                    self.bg_col, "", 21)  # mpls[j]
+                                    self.bg_col, "", 21)
                 self.mpll[i].append(self.board.ships[-1])
                 self.mpll[i][-1].pos_id = i
                 self.mpll[i][-1].posy_id = j
@@ -214,7 +203,7 @@ class Board(gd.BoardGame):
             self.subl.append([])
             for j in range(subsl):
                 self.board.add_unit(xp[3] - subsl * 2 + j * 2 - r_offset, yp[3], 2, 2, classes.board.Letter, "",
-                                    self.bg_col, "", 21)  # subs[j]
+                                    self.bg_col, "", 21)
                 self.subl[i].append(self.board.ships[-1])
                 self.subl[i][-1].pos_id = i
                 self.subl[i][-1].posy_id = j
@@ -223,7 +212,6 @@ class Board(gd.BoardGame):
             self.board.add_unit(xp[4] + (2 - len(str(nbr[i])) * 2) - r_offset, yp[4], len(str(nbr[i])) * 2, 1,
                                 classes.board.Label, "", self.bg_col, "", 21)
             self.draw_hori_line(self.board.units[-1])
-            # self.board.units[-1].text_wrap = False
             for i in range(5):
                 xp[i] += 2
                 if i > 0:
@@ -315,7 +303,7 @@ class Board(gd.BoardGame):
 
     def home_sqare_switch(self, activate):
 
-        if activate >= 0 and activate < self.activables:  # self.sumn1n2sl * 2 - 1:
+        if activate >= 0 and activate < self.activables:
             self.board.active_ship = activate
             self.home_square.update_me = True
             if self.board.active_ship >= 0:

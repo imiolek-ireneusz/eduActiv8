@@ -20,18 +20,16 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.allow_unit_animations = False
         self.board.draw_grid = False
-        s = 100  # random.randrange(30, 80)
-        v = 255  # random.randrange(200, 255)
+        s = 100
+        v = 255
         h = random.randrange(0, 225)
         self.letter_color = ex.hsv_to_rgb(h, s, v)
-        # font_color = ex.hsv_to_rgb(h, s, 75)
-        # primary_font_color = ex.hsv_to_rgb(h, 255, 230)
         font_color = ex.hsv_to_rgb(h, 255, 140)
         font_color2 = ex.hsv_to_rgb(h, 255, 50)
         outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
 
         if self.mainloop.scheme is not None:
-            card_color = self.mainloop.scheme.u_color  # (0,0,0)#(255,255,255)#ex.hsv_to_rgb(h+10,s-25,v)
+            card_color = self.mainloop.scheme.u_color
         else:
             card_color = (255, 255, 255)
 
@@ -59,17 +57,19 @@ class Board(gd.BoardGame):
 
         self.data = data
 
+        self.card_font_size_top = 0
+        if self.mainloop.lang.lang == "lkt":
+            self.card_font_size_top = 1
+
         self.vis_buttons = [0, 0, 0, 0, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
-        # self.prev_item = None
         self.base26 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
                        't', 'u', 'v', 'w', 'x', 'y', 'z']
         self.font_size = 17
-        # if self.lang.lang in ['en_gb', 'en_us']:
         self.word_list = self.lang.d['abc_flashcards_word_sequence']
         self.pword_list = self.lang.dp['abc_flashcards_word_sequence']
         self.frame_flow = self.lang.d['abc_flashcards_frame_sequence']
@@ -122,21 +122,21 @@ class Board(gd.BoardGame):
             xd = 1
         if self.lang.has_uc:
             img_plus = 0
-            self.board.add_unit(x, y, 2, 1, classes.board.Label, uc[0], card_color, "", 0)
+            self.board.add_unit(x, y, 2, 1, classes.board.Label, uc[0], card_color, "", self.card_font_size_top)
             if self.lang.has_cursive:
                 self.board.add_unit(x - 2, y + 1, 2, 3, classes.board.Label, uc[0], card_color, "", self.font_size)
 
-            self.board.add_unit(x + 2 - xd, y, 2, 1, classes.board.Label, alc[0], card_color, "", 0)
+            self.board.add_unit(x + 2 - xd, y, 2, 1, classes.board.Label, alc[0], card_color, "", self.card_font_size_top)
             if self.lang.has_cursive:
                 self.board.add_unit(x + 4 - xd, y + 1, 2, 3, classes.board.Label, alc[0], card_color, "",
                                     self.font_size)
         else:
             img_plus = 1
             if self.lang.has_cursive:
-                self.board.add_unit(x + 1 - xd, y, 2, 1, classes.board.Label, alc[0], card_color, "", 0)
+                self.board.add_unit(x + 1 - xd, y, 2, 1, classes.board.Label, alc[0], card_color, "", self.card_font_size_top)
                 self.board.add_unit(x + 3 - xd, y, 2, 1, classes.board.Label, alc[0], card_color, "", self.font_size)
             else:
-                self.board.add_unit(x + 2 - xd, y, 2, 1, classes.board.Label, alc[0], card_color, "", 0)
+                self.board.add_unit(x + 2 - xd, y, 2, 1, classes.board.Label, alc[0], card_color, "", self.card_font_size_top)
 
         # frame size 288 x 216
         img_src = os.path.join('fc', "fc%03i.jpg" % self.frame_flow[0])
@@ -149,7 +149,6 @@ class Board(gd.BoardGame):
         font_colors = ((200, 0, 0), font_color2)
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                # font_colors = ((255,200,200), (255,255,255))
                 font_colors = (self.mainloop.scheme.u_font_color3, self.mainloop.scheme.u_font_color)
 
         if self.lang.ltr_text:
@@ -184,7 +183,6 @@ class Board(gd.BoardGame):
             each.font_color = font_color
         for each in self.board.units:
             each.font_color = font_color
-
         self.active_item = self.board.ships[0]
         self.active_item.color = (255, 255, 255)
         self.prev_item = self.active_item
@@ -203,28 +201,36 @@ class Board(gd.BoardGame):
                 self.mainloop.redraw_needed[0] = True
 
     def create_card(self, active):
-
         val = ex.unival(active.value)
+        if len(val) == 2:
+            lcb = 0
+            lce = 1
+            ucb = 1
+            uce = 2
+        if len(val) == 4:
+            lcb = 0
+            lce = 2
+            ucb = 2
+            uce = 4
 
         if sys.version_info < (3, 0):
             self.say(val[0].encode("utf-8"))
         else:
             self.say(val[0])
-        self.board.units[0].value = val[0]
+        self.board.units[0].value = val[lcb:lce]
         if self.lang.has_cursive:
-            self.board.units[1].value = val[0]
+            self.board.units[1].value = val[lcb:lce]
         indx = [0, 1]
         if self.lang.has_uc:
             if self.lang.has_cursive:
                 indx = [0, 1, 2, 3]
-                self.board.units[2].value = val[1]
-                self.board.units[3].value = val[1]
+                self.board.units[2].value = val[ucb:uce]
+                self.board.units[3].value = val[ucb:uce]
             else:
-                self.board.units[1].value = val[1]
+                self.board.units[1].value = val[ucb:uce]
 
         self.board.ships[self.abc_len].value = self.word_list[active.unit_id]
         self.board.ships[self.abc_len].speaker_val = self.pword_list[active.unit_id]
-
         self.board.ships[self.abc_len + 1].set_value(self.word_list[active.unit_id])
         self.board.ships[self.abc_len + 1].speaker_val = self.pword_list[active.unit_id]
 
@@ -236,9 +242,7 @@ class Board(gd.BoardGame):
             indx2 = [self.abc_len, self.abc_len + 1]
         img_src = os.path.join('fc', "fc%03i.jpg" % self.frame_flow[active.unit_id])
         self.slide.change_image(img_src)
-
         self.board.active_ship = -1
-
         self.slide.update_me = True
         for i in indx:
             self.board.units[i].update_me = True

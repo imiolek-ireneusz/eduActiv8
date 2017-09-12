@@ -13,12 +13,14 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 5, 6)
+        #self.level = lc.Level(self, mainloop, 5, 6)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 9, 6)
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.board.draw_grid = True
         if self.mainloop.scheme is None:
@@ -36,23 +38,13 @@ class Board(gd.BoardGame):
             self.color2 = self.mainloop.scheme.u_font_color3  # contours & borders
             bg_color = self.bg_col
 
-        # bg_color = (255, 255, 255, 0)
-        # self.bg_col = (255, 255, 255, 0)
-        if self.level.lvl == 1:
-            data = [9, 6, 3, 5, 5, 1]
-        elif self.level.lvl == 2:
-            data = [9, 6, 3, 7, 5, 1]
-        elif self.level.lvl == 3:
-            data = [9, 6, 3, 11, 5, 1]
-        elif self.level.lvl == 4:
-            data = [9, 6, 3, 11, 5, 3]
-        elif self.level.lvl == 5:
-            data = [9, 6, 3, 11, 5, 6]
-        elif self.level.lvl == 6:
-            data = [9, 6, 3, 11, 5, 10]
-
-        self.points = self.level.lvl * 5
-
+        data = [9, 6, 3]
+        data.extend(
+            self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                  self.level.lvl))
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
+        self.row_count = data[6]
         self.font_size = 7
         extra_w = 0
         if self.mainloop.m.game_variant == 0:
@@ -83,7 +75,7 @@ class Board(gd.BoardGame):
                            classes.board.Letter]
             instruction = self.d["Fract instr3"]
             instrp = self.dp["Fract instr3"]
-            extra_w = 1
+            extra_w = 0
         elif self.mainloop.m.game_variant == 4:
             drawing_f = [self.draw_ratios, self.draw_circles, self.draw_rectangles, self.draw_minicircles,
                          self.draw_polygons]
@@ -95,10 +87,10 @@ class Board(gd.BoardGame):
 
         data[0] = data[0] + extra_w
         self.data = data
-        if self.mainloop.m.game_variant > 2:
-            self.board.set_animation_constraints(2, data[0], 0, data[1] - 1)
+        if self.mainloop.m.game_variant == 4:#2:
+            self.board.set_animation_constraints(2, data[0], 0, self.row_count)
         else:
-            self.board.set_animation_constraints(1, data[0], 0, data[1] - 1)
+            self.board.set_animation_constraints(1, data[0], 0, self.row_count)
 
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
@@ -111,25 +103,26 @@ class Board(gd.BoardGame):
         # create list of available slots for mixed objects
 
         slots = []
-        for j in range(0, 5):
+        for j in range(0, self.row_count):
             for i in range(5, 9):
                 slots.append([i, j])
         random.shuffle(slots)
         # num2 = 0
-        while len(numbers) < data[4]:
-            num1 = random.randrange(1, data[3] - 1)
-            if self.mainloop.m.game_variant == 3:
-                choice_lst = []
-                for i in [2, 4, 5, 8, 10]:
-                    if i > num1:
-                        choice_lst.append(i)
-                num2 = random.choice(choice_lst)
+        if data[4] == 0:
+            l2 = data[3].split(", ")
+            l2l = len(l2)
+
+        while len(numbers) < self.row_count:
+            if data[4] == 0:
+                num2 = int(l2[random.randint(0, l2l - 1)])
             else:
-                num2 = random.randrange(num1 + 1, data[3])
+                num2 = random.randint(data[3], data[4])
+            num1 = random.randrange(data[5], num2)
+
             lst = [num1, num2]
             if lst not in numbers:
                 unique = True
-                if len(numbers) > 1:  # and i < 50:
+                if len(numbers) > 0:  # and i < 50:
                     for each in numbers:
                         if float(num1) / float(num2) == float(each[0]) / float(each[1]):
                             unique = False
@@ -146,43 +139,44 @@ class Board(gd.BoardGame):
         center = [size // 2, size // 2]
         capt = copy.deepcopy(numbers)
 
-        for i in range(0, 25):
+        for i in range(0, 5*self.row_count):
             ew = 0
             xo = 0
-            if i < 5:
+            if i < self.row_count:
                 xy = [0, i]
-                if self.mainloop.m.game_variant >= 3:
+                if self.mainloop.m.game_variant == 4:
                     ew = 1
             else:
                 xy = slots[i - 5][0], slots[i - 5][1]
-                if self.mainloop.m.game_variant >= 3:
+                if self.mainloop.m.game_variant == 4:
                     xo = 1
-            f_index = i // 5
+            f_index = i // self.row_count
             disp = ""
             if drawing_f[f_index] == self.draw_fractions:
-                if self.level.lvl > 3:
-                    multi = random.randrange(1, data[5])
-                    capt[i - f_index * 5][0] *= multi
-                    capt[i - f_index * 5][1] *= multi
-                disp = ["", str(capt[i - f_index * 5][0]), str(capt[i - f_index * 5][1]), ""]
+                #TODO
+                #if self.level.lvl > 3:
+                #    multi = random.randrange(1, data[5])
+                #    capt[i - f_index * 5][0] *= multi
+                #    capt[i - f_index * 5][1] *= multi
+                disp = ["", str(capt[i - f_index * self.row_count][0]), str(capt[i - f_index * self.row_count][1]), ""]
             elif drawing_f[f_index] == self.draw_ratios:
 
                 if self.lang.lang == "lkt":
                     self.font_size = 5
-                    disp = str(capt[i - f_index * 5][0]) + " : " + str(capt[i - f_index * 5][1] - capt[i - f_index * 5][0])
+                    disp = str(capt[i - f_index * self.row_count][0]) + " : " + str(capt[i - f_index * self.row_count][1] - capt[i - f_index * self.row_count][0])
                 else:
-                    disp = [self.d["Ratio"], str(capt[i - f_index * 5][0]) + " : " + str(
-                        capt[i - f_index * 5][1] - capt[i - f_index * 5][0])]
+                    disp = [self.d["Ratio"], str(capt[i - f_index * self.row_count][0]) + " : " + str(
+                        capt[i - f_index * self.row_count][1] - capt[i - f_index * self.row_count][0])]
                     self.font_size = 7
             elif drawing_f[f_index] == self.draw_percents:
-                percent = (float(capt[i - f_index * 5][0]) / float(capt[i - f_index * 5][1])) * 100
+                percent = (float(capt[i - f_index * self.row_count][0]) / float(capt[i - f_index * self.row_count][1])) * 100
                 intperc = int(percent)
                 if intperc == percent:
                     disp = str(intperc) + "%"
                 else:
                     disp = str(percent) + "%"
             elif drawing_f[f_index] == self.draw_decimals:
-                decimal = float(capt[i - f_index * 5][0]) / float(capt[i - f_index * 5][1])
+                decimal = float(capt[i - f_index * self.row_count][0]) / float(capt[i - f_index * self.row_count][1])
                 disp = str(decimal)
 
             self.board.add_unit(xy[0] + xo, xy[1], 1 + ew, 1, obj_classes[f_index], disp, self.bg_col, "",
@@ -192,26 +186,30 @@ class Board(gd.BoardGame):
             else:
                 canvas = pygame.Surface([size, size - 1], flags=pygame.SRCALPHA)
             canvas.fill(self.bg_col)
-            drawing_f[f_index](numbers[i - f_index * 5], canvas, size, center, color1)  # data[7](data, canvas, i)
+            drawing_f[f_index](numbers[i - f_index * self.row_count], canvas, size, center, color1)  # data[7](data, canvas, i)
 
-            if i < 5:
+            if i < self.row_count:
                 self.board.units[-1].hidden_value = numbers[i]
                 self.board.units[-1].font_color = self.color2
                 self.board.units[-1].painting = canvas.copy()
             else:
-                self.board.ships[-1].hidden_value = numbers[i - f_index * 5]
+                self.board.ships[-1].hidden_value = numbers[i - f_index * self.row_count]
                 self.board.ships[-1].font_color = self.color2
                 self.board.ships[-1].painting = canvas.copy()
                 self.board.ships[-1].readable = False
                 self.board.ships[-1].highlight = False
 
         ind = len(self.board.units)
-        for i in range(0, 5):
+        for i in range(0, self.row_count):
             self.board.add_door(0, i, 5 + xo, 1, classes.board.Door, "", self.bg_col, "")
             self.board.units[ind + i].door_outline = True
             self.board.units[ind + i].perm_outline_color = self.color2
 
             self.board.all_sprites_list.move_to_front(self.board.units[ind + i])
+
+        if self.row_count < 5:
+            self.board.add_unit(0, data[1] - 1 - (5 - self.row_count), data[0], data[1] - 1 - self.row_count, classes.board.Label, "", self.bg_col, "", 9)
+
         self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, bg_color, "", 9)
         self.board.ships[-1].set_outline(self.color2, 1)
         self.board.ships[-1].immobilize()
@@ -245,7 +243,6 @@ class Board(gd.BoardGame):
             y = r * sin(angle) + center[1]
 
             # Draw the line from the center to the calculated end point
-            # pygame.draw.aaline(canvas, self.color2, [center[0], center[1]], [x, y])
             pygame.draw.line(canvas, self.color2, [center[0], center[1]], [x, y], 1)
 
     def draw_polygons(self, numbers, canvas, size, center, color):
@@ -295,10 +292,7 @@ class Board(gd.BoardGame):
         # pygame.draw.aalines(canvas, self.color2, True, lines, True)
         pygame.draw.lines(canvas, self.color2, True, lines, 1)
         for each in multilines:
-            # for i in range(1, len(multilines)):
-            # pygame.draw.aaline(canvas, self.color2, each[0], each[1], True)
             pygame.draw.line(canvas, self.color2, each[0], each[1], 1)
-            #pygame.draw.line(canvas, self.color2, multilines[i][0], multilines[i][1], 1)
 
     def draw_rectangles(self, numbers, canvas, size, center, color):
         points = []
@@ -365,8 +359,6 @@ class Board(gd.BoardGame):
                 pygame.draw.polygon(canvas, color, points, 0)
             # Draw the line from the center to the calculated end point
             multilines.extend(points)
-
-        # pygame.draw.aalines(canvas, self.color2, True, multilines, True)
         pygame.draw.lines(canvas, self.color2, True, multilines, 1)
 
     def draw_fractions(self, numbers, canvas, size, center, color):
@@ -403,10 +395,7 @@ class Board(gd.BoardGame):
             ship = self.board.ships[i]
             if ship.hidden_value != self.board.units[ship.grid_y].hidden_value:
                 correct = False
-                if self.points > 0:
-                    self.points -= 1
                 self.level.try_again()
                 break
         if correct:
-            # self.update_score(self.points)
             self.level.next_board()

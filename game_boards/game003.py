@@ -49,25 +49,18 @@ class Board(gd.BoardGame):
 
         self.center = self.data[0] // 2
 
-        self.board.add_unit(0, 0, data[0], 2, classes.board.Label, self.d["Language"], color, "", 25)
-        self.board.units[-1].font_color = (255, 75, 0, 0)
-
         lang = self.mainloop.config.settings["lang"]
         lng_index = 0
 
         for i in range(self.lang_count):
             if i <= half:
                 c = self.center - 4
-                t = i + 2
+                t = i + 0
             else:
                 c = self.center + 4
-                t = i - half - 1 + 2
+                t = i - half - 1 + 0
             self.board.add_unit(c - 4, t, 8, 1, classes.board.Letter, self.lang_titles[i], white, "", 2)
-            """
-            if self.all_lng[i] == "he" and self.lang.lang == "he":
-                self.board.ships[-1].speaker_val = self.lang.dp["Hebrew"]
-                self.board.ships[-1].speaker_val_update = False
-            """
+
             if self.all_lng[i] == lang:
                 lng_index = i
 

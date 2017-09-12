@@ -11,13 +11,13 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
-        self.level = lc.Level(self, mainloop, lvlc[0], lvlc[1])
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 6)
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 70
         v = 230
@@ -25,33 +25,9 @@ class Board(gd.BoardGame):
         color0 = ex.hsv_to_rgb(h, 40, 230)
         font_color = ex.hsv_to_rgb(h, 255, 140)
 
-        # data = [x_count, y_count, letter_count, ordered]
-        data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group, self.level.lvl)
-        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group)  # [1, 3, 5, 7, 9, 10]
-        """
-        if self.level.lvl == 1:
-            data = [11, 6, 3, True, 1]
-        elif self.level.lvl == 2:
-            data = [11, 6, 3, False, 1]
-        elif self.level.lvl == 3:
-            data = [11, 6, 5, True, 1]
-        elif self.level.lvl == 4:
-            data = [11, 6, 5, False, 1]
-        elif self.level.lvl == 5:
-            data = [11, 6, 7, True, 1]
-        elif self.level.lvl == 6:
-            data = [11, 6, 7, False, 1]
-        elif self.level.lvl == 7:
-            data = [11, 6, 9, True, 1]
-        elif self.level.lvl == 8:
-            data = [11, 6, 9, False, 1]
-        elif self.level.lvl == 9:
-            data = [11, 6, 11, True, 1]
-        elif self.level.lvl == 10:
-            data = [11, 6, 11, False, 1]
-        """
-
-        self.points = (data[2] + 2) // 3 + self.level.lvl // 4
+        data = [11, 6]
+        data.extend(self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group, self.level.lvl))
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group)
 
         self.data = data
         self.board.set_animation_constraints(0, data[0], 0, data[1] - 1)
@@ -149,11 +125,8 @@ class Board(gd.BoardGame):
                     if ships_sorted[i][1] != self.alphabet[self.indexes[i]]:
                         correct = False
             if correct == True:
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
-                if self.points > 0:
-                    self.points -= 1
                 self.level.try_again()
         else:
             self.level.try_again()

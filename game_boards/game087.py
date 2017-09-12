@@ -11,19 +11,19 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 36, 14)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 23, 14)
 
     def create_game_objects(self, level=1):
         self.board.decolorable = False
         self.board.draw_grid = True
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         if self.mainloop.scheme is None:
             s = 225  # random.randrange(150, 225, 5)
             v = 225  # random.randrange(190, 225, 5)
-            # h = 190 #random.randrange(0, 255, 5)
             h = random.randrange(0, 255, 5)
             color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
             color1 = ex.hsv_to_rgb(h, 70, v)  # highlight 2
@@ -43,45 +43,12 @@ class Board(gd.BoardGame):
             task_font_color = self.mainloop.scheme.u_font_color
 
         # data = [x_count, y_count, range_from, range_to, max_sum_range, image]
-
-        self.points = 1
-        if self.level.lvl == 1:
-            lvldata = [2, 5, 2, 5]
-        if self.level.lvl == 2:
-            lvldata = [2, 5, 2, 5]
-
-        elif self.level.lvl == 3:
-            lvldata = [2, 5, 5, 9]
-        elif self.level.lvl == 4:
-            lvldata = [2, 5, 5, 9]
-
-        elif self.level.lvl == 5:
-            lvldata = [5, 9, 2, 5]
-        elif self.level.lvl == 6:
-            lvldata = [5, 9, 2, 5]
-
-        elif self.level.lvl == 7:
-            lvldata = [5, 9, 5, 9]
-        elif self.level.lvl == 8:
-            lvldata = [5, 9, 5, 9]
-
-        elif self.level.lvl == 9:
-            lvldata = [2, 9, 2, 9]
-        elif self.level.lvl == 10:
-            lvldata = [2, 9, 2, 9]
-
-        elif self.level.lvl == 11:
-            lvldata = [2, 12, 10, 12]
-        elif self.level.lvl == 12:
-            lvldata = [2, 12, 10, 12]
-
-        elif self.level.lvl == 13:
-            lvldata = [2, 12, 2, 12]
-        elif self.level.lvl == 14:
-            lvldata = [2, 12, 2, 12]
+        lvldata = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                        self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
 
         self.level.games_per_lvl = (lvldata[1] - lvldata[0] + 1) * (lvldata[3] - lvldata[2] + 1)
-        self.chapters = [1, 3, 5, 7, 9, 11, 14]
 
         data = [lvldata[1] - lvldata[0] + 2, lvldata[3] - lvldata[2] + 2 + 3]
         if data[0] % 2 == 0:
@@ -108,8 +75,7 @@ class Board(gd.BoardGame):
         for i in range(bottom1, top1 + 1):
             for j in range(bottom2, top2 + 1):
                 if i == bottom1 or j == bottom2:
-                    # if i == num1 and j == num2: color=color0
-                    if self.level.lvl % 2 == 0:
+                    if lvldata[4] == 0:
                         color = color4
                     else:
                         if i == num1 and j == num2:
@@ -133,7 +99,7 @@ class Board(gd.BoardGame):
         # add the rest of the numbers
         for i in range(bottom1 + 1, top1 + 1):
             for j in range(bottom2 + 1, top2 + 1):
-                if self.level.lvl % 2 == 0:
+                if lvldata[4] == 0:
                     color = color0
                     font_color = color0
 
@@ -141,8 +107,6 @@ class Board(gd.BoardGame):
                     if i == num1 and j == num2:
                         color = color0
                     elif i == num1 or j == num2:
-                        color = color1
-                    elif self.level.lvl == 2 and (i == num2 or j == num1):
                         color = color1
                     else:
                         color = color2
@@ -196,7 +160,6 @@ class Board(gd.BoardGame):
 
     def check_result(self):
         if self.home_square.value != "" and (int(self.home_square.value) == self.solution[0]):
-            # self.update_score(self.points)
             self.quick_passed()
         else:
             self.failed()

@@ -16,13 +16,13 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 19, 10)
 
     def create_game_objects(self, level=1):
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.ai_enabled = True
         self.ai_speed = 18
         self.correct = False
-        self.board.draw_grid = False
+        self.board.draw_grid = True
         if self.mainloop.scheme is not None:
             color1 = self.mainloop.scheme.color1  # bright side of short hand
             color3 = self.mainloop.scheme.color3  # inner font color
@@ -103,7 +103,6 @@ class Board(gd.BoardGame):
             data = [19, 10, True, False, False, True, False, False, False, False, True, 25]
             h_pool = [i for i in range(1, 13)]
             m_pool = [i for i in range(0, 60)]
-        self.points = self.level.lvl // 2 + 1
 
         # visual display properties
         self.show_outer_ring = data[2]
@@ -148,6 +147,9 @@ class Board(gd.BoardGame):
 
         self.ans_h.immobilize()
         self.ans_m.immobilize()
+
+        self.ans_h.readable = False
+        self.ans_m.readable = False
 
         self.ans_h.font_color = color3
         self.ans_m.font_color = color4
@@ -419,9 +421,6 @@ class Board(gd.BoardGame):
             if correct == 2:
                 self.correct = True
                 self.ai_enabled = False
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
-                if self.points > 0:
-                    self.points -= 1
                 self.level.try_again()

@@ -105,7 +105,7 @@ class Board(gd.BoardGame):
         number_of_col_per_hue = 6  # number_of_colors // number_of_hues
         v_num = (255 - v) // (number_of_col_per_hue)
         # greyscale
-        grey_num = 6  # number_of_colors+2 - number_of_hues * number_of_col_per_hue
+        grey_num = 6
         if grey_num > 1:
             grey_v_num = (255 // (grey_num - 1))
         else:
@@ -180,7 +180,6 @@ class Board(gd.BoardGame):
                     pygame.mouse.set_cursor(*pygame.cursors.broken_x)
                 elif 0 < active < self.count + 1:
                     self.active_letter = self.board.ships[self.board.active_ship].value
-                    # self.active_word = self.word_list[self.board.active_ship-1]#"Zebra"#self.active_letter
                     self.tool_door.set_pos(self.board.active_ship_pos)
                     self.paint_bg_letter()
                 elif active > self.count:

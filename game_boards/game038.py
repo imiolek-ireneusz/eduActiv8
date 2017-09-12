@@ -32,8 +32,8 @@ class Board(gd.BoardGame):
         data = [14, 10]
         # stretch width to fit the screen size
         data[0] = self.get_x_count(data[1], even=True)
-        if data[0] < 14:
-            data[0] = 14
+        if data[0] < 10:
+            data[0] = 10
         self.data = data
         self.vis_buttons = [0, 0, 0, 0, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
@@ -43,13 +43,11 @@ class Board(gd.BoardGame):
         image_src = [os.path.join('memory', "n_img%da.png" % i) for i in range(1, 22)]
         self.fish_img_src = [os.path.join('fish', "n%d.png" % i) for i in range(1, 21)]
         self.word_list = [self.lang.n2txt(i) for i in range(1, 21)]
-        # self.lang.numbers # ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty']
         self.card_fronts = []
-        if data[0] > 20:
-            x = (data[0] - 20) // 2
-        else:
-            x = 0
-        x2 = (data[0] - (20 - data[0])) // 2
+
+        x = (data[0] - 10) // 2
+        x2 = x
+
         y = 0
         for i in range(1, 21):
             self.board.add_unit(x, y, 1, 1, classes.board.Letter, str(i), self.letter_color, "", 2)
@@ -61,9 +59,9 @@ class Board(gd.BoardGame):
             self.board.ships[-1].font_color = font_color
             self.board.ships[i - 1].set_outline(outline_color, 1)
             self.card_fronts.append(classes.board.ImgSurf(self.board, 2, 2, frame_color, image_src[i]))
-            x += 1
-            if x >= data[0]:
-                x = x2
+            x = x2 + i
+            if i > 9:
+                x = x2 + i - 10
                 y = data[1] - 1
 
         x = (data[0] - 4) // 2
@@ -74,8 +72,6 @@ class Board(gd.BoardGame):
             if self.mainloop.scheme.dark:
                 self.board.ships[-1].set_outline((255, 0, 0), 3)
         # frame size 432 x 288
-        #self.board.add_unit(x, y + 1, 6, 4, classes.board.MultiImgSprite, "1", frame_color, "flashcard_numbers.jpg",
-        #                    row_data=[5, 4])
         self.board.add_unit(x, y + 1, 6, 4, classes.board.ImgShip, "1", frame_color, self.fish_img_src[0], alpha=True)
         self.board.add_unit(x, y + 5, 6, 1, classes.board.Letter, self.word_list[0], frame_color, "", 2)
         self.board.ships[-1].font_color = font_color
@@ -108,8 +104,6 @@ class Board(gd.BoardGame):
         self.board.units[0].door_outline = True
         self.board.all_sprites_list.move_to_front(self.board.units[0])
         self.slide = self.board.ships[21]
-        #self.slide.build_frame_flow(20)
-        #self.slide.correction = True
         self.slide.perm_outline = True
 
         for each in self.board.ships:
@@ -162,7 +156,6 @@ class Board(gd.BoardGame):
         self.board.ships[23].speaker_val = sv
         self.board.ships[23].speaker_val_update = False
         self.mainloop.redraw_needed[0] = True
-        #self.slide.set_frame(active.unit_id)
         img_src = os.path.join(self.fish_img_src[active.unit_id])
         self.slide.change_image(img_src)
         self.board.active_ship = -1

@@ -108,8 +108,6 @@ class Board(gd.BoardGame):
             h_pool = range(1, 13)
             m_pool = range(0, 60)
 
-        self.pointsx = self.level.lvl // 4 + 4
-
         # visual display properties
         self.show_outer_ring = data[2]
         self.show_minutes = data[3]
@@ -178,8 +176,6 @@ class Board(gd.BoardGame):
                 self.board.active_ship = self.clock_wrapper.unit_id
                 self.clock = classes.clock.Clock(self, self.clock_wrapper, self.size, self.time[i], self.data[2:11])
             else:
-                # ttx = self.time2txt(self.time[i-switch])
-                # self.board.add_unit(slots[i][0],slots[i][1],1,1,classes.board.Letter,"%s" % ttx,white,"",23)
                 self.board.add_unit(slots[i][0], slots[i][1], 1, 1, classes.board.Letter,
                                     "%02d:%02d" % (self.time[i - switch][0], self.time[i - switch][1]), white, "", 8)
                 self.board.ships[-1].font_color = color4
@@ -197,7 +193,6 @@ class Board(gd.BoardGame):
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and self.ai_enabled is False:
-            # and self.start_sequence==False:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
                 if active.uncovered == False:
@@ -237,11 +232,8 @@ class Board(gd.BoardGame):
         else:
             if self.completed_mode:
                 self.history = [None, None]
-                # self.update_score(self.pointsx)
                 self.level.next_board()
             else:
-                if self.pointsx > 0:
-                    self.pointsx -= 1
                 self.history[0].perm_outline_width = 1
                 self.history[0].perm_outline_color = self.colors2[1]
                 self.history[1].perm_outline_width = 1

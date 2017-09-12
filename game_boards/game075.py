@@ -11,7 +11,8 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 99, 7)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 11)
 
     def create_game_objects(self, level=1):
@@ -36,22 +37,11 @@ class Board(gd.BoardGame):
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.bg_col = (0, 0, 0)
-        self.top_line = 3  # self.board.scale//2
-        if self.level.lvl == 1:
-            rngs = [11, 50, 11, 20]
-        elif self.level.lvl == 2:
-            rngs = [20, 50, 20, 30]
-        elif self.level.lvl == 3:
-            rngs = [50, 150, 30, 75]
-        elif self.level.lvl == 4:
-            rngs = [150, 500, 50, 75]
-        elif self.level.lvl == 5:
-            rngs = [500, 1000, 75, 100]
-        elif self.level.lvl == 6:
-            rngs = [1000, 2500, 100, 299]
-        elif self.level.lvl == 7:
-            rngs = [2500, 9999, 250, 999]
-
+        self.top_line = 3
+        rngs = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                     self.level.lvl)
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
         data = [39, 24]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=None)
@@ -120,8 +110,6 @@ class Board(gd.BoardGame):
                 self.carryl[i][-1].posy_id = i
                 self.carrylall.append(self.carryl[i][-1])
 
-        # self.carryl[0].set_outline(font_result, 1)
-
         # first number
         for i in range(self.n1sl):
             self.board.add_unit(data[0] - 3 - i * 3, 3, 3, 3, classes.board.Label, self.n1s[-(i + 1)], self.bg_col, "",
@@ -140,11 +128,9 @@ class Board(gd.BoardGame):
         self.board.add_unit(data[0] - 3 - i * 3, 6, 3, 3, classes.board.Label, "×", self.bg_col, "", 21)
         self.plus_label = self.board.units[-1]
         # line
-        # line = "―" * (self.sumn1n2sl*2)
         self.board.add_unit(data[0] - self.sumn1n2sl * 3, 9, self.sumn1n2sl * 3, 1, classes.board.Label, "",
                             self.bg_col, "", 21)
         self.draw_hori_line(self.board.units[-1])
-        # self.board.units[-1].text_wrap = False
         for i in range(self.sumn1n2sl - 2):
             self.board.add_unit(data[0] - 8 - i * 3, 10, 1, 1, classes.board.Letter, "", self.bg_col, "", 0)
             self.carrysuml.append(self.board.ships[-1])
@@ -164,7 +150,6 @@ class Board(gd.BoardGame):
         self.board.add_unit(data[0] - self.sumn1n2sl * 3, 10 + self.n2sl * 3 + 1, self.sumn1n2sl * 3, 1,
                             classes.board.Label, "", self.bg_col, "", 21)
         self.draw_hori_line(self.board.units[-1])
-        # self.board.units[-1].text_wrap = False
         self.board.add_unit(data[0] - (self.sumn1n2sl + 1) * 3, 7 + self.n2sl * 3 + 1, 3, 3, classes.board.Label, " + ",
                             self.bg_col, "", 21)
         self.plus2_label = self.board.units[-1]

@@ -51,7 +51,6 @@ class Board(gd.BoardGame):
                                     [255, 255, 0], [181, 219, 3], [0, 160, 0], [41, 131, 82], [0, 130, 133],
                                     [0, 0, 255], [0, 0, 132], [132, 0, 132], [255, 0, 255], [74, 0, 132],
                                     [255, 20, 138], [132, 0, 0], [140, 69, 16], [0, 255, 255], [0, 255, 0]]
-            self.points = 3
         elif self.level.lvl == 2:
             choice = [x for x in range(0, 13)]
             self.color_choice = [self.d["white"], self.d["black"], self.d["grey"], self.d["red"], self.d["orange"],
@@ -72,7 +71,6 @@ class Board(gd.BoardGame):
                                [60, 80, 3], [0, 50, 0], [0, 0, 100], [0, 0, 255], [255, 0, 255], [100, 5, 48],
                                [200, 100, 26]]
             self.init_font_color = [self.font_col for i in range(13)]
-            self.points = 5
         elif self.level.lvl >= 3:
             choice = [x for x in range(0, 20)]
             self.color_choice = [self.d["white"], self.d["black"], self.d["grey"], self.d["red"], self.d["orange"],
@@ -99,7 +97,6 @@ class Board(gd.BoardGame):
                                [255, 0, 255], [100, 0, 100], [140, 0, 255], [100, 5, 48], [200, 50, 50], [200, 100, 26],
                                [0, 155, 155], [0, 155, 0]]
             self.init_font_color = [self.font_col for i in range(20)]
-            self.points = 7
 
         self.bg_col = (255, 255, 255, 0)
         if self.mainloop.scheme is not None:
@@ -121,7 +118,7 @@ class Board(gd.BoardGame):
 
         self.data = data
         self.center = self.data[0] // 2
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -222,17 +219,12 @@ class Board(gd.BoardGame):
     def swap_font_color(self):
         active_ship = self.board.ships[self.board.active_ship]
         if active_ship.grid_y == 0 and self.color_pos_offset <= active_ship.grid_x < 5 + self.color_pos_offset:
-            # active_ship.initcolor = (255, 255, 255, 0)  # self.hue_choice[self.chosen[active_ship.grid_x - self.color_pos_offset]]
-            #active_ship.color = active_ship.initcolor
             active_ship.font_color = self.font_color[self.chosen[active_ship.grid_x - self.color_pos_offset]]
         else:
-            # active_ship.initcolor = self.bg_col
-            #active_ship.color = active_ship.initcolor
             if self.level.lvl == 1:
                 active_ship.font_color = self.init_font_color[self.shuffled2[self.board.active_ship]]
             else:
                 active_ship.font_color = self.font_col  # (0,0,0,0)
-        #active_ship.image.set_colorkey(active_ship.initcolor)
         active_ship.update_me = True
 
     def update(self, game):
@@ -261,11 +253,7 @@ class Board(gd.BoardGame):
                 if correct == True:
                     match_found = True
                     break
-                else:
-                    if self.points > 0:
-                        self.points -= 1
         if match_found:
-            # self.update_score(self.points)
             self.level.next_board()
         else:
             self.level.try_again(True)

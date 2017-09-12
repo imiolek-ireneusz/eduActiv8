@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         # create non-movable objects
         s = 100
@@ -48,7 +48,6 @@ class Board(gd.BoardGame):
             data = [15, 9, 30, 6, 3]
         elif self.level.lvl == 8:
             data = [15, 9, 30, 7, 3]
-        self.points = data[4]
         letter_table = []
         if self.lang.lang != "lkt":
             letter_table.extend(self.lang.alphabet_lc)
@@ -75,7 +74,6 @@ class Board(gd.BoardGame):
                 for i in range(len(letter_table)):
                     if each == unicode(letter_table[i], "utf-8"):
                         self.word_l.append(letter_table[i])
-                        #self.word_l.append(unicode(letter_table[i], "utf-8"))
         else:
             word_len = len(self.word)
             self.word_l = self.word
@@ -88,7 +86,6 @@ class Board(gd.BoardGame):
         for i in range(data[2] - word_len):  # adding noice letters
             index = random.randrange(0, len(choice_list))
             self.num_list.append(choice_list[index])
-        #print("%s, %s - %d" % (self.word, self.word_l, word_len))
         shuffled = self.num_list[:]
         for i in range(word_len):
             shuffled.append(self.word_l[i])
@@ -156,7 +153,6 @@ class Board(gd.BoardGame):
                     result[self.board.ships[i].grid_x] = self.board.ships[i].value
             result_s = ''.join(result).strip()
             if self.word == result_s:
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
                 self.level.try_again()

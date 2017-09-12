@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         # create non-movable objects
 
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.ai_enabled = False

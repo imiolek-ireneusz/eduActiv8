@@ -14,7 +14,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
 
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = random.randrange(190, 225)
         v = random.randrange(230, 255)
@@ -55,11 +55,6 @@ class Board(gd.BoardGame):
             data = [26, 9, 65, 91, 1, 15, 0]
         elif self.level.lvl == 16:
             data = [26, 9, 65, 91, 1, 20, 0]
-
-        if self.level.lvl < 9:
-            self.points = data[5] // 5 + (self.level.lvl + 3) // 4
-        else:
-            self.points = data[5] // 5 + (self.level.lvl + 3) // 8
 
         self.chapters = [1, 5, 9, 13, 16]
         self.data = data
@@ -136,11 +131,8 @@ class Board(gd.BoardGame):
                 if self.board.ships[i].grid_y == 0:
                     result[self.board.ships[i].grid_x] = self.board.ships[i].value
             if self.word == result:
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
-                if self.points > 0:
-                    self.points -= 1
                 self.level.try_again()
         else:
             self.level.try_again()

@@ -16,7 +16,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.decolorable = False
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.ai_enabled = False
@@ -74,8 +74,6 @@ class Board(gd.BoardGame):
             data = [8, 4, 3, 2, 4]
         elif self.level.lvl == 3:
             data = [8, 5, 3, 2, 5]
-
-        self.points = data[4] * 2
 
         # rescale the number of squares horizontally to better match the screen width
         m = data[0] % 2
@@ -147,10 +145,6 @@ class Board(gd.BoardGame):
             self.board.ships[i].perm_outline = True
             self.board.ships[i].uncovered = False
         self.outline_all(self.color2, 1)
-
-        #self.board.add_door(0, data[1] - 1, data[0], 1, classes.board.Door, "0/0", bg_col, "", font_size=3)
-        #self.counter = self.board.units[-1]
-        #self.counter.font_color = (80, 80, 80)
 
         lines = [[135, 128], [133, 132], [135, 137], [157, 157], [158, 161], [155, 165], [150, 166], [146, 163],
                  [133, 140], [129, 138], [125, 139],
@@ -248,8 +242,6 @@ class Board(gd.BoardGame):
                                 self.ai_enabled = True
                             self.history = [None, None]
                     active.update_me = True
-                    #self.counter.value = "%i/%i" % (self.found, self.clicks)
-                    #self.counter.update_me = True
 
     def update(self, game):
         game.fill((255, 255, 255))
@@ -261,11 +253,8 @@ class Board(gd.BoardGame):
         else:
             if self.completed_mode:
                 self.history = [None, None]
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
-                if self.points > 0:
-                    self.points -= 1
                 self.history[0].perm_outline_width = 1
                 self.history[0].perm_outline_color = self.color2
                 self.history[1].perm_outline_width = 1

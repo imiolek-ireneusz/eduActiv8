@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 12, 6)
 
     def create_game_objects(self, level=1):
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.ai_enabled = False
@@ -202,28 +202,6 @@ class Board(gd.BoardGame):
 
         x = w2
         y = h1
-        """
-        small_slots = []
-        for j in range(h1, data[1] - h2):
-            for i in range(w2, w2 + data[3]):
-                small_slots.append([i, j])
-        random.shuffle(small_slots)
-
-        wide_slots = []
-        for j in range(h1, data[1] - h2):
-            for i in range(w2 + data[3], data[0] - w2, 3):
-                wide_slots.append([i, j])
-
-        """
-        """
-        small_slots = [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0]]
-        wide_slots = [[0,1],[3,1],[0,2],[3,2],[0,3],[3,3]]
-        """
-
-        """
-        small_slots = [[0,0],[2,0],[4,0],[6,0],[8,0],[10,0]]
-        wide_slots = [[0,2],[6,2],[0,3],[6,3],[0,4],[6,4]]
-        """
 
         small_slots = [[0, 3], [0, 0], [3, 0], [6, 0], [9, 0], [9, 3]]
         wide_slots = [[3, 3], [6, 3], [3, 4], [6, 4], [3, 5], [6, 5]]

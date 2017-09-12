@@ -12,11 +12,13 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 5, 10)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
+        #self.level = lc.Level(self, mainloop, 5, 10)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 20, 10)
 
     def create_game_objects(self, level=1):
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         # create non-movable objects
         self.board.draw_grid = False
@@ -25,28 +27,14 @@ class Board(gd.BoardGame):
         font_color = ex.hsv_to_rgb(h, 255, 140)
         white = (255, 255, 255)
 
-        # data = [x_count, y_count, number of items on the list, top_quntity,font-size]
-        if self.level.lvl == 1:  # images 42x42
-            data = [20, 14, 3, 3, 2]
-        elif self.level.lvl == 2:
-            data = [20, 14, 3, 5, 2]
-        elif self.level.lvl == 3:
-            data = [20, 14, 3, 7, 2]
-        elif self.level.lvl == 4:
-            data = [20, 14, 4, 3, 2]
-        elif self.level.lvl == 5:
-            data = [20, 14, 4, 5, 2]
-        elif self.level.lvl == 6:
-            data = [20, 14, 4, 7, 2]
-        elif self.level.lvl == 7:
-            data = [20, 14, 5, 3, 2]
-        elif self.level.lvl == 8:
-            data = [20, 14, 5, 5, 2]
-        elif self.level.lvl == 9:
-            data = [20, 14, 6, 3, 2]
-        elif self.level.lvl == 10:
-            data = [20, 14, 6, 5, 2]
-        self.points = data[2] - 2
+        # data = [x_count, y_count, number of items on the list, top_quantity, font-size]
+        data = [20, 14]
+        data.extend(
+            self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                  self.level.lvl))
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
+
         # rescale the number of squares horizontally to better match the screen width
         x_count = self.get_x_count(data[1], even=None)
         if x_count > 20:
@@ -71,8 +59,8 @@ class Board(gd.BoardGame):
             if self.mainloop.scheme.dark:
                 scheme = "black"
                 img_bg_col = (0, 0, 0)
-        img_src = os.path.join("schemes", scheme, "basket.png")
-        self.board.add_door(data[0] - 6, data[1] - 6, 6, 5, classes.board.Door, "", img_bg_col, img_src)
+        img_src = "basket.png"
+        self.board.add_door(data[0] - 6, data[1] - 6, 6, 5, classes.board.Door, "", img_bg_col, img_src, door_alpha=True)
         self.board.units[-1].is_door = False
 
         self.board.add_unit(data[0] - 7, 0, 7, 1, classes.board.Label, self.d["Shopping List"], white, "", data[4] + 1)
@@ -189,9 +177,6 @@ class Board(gd.BoardGame):
             if count > 0:
                 result[str(i)] = count
         if result == self.solution:
-            # self.update_score(self.points)
             self.level.next_board()
         else:
-            if self.points > 0:
-                self.points -= 1
             self.level.try_again()

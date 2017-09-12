@@ -21,10 +21,10 @@ class Board(gd.BoardGame):
 
         if self.level.lvl > self.level.lvl_count:
             self.level.lvl = self.level.lvl_count
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = random.randrange(190, 225)
-        v = 255  # random.randrange(230, 255)
+        v = 255
         h = random.randrange(0, 255)
         color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
         font_color = ex.hsv_to_rgb(h, 255, 140)
@@ -60,6 +60,11 @@ class Board(gd.BoardGame):
 
         nlf[2] = nlf[0] + nlf[1]
         nlf[3] = aw * 2 - 4
+
+        self.font_size = 0
+        if self.mainloop.lang.lang == "lkt":
+            self.font_size = 1
+
         if self.mainloop.m.game_variant == 0:
             if self.level.lvl == 1:
                 data = [self.alphabet_width, 6, self.alphabet_lc, 0, nlf[0]]
@@ -96,8 +101,6 @@ class Board(gd.BoardGame):
                 data = [self.alphabet_width, 6, self.alphabet_uc, 1, nlf[2]]
             elif self.level.lvl == 8:
                 data = [self.alphabet_width, 6, self.alphabet_uc, 1, nlf[3]]
-
-        self.points = data[4] // 5 + (self.level.lvl + 3) // 4
 
         self.chapters = [1, 4, 8]
         self.data = data
@@ -170,17 +173,16 @@ class Board(gd.BoardGame):
                     xj = x3 + j - data[0]
                     y2 = 3
                 caption = self.word[lowered[j]]
-                self.board.add_unit(xj, y2, 1, 1, classes.board.Letter, caption, number_color, "", 0)
+                self.board.add_unit(xj, y2, 1, 1, classes.board.Letter, caption, number_color, "", self.font_size)
                 self.board.add_door(x, y, 1, 1, classes.board.Door, "", color, "")
                 self.board.units[j].door_outline = True
-                #self.board.ships[i].highlight = False
                 self.board.ships[i].outline_highlight = True
                 self.board.ships[i].font_color = ex.hsv_to_rgb(h, 255, 140)
                 self.board.ships[i].idx = i
                 j += 1
             else:
                 caption = self.word[i]
-                self.board.add_unit(x, y, 1, 1, classes.board.Letter, caption, number_color, "", 0)
+                self.board.add_unit(x, y, 1, 1, classes.board.Letter, caption, number_color, "", self.font_size)
                 self.board.ships[i].font_color = ex.hsv_to_rgb(h, 255, 140)
                 self.board.ships[i].idx = i
                 self.board.ships[i].immobilize()
@@ -236,7 +238,6 @@ class Board(gd.BoardGame):
             for i in range(len(self.board.ships)):
                 if self.board.ships[i].grid_y == 0:
                     result[self.board.ships[i].grid_x] = self.board.ships[i].value
-                    #if self.board.ships[i].grid_x ==
                 elif self.board.ships[i].grid_y == self.data[1] - 2:
                     if self.last_block and not self.lang.ltr_text:
                         result[self.data[0] + self.board.ships[i].grid_x - 1] = self.board.ships[i].value
@@ -245,11 +246,8 @@ class Board(gd.BoardGame):
 
             if ((self.lang.ltr_text and self.word == result) or (
                 not self.lang.ltr_text and ex.unival(self.word) == ex.unival("".join(result)))):
-                # self.update_score(self.points)
                 self.level.next_board()
             else:
-                if self.points > 0:
-                    self.points -= 1
                 self.level.try_again()
         else:
             self.level.try_again()

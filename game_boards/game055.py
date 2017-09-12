@@ -36,7 +36,6 @@ class Board(gd.BoardGame):
             data[0] = x_count
 
         self.data = data
-        self.points = 20
         self.vis_buttons = [1, 0, 0, 0, 1, 1, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
@@ -223,8 +222,6 @@ class Board(gd.BoardGame):
                 self.guides[2].value = "★"
                 help += self.dp['yellow is ok'] + ". "
             self.say(help)
-            if self.points > 0:
-                self.points -= 1
 
             self.level.try_again(silent=self.mainloop.speaker.talkative)
 
@@ -233,5 +230,4 @@ class Board(gd.BoardGame):
             self.mainloop.redraw_needed[0] = True
 
         else:
-            # self.update_score(self.points)
             self.level.next_board()

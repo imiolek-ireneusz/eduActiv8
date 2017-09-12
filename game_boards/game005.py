@@ -11,12 +11,13 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 5, 10)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 6)
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 100  # random.randrange(150, 190, 5)
         v = 255  # random.randrange(230, 255, 5)
@@ -24,28 +25,11 @@ class Board(gd.BoardGame):
         color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
         font_color = ex.hsv_to_rgb(h, 255, 140)
 
-        # data = [x_count, y_count, number_count, top_limit, ordered]
-        if self.level.lvl == 1:
-            data = [11, 6, 3, 9, True, 1]
-        elif self.level.lvl == 2:
-            data = [11, 6, 3, 9, False, 1]
-        elif self.level.lvl == 3:
-            data = [11, 6, 5, 15, True, 2]
-        elif self.level.lvl == 4:
-            data = [11, 6, 5, 15, False, 2]
-        elif self.level.lvl == 5:
-            data = [11, 6, 7, 20, True, 2]
-        elif self.level.lvl == 6:
-            data = [11, 6, 7, 20, False, 2]
-        elif self.level.lvl == 7:
-            data = [11, 6, 9, 99, True, 2]
-        elif self.level.lvl == 8:
-            data = [11, 6, 9, 99, False, 2]
-        elif self.level.lvl == 9:
-            data = [11, 6, 11, 99, True, 2]
-        elif self.level.lvl == 10:
-            data = [11, 6, 11, 99, False, 2]
-        self.chapters = [1, 3, 5, 7, 9, 10]
+        # data = [x_count, y_count, number_count, bottom_limit, top_limit, ordered, font_size]
+        data = [11, 6]
+        data.extend(self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group, self.level.lvl))
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
 
         self.points = (data[2] + 2) // 3 + self.level.lvl // 4
 
@@ -57,20 +41,17 @@ class Board(gd.BoardGame):
 
         self.num_list = []
 
-        if data[4] == True:
-            choice_list = [x for x in range(data[3] - data[2])]
-            index = random.randrange(0, len(choice_list))
+        if data[5] == True:
+            index = random.randrange(data[3], data[4]-data[2]+2)
             n = 0
             for i in range(data[2]):
-                self.num_list.append(choice_list[index] + n)
+                self.num_list.append(index + n)
                 n += 1
         else:
-            choice_list = [x for x in range(data[3])]
-            for i in range(data[2]):
-                index = random.randrange(0, len(choice_list))
-                self.num_list.append(choice_list[index])
-                del (choice_list[index])
-
+            while len(self.num_list) < data[2]:
+                num = random.randint(data[3], data[4])
+                if num not in self.num_list:
+                    self.num_list.append(num)
         shuffled = self.num_list[:]
         random.shuffle(shuffled)
 
@@ -90,7 +71,7 @@ class Board(gd.BoardGame):
             y = random.randrange(1, 5)
             number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
             caption = str(shuffled[i])
-            self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[5])
+            self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[6])
             self.board.ships[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
             self.solution_grid[x + i] = 1
             self.board.ships[-1].readable = False

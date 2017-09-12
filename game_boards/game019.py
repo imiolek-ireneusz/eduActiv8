@@ -11,12 +11,13 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 7, 11)
+        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
+        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 7)
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 100
         v = 255
@@ -26,96 +27,17 @@ class Board(gd.BoardGame):
         color3 = ex.hsv_to_rgb(h, 150, 75)
 
         # data = [0-x_count, 1-y_count, 2-bottom_range1, 3-top_range1, 4-bottom_range2, 5-top_range2, 6-operator, 7-font_size]
-        if self.mainloop.m.game_variant == 0:
-            self.points = self.level.lvl
-            self.level.lvl_count = 11
-            if self.level.lvl == 1:  # addition - ch0
-                data = [11, 7, 1, 5, 1, 5, "+", 2]
-            elif self.level.lvl == 2:
-                data = [11, 7, 3, 9, 1, 5, "+", 2]
-            elif self.level.lvl == 3:
-                data = [11, 7, 5, 15, 3, 9, "+", 2]
-            elif self.level.lvl == 4:
-                data = [11, 7, 5, 15, 5, 15, "+", 2]
-            elif self.level.lvl == 5:
-                data = [11, 7, 15, 55, 5, 35, "+", 2]
-            elif self.level.lvl == 6:
-                data = [11, 7, 35, 75, 15, 25, "+", 2]
-            elif self.level.lvl == 7:
-                data = [11, 7, 55, 99, 55, 99, "+", 2]
-            elif self.level.lvl == 8:
-                data = [11, 7, 100, 250, 100, 250, "+", 4]
-            elif self.level.lvl == 9:
-                data = [11, 7, 300, 500, 250, 499, "+", 4]
-            elif self.level.lvl == 10:
-                data = [11, 7, 400, 650, 150, 349, "+", 4]
-            elif self.level.lvl == 11:
-                data = [11, 7, 500, 850, 100, 149, "+", 4]
-        elif self.mainloop.m.game_variant == 1:
-            self.points = self.level.lvl
-            self.level.lvl_count = 11
-            if self.level.lvl == 1:  # subtraction  - ch1
-                data = [11, 7, 3, 10, 1, 0, "-", 2]
-            elif self.level.lvl == 2:
-                data = [11, 7, 5, 10, 3, 0, "-", 2]
-            elif self.level.lvl == 3:
-                data = [11, 7, 10, 15, 3, 0, "-", 2]
-            elif self.level.lvl == 4:
-                data = [11, 7, 15, 20, 5, 0, "-", 2]
-            elif self.level.lvl == 5:
-                data = [11, 7, 20, 49, 9, 0, "-", 2]
-            elif self.level.lvl == 6:
-                data = [11, 7, 49, 99, 9, 0, "-", 2]
-            elif self.level.lvl == 7:
-                data = [11, 7, 100, 250, 30, 0, "-", 4]
-            elif self.level.lvl == 8:
-                data = [11, 7, 100, 250, 30, 0, "-", 4]
-            elif self.level.lvl == 9:
-                data = [11, 7, 100, 250, 30, 0, "-", 4]
-            elif self.level.lvl == 10:
-                data = [11, 7, 250, 499, 50, 0, "-", 4]
-            elif self.level.lvl == 11:
-                data = [11, 7, 499, 999, 99, 0, "-", 4]
+        data = [11, 7]
+        data.extend(
+            self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
+                                                  self.level.lvl))
+        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
+                                                            self.mainloop.config.user_age_group)
 
-        elif self.mainloop.m.game_variant == 2:
-            self.points = self.level.lvl * 2
-            self.level.lvl_count = 7
-            if self.level.lvl > 7:
-                self.level.lvl = 7
-            if self.level.lvl == 1:  # multiplication  - ch2
-                data = [11, 7, 1, 3, 1, 3, "*", 2]
-            elif self.level.lvl == 2:
-                data = [11, 7, 1, 9, 1, 3, "*", 2]
-            elif self.level.lvl == 3:
-                data = [11, 7, 2, 6, 2, 6, "*", 2]
-            elif self.level.lvl == 4:
-                data = [11, 7, 2, 7, 3, 7, "*", 2]
-            elif self.level.lvl == 5:
-                data = [11, 7, 2, 9, 2, 9, "*", 2]
-            elif self.level.lvl == 6:
-                data = [11, 7, 2, 15, 2, 15, "*", 4]
-            elif self.level.lvl == 7:
-                data = [11, 7, 2, 20, 2, 20, "*", 4]
-
+        if self.mainloop.m.game_variant == 2:
+            data[6] = "*"
         elif self.mainloop.m.game_variant == 3:
-            self.points = self.level.lvl * 2
-            self.level.lvl_count = 7
-            if self.level.lvl > 7:
-                self.level.lvl = 7
-            if self.level.lvl == 1:  # division - ch3
-                data = [11, 7, 1, 3, 1, 3, "/", 2]
-            elif self.level.lvl == 2:
-                data = [11, 7, 1, 9, 1, 3, "/", 2]
-            elif self.level.lvl == 3:
-                data = [11, 7, 2, 6, 2, 6, "/", 2]
-            elif self.level.lvl == 4:
-                data = [11, 7, 2, 7, 3, 7, "/", 2]
-            elif self.level.lvl == 5:
-                data = [11, 7, 2, 9, 2, 9, "/", 2]
-            elif self.level.lvl == 6:
-                data = [11, 7, 2, 15, 2, 15, "/", 4]
-            elif self.level.lvl == 7:
-                data = [11, 7, 2, 20, 2, 20, "/", 4]
+            data[6] = "/"
 
         # stretch width to fit the screen size
         data[0] = self.get_x_count(data[1], even=False)
@@ -131,40 +53,72 @@ class Board(gd.BoardGame):
         self.num_list2 = []
         self.solution = []
 
-        num1 = [x for x in range(data[2], data[3] + 1)]
-        num2 = [x for x in range(data[4], data[5] + 1)]
+        if data[6] == "+":
+            while len(self.solution) < 5:
+                first_num = random.randint(data[2], data[3])
+                second_num = random.randint(data[4], data[5])
+                sm = first_num + second_num
+                if sm not in self.solution:
+                    self.num_list.append(first_num)
+                    self.num_list2.append(second_num)
+                    self.solution.append(sm)
+        elif data[6] == "-":
+            while len(self.solution) < 5:
+                first_num = random.randint(data[2], data[3])
+                second_num = random.randint(data[4], first_num - 1)
+                sm = first_num - second_num
+                if sm not in self.solution:
+                    self.num_list.append(first_num)
+                    self.num_list2.append(second_num)
+                    self.solution.append(sm)
+        elif data[6] == "*":
+            # if list:
+            if data[3] == 0:
+                l1 = data[2].split(", ")
+                l1l = len(l1)
 
-        if len(num1) < 5:
-            num1 *= 2
-        if len(num2) < 5:
-            num2 *= 2
-        random.shuffle(num1)
-        random.shuffle(num2)
+            if data[5] == 0:
+                l2 = data[4].split(", ")
+                l2l = len(l2)
 
-        for i in range(5):
-            if data[6] == "+":
-                first_num = num1[i]
-                second_num = num2[i]
-                self.solution.append(first_num + second_num)
+            while len(self.solution) < 5:
+                if data[3] == 0:
+                    first_num = int(l1[random.randint(0, l1l-1)])
+                else:
+                    first_num = random.randint(data[2], data[3])
+                if data[5] == 0:
+                    second_num = int(l2[random.randint(0, l2l-1)])
+                else:
+                    second_num = random.randint(data[4], data[5])
+                sm = first_num * second_num
+                if sm not in self.solution:
+                    self.num_list.append(first_num)
+                    self.num_list2.append(second_num)
+                    self.solution.append(sm)
 
-            elif data[6] == "-":
-                first_num = num1[i]
-                second_num = random.randrange(data[4], first_num - 1)
-                self.solution.append(first_num - second_num)
+        elif data[6] == "/":
+            # if list:
+            if data[3] == 0:
+                l1 = data[2].split(", ")
+                l1l = len(l1)
+            if data[5] == 0:
+                l2 = data[4].split(", ")
+                l2l = len(l2)
 
-            elif data[6] == "*":
-                first_num = num1[i]
-                second_num = num2[i]
-                self.solution.append(first_num * second_num)
-
-            elif data[6] == "/":  # reversed multiplication - looking for the first factor
-                first = num1[i]
-                second_num = num2[i]
-                first_num = first * second_num
-                self.solution.append(first)
-
-            self.num_list.append(first_num)
-            self.num_list2.append(second_num)
+            while len(self.solution) < 5:
+                if data[3] == 0:
+                    first = int(l1[random.randint(0, l1l - 1)])
+                else:
+                    first = random.randint(data[2], data[3])
+                if data[5] == 0:
+                    second_num = int(l2[random.randint(0, l2l - 1)])
+                else:
+                    second_num = random.randint(data[4], data[5])
+                sm = first
+                if first * second_num not in self.num_list:
+                    self.num_list.append(first * second_num)
+                    self.num_list2.append(second_num)
+                    self.solution.append(sm)
 
         self.shuffled = self.num_list2[:]  # self.solution[:]
         random.shuffle(self.shuffled)
@@ -223,9 +177,6 @@ class Board(gd.BoardGame):
                 break
         if correct:
             tts = self.d["Perfect! Task solved!"]
-            # self.update_score(self.points)
             self.level.next_board(tts)
         else:
-            if self.points > 0:
-                self.points -= 1
             self.level.try_again()

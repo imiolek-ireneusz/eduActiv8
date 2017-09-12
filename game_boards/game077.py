@@ -160,13 +160,11 @@ class KeyBoard:
         if text != " ":
             hl = [-1, -1, -1, -1, -1, -1]
             # check if letter is lowercase or what position it is on whether shift is needed
-            # text = text.upper()
             if sys.version_info < (3, 0):
                 # try:
                 text = text.encode("utf-8")
                 if text in self.a_map:
                     hl[4] = 39
-                    # hl[5] = 71
                     if text in self.a_map2:
                         hl[1] = 55
                         hl[3] = 71
@@ -176,7 +174,6 @@ class KeyBoard:
             else:
                 if text in self.a_map:
                     hl[4] = 39
-                    # hl[5] = 71
                     if text in self.a_map2:
                         hl[1] = 55
                         hl[3] = 71
@@ -284,7 +281,6 @@ class KeyBoard:
 
         keys = self.game_board.lang.kbrd.kbrd_keys
         for each in keys:
-            # self.add_key(x, y, w, h, top_left, bottom_left, middle, letter, init_color, highlight_color)
             self.add_key(each, colors[each[10]], highlight_colors[each[10]], font_colors[each[10]],
                          font_highlight_colors[each[10]])
         self.kbrd_h = self.keys[61].y + self.keys[61].h
@@ -309,7 +305,7 @@ class KeyBoard:
             # resize the image
             scaled_img = self.scale_img(img, img_size, img_size)
             pos_x = left
-            pos_y = self.kbrd_h + (self.keys[61].h) // 3  # + (self.kbrd_w * 11 // 445)
+            pos_y = self.kbrd_h + (self.keys[61].h) // 3
             img_pos = (pos_x, pos_y)
             self.canvas.blit(scaled_img, img_pos)
         except:
@@ -381,12 +377,11 @@ class Board(gd.BoardGame):
             self.current_line = unicode((self.t_string[0] * self.t_multi[0]).strip(), "utf-8")
         else:
             self.current_line = (self.t_string[0] * self.t_multi[0]).strip()
-        self.pointsx = len(self.current_line) // 15 + 1
         self.level.games_per_lvl = len(self.t_string)
         self.level.game_step = 1
         label_w = self.data[0] // 2
 
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -437,8 +432,6 @@ class Board(gd.BoardGame):
                             each.update_me = True
                     else:
                         self.mainloop.sfx.play(16)
-                        if self.pointsx > 0:
-                            self.pointsx -= 1
 
                 self.mainloop.redraw_needed[0] = True
 
@@ -464,7 +457,6 @@ class Board(gd.BoardGame):
             self.kbrd.get_btns_to_hl(self.current_line[0])
             self.mainloop.redraw_needed[1] = True
         else:
-            # self.update_score(self.pointsx)
             self.level.next_board()
 
     def check_result(self):
