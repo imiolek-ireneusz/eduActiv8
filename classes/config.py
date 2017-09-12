@@ -11,7 +11,6 @@ class Config:
     'holds some basic configuration data - screen size among others'
 
     def __init__(self, android):
-
         self.font_multiplier = 1
         self.font_line_height_adjustment = 1
         self.font_start_at_adjustment = 0
@@ -60,8 +59,9 @@ class Config:
         """
         if android is None:
             p = sys.platform
+            directory = os.path.dirname(os.path.abspath(os.path.expanduser("~/.config/eduactiv8/")))
+            self.window_pos = (3, 30)
             if p == "linux" or p == "linux2":
-                self.window_pos = (3, 30)
                 # self.window_pos = (10,30)
                 self.platform = "linux"
                 try:
@@ -74,22 +74,22 @@ class Config:
                     directory = os.path.join(home, '.local', 'share', 'eduactiv8')
                 else:
                     directory = os.path.join(xdg_data_home, 'eduactiv8')
-                self.file_db = os.path.join(directory, self.db_file_name)
 
-            else:  # if p == "darwin" or p == "win32" or p == "cygwin":
+            elif p == "win32" or p == "cygwin":
                 #windows or other non linux operating system
-                self.window_pos = (3, 30)
                 self.platform = "windows"
-                directory = os.path.dirname(os.path.abspath(os.path.expanduser("~/.config/eduactiv8/")))
-                self.file_db = os.path.join(directory, self.db_file_name)
+            elif p == "darwin":
+                self.platform = "macos"
+                self.window_pos = (0, 0)
+                self.os_panels_w = 0  # sum of widths of non-hiding vertical Panels (if any) and window border (1px on each side).
+                self.os_panels_h = 120
+            self.file_db = os.path.join(directory, self.db_file_name)
         else:
             # android folder creation
             self.platform = "android"
             self.window_pos = (0, 0)
             directory = "assets"
             self.file_db = os.path.join(directory, self.db_file_name)
-
-
         try:
             if not os.path.exists(directory):
                 os.makedirs(directory)

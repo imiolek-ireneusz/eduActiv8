@@ -374,6 +374,7 @@ class MenuItem(pygame.sprite.Sprite):
         self.variant = variant
         self.var2 = var2
         self.dbgameid = dbgameid
+        self.lang_activity = False
 
         self.title = ex.unival(title)
         self.subtitle = ex.unival(subtitle)
@@ -586,6 +587,7 @@ class Menu:
         self.active_cat = 0
         self.tab_game_id = -5
         self.prev_cat = -1
+        self.lang_activity = False
         self.game_constructor = game000.Board
         self.game_dbid = 0
         self.game_variant = 0
@@ -887,6 +889,7 @@ class Menu:
                     self.game_dbid = each.dbgameid
                     self.game_variant = each.variant
                     self.game_var2 = each.var2
+                    self.lang_activity = each.lang_activity
                     self.tab_r_scroll = (self.scroll_r // self.scroll_step)
                     row = (pos[1] - 3 - self.l.misio_pos[3] - self.arrow_h - self.scroll_r) // (
                     self.icon_size + self.y_margin)
@@ -1076,7 +1079,7 @@ class Menu:
                                     add = False
 
                             # check if the game requires the alphabet to have upper case
-                            elif self.lang.has_uc is False and ast.literal_eval(
+                            if self.lang.has_uc is False and ast.literal_eval(
                                     game.attrib['require_uc']) is True:
                                 add = False
                             elif self.mainloop.android is not None and ast.literal_eval(
@@ -1112,6 +1115,7 @@ class Menu:
                                               game.attrib['icon'],
                                               int(game.attrib["variant"]),
                                               int(game.attrib["var2"]))
+                            self.games[-1].lang_activity = ast.literal_eval(game.attrib['lang_activity'])
                         self.id2icon[int(game.attrib['dbid'])] = game.attrib['icon']
                 else:
                     for game in cat:

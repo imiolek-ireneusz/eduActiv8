@@ -19,6 +19,7 @@ class GameBase:
         self.show_msg = False
         self.auto_checking = False
         self.ships_count = 0
+        self.lvlc = None
 
     def game_restart(self, screen):
         pass
@@ -36,7 +37,7 @@ class BoardGame(GameBase):
         self.mainloop = mainloop
         self.speaker = speaker
         self.lang = self.mainloop.lang
-        self.level.d = self.lang.d
+        #self.level.d = self.lang.d
         self.min_level = 1
         self.d = self.mainloop.lang.d
         self.dp = self.mainloop.lang.dp
@@ -70,6 +71,8 @@ class BoardGame(GameBase):
         self.active_game = self.mainloop.m.games[self.mainloop.m.active_game_id]
         # self.level.lvl = self.mainloop.m.saved_levels[self.active_game.game_constructor][str(self.active_game.variant)]
         self.level.lvl = self.mainloop.m.saved_levels[self.active_game.dbgameid]
+        if self.level.lvl > self.level.lvl_count:
+            self.level.lvl = self.level.lvl_count
 
         # if one game has more than one category of tasks on different levels - the beginning of a category
         # can be marked on chapter list and jumped between with right click on the next level button
@@ -198,7 +201,7 @@ class BoardGame(GameBase):
                 column - self.x_diff, row - self.y_diff)  # used to store current position on grid
                 self.board.ships[self.board.active_ship].enable_circle()  # dnable drawing circle aim on items
                 self.circle_lock_pos = (self.x_diff * self.layout.scale, self.y_diff * self.layout.scale)
-                if self.board.active_val_len > 0 and self.board.ships[self.board.active_ship].readable:
+                if self.board.active_sval_len > 0 and self.board.ships[self.board.active_ship].readable:
                     if isinstance(self.board.ships[self.board.active_ship].speaker_val, list):
                         value = ', '.join(self.board.ships[self.board.active_ship].speaker_val)
                     else:

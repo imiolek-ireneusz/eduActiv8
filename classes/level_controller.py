@@ -24,18 +24,18 @@ class Level:
         self.lvl = 1  # current level
         self.game_step = 1  # used to store number of games played in this level
 
-    def levelup(self, record = True):
+    def levelup(self, record=True):
         if record:
             self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Ready to go to the next level?"],
                                              self.manual_levelup, self.reset_level)
         else:
-            self.manual_levelup(None)
+            self.manual_levelup(record)
 
     def manual_levelup(self, args=None):
         if self.lvl < self.lvl_count:
             self.lvl += 1
             self.mainloop.sfx.play(7)
-            self.load_level_plus()
+            self.load_level_plus(args)
 
     def manual_leveldown(self):
         if self.lvl > 1:
@@ -178,13 +178,14 @@ class Level:
             else:
                 pass  # self.game_won()
 
-    def load_level(self):
+    def load_level(self, args=None):
         self.game_board.create_game_objects(self.lvl)
 
         gc.collect()
         if self.game_board.game_type == "Board":
             self.game_board.board.board_bg.update_me = True
-        self.update_level_dictx()
+        if args is None:
+            self.update_level_dictx()
         self.game_board.mainloop.redraw_needed = [True, True, True]
         self.next_pressed = False
 
@@ -197,6 +198,6 @@ class Level:
         self.completed = self.game_board.mainloop.db.query_completion(self.game_board.mainloop.userid,
                                                                       self.game_board.active_game.dbgameid, self.lvl)
 
-    def load_level_plus(self):
+    def load_level_plus(self, args=None):
         self.game_step = 1
-        self.load_level()
+        self.load_level(args)

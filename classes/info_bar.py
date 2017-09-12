@@ -134,7 +134,7 @@ class Button(BaseButton):
             self.update_title()
 
 
-class InfoBar():
+class InfoBar:
     def __init__(self, mainloop):
         self.mainloop = mainloop
         self.mouse_over = False
@@ -154,17 +154,16 @@ class InfoBar():
 
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                self.bg_color = (40, 40, 40)
-
+                self.bg_color = (40, 40, 40, 255)
             else:
-                self.bg_color = (255, 255, 255)
+                self.bg_color = (255, 255, 255, 255)
             self.font_color = self.mainloop.scheme.info_font_color0
             self.font_color1 = self.mainloop.scheme.info_font_color1
 
             self.font_color2 = self.mainloop.scheme.info_font_color2
             self.font_color3 = self.mainloop.scheme.info_font_color3
         else:
-            self.bg_color = (255, 255, 255)
+            self.bg_color = (255, 255, 255, 255)
 
         self.hidden = False
         self.close_dialog = False
@@ -235,7 +234,6 @@ class InfoBar():
                     elif btn.btn_id == 12:
                         self.arrow_down = True
                         self.mainloop.game_board.direction[1] = 1
-
                     if self.arrow_down:
                         self.mainloop.game_board.check_direction_kdown()
 
@@ -250,35 +248,26 @@ class InfoBar():
                     if btn.btn_id == 0:
                         btn.img = btn.img_2
                         self.game_board.check_result()
-
                     elif btn.btn_id == 1:
                         if self.level.lvl > self.mainloop.game_board.min_level:
                             self.level.manual_leveldown()
-
                         if self.level.lvl == self.mainloop.game_board.min_level:
                             btn.img = btn.img_2
-                            # else:
-                            #    self.level.manual_leveldown()
-
                     elif btn.btn_id == 3:
                         if self.level.lvl == self.level.lvl_count:
                             btn.img = btn.img_2
                         else:
                             self.level.manual_levelup()
-
                     elif btn.btn_id == 4:  # clicked on close button
                         mainloop.dialog.show_dialog(0, self.lang.d["Do you want to exit the game?"])
-
                     elif btn.btn_id == 5:
                         self.level.load_level()
                         self.mainloop.sfx.play(1)
-
                     elif btn.btn_id == 7:
                         if self.level.lvl == self.mainloop.game_board.min_level:
                             btn.img = btn.img_2
                         else:
                             self.level.chapter_down()
-
                     elif btn.btn_id == 8:
                         if self.level.lvl == self.level.lvl_count:
                             btn.img = btn.img_2

@@ -234,6 +234,15 @@ class DBConnection():
         else:
             return self.mainloop.config.max_age
 
+    def get_lang_id(self):
+        if self.mainloop.m is not None:
+            if self.mainloop.m.lang_activity:
+                return self.mainloop.lang.lang_id
+            else:
+                return 0
+        else:
+            return self.mainloop.lang.lang_id
+
     def db_fix(self):
         #self.c.execute("SELECT num_completed FROM completions WHERE (gameid = ?)", (26,))
         #self.conn.commit()
@@ -244,27 +253,29 @@ class DBConnection():
     def update_completion(self, userid, gameid, lvl):
         if self.db_connected:
             age = self.get_age()
+            lng = self.get_lang_id()
             self.c.execute(
                 "SELECT num_completed FROM completions WHERE (userid = ? AND gameid = ? AND lvl_completed = ? AND lang_id = ? AND age = ?)",
-                (userid, gameid, lvl, self.mainloop.lang.lang_id, age))
+                (userid, gameid, lvl, lng, age))
             self.conn.commit()
             count = self.c.fetchone()
 
             if count is None:
                 self.c.execute("INSERT INTO completions VALUES (?, ?, ?, ?, ?, ?)",
-                               (userid, gameid, lvl, self.mainloop.lang.lang_id, 1, age))
+                               (userid, gameid, lvl, lng, 1, age))
             else:
                 self.c.execute(
                     "UPDATE completions SET num_completed = ?  WHERE (userid = ? AND gameid = ? AND lang_id = ? AND lvl_completed = ? AND age = ?)",
-                    (count[0] + 1, userid, gameid, self.mainloop.lang.lang_id, lvl, age))
+                    (count[0] + 1, userid, gameid, lng, lvl, age))
             self.conn.commit()
 
     def query_completion(self, userid, gameid, lvl):
         if self.db_connected:
             age = self.get_age()
+            lng = self.get_lang_id()
             self.c.execute(
                 "SELECT num_completed FROM completions WHERE (userid = ? AND gameid = ? AND lang_id = ? AND lvl_completed = ? AND age = ?)",
-                (userid, gameid, self.mainloop.lang.lang_id, lvl, age))
+                (userid, gameid, lng, lvl, age))
             self.conn.commit()
             count = self.c.fetchone()
             if count is None:

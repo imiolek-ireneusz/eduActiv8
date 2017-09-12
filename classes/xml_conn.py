@@ -3,10 +3,16 @@
 
 import os
 import ast
-import xml.etree.cElementTree as et
+import sys
+
+if sys.platform == "win32" or sys.platform == "cygwin":
+    import xml.etree.cElementTree as et
+else:
+    import xml.etree.ElementTree as et
 
 class XMLConn:
-    def __init__(self):
+    def __init__(self, mainloop):
+        self.mainloop = mainloop
         self.menu_tree = et.parse(os.path.join('xml', 'menu.xml'))
         self.menu_root = self.menu_tree.getroot()
 
@@ -17,11 +23,13 @@ class XMLConn:
         """Checks the xml structure to find a matching dbgameid and level,
         if found returns a list containing data used to build a level"""
         for game in self.lvl_root.iter('game'):
-            if dbgameid == int(game.attrib["dbid"]):
+            if str(dbgameid) in (game.attrib["dbids"]).split(", "):
                 if age == 7 and int(game.attrib["show_all"]) == 1 or int(game.attrib["min_age"]) <= age <= int(game.attrib["max_age"]):
                     for levels in game.iter("levels"):
                         for level in levels.iter("level"):
                             if int(level.attrib["n"]) == lvl:
+                                if age == 7 and int(game.attrib["show_all"]) == 1:
+                                    self.mainloop.config.max_age = int(game.attrib["max_age"])
                                 return ast.literal_eval(level.attrib["data"])
         return None
 
@@ -29,7 +37,7 @@ class XMLConn:
         """Checks the xml structure to find a matching dbgameid and level,
         if found returns a list containing data used to build a level"""
         for game in self.lvl_root.iter('game'):
-            if dbgameid == int(game.attrib["dbid"]):
+            if str(dbgameid) in (game.attrib["dbids"]).split(", "):
                 if age == 7 and int(game.attrib["show_all"]) == 1 or int(game.attrib["min_age"]) <= age <= int(game.attrib["max_age"]):
                     for chapter in game.iter("chapters"):
                         return ast.literal_eval(chapter.attrib["data"])
@@ -39,7 +47,7 @@ class XMLConn:
         """Checks the xml structure to find a matching dbgameid and level,
         if found returns a list containing data used to build a level"""
         for game in self.lvl_root.iter('game'):
-            if dbgameid == int(game.attrib["dbid"]):
+            if str(dbgameid) in (game.attrib["dbids"]).split(", "):
                 if age == 7 and int(game.attrib["show_all"]) == 1 or int(game.attrib["min_age"]) <= age <= int(game.attrib["max_age"]):
                     for levels in game.iter("levels"):
                         return [int(levels.attrib["games_per_level"]), int(levels.attrib["count"])]

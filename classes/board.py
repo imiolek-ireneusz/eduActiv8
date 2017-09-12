@@ -1024,6 +1024,12 @@ class Board:
         # 27 credits line under word building games
         self.font_sizes.append(pygame.font.Font(self.font_path_default2, (int(float(self.points) / float(sizes[4])))))
 
+        # extra sizes 28, 29, 30
+        xsizes = [5.5, 6.0, 6.5]
+        for i in range(len(xsizes)):
+            xsizes[i] = xsizes[i] / self.mainloop.config.font_multiplier
+            self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(float(self.points) / float(xsizes[i])))))
+
         self.board_bg = BoardBg(self, 0, 0, x_count, y_count, "", (255, 255, 255))
         self.unit_list.add(self.board_bg)
         self.all_sprites_list.add(self.board_bg)
@@ -1412,6 +1418,14 @@ class Board:
         if self.active_ship > -1:
             ship = self.ships[self.active_ship]
             return len(ship.value)
+        else:
+            return 0
+
+    @property
+    def active_sval_len(self):
+        if self.active_ship > -1:
+            ship = self.ships[self.active_ship]
+            return len(ship.speaker_val)
         else:
             return 0
 

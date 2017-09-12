@@ -13,12 +13,17 @@ class Dialog:
             if self.game_board.mainloop.scheme.dark:
                 self.scheme = "black"
                 self.color = (0, 0, 0)
+        """
         if self.game_board.lang.lang in ['en_GB', 'en_US']:
-            self.img_src = "congrats_en.jpg"
+            self.img_src = "congrats.png"
             self.img_src2 = "game_over_en.jpg"
         else:
-            self.img_src = "congrats.jpg"
+            self.img_src = "congrats.png"
             self.img_src2 = "game_over.jpg"
+        """
+
+        self.img_src = "congrats.png"
+        self.img_src2 = "game_over.png"
         self.layout = game_board.layout
         self.layout_update()
         self.level = game_board.level
@@ -32,12 +37,12 @@ class Dialog:
                 self.color = (0, 0, 0)
         self.width = self.layout.game_w
         self.height = self.layout.game_h
-        self.image = pygame.Surface([self.width, self.height])
+        self.image = pygame.Surface([self.width, self.height], flags=pygame.SRCALPHA)
         self.image.fill(self.color)
         self.rect = self.image.get_rect()
         self.rect.topleft = [0, 0]
-        self.img = pygame.image.load(os.path.join('res', 'images', "schemes", self.scheme, self.img_src)).convert()
-        self.img2 = pygame.image.load(os.path.join('res', 'images', "schemes", self.scheme, self.img_src2)).convert()
+        self.img = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
+        self.img2 = pygame.image.load(os.path.join('res', 'images', self.img_src2)).convert_alpha()
 
         # img2 has the same size
         img_pos_x = self.img.get_rect(centerx=self.image.get_width() // 2)
