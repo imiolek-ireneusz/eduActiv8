@@ -154,16 +154,16 @@ class InfoBar:
 
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                self.bg_color = (40, 40, 40, 255)
+                self.bg_color = (40, 40, 40, 0)
             else:
-                self.bg_color = (255, 255, 255, 255)
+                self.bg_color = (255, 255, 255, 0)
             self.font_color = self.mainloop.scheme.info_font_color0
             self.font_color1 = self.mainloop.scheme.info_font_color1
 
             self.font_color2 = self.mainloop.scheme.info_font_color2
             self.font_color3 = self.mainloop.scheme.info_font_color3
         else:
-            self.bg_color = (255, 255, 255, 255)
+            self.bg_color = (255, 255, 255, 0)
 
         self.hidden = False
         self.close_dialog = False
