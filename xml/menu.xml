@@ -1083,7 +1083,7 @@
                   title="Paint"
                   subtitle=""
                   icon="ico_g_0600.png" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="72" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="42"
