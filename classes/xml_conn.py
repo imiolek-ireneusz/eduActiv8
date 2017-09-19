@@ -13,11 +13,39 @@ else:
 class XMLConn:
     def __init__(self, mainloop):
         self.mainloop = mainloop
-        self.menu_tree = et.parse(os.path.join('xml', 'menu.xml'))
-        self.menu_root = self.menu_tree.getroot()
+        self.level_path = ""
+        self.menu_path = ""
+        self.load_xml_files()
 
-        self.lvl_tree = et.parse(os.path.join('xml', 'levels.xml'))
-        self.lvl_root = self.lvl_tree.getroot()
+    def load_xml_files(self):
+        # check for language specific files:
+        reload_files = False
+        lang_level_path = os.path.join('xml', 'levels_' + self.mainloop.lang.lang + '.xml')
+        if os.path.exists(lang_level_path):
+            if self.level_path != lang_level_path:
+                self.level_path = lang_level_path
+                reload_files = True
+        else:
+            if self.level_path != os.path.join('xml', 'levels.xml'):
+                self.level_path = os.path.join('xml', 'levels.xml')
+                reload_files = True
+
+        lang_menu_path = os.path.join('xml', 'menu_' + self.mainloop.lang.lang + '.xml')
+        if os.path.exists(lang_menu_path):
+            if self.menu_path != lang_menu_path:
+                self.menu_path = lang_menu_path
+                reload_files = True
+        else:
+            if self.menu_path != os.path.join('xml', 'menu.xml'):
+                self.menu_path = os.path.join('xml', 'menu.xml')
+                reload_files = True
+
+        if reload_files:
+            self.menu_tree = et.parse(self.menu_path)
+            self.menu_root = self.menu_tree.getroot()
+
+            self.lvl_tree = et.parse(self.level_path)
+            self.lvl_root = self.lvl_tree.getroot()
 
     def get_level_data(self, dbgameid, age, lvl):
         """Checks the xml structure to find a matching dbgameid and level,

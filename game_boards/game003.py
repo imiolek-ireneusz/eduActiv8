@@ -91,6 +91,7 @@ class Board(gd.BoardGame):
         self.mainloop.db.save_user_lang(lng)
         self.mainloop.config.settings["lang"] = lng
         self.lang.lang = lng
+        self.mainloop.xml_conn.load_xml_files()
         self.lang.get_lang_attr()
         self.d = self.lang.d
         self.mainloop.speaker.restart_server()
