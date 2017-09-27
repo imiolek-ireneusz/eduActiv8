@@ -6,12 +6,17 @@ p = sys.platform
 block_cipher = None
 
 # hiddenimports=["_io", "pyimod03_importers", "colorsys", "_struct", "struct"],
+if p == "linux" or p == "linux2":
+    hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct", "sqlite3", "ast", "xml.etree.ElementTree"]
+else:
+    hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct"]
+
 a = Analysis(['eduactiv8.py'],
              pathex=['/Users/cextested/Documents/eduActiv8/eduActiv8-3.70.823/dist/eduActiv8'],
              binaries=[],
              datas = [("CHANGES.txt", "."), ("CREDITS.txt", "."), ("LICENSE", "."), ("README.txt", "."), ("xml", "xml"),
                       ("locale", "locale"), ("res", "res"), ("classes", "classes"), ("game_boards", "game_boards"), ("i18n","i18n")],
-             hiddenimports=["_io", "pyimod03_importers", "colorsys", "_struct", "struct"],
+             hiddenimports=hidden_imports,
              hookspath=[],
              runtime_hooks=[],
              excludes=["numpy", "scipy", 'matplotlib', 'PIL', 'cython', 'zmq'],

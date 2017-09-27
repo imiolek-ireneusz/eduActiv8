@@ -97,7 +97,7 @@ def main():
         dir_patterns = ["__pycache__"]
         t = datetime.date.today()
         c = t.strftime('%Y%m%d')
-        v = "3.%s.%s-beta" % (c[3:5], c[5:])
+        v = "3.%s.%s" % (c[3:5], c[5:])
 
         with open(os.path.join(path, "classes", "cversion.py"), "w") as s_file:
             s_file.write('ver = "%s"' % v)

@@ -17,7 +17,8 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.board.decolorable = False
         self.board.draw_grid = False
-        color = (252, 252, 252)
+        #color = (252, 252, 252)
+        color = (255, 255, 255, 0)
         mask_color = color
         data = [7, 3]
 

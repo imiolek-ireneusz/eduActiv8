@@ -16,7 +16,7 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.board.decolorable = False
         self.board.draw_grid = False
-        white = (255, 255, 255)
+        white = (255, 255, 255, 0)
         self.font_col = (0, 0, 0)
         if self.mainloop.scheme is not None:
             if self.level.lvl > 1:
@@ -191,14 +191,15 @@ class Board(gd.BoardGame):
         for i in range(5):
             color1 = self.hue_choice[self.chosen[i]]
             color2 = self.hue_choice2[self.chosen[i]]
-            canvas = pygame.Surface([size, size - 1])
+            canvas = pygame.Surface([size, size - 1], flags=pygame.SRCALPHA)
             canvas.fill(self.board.units[i].initcolor)
             self.draw_splash(canvas, size, color1, color2)
             self.board.units[i].painting = canvas.copy()
 
     def draw_splash(self, canvas, size, color, outline_color):
         pygame.draw.polygon(canvas, color, self.scaled_lines, 0)
-        pygame.draw.aalines(canvas, outline_color, True, self.scaled_lines)
+        #pygame.draw.aalines(canvas, outline_color, True, self.scaled_lines)
+        pygame.draw.lines(canvas, outline_color, True, self.scaled_lines)
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up

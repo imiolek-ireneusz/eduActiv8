@@ -97,6 +97,9 @@ class GamePlay():
 
         self.android = android
 
+        self.draw_func = None
+        self.draw_func_args = None
+
         if android is not None:
             infoObject = pygame.display.Info()
             h = 770
@@ -446,6 +449,8 @@ class GamePlay():
                             wait = True
                             android.wait_for_resume()
                         else:
+                            if wait:
+                                self.redraw_needed = [True, True, True]
                             wait = False
 
                     if not wait:
@@ -616,8 +621,8 @@ class GamePlay():
                         # if anything has changed on the subsurface or it's size has changed
 
                         # creating list of drawing functions and arguments for each subsurface
-                        draw_func = [self.game_board.update, info.draw, m.draw_menu]
-                        draw_func_args = [[self.game], [self.info_bar],
+                        self.draw_func = [self.game_board.update, info.draw, m.draw_menu]
+                        self.draw_func_args = [[self.game], [self.info_bar],
                                           [self.menu, self.menu_l, self.menu_r, self.game_board.layout]]
 
                         if self.m.scroll_direction != 0:
@@ -633,7 +638,7 @@ class GamePlay():
 
                         for i in range(2, -1, -1):
                             if self.redraw_needed[i]:
-                                draw_func[i](*draw_func_args[i])
+                                self.draw_func[i](*self.draw_func_args[i])
                                 if i > 0:
                                     self.redraw_needed[i] = False
                                     self.flip_needed = True

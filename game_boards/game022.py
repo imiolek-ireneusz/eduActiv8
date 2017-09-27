@@ -26,11 +26,12 @@ class Board(gd.BoardGame):
         self.active_letter = "А"
         self.active_word = ""
         self.var_brush = 1
-        s = random.randrange(30, 80)
-        v = random.randrange(200, 255)
+        s = 100
+        v = 255
         h = random.randrange(0, 255)
         letter_color = ex.hsv_to_rgb(h, s, v)
         font_color = ex.hsv_to_rgb(h, 255, 140)
+        self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
         if self.mainloop.scheme is not None:
             self.bg_color = self.mainloop.scheme.u_color
             color = self.mainloop.scheme.u_color
@@ -121,6 +122,11 @@ class Board(gd.BoardGame):
                     else:
                         v += grey_v_num
 
+        self.board.ships[1].color = self.letter_color2
+        self.board.ships[1].initcolor = self.letter_color2
+        self.prev_item = self.board.ships[1]
+
+        self.active_letter = self.board.ships[1].value
         self.active_color = self.board.ships[161].initcolor
         self.size_display = self.board.units[0]
         self.tool_door = self.board.units[-2]
@@ -157,6 +163,9 @@ class Board(gd.BoardGame):
             pos = event.pos
             active = self.board.active_ship
             if event.button == 1:
+                if self.prev_item is not None:
+                    self.prev_item.color = self.letter_color2
+                    self.prev_item.update_me = True
                 if active == 0:
                     self.btn_down = True
                     canvas_pos = [pos[0] - self.layout.game_left - 12 * self.layout.scale,
@@ -175,6 +184,8 @@ class Board(gd.BoardGame):
                 elif 0 < active < 67:
                     self.active_letter = self.board.ships[self.board.active_ship].value
                     self.active_word = self.word_list[self.board.active_ship - 1]
+                    self.board.ships[self.board.active_ship].color = self.letter_color2
+                    self.prev_item = self.board.ships[self.board.active_ship]
                     self.tool_door.set_pos(self.board.active_ship_pos)
                     self.paint_bg_letter()
                 elif active > 66:

@@ -27,11 +27,12 @@ class Board(gd.BoardGame):
         self.active_word = "Apple"
         self.word_pos_y = 0
         self.var_brush = 1
-        s = random.randrange(30, 80)
-        v = random.randrange(200, 255)
+        s = 100
+        v = 255
         h = random.randrange(0, 255)
         letter_color = ex.hsv_to_rgb(h, s, v)
         font_color = ex.hsv_to_rgb(h, 255, 140)
+        self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
         if self.mainloop.scheme is not None:
             self.bg_color = self.mainloop.scheme.u_color
             color = self.mainloop.scheme.u_color
@@ -52,8 +53,15 @@ class Board(gd.BoardGame):
         self.count = l * 2 + lh
 
         data = [35, l, 0, 8]
+        if self.mainloop.m.game_variant == 0: #10
+            font_size = 12
+        elif self.mainloop.m.game_variant == 1: #68
+            font_size = 20
+        elif self.mainloop.m.game_variant == 2: #67
+            font_size = 13
+        elif self.mainloop.m.game_variant == 3: #22
+            font_size = 13
 
-        font_size = 12
         font_size2 = 14
         self.brush_size = data[3]
 
@@ -130,6 +138,12 @@ class Board(gd.BoardGame):
                     else:
                         v += grey_v_num
 
+        self.board.ships[1].color = self.letter_color2
+        self.board.ships[1].initcolor = self.letter_color2
+        self.prev_item = self.board.ships[1]
+
+        self.active_letter = self.board.ships[1].value
+
         self.active_color = self.board.ships[173].initcolor
         self.size_display = self.board.units[0]
         self.tool_door = self.board.units[-2]
@@ -168,6 +182,10 @@ class Board(gd.BoardGame):
             pos = event.pos
             active = self.board.active_ship
             if event.button == 1:
+                if self.prev_item is not None:
+                    self.prev_item.color = self.letter_color2
+                    self.prev_item.update_me = True
+
                 if active == 0:
                     self.btn_down = True
                     canvas_pos = [pos[0] - self.layout.game_left - 10 * self.layout.scale,
@@ -180,6 +198,9 @@ class Board(gd.BoardGame):
                     pygame.mouse.set_cursor(*pygame.cursors.broken_x)
                 elif 0 < active < self.count + 1:
                     self.active_letter = self.board.ships[self.board.active_ship].value
+                    self.board.ships[self.board.active_ship].color = self.letter_color2
+                    self.prev_item = self.board.ships[self.board.active_ship]
+
                     self.tool_door.set_pos(self.board.active_ship_pos)
                     self.paint_bg_letter()
                 elif active > self.count:
@@ -222,8 +243,11 @@ class Board(gd.BoardGame):
             text = self.canvas_block.font.render("%s" % (txt), 1, (220, 220, 220, 0))
 
             font_x = ((self.board.scale * self.canvas_block.grid_w - self.canvas_block.font.size(txt)[0]) // 2)
-            font_y = ((self.board.scale * self.canvas_block.grid_h - self.canvas_block.font.size(txt)[
-                1]) // 2) - 3 * self.board.scale
+            if self.mainloop.m.game_variant == 0:
+                font_y = ((self.board.scale * self.canvas_block.grid_h - self.canvas_block.font.size(txt)[
+                    1]) // 2) - 3 * self.board.scale
+            else:
+                font_y = ((self.board.scale * self.canvas_block.grid_h - self.canvas_block.font.size(txt)[1]) // 2)
 
             self.canvas.fill(self.bg_color)
 

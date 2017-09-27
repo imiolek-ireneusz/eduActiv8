@@ -24,6 +24,7 @@ class Board(gd.BoardGame):
         # languages with standard letters in number names
         self.safe_langs = ["en_gb", "en_us", "it", "el", "ru"]
         self.letter_color = ex.hsv_to_rgb(h, s, v)  # [round(each*255) for each in rgb]
+        self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
         font_color = ex.hsv_to_rgb(h, s, 140)
         outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
         frame_color = [255, 255, 255, 0]
@@ -120,7 +121,7 @@ class Board(gd.BoardGame):
             self.active_item = self.board.ships[self.board.active_ship]
             if self.active_item.unit_id < 20:
                 if self.prev_item is not None:
-                    self.prev_item.color = self.letter_color
+                    self.prev_item.color = self.letter_color2
                     self.prev_item.update_me = True
                 self.active_item.color = (255, 255, 255)
                 self.create_card(self.active_item)

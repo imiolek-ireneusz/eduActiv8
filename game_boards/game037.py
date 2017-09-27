@@ -24,6 +24,7 @@ class Board(gd.BoardGame):
         v = 255
         h = random.randrange(0, 225)
         self.letter_color = ex.hsv_to_rgb(h, s, v)
+        self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
         font_color = ex.hsv_to_rgb(h, 255, 140)
         font_color2 = ex.hsv_to_rgb(h, 255, 50)
         outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
@@ -120,7 +121,7 @@ class Board(gd.BoardGame):
             self.active_item = self.board.ships[self.board.active_ship]
             if self.active_item.unit_id < 26:
                 if self.prev_item is not None:
-                    self.prev_item.color = self.letter_color
+                    self.prev_item.color = self.letter_color2
                     self.prev_item.update_me = True
                 self.active_item.color = (255, 255, 255)
                 self.create_card(self.active_item)

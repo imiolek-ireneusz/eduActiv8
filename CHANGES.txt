@@ -1,5 +1,9 @@
 Changelog:
-eduActiv8 - 3.70.9xx::
+eduActiv8 - 3.70.919:
+    - compatibility with Android 7
+    - levels and menu can now be created for each locale separately (even after installation)
+
+eduActiv8 - 3.70.913:
     - Serbian language added by Miroslav Nikolic (Мирослав Николић)
     - Lakota Language added by Peter Hill, Derek Lackaff and Matthew Rama
     - Catalan translation updated with a patch from Jordi Mallach and Guillem Jover
