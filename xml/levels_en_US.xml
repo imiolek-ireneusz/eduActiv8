@@ -737,7 +737,7 @@
 
     <game dbids="46" min_age="3" max_age="3" show_all="0">
         <chapters data="[1, 4, 8]" />
-        <levels count="7" games_per_level="5">
+        <levels count="8" games_per_level="5">
             <level n="1" data="[3, 50, 2, 100, 7]" />
             <level n="2" data="[3, 99, 2, 200, 7]" />
             <level n="3" data="[5, 50, 3, 150, 7]" />
@@ -1068,8 +1068,8 @@
     </game>
 
     <game dbids="47" min_age="3" max_age="7" show_all="1">
-        <chapters data="[1, 6]" />
-        <levels count="6" games_per_level="15">
+        <chapters data="[1, 8]" />
+        <levels count="8" games_per_level="15">
             <level n="1" data="[3]" />
             <level n="2" data="[4]" />
             <level n="3" data="[5]" />

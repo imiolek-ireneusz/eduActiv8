@@ -23,18 +23,25 @@
                   visible="1" lang_incl="['en']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="6" variant="0" var2="0" min_age="0" max_age="2"
-                  constructor_id="68"
+                  constructor_id="10"
                   title="Learn to Write"
                   subtitle="Trace Letters"
                   icon="ico_g_0109.png" icosuffix="False" lang_activity="True"
                   visible="1" lang_incl="['en', 'it', 'pt', 'de']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
-            <game dbid="7" variant="0" var2="0" min_age="0" max_age="2"
+            <game dbid="7" variant="1" var2="0" min_age="0" max_age="2"
                   constructor_id="10"
                   title="Learn to Write"
                   subtitle="Trace Letters"
                   icon="ico_g_0110.png"  icosuffix="False" lang_activity="True"
                   visible="1" lang_incl="['en', 'it', 'pt', 'de']" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="9" variant="2" var2="0"  min_age="0" max_age="2"
+                  constructor_id="10"
+                  title="Learn to Write"
+                  subtitle="local_kbrd"
+                  icon="ico_g_0112.png" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="['el']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="8" variant="0" var2="0" min_age="0" max_age="2"
                   constructor_id="22"
@@ -42,13 +49,6 @@
                   subtitle="local_kbrd"
                   icon="ico_g_0111.png" icosuffix="False" lang_activity="True"
                   visible="1" lang_incl="['ru']" lang_excl="" require_uc="False" listening="False" android="True">
-            </game>
-            <game dbid="9" variant="0" var2="0"  min_age="0" max_age="2"
-                  constructor_id="67"
-                  title="Learn to Write"
-                  subtitle="local_kbrd"
-                  icon="ico_g_0112.png" icosuffix="False" lang_activity="True"
-                  visible="1" lang_incl="['el']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="11" variant="0" var2="0"  min_age="0" max_age="3"
                   constructor_id="49"
