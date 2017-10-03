@@ -11,8 +11,10 @@ class Layout:
         self.mainloop.sb.update_me = True
         self.x_count = x_count
         self.y_count = y_count
-
-        self.score_bar_h = 36
+        if self.mainloop.android is None:
+            self.score_bar_h = 36
+        else:
+            self.score_bar_h = 56
 
         self.menu_w = 166  # 124 #+5 - extra space to make the gap for tabs to look ok
         self.menu_a_w = self.menu_w

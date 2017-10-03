@@ -124,25 +124,33 @@ class Config:
         if self.fribidi_loaded:
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano", "Lakȟótiyapi",
                                 "Polski", "Português", "Suomalainen", "Ελληνικά", "Русский", "Српски", "Українська",
-                                "תירבע", self.arabic, "Dansk", "Nederlands", "Slovenčina", "Test Language"]
+                                "תירבע", self.arabic, "Test Language"]
             self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
-                            "uk", "he", "ar", "da", "nl", "sk", "te_ST"]
+                            "uk", "he", "ar", "te_ST"]
             self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
                            "uk", "he"]
         else:
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano", "Lakȟótiyapi",
                                 "Polski", "Português", "Suomalainen", "Ελληνικά", "Русский", "Српски", "Українська",
-                                "תירבע", "Dansk", "Nederlands", "Slovenčina", "Test Language"]
+                                "תירבע", "Test Language"]
             self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
-                            "uk", "he", "da", "nl", "sk", "te_ST"]
+                            "uk", "he", "te_ST"]
             self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
                            "uk", "he"]
 
         self.id2lng = {1: "English", 5: "Català", 19: "Српски", 12: "Deutsch", 8: "Español", 16: "Ελληνικά",
                        17: "תירבע", 11: "Italiano", 20:  "Lakȟótiyapi", 3: "Polski", 9: "Português", 13: "Русский", 15: "Suomalainen",
+                       14: "Українська", 2: self.arabic, 10: "Français"}
+        self.id2imgsuffix = {1: "", 5: "", 18: "ru", 12: "", 8: "", 16: "el", 17: "he", 11: "", 20: "", 3: "", 9: "", 13: "ru",
+                             15: "", 14: "ru", 2: "ar", 10: ""}
+
+        """
+        self.id2lng = {1: "English", 5: "Català", 19: "Српски", 12: "Deutsch", 8: "Español", 16: "Ελληνικά",
+                       17: "תירבע", 11: "Italiano", 20:  "Lakȟótiyapi", 3: "Polski", 9: "Português", 13: "Русский", 15: "Suomalainen",
                        14: "Українська", 2: self.arabic, 6: "Dansk", 10: "Français", 7: "Nederlands", 4: "Slovenčina"}
         self.id2imgsuffix = {1: "", 5: "", 18: "ru", 12: "", 8: "", 16: "el", 17: "he", 11: "", 20: "", 3: "", 9: "", 13: "ru",
                              15: "", 14: "ru", 2: "ar", 6: "", 10: "", 7: "", 4: ""}
+        """
 
     def set_font_family(self, variant=0):
         self.font_variant = variant

@@ -22,9 +22,16 @@ class PScoreItem(pygame.sprite.Sprite):
     def handle(self, event):
         pass
 
-    def onClick():
+    def onClick(self):
         pass
 
+    def scale_img(self, image, new_w, new_h):
+        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
+            img = pygame.transform.smoothscale(image, (new_w, new_h))
+        else:
+            img = pygame.transform.scale(image, (new_w, new_h))
+        return img
 
 class PToggleBtn(PScoreItem):
     def __init__(self, score_bar, pos_rect, img_on, img_off, fsubmit, fargs):
@@ -33,14 +40,15 @@ class PToggleBtn(PScoreItem):
         self.img_loaded = False
         self.fsubmit = fsubmit
         self.fargs = fargs
-        # try:
-        if True:
-            self.img_on = pygame.image.load(os.path.join('res', 'images', img_on)).convert()
-            self.img_off = pygame.image.load(os.path.join('res', 'images', img_off)).convert()
+        h = self.score_bar.btn_h
+        #if True:
+        try:
+            self.img_on = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_on)).convert(), h, h)
+            self.img_off = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_off)).convert(), h, h)
             self.img_pos = (0, 0)
             self.img_loaded = True
         # except IOError:
-        else:
+        except:
             pass
 
     def handle(self, event):
@@ -70,9 +78,10 @@ class PSelectBtn(PScoreItem):
         self.img_loaded = False
         self.fsubmit = fsubmit
         self.fargs = fargs
+        h = self.score_bar.btn_h
         try:
-            self.img1 = pygame.image.load(os.path.join('res', 'images', img_src1)).convert()
-            self.img2 = pygame.image.load(os.path.join('res', 'images', img_src2)).convert()
+            self.img1 = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_src1)).convert(), h, h)
+            self.img2 = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_src2)).convert(), h, h)
             self.img_pos = (0, 0)
             self.img_loaded = True
         except IOError:
@@ -111,16 +120,17 @@ class PLabel(PScoreItem):
                     val = self.value
             else:
                 val = self.value
-            if self.bold is None:
-                fnt = self.score_bar.font_clock
-            elif self.bold == True:
+            #if self.bold is None:
+            #    fnt = self.score_bar.font_clock
+            if self.bold == True:
                 fnt = self.score_bar.font_bold
             else:
                 fnt = self.score_bar.font
             text = fnt.render("%s" % (val), 1, self.font_color)
 
+
             font_x = 0
-            font_y = 3  # (self.pos_rect[3] - self.score_bar.font.size(val)[1])//2
+            font_y = (self.pos_rect[3] - fnt.size(val)[1]) // 2  # (self.pos_rect[3] - self.score_bar.font.size(val)[1])//2
             self.image.blit(text, (font_x, font_y))
 
 
@@ -152,14 +162,26 @@ class ScoreBar:
         self.mouse_over = False
 
         self.points = int(round((50 * 72 / 96) / 4, 0))
+        if self.mainloop.android is None:
+            points_multiplicator = 2.0
+            self.btn_h = 28
+            self.link_lbl_h = 32
+            self.btn_spacing = 3
+            self.img_ext = ".png"
+        else:
+            points_multiplicator = 3.0
+            self.btn_h = 48 #56
+            self.link_lbl_h = 48
+            self.btn_spacing = 5
+            self.img_ext = "_l.png"
         self.font = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_2),
-            (int(self.points * 2.0)))
+            (int(self.points * points_multiplicator)))
         self.font_bold = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1),
-            (int(self.points * 2.0)))
-        self.font_clock = pygame.font.Font(os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8Clock.ttf'),
-                                           (int(self.points * 4.0)))
+            (int(self.points * points_multiplicator)))
+        #self.font_clock = pygame.font.Font(os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8Clock.ttf'),
+        #                                   (int(self.points * 4.0)))
         """
         self.widget_list = pygame.sprite.LayeredUpdates()
         self.elements = []
@@ -168,41 +190,41 @@ class ScoreBar:
 
     def add_scroll_bar_elements(self):
         # toggle sounds
-        l = 2
+        l = self.btn_spacing
         self.elements.append(
-            PToggleBtn(self, (l, 2, 28, 28), "score_sound_on.png", "score_sound_off.png", self.toggle_sound, None))
-        l += 28 + 5
+            PToggleBtn(self, (l, 2, self.btn_h, self.btn_h), "score_sound_on" + self.img_ext, "score_sound_off" + self.img_ext, self.toggle_sound, None))
+        l += self.btn_h + self.btn_spacing
         # toggle espeak
         if self.mainloop.speaker.enabled:  # and self.mainloop.lang.voice is not None:
             self.elements.append(
-                PToggleBtn(self, (l, 2, 28, 28), "score_espeak_on.png", "score_espeak_off.png", self.toggle_espeak,
+                PToggleBtn(self, (l, 2, self.btn_h, self.btn_h), "score_espeak_on" + self.img_ext, "score_espeak_off" + self.img_ext, self.toggle_espeak,
                            None))
-            l += 28 + 15
+            l += self.btn_h + 15 + self.btn_spacing
         else:
-            l += 10
-        l += 0
+            l += 10 + self.btn_spacing
+        l += 0 + self.btn_spacing
         self.elements.append(
-            PSelectBtn(self, (l, 2, 28, 28), "score_hc_none.png", "score_hc_anone.png", self.switch_scheme, None))
-        l += 28
+            PSelectBtn(self, (l, 2, self.btn_h, self.btn_h), "score_hc_none" + self.img_ext, "score_hc_anone" + self.img_ext, self.switch_scheme, None))
+        l += self.btn_h + self.btn_spacing
         self.elements.append(
-            PSelectBtn(self, (l, 2, 28, 28), "score_hc_wb.png", "score_hc_awb.png", self.switch_scheme, "WB"))
-        l += 28
+            PSelectBtn(self, (l, 2, self.btn_h, self.btn_h), "score_hc_wb" + self.img_ext, "score_hc_awb" + self.img_ext, self.switch_scheme, "WB"))
+        l += self.btn_h + self.btn_spacing
         self.elements.append(
-            PSelectBtn(self, (l, 2, 28, 28), "score_hc_bw.png", "score_hc_abw.png", self.switch_scheme, "BW"))
-        l += 28
+            PSelectBtn(self, (l, 2, self.btn_h, self.btn_h), "score_hc_bw" + self.img_ext, "score_hc_abw" + self.img_ext, self.switch_scheme, "BW"))
+        l += self.btn_h + self.btn_spacing
         self.elements.append(
-            PSelectBtn(self, (l, 2, 28, 28), "score_hc_by.png", "score_hc_aby.png", self.switch_scheme, "BY"))
-        l += 28
+            PSelectBtn(self, (l, 2, self.btn_h, self.btn_h), "score_hc_by" + self.img_ext, "score_hc_aby" + self.img_ext, self.switch_scheme, "BY"))
+        l += self.btn_h + self.btn_spacing
         l += 10
         # score label
         # label = "Score" #self.lang.d["Score: "] + "0" #"Score: 12345"
         # w = self.font_bold.size(label)[0]
-        self.elements.append(PLabel(self, (l, 2, 300, 28), ""))
-        self.score = self.elements[-1]
-        self.score.font_color = (136, 201, 255)
-        self.score.bold = None
+        #self.elements.append(PLabel(self, (l, 2, 300, self.btn_h), ""))
+        #self.score = self.elements[-1]
+        #self.score.font_color = (136, 201, 255)
+        #self.score.bold = None
         # self.set_score(self.mainloop.)
-        self.mainloop.game_board.update_score(0)
+        #self.mainloop.game_board.update_score(0)
         # self.score.bold = True
 
         # logout link
@@ -216,7 +238,7 @@ class ScoreBar:
                 w0 = self.font.size(label)[0]
         else:
             w0 = self.font.size(label)[0]
-        self.elements.append(PLinkLabel(self, (self.width - w0 - 5, 0, w0, 32), label, self.flogout))
+        self.elements.append(PLinkLabel(self, (self.width - w0 - 5, 0, w0, self.link_lbl_h), label, self.flogout))
 
         # name label
         label = self.mainloop.user_name
@@ -238,10 +260,10 @@ class ScoreBar:
         else:
             l1 = self.width - w0 - w1 - w2 - 30
             l2 = self.width - w0 - w2 - 20
-        self.elements.append(PLabel(self, (l1, 0, w1, 32), label))
+        self.elements.append(PLabel(self, (l1, 0, w1, self.link_lbl_h), label))
         self.elements[-1].font_color = (136, 201, 255)
 
-        self.elements.append(PLabel(self, (l2, 0, w2, 32), label2))
+        self.elements.append(PLabel(self, (l2, 0, w2, self.link_lbl_h), label2))
 
         for each in self.elements:
             self.widget_list.add(each)
