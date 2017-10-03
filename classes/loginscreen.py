@@ -9,37 +9,32 @@ import random
 import classes.extras as ex
 
 class Colors:
-    def __init__(self):
+    def __init__(self, mainloop):
         # Background colors
         self.outer_color = (255, 255, 255, 255)  # color outside of the frame - visible on logout
-        #c1 = [210, 0, 126, 200] #pink
-        """
-        h1 = random.randint(0, 255)
-        h2 = random.randint(0, 255)
-        h3 = random.randint(0, 255)
-        h4 = random.randint(0, 255)
-        print("%d %d %d %d" % (h1, h2, h3, h4))
+
+        h1 = 132
+        h2 = 28
+        h3 = 28
+        h4 = 141
+        s = 200
+        v = 250
+
+        c1 = ex.hsva_to_rgba(h1, s, 200, 255)  # bottom
+        c2 = ex.hsva_to_rgba(h2, s, v, 255)  # top
+        c3 = ex.hsva_to_rgba(h3, s, v, 115)  # left
+        c4 = ex.hsva_to_rgba(h4, s, 20, 200)  # right
+
+        self.color_mono = (45, 75, 65)
+        self.color_mono_focused = (45, 75, 65)
+        self.color_mono_font = (27, 44, 39)
+
+        """ brown
+        self.color_mono = (111, 38, 12)
+        self.color_mono_focused = (71, 18, 3)
+        self.color_mono_font = (51, 8, 3)
         """
 
-        #29 194 203 177,
-        # 169 31 200 255
-
-        h1 = 169
-        h2 = 31
-        h3 = 200
-        h4 = 255
-
-        c1 = ex.hsva_to_rgba(h1, 200, 255, 255)
-        c2 = ex.hsva_to_rgba(h2, 200, 255, 255)
-        c3 = ex.hsva_to_rgba(h3, 200, 255, 5)
-        c4 = ex.hsva_to_rgba(h4, 200, 255, 200)
-
-        """
-        c1 = [210, 0, 76, 255] #pink
-        c2 = [254, 92, 0, 255] #orange
-        c3 = [180, 239, 0, 5] #green
-        c4 = [0, 141, 251, 200] #blue
-        """
         self.inner_color = c2  # main frame of the panel
         self.inner_color_end = c1
 
@@ -51,67 +46,65 @@ class Colors:
         self.transparent_fill = (255, 255, 255, 0)
 
         # PEdit Colors
-        self.bg_color = (253, 176, 134, 128)  # normal edit fields
-        self.bg_focus = (252, 151, 96, 128)
-        self.bg_color_disabled = (255, 255, 255, 30)  # default disabled color of the age buttons
-        self.border_disabled = (255, 255, 255, 50)  # age buttons disabled
+        self.bg_color = (255, 255, 255, 50)  # normal edit fields
+        self.bg_focus = (255, 255, 255, 100)
+        self.bg_color_disabled = (255, 255, 255, 10)  # default disabled color of the age buttons
+        self.border_disabled = (255, 255, 255, 30)  # age buttons disabled
 
-        self.border_color = (255, 100, 20)
-        self.border_focused = (255, 0, 0)
-        self.font_color = (81, 35, 4)
-        self.edit_font_color = (0, 0, 0)
+        self.border_color = self.color_mono #(128, 116, 85)
+        self.border_focused = self.color_mono_focused # (118, 106, 75)
+
+        self.font_color = self.color_mono_font #(81, 35, 4)
+        self.edit_font_color = self.color_mono_font
 
         #Check boxes
         self.cb_bg_col = (255, 255, 255, 0)
-        self.cb_color = (255, 210, 171)
-        self.cb_focus = (255, 250, 200)
+        self.cb_color = (255, 255, 255, 50)
+        self.cb_focus = (255, 255, 255, 100)
         self.cb_border_color = (0, 0, 0)
         self.cb_border_focused = (255, 0, 0)
 
         #PButon
-        self.btn_bg_color = (255, 161, 96, 128)  # all butons and non selected age buttons
-        self.btn_bg_focus = (255, 122, 29, 200)  # selected state age and focus on buttons
-        self.btn_font_color = (52, 17, 2)
+        self.btn_bg_color = (255, 255, 255, 50)  # all butons and non selected age buttons
+        self.btn_bg_focus = (255, 255, 255, 100)  # selected state age and focus on buttons
+        self.btn_font_color = self.color_mono_font  # (52, 17, 2)
         self.trans_btn_font_color = (255, 85, 85)
-        self.btn_border_color = (26, 6, 0)
-        self.btn_border_focused = (72, 17, 2)
 
-        self.btn_border_color = (255, 122, 29)
-        self.btn_border_focused = (255, 195, 152)
+        self.btn_border_color = self.color_mono #(26, 6, 0)
+        self.btn_border_focused = self.color_mono_focused #(72, 17, 2)
+        self.btn_border_color_l = self.color_mono #(26, 6, 0)
+        self.btn_border_focused_l = self.color_mono_focused #(72, 17, 2)
 
-        self.btn_border_color_l = (255, 122, 29)
-        self.btn_border_focused_l = (255, 195, 152)
 
         #PScrollBar
-        self.slb_bg_color = (255, 210, 171)
-        self.slb_bg_focus = (255, 190, 151)
-        self.slb_border_color = (0, 0, 0)
-        self.slb_border_focused = (255, 0, 0)
-
-        self.slb_mid_lines = (255, 0, 0)
+        self.slb_bg_color = (255, 255, 255, 50)
+        self.slb_bg_focus = (255, 255, 255, 100)
+        self.slb_border_color = self.color_mono
+        self.slb_border_focused = self.color_mono_focused
+        self.slb_mid_lines = self.color_mono
 
         #LoginScreen
-        self.ls_font_color = (81, 35, 4)
-        self.ls_header_font_color = (255, 179, 111)
+        self.ls_font_color = self.color_mono_font #(81, 35, 4)
+        self.ls_header_font_color = self.color_mono_font #(255, 179, 111)
         self.ls_bg_col = (255, 255, 255, 70)  # main panel
         self.bg_col = self.ls_bg_col
         self.ls_bg_sidecol = (0, 0, 0, 50)  # menu panel
 
         #Keyboard Key
-        self.key_bg_color_normal = (255, 191, 114, 100)
-        self.key_bg_color_activated = (246, 134, 0, 100)
+        self.key_bg_color_normal = (255, 255, 255, 70)
+        self.key_bg_color_activated = (255, 255, 255, 130)
         self.key_bg_color_disabled = self.inner_color
         self.key_bg_color = self.bg_color_disabled
 
 
-        self.key_bg_color_mouse_dn = (255, 191, 114, 150)
-        self.key_bg_color_mouse_ovr = (255, 191, 114, 125)
+        self.key_bg_color_mouse_dn = (255, 255, 255, 130)
+        self.key_bg_color_mouse_ovr = (255, 255, 255, 100)
 
         self.key_border_disabled = (62, 17, 2)
-        self.key_bg_focus = (255, 250, 200)
+        self.key_bg_focus = (255, 255, 255, 100)
         self.key_border_color = (0, 0, 0)
         self.key_border_focused = (255, 0, 0)
-        self.key_font_color = (81, 35, 4)
+        self.key_font_color = self.color_mono_font #(81, 35, 4)
 
     def fill_gradient(self, surface, color, gradient, rect=None, vertical=True, forward=True):
         """fill a surface with a gradient pattern
@@ -129,14 +122,6 @@ class Colors:
             rect = surface.get_rect()
         x1, x2 = rect.left, rect.right
         y1, y2 = rect.top, rect.bottom
-        """
-        if len(color) == 3:
-            color = list(color)
-            color.append(255)
-        if len(gradient) == 3:
-            gradient = list(gradient)
-            gradient.append(255)
-        """
 
         if vertical:
             h = y2 - y1
@@ -156,19 +141,19 @@ class Colors:
         if vertical:
             for line in range(y1, y2):
                 color = (
-                    min(max(a[0] + (rate[0] * (line - y1)), 0), 255),
-                    min(max(a[1] + (rate[1] * (line - y1)), 0), 255),
-                    min(max(a[2] + (rate[2] * (line - y1)), 0), 255),
-                    min(max(a[3] + (rate[3] * (line - y1)), 0), 255)
+                    int(min(max(a[0] + (rate[0] * (line - y1)), 0), 255)),
+                    int(min(max(a[1] + (rate[1] * (line - y1)), 0), 255)),
+                    int(min(max(a[2] + (rate[2] * (line - y1)), 0), 255)),
+                    int(min(max(a[3] + (rate[3] * (line - y1)), 0), 255))
                 )
                 fn_line(surface, color, (x1, line), (x2, line))
         else:
             for col in range(x1, x2):
                 color = (
-                    min(max(a[0] + (rate[0] * (col - x1)), 0), 255),
-                    min(max(a[1] + (rate[1] * (col - x1)), 0), 255),
-                    min(max(a[2] + (rate[2] * (col - x1)), 0), 255),
-                    min(max(a[3] + (rate[3] * (col - x1)), 0), 255)
+                    int(min(max(a[0] + (rate[0] * (col - x1)), 0), 255)),
+                    int(min(max(a[1] + (rate[1] * (col - x1)), 0), 255)),
+                    int(min(max(a[2] + (rate[2] * (col - x1)), 0), 255)),
+                    int(min(max(a[3] + (rate[3] * (col - x1)), 0), 255))
                 )
                 fn_line(surface, color, (col, y1), (col, y2))
 
@@ -222,11 +207,13 @@ class PEdit(pygame.sprite.Sprite):
                     self.image.fill(self.bg_focus)
                     pygame.draw.line(self.image, self.border_focused, self.lines[0], self.lines[1], 1)
                     pygame.draw.line(self.image, self.border_focused, self.lines[2], self.lines[3], 1)
+                    pygame.draw.line(self.image, self.border_focused, self.lines[0], self.lines[3], 1)
                 else:
                     self.image.fill(self.bg_color)
                     # pygame.draw.lines(self.image, self.border_color, True, self.lines,1)
                     pygame.draw.line(self.image, self.border_color, self.lines[0], self.lines[1], 1)
                     pygame.draw.line(self.image, self.border_color, self.lines[2], self.lines[3], 1)
+                    pygame.draw.line(self.image, self.border_color, self.lines[0], self.lines[3], 1)
             else:
                 if self.disabled:
                     self.image.fill(self.bg_color_disabled)
@@ -266,6 +253,7 @@ class PEdit(pygame.sprite.Sprite):
             self.font_y = (self.h - self.ls.font_2.size(val)[1]) // 2
 
             self.image.blit(text, (self.font_x, self.font_y))
+            self.image.blit(text, (self.font_x, self.font_y))
         elif self.update_me and not self.visible:
             self.image.fill(self.bg_color)
 
@@ -282,7 +270,7 @@ class PEdit(pygame.sprite.Sprite):
         return True
 
     def onKeyDown(self, event):
-        if self.select_item == False:
+        if not self.select_item:
             if event.type == pygame.KEYDOWN and event.key == pygame.K_DELETE:
                 pass
             elif event.type == pygame.KEYDOWN and event.key != pygame.K_RETURN and event.key != pygame.K_KP_ENTER and event.key != pygame.K_TAB:
@@ -295,7 +283,7 @@ class PEdit(pygame.sprite.Sprite):
                             self.value = self.value[1:lhv]
                 else:
                     char = event.unicode
-                    if len(char) > 0 and lhv < 25:
+                    if len(char) > 0 and lhv < 21:
                         if self.ls.lang.ltr_text:
                             self.value = self.value + char
                         else:
@@ -359,12 +347,15 @@ class PEdit(pygame.sprite.Sprite):
         self.ls.update_me = True
         self.ls.mainloop.redraw_needed[0] = True
 
+
+
 class PSelect(PEdit):
     def __init__(self, ls, w, h, l, t, focus_order, right_align=False, transparent=False):
         PEdit.__init__(self, ls, w, h, l, t, focus_order, False, right_align, transparent)
 
     def is_editable(self):
         return False
+
 
 class PCheckbox(pygame.sprite.Sprite):
     def __init__(self, ls, w, h, l, t, checked, value, hide=False):
@@ -459,7 +450,7 @@ class PCheckbox(pygame.sprite.Sprite):
         pass
 
     def onFocus(self):
-        if self.select_item == False or (self.select_item and len(self.value) > 0):
+        if not self.select_item or (self.select_item and len(self.value) > 0):
             self.focused = True
             self.update_trigger()
 
@@ -475,6 +466,7 @@ class PCheckbox(pygame.sprite.Sprite):
         self.ls.update_me = True
         self.ls.mainloop.redraw_needed[0] = True
 
+
 class PLabel(pygame.sprite.Sprite):
     def __init__(self, ls, w, h, l, t, value):
         pygame.sprite.Sprite.__init__(self)
@@ -488,6 +480,7 @@ class PLabel(pygame.sprite.Sprite):
             self.right_align = False
         else:
             self.right_align = True
+        self.font_color = self.ls.colors.font_color
         self.value = value
         self.select_item = False
         self.update_me = True
@@ -509,7 +502,7 @@ class PLabel(pygame.sprite.Sprite):
             else:
                 val = self.value
             try:
-                text = self.font_v.render("%s" % val, 1, self.ls.colors.font_color)
+                text = self.font_v.render("%s" % val, 1, self.font_color)
 
                 if self.right_align:
                     self.font_x = (self.w - self.font_v.size(val)[0]) - 5
@@ -615,19 +608,24 @@ class PButton2(PButton):
 
             val = ex.unival(self.value)
 
-            text = self.font_v.render("%s" % (val), 1, self.font_color)
+            text = self.font_v.render(val, 1, self.font_color)
 
             font_x = (self.w - self.font_v.size(val)[0]) // 2
             if self.value2:
                 val2 = ex.unival(self.value2)
-                text2 = self.font_v2.render("%s" % (val2), 1, self.font_color)
+                text2 = self.font_v2.render(val2, 1, self.font_color)
                 font_y = 0
                 font_x2 = (self.w - self.font_v2.size(val2)[0]) // 2
                 font_y2 = 25
                 self.image.blit(text2, (font_x2, font_y2))
             else:
                 font_y = (self.h - self.font_v.size(val)[1]) // 2
+            # double blit due to a problem with semi-transparent background - especially with Hebrew letters
             self.image.blit(text, (font_x, font_y))
+            self.image.blit(text, (font_x, font_y))
+            if self.ls.mainloop.lang.lang == "he":
+                self.image.blit(text, (font_x, font_y))
+                self.image.blit(text, (font_x, font_y))
 
 
 class PScrollBar(pygame.sprite.Sprite):
@@ -654,7 +652,7 @@ class PScrollBar(pygame.sprite.Sprite):
         self.rect_init()
 
     def rect_init(self):
-        self.image = pygame.Surface([self.w, self.h])
+        self.image = pygame.Surface([self.w, self.h], flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.left, self.top]
 
@@ -942,7 +940,7 @@ class KbrdKey(pygame.sprite.Sprite):
                     if isinstance(self.ls.in_focus, PEdit):
                         if self.fcode == 0: # key
                             char = ex.unival(self.get_value())
-                            if len(char) > 0 and lhv < 25:
+                            if len(char) > 0 and lhv < 21:
                                 if self.ls.lang.ltr_text:
                                     self.ls.in_focus.value = ex.unival(self.ls.in_focus.value) + char
                                 else:
@@ -1095,7 +1093,7 @@ class LoginScreen:
         self.screen = screen
         self.mainloop = mainloop
         self.config = self.mainloop.config
-        self.colors = Colors()
+        self.colors = Colors(mainloop)
 
         if self.mainloop.android is not None:
             self.w = self.mainloop.android_login_size[0]  # size[0] 800
@@ -1168,15 +1166,19 @@ class LoginScreen:
         self.draw_background()
 
     def draw_background(self):
+
         layer2 = pygame.Surface(self.screen.get_size(), flags=pygame.SRCALPHA, depth=32)
         layer3 = pygame.Surface(self.screen.get_size(), flags=pygame.SRCALPHA, depth=32)
 
-        self.colors.fill_gradient(self.layer1, self.colors.inner_color, self.colors.inner_color_end, rect=None,
-                                  vertical=True, forward=True)
-        #if self.mainloop.android is None:
-        self.colors.fill_gradient(layer2, self.colors.inner_color2, self.colors.inner_color2_end, rect=None,
-                                  vertical=False, forward=True)
-        self.layer1.blit(layer2, (0, 0), self.layer1.get_rect())
+        if self.mainloop.android is None:
+            self.colors.fill_gradient(self.layer1, self.colors.inner_color, self.colors.inner_color_end, rect=None,
+                                           vertical=True, forward=True)
+            self.colors.fill_gradient(layer2, self.colors.inner_color2, self.colors.inner_color2_end, rect=None,
+                                           vertical=False, forward=True)
+            self.layer1.blit(layer2, (0, 0), self.layer1.get_rect())
+        else:
+            self.layer1.fill(self.colors.color_mono)
+
 
         lines = [[self.left + 0, self.top + 0], [self.left + self.w - 1, self.top + 0],
                  [self.left + self.w - 1, self.top + self.h - 1], [self.left + 0, self.top + self.h - 1]]
@@ -1214,6 +1216,7 @@ class LoginScreen:
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1),
             (int(self.points * 1.8)))
 
+        #keyboard Keys
         self.font_3 = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1),
             (int(self.points * 3.5)))
@@ -1229,7 +1232,8 @@ class LoginScreen:
     def merge_sprite_lists(self):
         self.all_list.empty()
         self.db_status_lbl = PLabel(self, self.w - 135, 30, self.left + 15, self.top + self.h - 55 - self.keyboard_h + 25, "")
-        self.db_status_lbl.bg_color = (107, 28, 3, 0)
+        self.db_status_lbl.bg_color = (0, 0, 0, 0)
+        self.db_status_lbl.font_color = (255, 255, 255)
         self.edit_list.add(self.db_status_lbl)
         for each in self.edit_list:
             self.all_list.add(each)
@@ -1390,7 +1394,7 @@ class LoginScreen:
         self.db_status = ""
         self.scroll_item_count = len(self.config.all_lng)
         if self.mainloop.android is not None:
-            self.scroll_item_count -= 4
+            self.scroll_item_count -= 1
         self.halfw = self.w // 2 - 50
 
 
@@ -1406,7 +1410,10 @@ class LoginScreen:
         # hs = [60,90,120,150,180,210,240,280,320,350,380,410,430,450]
         #hs = [60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 60, 90, 120, 150, 180, 210, 240, 270]  # ,150]#,180]
         #hs = [60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 60, 90, 120, 150, 180, 210, 240, 270]  # ,150]#,180]
-        rows = 5
+        if self.mainloop.android:
+            rows = 4
+        else:
+            rows = 5
         frows = float(rows)
         cols = int(math.ceil(self.scroll_item_count / frows))
 
@@ -1491,7 +1498,7 @@ class LoginScreen:
 
         # add new user
         self.lb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 285, self.lang.b["Add new user:"])
-        self.lb1.font_color = (255, 179, 111)
+        self.lb1.font_color = self.colors.ls_font_color # (255, 179, 111)
         self.lb2 = PLabel(self, cw, 30, self.left + 20, self.top + 315, self.lang.b["user name:"])
         self.rusername = PEdit(self, cw, 30, self.left + 20, self.top + 340, 1)
         self.lb3 = PLabel(self, cw, 30, self.left + 20 + cw + 10, self.top + 315, self.lang.b["password:"])
@@ -1504,7 +1511,7 @@ class LoginScreen:
 
         # user info elements w h l t
         self.dlb1 = PLabel(self, cw * 2 - 10, 30, self.left + cw + 50, self.top + 60, self.lang.b["Please select"])  # name field
-        self.dlb1.font_color = (100, 200, 255)
+        self.dlb1.font_color = self.colors.ls_font_color # (100, 200, 255)
         if self.lang.ltr_text:
             l = [self.left + cw + 70, self.left + 2 * cw + 40]
         else:
@@ -1938,6 +1945,7 @@ class LoginScreen:
             self.keyboard.handle(event)
 
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            #self.draw_background()
             pos = event.pos
             if pos[1] < self.keyboard.y:
                 focus_changed = False
