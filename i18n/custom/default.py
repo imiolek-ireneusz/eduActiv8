@@ -544,3 +544,12 @@ class I18n():
         #new games
         self.d["Listening Exercises"] = _("Listening Exercises")
         self.d["Match sounds to words"] = _("Match sounds to words")
+
+        self.d["Patterns"] = _("Patterns")
+        self.d["Number Patterns"] = _("Number Patterns")
+        self.d["Letter Patterns"] = _("Letter Patterns")
+        self.d["Color Patterns"] = _("Color Patterns")
+        self.d["Image Patterns"] = _("Image Patterns")
+        self.d["Fraction Patterns"] = _("Fraction Patterns")
+        self.d["Shape Patterns"] = _("Shape Patterns")
+        self.d["Complete the pattern"] = _("Complete the pattern on the top line.")
