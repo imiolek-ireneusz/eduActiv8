@@ -1258,3 +1258,33 @@ msgstr "Transport"
 
 msgid "Food"
 msgstr "Food"
+
+msgid "Listening Exercises"
+msgstr "Listening Exercises"
+
+msgid "Match sounds to words"
+msgstr "Match sounds to words"
+
+msgid "Patterns"
+msgstr "Patterns"
+
+msgid "Number Patterns"
+msgstr "Number Patterns"
+
+msgid "Letter Patterns"
+msgstr "Letter Patterns"
+
+msgid "Color Patterns"
+msgstr "Color Patterns"
+
+msgid "Image Patterns"
+msgstr "Image Patterns"
+
+msgid "Fraction Patterns"
+msgstr "Fraction Patterns"
+
+msgid "Shape Patterns"
+msgstr "Shape Patterns""
+
+msgid "Complete the pattern on the top line."
+msgstr "Complete the pattern on the top line."

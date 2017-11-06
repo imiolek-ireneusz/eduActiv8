@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2016-11-18 23:13+0000\n"
+"PO-Revision-Date: 2017-11-06 20:57+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language: pl\n"
@@ -1314,3 +1314,33 @@ msgstr "Środki transportu"
 
 msgid "Food"
 msgstr "Żywność"
+
+msgid "Listening Exercises"
+msgstr "Zadania ze słuchania"
+
+msgid "Match sounds to words"
+msgstr "Dopasuj dźwięki do słów"
+
+msgid "Patterns"
+msgstr "Rytmy"
+
+msgid "Number Patterns"
+msgstr "Rytm cyfr"
+
+msgid "Letter Patterns"
+msgstr "Rytm liter"
+
+msgid "Color Patterns"
+msgstr "Rytm colorów"
+
+msgid "Image Patterns"
+msgstr "Rytm obrazków"
+
+msgid "Fraction Patterns"
+msgstr "Rytm ułamków"
+
+msgid "Shape Patterns"
+msgstr "Rytm kształtów"
+
+msgid "Complete the pattern on the top line."
+msgstr "Dokończ rytm w górnej linii"

@@ -1256,3 +1256,34 @@ msgstr "Μεταφορικά μέσα"
 
 msgid "Food"
 msgstr "Φαγητό"
+
+
+msgid "Listening Exercises"
+msgstr ""
+
+msgid "Match sounds to words"
+msgstr ""
+
+msgid "Patterns"
+msgstr ""
+
+msgid "Number Patterns"
+msgstr ""
+
+msgid "Letter Patterns"
+msgstr ""
+
+msgid "Color Patterns"
+msgstr ""
+
+msgid "Image Patterns"
+msgstr ""
+
+msgid "Fraction Patterns"
+msgstr ""
+
+msgid "Shape Patterns"
+msgstr ""
+
+msgid "Complete the pattern on the top line."
+msgstr ""

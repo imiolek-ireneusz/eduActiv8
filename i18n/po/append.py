@@ -7,11 +7,12 @@ import sys
 os.chdir(os.path.abspath(os.path.dirname(sys.argv[0])))
 
 # list of language files
-langs = ["ca.po", "el.po", "en_GB.po", "en_US.po", "pl.po", "es_ES.po", "pt_PT.po", "fr.po", "it.po", "de.po", "ru.po",
-         "fi.po", "te_ST.po"]
+langs = ["ar.po", "ca.po", "da.po", "de.po", "el.po", "en_GB.po", "en_US.po", "es_ES.po", "fi.po", "fr.po", "he.po", "it.po", "lkt.po", "nl.po", "pl.po", "pt_PT.po", "ru.po", "sk.po", "sr.po", "te_ST.po", "uk.po", "zh.po"]
 
 # lines = ["Word Builder - Sports","Word Builder - Body","Word Builder - People","Word Builder - Actions","Word Builder - Constructions","Word Builder - Nature","Word Builder - Jobs","Word Builder - Clothes and Accessories","Word Builder - Fruits and Vegetables","Word Builder - Transport","Word Builder - Food"]
-lines = []
+#new games
+
+lines = ["Listening Exercises", "Match sounds to words", "Patterns", "Number Patterns", "Letter Patterns", "Color Patterns", "Image Patterns", "Fraction Patterns", "Shape Patterns", "Complete the pattern on the top line."]
 
 
 def add_all():
