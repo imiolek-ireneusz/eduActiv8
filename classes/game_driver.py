@@ -37,6 +37,7 @@ class BoardGame(GameBase):
         self.mainloop = mainloop
         self.speaker = speaker
         self.lang = self.mainloop.lang
+        self.update_layout_on_start = False
         #self.level.d = self.lang.d
         self.min_level = 1
         self.d = self.mainloop.lang.d
@@ -480,6 +481,10 @@ class BoardGame(GameBase):
             self.board.all_sprites_list.draw(game)
             # self.board.sprites_to_draw.draw(game)
         else:
+            self.board.update_ships(self.circle_lock_pos)
+
+            # Draw all the spites
+            self.board.all_sprites_list.draw(game)
             self.dialog.update(game)
 
         if self.board.draw_grid:

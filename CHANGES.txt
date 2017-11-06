@@ -1,4 +1,11 @@
 Changelog:
+eduActiv8 - 3.71.106:
+    - new section added with 5 new games covering patterns (only in English at the moment).
+    - more activities are now automatically checked and feedback displayed.
+eduActiv8 - 3.71.003:
+    - login screen colour scheme changed - on Android gradient removed due to problem with rendering,
+    - auto validation implemented in a number of activities.
+
 eduActiv8 - 3.70.919:
     - compatibility with Android 7
     - levels and menu can now be created for each locale separately (even after installation)

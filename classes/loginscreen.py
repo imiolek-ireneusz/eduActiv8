@@ -25,8 +25,12 @@ class Colors:
         c3 = ex.hsva_to_rgba(h3, s, v, 115)  # left
         c4 = ex.hsva_to_rgba(h4, s, 20, 200)  # right
 
-        self.color_mono = (45, 75, 65)
-        self.color_mono_focused = (45, 75, 65)
+        #self.color_mono = (45, 75, 65)
+        self.color_mono = (0, 0, 0, 50)
+        self.android_backup_color = (45, 75, 65)
+
+        #self.color_mono_focused = (45, 75, 65)
+        self.color_mono_focused = (255, 0, 0, 100)
         self.color_mono_font = (27, 44, 39)
 
         """ brown
@@ -1144,6 +1148,24 @@ class LoginScreen:
         self.img = pygame.image.load(os.path.join('res', 'images', "login_screen_logo.png")).convert_alpha()
         self.img_rect = self.img.get_rect()
 
+        #if self.mainloop.android is not None:
+        try:
+            self.bg_img = self.scale_img(
+                pygame.image.load(os.path.join('res', 'images', "gradient_large.jpg")).convert(),
+                self.screen.get_size()[0],
+                self.screen.get_size()[1])
+        except:
+            try:
+                self.bg_img = self.scale_img(
+                    pygame.image.load(os.path.join('res', 'images', "gradient.jpg")).convert(),
+                    self.screen.get_size()[0],
+                    self.screen.get_size()[1])
+            except:
+                self.bg_img = None
+
+            #self.bg_img_rect = self.img.get_rect()
+
+
         # add keyboard
         self.keyboard = Keyboard(self, self.left+5, self.top + self.h - self.keyboard_h - 5, self.w-10, self.keyboard_h)
 
@@ -1165,19 +1187,30 @@ class LoginScreen:
         self.layer4 = pygame.Surface(screen.get_size(), flags=pygame.SRCALPHA, depth=32)
         self.draw_background()
 
+    def scale_img(self, image, new_w, new_h):
+        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
+            img = pygame.transform.smoothscale(image, (new_w, new_h))
+        else:
+            img = pygame.transform.scale(image, (new_w, new_h))
+        return img
+
     def draw_background(self):
 
         layer2 = pygame.Surface(self.screen.get_size(), flags=pygame.SRCALPHA, depth=32)
         layer3 = pygame.Surface(self.screen.get_size(), flags=pygame.SRCALPHA, depth=32)
 
-        if self.mainloop.android is None:
-            self.colors.fill_gradient(self.layer1, self.colors.inner_color, self.colors.inner_color_end, rect=None,
-                                           vertical=True, forward=True)
-            self.colors.fill_gradient(layer2, self.colors.inner_color2, self.colors.inner_color2_end, rect=None,
-                                           vertical=False, forward=True)
-            self.layer1.blit(layer2, (0, 0), self.layer1.get_rect())
+        if self.bg_img is not None:
+            self.layer1.blit(self.bg_img, (0, 0), self.layer1.get_rect())
         else:
-            self.layer1.fill(self.colors.color_mono)
+            if self.mainloop.android is None:
+                self.colors.fill_gradient(self.layer1, self.colors.inner_color, self.colors.inner_color_end, rect=None,
+                                          vertical=True, forward=True)
+                self.colors.fill_gradient(layer2, self.colors.inner_color2, self.colors.inner_color2_end, rect=None,
+                                          vertical=False, forward=True)
+                self.layer1.blit(layer2, (0, 0), self.layer1.get_rect())
+            else:
+                self.layer1.fill(self.colors.android_backup_color)
 
 
         lines = [[self.left + 0, self.top + 0], [self.left + self.w - 1, self.top + 0],
@@ -1665,7 +1698,7 @@ class LoginScreen:
                 self.in_focus.onFocus()
 
     def recheck(self):
-        if self.mainloop.android is not None:
+        if self.mainloop.android is None:
             self.cb0.checked = self.full_screen
             self.cb2.checked = self.extra_langs
         self.cb3.checked = self.require_pass

@@ -63,7 +63,6 @@ class Board(gd.BoardGame):
         self.board.level_start(data[0], data[1], scale)
 
         self.top_line = self.board.scale // 2
-
         nr1 = random.randrange(rngs[0], rngs[1])
         nr2 = random.randrange(rngs[2], rngs[3])
         self.n1 = nr1 * nr2
@@ -150,7 +149,6 @@ class Board(gd.BoardGame):
         sub = [0 for i in range(self.n1sl)]
         # [res,nbr,mpl,sub,line]
         yp = [0, 3, 5, 8, 7]
-
         xp = [xs, xs, xs + 2, xs + 2, xs]
         self.activables = 0
         for i in range(self.n1sl):
@@ -159,6 +157,8 @@ class Board(gd.BoardGame):
                 nbe[i] = int(self.n1s[i])
                 self.board.add_unit(xp[1] - r_offset, yp[1], 2, 2, classes.board.Letter, "", self.bg_col, "", 21)
                 self.nbel.append(self.board.ships[-1])
+                self.nbel[-1].checkable = True
+                self.nbel[-1].init_check_images()
                 self.nbel[-1].pos_id = i
                 self.activables += 1
             elif i == 0:
@@ -168,6 +168,8 @@ class Board(gd.BoardGame):
             self.board.add_unit(xp[0] - r_offset, yp[0], 2, 2, classes.board.Letter, "", self.bg_col, "", 21)
             self.resl.append(self.board.ships[-1])
             self.resl[-1].pos_id = i
+            self.resl[-1].checkable = True
+            self.resl[-1].init_check_images()
             self.activables += 1
 
             mpl[i] = self.n2 * res[i]
@@ -183,6 +185,8 @@ class Board(gd.BoardGame):
                 self.mpll[i].append(self.board.ships[-1])
                 self.mpll[i][-1].pos_id = i
                 self.mpll[i][-1].posy_id = j
+                self.mpll[i][-1].checkable = True
+                self.mpll[i][-1].init_check_images()
                 self.activables += 1
             sub[i] = nbr[i] - mpl[i]
             subs = str(sub[i])
@@ -194,6 +198,8 @@ class Board(gd.BoardGame):
                 self.subl[i].append(self.board.ships[-1])
                 self.subl[i][-1].pos_id = i
                 self.subl[i][-1].posy_id = j
+                self.subl[i][-1].checkable = True
+                self.subl[i][-1].init_check_images()
                 self.activables += 1
 
             self.board.add_unit(xp[4] + (2 - len(str(nbr[i])) * 2) - r_offset, yp[4], len(str(nbr[i])) * 2, 1,
@@ -211,6 +217,12 @@ class Board(gd.BoardGame):
 
         self.deactivate_colors()
         self.reactivate_colors()
+
+        self.nbr = nbr
+        self.nbe = nbe
+        self.res = res
+        self.mpl = mpl
+        self.sub = sub
 
     def draw_vert_line(self, unit):
         w = unit.grid_w * self.board.scale
@@ -238,8 +250,9 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-
         if self.show_msg == False:
+            if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+                self.auto_check_reset()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
                 self.home_sqare_switch(self.board.active_ship + 1)
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
@@ -357,7 +370,57 @@ class Board(gd.BoardGame):
         game.fill(self.color)
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
+    def auto_check_reset(self):
+        for i in range(len(self.mpll)):
+            for each in self.mpll[i]:
+                each.set_display_check(None)
+        for i in range(len(self.subl)):
+            for each in self.subl[i]:
+                each.set_display_check(None)
+        for each in self.nbel:
+            each.set_display_check(None)
+        for each in self.resl:
+            each.set_display_check(None)
+
     def check_result(self):
+        """
+        print(self.nbr) # numbers in top lines from index 1+  - subtraction and number from top
+        print(self.nbe) # dropped numbers
+        print(self.res) # result
+        print(self.mpl) # multiplication results - bottom lines
+        print(self.sub) #subtractions
+        """
+        for i in range(len(self.mpll)):
+            for j in range(len(self.mpll[i])): #range(len(self.mpll[i])-1, -1, -1):
+                #print("%s == %s" % (self.mpll[i][j].value, str(self.mpl[i])[j]))
+                if self.mpll[i][j].value == str(self.mpl[i])[j]:
+                    self.mpll[i][j].set_display_check(True)
+                else:
+                    self.mpll[i][j].set_display_check(False)
+        
+
+        for i in range(len(self.nbel)):
+            if self.nbel[i].value == str(self.nbe[i+1]):
+                self.nbel[i].set_display_check(True)
+            else:
+                self.nbel[i].set_display_check(False)
+
+
+        for i in range(len(self.subl)):
+            for j in range(len(self.subl[i])):
+                if self.subl[i][j].value == str(self.sub[i])[j]:
+                    self.subl[i][j].set_display_check(True)
+                else:
+                    self.subl[i][j].set_display_check(False)
+
+  # try changing self.mpl to reversed
+
+        for i in range(len(self.resl)):
+            if self.resl[i].value == str(self.res[i]):
+                self.resl[i].set_display_check(True)
+            else:
+                self.resl[i].set_display_check(False)
+
         s = ""
         for each in self.resl:
             s += each.value

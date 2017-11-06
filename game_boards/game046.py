@@ -2,6 +2,7 @@
 
 import os
 import random
+import pygame
 
 import classes.board
 import classes.extras as ex
@@ -90,6 +91,8 @@ class Board(gd.BoardGame):
             self.board.add_unit(0, i, 1, 1, classes.board.Label, caption, color, "", data[7])
             self.board.units[i].set_outline(outline_color, 1)
             self.board.units[i].font_color = self.font_color
+            self.board.units[-1].checkable = True
+            self.board.units[-1].init_check_images()
         x = data[0] - 1
         y = 0
         for i in range(1, total + 1):
@@ -103,13 +106,22 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
+        if event.type == pygame.MOUSEBUTTONUP:
+            pass
+            #self.check_result(auto=True)
+            #self.auto_check_reset()
 
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
-    def check_result(self):
+    def auto_check_reset(self):
+        for each in self.board.units:
+            each.set_display_check(None)
+
+    def check_result(self, auto=False):
         self.result = []
+        j = 0
         for each_list in self.board.grid:
             total = 0
             i = 0
@@ -118,8 +130,16 @@ class Board(gd.BoardGame):
                     total += each_item
                 i += 1
             self.result.append(total)
+            if self.result[j] == self.solution[j]:
+                self.board.units[j].set_display_check(True)
+            else:
+                self.board.units[j].set_display_check(False)
+
+            j += 1
 
         if self.result == self.solution:
             self.level.next_board()
-        else:
-            self.level.try_again()
+        self.mainloop.redraw_needed[0] = True
+        #else:
+            #self.level.try_again()
+        #    self.auto_check_reset()

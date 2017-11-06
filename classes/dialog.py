@@ -7,12 +7,12 @@ import pygame
 class Dialog:
     def __init__(self, game_board):
         self.game_board = game_board
-        self.color = (255, 255, 255, 0)
+        self.color = (255, 255, 255, 150)
         self.scheme = "white"
         if self.game_board.mainloop.scheme is not None:
             if self.game_board.mainloop.scheme.dark:
                 self.scheme = "black"
-                self.color = (0, 0, 0, 0)
+                self.color = (0, 0, 0, 150)
         """
         if self.game_board.lang.lang in ['en_GB', 'en_US']:
             self.img_src = "congrats.png"
@@ -29,12 +29,12 @@ class Dialog:
         self.level = game_board.level
 
     def layout_update(self):
-        self.color = (255, 255, 255, 0)
+        self.color = (255, 255, 255, 150)
         self.scheme = "white"
         if self.game_board.mainloop.scheme is not None:
             if self.game_board.mainloop.scheme.dark:
                 self.scheme = "black"
-                self.color = (0, 0, 0, 0)
+                self.color = (0, 0, 0, 150)
         self.width = self.layout.game_w
         self.height = self.layout.game_h
         self.image = pygame.Surface([self.width, self.height], flags=pygame.SRCALPHA)

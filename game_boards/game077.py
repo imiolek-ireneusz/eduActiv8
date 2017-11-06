@@ -161,7 +161,6 @@ class KeyBoard:
             hl = [-1, -1, -1, -1, -1, -1]
             # check if letter is lowercase or what position it is on whether shift is needed
             if sys.version_info < (3, 0):
-                # try:
                 text = text.encode("utf-8")
                 if text in self.a_map:
                     hl[4] = 39
@@ -377,6 +376,7 @@ class Board(gd.BoardGame):
             self.current_line = unicode((self.t_string[0] * self.t_multi[0]).strip(), "utf-8")
         else:
             self.current_line = (self.t_string[0] * self.t_multi[0]).strip()
+
         self.level.games_per_lvl = len(self.t_string)
         self.level.game_step = 1
         label_w = self.data[0] // 2

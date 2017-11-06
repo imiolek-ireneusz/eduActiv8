@@ -160,7 +160,6 @@ class KeyBoard:
         if text != " ":
             hl = [-1, -1, -1, -1, -1, -1]
             # check if letter is lowercase or what position it is on whether shift is needed
-            # text = text.upper()
             if sys.version_info < (3, 0):
                 text = text.encode("utf-8")
                 if text in self.a_map:

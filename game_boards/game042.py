@@ -35,7 +35,7 @@ class Board(gd.BoardGame):
                                   self.dp["purple"], self.dp["magenta"], self.dp["indigo"], self.dp["pink"],
                                   self.dp["maroon"], self.dp["brown"], self.dp["aqua"], self.dp["lime"]]
             # self.color_choice= ["white",    "black",      "grey",       "red",     "orange",  "yellow",   "olive",    "green",  "sea green","teal",     "blue",   "navy",   "purple",    "magenta",  "indigo",  "pink"       "maroon",  "brown",     "aqua",      "lime" ]
-            self.hue_choice = [[255, 255, 255], [2, 2, 2], [140, 140, 140], [255, 0, 0], [255, 138, 0], [255, 255, 0],
+            self.hue_choice = [[255, 255, 255, 255], [0, 0, 0, 255], [140, 140, 140], [255, 0, 0], [255, 138, 0], [255, 255, 0],
                                [181, 219, 3], [0, 160, 0], [41, 131, 82], [0, 130, 133], [0, 0, 255], [0, 0, 132],
                                [132, 0, 132], [255, 0, 255], [74, 0, 132], [255, 20, 138], [132, 0, 0], [140, 69, 16],
                                [0, 255, 255], [0, 255, 0]]
@@ -61,7 +61,7 @@ class Board(gd.BoardGame):
                                   self.dp["blue"], self.dp["navy"], self.dp["purple"], self.dp["pink"],
                                   self.dp["brown"]]
             # self.color_choice= ["white",    "black",      "grey",      "red",     "orange",   "yellow",   "olive",    "green",  "blue",    "navy",   "purple",   "pink"]
-            self.hue_choice = [[255, 255, 255], [2, 2, 2], [140, 140, 140], [255, 0, 0], [255, 138, 0], [255, 255, 0],
+            self.hue_choice = [[255, 255, 255, 255], [0, 0, 0, 255], [140, 140, 140], [255, 0, 0], [255, 138, 0], [255, 255, 0],
                                [181, 219, 3], [0, 160, 0], [0, 0, 255], [0, 0, 132], [132, 0, 132], [255, 20, 138],
                                [140, 69, 16]]
             self.hue_choice2 = [[150, 150, 150], [100, 100, 100], [100, 100, 100], [200, 0, 0], [200, 80, 0],
@@ -84,7 +84,7 @@ class Board(gd.BoardGame):
                                   self.dp["purple"], self.dp["magenta"], self.dp["indigo"], self.dp["pink"],
                                   self.dp["maroon"], self.dp["brown"], self.dp["aqua"], self.dp["lime"]]
             # self.color_choice= ["white",    "black",      "grey",       "red",     "orange",  "yellow",   "olive",    "green",  "sea green","teal",     "blue",   "navy",   "purple",    "magenta",  "indigo",  "pink"       "maroon",  "brown",     "aqua",      "lime" ]
-            self.hue_choice = [[255, 255, 255], [2, 2, 2], [140, 140, 140], [255, 0, 0], [255, 138, 0], [255, 255, 0],
+            self.hue_choice = [[255, 255, 255, 255], [0, 0, 0, 255], [140, 140, 140], [255, 0, 0], [255, 138, 0], [255, 255, 0],
                                [181, 219, 3], [0, 160, 0], [41, 131, 82], [0, 130, 133], [0, 0, 255], [0, 0, 132],
                                [132, 0, 132], [255, 0, 255], [74, 0, 132], [255, 20, 138], [132, 0, 0], [140, 69, 16],
                                [0, 255, 255], [0, 255, 0]]

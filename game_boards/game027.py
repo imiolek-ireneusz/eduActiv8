@@ -72,6 +72,7 @@ class Board(gd.BoardGame):
         self.img_captions = []
         self.singular_items = ["green apple", "red apple", "strawberry", "pear", "orange [fruit]", "onion", "tomato",
                                "lemon", "cherry", "pepper", "carrot", "banana", "watermelon"]
+        self.count_units = []
         for each in self.singular_items:
             caption = self.lang._n(each, 1)
             if not self.lang.ltr_text:
@@ -119,6 +120,9 @@ class Board(gd.BoardGame):
             self.board.add_unit(l[0], i + 1, 1, 1, classes.board.Label, str(self.chosen_items[1][i]) + " ", white, "",
                                 data[4])
             self.board.units[-1].font_color = font_color
+            self.board.units[-1].checkable = True
+            self.board.units[-1].init_check_images()
+            self.count_units.append(len(self.board.units))
             self.board.add_unit(l[1], i + 1, 1, 1, classes.board.ImgShip, "", (0, 0, 0, 0),
                                 os.path.join("fr", items[ind] + f_end), data[4], alpha=True)
             self.board.add_unit(l[2], i + 1, 5, 1, classes.board.Label, caption, white, "", data[4])
@@ -159,6 +163,14 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
+            #if event.pos[1] > self.layout.info_bar_h + self.layout.score_bar_h:
+
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
+
+    def auto_check_reset(self):
+        for i in range(self.data[2]):
+            self.board.units[self.count_units[i]-1].set_display_check(None)
 
     def update(self, game):
         game.fill((255, 255, 255))
@@ -176,7 +188,16 @@ class Board(gd.BoardGame):
                     count += 1
             if count > 0:
                 result[str(i)] = count
+        for i in range(self.data[2]):
+            if str(self.chosen_items[0][i]) in result and str(self.chosen_items[0][i]) in self.solution:
+                if result[str(self.chosen_items[0][i])] == self.solution[str(self.chosen_items[0][i])]:
+                    self.board.units[self.count_units[i]-1].set_display_check(True)
+                else:
+                    self.board.units[self.count_units[i]-1].set_display_check(False)
+            else:
+                self.board.units[self.count_units[i]-1].set_display_check(False)
+
         if result == self.solution:
             self.level.next_board()
-        else:
-            self.level.try_again()
+
+        self.mainloop.redraw_needed[0] = True

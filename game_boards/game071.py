@@ -62,6 +62,8 @@ class Board(gd.BoardGame):
         self.n2sl = len(self.n2s)
         self.sumn1n2sl = len(self.sumn1n2s)
 
+        self.semi_results_ls = []
+
         self.cursor_pos = 0
         self.correct = False
         self.carryl = []
@@ -105,6 +107,16 @@ class Board(gd.BoardGame):
                 self.carryl[i][-1].pos_id = j
                 self.carryl[i][-1].posy_id = i
                 self.carrylall.append(self.carryl[i][-1])
+            if self.n2s[i] != "0":
+                self.semi_results_ls.append(str(int(self.n2s[i]) * self.n1))
+            else:
+                self.semi_results_ls.append("0" * self.n1sl)
+
+        #prep the individual multiplications in reversed order ready for checking
+        self.semi_results_ls.reverse()
+        for i in range(len(self.semi_results_ls)):
+            self.semi_results_ls[i] = self.semi_results_ls[i][::-1]
+
 
         # first number
         for i in range(self.n1sl):
@@ -143,6 +155,9 @@ class Board(gd.BoardGame):
                 self.semiresultl[j][-1].set_outline(self.grey, 1)
                 self.semiresultl[j][-1].pos_id = i
                 self.semiresultl[j][-1].posy_id = j
+
+                self.semiresultl[j][-1].checkable = True
+                self.semiresultl[j][-1].init_check_images()
                 self.semiresultlall.append(self.semiresultl[j][-1])
 
         self.board.add_unit(data[0] - self.sumn1n2sl * 3, 10 + self.n2sl * 3 + 1, self.sumn1n2sl * 3, 1,
@@ -157,6 +172,8 @@ class Board(gd.BoardGame):
             self.resultl.append(self.board.ships[-1])
             self.resultl[-1].set_outline(self.grey, 1)
             self.resultl[-1].pos_id = i
+            self.resultl[-1].checkable = True
+            self.resultl[-1].init_check_images()
 
         self.resultl[0].set_outline(self.activated_col, 1)
         self.home_square = self.semiresultl[0][0]
@@ -187,6 +204,8 @@ class Board(gd.BoardGame):
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if self.show_msg == False:
+            if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+                self.auto_check_reset()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
                 self.home_sqare_switch(self.board.active_ship + 1)
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
@@ -258,7 +277,6 @@ class Board(gd.BoardGame):
             each.update_me = True
 
     def reactivate_colors(self):
-
         self.plus_label.font_color = self.font_hl
         self.board.units[0].font_color = self.task_str_color
         if self.home_square in self.carrylall:
@@ -307,12 +325,39 @@ class Board(gd.BoardGame):
         game.fill(self.color)
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
+    def auto_check_reset(self):
+        for each in self.resultl:
+            each.set_display_check(None)
+
+        for i in range(len(self.semiresultl)):
+            for each in self.semiresultl[i]:
+                each.set_display_check(None)
+
     def check_result(self):
         s = ""
+        #check individual sums
+        correct = True
+        for j in range(self.n2sl):
+            empty_allowed = False
+            if int(self.semi_results_ls[j]) == 0:
+                empty_allowed = True
+            for i in range(self.semiresultlengths[j]):
+                if self.semiresultl[j][i].value == self.semi_results_ls[j][i] or (empty_allowed and self.semiresultl[j][i].value == ""):
+                    self.semiresultl[j][i].set_display_check(True)
+                else:
+                    self.semiresultl[j][i].set_display_check(False)
+                    correct = False
+
+        i = 0
+        #check final result
         for each in reversed(self.resultl):
             s += each.value
+            if each.value == self.sumn1n2s[i]:
+                each.set_display_check(True)
+            else:
+                each.set_display_check(False)
+                correct = False
+            i += 1
 
-        if s == self.sumn1n2s:
+        if correct:
             self.level.next_board()
-        else:
-            self.level.try_again()

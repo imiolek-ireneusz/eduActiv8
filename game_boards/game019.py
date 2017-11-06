@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 100
         v = 255
@@ -144,6 +144,8 @@ class Board(gd.BoardGame):
             self.board.add_unit(x + 6, y, 1, 1, classes.board.Letter, str(self.shuffled[i]), color2, "", data[7])
             self.board.ships[-1].audible = False
             self.board.ships[-1].readable = False
+            self.board.ships[-1].checkable = True
+            self.board.ships[-1].init_check_images()
             y += 1
         self.outline_all(1, 1)
         for i in range(2, 25, 5):
@@ -159,10 +161,25 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
+            self.auto_check()
+
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            each.set_display_check(None)
 
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
+
+    def auto_check(self):
+        count = 0
+        for i in range(5):
+            if self.board.ships[i].grid_x == self.board.units[-3].grid_x and 0 < self.board.ships[i].grid_y < 6:
+                count += 1
+        if count == 5:
+            self.check_result()
+        else:
+            self.auto_check_reset()
 
     def check_result(self):
         correct = True
@@ -171,12 +188,14 @@ class Board(gd.BoardGame):
                 # if position from the left is in line with target squares
                 if self.board.ships[i].value != str(self.num_list2[self.board.ships[i].grid_y - 1]):
                     correct = False
-                    break
+                    self.board.ships[i].set_display_check(False)
+                else:
+                    self.board.ships[i].set_display_check(True)
             else:
                 correct = False
-                break
+                self.board.ships[i].set_display_check(None)
         if correct:
             tts = self.d["Perfect! Task solved!"]
             self.level.next_board(tts)
-        else:
-            self.level.try_again()
+
+        self.mainloop.redraw_needed[0] = True

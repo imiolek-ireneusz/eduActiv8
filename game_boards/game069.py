@@ -103,11 +103,9 @@ class Board(gd.BoardGame):
         self.board.add_unit(data[0] - 3 - i * 3, 5, 3, 3, classes.board.Label, "+", self.bg_col, "", 21)
         self.plus_label = self.board.units[-1]
         # line
-        # line = "―" * (self.sumn1n2sl*2)
         self.board.add_unit(data[0] - self.sumn1n2sl * 3, 8, self.sumn1n2sl * 3, 1, classes.board.Label, "",
                             self.bg_col, "", 21)
         self.draw_hori_line(self.board.units[-1])
-        # self.board.units[-1].text_wrap = False
 
         # result
         for i in range(self.sumn1n2sl):
@@ -115,6 +113,10 @@ class Board(gd.BoardGame):
             self.resultl.append(self.board.ships[-1])
             self.resultl[-1].set_outline(self.grey, 2)
             self.resultl[-1].pos_id = i
+
+            self.resultl[-1].checkable = True
+            self.resultl[-1].init_check_images()
+
 
         self.resultl[0].set_outline(self.activated_col, 3)
         self.home_square = self.resultl[0]
@@ -136,9 +138,15 @@ class Board(gd.BoardGame):
         unit.painting = canv.copy()
         unit.update_me = True
 
+    def auto_check_reset(self):
+        for each in self.resultl:
+            each.set_display_check(None)
+
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if self.show_msg == False:
+            if event.type == pygame.KEYDOWN:
+                self.auto_check_reset()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
                 self.home_sqare_switch(self.board.active_ship + 1)
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
@@ -186,6 +194,8 @@ class Board(gd.BoardGame):
                 self.mainloop.redraw_needed[0] = True
             elif event.type == pygame.MOUSEBUTTONUP:
                 self.home_sqare_switch(self.board.active_ship)
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                self.auto_check_reset()
 
     def home_sqare_switch(self, activate):
         if activate < 0 or activate > self.sumn1n2sl * 2 - 1:
@@ -230,10 +240,13 @@ class Board(gd.BoardGame):
 
     def check_result(self):
         s = ""
+        i = 0
         for each in reversed(self.resultl):
             s += each.value
-
+            if each.value == self.sumn1n2s[i]:
+                each.set_display_check(True)
+            else:
+                each.set_display_check(False)
+            i += 1
         if s == self.sumn1n2s:
             self.level.next_board()
-        else:
-            self.level.try_again()

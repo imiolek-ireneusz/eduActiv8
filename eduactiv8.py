@@ -478,11 +478,12 @@ class GamePlay():
                             # self.fs_rescale(info)
                             gc.collect()  # force garbage collection to remove remaining variables to free memory
 
-                        elif self.game_board.level.lvl != self.game_board.level.prev_lvl:
+                        elif self.game_board.level.lvl != self.game_board.level.prev_lvl or self.game_board.update_layout_on_start:
                             # if game id is the same but the level changed load new level
                             self.create_subsurfaces(self.game_board)
                             info.new_game(self.game_board, self.info_bar)
                             self.game_board.level.prev_lvl = self.game_board.level.lvl
+                            self.game_board.update_layout_on_start = False
                             gc.collect()
 
                         if not self.show_dialogwnd:

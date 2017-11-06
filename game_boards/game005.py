@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 100  # random.randrange(150, 190, 5)
         v = 255  # random.randrange(230, 255, 5)
@@ -30,8 +30,6 @@ class Board(gd.BoardGame):
         data.extend(self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group, self.level.lvl))
         self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
                                                             self.mainloop.config.user_age_group)
-
-        self.points = (data[2] + 2) // 3 + self.level.lvl // 4
 
         self.data = data
 
@@ -53,6 +51,7 @@ class Board(gd.BoardGame):
                 if num not in self.num_list:
                     self.num_list.append(num)
         shuffled = self.num_list[:]
+        self.ordered = sorted(self.num_list[:])
         random.shuffle(shuffled)
 
         color = ((255, 255, 255))
@@ -61,20 +60,24 @@ class Board(gd.BoardGame):
         self.solution_grid = [0 for x in range(data[0])]
 
         # find position of first door square
-        x = (data[0] - data[2]) // 2
+        # x = (data[0] - data[2]) // 2
+        self.left_offset = (data[0] - data[2]) // 2
 
         # add objects to the board
         for i in range(data[2]):
-            self.board.add_door(x + i, 0, 1, 1, classes.board.Door, "", color, "")
+            self.board.add_door(self.left_offset + i, 0, 1, 1, classes.board.Door, "", color, "")
             self.board.units[i].door_outline = True
             h = random.randrange(0, 255, 5)
             y = random.randrange(1, 5)
             number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
             caption = str(shuffled[i])
-            self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[6])
+            self.board.add_unit(self.left_offset + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[6])
             self.board.ships[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
-            self.solution_grid[x + i] = 1
+            self.solution_grid[self.left_offset + i] = 1
             self.board.ships[-1].readable = False
+
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
 
         for each in self.board.units:
             self.board.all_sprites_list.move_to_front(each)
@@ -93,29 +96,39 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
+            self.check_result()
+
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
 
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            each.update_me = True
+            each.set_display_check(None)
+
+    def auto_check(self):
+        if self.board.grid[0] == self.solution_grid:
+            for i in range(self.data[2]):
+                if self.ordered[self.board.ships[i].grid_x - self.left_offset] == int(self.board.ships[i].value):
+                    self.board.ships[i].set_display_check(True)
+                else:
+                    self.board.ships[i].set_display_check(False)
+
     def check_result(self):
         if self.board.grid[0] == self.solution_grid:
-            ships = []
-            # collect value and x position on the grid from ships list
-            for i in range(self.data[2]):
-                ships.append([int(self.board.ships[i].value), self.board.ships[i].grid_x])
-            ships_sorted = sorted(ships)
             correct = True
             for i in range(self.data[2]):
-                if i < self.data[2] - 1:
-                    if ships_sorted[i][1] > ships_sorted[i + 1][1]:
-                        correct = False
-            if correct == True:
-                # self.update_score(self.points)
+                if self.ordered[self.board.ships[i].grid_x - self.left_offset] != int(self.board.ships[i].value):
+                    correct = False
+                    break
+
+            if correct:
+                self.auto_check()
                 self.level.next_board()
             else:
-                if self.points > 0:
-                    self.points -= 1
-                self.level.try_again()
-        else:
-            self.level.try_again()
+                self.auto_check()
+        self.mainloop.redraw_needed[0] = True

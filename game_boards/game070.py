@@ -32,6 +32,7 @@ class Board(gd.BoardGame):
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.bg_col = (0, 0, 0)
+
         rngs = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
                                                      self.level.lvl)
         self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
@@ -134,6 +135,8 @@ class Board(gd.BoardGame):
             self.resultl.append(self.board.ships[-1])
             self.resultl[-1].set_outline(self.grey, 2)
             self.resultl[-1].pos_id = i
+            self.resultl[-1].checkable = True
+            self.resultl[-1].init_check_images()
 
         self.resultl[0].set_outline(self.activated_col, 3)
         self.home_square = self.resultl[0]
@@ -157,9 +160,15 @@ class Board(gd.BoardGame):
         unit.painting = canv.copy()
         unit.update_me = True
 
+    def auto_check_reset(self):
+        for each in self.resultl:
+            each.set_display_check(None)
+
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if self.show_msg == False:
+            if event.type == pygame.KEYDOWN:
+                self.auto_check_reset()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
                 self.home_sqare_switch(self.board.active_ship + 1)
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
@@ -225,6 +234,8 @@ class Board(gd.BoardGame):
                 self.mainloop.redraw_needed[0] = True
             elif event.type == pygame.MOUSEBUTTONUP:
                 self.home_sqare_switch(self.board.active_ship)
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                self.auto_check_reset()
 
     def home_sqare_switch(self, activate):
 
@@ -279,10 +290,14 @@ class Board(gd.BoardGame):
 
     def check_result(self):
         s = ""
+        i = 0
         for each in reversed(self.resultl):
             s += each.value
+            if each.value == self.sumn1n2s[i]:
+                each.set_display_check(True)
+            else:
+                each.set_display_check(False)
+            i += 1
 
         if s == self.sumn1n2s:
             self.level.next_board()
-        else:
-            self.level.try_again()

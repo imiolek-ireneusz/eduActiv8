@@ -57,6 +57,9 @@ class Board(gd.BoardGame):
             number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
             caption = str(self.num_list[i])
             self.board.add_unit(x, y, 1, 1, classes.board.Letter, caption, number_color, "", data[5])
+
+            self.board.ships[-1].checkable = True
+            self.board.ships[-1].init_check_images()
             self.board.ships[-1].readable = False
             self.board.ships[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
             x -= 1
@@ -89,6 +92,13 @@ class Board(gd.BoardGame):
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
 
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
+
+    def auto_check_reset(self):
+        for i in range(len(self.board.ships) - 3):
+            self.board.ships[i].set_display_check(None)
+
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
@@ -96,11 +106,15 @@ class Board(gd.BoardGame):
     def check_result(self):
         correct = True
         for i in range(len(self.board.ships) - 3):
-            each = self.board.ships[i]
-            if each.grid_y < 2 and self.num_list[each.unit_id] % 2 != 0 \
-                    or each.grid_y > 1 and self.num_list[each.unit_id] % 2 == 0:
+            if self.board.ships[i].grid_y < 2 and self.num_list[self.board.ships[i].unit_id] % 2 == 0:
+                self.board.ships[i].set_display_check(True)
+            elif self.board.ships[i].grid_y > 1 and self.num_list[self.board.ships[i].unit_id] % 2 != 0:
+                self.board.ships[i].set_display_check(True)
+            else:
+                self.board.ships[i].set_display_check(False)
                 correct = False
-        if correct == True:
+        if correct:
             self.level.next_board()
-        else:
-            self.level.try_again()
+
+        self.mainloop.redraw_needed[0] = True
+

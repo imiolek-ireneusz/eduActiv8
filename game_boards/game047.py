@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 70
         v = 230
@@ -49,14 +49,17 @@ class Board(gd.BoardGame):
         self.indexes = []
         self.choice_indexes = [x for x in range(self.alph_len)]
 
+        self.positionsd = {}
+        #for i in range(self.alph_len - data[2]):
+        #    self.positions.append((i, 0))
+
         if data[3] == True:
             choice_list = [x for x in range(self.alph_len - data[2])]
             index = random.randrange(0, len(choice_list))
-            n = 0
             for i in range(data[2]):
-                self.num_list.append(choice_list[index] + n)
-                self.indexes.append(index + n)
-                n += 1
+                self.num_list.append(choice_list[index] + i)
+                self.indexes.append(index + i)
+                self.positionsd[index + i] = i
         else:
             choice_list = [x for x in range(self.alph_len)]
             for i in range(data[2]):
@@ -66,9 +69,9 @@ class Board(gd.BoardGame):
                 del (choice_list[index])
 
         self.indexes.sort()
+
         shuffled = self.num_list[:]
         random.shuffle(shuffled)
-
         color = (255, 255, 255)
 
         # create table to store 'binary' solution
@@ -76,6 +79,11 @@ class Board(gd.BoardGame):
 
         # find position of first door square
         x = (data[0] - data[2]) // 2
+
+        self.positions = []
+        for i in range(data[2]):
+            self.positionsd[self.indexes[i]] = i
+            self.positions.append([x + i, 0])
 
         # add objects to the board
         for i in range(data[2]):
@@ -88,6 +96,9 @@ class Board(gd.BoardGame):
             self.board.ships[-1].font_color = font_color
             # self.board.ships[i].highlight = False
             self.board.ships[i].outline_highlight = True
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
+            self.board.ships[i].home_location = [x + self.positionsd[shuffled[i]], 0]
             self.solution_grid[x + i] = 1
 
         for each in self.board.units:
@@ -106,6 +117,25 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
+            if True:  # self.data[5] == 1:
+                self.auto_check()
+            self.check_result()
+
+    def auto_check(self):
+        for each in self.board.ships:
+            each.update_me = True
+            if each.checkable and (each.grid_y == 0):
+                if each.home_location[0] == each.grid_x and each.home_location[1] == each.grid_y:
+                    each.set_display_check(True)
+                else:
+                    each.set_display_check(False)
+            else:
+                each.set_display_check(None)
+
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            each.update_me = True
+            each.set_display_check(None)
 
     def update(self, game):
         game.fill((0, 0, 0))
@@ -125,8 +155,9 @@ class Board(gd.BoardGame):
                     if ships_sorted[i][1] != self.alphabet[self.indexes[i]]:
                         correct = False
             if correct == True:
+                self.auto_check()
                 self.level.next_board()
             else:
-                self.level.try_again()
+                self.auto_check()
         else:
-            self.level.try_again()
+            self.auto_check_reset()

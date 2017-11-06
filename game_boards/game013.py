@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         # create non-movable objects
         s = 100
@@ -106,6 +106,8 @@ class Board(gd.BoardGame):
             caption = shuffled[i]
             self.board.add_unit(x, y, 1, 1, classes.board.Letter, caption, number_color, "", 1)
             self.board.ships[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
             x += 1
             if x >= data[0]:
                 x = 0
@@ -113,6 +115,7 @@ class Board(gd.BoardGame):
 
         # find position of first door square
         x = (data[0] - word_len) // 2
+        self.left_offset = x
 
         # add objects to the board
         for i in range(word_len):
@@ -140,12 +143,28 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
+            self.check_result(auto=True)
 
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
-    def check_result(self):
+    def auto_check(self):
+        if self.board.grid[2] == self.solution_grid:
+            for i in range(len(self.board.ships)):
+                if self.board.ships[i].grid_y == 2:
+                    self.board.ships[i].update_me = True
+                    if self.board.ships[i].value == self.word[self.board.ships[i].grid_x - self.left_offset]:
+                        self.board.ships[i].set_display_check(True)
+                    else:
+                        self.board.ships[i].set_display_check(False)
+
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            each.update_me = True
+            each.set_display_check(None)
+
+    def check_result(self, auto=False):
         result = [" " for i in range(self.data[0])]
         if self.board.grid[2] == self.solution_grid:
             for i in range(len(self.board.ships)):
@@ -153,8 +172,15 @@ class Board(gd.BoardGame):
                     result[self.board.ships[i].grid_x] = self.board.ships[i].value
             result_s = ''.join(result).strip()
             if self.word == result_s:
+                self.auto_check()
                 self.level.next_board()
             else:
-                self.level.try_again()
+                if auto:
+                    self.auto_check()
+                else:
+                    self.level.try_again()
         else:
-            self.level.try_again()
+            if auto:
+                self.auto_check_reset()
+            else:
+                self.level.try_again()

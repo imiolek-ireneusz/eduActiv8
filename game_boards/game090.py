@@ -8,7 +8,7 @@ import classes.board
 import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
-import classes.clock
+import classes.drw.clock
 
 
 class Board(gd.BoardGame):
@@ -220,7 +220,7 @@ class Board(gd.BoardGame):
                 self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, xw, classes.board.Ship, "", color0, "", self.font_size)
                 self.clock_wrapper = self.board.ships[-1]
                 self.board.active_ship = self.clock_wrapper.unit_id
-                self.clock = classes.clock.Clock(self, self.clock_wrapper, self.size*xw, self.time[i], self.data2[2:11])
+                self.clock = classes.drw.clock.Clock(self, self.clock_wrapper, self.size*xw, self.time[i], self.data2[2:11])
 
             else:
                 if self.mainloop.m.game_var2 == 0:

@@ -22,6 +22,8 @@ class Board(gd.BoardGame):
         self.allow_unit_animations = False
         self.change_count = 0
         self.allow_teleport = False
+        if self.mainloop.m.game_variant == 1:
+            self.ai_enabled = True
         s = random.randrange(150, 205, 5)
         v = random.randrange(150, 205, 5)
         h = random.randrange(0, 255, 5)
@@ -29,9 +31,11 @@ class Board(gd.BoardGame):
         letter_font_color = ex.hsv_to_rgb(h, 255, 140)
         # data = [0:x_count, 1:y_count, 2:games_per_level, 3:bug_img, 4:level_maps]
         bug_img = "bug_32.png"
+        bug2_img = "bug2_32.png"
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 bug_img = "bug_32b.png"
+                bug2_img = "bug2_32b.png"
                 letter_bg = (0, 0, 0)
                 s = 100
                 v = 50
@@ -56,7 +60,6 @@ class Board(gd.BoardGame):
             data = [27, 19, 10, bug_img, 5, gl.lvl1]
         elif self.level.lvl == 5:  # img_ 32x32
             data = [27, 19, 10, bug_img, 6, gl.lvl1]
-        self.points = data[4]
         self.data = data
 
         self.layout.update_layout(data[0], data[1])
@@ -159,6 +162,14 @@ class Board(gd.BoardGame):
         self.board.ships[0].outline = False
         self.board.ships[0].draggable = True
         self.board.all_sprites_list.move_to_front(self.board.ships[0])
+        if self.mainloop.m.game_variant == 1:
+            self.board.add_unit(0, 0, 1, 1, classes.board.AIUnit, "", letter_bg, bug2_img)
+            self.board.add_unit(data[0] - 1, 0, 1, 1, classes.board.AIUnit, "", letter_bg, bug2_img)
+            self.board.add_unit(0, data[1] - 1, 1, 1, classes.board.AIUnit, "", letter_bg, bug2_img)
+            self.board.add_unit(data[0] - 1, data[1] - 1, 1, 1, classes.board.AIUnit, "", letter_bg, bug2_img)
+
+            for each in self.board.aiunits:
+                each.outline = False
 
         self.ships_count = len(self.board.ships)
 
@@ -196,6 +207,7 @@ class Board(gd.BoardGame):
                         self.board.units[rem - 1].font_color = self.font_color
                         self.board.units[rem].update_me = True
                         self.board.units[rem - 1].update_me = True
+
                         for j in range(self.units_len - self.word_len, self.units_len):
                             if self.board.ships[self.board.active_ship].grid_pos == self.board.units[j].grid_pos:
                                 self.board.units[j].kill()
@@ -206,6 +218,30 @@ class Board(gd.BoardGame):
                 else:
                     self.level.game_over()
                     break
+
+    def ai_walk(self):
+        for i in range(len(self.board.aiunits)):
+            ai = self.board.aiunits[i]
+            # calculate the back
+            back = [-ai.move_dir[0], -ai.move_dir[1]]
+            # build a list of positions to check (front, left, right)
+            first_choice = [ai.move_dir]
+            if ai.move_dir[0] == 0:
+                first_choice.extend([[-1, 0], [1, 0]])
+            else:
+                first_choice.extend([[0, -1], [0, 1]])
+            # look around check front, left and right if non of them are ok go back
+            possible = []
+            for each in first_choice:
+                if self.board._isfree(ai.grid_x + each[0], ai.grid_y + each[1], ai.grid_w, ai.grid_h):
+                    possible.append(each)
+            if len(possible) == 0:
+                possible.append(back)
+            ai.change_dir(possible)
+            mdir = ai.move_dir
+
+            self.board.move(i, mdir[0], mdir[1], ai=True)
+            ai.turn(mdir)
 
     def after_keydown_move(self):
         pass

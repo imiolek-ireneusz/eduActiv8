@@ -49,6 +49,10 @@ class Unit(pygame.sprite.Sprite):
         self.valign = 0  # align: 0 - centered, 1 - top
         self.idx = 0  # position in sequence
         self.update_me = True
+
+        self.check_display = None  # None - none, True - correct, False - wrong
+        self.checkable = False
+
         # Set height, width, the -1 is to give it some space around for the margin
         if self.alpha:
             self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1], flags=pygame.SRCALPHA)
@@ -69,6 +73,20 @@ class Unit(pygame.sprite.Sprite):
         self.font = board.font_sizes[0]
         self.text_wrap = True
         self.is_door = False
+
+    def set_display_check(self, value):
+        self.check_display = value
+        self.update_me = True
+
+    def init_check_images(self):
+        w = (self.grid_w * self.board.scale) // 2
+        h = (self.grid_h * self.board.scale) // 2
+        self.check_x = w
+        self.check_y = h
+        self.check_img1 = self.scaled_img(
+            pygame.image.load(os.path.join('res', 'images', "check_ok.png")).convert_alpha(), w, h)
+        self.check_img2 = self.scaled_img(
+            pygame.image.load(os.path.join('res', 'images', "check_wrong.png")).convert_alpha(), w, h)
 
     def set_value(self, new_value):
         self.value = ex.unival(new_value)
@@ -92,9 +110,21 @@ class Unit(pygame.sprite.Sprite):
         else:
             self.img = self.img_org = pygame.transform.scale(self.img, (new_w, new_h))
 
+    def scaled_img(self, image, new_w, new_h):
+        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
+            img = pygame.transform.smoothscale(image, (new_w, new_h))
+        else:
+            img = pygame.transform.scale(image, (new_w, new_h))
+        return img
+
     @property
     def grid_pos(self):
         return [self.grid_x, self.grid_y]
+
+    def set_color(self, color):
+        self.color = color
+        self.initcolor = color
 
     def immobilize(self):
         self.keyable = False
@@ -262,6 +292,15 @@ class Unit(pygame.sprite.Sprite):
 
             if self.perm_outline:
                 self.draw_outline()
+
+            self.draw_check_marks()
+
+    def draw_check_marks(self):
+        if self.check_display is not None:
+            if self.check_display:
+                self.image.blit(self.check_img1, (self.check_x, self.check_y))
+            else:
+                self.image.blit(self.check_img2, (self.check_x, self.check_y))
 
     @property
     def reversed_color(self):
@@ -587,10 +626,12 @@ class ImgShip(Ship):
                          [self.grid_w * board.scale - 2, self.grid_h * board.scale - 2],
                          [0, self.grid_h * board.scale - 2]]
                 pygame.draw.lines(self.image, (255, 200, 200), True, lines)
-            if hasattr(self, "door_outline") and self.door_outline == True:
+            if hasattr(self, "door_outline") and self.door_outline is True:
                 self.set_outline(self.perm_outline_color, 2)
             if self.perm_outline:
                 self.draw_outline()
+
+            self.draw_check_marks()
 
     @property
     def brighter(self):

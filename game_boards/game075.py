@@ -74,6 +74,7 @@ class Board(gd.BoardGame):
         self.semiresultl = []
         self.semiresultlall = []
         self.semiresultlengths = []
+
         self.resultl = []
         self.all_count = 0
         for i in range(self.n2sl):
