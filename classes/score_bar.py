@@ -353,13 +353,14 @@ class ScoreBar:
 
     def toggle_espeak(self, enable):
         self.update_me = True
-        if enable:
-            self.mainloop.config.settings["espeak"] = True
-            self.mainloop.speaker.talkative = True
-        else:
-            self.mainloop.config.settings["espeak"] = False
-            self.mainloop.speaker.talkative = False
-        self.mainloop.config.settings_changed = True
+        if self.mainloop.speaker.started:
+            if enable:
+                self.mainloop.config.settings["espeak"] = True
+                self.mainloop.speaker.talkative = True
+            else:
+                self.mainloop.config.settings["espeak"] = False
+                self.mainloop.speaker.talkative = False
+            self.mainloop.config.settings_changed = True
 
     def switch_scheme(self, scheme):
         self.mainloop.switch_scheme(scheme)

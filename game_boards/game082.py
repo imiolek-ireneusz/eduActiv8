@@ -213,6 +213,7 @@ class Board(gd.BoardGame):
             self.board.add_unit(img_left, img_top, img_size, img_size, classes.board.ImgShip, self.wordp, color,
                                 os.path.join('art4apps', category, img_src))
         elif self.mainloop.m.game_var2 == 1:
+            self.mainloop.sb.toggle_espeak(True)
             self.board.add_unit(img_left, img_top, img_size, img_size, classes.board.ImgShip, self.wordp, color_bg,
                                 img_src, alpha=True)
         self.board.ships[-1].immobilize()

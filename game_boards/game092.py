@@ -37,6 +37,7 @@ class Board(gd.BoardGame):
         self.disp_counter = 0
         self.disp_len = 1
         lvl = 0
+        self.mainloop.sb.toggle_espeak(True)
 
         gv = self.mainloop.m.game_variant
         if gv == 0:

@@ -167,6 +167,7 @@ class Board(gd.BoardGame):
             h = "%02d" % self.target_time[0]
             m = "%02d" % self.target_time[1]
         elif gv == 2:
+            self.mainloop.sb.toggle_espeak(True)
             top = 6
             top_offset = 2
         self.board.add_unit(ans_offset+1, top, 1, 1, classes.board.Label, h, white, "", 0)
@@ -205,8 +206,6 @@ class Board(gd.BoardGame):
         lst = [self.h_plus, self.h_min, self.m_plus, self.m_min]
         for each in lst:
             each.immobilize()
-
-
         if gv < 2:
             self.board.add_unit(10, 2, data[0] - 10, 2, classes.board.Letter, self.text_string, white, "", 2)
             self.board.ships[-1].immobilize()
