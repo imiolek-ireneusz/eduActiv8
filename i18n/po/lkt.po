@@ -123,6 +123,12 @@ msgstr "Obló Záptaŋ"
 msgid "Hexagon"
 msgstr "Obló Šákpe"
 
+msgid "Heptagon"
+msgstr ""
+
+msgid "Octagon"
+msgstr ""
+
 msgid "Circle"
 msgstr "Miméla"
 
@@ -161,9 +167,6 @@ msgstr "Iyápi Ikčéka:"
 
 msgid "Guest"
 msgstr "Thiléhaŋyaŋg Wahí"
-
-msgid "Hi Stranger :) Would you like to log in so we know who you are?"
-msgstr "Háu Kȟolá/Máške :) Taŋyáŋ yahí. Ečháš čhaž’óigwa yo/ye."
 
 msgid "Log in:"
 msgstr "Čhaž’óigwa yo/ye:"
@@ -1253,4 +1256,10 @@ msgid "Shape Patterns"
 msgstr ""
 
 msgid "Complete the pattern on the top line."
+msgstr ""
+
+msgid "Match shapes to their names"
+msgstr ""
+
+msgid "Negative numbers"
 msgstr ""

@@ -399,6 +399,25 @@ class I18n():
         self.d["circle"] = _("Circle")
         self.d["triangle_not_really"] = _(
             "Triangle? Well, not really...")  # used to label a drawn "quadrilateral" with one of its angles equal to 180º - in effect making it look like triangle
+        self.d["Heptagon"] = _("Heptagon")
+        self.d["Pentagon"] = _("Pentagon")
+        self.d["Octagon"] = _("Octagon")
+        self.d["Hexagon"] = _("Hexagon")
+        self.d["Ellipse"] = _("Ellipse")
+        self.d["Equilateral Triangle"] = _("Equilateral Triangle")
+        self.d["Isosceles Triangle"] = _("Isosceles Triangle")
+        self.d["Obtuse Triangle"] = _("Obtuse Triangle")
+        self.d["Right Triangle"] = _("Right Triangle")
+        self.d["Acute Triangle"] = _("Acute Triangle")
+        self.d["Square"] = _("Square")
+        self.d["Rectangle"] = _("Rectangle")
+        self.d["Right Trapezium"] = _("Right Trapezium")
+        self.d["Isosceles Trapezium"] = _("Isosceles Trapezium")
+        self.d["Rhombus"] = _("Rhombus")
+        self.d["Parallelogram"] = _("Parallelogram")
+        self.d["Circle"] = _("Circle")
+
+        self.d["Match shapes to their names"] = _("Match shapes to their names")
 
         self.d["test_yourself"] = _("Test yourself")
         self.d["Clock1"] = _("Clock")
@@ -553,3 +572,5 @@ class I18n():
         self.d["Fraction Patterns"] = _("Fraction Patterns")
         self.d["Shape Patterns"] = _("Shape Patterns")
         self.d["Complete the pattern"] = _("Complete the pattern on the top line.")
+
+        self.d["Negative numbers"] = _("Negative numbers")

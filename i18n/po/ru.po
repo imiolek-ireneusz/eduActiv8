@@ -136,6 +136,12 @@ msgstr "Пятиугольник"
 msgid "Hexagon"
 msgstr "Шестиугольник"
 
+msgid "Heptagon"
+msgstr ""
+
+msgid "Octagon"
+msgstr ""
+
 msgid "Circle"
 msgstr "Круг"
 
@@ -174,9 +180,6 @@ msgstr "Язык по умолчанию:"
 
 msgid "Guest"
 msgstr "Гость"
-
-msgid "Hi Stranger :) Would you like to log in so we know who you are?"
-msgstr "Привет, Незнакомец :) Не могли бы вы войти, чтобы мы знали кто Вы?"
 
 msgid "Log in:"
 msgstr "Войти:"
@@ -1299,4 +1302,10 @@ msgid "Shape Patterns"
 msgstr ""
 
 msgid "Complete the pattern on the top line."
+msgstr ""
+
+msgid "Match shapes to their names"
+msgstr ""
+
+msgid "Negative numbers"
 msgstr ""

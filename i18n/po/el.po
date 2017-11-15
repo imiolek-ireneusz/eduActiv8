@@ -123,6 +123,12 @@ msgstr "Πεντάγωνο"
 msgid "Hexagon"
 msgstr "Εξάγωνο"
 
+msgid "Heptagon"
+msgstr ""
+
+msgid "Octagon"
+msgstr ""
+
 msgid "Circle"
 msgstr "Κύκλος"
 
@@ -161,9 +167,6 @@ msgstr "Προκαθορισμένη γλώσσα:"
 
 msgid "Guest"
 msgstr "Επισκέπτης"
-
-msgid "Hi Stranger :) Would you like to log in so we know who you are?"
-msgstr "Γεια σου Ξένε :) Θέλεις να συνδεθείς για να ξέρουμε ποιος είσαι;"
 
 msgid "Log in:"
 msgstr "Σύνδεση:"
@@ -1286,4 +1289,10 @@ msgid "Shape Patterns"
 msgstr ""
 
 msgid "Complete the pattern on the top line."
+msgstr ""
+
+msgid "Match shapes to their names"
+msgstr ""
+
+msgid "Negative numbers"
 msgstr ""

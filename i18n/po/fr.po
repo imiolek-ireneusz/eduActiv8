@@ -123,6 +123,12 @@ msgstr "Pentagone"
 msgid "Hexagon"
 msgstr "Hexagone"
 
+msgid "Heptagon"
+msgstr ""
+
+msgid "Octagon"
+msgstr ""
+
 msgid "Circle"
 msgstr "Cercle"
 
@@ -161,9 +167,6 @@ msgstr "Langue par defaut :"
 
 msgid "Guest"
 msgstr "Invité"
-
-msgid "Hi Stranger :) Would you like to log in so we know who you are?"
-msgstr "Salut l'étranger :) Souhaites-tu ouvrir une session afin que nous sachions qui tu es ?"
 
 msgid "Log in:"
 msgstr "Login :"
@@ -1283,4 +1286,10 @@ msgid "Shape Patterns"
 msgstr ""
 
 msgid "Complete the pattern on the top line."
+msgstr ""
+
+msgid "Match shapes to their names"
+msgstr ""
+
+msgid "Negative numbers"
 msgstr ""

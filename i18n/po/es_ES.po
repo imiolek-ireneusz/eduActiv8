@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2016-12-09 11:06+0000\n"
+"PO-Revision-Date: 2017-11-14 23:01+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Miriam Ruiz\n"
 "Language: es\n"
@@ -123,6 +123,12 @@ msgstr "Pentágono"
 msgid "Hexagon"
 msgstr "Hexágono"
 
+msgid "Heptagon"
+msgstr "Heptágono"
+
+msgid "Octagon"
+msgstr "Octágono"
+
 msgid "Circle"
 msgstr "Círculo"
 
@@ -161,9 +167,6 @@ msgstr "Idioma por defecto:"
 
 msgid "Guest"
 msgstr "Invitado"
-
-msgid "Hi Stranger :) Would you like to log in so we know who you are?"
-msgstr "¡Hola desconocido! ¿Quieres decirme tu nombre para saber quien eres?"
 
 msgid "Log in:"
 msgstr "Entrar:"
@@ -321,7 +324,7 @@ msgid "Hello"
 msgstr "Hola"
 
 msgid "Welcome back in the game."
-msgstr "Te damos nuevamente la bienvenida a eduactiv8."
+msgstr "Te damos nuevamente la bienvenida a eduactiveyt."
 
 msgid "Language"
 msgstr "Idioma"
@@ -1090,27 +1093,23 @@ msgstr "el amarillo está bien"
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
-"Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
-"Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 
 msgid "Licence"
 msgstr "Licence"
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
-"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
-"not, see <http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the "
+"License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
-"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
-"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
-"not, see <http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the "
+"License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
 
 msgid "A collection of educational activities for kids"
 msgstr "Un conjunto de aplicaciones educativas para niños"
@@ -1258,7 +1257,6 @@ msgstr "Transporte"
 msgid "Food"
 msgstr "Comida"
 
-
 msgid "Listening Exercises"
 msgstr ""
 
@@ -1288,3 +1286,9 @@ msgstr ""
 
 msgid "Complete the pattern on the top line."
 msgstr ""
+
+msgid "Match shapes to their names"
+msgstr "Empareja las formas con sus nombres"
+
+msgid "Negative numbers"
+msgstr "Números negativos"

@@ -123,6 +123,12 @@ msgstr "פנטגון"
 msgid "Hexagon"
 msgstr "משושה"
 
+msgid "Heptagon"
+msgstr ""
+
+msgid "Octagon"
+msgstr ""
+
 msgid "Circle"
 msgstr "עיגול"
 
@@ -161,9 +167,6 @@ msgstr "שפה ברירת מחדל"
 
 msgid "Guest"
 msgstr "אורח"
-
-msgid "Hi Stranger :) Would you like to log in so we know who you are?"
-msgstr "שלום, תוכלו להיכנס בשביל שנדע מי אתם"
 
 msgid "Log in:"
 msgstr "כניסה"
@@ -1281,4 +1284,10 @@ msgid "Shape Patterns"
 msgstr ""
 
 msgid "Complete the pattern on the top line."
+msgstr ""
+
+msgid "Match shapes to their names"
+msgstr ""
+
+msgid "Negative numbers"
 msgstr ""

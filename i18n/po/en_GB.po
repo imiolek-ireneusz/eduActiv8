@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2016-11-18 23:14+0000\n"
+"PO-Revision-Date: 2017-11-14 18:18+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: en_GB\n"
@@ -122,6 +122,12 @@ msgstr "Pentagon"
 msgid "Hexagon"
 msgstr "Hexagon"
 
+msgid "Heptagon"
+msgstr "Heptagon"
+
+msgid "Octagon"
+msgstr "Octagon"
+
 msgid "Circle"
 msgstr "Circle"
 
@@ -160,9 +166,6 @@ msgstr "Default Language:"
 
 msgid "Guest"
 msgstr "Guest"
-
-msgid "Hi Stranger :) Would you like to log in so we know who you are?"
-msgstr "Hi Stranger :) Would you like to log in so we know who you are?"
 
 msgid "Log in:"
 msgstr "Log in:"
@@ -1115,7 +1118,7 @@ msgid "Complete the word"
 msgstr "Complete the word"
 
 msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
-msgstr ""
+msgstr "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 
 msgid "Decimals and Fractions"
 msgstr "Decimals and Fractions"
@@ -1175,19 +1178,19 @@ msgid "show all"
 msgstr "Show all"
 
 msgid "Do you want to exit the game?"
-msgstr ""
+msgstr "Do you want to exit the game?"
 
 msgid "Do you want to log out of the game?"
 msgstr "Do you want to log out of the game?"
 
 msgid "Ready to go to the next level?"
-msgstr ""
+msgstr "Ready to go to the next level?"
 
 msgid "Language arts"
 msgstr "English"
 
 msgid "Other"
-msgstr ""
+msgstr "Other"
 
 msgid "Educational Activities for Kids"
 msgstr "Educational Activities for Kids"
@@ -1281,7 +1284,13 @@ msgid "Fraction Patterns"
 msgstr "Fraction Patterns"
 
 msgid "Shape Patterns"
-msgstr "Shape Patterns""
+msgstr "Shape Patterns\""
 
 msgid "Complete the pattern on the top line."
 msgstr "Complete the pattern on the top line."
+
+msgid "Match shapes to their names"
+msgstr "Match shapes to their names"
+
+msgid "Negative numbers"
+msgstr "Negative numbers"
