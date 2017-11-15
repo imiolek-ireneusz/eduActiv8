@@ -52,7 +52,6 @@ class Unit(pygame.sprite.Sprite):
 
         self.check_display = None  # None - none, True - correct, False - wrong
         self.checkable = False
-
         # Set height, width, the -1 is to give it some space around for the margin
         if self.alpha:
             self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1], flags=pygame.SRCALPHA)
@@ -78,11 +77,16 @@ class Unit(pygame.sprite.Sprite):
         self.check_display = value
         self.update_me = True
 
-    def init_check_images(self):
-        w = (self.grid_w * self.board.scale) // 2
-        h = (self.grid_h * self.board.scale) // 2
-        self.check_x = w
-        self.check_y = h
+    def init_check_images(self, align=2, shrink=2):
+        # w = int((self.grid_w * self.board.scale) / shrink)
+        h = w = int((self.grid_h * self.board.scale) / shrink)
+        if align == 2:
+            self.check_x = int((self.grid_w * self.board.scale * 0.95) - w)
+            self.check_y = int((self.grid_h * self.board.scale * 0.95) - h)
+        elif align == 1:
+            self.check_x = ((self.grid_w * self.board.scale) - w) // 2
+            self.check_y = ((self.grid_h * self.board.scale) - h) // 2
+
         self.check_img1 = self.scaled_img(
             pygame.image.load(os.path.join('res', 'images', "check_ok.png")).convert_alpha(), w, h)
         self.check_img2 = self.scaled_img(
@@ -587,7 +591,7 @@ class ImgSurf(pygame.sprite.Sprite):
 
 class ImgShip(Ship):
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 157, 23), img_src='',
-                 alpha=False, **kwargs):
+                 alpha=False, door_alpha=False, **kwargs):
         Ship.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha, **kwargs)
         self.img_src2 = None
         self.change_image(img_src)
@@ -849,7 +853,7 @@ class MultiImgSprite(ImgShip):
 
 
 class Door(ImgShip):
-    def __init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, font_size, door_alpha=True, **kwargs):
+    def __init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, font_size, door_alpha=True, alpha=False, **kwargs):
         ImgShip.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha=door_alpha, **kwargs)
         # (self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 157, 23), img_src='',
         #         alpha=False, **kwargs)
@@ -1154,11 +1158,11 @@ class Board:
             self.mainloop.size[0], self.mainloop.size[1]))
 
     def add_door(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, unit_class=Door, value="", color=(0, 0, 0), img_src='',
-                 font_size=0, door_alpha=True, frame_flow=[0], frame_count=1, row_data=[1, 1]):
+                 font_size=0, door_alpha=True, alpha=False, frame_flow=[0], frame_count=1, row_data=[1, 1]):
         # add a unit that will be drawn to the board but will not hold a square in the grid
         # this is usually a red square indicating where other squares should be dragged to complete the task
         unit = unit_class(self, grid_x, grid_y, grid_w, grid_h, value, initcolor=color, img_src=img_src,
-                          font_size=font_size, door_alpha=door_alpha, frame_flow=frame_flow, frame_count=frame_count,
+                          font_size=font_size, door_alpha=door_alpha, alpha=alpha, frame_flow=frame_flow, frame_count=frame_count,
                           row_data=row_data)
         self.unit_list.add(unit)
         self.units.append(unit)
