@@ -73,7 +73,10 @@ class Board(gd.BoardGame):
         elif data[6] == "-":
             while len(self.solution) < 5:
                 first_num = random.randint(data[2], data[3])
-                second_num = random.randint(data[4], first_num - 1)
+                if self.mainloop.m.game_var2 == 0:
+                    second_num = random.randint(data[4], first_num - 1)
+                else:
+                    second_num = random.randint(data[4], data[5])
                 sm = first_num - second_num
                 if sm not in self.solution:
                     self.num_list.append(first_num)
@@ -144,7 +147,12 @@ class Board(gd.BoardGame):
         y = 1
 
         for i in range(5):
-            caption = "%d %s %d" % (self.num_list[i], operator, self.num_list2[i])
+            if self.num_list2[i] < 0:
+                n2 = "(%d)" % self.num_list2[i]
+            else:
+                n2 = str(self.num_list2[i])
+
+            caption = "%d %s %s" % (self.num_list[i], operator, n2)
 
             self.board.add_unit(x-xp, y, w, 1, classes.board.Label, caption, color1, "", data[7])
             self.board.add_unit(x + 2, y, 1, 1, classes.board.Label, "=", color1, "", data[7])

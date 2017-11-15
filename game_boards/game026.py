@@ -18,7 +18,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.decolorable = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.board.draw_grid = False
         if self.mainloop.scheme is None:
@@ -116,7 +116,10 @@ class Board(gd.BoardGame):
                     y = 3
 
             self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, signs[i], color3, "", data[4])
+            self.board.ships[-1].checkable = True
+            self.board.ships[-1].init_check_images()
             self.board.ships[-1].font_color = self.font_color
+            #self.board.ships[-1].allow_brightening = False
             self.board.ships[i].readable = False
             self.board.ships[i].set_outline(self.font_color, 1)
 
@@ -174,6 +177,7 @@ class Board(gd.BoardGame):
             # Calculate the x,y for the end point
             x = r * cos(angle) + center[0]
             y = r * sin(angle) + center[1]
+
             multipoints.append([x, y])
 
         # draw clipping polygon
@@ -197,15 +201,28 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
+            self.check_result()
+
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
+        elif event.type == pygame.KEYUP:
+            self.check_result()
 
     def update(self, game):
         game.fill(self.bg_col)
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            if each.checkable:
+                each.set_display_check(None)
+
     def check_result(self):
         if self.board.grid[2] == self.solution_grid:
+            found = None
             for i in range(len(self.board.ships) - 1):
                 if self.board.ships[i].grid_y == 2:  # if the sign is on line with expression
+                    found = self.board.ships[i]
                     value = self.board.ships[i].value
                     if value == " = ":
                         value = "=="
@@ -214,7 +231,11 @@ class Board(gd.BoardGame):
             eval_string.strip()
             if eval(eval_string) == True:
                 self.level.next_board()
+                if found is not None:
+                    found.set_display_check(True)
             else:
-                self.level.try_again()
+                if found is not None:
+                    found.set_display_check(False)
         else:
-            self.level.try_again()
+            self.auto_check_reset()
+        self.mainloop.redraw_needed[0] = True

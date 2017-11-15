@@ -52,14 +52,14 @@ class Board(gd.BoardGame):
         self.rgb_g = [y, y, y]
         self.rgbx3 = [self.col_k, self.col_k, self.col_k]
 
-        self.board.add_unit(1, y, 2, 3, classes.board.ImgAlphaShip, "", self.col_r, "light_r.png")
-        self.board.add_unit(4, y, 2, 3, classes.board.ImgAlphaShip, "", self.col_g, "light_g.png")
-        self.board.add_unit(7, y, 2, 3, classes.board.ImgAlphaShip, "", self.col_b, "light_b.png")
+        self.board.add_unit(1, y, 2, 3, classes.board.ImgAlphaShip, "", (0, 0, 0, 0), "light_r.png", alpha=True)
+        self.board.add_unit(4, y, 2, 3, classes.board.ImgAlphaShip, "", (0, 0, 0, 0), "light_g.png", alpha=True)
+        self.board.add_unit(7, y, 2, 3, classes.board.ImgAlphaShip, "", (0, 0, 0, 0), "light_b.png", alpha=True)
 
         for each in self.board.ships:
             each.outline = False
             each.audible = False
-            each.image.set_colorkey(each.initcolor)
+            #each.image.set_colorkey(each.initcolor)
 
         # add colour circles - canvas
         self.board.add_unit(10, 0, data[0] - 10, data[1], classes.board.Label, "", self.col_e, "", 0)

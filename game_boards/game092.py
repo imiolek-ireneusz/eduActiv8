@@ -226,6 +226,8 @@ class Board(gd.BoardGame):
             self.board.ships[i].immobilize()
             self.board.ships[i].perm_outline = True
             self.board.ships[i].uncovered = False
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
         self.outline_all(self.color2, 1)
 
     def handle(self, event):
@@ -256,6 +258,8 @@ class Board(gd.BoardGame):
                             self.history[1].perm_outline_color = self.color2
                             self.history[0].update_me = True
                             self.history[1].update_me = True
+                            self.history[0].set_display_check(True)
+                            self.history[1].set_display_check(True)
                             if self.history[0].hasimg:
                                 self.history[0].change_image(self.history[0].img_src2)
                             elif self.history[1].hasimg:

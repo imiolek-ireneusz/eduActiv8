@@ -49,6 +49,8 @@ class Board(gd.BoardGame):
 
             white = (255, 255, 255)
             gray = (100, 100, 100)
+        self.color3 = color3
+        self.color4 = color4
 
         if self.level.lvl == 1:
             data = [19, 10, True, True, False, False, True, False, False, True, True, 15]
@@ -136,12 +138,17 @@ class Board(gd.BoardGame):
         self.board.units[-1].font_color = gray
         self.board.add_unit(ans_offset, 2, 2, 2, classes.board.Letter, "00", white, "", 0)
         self.ans_h = self.board.ships[-1]
+        self.ans_h.checkable = True
+        self.ans_h.init_check_images()
         self.board.active_ship = self.ans_h.unit_id
         self.home_square = self.ans_h
 
         self.board.add_unit(ans_offset + 2, 2, 1, 2, classes.board.Label, ":", white, "", 0)
         self.board.add_unit(ans_offset + 3, 2, 2, 2, classes.board.Letter, "00", white, "", 0)
         self.ans_m = self.board.ships[-1]
+        self.ans_m.checkable = True
+        self.ans_m.init_check_images()
+
         self.ans_h.set_outline(color3, 5)
         self.ans_m.set_outline(color4, 5)
 
@@ -174,6 +181,13 @@ class Board(gd.BoardGame):
         self.clock_canvas.hidden_value = [2, 3]  # numbers[i]
         self.clock_canvas.font_color = color2
         self.clock_canvas.painting = canvas.copy()
+
+    def auto_check_reset(self):
+        self.ans_h.set_display_check(None)
+        self.ans_m.set_display_check(None)
+
+        self.ans_h.set_outline(self.color3, 5)
+        self.ans_m.set_outline(self.color4, 5)
 
     def draw_hands(self, time, canvas, size, center, colors, colors2, colors3, colors4):
         angle_step_12 = 2 * pi / 12
@@ -324,6 +338,8 @@ class Board(gd.BoardGame):
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if self.show_msg == False:
+            if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+                self.auto_check_reset()
             if event.type == pygame.KEYDOWN and event.key != pygame.K_RETURN and not self.correct:
                 lhv = len(self.home_square.value)
                 self.changed_since_check = True
@@ -404,15 +420,19 @@ class Board(gd.BoardGame):
             correct = 0
             if len(self.ans_h.value.strip()) > 0 and self.time[0] == int(self.ans_h.value):
                 self.ans_h.set_outline((0, 255, 0), 5)
+                self.ans_h.set_display_check(True)
                 correct += 1
             else:
+                self.ans_h.set_display_check(False)
                 self.ans_h.set_outline((255, 0, 0), 5)
 
             if len(self.ans_m.value.strip()) > 0 and self.time[1] == int(self.ans_m.value):
                 self.ans_m.set_outline((0, 255, 0), 5)
+                self.ans_m.set_display_check(True)
                 correct += 1
             else:
                 self.ans_m.set_outline((255, 0, 0), 5)
+                self.ans_m.set_display_check(False)
 
             self.ans_m.update_me = True
             self.ans_h.update_me = True
@@ -422,5 +442,3 @@ class Board(gd.BoardGame):
                 self.correct = True
                 self.ai_enabled = False
                 self.level.next_board()
-            else:
-                self.level.try_again()

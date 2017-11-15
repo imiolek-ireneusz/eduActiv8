@@ -383,28 +383,21 @@ class Board(gd.BoardGame):
             each.set_display_check(None)
 
     def check_result(self):
-        """
-        print(self.nbr) # numbers in top lines from index 1+  - subtraction and number from top
-        print(self.nbe) # dropped numbers
-        print(self.res) # result
-        print(self.mpl) # multiplication results - bottom lines
-        print(self.sub) #subtractions
-        """
+        correct = True
         for i in range(len(self.mpll)):
-            for j in range(len(self.mpll[i])): #range(len(self.mpll[i])-1, -1, -1):
-                #print("%s == %s" % (self.mpll[i][j].value, str(self.mpl[i])[j]))
+            for j in range(len(self.mpll[i])):
                 if self.mpll[i][j].value == str(self.mpl[i])[j]:
                     self.mpll[i][j].set_display_check(True)
                 else:
                     self.mpll[i][j].set_display_check(False)
-        
+                    correct = False
 
         for i in range(len(self.nbel)):
             if self.nbel[i].value == str(self.nbe[i+1]):
                 self.nbel[i].set_display_check(True)
             else:
                 self.nbel[i].set_display_check(False)
-
+                correct = False
 
         for i in range(len(self.subl)):
             for j in range(len(self.subl[i])):
@@ -412,22 +405,18 @@ class Board(gd.BoardGame):
                     self.subl[i][j].set_display_check(True)
                 else:
                     self.subl[i][j].set_display_check(False)
-
-  # try changing self.mpl to reversed
+                    correct = False
 
         for i in range(len(self.resl)):
             if self.resl[i].value == str(self.res[i]):
                 self.resl[i].set_display_check(True)
             else:
                 self.resl[i].set_display_check(False)
+                correct = False
 
         s = ""
         for each in self.resl:
             s += each.value
         if len(s) > 0:
-            if int(s) == self.sumn1n2:
+            if int(s) == self.sumn1n2 and correct:
                 self.level.next_board()
-            else:
-                self.level.try_again()
-        else:
-            self.level.try_again()

@@ -35,7 +35,6 @@ class Board(gd.BoardGame):
             color6 = self.mainloop.scheme.color6  # dark side of long hand
             color8 = self.mainloop.scheme.color8  # outer circle filling
 
-            color = self.mainloop.scheme.u_color
             white = self.mainloop.scheme.u_color
             gray = (100, 100, 100)
         else:
@@ -49,7 +48,6 @@ class Board(gd.BoardGame):
             color6 = ex.hsv_to_rgb(170, 180, 240)
             color8 = ex.hsv_to_rgb(170, 10, 255)
 
-            color = (255, 255, 255)
             white = (255, 255, 255)
             gray = (100, 100, 100)
 

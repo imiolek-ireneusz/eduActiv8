@@ -53,6 +53,9 @@ class Board(gd.BoardGame):
             white = (255, 255, 255)
             gray = (100, 100, 100)
 
+        self.color3 = color3
+        self.color4 = color4
+
         self.colors = [color1, color2]
         self.colors2 = [color3, color4]
         self.colors3 = [color5, color6]
@@ -108,7 +111,10 @@ class Board(gd.BoardGame):
         if self.mainloop.m.game_var2 == 0:
             self.text_string = self.lang.time2str(tt[0], tt[1])
         else:
-            self.text_string = self.lang.time2str_short(tt[0], tt[1])
+            if self.lang.lang == "ru":
+                self.text_string = self.lang.time2officialstr(tt[0], tt[1])
+            else:
+                self.text_string = self.lang.time2str_short(tt[0], tt[1])
         self.time = [6, 0]
         self.tm = self.time[:]
 
@@ -172,10 +178,14 @@ class Board(gd.BoardGame):
             top_offset = 2
         self.board.add_unit(ans_offset+1, top, 1, 1, classes.board.Label, h, white, "", 0)
         self.ans_h = self.board.units[-1]
+        self.ans_h.checkable = True
+        self.ans_h.init_check_images()
 
         self.board.add_unit(ans_offset + 2, top, 1, 1, classes.board.Label, ":", white, "", 0)
         self.board.add_unit(ans_offset + 3, top, 1, 1, classes.board.Label, m, white, "", 0)
         self.ans_m = self.board.units[-1]
+        self.ans_m.checkable = True
+        self.ans_m.init_check_images()
 
         self.ans_h.align = 2
         self.ans_m.align = 1
@@ -212,6 +222,8 @@ class Board(gd.BoardGame):
             self.board.ships[-1].font_color = gray
         if gv == 0 and self.lang.lang in ["ru", "he"]:
             spk_txt = self.lang.time2spk(tt[0], tt[1])
+            if self.lang.lang == "ru" and self.mainloop.m.game_var2 == 1:
+                spk_txt = self.lang.time2officialspk(tt[0], tt[1])
             self.board.ships[-1].speaker_val = spk_txt
             self.board.ships[-1].speaker_val_update = False
         if gv == 2:
@@ -222,6 +234,10 @@ class Board(gd.BoardGame):
             self.board.ships[-1].outline_highlight = False
             self.board.ships[-1].animable = False
             self.board.ships[-1].outline = False
+
+    def auto_check_reset(self):
+        self.ans_h.set_display_check(None)
+        self.ans_m.set_display_check(None)
 
     def hands_vars(self):
         numbers = [2, 2]
@@ -431,7 +447,6 @@ class Board(gd.BoardGame):
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         self.tm = self.time[:]
-
         if event.type == pygame.MOUSEMOTION and self.hand_id > 0:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             r = self.vector_len([pos[0] - self.center[0], pos[1] - self.center[1]])
@@ -458,6 +473,7 @@ class Board(gd.BoardGame):
                         self.tm[0] -= 1
 
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            self.auto_check_reset()
             active = self.board.active_ship
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             if active == 0:
@@ -531,7 +547,18 @@ class Board(gd.BoardGame):
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
     def check_result(self):
+        if self.time[0] == self.target_time[0]:
+            self.ans_h.set_display_check(True)
+        else:
+            self.ans_h.set_display_check(False)
+
+
+        if self.time[1] == self.target_time[1]:
+            self.ans_m.set_display_check(True)
+        else:
+            self.ans_m.set_display_check(False)
+
         if self.time == self.target_time:
             self.level.next_board()
-        else:
-            self.level.try_again()
+
+        self.mainloop.redraw_needed[0] = True

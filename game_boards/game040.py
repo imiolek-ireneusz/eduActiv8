@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import pygame
 import random
 
@@ -97,7 +98,6 @@ class Board(gd.BoardGame):
             self.board.ships[-1].font_color = ex.hsv_to_rgb(hx, 255, 140)
             self.board.ships[-1].highlight = False
             self.board.ships[-1].outline_highlight = True
-
             j += 1
         self.colors_completed = self.colors[:]
         self.outline_all(0, 1)

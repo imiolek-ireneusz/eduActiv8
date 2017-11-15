@@ -119,6 +119,8 @@ class Board(gd.BoardGame):
             self.board.ships[i].immobilize()
             self.board.ships[i].readable = False
             self.board.ships[i].uncovered = False
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
             if x >= w2 + data[3] - 1:
                 x = w2
                 y += 1
@@ -148,6 +150,8 @@ class Board(gd.BoardGame):
                         else:
                             self.history[0].uncovered = True
                             self.history[1].uncovered = True
+                            self.history[0].set_display_check(True)
+                            self.history[1].set_display_check(True)
                             self.found += 2
                             if self.found == self.square_count:
                                 self.completed_mode = True

@@ -2,6 +2,7 @@
 
 import pygame
 import random
+import os
 
 import classes.board
 import classes.extras as ex
@@ -11,7 +12,7 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 3, 6)
+        self.level = lc.Level(self, mainloop, 5, 6)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 9)
 
     def create_game_objects(self, level=1):
@@ -39,6 +40,9 @@ class Board(gd.BoardGame):
 
         if self.mainloop.m.game_variant == 0:
             self.level.lvl_count = 6
+        if self.mainloop.m.game_variant == 2:
+            self.level.lvl_count = 3
+            self.level.games_per_lvl = 10
 
         if self.level.lvl > self.level.lvl_count:
             self.level.lvl = self.level.lvl_count
@@ -81,7 +85,7 @@ class Board(gd.BoardGame):
         texts2 = []
 
         if self.mainloop.m.game_variant == 0:
-            if self.level.lvl == 1:  # addition
+            if self.level.lvl == 1:
                 draw_data = [1, 10, 1, 5, 8]
             elif self.level.lvl == 2:
                 draw_data = [1, 15, 1, 5, 8]
@@ -105,8 +109,8 @@ class Board(gd.BoardGame):
                     else:
                         texts2.append(self.lang.n2txt(num, twoliner=True))
 
-        if self.mainloop.m.game_variant == 1:
-            if self.level.lvl == 1:  # addition
+        elif self.mainloop.m.game_variant == 1:
+            if self.level.lvl == 1:
                 draw_data = [1, 5, 1, 5, 6]
             elif self.level.lvl == 2:
                 draw_data = [3, 9, 1, 5, 6]
@@ -127,6 +131,25 @@ class Board(gd.BoardGame):
                 if my_sum not in texts1:
                     texts1.append(str(my_sum))
                     texts2.append("%d + %d" % (first_num, second_num))
+        elif self.mainloop.m.game_variant == 2:
+            shapes = [self.lang.d["Parallelogram"], self.lang.d["Heptagon"], self.lang.d["Rectangle"],
+                      self.lang.d["Rhombus"], self.lang.d["Square"], self.lang.d["Pentagon"], self.lang.d["Octagon"],
+                      self.lang.d["Hexagon"], self.lang.d["Equilateral Triangle"], self.lang.d["Circle"],
+                      self.lang.d["Isosceles Triangle"], self.lang.d["trapezium"], self.lang.d["Ellipse"]]
+            image_numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17]
+            colors = ["blue", "green", "olive", "orange", "pink", "purple", "yellow"]
+            random.shuffle(colors)
+            cl = len(colors)
+            draw_data = [0, 0, 0, 0, 8]
+            l = len(image_numbers)
+
+            while len(texts1) < self.square_count // 2:
+                num = random.randrange(0, l)
+                s = str(image_numbers[num])
+                if s not in texts1:
+                    ns = shapes[num]
+                    texts1.append(s)
+                    texts2.append(ns)
 
         self.completed_mode = False
         if self.mainloop.m.game_variant in [4, 5]:
@@ -157,31 +180,35 @@ class Board(gd.BoardGame):
         random.shuffle(wide_slots)
         switch = self.square_count // 2
         for i in range(self.square_count):
-            if self.mainloop.m.game_variant in [4, 5]:
-                if i < switch:
-                    src = image_src1[self.chosen[i]]
+            if i < switch:
+                caption = texts1[self.chosen[i]]
+                position_list = small_slots
+                pos = i
+                xw = 1
+                if self.mainloop.m.game_variant == 2:
+                    color = colors[i % cl]  # colors[random.randint(0, cl-1)]
+                    src = os.path.join("shapes", color, "s%s.png" % texts1[self.chosen[i]])
+                    self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, 1, classes.board.ImgShip,
+                                        caption, color0, src, alpha=True)
                 else:
-                    src = image_src2[self.chosen[i - switch]]
-                self.board.add_unit(slots[i][0], slots[i][1], 1, 1, classes.board.ImgShip, "", white, src)
+                    self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, 1, classes.board.Letter,
+                                        caption, color0, "", draw_data[4])
             else:
-                if i < switch:
-                    caption = texts1[self.chosen[i]]
-                    position_list = small_slots
-                    pos = i
-                    xw = 1
-                else:
-                    caption = texts2[self.chosen[i - switch]]
-                    position_list = wide_slots
-                    pos = i - switch
-                    xw = 4
+                caption = texts2[self.chosen[i - switch]]
+                position_list = wide_slots
+                pos = i - switch
+                xw = 4
                 self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, 1, classes.board.Letter, caption,
                                     color0, "", draw_data[4])
-                self.board.ships[-1].font_color = self.font_color
+            self.board.ships[-1].font_color = self.font_color
 
             self.board.ships[i].immobilize()
             self.board.ships[i].readable = False
             self.board.ships[i].perm_outline = True
             self.board.ships[i].uncovered = False
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
+
         self.outline_all(self.color2, 1)
 
     def handle(self, event):
@@ -210,10 +237,13 @@ class Board(gd.BoardGame):
                             self.history[1].uncovered = True
                             self.history[0].perm_outline_color = self.color2  # [50,255,50]
                             self.history[1].perm_outline_color = self.color2
-                            self.history[0].image.set_alpha(50)
-                            self.history[1].image.set_alpha(50)
+                            if self.mainloop.m.game_variant != 2:
+                                self.history[0].image.set_alpha(50)
+                                self.history[1].image.set_alpha(50)
                             self.history[0].update_me = True
                             self.history[1].update_me = True
+                            self.history[0].set_display_check(True)
+                            self.history[1].set_display_check(True)
                             self.found += 2
                             if self.found == self.square_count:
                                 self.completed_mode = True

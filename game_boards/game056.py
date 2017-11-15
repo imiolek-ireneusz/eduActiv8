@@ -20,7 +20,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.board.draw_grid = True
         if self.mainloop.scheme is None:
@@ -198,6 +198,8 @@ class Board(gd.BoardGame):
                 self.board.ships[-1].painting = canvas.copy()
                 self.board.ships[-1].readable = False
                 self.board.ships[-1].highlight = False
+                self.board.ships[-1].checkable = True
+                self.board.ships[-1].init_check_images()
 
         ind = len(self.board.units)
         for i in range(0, self.row_count):
@@ -384,6 +386,16 @@ class Board(gd.BoardGame):
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
 
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
+        elif event.type == pygame.KEYUP or event.type == pygame.MOUSEBUTTONUP:
+            self.check_result()
+
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            if each.checkable:
+                each.set_display_check(None)
+
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
@@ -393,9 +405,17 @@ class Board(gd.BoardGame):
 
         for i in range(len(self.board.ships) - 1):
             ship = self.board.ships[i]
-            if ship.hidden_value != self.board.units[ship.grid_y].hidden_value:
+            if ship.grid_x >= self.data[0] - 4:
                 correct = False
-                self.level.try_again()
                 break
+
         if correct:
-            self.level.next_board()
+            for i in range(len(self.board.ships) - 1):
+                ship = self.board.ships[i]
+                if ship.hidden_value == self.board.units[ship.grid_y].hidden_value:
+                    ship.set_display_check(True)
+                else:
+                    correct = False
+                    ship.set_display_check(False)
+            if correct:
+                self.level.next_board()

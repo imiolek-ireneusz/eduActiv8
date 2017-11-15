@@ -118,7 +118,7 @@ class Board(gd.BoardGame):
 
         self.data = data
         self.center = self.data[0] // 2
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -139,6 +139,8 @@ class Board(gd.BoardGame):
 
             self.board.ships[-1].speaker_val = self.color_choicep[self.shuffled2[i]]
             self.board.ships[-1].speaker_val_update = False
+            self.board.ships[-1].checkable = True
+            self.board.ships[-1].init_check_images()
             font_color = self.init_font_color[self.shuffled2[i]]
             if self.level.lvl == 1:
                 self.board.ships[i].font_color = font_color
@@ -196,6 +198,11 @@ class Board(gd.BoardGame):
             self.draw_splash(canvas, size, color1, color2)
             self.board.units[i].painting = canvas.copy()
 
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            if each.checkable:
+                each.set_display_check(None)
+
     def draw_splash(self, canvas, size, color, outline_color):
         pygame.draw.polygon(canvas, color, self.scaled_lines, 0)
         #pygame.draw.aalines(canvas, outline_color, True, self.scaled_lines)
@@ -203,6 +210,8 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
         if event.type == pygame.MOUSEMOTION:
             if self.drag:
                 self.swap_font_color()
@@ -210,6 +219,7 @@ class Board(gd.BoardGame):
             #  self.swap_font_color()
         elif event.type == pygame.MOUSEBUTTONUP:
             self.swap_font_color()
+            self.check_result()
             #  if self.drag and self.mouse_entered_new:
             #  self.swap_font_color()
 
@@ -235,27 +245,28 @@ class Board(gd.BoardGame):
     def check_result(self):
         # checking copied from number sorting game and re-done
         match_found = False
-        for j in range(3):
-            if self.board.grid[j][self.center - 2:self.center + 3] == [1, 1, 1, 1, 1]:  # self.solution_grid:
-                ships = []
-                units = []
-                # collect value and x position on the grid from ships list
-                for i in range(5):
-                    ships.append([self.board.ships[i].grid_x, self.board.ships[i].value])
-                    units.append([self.board.units[i].grid_x, self.board.units[i].value])
-                # ships_sorted = sorted(ships)
-                ships.sort()
-                units.sort()
-                correct = True
-                for i in range(5):
-                    if i < 4:
-                        if ships[i][1] != units[i][1]:
-                            correct = False
-                if correct == True:
-                    match_found = True
-                    break
+        if self.board.grid[0][self.center - 2:self.center + 3] == [1, 1, 1, 1, 1]:  # self.solution_grid:
+            ships = []
+            units = []
+            # collect value and x position on the grid from ships list
+            for i in range(5):
+                ships.append([self.board.ships[i].grid_x, self.board.ships[i].value, self.board.ships[i]])
+                units.append([self.board.units[i].grid_x, self.board.units[i].value])
+            # ships_sorted = sorted(ships)
+            ships.sort()
+            units.sort()
+            correct = True
+            for i in range(5):
+                if ships[i][1] != units[i][1]:
+                    ships[i][2].set_display_check(False)
+                    correct = False
+                else:
+                    ships[i][2].set_display_check(True)
+
+            if correct == True:
+                match_found = True
+                #break
         if match_found:
             self.level.next_board()
-        else:
-            self.level.try_again(True)
-            self.level.try_again()
+
+        self.mainloop.redraw_needed[0] = True

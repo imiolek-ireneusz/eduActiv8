@@ -27,7 +27,7 @@ class Board(gd.BoardGame):
         self.col_y = (255, 255, 0)
         self.col_k = (0, 0, 0)
         self.col_e = (255, 255, 255)
-        colorkey = (2, 2, 2)
+        colorkey = (2, 2, 2, 0)
         self.col_bg = (0, 0, 0, 0)
         data = [32, 23]
         # stretch width to fit the screen size
@@ -108,18 +108,19 @@ class Board(gd.BoardGame):
         self.board.units[-1].image.set_colorkey(None)
 
         # guides
-        self.board.add_door(1, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21)
+        self.board.add_door(1, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21, alpha=True)
         self.guides.append(self.board.units[-1])
-        self.board.add_door(4, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21)
+        self.board.add_door(4, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21, alpha=True)
         self.guides.append(self.board.units[-1])
-        self.board.add_door(7, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21)
+        self.board.add_door(7, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21, alpha=True)
         self.guides.append(self.board.units[-1])
 
         for each in self.guides:
-            each.image.set_colorkey(each.initcolor)
             each.font_color = self.col_k
+            each.checkable = True
+            each.init_check_images(1, 1.2)
+            each.decolorable = False
 
-        # self.color_info = self.board.units[-1]
         for i in [5, 6, 7, 8, 9, 10, 11, 12, 13]:
             if i > 7:
                 self.board.units[i].image.set_colorkey(colorkey)
@@ -184,10 +185,16 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
 
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
+
+    def auto_check_reset(self):
+        for each in self.guides:
+            each.set_display_check(None)
 
     def check_result(self):
         if self.picked_steps != self.rgb_g:
@@ -199,8 +206,9 @@ class Board(gd.BoardGame):
                 self.guides[0].value = "⇓"
                 help += self.dp['less cyan'] + ", "
             else:
-                self.guides[0].value = "★"
+                self.guides[0].value = " "
                 help += self.dp['cyan is ok'] + ", "
+                self.guides[0].set_display_check(True)
 
             if self.picked_steps[1] < self.rgb_g[1]:
                 self.guides[1].value = "⇑"
@@ -209,8 +217,9 @@ class Board(gd.BoardGame):
                 self.guides[1].value = "⇓"
                 help += self.dp['less magenta'] + ", "
             else:
-                self.guides[1].value = "★"
+                self.guides[1].value = " "
                 help += self.dp['magenta is ok'] + ", "
+                self.guides[1].set_display_check(True)
 
             if self.picked_steps[2] < self.rgb_g[2]:
                 self.guides[2].value = "⇑"
@@ -219,15 +228,20 @@ class Board(gd.BoardGame):
                 self.guides[2].value = "⇓"
                 help += self.dp['less yellow'] + ". "
             else:
-                self.guides[2].value = "★"
+                self.guides[2].value = " "
                 help += self.dp['yellow is ok'] + ". "
-            self.say(help)
+                self.guides[2].set_display_check(True)
+            #self.say(help)
 
             self.level.try_again(silent=self.mainloop.speaker.talkative)
 
             for each in self.guides:
                 each.update_me = True
-            self.mainloop.redraw_needed[0] = True
-
         else:
+            for each in self.guides:
+                each.set_display_check(True)
+                each.value = ""
             self.level.next_board()
+        self.mainloop.redraw_needed[0] = True
+
+

@@ -65,7 +65,10 @@ class Board(gd.BoardGame):
         elif data[6] == "-":
             while len(self.solution) < 5:
                 first_num = random.randint(data[2], data[3])
-                second_num = random.randint(data[4], first_num - 1)
+                if self.mainloop.m.game_var2 == 0:
+                    second_num = random.randint(data[4], first_num - 1)
+                else:
+                    second_num = random.randint(data[4], data[5])
                 sm = first_num - second_num
                 if sm not in self.solution:
                     self.num_list.append(first_num)

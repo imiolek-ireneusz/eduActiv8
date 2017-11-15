@@ -58,19 +58,30 @@ class Board(gd.BoardGame):
                 my_sum = str(first_num + second_num)
                 if my_sum not in texts1:
                     texts1.append(str(my_sum))
-                    texts2.append("%d + %d" % (first_num, second_num))
+                    if second_num < 0:
+                        n2 = "(%d)" % second_num
+                    else:
+                        n2 = str(second_num)
+                    texts2.append("%d + %s" % (first_num, n2))
 
         elif self.mainloop.m.game_variant == 1:
             while len(texts1) < self.square_count // 2:
                 first_num = random.randrange(data[2], data[3] + 1)
-                if first_num - 1 <= data[4]:
+                if first_num - 1 <= data[4] and self.mainloop.m.game_var2 == 0:
                     continue
                 else:
-                    second_num = random.randrange(data[4], first_num - 1)
+                    if self.mainloop.m.game_var2 == 0:
+                        second_num = random.randint(data[4], first_num - 1)
+                    else:
+                        second_num = random.randint(data[4], data[5])
                     my_sum = str(first_num - second_num)
                     if my_sum not in texts1:
                         texts1.append(str(my_sum))
-                        texts2.append("%d - %d" % (first_num, second_num))
+                        if second_num < 0:
+                            n2 = "(%d)" % second_num
+                        else:
+                            n2 = str(second_num)
+                        texts2.append("%d - %s" % (first_num, n2))
 
         elif self.mainloop.m.game_variant == 2:
             if data[3] == 0:
@@ -183,6 +194,8 @@ class Board(gd.BoardGame):
             self.board.ships[i].readable = False
             self.board.ships[i].perm_outline = True
             self.board.ships[i].uncovered = False
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
         self.outline_all(self.color2, 1)
 
     def handle(self, event):
@@ -214,6 +227,8 @@ class Board(gd.BoardGame):
                             self.history[1].image.set_alpha(50)
                             self.history[0].update_me = True
                             self.history[1].update_me = True
+                            self.history[0].set_display_check(True)
+                            self.history[1].set_display_check(True)
                             self.found += 2
                             if self.found == self.square_count:
                                 self.completed_mode = True

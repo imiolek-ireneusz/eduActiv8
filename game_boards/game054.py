@@ -26,7 +26,7 @@ class Board(gd.BoardGame):
         self.col_b = (0, 0, 255)
         self.col_k = (0, 0, 0)
         self.col_e = (255, 255, 255)
-        colorkey = (2, 2, 2)
+        colorkey = (2, 2, 2, 0)
         self.col_bg = (255, 255, 255)  # self.col_k #(255,246,219)
         data = [32, 23]
         # stretch width to fit the screen size
@@ -62,14 +62,14 @@ class Board(gd.BoardGame):
         self.rgb_g = [y, y, y]
         self.rgbx3 = [self.col_k, self.col_k, self.col_k]
 
-        self.board.add_unit(1, y, 2, 3, classes.board.ImgAlphaShip, "", self.col_r, "light_r.png")
-        self.board.add_unit(4, y, 2, 3, classes.board.ImgAlphaShip, "", self.col_g, "light_g.png")
-        self.board.add_unit(7, y, 2, 3, classes.board.ImgAlphaShip, "", self.col_b, "light_b.png")
+        self.board.add_unit(1, y, 2, 3, classes.board.ImgAlphaShip, "", (0, 0, 0, 0), "light_r.png", alpha=True)
+        self.board.add_unit(4, y, 2, 3, classes.board.ImgAlphaShip, "", (0, 0, 0, 0), "light_g.png", alpha=True)
+        self.board.add_unit(7, y, 2, 3, classes.board.ImgAlphaShip, "", (0, 0, 0, 0), "light_b.png", alpha=True)
 
         for each in self.board.ships:
             each.outline = False
             each.audible = False
-            each.image.set_colorkey(each.initcolor)
+            #each.image.set_colorkey(each.initcolor)
 
         # add colour circles - canvas
         self.board.add_unit(10, 0, data[0] - 10, data[1], classes.board.Label, "", self.col_e, "", 0)
@@ -105,9 +105,19 @@ class Board(gd.BoardGame):
         self.board.add_door(7, 0, 2, data[1], classes.board.Door, "", self.col_k, "", 0, door_alpha=False)
         self.board.units[-1].image.set_colorkey(None)
 
+        # guides
+        self.board.add_door(1, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21, alpha=True)
+        self.guides.append(self.board.units[-1])
+        self.board.add_door(4, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21, alpha=True)
+        self.guides.append(self.board.units[-1])
+        self.board.add_door(7, data[1] - 2, 2, 2, classes.board.Label, "", colorkey, "", 21, alpha=True)
+        self.guides.append(self.board.units[-1])
+
         for each in self.guides:
-            each.image.set_colorkey(each.initcolor)
             each.font_color = self.col_e
+            each.checkable = True
+            each.init_check_images(1, 1.2)
+            each.decolorable = False
 
         for i in [5, 6, 7, 8, 9, 10, 11, 12, 13]:
             if i > 7:
@@ -171,6 +181,12 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
+
+    def auto_check_reset(self):
+        for each in self.guides:
+            each.set_display_check(None)
 
     def update(self, game):
         game.fill((0, 0, 0))
@@ -190,8 +206,9 @@ class Board(gd.BoardGame):
                 self.guides[0].value = "⇓"
                 help += self.dp['less red'] + ", "
             else:
-                self.guides[0].value = "★"
+                self.guides[0].value = " "
                 help += self.dp['red is ok'] + ", "
+                self.guides[0].set_display_check(True)
 
             if self.picked[1] > g:
                 self.guides[1].value = "⇑"
@@ -200,8 +217,9 @@ class Board(gd.BoardGame):
                 self.guides[1].value = "⇓"
                 help += self.dp['less green'] + ", "
             else:
-                self.guides[1].value = "★"
+                self.guides[1].value = " "
                 help += self.dp['green is ok'] + ", "
+                self.guides[1].set_display_check(True)
 
             if self.picked[2] > b:
                 self.guides[2].value = "⇑"
@@ -210,13 +228,19 @@ class Board(gd.BoardGame):
                 self.guides[2].value = "⇓"
                 help += self.dp['less blue'] + ". "
             else:
-                self.guides[2].value = "★"
+                self.guides[2].value = " "
                 help += self.dp['blue is ok'] + ". "
-            self.say(help)
+                self.guides[2].set_display_check(True)
+            #self.say(help)
             self.level.try_again(silent=self.mainloop.speaker.talkative)
 
             for each in self.guides:
                 each.update_me = True
-            self.mainloop.redraw_needed[0] = True
         else:
+            for each in self.guides:
+                each.update_me = True
+                each.set_display_check(True)
+                each.value = ""
             self.level.next_board()
+        self.mainloop.redraw_needed[0] = True
+

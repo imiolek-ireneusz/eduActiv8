@@ -222,6 +222,8 @@ class Board(gd.BoardGame):
             self.board.ships[i].readable = False
             self.board.ships[i].perm_outline = True
             self.board.ships[i].uncovered = False
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
         self.outline_all(self.color2, 1)
 
     def handle(self, event):
@@ -254,6 +256,8 @@ class Board(gd.BoardGame):
                             self.history[1].image.set_alpha(50)
                             self.history[0].update_me = True
                             self.history[1].update_me = True
+                            self.history[0].set_display_check(True)
+                            self.history[1].set_display_check(True)
                             self.found += 2
                             if self.found == self.square_count:
                                 self.completed_mode = True

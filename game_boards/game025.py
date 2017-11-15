@@ -91,6 +91,7 @@ class Board(gd.BoardGame):
                 self.choices = [str(x) for x in range(0, 9)]
         elif self.mainloop.m.game_variant == 2:
             self.choices = [x for x in range(2, 20)]
+
             alpha = True
             color0 = (0, 0, 0, 0)
         elif self.mainloop.m.game_variant == 3:
@@ -102,6 +103,10 @@ class Board(gd.BoardGame):
             alpha = True
             color0 = (0, 0, 0, 0)
             random.shuffle(self.shape_colors)
+            if self.level.lvl < 3:
+                self.mixed_colours = True
+            else:
+                self.mixed_colours = False
         elif self.mainloop.m.game_variant == 4:
             self.func_number = random.randint(0, 3)
             #create fractions
@@ -136,7 +141,7 @@ class Board(gd.BoardGame):
         data = [self.task_len, 5]
         self.data = data
 
-        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.board.set_animation_constraints(0, data[0], 0, data[1] - 1)
         self.layout.update_layout(data[0], data[1])
@@ -172,7 +177,10 @@ class Board(gd.BoardGame):
 
                 elif self.mainloop.m.game_variant == 5:
                     img = "%s.png" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
-                    img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                    if self.mixed_colours:
+                        img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                    else:
+                        img_src = os.path.join('shapes', self.shape_colors[0], img)
                     self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.ImgShip, "", color0, img_src, alpha=alpha)
                 elif self.mainloop.m.game_variant == 2:
                     self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.Letter, v, color0, "", 0,
@@ -211,7 +219,10 @@ class Board(gd.BoardGame):
                     self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.ImgShip, "", color0, img_src)
                 elif self.mainloop.m.game_variant == 5:
                     img = "%s.png" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
-                    img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                    if self.mixed_colours:
+                        img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                    else:
+                        img_src = os.path.join('shapes', self.shape_colors[0], img)
                     self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.ImgShip, "", color0, img_src, alpha=alpha)
                 elif self.mainloop.m.game_variant == 2:
                     self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.Letter, v, color0, "", 0,
@@ -251,7 +262,10 @@ class Board(gd.BoardGame):
                 self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.ImgShip, "", color0, img_src)
             elif self.mainloop.m.game_variant == 5:
                 img = "%s.png" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
-                img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                if self.mixed_colours:
+                    img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                else:
+                    img_src = os.path.join('shapes', self.shape_colors[0], img)
                 self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.ImgShip, "", color0, img_src, alpha=alpha)
 
             elif self.mainloop.m.game_variant == 2:

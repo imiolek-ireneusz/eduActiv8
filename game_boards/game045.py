@@ -2,6 +2,7 @@
 
 import os
 import random
+import pygame
 
 import classes.board
 import classes.extras as ex
@@ -108,6 +109,8 @@ class Board(gd.BoardGame):
             caption = str(self.shuffled[i])
             self.board.add_unit(x, y, 1, 1, classes.board.ImgShip, caption, white, image_src[self.shuffled[i]])
             self.board.ships[-1].readable = False
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
             line.append(i)
             x += 1
             if x >= w2 + data[3] or i == data[2] - 1:
@@ -133,26 +136,38 @@ class Board(gd.BoardGame):
 
         self.board.all_sprites_list.move_to_front(self.board.units[0])
 
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            if each.checkable:
+                each.set_display_check(None)
+
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
 
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
     def check_result(self):
-        ships = []
         current = [x for x in range(self.data[2] + 1)]  # self.choice_list[:]
         # collect value and x position on the grid from ships list
         for i in range(len(self.board.ships) - 1):
             x = self.board.ships[i].grid_x - self.check[2]
             y = self.board.ships[i].grid_y - self.check[0]
             w = self.data[3]
-            h = self.data[4]
             pos = x + (y * w)
             current[pos] = int(self.board.ships[i].value)
+            if pos < self.data[2]:
+                if self.choice_list[pos] == current[pos]:
+                    self.board.ships[i].set_display_check(True)
+                else:
+                    self.board.ships[i].set_display_check(False)
+            else:
+                self.board.ships[i].set_display_check(False)
+
         del (current[-1])
         if self.choice_list == current:
             self.level.next_board()
-        else:
-            self.level.try_again()
+        self.mainloop.redraw_needed[0] = True

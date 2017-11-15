@@ -121,7 +121,7 @@ class Board(gd.BoardGame):
                                 data[4])
             self.board.units[-1].font_color = font_color
             self.board.units[-1].checkable = True
-            self.board.units[-1].init_check_images()
+            self.board.units[-1].init_check_images(1, 1.5)
             self.count_units.append(len(self.board.units))
             self.board.add_unit(l[1], i + 1, 1, 1, classes.board.ImgShip, "", (0, 0, 0, 0),
                                 os.path.join("fr", items[ind] + f_end), data[4], alpha=True)

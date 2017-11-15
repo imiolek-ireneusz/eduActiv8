@@ -180,6 +180,8 @@ class Board(gd.BoardGame):
                                     "%02d:%02d" % (self.time[i - switch][0], self.time[i - switch][1]), white, "", 8)
                 self.board.ships[-1].font_color = color4
             self.immo(self.board.ships[-1])
+            self.board.ships[i].checkable = True
+            self.board.ships[i].init_check_images()
         self.outline_all(color4, 1)
 
         self.mainloop.redraw_needed[0] = True
@@ -219,6 +221,8 @@ class Board(gd.BoardGame):
                             self.history[1].image.set_alpha(50)
                             self.history[0].update_me = True
                             self.history[1].update_me = True
+                            self.history[0].set_display_check(True)
+                            self.history[1].set_display_check(True)
                             self.found += 2
                             if self.found == self.square_count:
                                 self.completed_mode = True

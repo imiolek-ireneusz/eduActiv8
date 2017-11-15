@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 1, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         # data = [x_count, y_count, square_num, canvas_height, non_vertical, color_difference, games_per_level, mess_drawing_function]
 
@@ -90,6 +90,8 @@ class Board(gd.BoardGame):
             self.board.ships[-1].font_color = ex.hsv_to_rgb(hx, 255, 140)
             self.board.ships[-1].highlight = False
             self.board.ships[-1].outline_highlight = True
+            self.board.ships[-1].checkable = True
+            self.board.ships[-1].init_check_images()
 
             j += 1
         self.colors_completed = self.colors[:]
@@ -213,15 +215,22 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-
-        if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+        if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+            self.auto_check_reset()
+        elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             self.draw_lines()
             self.mainloop.redraw_needed[0] = True
+            self.check_result()
 
     def update(self, game):
         game.fill((255, 255, 255))
 
         gd.BoardGame.update(self, game)  # rest of painting done by parent
+
+    def auto_check_reset(self):
+        for each in self.board.ships:
+            if each.checkable:
+                each.set_display_check(None)
 
     def check_result(self):
         self.result = []
@@ -230,12 +239,13 @@ class Board(gd.BoardGame):
         correct = True
         if self.solution_positions == self.result:  # self.board.grid[7]:
             for each_item in self.board.ships:
-                if each_item.grid_y != self.solution[each_item.unit_id]:
+                if each_item.grid_y == self.solution[each_item.unit_id]:
+                    each_item.set_display_check(True)
+                else:
+                    each_item.set_display_check(False)
                     correct = False
-                    break
         else:
             correct = False
+
         if correct == True:
             self.level.next_board()
-        else:
-            self.level.try_again()
