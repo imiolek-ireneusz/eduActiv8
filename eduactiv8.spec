@@ -5,6 +5,8 @@ import sys
 p = sys.platform
 block_cipher = None
 
+# command: $ pyinstaller eduactiv8.spec
+
 # hiddenimports=["_io", "pyimod03_importers", "colorsys", "_struct", "struct"],
 if p == "linux" or p == "linux2":
     hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct", "sqlite3", "ast", "xml.etree.ElementTree"]

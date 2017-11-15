@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pygame
+import classes.extras as ex
 
 
 class Splash:
@@ -36,13 +37,17 @@ class Splash:
                   [132, 0, 132], [255, 0, 255], [74, 0, 132], [255, 20, 138], [132, 0, 0], [140, 69, 16],
                   [0, 255, 255], [0, 255, 0]]
 
-    def __init__(self, unit_size, scale, color1):
+    def __init__(self, unit_size, scale, preset_color, custom_color=(-1, -1, -1, -1)):
         size = unit_size * scale
         self.scaled_lines = [[int(size * each[0] / 200.0), int(size * each[1] / 200.0)] for each in Splash.lines]
 
         self.canvas = pygame.Surface([size, size - 1], flags=pygame.SRCALPHA)
         self.canvas.fill((0, 0, 0, 0))
-        self.draw_splash(self.canvas, Splash.hue_choice[color1])
+        if custom_color[0] > -1:
+            col = ex.hsva_to_rgba(custom_color[0], custom_color[1], custom_color[2], custom_color[3])
+        else:
+            col = Splash.hue_choice[preset_color]
+        self.draw_splash(self.canvas, col)
 
     def get_canvas(self):
         return self.canvas
