@@ -11,13 +11,16 @@ import time
 import classes.extras as ex
 from game_boards import game000, game001, game002, game003, game004, game005, game006, game007, game008, game009, \
     game010, game011, game012, game013, game015, game016, game017, game018, game019, game020, game021, game022, \
-    game023, game024, game025, game026, game027, game028, game029, game031, game032, game033, game034, game035, \
-    game036, game037, game038, game039, game040, game041, game042, game043, game044, game045, game046, game047, \
+    game023, game024, game025, game026, game027, game028, game029, game031, game032, game034, game035, \
+    game036, game037, game038, game039, game041, game042, game044, game045, game046, game047, \
     game049, game050, game051, game052, game053, game054, game055, game056, game059, game060, game061, game062, \
-    game063, game064, game065, game066, game067, game068, game069, game070, game071, game072, game073, game074, \
-    game075, game076, game077, game078, game079, game080, game081, game082, game084, game085, game086, game087, \
-    game088, game089, game090, game091, game092
-
+    game063, game064, game066, game069, game070, game071, game072, game073, game074, \
+    game075, game076, game077, game078, game079, game080, game081, game082, game084, game085, game087, \
+    game088, game089, game090, game092
+#games currently not used
+#, game014, game030, game033, game040, game043, game048, game057, game058, game065, game067, game068, game083, game086, game091
+#14, 30, 48, 57, 58, 83
+#33, 40, 43, 65, 67, 68, 86, 91,
 
 class MenuCategoryGroup(pygame.sprite.Sprite):
     def __init__(self, menu, unit_id, title, subtitle, w, h, img_src1):

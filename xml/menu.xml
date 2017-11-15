@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- max cat id = 19, max game id = 210 -->
+<!-- max cat id = 20, max game id = 210 -->
 <!-- title and subtitle must match already existing string from .po file so these can't just be changed here -->
 <!-- visible 0 - hide, 1 - show, use to temporarily hide activities -->
 <!-- "listening" used to mark which activities are listening activities that require TTS engine to work - if not available the activities will be hidden -->
@@ -84,21 +84,21 @@
                   title="Word Builder"
                   subtitle=""
                   icon="ico_g_0200.png" icosuffix="False" lang_activity="True"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                  visible="1" lang_incl="" lang_excl="['he']" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="18" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="23"
                   title="Word Maze"
                   subtitle="Collect all"
                   icon="ico_g_0201.png" icosuffix="False" lang_activity="True"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="['he']" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="19" variant="1" var2="0"  min_age="0" max_age="7"
                   constructor_id="23"
                   title="Word Maze + 4"
                   subtitle="Collect all"
                   icon="ico_g_0202.png" icosuffix="False" lang_activity="True"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="['he']" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="14" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="16"
@@ -789,6 +789,73 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
         </cat>
+        <cat id="20" title="Negative numbers" subtitle="" icon="ico_c_23.png" min_age="4" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
+            <game dbid="215" variant="1" var2="0"  min_age="4" max_age="7"
+                  constructor_id="5"
+                  title="Sorting Numbers"
+                  subtitle=""
+                  icon="ico_g_2300.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="216" variant="0" var2="0"  min_age="4" max_age="7"
+                  constructor_id="32"
+                  title="Number Comparison"
+                  subtitle=""
+                  icon="ico_g_2301.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="217" variant="0" var2="0"  min_age="4" max_age="7"
+                  constructor_id="11"
+                  title="Even or Odd"
+                  subtitle=""
+                  icon="ico_g_2302.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+
+            <game dbid="218" variant="0" var2="0"  min_age="4" max_age="7"
+                  constructor_id="39"
+                  title="Find solution"
+                  subtitle="Addition"
+                  icon="ico_g_2303.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="219" variant="0" var2="0"  min_age="4" max_age="7"
+                  constructor_id="19"
+                  title="Find missing number"
+                  subtitle="Addition"
+                  icon="ico_g_2304.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="220" variant="0" var2="0"  min_age="4" max_age="7"
+                  constructor_id="60"
+                  title="Maths Matching Game"
+                  subtitle="Addition"
+                  icon="ico_g_2305.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+
+            <game dbid="221" variant="1" var2="1"  min_age="4" max_age="7"
+                  constructor_id="39"
+                  title="Find solution"
+                  subtitle="Subtraction"
+                  icon="ico_g_2306.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="222" variant="1" var2="1"  min_age="4" max_age="7"
+                  constructor_id="19"
+                  title="Find missing number"
+                  subtitle="Subtraction"
+                  icon="ico_g_2307.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="223" variant="1" var2="1"  min_age="4" max_age="7"
+                  constructor_id="60"
+                  title="Maths Matching Game"
+                  subtitle="Subtraction"
+                  icon="ico_g_2308.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+        </cat>
         <cat id="11" title="Decimals, fractions, ratios and percentages" subtitle="" icon="ico_c_10.png" min_age="1" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
             <game dbid="47" variant="0" var2="0"  min_age="1" max_age="7"
                   constructor_id="26"
@@ -855,6 +922,13 @@
                   icon="ico_g_0501.png" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
+            <game dbid="214" variant="2" var2="0"  min_age="0" max_age="7"
+                  constructor_id="61"
+                  title="Match shapes to their names"
+                  subtitle=""
+                  icon="ico_g_0504.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="['en', 'pl', 'es']" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
             <game dbid="64" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="59"
                   title="ShapeMaker"
@@ -914,7 +988,7 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="13" title="Clock_cat" subtitle="" icon="ico_c_15.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
+        <cat id="13" title="Clock_cat" subtitle="" icon="ico_c_15.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="['sr']" icosuffix="False" lang_activity="False" listening="False" android="True">
             <game dbid="66" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="66"
                   title="Clock0"
@@ -994,8 +1068,8 @@
                   icon="ico_g_1000.png" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="['ru']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
-            <game dbid="106" variant="1" var2="0"  min_age="0" max_age="7"
-                  constructor_id="65"
+            <game dbid="106" variant="1" var2="1"  min_age="0" max_age="7"
+                  constructor_id="64"
                   title="Clock2 - Russian official time"
                   subtitle="Russian official - txt_only"
                   icon="ico_g_1005.png" icosuffix="False" lang_activity="False"
@@ -1273,8 +1347,8 @@
                   icon="ico_g_0803.png" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
-            <game dbid="92" variant="0" var2="0"  min_age="0" max_age="7"
-                  constructor_id="40"
+            <game dbid="92" variant="1" var2="0"  min_age="0" max_age="7"
+                  constructor_id="41"
                   title="Connect"
                   subtitle="Numbers"
                   icon="ico_g_0802.png" icosuffix="False" lang_activity="False"
