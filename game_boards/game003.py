@@ -24,10 +24,12 @@ class Board(gd.BoardGame):
         self.lang_titles = self.mainloop.lang.lang_titles
         self.all_lng = self.mainloop.lang.all_lng
         self.ok_lng = self.mainloop.lang.ok_lng
+        """
         if self.mainloop.config.google_trans_languages == True:
             self.languages = self.all_lng
         else:
-            self.languages = self.ok_lng
+        """
+        self.languages = self.ok_lng
 
         self.lang_count = len(self.languages)
         half = int(ceil(self.lang_count / 2))

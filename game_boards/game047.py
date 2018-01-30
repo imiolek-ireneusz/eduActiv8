@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 70
         v = 230
@@ -25,12 +25,12 @@ class Board(gd.BoardGame):
         color0 = ex.hsv_to_rgb(h, 40, 230)
         font_color = ex.hsv_to_rgb(h, 255, 140)
 
-        data = [11, 6]
+        data = [11, 3]
         data.extend(self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group, self.level.lvl))
         self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group)
 
         self.data = data
-        self.board.set_animation_constraints(0, data[0], 0, data[1] - 1)
+        self.board.set_animation_constraints(0, data[0], 0, data[1])
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
         if self.mainloop.m.game_variant == 0:
@@ -89,7 +89,7 @@ class Board(gd.BoardGame):
         for i in range(data[2]):
             self.board.add_door(x + i, 0, 1, 1, classes.board.Door, "", color, "")
             self.board.units[i].door_outline = True
-            y = random.randrange(1, 5)
+            y = random.randrange(1, data[1])
             number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
             caption = self.alphabet[shuffled[i]]
             self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[4])
@@ -103,13 +103,19 @@ class Board(gd.BoardGame):
 
         for each in self.board.units:
             self.board.all_sprites_list.move_to_front(each)
+
+        """
         instruction = self.d["Re-arrange alphabetical"]
         self.board.add_unit(0, 5, 11, 1, classes.board.Letter, instruction, color0, "", 7)
         self.board.ships[-1].immobilize()
         self.board.ships[-1].font_color = font_color
         self.board.ships[-1].speaker_val = self.dp["Re-arrange alphabetical"]
         self.board.ships[-1].speaker_val_update = False
+        """
         self.outline_all(0, 1)
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.d["Re-arrange alphabetical"])
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up

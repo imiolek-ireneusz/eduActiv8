@@ -138,12 +138,12 @@ class Board(gd.BoardGame):
         random.shuffle(self.choices)
         self.term_values = self.choices[0:self.term_len]
 
-        data = [self.task_len, 5]
+        data = [self.task_len, 4]
         self.data = data
 
-        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-        self.board.set_animation_constraints(0, data[0], 0, data[1] - 1)
+        self.board.set_animation_constraints(0, data[0], 0, data[1])
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
@@ -199,6 +199,8 @@ class Board(gd.BoardGame):
                     self.board.ships[-1].set_outline(color=font_clrs[int(self.term[i % self.term_len])], width=1)
                     self.board.ships[-1].font_color = font_clrs[int(self.term[i % self.term_len])]
                     self.board.ships[-1].set_color(unit_clrs[int(self.term[i % self.term_len])])
+                if self.mainloop.m.game_variant == 2 or self.mainloop.m.game_variant == 5:
+                    self.board.ships[-1].outline = False
 
                 self.board.ships[-1].pattern_value = self.term[i % self.term_len]
                 self.board.ships[-1].highlight = False
@@ -241,6 +243,8 @@ class Board(gd.BoardGame):
                     self.board.ships[-1].set_outline(color=font_clrs[int(self.term[i % self.term_len])], width=1)
                     self.board.ships[-1].font_color = font_clrs[int(self.term[i % self.term_len])]
                     self.board.ships[-1].set_color(unit_clrs[int(self.term[i % self.term_len])])
+                if self.mainloop.m.game_variant == 2 or self.mainloop.m.game_variant == 5:
+                    self.board.ships[-1].outline = False
 
                 self.board.ships[-1].pattern_value = self.term[i % self.term_len]
                 self.board.ships[-1].immobilize()
@@ -285,9 +289,9 @@ class Board(gd.BoardGame):
                 self.board.ships[-1].set_color(unit_clrs[int(self.term[i % self.term_len])])
 
             if self.mainloop.m.game_variant == 2 or self.mainloop.m.game_variant == 5:
-                self.board.ships[-1].outline_highlight = False
+                #self.board.ships[-1].outline_highlight = False
                 self.board.ships[-1].outline = False
-                self.board.ships[-1].perm_outline = False
+                #self.board.ships[-1].perm_outline = False
 
             self.board.ships[-1].pattern_value = self.term[i % self.term_len]
             self.board.ships[-1].highlight = False
@@ -295,11 +299,16 @@ class Board(gd.BoardGame):
             self.board.ships[-1].checkable = True
             self.board.ships[-1].init_check_images()
 
+        """
         self.board.add_unit(0, 4, data[0], 1, classes.board.Label, self.lang.d["Complete the pattern"], color1, "", 5)
         self.board.units[-1].font_color = font_color
+        """
 
         for each in self.board.units:
             self.board.all_sprites_list.move_to_front(each)
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.lang.d["Complete the pattern"])
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up

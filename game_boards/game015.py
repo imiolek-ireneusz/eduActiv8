@@ -18,7 +18,7 @@ class Board(gd.BoardGame):
         self.allow_unit_animations = False
         self.allow_teleport = False
         self.board.decolorable = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.board.draw_grid = False
@@ -41,33 +41,33 @@ class Board(gd.BoardGame):
         # setting level variable
         # data = [x_count, y_count, number_count, top_limit, ordered]
         if self.level.lvl == 1:
-            data = [13, 9, 5, 3, 2]
+            data = [13, 8, 5, 3, 2]
         elif self.level.lvl == 2:
-            data = [13, 9, 8, 3, 3]
+            data = [13, 8, 8, 3, 3]
         elif self.level.lvl == 3:
-            data = [12, 9, 7, 4, 2]
+            data = [12, 8, 7, 4, 2]
         elif self.level.lvl == 4:
-            data = [12, 9, 11, 4, 3]
+            data = [12, 8, 11, 4, 3]
         elif self.level.lvl == 5:
-            data = [12, 9, 15, 4, 4]
+            data = [12, 8, 15, 4, 4]
         elif self.level.lvl == 6:
-            data = [13, 9, 9, 5, 2]
+            data = [13, 8, 9, 5, 2]
         elif self.level.lvl == 7:
-            data = [13, 9, 14, 5, 3]
+            data = [13, 8, 14, 5, 3]
         elif self.level.lvl == 8:
-            data = [13, 9, 19, 5, 4]
+            data = [13, 8, 19, 5, 4]
         elif self.level.lvl == 9:
-            data = [13, 9, 24, 5, 5]
+            data = [13, 8, 24, 5, 5]
         elif self.level.lvl == 10:
-            data = [12, 9, 11, 6, 2]
+            data = [12, 8, 11, 6, 2]
         elif self.level.lvl == 11:
-            data = [12, 9, 17, 6, 3]
+            data = [12, 8, 17, 6, 3]
         elif self.level.lvl == 12:
-            data = [12, 9, 23, 6, 4]
+            data = [12, 8, 23, 6, 4]
         elif self.level.lvl == 13:
-            data = [12, 9, 29, 6, 5]
+            data = [12, 8, 29, 6, 5]
         elif self.level.lvl == 14:
-            data = [12, 9, 35, 6, 6]
+            data = [12, 8, 35, 6, 6]
 
         self.chapters = [1, 3, 6, 10, 14]
         # rescale the number of squares horizontally to better match the screen width
@@ -97,7 +97,7 @@ class Board(gd.BoardGame):
             self.shuffled[1] = temp
 
         h1 = (data[1] - data[4]) // 2  # height of the top margin
-        h2 = data[1] - h1 - data[4] - 1  # height of the bottom margin minus 1 (game label)
+        h2 = data[1] - h1 - data[4]  # height of the bottom margin
         w2 = (data[0] - data[3]) // 2  # side margin width
         self.check = [h1, h2, w2]
 
@@ -137,6 +137,7 @@ class Board(gd.BoardGame):
                 line = []
         if self.mainloop.scheme is not None:
             self.outline_all(font_col, 1)
+        """
         instruction = self.d["Re-arrange right"]
         self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, color0, "", 5)  # bottom 2
         self.board.ships[-1].font_color = instr_font_col
@@ -144,6 +145,7 @@ class Board(gd.BoardGame):
 
         self.board.ships[-1].speaker_val = self.dp["Re-arrange right"]
         self.board.ships[-1].speaker_val_update = False
+        """
         if self.mainloop.scheme is None:
             self.outline_all(0, 1)
         # horizontal
@@ -154,6 +156,9 @@ class Board(gd.BoardGame):
         self.board.add_unit(w2 + data[3], h1, w2, data[4], classes.board.Obstacle, "", white, "", 7)  # right
 
         self.board.all_sprites_list.move_to_front(self.board.units[0])
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.d["Re-arrange right"])
 
     def auto_check_reset(self):
         for each in self.board.ships:
@@ -172,7 +177,7 @@ class Board(gd.BoardGame):
     def check_result(self):
         current = [x for x in range(self.data[2] + 1)]  # self.choice_list[:]
         # collect value and x position on the grid from ships list
-        for i in range(len(self.board.ships) - 1):
+        for i in range(len(self.board.ships)):
             x = self.board.ships[i].grid_x - self.check[2]
             y = self.board.ships[i].grid_y - self.check[0]
             w = self.data[3]

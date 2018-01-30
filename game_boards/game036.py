@@ -19,7 +19,7 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.allow_unit_animations = False
         self.allow_teleport = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 100
         v = 255
@@ -27,7 +27,7 @@ class Board(gd.BoardGame):
         color0 = ex.hsv_to_rgb(h, 40, 230)
         font_color = ex.hsv_to_rgb(h, 255, 140)
 
-        data = [11, 6]
+        data = [11, 5]
         data.extend(
             self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
                                                   self.level.lvl))
@@ -118,7 +118,7 @@ class Board(gd.BoardGame):
             self.door_indexes.append(indu + i)
             self.board.ships[inds + i].readable = False
             self.board.all_sprites_list.move_to_front(self.board.units[indu + i])
-
+        """
         instruction = self.d["Drag the slider"]
         self.board.add_unit(0, 5, 11, 1, classes.board.Letter, instruction, color0, "", 7)
         self.board.ships[-1].immobilize()
@@ -126,8 +126,12 @@ class Board(gd.BoardGame):
 
         self.board.ships[-1].speaker_val = self.dp["Drag the slider"]
         self.board.ships[-1].speaker_val_update = False
+        """
         self.changed_since_check = True  # to make it possible to confirm if numbers are equal
         self.outline_all(0, 1)
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.d["Drag the slider"])
 
     def auto_check_reset(self):
         for each in self.board.units:
@@ -147,7 +151,7 @@ class Board(gd.BoardGame):
 
     def check_result(self):
         all_true = True
-        for i in range(len(self.board.ships) - 1):
+        for i in range(len(self.board.ships)):
             # calculate the active value based on grid_y of the slider
             if self.board.ships[i].grid_y != 1:
                 value = self.board.ships[i].value[2 - self.board.ships[i].grid_y]

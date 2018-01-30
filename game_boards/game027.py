@@ -18,7 +18,7 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 20, 10)
 
     def create_game_objects(self, level=1):
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         # create non-movable objects
         self.board.draw_grid = False
@@ -28,7 +28,7 @@ class Board(gd.BoardGame):
         white = (255, 255, 255)
 
         # data = [x_count, y_count, number of items on the list, top_quantity, font-size]
-        data = [20, 14]
+        data = [20, 13]
         data.extend(
             self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
                                                   self.level.lvl))
@@ -42,7 +42,7 @@ class Board(gd.BoardGame):
 
         self.data = data
 
-        self.board.set_animation_constraints(0, data[0], 0, data[1] - 1)
+        self.board.set_animation_constraints(0, data[0], 0, data[1])
 
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
@@ -50,7 +50,7 @@ class Board(gd.BoardGame):
         shelf_len = 7
         # basket
         basket_w = data[0] - shelf_len - 1
-        self.board.add_door(data[0] - basket_w, data[1] - 6, basket_w, 5, classes.board.Door, "", white, "")
+        self.board.add_door(data[0] - basket_w, data[1] - 5, basket_w, 5, classes.board.Door, "", white, "")
         self.board.units[0].door_outline = True
         # basket image - 260 x 220
         img_bg_col = white
@@ -60,7 +60,7 @@ class Board(gd.BoardGame):
                 scheme = "black"
                 img_bg_col = (0, 0, 0)
         img_src = "basket.png"
-        self.board.add_door(data[0] - 6, data[1] - 6, 6, 5, classes.board.Door, "", img_bg_col, img_src, door_alpha=True)
+        self.board.add_door(data[0] - 6, data[1] - 5, 6, 5, classes.board.Door, "", img_bg_col, img_src, door_alpha=True)
         self.board.units[-1].is_door = False
 
         self.board.add_unit(data[0] - 7, 0, 7, 1, classes.board.Label, self.d["Shopping List"], white, "", data[4] + 1)
@@ -149,6 +149,7 @@ class Board(gd.BoardGame):
                 self.board.ships[-1].speaker_val_update = False
                 self.board.ships[-1].outline = False
         self.board.all_sprites_list.move_to_front(self.board.units[0])
+        """
         instruction = self.d["Check the shopping list"]
         self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, color0, "", 3)
         self.board.ships[-1].set_outline(0, 1)
@@ -156,6 +157,10 @@ class Board(gd.BoardGame):
         self.board.ships[-1].font_color = font_color
         self.board.ships[-1].speaker_val = self.dp["Check the shopping list"]
         self.board.ships[-1].speaker_val_update = False
+        """
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.d["Check the shopping list"])
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up

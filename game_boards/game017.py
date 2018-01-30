@@ -28,6 +28,7 @@ class Board(gd.BoardGame):
         font_color = ex.hsv_to_rgb(h, 255, 140)
         font_color2 = ex.hsv_to_rgb(h, 255, 50)
         outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
+        outline_color2 = (255, 102, 0)
 
         if self.mainloop.scheme is not None:
             card_color = self.mainloop.scheme.u_color
@@ -68,6 +69,10 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
+
+        self.board.board_bg.update_me = True
+        self.board.board_bg.line_color = (20, 20, 20)
+
         self.base26 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
                        't', 'u', 'v', 'w', 'x', 'y', 'z']
         self.font_size = 17
@@ -175,10 +180,19 @@ class Board(gd.BoardGame):
         else:
             h = 5
         self.board.add_door(x - 2 + xd, y, w, h, classes.board.Door, "", card_color, "")
-        self.board.units[-1].set_outline(color=outline_color, width=2)
+        self.board.units[-1].set_outline(color=outline_color2, width=2)
         self.board.all_sprites_list.move_to_front(self.board.units[-1])
+
+        self.board.add_unit(x - 3 + xd, y, 1, h, classes.board.ImgCenteredShip, "", card_color, img_src='nav_l.png',
+                 alpha=True)
+        self.lt = self.board.ships[-1]
+        self.board.add_unit(x - 2 + xd + w, y, 1, h, classes.board.ImgCenteredShip, "", card_color, img_src='nav_r.png',
+                 alpha=True)
+        self.rt = self.board.ships[-1]
+
         self.slide = self.board.ships[self.abc_len]
-        self.slide.perm_outline = True
+        #self.slide.perm_outline = True
+        self.slide.set_outline(color=outline_color2, width=2)
         for each in self.board.ships:
             each.immobilize()
             each.font_color = font_color
@@ -187,48 +201,88 @@ class Board(gd.BoardGame):
         self.active_item = self.board.ships[0]
         self.active_item.color = (255, 255, 255)
         self.prev_item = self.active_item
+        self.current_letter_index = 0
+
+    def activate_letter(self):
+        if self.prev_item is not None:
+            self.prev_item.color = self.letter_color2
+            self.prev_item.update_me = True
+        self.active_item.color = (255, 255, 255)
+        self.create_card(self.active_item)
+        self.prev_item = self.active_item
+        self.mainloop.redraw_needed[0] = True
+
+    def next_slide(self, n):
+        if n == 1:
+            if self.current_letter_index < self.abc_len - 1:
+                self.current_letter_index += 1
+                self.active_item = self.board.ships[self.current_letter_index]
+            else:
+                self.active_item = self.board.ships[0]
+                self.current_letter_index = 0
+        else:
+            if self.current_letter_index > 0:
+                self.current_letter_index -= 1
+                self.active_item = self.board.ships[self.current_letter_index]
+            else:
+                self.active_item = self.board.ships[self.abc_len - 1]
+                self.current_letter_index = self.abc_len - 1
+
+        self.active_item.update_me = True
+        self.activate_letter()
+
+        self.mainloop.redraw_needed[0] = True
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if event.type == pygame.MOUSEBUTTONDOWN:
             self.active_item = self.board.ships[self.board.active_ship]
             if self.active_item.unit_id < self.abc_len:
-                if self.prev_item is not None:
-                    self.prev_item.color = self.letter_color2
-                    self.prev_item.update_me = True
-                self.active_item.color = (255, 255, 255)
-                self.create_card(self.active_item)
-                self.prev_item = self.active_item
-                self.mainloop.redraw_needed[0] = True
+                self.current_letter_index = self.active_item.unit_id
+                self.activate_letter()
+            else:
+                pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
+                if self.lt.rect.topleft[0] < pos[0] < self.lt.rect.topleft[0] + self.lt.rect.width and \
+                                        self.lt.rect.topleft[1] < pos[1] < self.lt.rect.topleft[
+                            1] + self.lt.rect.height:
+                    self.next_slide(-1)
+                elif self.rt.rect.topleft[0] < pos[0] < self.rt.rect.topleft[0] + self.rt.rect.width and \
+                                        self.rt.rect.topleft[1] < pos[1] < self.rt.rect.topleft[
+                            1] + self.rt.rect.height:
+                    self.next_slide(1)
 
     def create_card(self, active):
         val = ex.unival(active.value)
-        if len(val) == 2:
-            lcb = 0
-            lce = 1
-            ucb = 1
-            uce = 2
-        if len(val) == 4:
-            lcb = 0
-            lce = 2
-            ucb = 2
-            uce = 4
-
         if sys.version_info < (3, 0):
             self.say(val[0].encode("utf-8"))
         else:
             self.say(val[0])
-        self.board.units[0].value = val[lcb:lce]
-        if self.lang.has_cursive:
-            self.board.units[1].value = val[lcb:lce]
         indx = [0, 1]
         if self.lang.has_uc:
+            if len(val) == 2:
+                lcb = 0
+                lce = 1
+                ucb = 1
+                uce = 2
+            if len(val) == 4:
+                lcb = 0
+                lce = 2
+                ucb = 2
+                uce = 4
+
+            self.board.units[0].value = val[lcb:lce]
+            if self.lang.has_cursive:
+                self.board.units[1].value = val[lcb:lce]
+
             if self.lang.has_cursive:
                 indx = [0, 1, 2, 3]
                 self.board.units[2].value = val[ucb:uce]
                 self.board.units[3].value = val[ucb:uce]
             else:
                 self.board.units[1].value = val[ucb:uce]
+        else:
+            self.board.units[0].value = val
+
 
         self.board.ships[self.abc_len].value = self.word_list[active.unit_id]
         self.board.ships[self.abc_len].speaker_val = self.pword_list[active.unit_id]

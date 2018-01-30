@@ -126,6 +126,8 @@ class Board(gd.BoardGame):
 
         self.board.add_door(18, y, 1, 1, classes.board.Door, "", task_bg_color, "", font_size=2)
         self.home_square = self.board.units[86]
+        self.home_square.checkable = True
+        self.home_square.init_check_images()
         self.home_square.door_outline = True
         if self.level.lvl < 4:
             self.home_square.font_color = self.board.ships[self.solution[1] - 1].font_color
@@ -136,7 +138,7 @@ class Board(gd.BoardGame):
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if self.show_msg == False:
-            if event.type == pygame.KEYDOWN and event.key != pygame.K_RETURN:
+            if event.type == pygame.KEYDOWN and (event.key != pygame.K_RETURN and event.key != pygame.K_KP_ENTER):
                 lhv = len(self.home_square.value)
                 self.changed_since_check = True
                 if event.key == pygame.K_BACKSPACE:
@@ -156,32 +158,37 @@ class Board(gd.BoardGame):
                 for each in self.board.units:
                     if each.is_door is True:
                         self.board.all_sprites_list.move_to_front(each)
+                if self.board.grid[4][18]:
+                    self.check_result()
+                    self.home_square.value = ""
+                    self.home_square.update_me = True
+            elif event.type == pygame.KEYDOWN and (event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER):
+                self.check_result()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                self.auto_check_reset()
 
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
+
+    def auto_check_reset(self):
+        self.home_square.set_display_check(None)
 
     def check_result(self):
         if self.board.grid[4][18]:
             sol = self.board.ships[self.solution[1] - 1]
             if sol.grid_x == 18 and sol.grid_y == 4:
                 self.passed()
+                self.home_square.set_display_check(True)
             else:
-                self.failed()
+                self.home_square.set_display_check(False)
         else:
             if self.home_square.value != "" and (int(self.home_square.value) == self.solution[1]):
-                self.quick_passed()
+                self.passed()
+                self.home_square.set_display_check(True)
             else:
-                self.failed()
+                self.home_square.set_display_check(False)
+        self.mainloop.redraw_needed[0] = True
 
     def passed(self):
-        tts = self.d[
-            "Perfect!"]  # +" "+str(self.solution[2])+" "+self.d["divided by"]+" "+str(self.solution[0])+" "+self.d["equals"]+" "+str(self.solution[1])
-        self.level.next_board(tts)
-
-    def quick_passed(self):
-        tts = self.d["Perfect!"]
-        self.level.next_board(tts)
-
-    def failed(self):
-        self.level.try_again()
+        self.level.next_board(self.d["Perfect!"])

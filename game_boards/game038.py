@@ -3,6 +3,7 @@
 import os
 import pygame
 import random
+import sys
 
 import classes.board
 import classes.extras as ex
@@ -27,6 +28,7 @@ class Board(gd.BoardGame):
         self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
         font_color = ex.hsv_to_rgb(h, s, 140)
         outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
+        outline_color2 = (255, 102, 0)
         frame_color = [255, 255, 255, 0]
         card_color = ex.hsv_to_rgb(h + 10, s - 25, v)
 
@@ -58,6 +60,7 @@ class Board(gd.BoardGame):
                 self.board.ships[-1].speaker_val_update = False
 
             self.board.ships[-1].font_color = font_color
+            self.board.ships[-1].readable = False
             self.board.ships[i - 1].set_outline(outline_color, 1)
             self.card_fronts.append(classes.board.ImgSurf(self.board, 2, 2, frame_color, image_src[i]))
             x = x2 + i
@@ -71,9 +74,10 @@ class Board(gd.BoardGame):
         self.board.add_unit(x - 2, y + 5, 2, 2, classes.board.ImgShip, "1", frame_color, image_src[1])
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                self.board.ships[-1].set_outline((255, 0, 0), 3)
+                self.board.ships[-1].set_outline(outline_color2, 2)
         # frame size 432 x 288
         self.board.add_unit(x, y + 1, 6, 4, classes.board.ImgShip, "1", frame_color, self.fish_img_src[0], alpha=True)
+        self.board.ships[-1].set_outline(outline_color2, 2)
         self.board.add_unit(x, y + 5, 6, 1, classes.board.Letter, self.word_list[0], frame_color, "", 2)
         self.board.ships[-1].font_color = font_color
         if self.lang.ltr_text:
@@ -102,10 +106,17 @@ class Board(gd.BoardGame):
         self.board.add_unit(x - 2, y + 1, 2, 4, classes.board.Letter, "1", frame_color, "", 18)
         self.board.ships[-1].font_color = font_color
         self.board.add_door(x - 2, y + 1, 8, 6, classes.board.Door, "", card_color, "")
-        self.board.units[0].door_outline = True
+        self.board.units[0].set_outline(outline_color2, 2)
         self.board.all_sprites_list.move_to_front(self.board.units[0])
         self.slide = self.board.ships[21]
         self.slide.perm_outline = True
+
+        self.board.add_unit(x - 3, y+1, 1, 6, classes.board.ImgCenteredShip, "", frame_color, img_src='nav_l.png',
+                            alpha=True)
+        self.lt = self.board.ships[-1]
+        self.board.add_unit(x + 6, y+1, 1, 6, classes.board.ImgCenteredShip, "", frame_color, img_src='nav_r.png',
+                            alpha=True)
+        self.rt = self.board.ships[-1]
 
         for each in self.board.ships:
             each.immobilize()
@@ -115,11 +126,46 @@ class Board(gd.BoardGame):
         self.active_item.color = (255, 255, 255)
         self.prev_item = self.active_item
 
+        self.current_letter_index = 0
+
+    def activate_letter(self):
+        if self.prev_item is not None:
+            self.prev_item.color = self.letter_color2
+            self.prev_item.update_me = True
+        self.active_item.color = (255, 255, 255)
+        self.create_card(self.active_item)
+        self.prev_item = self.active_item
+        self.mainloop.redraw_needed[0] = True
+
+    def next_slide(self, n):
+        if n == 1:
+            if self.current_letter_index < 19:
+                self.current_letter_index += 1
+                self.active_item = self.board.ships[self.current_letter_index]
+            else:
+                self.active_item = self.board.ships[0]
+                self.current_letter_index = 0
+        else:
+            if self.current_letter_index > 0:
+                self.current_letter_index -= 1
+                self.active_item = self.board.ships[self.current_letter_index]
+            else:
+                self.active_item = self.board.ships[19]
+                self.current_letter_index = 19
+
+        self.active_item.update_me = True
+        self.activate_letter()
+
+        self.mainloop.redraw_needed[0] = True
+
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if event.type == pygame.MOUSEBUTTONDOWN:
             self.active_item = self.board.ships[self.board.active_ship]
             if self.active_item.unit_id < 20:
+                self.current_letter_index = self.active_item.unit_id
+                self.activate_letter()
+                """
                 if self.prev_item is not None:
                     self.prev_item.color = self.letter_color2
                     self.prev_item.update_me = True
@@ -127,6 +173,17 @@ class Board(gd.BoardGame):
                 self.create_card(self.active_item)
                 self.prev_item = self.active_item
                 self.mainloop.redraw_needed[0] = True
+                """
+            else:
+                pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
+                if self.lt.rect.topleft[0] < pos[0] < self.lt.rect.topleft[0] + self.lt.rect.width and \
+                                        self.lt.rect.topleft[1] < pos[1] < self.lt.rect.topleft[
+                            1] + self.lt.rect.height:
+                    self.next_slide(-1)
+                elif self.rt.rect.topleft[0] < pos[0] < self.rt.rect.topleft[0] + self.rt.rect.width and \
+                                        self.rt.rect.topleft[1] < pos[1] < self.rt.rect.topleft[
+                            1] + self.rt.rect.height:
+                    self.next_slide(1)
 
     def create_card(self, active):
         if self.lang.ltr_text:
@@ -163,6 +220,12 @@ class Board(gd.BoardGame):
 
         self.slide.update_me = True
         self.board.units[0].update_me = True
+
+        if sys.version_info < (3, 0):
+            self.say(sv.encode("utf-8"))
+        else:
+            self.say(sv)
+
         for i in [20, 21, 22, 23, 24]:
             self.board.ships[i].update_me = True
 

@@ -11,7 +11,7 @@ import classes.level_controller as lc
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.level = lc.Level(self, mainloop, 1, 1)
-        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 11)
+        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 17, 11)
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
@@ -54,10 +54,14 @@ class Board(gd.BoardGame):
         self.board.board_bg.initcolor = color
         self.board.board_bg.color = color
         self.board.board_bg.update_me = True
-
-        self.board.add_unit(data[0]-4, 0, 4, 1, classes.board.Label, ["v.%s" % self.mainloop.config.version, " ", " "],
-                            color, "", 5)
-        self.board.units[-1].align = 2
+        if self.mainloop.config.update_available:
+            txt = self.d["upd8 available"] % (self.mainloop.config.version, self.mainloop.config.avail_version)
+            align = 0
+        else:
+            txt = self.d["upd8 no update"] % self.mainloop.config.version
+            align = 2
+        self.board.add_unit(0, 0, data[0], 1, classes.board.Label, [txt, " ", " "], color, "", 5)
+        self.board.units[-1].align = align
         self.board.units[-1].font_color = ver_color
 
         img_src = os.path.join("schemes", self.scheme_dir, 'home_logo.png')
@@ -87,7 +91,7 @@ class Board(gd.BoardGame):
                             "info%seduactiv8%sorg   |   bugs%seduactiv8%sorg" % ("@", ".", "@", "."), color, "", 6)
         self.board.units[-1].font_color = font_color
 
-        self.board.add_unit(0, 10, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2017  Ireneusz Imiolek",
+        self.board.add_unit(0, 10, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2018  Ireneusz Imiolek",
                             color, "", 6)
         self.board.units[-1].font_color = font_color
 

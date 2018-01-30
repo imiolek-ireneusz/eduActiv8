@@ -20,7 +20,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.board.draw_grid = True
         if self.mainloop.scheme is None:
@@ -38,7 +38,7 @@ class Board(gd.BoardGame):
             self.color2 = self.mainloop.scheme.u_font_color3  # contours & borders
             bg_color = self.bg_col
 
-        data = [9, 6, 3]
+        data = [9, 5, 3]
         data.extend(
             self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
                                                   self.level.lvl))
@@ -84,6 +84,7 @@ class Board(gd.BoardGame):
             instruction = self.d["Fract instr4"]
             instrp = self.dp["Fract instr4"]
             extra_w = 1
+        self.instruction = instruction
 
         data[0] = data[0] + extra_w
         self.data = data
@@ -209,15 +210,21 @@ class Board(gd.BoardGame):
 
             self.board.all_sprites_list.move_to_front(self.board.units[ind + i])
 
-        if self.row_count < 5:
-            self.board.add_unit(0, data[1] - 1 - (5 - self.row_count), data[0], data[1] - 1 - self.row_count, classes.board.Label, "", self.bg_col, "", 9)
 
+        if self.row_count < 5:
+            self.board.add_unit(0, data[1] - (5 - self.row_count), data[0], data[1] - self.row_count, classes.board.Label, "", self.bg_col, "", 9)
+        """
         self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, bg_color, "", 9)
         self.board.ships[-1].set_outline(self.color2, 1)
         self.board.ships[-1].immobilize()
         self.board.ships[-1].font_color = self.color2
         self.board.ships[-1].speaker_val = instrp
         self.board.ships[-1].speaker_val_update = False
+        """
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.instruction)
+
 
     def draw_circles(self, numbers, canvas, size, center, color):
         angle_step = 2 * pi / numbers[1]
@@ -403,14 +410,14 @@ class Board(gd.BoardGame):
     def check_result(self):
         correct = True
 
-        for i in range(len(self.board.ships) - 1):
+        for i in range(len(self.board.ships)):
             ship = self.board.ships[i]
             if ship.grid_x >= self.data[0] - 4:
                 correct = False
                 break
 
         if correct:
-            for i in range(len(self.board.ships) - 1):
+            for i in range(len(self.board.ships)):
                 ship = self.board.ships[i]
                 if ship.hidden_value == self.board.units[ship.grid_y].hidden_value:
                     ship.set_display_check(True)

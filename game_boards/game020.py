@@ -8,22 +8,24 @@ import classes.board
 import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
+import classes.drw.fraction_hq
 
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
         self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
-        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 9, 5)
+        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 7)
 
     def create_game_objects(self, level=1):
         self.board.decolorable = False
-        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.board.draw_grid = False
+
         if self.mainloop.scheme is None:
-            s = random.randrange(100, 150, 5)
-            v = random.randrange(230, 255, 5)
+            s = 127  # random.randrange(100, 150, 5)
+            v = 255  # random.randrange(230, 255, 5)
             h = random.randrange(0, 255, 5)
             white = (255, 255, 255)
             self.bg_col = white
@@ -43,7 +45,28 @@ class Board(gd.BoardGame):
                 color3 = (254, 254, 255)
                 self.bg_col = (254, 254, 255)
                 self.color2 = (0, 0, 200)
-        data = [9, 5, 3]
+
+        if self.mainloop.scheme is not None:
+            white = self.mainloop.scheme.u_color
+
+            h1 = 170
+            h2 = 40
+            color1 = ex.hsv_to_rgb(h1, 255, 255)
+            color2 = ex.hsv_to_rgb(h2, 75, 255)
+            bd_color1 = ex.hsv_to_rgb(h1, 127, 155)
+            bd_color2 = ex.hsv_to_rgb(h2, 127, 155)
+        else:
+            white = (255, 255, 255)
+
+            h1 = h#random.randrange(0, 255, 5)
+            h2 = h1
+
+            color1 = ex.hsv_to_rgb(h1, 150, 255)
+            color2 = ex.hsv_to_rgb(h2, 30, 255)
+            bd_color1 = ex.hsv_to_rgb(h1, 187, 200)
+            bd_color2 = ex.hsv_to_rgb(h2, 150, 225)
+
+        data = [13, 5, 3]
         data.extend(
             self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
                                                   self.level.lvl))
@@ -52,13 +75,15 @@ class Board(gd.BoardGame):
                                                             self.mainloop.config.user_age_group)
 
         self.data = data
-        self.board.set_animation_constraints(3, data[0] - 3, 0, data[1] - 1)
+        self.layout.update_layout(data[0], data[1])
+        self.board.set_animation_constraints(5, data[0] - 5, 0, data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
 
         self.num_list = []
         self.num_list2 = []
 
-        decimals = [1, 2, 2.5, 3, 4, 5, 6, 7, 7.5, 8, 9]
+        #decimals = [1, 2, 2.5, 3, 4, 5, 6, 7, 7.5, 8, 9]
+        decimals = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         sign = "/"
         numbers = []
 
@@ -79,14 +104,14 @@ class Board(gd.BoardGame):
         self.num_list2.append(["", str(num1), str(num2), ""])
 
         # create table to store 'binary' solution
-        self.solution_grid = [1, 1, 1, 1, 1, 1, 1, 1, 1]
+        self.solution_grid = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         self.expression = [" " for x in range(data[0])]
         # find position of first door square
         xd = (data[0] - data[2]) // 2
 
         # add objects to the board
-        self.board.add_unit(0, 1, 3, 3, classes.board.Label, "", self.bg_col, "", data[4])
-        self.board.add_unit(6, 1, 3, 3, classes.board.Label, "", self.bg_col, "", data[4])
+        self.board.add_unit(0, 0, 5, 5, classes.board.Label, "", self.bg_col, "", data[4])
+        self.board.add_unit(8, 0, 5, 5, classes.board.Label, "", self.bg_col, "", data[4])
 
         size = self.board.scale
         center = [size // 2, size // 2]
@@ -111,17 +136,10 @@ class Board(gd.BoardGame):
             if len(signs) < data[0]:
                 if i == 0 and len(signs) % 2 == 0:
                     x = data[0] // 2
-                    y = 3
+                    y = 2
                 else:
                     x = (data[0] - len(signs)) // 2
                     y = 0
-            else:
-                if i < data[0]:
-                    x = 0
-                    y = 0
-                else:
-                    x = ((data[0] - (len(signs) - data[0])) // 2) - data[0]
-                    y = 3
 
             self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, signs[i], color3, "", data[4])
             self.board.ships[-1].checkable = True
@@ -136,6 +154,7 @@ class Board(gd.BoardGame):
         self.board.units[ind].door_outline = True
         self.board.all_sprites_list.move_to_front(self.board.units[ind])
 
+        """
         instruction = self.d["Drag lt"]
         self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, self.bg_col, "", 9)
         self.board.ships[-1].font_color = self.font_color
@@ -143,7 +162,10 @@ class Board(gd.BoardGame):
         self.board.ships[-1].speaker_val = self.d["Drag lt2"]
         self.board.ships[-1].set_outline(self.font_color, 1)
         self.board.ships[-1].speaker_val_update = False
+        """
 
+
+        """
         size = self.board.units[0].grid_w * self.board.scale
         center = [size // 2, size // 2]
         for i in range(2):
@@ -151,6 +173,14 @@ class Board(gd.BoardGame):
             canvas.fill(self.board.units[i].initcolor)
             self.draw_circles(numbers[i], canvas, size, center, color1a)  # data[7](data, canvas, i)
             self.board.units[i].painting = canvas.copy()
+        """
+        for i in range(2):
+            self.fraction = classes.drw.fraction_hq.Fraction(1, self.board.scale * self.board.units[i].grid_w, color1, color2, bd_color1,
+                                                             bd_color2, numbers[i], 1)
+            self.board.units[i].painting = self.fraction.get_canvas().copy()
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.d["Drag lt"])
 
     def draw_fractions(self, canvas, size, center, color):
         lh = max(int(size * 0.05), 2)
@@ -239,7 +269,7 @@ class Board(gd.BoardGame):
     def check_result(self):
         if self.board.grid[2] == self.solution_grid:
             found = None
-            for i in range(len(self.board.ships) - 1):
+            for i in range(len(self.board.ships)):
                 if self.board.ships[i].grid_y == 2:  # if the sign is on line with expression
                     found = self.board.ships[i]
                     value = self.board.ships[i].value

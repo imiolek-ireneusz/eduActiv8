@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = 100
         v = 255
@@ -27,7 +27,7 @@ class Board(gd.BoardGame):
         font_color = ex.hsv_to_rgb(h, 255, 140)
         white = [255, 255, 255]
 
-        data = [14, 5]
+        data = [14, 4]
         data.extend(
             self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
                                                   self.level.lvl))
@@ -37,7 +37,7 @@ class Board(gd.BoardGame):
         self.points = data[2] // 5
         self.data = data
 
-        self.board.set_animation_constraints(4, data[0], 0, data[1] - 1)
+        self.board.set_animation_constraints(4, data[0], 0, data[1])
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
 
@@ -50,7 +50,7 @@ class Board(gd.BoardGame):
 
         # find position of first door square
         x = data[0] - 1
-        y = data[1] - 2
+        y = data[1] - 1
         # add objects to the board
         for i in range(data[2]):
             h = random.randrange(0, 255, 5)
@@ -75,6 +75,10 @@ class Board(gd.BoardGame):
         self.board.add_door(4, 0, data[0] - 4, 2, classes.board.Door, "", white, "")
         self.board.units[-1].door_outline = True
 
+        self.board.add_door(4, 2, data[0] - 4, 2, classes.board.Door, "", white, "")
+        self.board.units[-1].door_outline = True
+
+        """
         instruction = self.d["Find and separate"]
         self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, color0, "", 7)
         self.board.ships[-1].immobilize()
@@ -82,8 +86,12 @@ class Board(gd.BoardGame):
 
         self.board.ships[-1].speaker_val = self.dp["Find and separate"]
         self.board.ships[-1].speaker_val_update = False
+        """
         self.outline_all(0, 1)
         self.board.all_sprites_list.move_to_front(self.board.units[-1])
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.d["Find and separate"])
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up

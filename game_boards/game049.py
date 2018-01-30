@@ -23,7 +23,7 @@ class Board(gd.BoardGame):
 
         if self.level.lvl > self.level.lvl_count:
             self.level.lvl = self.level.lvl_count
-        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         s = random.randrange(190, 225)
         v = 255
@@ -57,14 +57,14 @@ class Board(gd.BoardGame):
             self.font_size = 1
 
         if self.mainloop.m.game_variant == 0:
-            data = [self.alphabet_width, 6, self.alphabet_lc]
+            data = [self.alphabet_width, 5, self.alphabet_lc]
         else:  # if self.mainloop.m.game_variant == 0:
-            data = [self.alphabet_width, 6, self.alphabet_uc]
+            data = [self.alphabet_width, 5, self.alphabet_uc]
         data.extend(lvl_data)
         nlf = min((self.alphabet_len * data[4] / 100), self.alphabet_len)
 
         self.data = data
-        self.board.set_animation_constraints(0, data[0], 0, data[1] - 1)
+        self.board.set_animation_constraints(0, data[0], 0, data[1])
 
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
@@ -118,7 +118,7 @@ class Board(gd.BoardGame):
                     else:
                         x = 1
 
-                y = data[1] - 2
+                y = data[1] - 1
         x = 0
         y = 0
         for i in range(self.alphabet_len):
@@ -174,7 +174,7 @@ class Board(gd.BoardGame):
                         x = 0
                     else:
                         x = 1
-                y = data[1] - 2
+                y = data[1] - 1
 
         for each in self.board.units:
             self.board.all_sprites_list.move_to_front(each)
@@ -188,6 +188,7 @@ class Board(gd.BoardGame):
             # red
             self.board.add_unit(x, data[1] - 2, 1, 1, classes.board.Label, "", color0, "", 0)
 
+        """
         instruction = self.d["Complete abc"]
         if self.alphabet_len > 30:
             size = 2
@@ -198,7 +199,11 @@ class Board(gd.BoardGame):
         self.board.ships[-1].immobilize()
         self.board.ships[-1].speaker_val = self.dp["Complete abc"]
         self.board.ships[-1].speaker_val_update = False
+        """
         self.outline_all(0, 1)
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, self.d["Complete abc"])
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
@@ -213,7 +218,7 @@ class Board(gd.BoardGame):
     def auto_check(self):
         for each in self.board.ships:
             each.update_me = True
-            if each.checkable and (each.grid_y == 0 or each.grid_y == self.data[1] - 2):
+            if each.checkable and (each.grid_y == 0 or each.grid_y == self.data[1] - 1):
                 if each.home_location[0] == each.grid_x and each.home_location[1] == each.grid_y:
                     each.set_display_check(True)
                 else:
@@ -232,11 +237,11 @@ class Board(gd.BoardGame):
 
     def check_result(self):
         result = [" " for i in range(self.alphabet_len)]
-        if self.board.grid[0] == self.board.grid[self.data[1] - 2] == self.solution_grid:
+        if self.board.grid[0] == self.board.grid[self.data[1] - 1] == self.solution_grid:
             for i in range(len(self.board.ships)):
                 if self.board.ships[i].grid_y == 0:
                     result[self.board.ships[i].grid_x] = self.board.ships[i].value
-                elif self.board.ships[i].grid_y == self.data[1] - 2:
+                elif self.board.ships[i].grid_y == self.data[1] - 1:
                     if self.last_block and not self.lang.ltr_text:
                         result[self.data[0] + self.board.ships[i].grid_x - 1] = self.board.ships[i].value
                     else:
