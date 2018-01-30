@@ -32,7 +32,7 @@ class I18n():
         self.b = dict()
         self.b["Default Language:"] = _("Default Language:")
         self.b["Guest"] = _("Guest")
-        self.b["Hi Stranger"] = _("Hi Stranger :) Would you like to log in so we know who you are?")
+        self.b["Hi Stranger"] = _("Hi Stranger :) Would you like to log in so we know who you are?") #DEL
         self.b["Log in:"] = _("Log in:")
         self.b["user name:"] = _("user name:")
         self.b["password:"] = _("password:")
@@ -134,24 +134,24 @@ class I18n():
 
         # menu categories
         self.d["Info Category"] = _("Info & Settings")
-        self.d["Keyboard & Mouse"] = _("Keyboard & Mouse")
+        #self.d["Keyboard & Mouse"] = _("Keyboard & Mouse") #DEL
         self.d["Discover Letters"] = _("Discover Letters")
         self.d["Learn Words"] = _("Learn New Words")
         self.d["Maths"] = _("Mathematics")
-        self.d["Numbers & Basic Operations"] = _("Numbers & Basic Operations")
-        self.d["Basic Operations - exercises"] = _("Basic Operations - Exercises")
-        self.d["Sorting and Comparing"] = _("Sorting and Comparing")
-        self.d["Geometry"] = _("Geometry and Shape Recognition")
+        #self.d["Numbers & Basic Operations"] = _("Numbers & Basic Operations") #DEL
+        #self.d["Basic Operations - exercises"] = _("Basic Operations - Exercises") #DEL
+        #self.d["Sorting and Comparing"] = _("Sorting and Comparing") #DEL
+        #self.d["Geometry"] = _("Geometry and Shape Recognition") #DEL
         self.d["Art"] = _("Art and Colour")
         self.d["Memory"] = _("Memory")
         self.d["Games & Mazes"] = _("Games & Mazes")
-        self.d["Multiplayer"] = _("Multiplayer Games")
+        #self.d["Multiplayer"] = _("Multiplayer Games") #DEL
 
         # games
-        self.d["About."] = _("About.")
-        self.d["Game info..."] = _("Game info...")
+        #self.d["About."] = _("About.") #DEL
+        #self.d["Game info..."] = _("Game info...") #DEL
         self.d["Credits"] = _("Copyright & Credits")
-        self.d["Hit the Mole"] = _("Hit the Mole")
+        #self.d["Hit the Mole"] = _("Hit the Mole") #DEL
         self.d["Letters"] = _("Letters")
         self.d["Letter Flashcards"] = _("Learn Letters with Flashcards")
         self.d["Learn to Write"] = _("Learn to Write")
@@ -182,8 +182,6 @@ class I18n():
         self.d["Number Comparison"] = _("Number Comparison")
         self.d["Addition & Subtraction"] = _("Addition & Subtraction")
         self.d["Comparison"] = _("Comparison")
-        self.d["Fractions"] = _("Fractions")
-        self.d["Decimal Fractions"] = _("Decimal Fractions")
         self.d["Even or Odd"] = _("Even or Odd")
         self.d["Shapes"] = _("Shapes")
         self.d["Shape Flashcards"] = _("Learn Shapes with Flashcards")
@@ -215,12 +213,7 @@ class I18n():
         self.d["Check the shopping list"] = _("Check the shopping list and drag all needed items into the basket.")
         self.d["Drag lt"] = _("Drag one of the <, > or = (lesser, greater or equal) to the red square.")
         self.d["Drag lt2"] = _("Drag one of the lesser, greater or equal to the red square.")
-        self.d["Re-arrange right"] = _("Re-arrange the above numbers so they are in the right order")
-        self.d["Complete abc"] = _("Complete the abc using the letters above.")
         self.d["Write a word:"] = _("Write a word:")
-        self.d["Find and separate"] = _("Find and separate the Even Numbers from the Odd Numbers in the above series.")
-        self.d["Re-arrange alphabetical"] = _("Re-arrange the above letters so they are in the alphabetical order.")
-        self.d["Re-arrange ascending"] = _("Re-arrange the above numbers so they are in the ascending order.")
 
         # game dialogs
         self.d["Please try again."] = _("Please try again.")
@@ -300,14 +293,14 @@ class I18n():
         self.d["brush size"] = _("brush size")
 
         # new in 0.3.2
-        self.d["TicTacToe2"] = _("Noughts and Crosses 2")
-        self.d["TicTacToe3"] = _("Noughts and Crosses 3")
+        #self.d["TicTacToe2"] = _("Noughts and Crosses 2") #DEL
+        #self.d["TicTacToe3"] = _("Noughts and Crosses 3") #DEL
+        #self.d["multiline-tictactoe"] = _("Get as many lines of 3 as possible to win") #DEL
+        #self.d["Player"] = _("Player") #DEL
+        #self.d["Won"] = _("Won") #DEL
+        #self.d["Game Draw"] = _("Draw") #DEL
 
-        self.d["multiline-tictactoe"] = _("Get as many lines of 3 as possible to win")
 
-        self.d["Player"] = _("Player")
-        self.d["Won"] = _("Won")
-        self.d["Game Draw"] = _("Draw")
         self.d["UserName"] = _("User Name")
         self.d["Match Animals Memory"] = _("Match Animals - Memory Game")
         self.d["Match Fruits"] = _("Match Fruits - Memory Game")
@@ -320,9 +313,6 @@ class I18n():
         self.d["Sliced Fruits"] = _("Fruit Slider")
         self.d["Sliced Numbers"] = _("Number Slider")
 
-        self.d["Fraction Groups"] = _("Fraction Groups")
-        self.d["Percentages"] = _("Percentages")
-        self.d["Ratios"] = _("Ratios")
         self.d["Fract instr0"] = _("Match fraction charts on the right to the ones on the left")
         self.d["Fract instr1"] = _(
             "Match fraction charts and fractions on the right to the fraction charts on the left")
@@ -515,10 +505,11 @@ class I18n():
         self.d["Subtraction"] = _("Subtraction")
         self.d["Multiplication"] = _("Multiplication")
         self.d["Division"] = _("Division")
-        self.d["Fractions"] = _("Fractions")
-        self.d["Decimals and Fractions"] = _("Decimals and Fractions")
-        self.d["Decimals, fractions and percentages"] = _("Decimals, fractions and percentages")
-        self.d["Decimals, fractions, ratios and percentages"] = _("Decimals, fractions, ratios and percentages")
+
+
+        #self.d["Decimals and Fractions"] = _("Decimals and Fractions") #DEL
+        #self.d["Decimals, fractions and percentages"] = _("Decimals, fractions and percentages")
+        #self.d["Decimals, fractions, ratios and percentages"] = _("Decimals, fractions, ratios and percentages")
         self.d["Shapes and Solids"] = _("Shapes and Solids")
         self.d["Nothing here yet..."] = _("Nothing here yet...")
         self.d["Translation Credits"] = _("Translation Credits")
@@ -534,15 +525,16 @@ class I18n():
         self.d[""] = ""
 
         #eduActiv8 new words
-        self.d["Decimals"] = _("Decimals")
+        #self.d["Decimals"] = _("Decimals")
+        self.d["Decimal Fractions"] = _("Decimal Fractions")
         self.d["Fractions"] = _("Fractions")
         self.d["Ratios"] = _("Ratios")
         self.d["Percentages"] = _("Percentages")
 
-        self.d["long form"] = _("long form")  # sr only
-        self.d["short form"] = _("short form")  # sr only
+        self.d["long form"] = _("long form")  # Serbian only
+        self.d["short form"] = _("short form")  # Serbian only
 
-        self.d["Catalan clock"] = _("Catalan clock")  # ca only
+        self.d["Catalan clock"] = _("Catalan clock")  # Catalan only
 
         self.d["Word Builders"] = _("Word Builders")
         self.d["Word Matchers"] = _("Word Matchers")
@@ -574,3 +566,63 @@ class I18n():
         self.d["Complete the pattern"] = _("Complete the pattern on the top line.")
 
         self.d["Negative numbers"] = _("Negative numbers")
+
+        self.d["numerator"] = _("numerator")
+        self.d["denominator"] = _("denominator")
+
+        self.d["Experiment with fractions"] = _("Experiment with fractions")
+        self.d["Experiment with decimals"] = _("Experiment with decimal fractions")
+        self.d["Experiment with ratios"] = _("Experiment with ratios")
+        self.d["Experiment with percentages"] = _("Experiment with percentages")
+
+        self.d["What fraction is it?"] = _("What fraction is it?")
+        self.d["What decimal is it?"] = _("What decimal fraction is it?")
+
+        self.d["Add fractions with the same denominator"] = _("Add fractions with the same denominator")
+        self.d["Subtract fractions with the same denominator"] = _("Subtract fractions with the same denominator")
+        self.d["Multiply fractions"] = _("Multiply fractions")
+        self.d["Divide fractions"] = _("Divide fractions")
+
+        self.d["Exercise 1"] = _("Exercise 1")
+        self.d["Exercise 2"] = _("Exercise 2")
+        self.d["Exercise 3"] = _("Exercise 3")
+
+        self.d["Compare decimals and fractions"] = _("Compare decimals and fractions")
+        self.d["Compare fractions"] = _("Compare fractions")
+        self.d["Reduce fractions"] = _("Reduce fractions")
+        self.d["Extend fractions"] = _("Extend fractions")
+        self.d["To reduce a fraction..."] = _("To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one.")
+        self.d["To extend a fraction..."] = _("To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens.")
+        self.d["Use plus or minus..."] = _("Use the plus or minus signs to change your answer or just type it in.")
+        self.d["Use plus or minus... Android"] = _("Use the plus or minus signs to change your answer.")
+        self.d["To add a fraction with the same denominator..."] = _("To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible.")
+        self.d["To subtract a fraction with the same denominator..."] = _("To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible.")
+        self.d["To multiply two fractions..."] = _("To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible.")
+        self.d["To divide a fraction by a fraction..."] = _("To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible.")
+
+        #self.d["Test Instruction"] = _("Test Instruction")
+
+        self.d["Fraction Groups"] = _("Group fractions together")
+        self.d["Percentage Groups"] = _("Group percentages together")
+        self.d["Ratio Groups"] = _("Group ratios together")
+
+        #Minor changes to the current lines - remove the above from the lines.
+        """
+        self.d["Re-arrange right"] = _("Rearrange the numbers so they are in the right order")
+        self.d["Complete abc"] = _("Complete the abc using the letters above.")
+        self.d["Find and separate"] = _("Find and separate the Even Numbers from the Odd Numbers in the above series.")
+        self.d["Re-arrange alphabetical"] = _("Rearrange the letters so they are in the alphabetical order.")
+        self.d["Re-arrange ascending"] = _("Rearrange the numbers so they are in the ascending order.")
+        """
+        self.d["Re-arrange right"] = _("Rearrange the numbers so they are in the right order.")
+        self.d["Complete abc"] = _("Complete the alphabet using letters from the middle line.")
+        self.d["Find and separate"] = _("Find and separate even numbers from odd numbers.")
+        """
+        msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+        msgstr "Find and separate the Even Numbers from the Odd Numbers in the above series."
+        """
+        self.d["Re-arrange alphabetical"] = _("Rearrange the letters so they are in the alphabetical order.")
+        self.d["Re-arrange ascending"] = _("Rearrange the numbers so they are in the ascending order.")
+        self.d["upd8 no update"] = _("v.%s")
+        self.d["upd8 available"] = _("eduActiv8 update is available. Current version: %s. New version: %s.")
+        self.b["check for updates"] = _("check for updates on start")

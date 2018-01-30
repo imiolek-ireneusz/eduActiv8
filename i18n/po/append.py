@@ -12,7 +12,7 @@ langs = ["ar.po", "ca.po", "da.po", "de.po", "el.po", "en_GB.po", "en_US.po", "e
 # lines = ["Word Builder - Sports","Word Builder - Body","Word Builder - People","Word Builder - Actions","Word Builder - Constructions","Word Builder - Nature","Word Builder - Jobs","Word Builder - Clothes and Accessories","Word Builder - Fruits and Vegetables","Word Builder - Transport","Word Builder - Food"]
 #new games
 
-lines = ["Heptagon", "Pentagon", "Octagon", "Hexagon", "Ellipse", "Match shapes to their names", "Negative numbers"]
+lines = ["lines to", " add"]
 
 def add_all():
     for lang in langs:

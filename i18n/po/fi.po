@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2016-11-18 23:14+0000\n"
+"PO-Revision-Date: 2018-01-30 12:21+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: fi\n"
@@ -562,7 +562,7 @@ msgstr "Raahaa oikea merkki punaiseen ruutuun: <, > tai =."
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Raahaa punaiseen ruutuun pienempi, suurempi tai yhtäsuuri."
 
-msgid "Re-arrange the above numbers so they are in the right order"
+msgid "Rearrange the numbers so they are in the right order"
 msgstr "Järjestä luvut oikeaan järjestykseen"
 
 msgid "Complete the abc using the letters above."
@@ -571,13 +571,13 @@ msgstr "Täydennä aakkoset."
 msgid "Write a word:"
 msgstr "Kirjoita sana:"
 
-msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgid "Find and separate even numbers from odd numbers."
 msgstr "Erottele parittomat ja parilliset luvut toisistaan."
 
-msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgid "Rearrange the letters so they are in the alphabetical order."
 msgstr "Järjestä kirjaimet aakkosjärjestykseen."
 
-msgid "Re-arrange the above numbers so they are in the ascending order."
+msgid "Rearrange the numbers so they are in the ascending order."
 msgstr "Järjestä luvut oikeaan järjestykseen."
 
 msgid "Please try again."
@@ -1092,27 +1092,23 @@ msgstr "muista minut"
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
-"Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Äänet, monia tekijöitä, jotka ovat osallistuneet: freesound.org. \n"
-" Kuvat, monia tekijöitä, jotka ovat osallistuneet: openclipart.org (Public Domain) ja http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: Creative Commons (CC "
-"BY-SA). \n"
+" Kuvat, monia tekijöitä, jotka ovat osallistuneet: openclipart.org (Public Domain) ja http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: Creative Commons (CC BY-SA). \n"
 " Tiedostosta credits.txt löydät lisää tietoa tämän projektin käyttämistä mediatiedostoista."
 
 msgid "Licence"
 msgstr "Licence"
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
-"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
-"not, see <http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General "
+"Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
-"Tämä on vapaa ohjelma: tätä ohjelmaa saa levittää edelleen ja muuttaa Free Software Foundationin julkaiseman GNU General Public Licensen (GPL-lisenssi) version 3 tai "
-"(valinnan mukaan) myöhemmän version ehtojen mukaisestiTämän ohjelman mukana pitäisi tulla kopio GPL-lisenssistä. Jos näin ei ole, katso <http://www.gnu.org/licenses/>. "
-"(Epävirallinen suomennos: <http://www.turre.com/licenses/gpl_fi.html>)."
+"Tämä on vapaa ohjelma: tätä ohjelmaa saa levittää edelleen ja muuttaa Free Software Foundationin julkaiseman GNU General Public Licensen (GPL-lisenssi) version 3 tai (valinnan mukaan) myöhemmän version ehtojen mukaisestiTämän ohjelman mukana pitäisi tulla kopio GPL-lisenssistä. Jos näin ei "
+"ole, katso <http://www.gnu.org/licenses/>. (Epävirallinen suomennos: <http://www.turre.com/licenses/gpl_fi.html>)."
 
 msgid "A collection of educational activities for kids"
 msgstr "Pieni kokoelmia opettavaisia sovelluksia lapsille"
@@ -1260,7 +1256,6 @@ msgstr "Matkustaminen"
 msgid "Food"
 msgstr "Ruoka"
 
-
 msgid "Listening Exercises"
 msgstr ""
 
@@ -1295,4 +1290,100 @@ msgid "Match shapes to their names"
 msgstr ""
 
 msgid "Negative numbers"
+msgstr ""
+
+msgid "numerator"
+msgstr ""
+
+msgid "denominator"
+msgstr ""
+
+msgid "Experiment with fractions"
+msgstr ""
+
+msgid "Experiment with decimal fractions"
+msgstr ""
+
+msgid "Experiment with ratios"
+msgstr ""
+
+msgid "Experiment with percentages"
+msgstr ""
+
+msgid "What fraction is it?"
+msgstr ""
+
+msgid "What decimal fraction is it?"
+msgstr ""
+
+msgid "Add fractions with the same denominator"
+msgstr ""
+
+msgid "Subtract fractions with the same denominator"
+msgstr ""
+
+msgid "Multiply fractions"
+msgstr ""
+
+msgid "Divide fractions"
+msgstr ""
+
+msgid "Exercise 1"
+msgstr ""
+
+msgid "Exercise 2"
+msgstr ""
+
+msgid "Exercise 3"
+msgstr ""
+
+msgid "Compare decimals and fractions"
+msgstr ""
+
+msgid "Compare fractions"
+msgstr ""
+
+msgid "Reduce fractions"
+msgstr ""
+
+msgid "Extend fractions"
+msgstr ""
+
+msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
+msgstr ""
+
+msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer or just type it in."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer."
+msgstr ""
+
+msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgstr ""
+
+msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "Group fractions together"
+msgstr ""
+
+msgid "Group percentages together"
+msgstr ""
+
+msgid "Group ratios together"
+msgstr ""
+
+msgid "eduActiv8 update is available. Current version: %s. New version: %s."
+msgstr ""
+
+msgid "check for updates on start"
 msgstr ""

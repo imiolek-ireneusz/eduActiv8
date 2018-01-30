@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2017-11-14 18:19+0000\n"
+"PO-Revision-Date: 2018-01-30 14:10+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language: pl\n"
@@ -578,8 +578,8 @@ msgstr "Przeciągnij jeden z <, > lub = (mniejsze, większe lub równe) do czerw
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Przeciągnij większy, mniejszy lub równy do czerwonego kwadratu."
 
-msgid "Re-arrange the above numbers so they are in the right order"
-msgstr "Ułóż powyższe liczby we właściwej kolejności"
+msgid "Rearrange the numbers so they are in the right order"
+msgstr "Ułóż liczby we właściwej kolejności"
 
 msgid "Complete the abc using the letters above."
 msgstr "Uzupełnij alfabet."
@@ -587,14 +587,14 @@ msgstr "Uzupełnij alfabet."
 msgid "Build the following word using the letters below."
 msgstr "Ułóż słowo z liter poniżej."
 
-msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgid "Find and separate even numbers from odd numbers."
 msgstr "Znajdź i oddziel liczby parzyste od nieparzystych."
 
-msgid "Re-arrange the above letters so they are in the alphabetical order."
-msgstr "Ułóż powyższe litery w kolejności alfabetycznej."
+msgid "Rearrange the letters so they are in the alphabetical order."
+msgstr "Ułóż litery w kolejności alfabetycznej."
 
-msgid "Re-arrange the above numbers so they are in the ascending order."
-msgstr "Ułóż powyższe liczby w porządku rosnącym."
+msgid "Rearrange the numbers so they are in the ascending order."
+msgstr "Ułóż liczby w porządku rosnącym."
 
 msgid "Please try again."
 msgstr "Spróbuj ponownie."
@@ -876,7 +876,7 @@ msgid "Match animals to their shadows"
 msgstr "Dopasuj zwierzaki do ich cieni"
 
 msgid "Shape Maker"
-msgstr "Shape Maker"
+msgstr "Tworzenie figur geometrycznych"
 
 #, python-format
 msgid "Shape to draw: %s"
@@ -1345,3 +1345,99 @@ msgstr "Dopasuj kształty do ich nazw"
 
 msgid "Negative numbers"
 msgstr "Liczby ujemne"
+
+msgid "numerator"
+msgstr "licznik"
+
+msgid "denominator"
+msgstr "mianownik"
+
+msgid "Experiment with fractions"
+msgstr "Eksperymentuj z ułamkami"
+
+msgid "Experiment with decimal fractions"
+msgstr "Eksperymentuj z ułamkami dziesiętnymi"
+
+msgid "Experiment with ratios"
+msgstr "Eksperymentuj z proporcjami"
+
+msgid "Experiment with percentages"
+msgstr "Eksperymentuj z procentami"
+
+msgid "What fraction is it?"
+msgstr "Jaki to ułamek?"
+
+msgid "What decimal fraction is it?"
+msgstr "Jaki to ułamek dziesiętny?"
+
+msgid "Add fractions with the same denominator"
+msgstr "Dodawanie ułamków o tych samych mianownikach"
+
+msgid "Subtract fractions with the same denominator"
+msgstr "Odejmowanie ułamków o różnych mianownikach"
+
+msgid "Multiply fractions"
+msgstr "Mnożenie ułamków zwykłych"
+
+msgid "Divide fractions"
+msgstr "Dzielenie ułamków zwykłych"
+
+msgid "Exercise 1"
+msgstr "Zadanie 1"
+
+msgid "Exercise 2"
+msgstr "Zadanie 2"
+
+msgid "Exercise 3"
+msgstr "Zadanie 3"
+
+msgid "Compare decimals and fractions"
+msgstr "Porównywanie ułamków zwykłych z dziesiętnymi"
+
+msgid "Compare fractions"
+msgstr "Porownywanie ułamków zwykłych"
+
+msgid "Reduce fractions"
+msgstr "Skracanie ułamków zwykłych"
+
+msgid "Extend fractions"
+msgstr "Rozszerzanie ułamków zwykłych"
+
+msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
+msgstr "Aby skrócić ułamek, należy podzielić licznik i mianownik przez tę samą liczbę. Wybierz jedną z liczb między ułamkami by zobaczyć co się stanie. Jeśli jest tam tylko 1 to znaczy, że ułamka nie da się bardziej uprościć. Zmień ułamek na inny."
+
+msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgstr "Aby rozszerzyć ułamek, należy pomnożyć licznik i mianownik przez tę samą liczbę. Zmień liczbę w środku by zobaczyć co się stanie."
+
+msgid "Use the plus or minus signs to change your answer or just type it in."
+msgstr "Aby wprowadzić odpowiedź użyj przycisku z plusem lub minusem, albo wpisz Twoją odpowiedź na klawiaturze."
+
+msgid "Use the plus or minus signs to change your answer."
+msgstr "Aby wprowadzić odpowiedź użyj przycisku z plusem lub minusem."
+
+msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgstr "Aby dodać dwa ułamki zwykłe o tym samym mianowniku należy dodać ich liczniki do siebie pozostawiając mianownik bez zmian. Potem należy uprościć ułamek jeśli to możliwe."
+
+msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgstr "Aby odjąć jeden ułamek zwykły od drugiego o tym zamym mianowniku należy odjąć licznik drugiego ułamka od pierwszego, pozostawiając mianownik bez zmian. Potem należy uprościć ułamek jeśli to możliwe."
+
+msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgstr "Aby pomnożyć dwa ułamki zwykłe przez siebie należy pomnożyć liczniki obu ułamków przez siebie, a także pomnożyć mianowniki obu ułamków przez siebie, a następnie uprościć wynik jeśli to możliwe."
+
+msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgstr "Aby podzielić jeden ułamek zwykły przez drugi należy pierwszy ułamek pomnożyć przez odwrotność drugiego."
+
+msgid "Group fractions together"
+msgstr "Pogrupuj ułamki"
+
+msgid "Group percentages together"
+msgstr "Pogrupuj procenty"
+
+msgid "Group ratios together"
+msgstr "Pogrupuj proporcje"
+
+msgid "eduActiv8 update is available. Current version: %s. New version: %s."
+msgstr "Aktualizacja eduActiv8 jest dostępna. Obecna wersja: %s, Nowa wersja: %s."
+
+msgid "check for updates on start"
+msgstr "sprawdź dostępność aktualizacji programu przy starcie"

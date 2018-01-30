@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.70.807\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2017-09-11 16:48+0100\n"
+"PO-Revision-Date: 2018-01-30 12:21+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: lkt\n"
@@ -558,7 +558,7 @@ msgstr "\"<, >, =\" wápȟetȟokeča kiŋ hená ayúta na tukté waŋží oblót
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Wápȟetȟokeča kiŋ hená (isáŋm tȟáŋka, isáŋm čík’ala, ákhiyenakča) tukté waŋží oblótȟuŋ šá él yaŋkíŋ kta iyéčheča héči hé ektá yuslóhaŋ áya yo/ye."
 
-msgid "Re-arrange the above numbers so they are in the right order"
+msgid "Rearrange the numbers so they are in the right order"
 msgstr "Wóiyawa eyá yuíženapi kiŋ lená yuéčhel yuówečhiŋhaŋ égnaka yo/ye."
 
 msgid "Complete the abc using the letters above."
@@ -567,13 +567,13 @@ msgstr "Oówa eyá waŋkál hé kiŋ hená uŋ oówaptaya kiŋ yuštáŋ yo/ye."
 msgid "Build the following word using the letters below."
 msgstr "Oówa eyá hukhúl hé kiŋ hená uŋ wičhóiye kiŋ yuštáŋ yo/ye."
 
-msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgid "Find and separate even numbers from odd numbers."
 msgstr "Wóiyawa kiŋ hená ayúta na wíotkuŋza na wíyušna eyá ópȟa héči hená yukhínuŋkȟaŋ égnaka yo/ye."
 
-msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgid "Rearrange the letters so they are in the alphabetical order."
 msgstr "Oówa eyá yuíženapi kiŋ lená yuéčhel égnakiŋ na ečhél wičhóiye kiŋ owá yo/ye."
 
-msgid "Re-arrange the above numbers so they are in the ascending order."
+msgid "Rearrange the numbers so they are in the ascending order."
 msgstr "Wóiyawa kiŋ lená waŋkátakiya sáŋm óta áyiŋ kta čha yuówečhiŋhaŋ égnaka yo/ye."
 
 msgid "Please try again."
@@ -1227,7 +1227,6 @@ msgstr "Ratios"
 msgid "Percentages (Category)"
 msgstr "Percentages"
 
-
 msgid "Listening Exercises"
 msgstr ""
 
@@ -1262,4 +1261,100 @@ msgid "Match shapes to their names"
 msgstr ""
 
 msgid "Negative numbers"
+msgstr ""
+
+msgid "numerator"
+msgstr ""
+
+msgid "denominator"
+msgstr ""
+
+msgid "Experiment with fractions"
+msgstr ""
+
+msgid "Experiment with decimal fractions"
+msgstr ""
+
+msgid "Experiment with ratios"
+msgstr ""
+
+msgid "Experiment with percentages"
+msgstr ""
+
+msgid "What fraction is it?"
+msgstr ""
+
+msgid "What decimal fraction is it?"
+msgstr ""
+
+msgid "Add fractions with the same denominator"
+msgstr ""
+
+msgid "Subtract fractions with the same denominator"
+msgstr ""
+
+msgid "Multiply fractions"
+msgstr ""
+
+msgid "Divide fractions"
+msgstr ""
+
+msgid "Exercise 1"
+msgstr ""
+
+msgid "Exercise 2"
+msgstr ""
+
+msgid "Exercise 3"
+msgstr ""
+
+msgid "Compare decimals and fractions"
+msgstr ""
+
+msgid "Compare fractions"
+msgstr ""
+
+msgid "Reduce fractions"
+msgstr ""
+
+msgid "Extend fractions"
+msgstr ""
+
+msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
+msgstr ""
+
+msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer or just type it in."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer."
+msgstr ""
+
+msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgstr ""
+
+msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "Group fractions together"
+msgstr ""
+
+msgid "Group percentages together"
+msgstr ""
+
+msgid "Group ratios together"
+msgstr ""
+
+msgid "eduActiv8 update is available. Current version: %s. New version: %s."
+msgstr ""
+
+msgid "check for updates on start"
 msgstr ""

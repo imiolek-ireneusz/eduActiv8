@@ -9,15 +9,14 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2017-02-08 00:11+0000\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"PO-Revision-Date: 2018-01-30 12:21+0000\n"
+"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
 msgid "green apple"
@@ -560,8 +559,7 @@ msgid "With a Twist"
 msgstr "Са увијањем"
 
 msgid "Drag the slider up or down so that the right sign is in the red square."
-msgstr ""
-"Превуци клизач горе или доле тако да је одговарајући знак у црвеном квадрату."
+msgstr "Превуци клизач горе или доле тако да је одговарајући знак у црвеном квадрату."
 
 msgid "Take your sheep to the rest of the herd."
 msgstr "Одведи твоју овчицу до остатка стада."
@@ -575,7 +573,7 @@ msgstr "Превуци <, > или = (мање, веће или једнако) 
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Превуци мање, веће или једнако у црвени квадрат."
 
-msgid "Re-arrange the above numbers so they are in the right order"
+msgid "Rearrange the numbers so they are in the right order"
 msgstr "Поређај горње бројеве одговарајућим редом"
 
 msgid "Complete the abc using the letters above."
@@ -584,14 +582,13 @@ msgstr "Доврши азбуку користећи слова испод."
 msgid "Build the following word using the letters below."
 msgstr "Испиши следећу реч користећи слова испод."
 
-msgid ""
-"Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgid "Find and separate even numbers from odd numbers."
 msgstr "Нађи и одвој парне бројеве од непарних у горњим низовима."
 
-msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgid "Rearrange the letters so they are in the alphabetical order."
 msgstr "Поређај горња слова азбучним редом."
 
-msgid "Re-arrange the above numbers so they are in the ascending order."
+msgid "Rearrange the numbers so they are in the ascending order."
 msgstr "Поређај горње бројеве од мањег ка већем."
 
 msgid "Please try again."
@@ -832,35 +829,19 @@ msgid "Ratios"
 msgstr "Односи"
 
 msgid "Match fraction charts on the right to the ones on the left"
-msgstr ""
-"Премести графике разломака са десне стране на одговарајућа места на левој "
-"страни"
+msgstr "Премести графике разломака са десне стране на одговарајућа места на левој страни"
 
-msgid ""
-"Match fraction charts and fractions on the right to the fraction charts on "
-"the left"
-msgstr ""
-"Премести графике разломака и разломке са десне стране на одговарајућа места "
-"на левој страни"
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Премести графике разломака и разломке са десне стране на одговарајућа места на левој страни"
 
 msgid "Match fraction charts to the fractions on the left"
-msgstr ""
-"Премести графике разломака са десне стране на одговарајућа места на левој "
-"страни"
+msgstr "Премести графике разломака са десне стране на одговарајућа места на левој страни"
 
-msgid ""
-"Match fraction charts, fractions and decimal fractions on the right to their "
-"percentage representations"
-msgstr ""
-"Премести графике разломака, разломке и децималне разломке са десне стране "
-"поред одговарајућих процената на левој страни"
+msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+msgstr "Премести графике разломака, разломке и децималне разломке са десне стране поред одговарајућих процената на левој страни"
 
-msgid ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of "
-"coloured pieces to white pieces"
-msgstr ""
-"Премести графике са десне стране поред одговарајућих односа на левој страни. "
-"Односи су представљени као однос обојених делова и белих делова"
+msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
+msgstr "Премести графике са десне стране поред одговарајућих односа на левој страни. Односи су представљени као однос обојених делова и белих делова"
 
 msgid "Maths Matching Game"
 msgstr "Математичке игре поређења"
@@ -874,12 +855,8 @@ msgstr "Одузимање"
 msgid "Multiplication"
 msgstr "Множење"
 
-msgid ""
-"Check for newer version, report bugs, discuss, translate or review this "
-"project at:"
-msgstr ""
-"Потражите нова издања, пријавите грешке, расправљајте, преведите или "
-"прегледајте овај пројекат на:"
+msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
+msgstr "Потражите нова издања, пријавите грешке, расправљајте, преведите или прегледајте овај пројекат на:"
 
 msgid "Match numbers to their spelling"
 msgstr "Упари бројеве са писаним облицима"
@@ -913,8 +890,7 @@ msgid "such that lengths of its sides are equal to %d and %d"
 msgstr "тако да су дужине његових страна једнаке %d и %d"
 
 #, python-format
-msgid ""
-"such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
 msgstr "тако да су дужине 2 његове паралелне основе једнаке %d а висина %d"
 
 #, python-format
@@ -1127,29 +1103,20 @@ msgstr "упамти ме"
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org "
-"(Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - "
-"under a Creative Commons License (CC BY-SA). \n"
-" Please view credits.txt for more info about authors of media files used in "
-"this project"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Лаби, 2010 Меди Кери (mehdidc) \n"
 " Разни аутори су допринели звуку својим радовима на „freesound.org“. \n"
-" Разни аутори су допринели сликама својим радовима на „openclipart.org“-у "
-"(Јавни домен) и „http://www.art4apps.org/“-у — „Art4Apps“ од „Smart4Kids“ — "
-"под дозволом Заједничког стваралаштва (CC BY-SA). \n"
-" Погледајте датотеку „credits.txt“ за више података о ауторима медијских "
-"датотека коришћеним у овом пројекту"
+" Разни аутори су допринели сликама својим радовима на „openclipart.org“-у (Јавни домен) и „http://www.art4apps.org/“-у — „Art4Apps“ од „Smart4Kids“ — под дозволом Заједничког стваралаштва (CC BY-SA). \n"
+" Погледајте датотеку „credits.txt“ за више података о ауторима медијских датотека коришћеним у овом пројекту"
 
 msgid "Licence"
 msgstr "Дозвола"
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public "
-"License along with this program. If not, see <http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General "
+"Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
 "Овај програм је слободан софтвер; можете га расподељивати\n"
 "и/или мењати под условима Гнуове опште јавне лиценце коју је\n"
@@ -1164,12 +1131,8 @@ msgstr "Малени скуп образовних програма за деч�
 msgid "Complete the word"
 msgstr "Доврши реч"
 
-msgid ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
-msgstr ""
-"Слике су са „http://www.art4apps.org/“ — „Art4Apps“ од „Smart4Kids“ — "
-"Дозвола Заједничког стваралаштва (CC BY-SA)"
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr "Слике су са „http://www.art4apps.org/“ — „Art4Apps“ од „Smart4Kids“ — Дозвола Заједничког стваралаштва (CC BY-SA)"
 
 msgid "Decimals and Fractions"
 msgstr "Децимални бројеви и разломци"
@@ -1253,12 +1216,10 @@ msgid "Educational Activities for Kids"
 msgstr "Комплет образовних активности за дечицу"
 
 msgid ""
-"You may like to install espeak to use its text to speech functionality, "
-"however this is not required to successfully use the game: \n"
+"You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
-"Можеш да инсталираш е-говорника да би користио његову могућност изговарања "
-"текста, али није толико ни неопходно за успешно коришћење игре: \n"
+"Можеш да инсталираш е-говорника да би користио његову могућност изговарања текста, али није толико ни неопходно за успешно коришћење игре: \n"
 "http://espeak.sourceforge.net/"
 
 msgid "Decimals (Category)"
@@ -1318,7 +1279,6 @@ msgstr "превоз"
 msgid "Food"
 msgstr "храна"
 
-
 msgid "Listening Exercises"
 msgstr ""
 
@@ -1353,4 +1313,100 @@ msgid "Match shapes to their names"
 msgstr ""
 
 msgid "Negative numbers"
+msgstr ""
+
+msgid "numerator"
+msgstr ""
+
+msgid "denominator"
+msgstr ""
+
+msgid "Experiment with fractions"
+msgstr ""
+
+msgid "Experiment with decimal fractions"
+msgstr ""
+
+msgid "Experiment with ratios"
+msgstr ""
+
+msgid "Experiment with percentages"
+msgstr ""
+
+msgid "What fraction is it?"
+msgstr ""
+
+msgid "What decimal fraction is it?"
+msgstr ""
+
+msgid "Add fractions with the same denominator"
+msgstr ""
+
+msgid "Subtract fractions with the same denominator"
+msgstr ""
+
+msgid "Multiply fractions"
+msgstr ""
+
+msgid "Divide fractions"
+msgstr ""
+
+msgid "Exercise 1"
+msgstr ""
+
+msgid "Exercise 2"
+msgstr ""
+
+msgid "Exercise 3"
+msgstr ""
+
+msgid "Compare decimals and fractions"
+msgstr ""
+
+msgid "Compare fractions"
+msgstr ""
+
+msgid "Reduce fractions"
+msgstr ""
+
+msgid "Extend fractions"
+msgstr ""
+
+msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
+msgstr ""
+
+msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer or just type it in."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer."
+msgstr ""
+
+msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgstr ""
+
+msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "Group fractions together"
+msgstr ""
+
+msgid "Group percentages together"
+msgstr ""
+
+msgid "Group ratios together"
+msgstr ""
+
+msgid "eduActiv8 update is available. Current version: %s. New version: %s."
+msgstr ""
+
+msgid "check for updates on start"
 msgstr ""

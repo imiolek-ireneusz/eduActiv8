@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2016-11-20 22:14+0000\n"
+"PO-Revision-Date: 2018-01-30 12:21+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: el\n"
@@ -560,7 +560,7 @@ msgstr "Σύρε ένα από τα <, > ή = (μικρότερο, μεγαλύ�
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Σύρε ένα από τα μικρότερο, μεγαλύτερο ή ίσο στο κόκκινο τετράγωνο."
 
-msgid "Re-arrange the above numbers so they are in the right order"
+msgid "Rearrange the numbers so they are in the right order"
 msgstr "Βάλε τους παραπάνω αριθμούς στη σωστή σειρά."
 
 msgid "Complete the abc using the letters above."
@@ -572,13 +572,13 @@ msgstr "Γράψε μια λέξη:"
 msgid "Build the following word using the letters below."
 msgstr "Σχημάτισε την επόμενη λέξη χρησιμοποιώντας τα παρακάτω γράμματα"
 
-msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgid "Find and separate even numbers from odd numbers."
 msgstr "Βρες και χώρισε τους ζυγούς από τους περιττούς αριθμούς στην παραπάνω σειρά."
 
-msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgid "Rearrange the letters so they are in the alphabetical order."
 msgstr "Βάλε με αλφαβητική σειρά τα παραπάνω γράμματα."
 
-msgid "Re-arrange the above numbers so they are in the ascending order."
+msgid "Rearrange the numbers so they are in the ascending order."
 msgstr "Βάλε τους παραπάνω αριθμούς στην σειρά, από τον μικρότερο προς τον μεγαλύτερο."
 
 msgid "Please try again."
@@ -1105,12 +1105,11 @@ msgid "Licence"
 msgstr "Άδεια"
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your "
-"option) any later version. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General "
+"Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
-"Το παρόν έργο είναι Ελεύθερο Λογισμικό: επιτρέπεται η διανομή του καθώς και η τροποποίηση του με βάση τους όρους του διέπουν τις άδειες τύπου GNU General Public License οι οποίες έχουν δημοσιευτεί από το Free Software "
-"Foundation (είτε η έκδοση 3 της άδειας είτε κάποια μεταγενέστερη έκδοση). Θα πρέπει να έχετε λάβει και ένα αντίγραφο άδειας GNU General Public License μαζί με αυτή την εφαρμογή. Αν δεν την έχετε λάβει επισκεφθείτε το "
-"<http://www.gnu.org/licenses/>."
+"Το παρόν έργο είναι Ελεύθερο Λογισμικό: επιτρέπεται η διανομή του καθώς και η τροποποίηση του με βάση τους όρους του διέπουν τις άδειες τύπου GNU General Public License οι οποίες έχουν δημοσιευτεί από το Free Software Foundation (είτε η έκδοση 3 της άδειας είτε κάποια μεταγενέστερη έκδοση). "
+"Θα πρέπει να έχετε λάβει και ένα αντίγραφο άδειας GNU General Public License μαζί με αυτή την εφαρμογή. Αν δεν την έχετε λάβει επισκεφθείτε το <http://www.gnu.org/licenses/>."
 
 msgid "A collection of educational activities for kids"
 msgstr "Ένα μικρό σετ εκπαιδευτικών εφαρμογών για παιδιά"
@@ -1260,7 +1259,6 @@ msgstr "Μεταφορικά μέσα"
 msgid "Food"
 msgstr "Φαγητό"
 
-
 msgid "Listening Exercises"
 msgstr ""
 
@@ -1295,4 +1293,100 @@ msgid "Match shapes to their names"
 msgstr ""
 
 msgid "Negative numbers"
+msgstr ""
+
+msgid "numerator"
+msgstr ""
+
+msgid "denominator"
+msgstr ""
+
+msgid "Experiment with fractions"
+msgstr ""
+
+msgid "Experiment with decimal fractions"
+msgstr ""
+
+msgid "Experiment with ratios"
+msgstr ""
+
+msgid "Experiment with percentages"
+msgstr ""
+
+msgid "What fraction is it?"
+msgstr ""
+
+msgid "What decimal fraction is it?"
+msgstr ""
+
+msgid "Add fractions with the same denominator"
+msgstr ""
+
+msgid "Subtract fractions with the same denominator"
+msgstr ""
+
+msgid "Multiply fractions"
+msgstr ""
+
+msgid "Divide fractions"
+msgstr ""
+
+msgid "Exercise 1"
+msgstr ""
+
+msgid "Exercise 2"
+msgstr ""
+
+msgid "Exercise 3"
+msgstr ""
+
+msgid "Compare decimals and fractions"
+msgstr ""
+
+msgid "Compare fractions"
+msgstr ""
+
+msgid "Reduce fractions"
+msgstr ""
+
+msgid "Extend fractions"
+msgstr ""
+
+msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
+msgstr ""
+
+msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer or just type it in."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer."
+msgstr ""
+
+msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgstr ""
+
+msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "Group fractions together"
+msgstr ""
+
+msgid "Group percentages together"
+msgstr ""
+
+msgid "Group ratios together"
+msgstr ""
+
+msgid "eduActiv8 update is available. Current version: %s. New version: %s."
+msgstr ""
+
+msgid "check for updates on start"
 msgstr ""
