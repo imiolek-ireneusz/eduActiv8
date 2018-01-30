@@ -40,7 +40,6 @@ import gc
 import os
 import pygame
 import sys
-#import threading
 import time
 
 import classes.config
@@ -59,44 +58,43 @@ import classes.lang
 import classes.logoimg
 import classes.score_bar
 import classes.dialogwnd
+import classes.updater
 
-# if android is None:
 # setting the working directory to the directory of this file
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 os.chdir(path)
 
-class GamePlay():
+
+class GamePlay:
     """The top most class - subclasses the Thread to keep the game and speaker in two different processes
     holds main loop"""
 
-    def __init__(self, speaker, lang, configo):
+    def __init__(self, speaker, lang, configo, updater):
         # Create / set additional top level game objects and mainloop variables
         self.speaker = speaker
         self.lang = lang
         self.config = configo
+        self.updater = updater
+        self.first_run = True
+        self.updater_started = False
         self.show_dialogwnd = False
         self.game_board = None
         self.cl = classes.colors.Color()
         self.sfx = classes.sound.SoundFX(self)
         self.m = None
-
         self.userid = -1
-
         self.score = 0
-
         self.window_states = ["LOG IN", "GAME"]
         self.window_state = self.window_states[0]
+        self.theme = "default"
 
         # As long as this is False the main loop of a state will keep running. If some action sets it to True the loop ends and so does the current state.
         self.done = False
 
         # but if you log out you are still given a chance to log back in...
         self.done4good = False
-
         self.logged_out = False
-
         self.android = android
-
         self.draw_func = None
         self.draw_func_args = None
 
@@ -120,8 +118,6 @@ class GamePlay():
         # mouse over [surface, group of objects, top most object]
         self.mouse_over = [None, None, None]
 
-        # self.counter = 0
-
     def create_subsurfaces(self, game_board):
         self.layout = self.game_board.layout
         # create subsurfaces & set some of the initial layout constraints
@@ -131,27 +127,16 @@ class GamePlay():
             self.game_board.layout.menu_r_pos)  # game selection menu - games in a category
         self.game_bg = self.screen.subsurface(self.game_board.layout.game_bg_pos)
         self.game = self.screen.subsurface(self.game_board.layout.game_pos)  # game panel - all action happens here
-        # self.info_bar_offset = self.screen.subsurface(self.game_board.layout.info_bar_offset_pos) #offset - empty area between game and bottom panel - if game is not high enough to fill all available area
-        # self.info_bar = self.info_bar_offset.subsurface(self.game_board.layout.info_bar_pos) #info panel - level control, game info, etc.
-
-        # self.info_bar_offset = self.screen.subsurface(self.game_board.layout.info_bar_offset_pos) #offset - empty area between game and bottom panel - if game is not high enough to fill all available area
         self.info_bar = self.screen.subsurface(
             self.game_board.layout.info_bar_pos)  # info panel - level control, game info, etc.
-
         self.score_bar = self.screen.subsurface(
             self.game_board.layout.score_bar_pos)  # top panel - holding username, score etc.
-
         self.misio = self.screen.subsurface(
             self.game_board.layout.misio_pos)  # holds an image/logo in top left corner - over menu
         self.misio.set_colorkey((255, 75, 0))
-
         self.dialogbg = self.screen.subsurface(self.game_board.layout.dialogbg_pos)
-
         self.dialogwnd = self.screen.subsurface(self.game_board.layout.dialogwnd_pos)
-        # self.dialogwnd.set_colorkey((255,255,255))
-
         self.sb.resize()
-        # self.counter += 1
 
     def fs_rescale(self, info):
         """rescale the game after fullscreen toggle, this will restart the board
@@ -189,7 +174,6 @@ class GamePlay():
 
     def on_resize(self, size, info):
         if android is None:
-            # pygame.event.set_blocked(pygame.VIDEORESIZE)
             repost = False
             if size[0] < self.config.size_limits[0]:
                 size[0] = self.config.size_limits[0]
@@ -215,7 +199,6 @@ class GamePlay():
             self.fs_rescale(info)
             self.config.settings_changed = True
             self.config.save_settings(self.db)
-            # pygame.event.set_allowed(pygame.VIDEORESIZE)
             if repost:
                 pygame.event.post(
                     pygame.event.Event(pygame.VIDEORESIZE, size=self.size[:], w=self.size[0], h=self.size[1]))
@@ -230,7 +213,11 @@ class GamePlay():
         self.lang.load_language()
         self.speaker.talkative = self.config.settings["espeak"]
         self.speaker.start_server()
-        self.config.google_trans_languages = self.config.settings["extra_langs"]
+        self.config.check_updates = self.config.settings["check_updates"]
+        if self.android is None and self.config.check_updates and self.first_run:
+            self.first_run = False
+            self.updater_started = True
+            self.updater.start()
         if self.config.loaded_settings:
             self.config.fullscreen = self.config.settings["full_screen"]
         # message said at the start of the game
@@ -290,8 +277,6 @@ class GamePlay():
     def run(self):
         # start of this Thread
         if android is None:
-            #self.speaker.join()  # join speaker Thread
-            # initialize pygame
             pygame.init()
 
         self.db = classes.dbconn.DBConnection(self.config.file_db, self)
@@ -313,7 +298,7 @@ class GamePlay():
                     self.config.window_pos[0], self.config.window_pos[1])
                 if android is None:
                     if not self.logged_out:
-                        self.size = [800, 570]  # [800, 570]
+                        self.size = [800, 570]
                     else:
                         self.size = self.wn_size
                 else:
@@ -322,7 +307,6 @@ class GamePlay():
 
                 pygame.display.set_caption(self.config.window_caption)
                 self.loginscreen = classes.loginscreen.LoginScreen(self, self.screen, self.size)
-                # clock=pygame.time.Clock()
                 wait = False
                 while self.done is False and self.userid < 0:
                     if android is not None:
@@ -359,9 +343,7 @@ class GamePlay():
                 self.set_up_user()
 
                 self.done = False
-                # self.force_no_resize = True
                 self.set_init_vals()
-                # if self.config.platform != "windows":
                 if android is None:
                     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (self.config.window_pos[0], self.config.window_pos[1])
                 self.config.fs_width = self.display_info.current_w
@@ -406,8 +388,6 @@ class GamePlay():
                 # create a list of one sprite holding game image or logo
                 self.sprites_list = pygame.sprite.RenderPlain()
 
-
-
                 # create a dummy self.game_board variable to be deleted and recreated at the beginning of the main loop
                 self.game_board = None
 
@@ -433,17 +413,9 @@ class GamePlay():
                 self.front_img = classes.logoimg.LogoImg(self)
                 self.sprites_list.add(self.front_img)
 
-                # Used to manage how fast the screen updates
-                # clock=pygame.time.Clock()
-
-                # test values
-                # self.video_resize_count = 0
-                # self.resize_func = 0
                 # -------- Main Program Loop ----------- #
                 wait = False
                 while self.done is False:
-                    # start, switch or continue a game
-                    # not really an implementation of a State Machine but does the job
                     if android is not None:
                         if android.check_pause():
                             wait = True
@@ -461,21 +433,15 @@ class GamePlay():
                                 del (self.game_board)  # delete all previous game objects
                                 self.game_board = None
                             # recreate a new game and subsurfaces
-                            self.game_board = m.game_constructor(self, self.speaker, self.config, self.size[0],
+                            exec("import game_boards.%s" % m.game_constructor[0:7])
+                            game_const = eval("game_boards.%s" % m.game_constructor)
+                            self.game_board = game_const(self, self.speaker, self.config, self.size[0],
                                                                  self.size[1])
                             m.game_started_id = m.active_game_id
                             m.l = self.game_board.layout
                             self.create_subsurfaces(self.game_board)
                             info.new_game(self.game_board, self.info_bar)
                             self.set_up_scheme()
-                            # self.game_board.update_score(0)
-                            """
-                            if self.config.loaded_settings == False and self.init_resize:
-                                if self.config.fullscreen == False:
-                                    self.on_resize(self.size, info)
-                                    self.init_resize = False
-                            """
-                            # self.fs_rescale(info)
                             gc.collect()  # force garbage collection to remove remaining variables to free memory
 
                         elif self.game_board.level.lvl != self.game_board.level.prev_lvl or self.game_board.update_layout_on_start:
@@ -494,20 +460,15 @@ class GamePlay():
                                     self.game_board.level.next_board_load()
 
                         # Process or delegate events
-                        # mods = pygame.key.get_mods()
                         for event in pygame.event.get():  # pygame.event.get(): # User did something
-
                             if event.type == pygame.QUIT or (
                                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                                 self.dialog.show_dialog(0, self.lang.d["Do you want to exit the game?"])
-                                # self.done = True #mark to finish the loop and the game
-                                # self.done4good = True
                             elif event.type == pygame.VIDEORESIZE:
                                 if self.config.fullscreen == False:
                                     self.on_resize(list(event.size), info)
                             elif event.type == pygame.KEYDOWN and event.key == pygame.K_f and (
                                         event.mod & pygame.KMOD_LCTRL):
-                                # CTRL + F - pressed
                                 self.fullscreen_toggle(info)
                             elif event.type == pygame.KEYDOWN and event.key == pygame.K_F5:  # refresh - reload level
                                 self.game_board.level.load_level()
@@ -570,7 +531,6 @@ class GamePlay():
                                             # if dialog after completing the game is shown then hide it and load next game
                                             self.game_board.show_msg = False
                                             self.game_board.level.next_board_load()
-                                            # info.handle(event,self.game_board.layout,self)
                             elif event.type == pygame.MOUSEBUTTONUP:
                                 pos = event.pos
                                 if self.show_dialogwnd:
@@ -632,7 +592,6 @@ class GamePlay():
                                 self.menu_tick = 0
                             else:
                                 self.menu_tick += 1
-                                # self.redraw_needed[2] = True
 
                         # checking if any of the subsurfaces need updating and updating them if needed
                         # in reverse order so the menu is being drawn first
@@ -658,7 +617,6 @@ class GamePlay():
                         if self.sb.update_me:
                             self.sb.draw(self.score_bar)
                             self.flip_needed = True
-                            # if self.show_dialogwnd:
                             self.sb.update_me = False
 
                         if self.flip_needed:
@@ -706,7 +664,9 @@ def main():
         # create the Thread objects and start the threads
         speaker = classes.speaker.Speaker(lang, configo, android)
 
-        app = GamePlay(speaker, lang, configo)
+        updater = classes.updater.Updater(configo, android)
+
+        app = GamePlay(speaker, lang, configo, updater)
         if android is None:
             speaker.start()
         app.run()
