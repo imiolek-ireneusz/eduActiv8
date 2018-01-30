@@ -35,6 +35,9 @@ class Unit(pygame.sprite.Sprite):
         self.perm_outline = False
         self.perm_outline_color = [255, 0, 0]
         self.perm_outline_width = 2
+        self.fraction_line_top = False
+        self.fraction_line_bottom = False
+        self.fraction_line_color = (0, 0, 0)
         self.hasimg = False
         self.draggable = True
         self.animable = True
@@ -73,6 +76,18 @@ class Unit(pygame.sprite.Sprite):
         self.text_wrap = True
         self.is_door = False
 
+    def resize_unit(self, new_grid_w, new_grid_h):
+        self.grid_w = new_grid_w
+        self.grid_h = new_grid_h
+        if self.alpha:
+            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
+        else:
+            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+        self.image.fill(self.color)
+
+        #self.rect = self.image.get_rect()
+        #self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
+
     def set_display_check(self, value):
         self.check_display = value
         self.update_me = True
@@ -94,6 +109,54 @@ class Unit(pygame.sprite.Sprite):
 
     def set_value(self, new_value):
         self.value = ex.unival(new_value)
+        self.update_me = True
+
+    def update_font_size(self, font_size):
+        self.font = self.board.font_sizes[font_size]
+
+    def set_fraction_lines(self, top, bottom, color):
+        if top:
+            self.fraction_line_top = True
+        else:
+            self.fraction_line_top = False
+        if bottom:
+            self.fraction_line_bottom = True
+        else:
+            self.fraction_line_bottom = False
+        self.fraction_line_color = color
+
+    def draw_fraction_lines(self):
+        if self.fraction_line_top or self.fraction_line_bottom:
+            width = self.board.scale // 20
+            margin = (self.board.scale * self.grid_w) // 8
+            if width > 1:
+                x = width // 2 - 1
+                y = width // 2 - 1
+                if width % 2 == 0:
+                    w2 = width // 2 + 2
+                else:
+                    w2 = width // 2 + 1
+            elif width == 1:
+                x = 0
+                y = 0
+                w2 = 2
+        if self.fraction_line_top:
+            pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, y], [self.board.scale * self.grid_w - w2 + width - margin, y], width)
+
+        if self.fraction_line_bottom:
+            pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, self.board.scale * self.grid_h - w2], [self.board.scale * self.grid_w - w2 + width - margin, self.board.scale * self.grid_h - w2], width)
+
+            """
+            pygame.draw.lines(self.image, color, True, [[x - width, y], [self.board.scale * self.grid_w - w2 + width, y],
+                                                    [self.board.scale * self.grid_w - w2, y - width],
+                                                    [self.board.scale * self.grid_w - w2,
+                                                     self.board.scale * self.grid_h - w2 + width],
+                                                    [self.board.scale * self.grid_w - w2 + width,
+                                                     self.board.scale * self.grid_h - w2],
+                                                    [x - width, self.board.scale * self.grid_h - w2],
+                                                    [x, self.board.scale * self.grid_h - w2 + width], [x, y - width]],
+            """
+
 
     def pos_update(self):
         if self.grid_w > 0 and self.grid_h > 0:
@@ -297,6 +360,7 @@ class Unit(pygame.sprite.Sprite):
             if self.perm_outline:
                 self.draw_outline()
 
+            self.draw_fraction_lines()
             self.draw_check_marks()
 
     def draw_check_marks(self):
@@ -599,6 +663,7 @@ class ImgShip(Ship):
     def change_image(self, img_src):
         self.img_src = img_src
         if len(self.img_src) > 0:
+            self.update_me = True
             self.hasimg = True
             self.img = self.image
             self.img_pos = (0, 0)
@@ -683,12 +748,12 @@ class TwoImgsShip(Ship):
             Unit.update(self, board)
             if len(self.img_src) > 0:
                 self.image.blit(self.img, self.img_pos)
-            if self.unit_id == board.active_ship and self.outline == True:
+            if self.unit_id == board.active_ship and self.outline is True:
                 lines = [[0, 0], [self.grid_w * board.scale - 2, 0],
                          [self.grid_w * board.scale - 2, self.grid_h * board.scale - 2],
                          [0, self.grid_h * board.scale - 2]]
                 pygame.draw.lines(self.image, (255, 200, 200), True, lines)
-            if hasattr(self, "door_outline") and self.door_outline == True:
+            if hasattr(self, "door_outline") and self.door_outline is True:
                 self.set_outline(self.perm_outline_color, 2)
             if self.perm_outline:
                 self.draw_outline()
@@ -703,7 +768,7 @@ class ImgAlphaShip(ImgShip):
             self.hasimg = True
             self.img = self.image
             self.img_pos = (0, 0)
-            self.outline = True
+            self.outline = False
             try:
                 self.img_org = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
                 self.img = self.img_org
@@ -725,12 +790,16 @@ class ImgCenteredShip(Ship):
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 157, 23), img_src='',
                  alpha=False, **kwargs):
         Ship.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha, **kwargs)
+        self.change_image(img_src)
+
+    def change_image(self, img_src):
         self.img_src = img_src
         if len(self.img_src) > 0:
             self.hasimg = True
             self.img = self.image
             self.img_pos = (0, 0)
-            self.outline = True
+            self.outline = False
+            self.update_me = True
             try:
                 if self.alpha:
                     self.img_org = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
@@ -740,15 +809,18 @@ class ImgCenteredShip(Ship):
                 self.img_rect = self.img.get_rect()
                 old_h = self.img_rect.h
                 old_w = self.img_rect.w
-
-                new_h = self.rect.h
-                new_w = int((new_h * old_w) / old_h)
+                if self.grid_x > self.grid_y:
+                    new_w = self.rect.w
+                    new_h = int((new_w * old_h) / old_w)
+                else:
+                    new_h = self.rect.h
+                    new_w = int((new_h * old_w) / old_h)
                 # resize the image
                 self.scale_img(new_w, new_h)
 
                 self.img_rect = self.img.get_rect()
-                pos_x = ((board.scale * self.grid_w - self.img_rect.w) // 2)
-                pos_y = ((board.scale * self.grid_h - self.img_rect.h) // 2)
+                pos_x = ((self.board.scale * self.grid_w - self.img_rect.w) // 2)
+                pos_y = ((self.board.scale * self.grid_h - self.img_rect.h) // 2)
                 self.img_pos = (pos_x, pos_y)
             except:
                 pass
@@ -759,12 +831,12 @@ class ImgCenteredShip(Ship):
             Unit.update(self, board)
             if len(self.img_src) > 0:
                 self.image.blit(self.img, self.img_pos)
-            if self.unit_id == board.active_ship and self.outline == True:
+            if self.unit_id == board.active_ship and self.outline is True:
                 lines = [[0, 0], [self.grid_w * board.scale - 2, 0],
                          [self.grid_w * board.scale - 2, self.grid_h * board.scale - 2],
                          [0, self.grid_h * board.scale - 2]]
                 pygame.draw.lines(self.image, (255, 200, 200), True, lines)
-            if hasattr(self, "door_outline") and self.door_outline == True:
+            if hasattr(self, "door_outline") and self.door_outline is True:
                 # self.set_outline([255,0,0],2)
                 self.set_outline(self.perm_outline_color, self.perm_outline_width)
             if self.perm_outline:
@@ -1069,8 +1141,8 @@ class Board:
         # 27 credits line under word building games
         self.font_sizes.append(pygame.font.Font(self.font_path_default2, (int(float(self.points) / float(sizes[4])))))
 
-        # extra sizes 28, 29, 30
-        xsizes = [5.5, 6.0, 6.5]
+        # extra sizes 28, 29, 30, 31, 32, 33
+        xsizes = [5.5, 6.0, 6.5, 0.7, 0.9, 1]
         for i in range(len(xsizes)):
             xsizes[i] = xsizes[i] / self.mainloop.config.font_multiplier
             self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(float(self.points) / float(xsizes[i])))))
@@ -1259,7 +1331,30 @@ class Board:
                     self._move_unit(ship_id, ai, mdir[0], mdir[1])
 
     def moved(self):
-        pass  # print("board - moved")
+        pass  # print("board - movedunit_id")
+
+    def move_unit(self, unit_id, x, y):
+        self._move_unit_to(unit_id, x, y)
+
+    def _move_unit_to(self, unit_id, x, y):
+        ship = self.units[unit_id]
+        if self.check_laby is False or (self.check_laby is True and self.laby_dir > -1 and not
+        self.mainloop.game_board.mylaby.get_cell(ship.grid_x, ship.grid_y).laby_doors[self.laby_dir]):
+            self.laby_dir = -1
+            # remove ship from board grid - take off
+            self._set(ship.grid_x, ship.grid_y, ship.grid_w, ship.grid_h, False)
+
+            # change position of ship in ships list
+            ship.grid_x = x
+            ship.grid_y = y
+
+            # place the ship back on board - land
+            self._set(ship.grid_x, ship.grid_y, ship.grid_w, ship.grid_h, True)
+
+            # update the sprite's position
+            ship.rect.topleft = [ship.grid_x * self.scale + 1, ship.grid_y * self.scale + 1]
+            self.board_changed = True
+            self.moved()
 
     def _move_unit(self, ship_id, ai, x, y):
         if ai == True:

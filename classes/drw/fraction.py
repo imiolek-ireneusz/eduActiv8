@@ -5,7 +5,7 @@ from math import pi, cos, sin
 
 
 class Fraction:
-    def __init__(self, unit_size, scale, color1, color2, numbers, type):
+    def __init__(self, unit_size, scale, color1, color2, numbers, fract_type):
         self.size = unit_size * scale
         self.center = [self.size // 2, self.size // 2]
 
@@ -17,7 +17,7 @@ class Fraction:
         self.canvas.fill((0, 0, 0, 0))
 
         self.drawing_f = [self.draw_circles, self.draw_minicircles, self.draw_polygons, self.draw_petals]
-        self.drawing_f[type]()
+        self.drawing_f[fract_type]()
 
     def get_canvas(self):
         return self.canvas

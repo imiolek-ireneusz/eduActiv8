@@ -79,6 +79,8 @@ class Colors:
         self.btn_border_color_l = self.color_mono #(26, 6, 0)
         self.btn_border_focused_l = self.color_mono_focused #(72, 17, 2)
 
+        self.c2a_btn_bg_color = (25, 255, 25, 125)  # all butons and non selected age buttons
+        self.c2a_btn_bg_focus = (55, 255, 55, 150)  # selected state age and focus on buttons
 
         #PScrollBar
         self.slb_bg_color = (255, 255, 255, 50)
@@ -583,6 +585,9 @@ class PButton(PEdit):
         self.fsubmit()
         self.update_trigger()
 
+    def set_call2action_style(self):
+        self.bg_color = self.ls.colors.c2a_btn_bg_color
+        self.bg_focus = self.ls.colors.c2a_btn_bg_focus
 
 
 class PButton2(PButton):
@@ -1258,7 +1263,7 @@ class LoginScreen:
         self.login_defs = self.mainloop.db.get_login_defs()
         self.default_lang = self.login_defs[0]
         self.full_screen = bool(int(self.login_defs[1][0]))
-        self.extra_langs = bool(int(self.login_defs[1][2]))
+        self.check_updates = bool(int(self.login_defs[1][2]))
         self.require_pass = bool(int(self.login_defs[1][3]))
         self.require_adminpass = bool(int(self.login_defs[1][4]))
 
@@ -1309,8 +1314,9 @@ class LoginScreen:
         self.cb_remember = PCheckbox(self, label_w, 30, self.left + 20, self.top + btn_top, False,
                                      self.lang.b["remember me"])
         self.edit_list.add(self.cb_remember)
-        self.loginbtn = PButton(self, self.halfw // 2 - 40, 30, self.left + 20 + self.halfw // 2,
+        self.loginbtn = PButton(self, self.halfw // 2 - 40 + 20, 35, self.left + 0 + self.halfw // 2,
                                 self.top + btn_top + 30, 3, self.lang.b["Login"], self.flogin)
+        self.loginbtn.set_call2action_style()
         self.edit_list.add(self.loginbtn)
         self.select = []
         if self.username_count > 5:
@@ -1700,7 +1706,7 @@ class LoginScreen:
     def recheck(self):
         if self.mainloop.android is None:
             self.cb0.checked = self.full_screen
-            self.cb2.checked = self.extra_langs
+            self.cb2.checked = self.check_updates
         self.cb3.checked = self.require_pass
         self.cb4.checked = self.require_adminpass
 
@@ -1719,7 +1725,7 @@ class LoginScreen:
             self.cb0.visible = False
         self.edit_list.add(self.cb0)
         self.cb2 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 150, False,
-                             self.lang.b["display languages with uncompleted translations"])
+                             self.lang.b["check for updates"])
         if self.mainloop.android is not None:
             self.cb2.visible = False
         self.edit_list.add(self.cb2)

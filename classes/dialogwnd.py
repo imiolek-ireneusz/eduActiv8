@@ -90,12 +90,16 @@ class DialogWnd:
         # self.rect = self.image.get_rect()
         # self.rect.topleft = [0,0]
         self.sbg = None
+        self.dialog_type = 0
 
         self.color = (255, 255, 255)
         self.widget_list = pygame.sprite.LayeredUpdates()
+        self.widget_list2 = pygame.sprite.LayeredUpdates()
         self.font_l = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 40)
         self.font_s = pygame.font.Font(
+            os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 20)
+        self.font_xs = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 20)
         self.default_font = None
         self.text = ""
@@ -120,6 +124,8 @@ class DialogWnd:
 
         for each in self.elements:
             self.widget_list.add(each)
+
+        self.widget_list2.add(self.elements[1])
 
     def fsubmit_none(self, args):
         pass
@@ -147,6 +153,7 @@ class DialogWnd:
         self.wnd_close_function = fc
         self.mainloop.show_dialogwnd = True
         self.mainloop.redraw_needed = [True, True, True]
+        self.dialog_type = dialog_type
 
         # close the game
         if dialog_type == 0:
@@ -164,6 +171,9 @@ class DialogWnd:
                 self.mainloop.sfx.play(13)
             self.elements[1].set_function(f)
             self.set_text(text=txt, font=0)
+        elif dialog_type == 3:
+            self.elements[1].set_function(self.fsubmit_close_wnd)
+            self.set_text(text=txt, font=2)
 
         self.update()
 
@@ -172,13 +182,15 @@ class DialogWnd:
             self.default_font = self.font_l
         elif font == 1:
             self.default_font = self.font_s
+        elif font == 2:
+            self.default_font = self.font_xs
 
-    def set_text(self, text, font):
+    def set_text(self, text, font, justification=1):
         self.set_font(font)
         self.text = text
         self.text_canvas = self.render_textrect(string=self.text, font=self.default_font,
-                                                rect=pygame.Rect((0, 0, 450, 220)), text_color=(0, 0, 0),
-                                                background_color=(255, 249, 194), justification=1)
+                                                rect=pygame.Rect((0, 0, 470, 240)), text_color=(0, 0, 0),
+                                                background_color=(255, 249, 194), justification=justification)
         # self.update()
 
     def hide_dialog(self):
@@ -221,14 +233,17 @@ class DialogWnd:
         self.mainloop.redraw_needed = [True, True, True]
         # self.screen.fill(self.color)
         self.screen.blit(self.img, self.img_pos)
-        self.screen.blit(self.text_canvas, (86, 90))
+        self.screen.blit(self.text_canvas, (76, 80))
 
         # self.screen.set_colorkey(self.color)
+
         for each in self.widget_list:
             each.update()
 
-        # self.mainloop.redraw_needed = [True,True,True]
-        self.widget_list.draw(self.screen)
+        if self.dialog_type < 3:
+            self.widget_list.draw(self.screen)
+        else:
+            self.widget_list2.draw(self.screen)
         # self.update_me = False
 
     # Title: Word-wrapped text display module - render_textrect

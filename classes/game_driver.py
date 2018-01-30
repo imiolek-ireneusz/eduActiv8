@@ -118,6 +118,9 @@ class BoardGame(GameBase):
     def say(self, text, voice="1"):
         self.speaker.say(text, voice)
 
+    def show_info_dialog(self):
+        pass
+
     def create_game_objects(self):
         pass
 

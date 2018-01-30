@@ -45,7 +45,7 @@ class DBConnection():
                     "CREATE TABLE admin (admin_id INTEGER KEY, admin_name TEXT, admin_pass TEXT, default_lang TEXT, login_screen_defaults TEXT, autologin_userid INTEGER, autologin INTEGER, db_version INTEGER)")
                 # self.c.execute("INSERT INTO admin VALUES (?, ?, ?, ?, ?)", (admin_id, admin_name, admin_pass, default_lang, login_screen_defaults, db_version,autologin_userid TEXT,autologin INTEGER))
                 self.c.execute("INSERT INTO admin VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-                               (0, "", "", default_lang, "01001", 0, 0, db_version))
+                               (0, "", "", default_lang, "01101", 0, 0, db_version))
                 self.conn.commit()
 
                 self.lang = self.mainloop.lang
