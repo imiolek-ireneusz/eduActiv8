@@ -13,15 +13,15 @@ class LogoImg(pygame.sprite.Sprite):
         self.mainloop = mainloop
         self.state = 2
         self.mouse_over = False
-        self.image = pygame.Surface([166, 146])
-        self.image.fill((60, 60, 60))
+        self.image = pygame.Surface([204, 146])
+        self.image.fill((0, 0, 0, 0))
         self.rect = self.image.get_rect()
         self.rect.topleft = [0, 0]
         self.img_pos = (0, 0)
         try:
-            self.img1 = pygame.image.load(os.path.join('res', 'images', "logo_n.png")).convert_alpha()
-            self.img2 = pygame.image.load(os.path.join('res', 'images', "logo_h.png")).convert_alpha()
-            self.img3 = pygame.image.load(os.path.join('res', 'images', "logo_a.png")).convert_alpha()
+            self.img1 = pygame.image.load(os.path.join('res', 'images', "logo_n.png")).convert()
+            self.img2 = pygame.image.load(os.path.join('res', 'images', "logo_h.png")).convert()
+            self.img3 = pygame.image.load(os.path.join('res', 'images', "logo_a.png")).convert()
         except:
             pass
         self.update()
@@ -48,7 +48,7 @@ class LogoImg(pygame.sprite.Sprite):
                     self.mainloop.sfx.play(4)
                 self.state = 2
                 self.mainloop.m.active_cat = 0
-                self.mainloop.m.game_constructor = game000.Board
+                self.mainloop.m.game_constructor = "game000.Board"
                 self.mainloop.m.game_variant = 0
                 self.mainloop.m.active_game_id = 0
                 self.mainloop.m.game_started_id = -1

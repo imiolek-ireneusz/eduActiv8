@@ -16,7 +16,7 @@ class Layout:
         else:
             self.score_bar_h = 56
 
-        self.menu_w = 166  # 124 #+5 - extra space to make the gap for tabs to look ok
+        self.menu_w = 166 + 26 + 12  # 124 #+5 - extra space to make the gap for tabs to look ok
         self.menu_a_w = self.menu_w
         # 50+10+50+10+1
         self.grid_line_w = 1
@@ -64,14 +64,15 @@ class Layout:
         self.menu_pos = (0, 0, self.menu_w, self.screen_h)
 
         self.menu_l_w = 96
-        self.menu_r_w = 70  # self.menu_w - self.menu_l_w
+        self.menu_r_w = 70 + 26 + 12 # self.menu_w - self.menu_l_w
         self.menu_l_pos = (0, 0, self.menu_l_w, self.screen_h)
         self.menu_r_pos = (self.menu_l_w, 0, self.menu_r_w, self.screen_h)
         # self.game_pos = (self.menu_w,0, self.game_w, self.game_h) #changed
         # self.game_pos = (self.menu_w,self.top_margin, self.game_w, self.game_h) #changed
         self.game_pos = (self.game_left, self.top_margin, self.game_w, self.game_h)  # changed
 
-        self.misio_pos = (0, 0, 166, 146)
+        #self.misio_pos = (0, 0, 204, 146)
+        self.misio_pos = (0, 0, 204, 120)
         """
         self.info_bar_offset_pos = (self.menu_w - self.menu_w_offset, self.game_h+self.top_margin, self.game_w + self.menu_w_offset, self.info_bar_offset_h)
         self.info_bar_pos = (1, self.info_bar_offset_h - self.info_bar_h, self.game_w - 1 + self.menu_w_offset, self.info_bar_h)
