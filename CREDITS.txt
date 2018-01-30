@@ -1,3 +1,14 @@
+Design and Development - Ireneusz Imiolek
+
+Game Ideas:
+    Kamila Roszak-Imiolek & Ireneusz Imiolek
+
+Usability Testing:
+    Elisabete Cunha
+
+Windows Setup Script (eduactiv82exe):
+    Gino Ingras
+
 Translations:
     Catalan - Guillem Jover - http://www.hadrons.org/~guillem/
             - updated by Jordi Mallach
@@ -22,15 +33,6 @@ Translations:
             - updated by: Mario Izquierdo
     Ukrainian - Yuri Chornoivan (Юрій Чорноіван)
 
-Game Ideas:
-    Kamila Roszak-Imiolek & Ireneusz Imiolek
-
-Usability Testing:
-    Elisabete Cunha
-
-Windows Setup Script (eduactiv82exe):
-    Gino Ingras
-    
 Thanks to creators of python and pygame - without their work this program would never exist.
 Thanks to everyone sending various bug reports and fixes.
 
@@ -153,7 +155,6 @@ Images from openclipart.org by various authors:
     http://openclipart.org/detail/4421/aquarela-colors-by-valessiobrito-4421
     http://openclipart.org/detail/4070/green-sea-turtle-by-valessiobrito-4070
 
-
     Fish:
     http://openclipart.org/detail/3753/gold-fish-by-tomas_arad
     http://openclipart.org/detail/15731/aquarium-fish---xiphophorus-maculatus-by-mystica
@@ -173,8 +174,6 @@ Images from openclipart.org by various authors:
     http://openclipart.org/detail/8230/crawfish-by-gerald_g-8230
     http://openclipart.org/detail/8233/crawfish-by-gerald_g-8233
     http://openclipart.org/detail/3006/flowerhorn-fish-by-danz
-
-
 
     Letter Flashcards:
     http://openclipart.org/detail/1581/ant-by-aurium
@@ -204,7 +203,6 @@ Images from openclipart.org by various authors:
     http://openclipart.org/detail/23398/pink-ball-of-yarn-by-adam_lowe
     http://openclipart.org/detail/100297/cebra-by-ha1flosse
     http://openclipart.org/detail/4802/violin-by-papapishu
-
     http://openclipart.org/detail/155773/hedgehog-by-tzunghaor
     http://openclipart.org/detail/28555/sapin_01-by-jean_victor_balin
     http://openclipart.org/detail/155125/yogurt-by-mazeo
@@ -248,7 +246,6 @@ Images from openclipart.org by various authors:
     http://openclipart.org/detail/38065/hockey-goal-by-j_alves
     http://openclipart.org/detail/24366/tiger-by-anonymous-24366
     http://openclipart.org/detail/2218/bus-by-drunken_duck
-
 
     Shapes:
     http://openclipart.org/detail/68527/cube-by-buggi
@@ -318,21 +315,16 @@ Images from openclipart.org by various authors:
     http://openclipart.org/detail/140677/sveglia-by-emilie.rollandin
     http://openclipart.org/detail/25516/architetto----clessidra-by-anonymous-25516
     http://openclipart.org/detail/179359/owl-by-rematuche-179359
-
     http://openclipart.org/detail/167095/secure-gold-by-rygle
-
     http://openclipart.org/detail/171109/filter--funnel-icon-by-mlampret-171109
-
     http://openclipart.org/detail/48937/trophy-by-sheikh_tuhin
     http://openclipart.org/detail/170859/trophy-by-hatalar205-170859
     http://openclipart.org/detail/25414/architetto----cassa-negozio-by-anonymous-25414
     http://openclipart.org/detail/173984/pretty-coin-golden-by-qubodup-173984
-
     http://openclipart.org/detail/167328/jaguar-by-frankes
     http://openclipart.org/detail/3469/-by--3469
     http://openclipart.org/detail/171184/interactive-language-button-by-gmcglinn-171184
     http://openclipart.org/detail/58735/cat-paw-print-by-j_alves
-
     http://openclipart.org/detail/2163/jogging-by-machovka
     http://openclipart.org/detail/2838/bike-by-machovka
     http://openclipart.org/detail/138967/people-by-netalloy
@@ -344,7 +336,6 @@ Images from openclipart.org by various authors:
     http://openclipart.org/detail/2026/stylized-house-by-paolo_savini
     http://openclipart.org/detail/61933/maple-leaf-by-rones
     http://openclipart.org/detail/131689/apples-by-gnokii
-
     https://openclipart.org/detail/166368/thumb-up-by-nikitan
 
 New images for version 3:
@@ -387,5 +378,4 @@ Cinderella in the Touch Typing Tutor:
 	Kopciuszek - Bracia Grim - http://www.gutenberg.org/files/28044/28044-h/28044-h.htm
 	Золушка - Шарль Перро - Charles Perrault -  http://sheba.spb.ru/libra/perro_zolushka.htm
 	Cendrillon par Charles Perrault - http://www.alyon.org/litterature/livres/XVIII/esprit_salon/perrault/cendrillon.html
-	
-        Schneewittchen (Snowwhite) by Brothers Grimm - http://gutenberg.spiegel.de/buch/-6248/150
+	Schneewittchen (Snowwhite) by Brothers Grimm - http://gutenberg.spiegel.de/buch/-6248/150

@@ -16,6 +16,8 @@ class Config:
         self.font_start_at_adjustment = 0
         self.font_variant = 0
         self.version = ver
+        self.avail_version = ""
+        self.update_available = False
         self.settings_changed = False
         self.fs_width = 1024
         self.fs_height = 768
@@ -38,7 +40,7 @@ class Config:
         # to change any of these do this in the in-game preferences, except fullscreen if there's no config file the value below will be used.
         self.fullscreen = False
         # self.read_inst = False #no longer used
-        self.google_trans_languages = False
+        self.check_updates = True
 
         self.user_age_group = 0  # default group - showing all games - TO DO: will be overridden by data stored in database
         self.max_age = 7
@@ -202,7 +204,11 @@ class Config:
         a = db.get_login_defs()
         # lang, sounds, espeak, screenw, screenh
 
-        self.settings["extra_langs"] = int(a[1][2])
+        self.settings["check_updates"] = int(a[1][2])
+        if self.settings["check_updates"] == 1:
+            self.check_updates = True
+        else:
+            self.check_updates = False
         self.settings["full_screen"] = int(a[1][0])
 
         self.settings["lang"] = u[0]
