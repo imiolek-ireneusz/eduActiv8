@@ -1254,3 +1254,136 @@ msgstr ""
 
 msgid "Food"
 msgstr ""
+
+msgid "Listening Exercises"
+msgstr ""
+
+msgid "Match sounds to words"
+msgstr ""
+
+msgid "Patterns"
+msgstr ""
+
+msgid "Number Patterns"
+msgstr ""
+
+msgid "Letter Patterns"
+msgstr ""
+
+msgid "Color Patterns"
+msgstr ""
+
+msgid "Image Patterns"
+msgstr ""
+
+msgid "Fraction Patterns"
+msgstr ""
+
+msgid "Shape Patterns"
+msgstr ""
+
+msgid "Complete the pattern on the top line."
+msgstr ""
+
+msgid "Match shapes to their names"
+msgstr ""
+
+msgid "Negative numbers"
+msgstr ""
+
+msgid "numerator"
+msgstr ""
+
+msgid "denominator"
+msgstr ""
+
+msgid "Experiment with fractions"
+msgstr ""
+
+msgid "Experiment with decimal fractions"
+msgstr ""
+
+msgid "Experiment with ratios"
+msgstr ""
+
+msgid "Experiment with percentages"
+msgstr ""
+
+msgid "What fraction is it?"
+msgstr ""
+
+msgid "What decimal fraction is it?"
+msgstr ""
+
+msgid "Add fractions with the same denominator"
+msgstr ""
+
+msgid "Subtract fractions with the same denominator"
+msgstr ""
+
+
+msgid "Multiply fractions"
+msgstr ""
+
+msgid "Divide fractions"
+msgstr ""
+
+msgid "Exercise 1"
+msgstr ""
+
+msgid "Exercise 2"
+msgstr ""
+
+msgid "Exercise 3"
+msgstr ""
+
+msgid "Compare decimals and fractions"
+msgstr ""
+
+msgid "Compare fractions"
+msgstr ""
+
+msgid "Reduce fractions"
+msgstr ""
+
+msgid "Extend fractions"
+msgstr ""
+
+msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
+msgstr ""
+
+msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer or just type it in."
+msgstr ""
+
+msgid "Use the plus or minus signs to change your answer."
+msgstr ""
+
+msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgstr ""
+
+msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgstr ""
+
+msgid "Group fractions together"
+msgstr ""
+
+msgid "Group percentages together"
+msgstr ""
+
+msgid "Group ratios together"
+msgstr ""
+
+msgid "eduActiv8 update is available. Current version: %s. New version: %s."
+msgstr ""
+
+msgid "check for updates on start"
+msgstr ""
