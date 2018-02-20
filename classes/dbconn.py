@@ -389,35 +389,21 @@ class DBConnection():
     def del_user(self, username):
         # check if user exists + get user id
         if self.db_connected:
-            self.c.execute("SELECT ROWID FROM users WHERE username=?", (username,))
+            self.c.execute("SELECT count(*) FROM users")
             self.conn.commit()
-            row = self.c.fetchone()
-            if row is not None:
-                userid = row[0]
-                self.c.execute("DELETE FROM levelcursors WHERE userid = ?", (userid,))
-                self.c.execute("DELETE FROM completions WHERE userid = ?", (userid,))
-                self.c.execute("DELETE FROM users WHERE username = ?", (username,))
+            count = self.c.fetchall()
+            if count is not None and count[0][0] > 1:
+                self.c.execute("SELECT ROWID FROM users WHERE username=?", (username,))
                 self.conn.commit()
-                return 0  # "%s deleted from database." % username
-            else:
-                return -1
+                row = self.c.fetchone()
+                if row is not None:
+                    userid = row[0]
+                    self.c.execute("DELETE FROM levelcursors WHERE userid = ?", (userid,))
+                    self.c.execute("DELETE FROM completions WHERE userid = ?", (userid,))
+                    self.c.execute("DELETE FROM users WHERE username = ?", (username,))
+                    self.conn.commit()
+                    return 0  # "%s deleted from database." % username
         return -1
-
-    def delete_user(self, username, password):
-        if self.db_connected:
-            m = hashlib.md5()
-            m.update(password.encode("utf-8"))
-            md5password = m.hexdigest()
-            self.c.execute("SELECT count(*) FROM users WHERE username=? AND password=?", (username, md5password))
-            self.conn.commit()
-            count = self.c.fetchone()
-            if count[0] == 0:
-                return -1  # "Sorry... Nothing to delete."
-            else:
-                self.c.execute("DELETE FROM users WHERE username=? AND password=?", (username, md5password))
-                self.conn.commit()
-                return 0  # "%s, your account has been removed" % username
-        return ""
 
     def save_user_settings(self, lang, sounds, espeak, screenw, screenh, scheme):
         if self.db_connected:
