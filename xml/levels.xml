@@ -1116,6 +1116,64 @@
         </levels>
     </game>
 
+    <!-- game101 - match frections & game102 - frections with text, 243, 244 - equivalent fractions -->
+    <game dbids="241, 242" min_age="1" max_age="2" show_all="0">
+        <chapters data="[1, 4]" />
+        <levels count="4" games_per_level="5">
+            <level n="1" data="[2, 4]" />
+            <level n="2" data="[2, 5]" />
+            <level n="3" data="[3, 5]" />
+            <level n="4" data="[3, 6]" />
+        </levels>
+    </game>
+
+    <game dbids="241, 242, 243, 244" min_age="3" max_age="7" show_all="1">
+        <chapters data="[1, 7]" />
+        <levels count="7" games_per_level="10">
+            <level n="1" data="[2, 6]" />
+            <level n="2" data="[3, 7]" />
+            <level n="3" data="[4, 8]" />
+            <level n="4" data="[4, 9]" />
+            <level n="5" data="[5, 10]" />
+            <level n="6" data="[5, 11]" />
+            <level n="7" data="[5, 12]" />
+        </levels>
+    </game>
+
+    <!-- game101 - match decimal frections -->
+    <game dbids="245" min_age="4" max_age="7" show_all="1">
+        <chapters data="[1, 3]" />
+        <levels count="3" games_per_level="10">
+            <level n="1" data="[1]" />
+            <level n="2" data="[2]" />
+            <level n="3" data="[3]" />
+        </levels>
+    </game>
+
+    <!-- game101 - match percentages -->
+    <game dbids="246" min_age="5" max_age="7" show_all="1">
+        <chapters data="[1, 3]" />
+        <levels count="5" games_per_level="10">
+            <level n="1" data="[25, 0, 100]" />
+            <level n="2" data="[20, 0, 100]" />
+            <level n="3" data="[10, 10, 90]" />
+            <level n="4" data="[5, 5, 95]" />
+            <level n="5" data="[1, 5, 95]" />
+        </levels>
+    </game>
+
+    <!-- game101, 102 - match ratios -->
+    <game dbids="247, 248" min_age="5" max_age="7" show_all="1">
+        <chapters data="[1, 3]" />
+        <levels count="5" games_per_level="10">
+            <level n="1" data="[2, 1, 5]" />
+            <level n="2" data="[2, 2, 7]" />
+            <level n="3" data="[3, 1, 3]" />
+            <level n="4" data="[3, 2, 5]" />
+            <level n="5" data="[3, 3, 7]" />
+        </levels>
+    </game>
+
     <!-- fraction groups - game056 -->
     <!-- data = [range of denominators or min denominator, 0 for a range or max denominator, min numerator, number of rows (max 5)] -->
     <!-- make sure there is at least as many different combinations as there is rows, ie. 1/2, 1/4. 2/4, 3/4 is not enough if number of rows is 5 -->
@@ -1367,6 +1425,94 @@
             <level n="14" data="[5, 5, 3, 3, 0, 3, True]" />
             <level n="15" data="[5, 5, 3, 3, 0, 2, False]" />
             <level n="16" data="[5, 5, 3, 3, 0, 2, True]" />
+         </levels>
+    </game>
+
+    <game dbids="237" min_age="0" max_age="7" show_all="1">
+        <chapters data="[1]" />
+        <levels count="1" games_per_level="1">
+            <level n="1" data="[0]" />
+         </levels>
+    </game>
+
+    <!-- symmetry game
+    width, height, number of corners, direction 0 - 3, half - if true shapes don't cross the symmetry line -->
+    <game dbids="238, 239" min_age="2" max_age="3" show_all="0">
+        <chapters data="[1]" />
+        <levels count="6" games_per_level="10">
+            <level n="1" data="[18, 14, 3, 0, True]" />
+            <level n="2" data="[18, 14, 3, 1, True]" />
+            <level n="3" data="[18, 14, 4, 0, True]" />
+            <level n="4" data="[18, 14, 4, 1, True]" />
+            <level n="5" data="[18, 14, 5, 0, True]" />
+            <level n="6" data="[18, 14, 5, 1, True]" />
+         </levels>
+    </game>
+
+    <game dbids="238, 239" min_age="4" max_age="4" show_all="0">
+        <chapters data="[1]" />
+        <levels count="12" games_per_level="10">
+            <level n="1" data="[18, 14, 3, 0, True]" />
+            <level n="2" data="[18, 14, 3, 1, True]" />
+            <level n="3" data="[18, 14, 3, 2, True]" />
+            <level n="4" data="[18, 14, 3, 3, True]" />
+            <level n="5" data="[18, 14, 4, 0, True]" />
+            <level n="6" data="[18, 14, 4, 1, True]" />
+            <level n="7" data="[18, 14, 4, 2, True]" />
+            <level n="8" data="[18, 14, 4, 3, True]" />
+            <level n="9" data="[18, 14, 5, 0, True]" />
+            <level n="10" data="[18, 14, 5, 1, True]" />
+            <level n="11" data="[18, 14, 5, 2, True]" />
+            <level n="12" data="[18, 14, 5, 3, True]" />
+         </levels>
+    </game>
+
+    <game dbids="238, 239" min_age="5" max_age="6" show_all="0">
+        <chapters data="[1]" />
+        <levels count="12" games_per_level="10">
+            <level n="1" data="[18, 14, 3, 0, True]" />
+            <level n="2" data="[18, 14, 3, 1, True]" />
+            <level n="3" data="[18, 14, 3, 2, True]" />
+            <level n="4" data="[18, 14, 3, 3, True]" />
+            <level n="5" data="[18, 14, 4, 0, False]" />0
+            <level n="6" data="[18, 14, 4, 1, False]" />
+            <level n="7" data="[18, 14, 4, 2, False]" />
+            <level n="8" data="[18, 14, 4, 3, False]" />
+            <level n="9" data="[18, 14, 5, 0, False]" />
+            <level n="10" data="[18, 14, 5, 1, False]" />
+            <level n="11" data="[18, 14, 5, 2, False]" />
+            <level n="12" data="[18, 14, 5, 3, False]" />
+         </levels>
+    </game>
+
+    <game dbids="238, 239" min_age="7" max_age="7" show_all="1">
+        <chapters data="[1]" />
+        <levels count="8" games_per_level="10">
+            <level n="1" data="[18, 14, 0, 0, True]" />
+            <level n="2" data="[18, 14, 0, 0, True]" />
+            <level n="3" data="[18, 14, 0, 0, True]" />
+            <level n="4" data="[18, 14, 0, 0, True]" />
+            <level n="5" data="[18, 14, 0, 0, False]" />
+            <level n="6" data="[18, 14, 0, 0, False]" />
+            <level n="7" data="[18, 14, 0, 0, False]" />
+            <level n="8" data="[18, 14, 0, 0, False]" />
+         </levels>
+    </game>
+
+    <!-- Lines of symmetry -->
+    <game dbids="240" min_age="2" max_age="7" show_all="1">
+        <chapters data="[1]" />
+        <levels count="10" games_per_level="15">
+            <level n="1" data="[14, 14, 1, 0, 1]" />
+            <level n="2" data="[14, 14, 1, 0, 2]" />
+            <level n="3" data="[14, 14, 1, 0, 0]" />
+            <level n="4" data="[14, 14, 2, 0, 1]" />
+            <level n="5" data="[14, 14, 2, 0, 2]" />
+            <level n="6" data="[14, 14, 2, 0, 0]" />
+            <level n="7" data="[14, 14, 3, 0, 1]" />
+            <level n="8" data="[14, 14, 3, 0, 2]" />
+            <level n="9" data="[14, 14, 3, 0, 0]" />
+            <level n="10" data="[14, 14, 0, 0, 0]" />
          </levels>
     </game>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- max cat id = 20, max game id = 224 -->
+<!-- max cat id = 20, max game id = 238 -->
 <!-- title and subtitle must match already existing string from .po file so these can't just be changed here -->
 <!-- visible 0 - hide, 1 - show, use to temporarily hide activities -->
 <!-- "listening" used to mark which activities are listening activities that require TTS engine to work - if not available the activities will be hidden -->
@@ -871,6 +871,20 @@
                   icon="ico_g_2400.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
+            <game dbid="241" variant="0" var2="0"  min_age="1" max_age="7"
+                  constructor_id="101"
+                  title="Matching fractions"
+                  subtitle=""
+                  icon="ico_g_2411.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="242" variant="0" var2="0"  min_age="1" max_age="7"
+                  constructor_id="102"
+                  title="Matching fractions"
+                  subtitle=""
+                  icon="ico_g_2412.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="['en', 'pl']" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
             <!--
             <game dbid="229" variant="0" var2="0"  min_age="1" max_age="7"
                   constructor_id="83"
@@ -895,6 +909,21 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
+            <game dbid="243" variant="0" var2="0"  min_age="3" max_age="7"
+                  constructor_id="103"
+                  title="Match equivalent fractions"
+                  subtitle=""
+                  icon="ico_g_2413.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+
+            <game dbid="244" variant="1" var2="0"  min_age="3" max_age="7"
+                  constructor_id="103"
+                  title="Match equivalent fractions"
+                  subtitle=""
+                  icon="ico_g_2414.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
 
             <game dbid="232" variant="0" var2="0"  min_age="1" max_age="7"
                   constructor_id="94"
@@ -959,8 +988,8 @@
             </game>
         </cat>
 
-        <cat id="21" title="Decimal Fractions" subtitle="" icon="ico_c_24.png" min_age="1" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
-            <game dbid="224" variant="0" var2="0"  min_age="4" max_age="7"
+        <cat id="21" title="Decimal Fractions" subtitle="" icon="ico_c_24.png" min_age="4" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
+            <game dbid="236" variant="0" var2="0"  min_age="4" max_age="7"
                   constructor_id="65"
                   title="Experiment with decimals"
                   subtitle=""
@@ -972,6 +1001,13 @@
                   title="What decimal is it?"
                   subtitle=""
                   icon="ico_g_2450.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="245" variant="1" var2="0"  min_age="4" max_age="7"
+                  constructor_id="101"
+                  title="Matching decimals"
+                  subtitle=""
+                  icon="ico_g_2452.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="48" variant="0" var2="0"  min_age="4" max_age="7"
@@ -991,6 +1027,20 @@
                   icon="ico_g_2500.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
+            <game dbid="249" variant="1" var2="0"  min_age="1" max_age="7"
+                  constructor_id="104"
+                  title="Reading pie charts"
+                  subtitle=""
+                  icon="ico_g_2400.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="0" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="246" variant="2" var2="0"  min_age="1" max_age="7"
+                  constructor_id="101"
+                  title="Matching percentages"
+                  subtitle=""
+                  icon="ico_g_2502.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
             <game dbid="52" variant="3" var2="0"  min_age="5" max_age="7"
                   constructor_id="56"
                   title="Percentage Groups"
@@ -1006,6 +1056,21 @@
                   title="Experiment with ratios"
                   subtitle=""
                   icon="ico_g_2600.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+
+            <game dbid="247" variant="3" var2="0"  min_age="1" max_age="7"
+                  constructor_id="101"
+                  title="Matching ratios"
+                  subtitle=""
+                  icon="ico_g_2602.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="248" variant="1" var2="0"  min_age="1" max_age="7"
+                  constructor_id="102"
+                  title="Matching ratios"
+                  subtitle=""
+                  icon="ico_g_2603.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="53" variant="4" var2="0"  min_age="6" max_age="7"
@@ -1057,6 +1122,37 @@
                   title="ShapeMaker"
                   subtitle="test_yourself"
                   icon="ico_g_0503.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+
+            <game dbid="237" variant="0" var2="0"  min_age="0" max_age="7"
+                  constructor_id="98"
+                  title="Reflections - Drawing"
+                  subtitle=""
+                  icon="ico_g_0505.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="238" variant="0" var2="0"  min_age="3" max_age="7"
+                  constructor_id="99"
+                  title="Draw Symmetrical Shapes - half"
+                  subtitle="DSS - missing half - subtitle"
+                  icon="ico_g_0506.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+
+            <game dbid="239" variant="1" var2="0"  min_age="3" max_age="7"
+                  constructor_id="99"
+                  title="Reflecting shapes"
+                  subtitle="DRS - subtitle"
+                  icon="ico_g_0507.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+
+            <game dbid="240" variant="0" var2="0"  min_age="2" max_age="7"
+                  constructor_id="100"
+                  title="Lines of symmetry"
+                  subtitle=""
+                  icon="ico_g_0508.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
