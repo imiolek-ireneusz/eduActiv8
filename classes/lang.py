@@ -328,6 +328,8 @@ class Language:
         self.numbers2090 = self.lang_file.numbers2090
         self.n2txt = self.lang_file.n2txt
         self.time2str = self.lang_file.time2str
+        if self.lang in ["en_GB", "en_US", "pl"]:
+            self.fract2str = self.lang_file.fract2str
 
         self.solid_names = self.oi18n.solid_names
         self.shape_names = self.oi18n.shape_names

@@ -667,7 +667,7 @@ class ImgShip(Ship):
             self.hasimg = True
             self.img = self.image
             self.img_pos = (0, 0)
-            self.outline = True
+            #self.outline = True
             try:
                 if self.alpha:
                     self.img_org = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
@@ -809,7 +809,7 @@ class ImgCenteredShip(Ship):
                 self.img_rect = self.img.get_rect()
                 old_h = self.img_rect.h
                 old_w = self.img_rect.w
-                if self.grid_x > self.grid_y:
+                if self.grid_h > self.grid_w:
                     new_w = self.rect.w
                     new_h = int((new_w * old_h) / old_w)
                 else:
@@ -841,6 +841,7 @@ class ImgCenteredShip(Ship):
                 self.set_outline(self.perm_outline_color, self.perm_outline_width)
             if self.perm_outline:
                 self.draw_outline()
+            self.draw_check_marks()
 
 
 class MultiImgSprite(ImgShip):

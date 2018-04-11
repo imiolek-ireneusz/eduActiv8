@@ -373,9 +373,9 @@ Laby code based on:
     Laby, 2010 by Mehdi Cherti(mehdidc):
         http://www.pythonfrance.com/codes/GENERATION-LABYRINTHE-AVEC-RECHERCHE-CHEMIN-PLUS-COURT-AVEC_51293.aspx
 
-Cinderella in the Touch Typing Tutor:
+Cinderella/Snow White in the Touch Typing Tutor:
 	Cinderella - Brothers Grim - http://www.thegrimmtales.com/cinderella/
 	Kopciuszek - Bracia Grim - http://www.gutenberg.org/files/28044/28044-h/28044-h.htm
 	Золушка - Шарль Перро - Charles Perrault -  http://sheba.spb.ru/libra/perro_zolushka.htm
 	Cendrillon par Charles Perrault - http://www.alyon.org/litterature/livres/XVIII/esprit_salon/perrault/cendrillon.html
-	Schneewittchen (Snowwhite) by Brothers Grimm - http://gutenberg.spiegel.de/buch/-6248/150
+	Schneewittchen (Snow White) by Brothers Grimm - http://gutenberg.spiegel.de/buch/-6248/150
