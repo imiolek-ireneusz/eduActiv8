@@ -24,48 +24,14 @@ dp['abc_flashcards_word_sequence'] = ['Apple', 'Butterfly', 'Cat', 'Dolphin', 'E
                                       'Hedgehog', 'Igloo', 'Jar', 'Koala', 'Lion', 'Monitor', 'Notebook', 'Ocean',
                                       'Parrot', 'Queen', 'Rabbit', 'Street', 'Tomato', 'Umbrella', 'Violin',
                                       'Watermelon', 'Xylophone', 'Yarn', 'Zebra']
-d['abc_flashcards_word_sequence'] = ['<1>A<2>pple', '<1>B<2>utterfly', '<1>C<2>at', '<1>D<2>olphin', '<1>E<2>lephant',
-                                     '<1>F<2>ortepiano', '<1>G<2>uitar', '<1>H<2>edgehog', '<1>I<2>gloo', '<1>J<2>ar',
-                                     '<1>K<2>oala', '<1>L<2>ion', '<1>M<2>onitor', '<1>N<2>otebook', '<1>O<2>cean',
-                                     '<1>P<2>arrot', '<1>Q<2>ueen', '<1>R<2>abbit', '<1>S<2>treet', '<1>T<2>omato',
-                                     '<1>U<2>mbrella', '<1>V<2>iolin', '<1>W<2>atermelon', '<1>X<2>ylophone',
-                                     '<1>Y<2>arn', '<1>Z<2>ebra']
+d['abc_flashcards_word_sequence'] = ['<1>A<2>pple', '<1>B<2>utterfly', '<1>C<2>at', '<1>D<2>olphin',
+                                     '<1>E<2>l<1>e<2>phant', '<1>F<2>ortepiano', '<1>G<2>uitar', '<1>H<2>edge<1>h<2>og',
+                                     '<1>I<2>gloo', '<1>J<2>ar', '<1>K<2>oala', '<1>L<2>ion', '<1>M<2>onitor',
+                                     '<1>N<2>otebook', '<1>O<2>cean', '<1>P<2>arrot', '<1>Q<2>ueen', '<1>R<2>abbit',
+                                     '<1>S<2>treet', '<1>T<2>oma<1>t<2>o', '<1>U<2>mbrella', '<1>V<2>iolin',
+                                     '<1>W<2>atermelon', '<1>X<2>ylophone', '<1>Y<2>arn', '<1>Z<2>ebra']
 d['abc_flashcards_frame_sequence'] = [42, 27, 2, 59, 4, 34, 28, 29, 8, 9, 72, 11, 40, 13, 52, 15, 16, 17, 53, 33, 20,
                                       21, 26, 23, 24, 25]
-
-# used in telling time activity
-# the number lists below are for languages with a bit more complex forms, ie. different suffixes depending on context - if your language is like that check Polish translation to see how to use them
-d["minute_numbers_1to29"] = numbers[:]
-
-# hours case 0: full hour, ie. one o'clock, two o'clock, etc.
-d["hours_a"] = numbers[0:12]
-
-# hours case 1: ie. ten past one, 22 past three, etc.
-d["hours_b"] = d["hours_a"][:]
-
-# hours case 2: ie. ten to one, 22 to three, etc.
-d["hours_c"] = d["hours_a"][:]
-
-d["time_string_one_to"] = "one minute to %s"  # if you never use the to the hour form leave this blank
-d["time_string_one_past"] = "one minute past %s"
-# pick either mh or hm version, or leave these 4 blank if you don't use to the hour form: mh means that number of minutes will appear first in the sentence followed by the number of hours, the hm is the opposite.
-d["time_string_to_mh"] = "%s to %s"  # ie. five to four
-d["time_string_past_mh"] = "%s past %s"  # ie. five past four
-d["time_string_to_hm"] = ""  # ie. 3:55 = four o'clock in five
-d["time_string_past_hm"] = ""  # ie. 4:05 = four and five minutes
-
-# if you never use the "to the hour" form leave the above fields blank and only fill one of the following two
-d["time_string_1_59_past_mh"] = ""
-d["time_string_1_59_past_hm"] = ""
-d[
-    "time_string_3q_past"] = ""  # if you don't use quarter to but rather past use this one to either say it's 3 quarters past or 45 past - and leave the "quarter to" field blanck
-
-d["time_string_q_to"] = "quarter to %s"
-d["time_string_q_past"] = "quarter past %s"
-
-d["time_string_half_to"] = ""  # ie. in languages using this form, ie. half to four
-d["time_string_half_past"] = "half past %s"  # ie. half past three or "thirty past %s" if that sounds better
-d["time_string_full"] = "%s o'clock"
 
 # alphabet en
 alphabet_lc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
@@ -102,29 +68,23 @@ def n2txt(n, twoliner=False):
     return ""
 
 
-def time2str(h, m, f):
-    'takes 3 variables: h - hour, m - minute, f - format (12 or 24) returns time as a string, ie. five to seven - for 6:55'
+def time2str(h, m):
+    'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
     if m > 30:
-        if f == 12:
-            if h == 12:
-                h = 1
-            else:
-                h += 1
-        elif f == 24:
-            if h == 23:
-                h = 0
-            else:
-                h += 1
+        if h == 12:
+            h = 1
+        else:
+            h += 1
     if m == 0:
         return "%s o'clock" % n2txt(h)
     elif m == 1:
         return "one minute past %s" % n2txt(h)
     elif m == 15:
-        return "quater past %s" % n2txt(h)
+        return "quarter past %s" % n2txt(h)
     elif m == 30:
         return "half past %s" % n2txt(h)
     elif m == 45:
-        return "quater to %s" % n2txt(h)
+        return "quarter to %s" % n2txt(h)
     elif m == 59:
         return "one minute to %s" % n2txt(h)
     elif m < 30:
@@ -133,6 +93,16 @@ def time2str(h, m, f):
         return "%s to %s" % (n2txt(60 - m), n2txt(h))
     return ""
 
+#write a fraction in words
+numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
+d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
+def fract2str(n, d):
+    if n == 1:
+        return numerators[0] + " " + d_singular[d-1]
+    else:
+        return numerators[n-1] + " " + d_plural[d-1]
 
 d["a4a_animals"] = ["cow", "turkey", "shrimp", "wolf", "panther", "panda", "magpie", "clam", "pony", "mouse", "pug",
                     "koala", "frog", "ladybug", "gorilla", "llama", "vulture", "hamster", "bird", "starfish", "crow",

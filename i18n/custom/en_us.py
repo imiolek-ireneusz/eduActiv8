@@ -44,7 +44,6 @@ letter_names = []
 accents_lc = ['-']
 accents_uc = []
 
-
 def n2txt(n, twoliner=False):
     "takes a number from 1 - 99 and returns it back in a word form, ie: 63 returns 'sixty three'."
     if 0 < n < 30:
@@ -66,7 +65,6 @@ def n2txt(n, twoliner=False):
     elif n == 100:
         return "one hundred"
     return ""
-
 
 def time2str(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
@@ -93,6 +91,16 @@ def time2str(h, m):
         return "%s to %s" % (n2txt(60 - m), n2txt(h))
     return ""
 
+#write a fraction in words
+numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
+d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
+def fract2str(n, d):
+    if n == 1:
+        return numerators[0] + " " + d_singular[d-1]
+    else:
+        return numerators[n-1] + " " + d_plural[d-1]
 
 d["a4a_animals"] = ["cow", "turkey", "shrimp", "wolf", "panther", "panda", "magpie", "clam", "pony", "mouse", "pug",
                     "koala", "frog", "ladybug", "gorilla", "llama", "vulture", "hamster", "bird", "starfish", "crow",

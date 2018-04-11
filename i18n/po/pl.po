@@ -1,14 +1,14 @@
 # eduActiv8 - Educational Activity Pack - translation file.
-# Copyright (C) 2012 - 2013 Ireneusz Imiolek
+# Copyright (C) 2012 - 2018 Ireneusz Imiolek
 # This file is distributed under the same license as the eduactiv8 package.
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2013.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-01-30 14:10+0000\n"
+"PO-Revision-Date: 2018-04-11 12:45+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language: pl\n"
@@ -166,7 +166,7 @@ msgid "Sphere"
 msgstr "Kula"
 
 msgid "Cylinder"
-msgstr "Cylinder"
+msgstr "Walec"
 
 msgid "Cone"
 msgstr "Stożek"
@@ -393,7 +393,7 @@ msgid "Game info..."
 msgstr "Informacje o grze..."
 
 msgid "Copyright & Credits"
-msgstr "Copyright & Credits"
+msgstr "Prawa autorskie"
 
 msgid "Hit the Mole"
 msgstr "Złap Krecika"
@@ -639,7 +639,7 @@ msgid "perimeter:"
 msgstr "obwód:"
 
 msgid "circumference:"
-msgstr "obwód"
+msgstr "obwód:"
 
 msgid "surface area:"
 msgstr "powierzchnia:"
@@ -648,7 +648,7 @@ msgid "volume:"
 msgstr "objętość:"
 
 msgid "Perfect!"
-msgstr "Perfekcyjnie"
+msgstr "Perfekcyjnie!"
 
 msgid "divided by"
 msgstr "podzielone przez"
@@ -993,7 +993,7 @@ msgid "Let's see what shapes you can draw"
 msgstr "Zobaczmy jakie kształty umiesz narysować"
 
 msgid "Time in text version only"
-msgstr "Tym razem tylko zapis słowny."
+msgstr "Tym razem tylko zapis słowny"
 
 msgid "How clock works?"
 msgstr "Jak działa zegar?"
@@ -1044,7 +1044,7 @@ msgid "rewrite "
 msgstr "przepisujemy "
 
 msgid "remainder"
-msgstr "remainder"
+msgstr "reszta"
 
 msgid "result"
 msgstr "wynik"
@@ -1121,7 +1121,7 @@ msgstr ""
 " Please view credits.txt for more info about authors of media files used in this project"
 
 msgid "Licence"
-msgstr "Licence"
+msgstr "Licencja"
 
 msgid "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
 msgstr "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
@@ -1199,10 +1199,10 @@ msgid "Achievements"
 msgstr "Osiągnięcia"
 
 msgid "Select age group:"
-msgstr "Wybierz grupę wiekową"
+msgstr "Wybierz grupę wiekową:"
 
 msgid "show activities for:"
-msgstr "pokaż zadania dla: "
+msgstr "pokaż zadania dla:"
 
 msgid "preschool"
 msgstr "Przedszkole"
@@ -1338,7 +1338,7 @@ msgid "Shape Patterns"
 msgstr "Rytm kształtów"
 
 msgid "Complete the pattern on the top line."
-msgstr "Dokończ rytm w górnej linii"
+msgstr "Dokończ rytm w górnej linii."
 
 msgid "Match shapes to their names"
 msgstr "Dopasuj kształty do ich nazw"
@@ -1441,3 +1441,48 @@ msgstr "Aktualizacja eduActiv8 jest dostępna. Obecna wersja: %s, Nowa wersja: %
 
 msgid "check for updates on start"
 msgstr "sprawdź dostępność aktualizacji programu przy starcie"
+
+msgid "Symmetry"
+msgstr "Symetria"
+
+msgid "Reflection Symmetry - draw with shapes"
+msgstr "Lustrzana  symetria - rysuj kształtami"
+
+msgid "Reflect shapes"
+msgstr "Kształty w odbiciu lustrzanym"
+
+msgid "Reflect a shape in a mirror line"
+msgstr "Figury symetryczne względem prostej"
+
+msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgstr "Narysuj figurę, która będzie odbiciem lustrzanym figury widocznej na ekranie. Czerwona linja jest osią symetrii."
+
+msgid "Symmetrical shapes - missing half"
+msgstr "Figury symetryczne - brakująca połowa"
+
+msgid "Draw the other half of the shape"
+msgstr "Narysuj drugą połowę figury"
+
+msgid "Find lines of symmetry."
+msgstr "Znajdź wszystkie osie symetrii"
+
+msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
+msgstr "Znajdź i zaznacz wszystkie osie symetrii wyświetlonych figur. Kliknij na strzałki znajdujące się wkoło rysunku by je zaznaczyć."
+
+msgid "Match equivalent fractions"
+msgstr "Dopasuj ułamki równoważne"
+
+msgid "Match fractions"
+msgstr "Dopasuj ułamki zwykłe"
+
+msgid "Match decimals"
+msgstr "Dopasuj ułamki dziesiętne"
+
+msgid "Match percentages"
+msgstr "Dopasuj procenty"
+
+msgid "Match ratios"
+msgstr "Dopasuj proporcje"
+
+msgid "Read pie charts"
+msgstr "Procenty na wykresach kołowych"

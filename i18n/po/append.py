@@ -11,8 +11,8 @@ langs = ["ar.po", "ca.po", "da.po", "de.po", "el.po", "en_GB.po", "en_US.po", "e
 
 # lines = ["Word Builder - Sports","Word Builder - Body","Word Builder - People","Word Builder - Actions","Word Builder - Constructions","Word Builder - Nature","Word Builder - Jobs","Word Builder - Clothes and Accessories","Word Builder - Fruits and Vegetables","Word Builder - Transport","Word Builder - Food"]
 #new games
-
-lines = ["lines to", " add"]
+lines = ["Symmetry", "Reflection Symmetry - draw with shapes", "Reflect shapes", "Reflect a shape in a mirror line", "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line.", "Symmetrical shapes - missing half", "Draw the other half of the shape", "Find lines of symmetry.", "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them.", "Match equivalent fractions", "Match fractions", "Match decimals", "Match percentages", "Match ratios", "Read pie charts"]
+#lines = ["lines to", " add"]
 
 def add_all():
     for lang in langs:

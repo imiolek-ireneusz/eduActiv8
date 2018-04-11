@@ -78,6 +78,7 @@ half past - mázaškaŋškaŋ # sáŋm okhíse (e.g. mázaškaŋškaŋ waŋží 
 X minutes past #:00 - mázaškaŋškaŋ # sáŋm oápȟe čík’ala X (e.g. mázaškaŋškaŋ waŋží sáŋm oápȟe čík’ala tópa = 1:04)
 X minutes before #:00 - mázaškaŋškaŋ # itȟókab oápȟe čík’ala X (e.g. mázaškaŋškaŋ waŋží itȟókab oápȟe čík’ala tópa = 12:56)
 """
+
 def time2str(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
     if m > 30 and not m == 45:
@@ -99,6 +100,16 @@ def time2str(h, m):
         return "mázaškaŋškaŋ %s itȟókab oápȟe čík’ala %s" % (n2txt(h), n2txt(60 - m))
     return ""
 
+#write a fraction in words
+numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
+d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
+def fract2str(n, d):
+    if n == 1:
+        return numerators[0] + " " + d_singular[d-1]
+    else:
+        return numerators[n-1] + " " + d_plural[d-1]
 
 d["a4a_animals"] = ["ptegléška", "waglékšuŋ", "hokáš’iŋla", "šuŋgmánitu tȟáŋka", "igmútȟaŋka sápa", "matȟówičhá", "halháta", "thukí", "šuŋkčík’ala", "itȟúŋkala", "šuŋkíteblaska",
                     "matȟó itókaǧa", "gnašká", "wíŋyaŋ wablúška", "makhúakipȟela", "lamá", "hečá", "itȟúŋkčhepa", "ziŋtkála", "wičháȟpi hoǧáŋ", "kȟaŋǧí",

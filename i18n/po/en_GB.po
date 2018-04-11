@@ -1,14 +1,14 @@
 # eduActiv8 - Educational Activity Pack - translation file.
-# Copyright (C) 2012 - 2013 Ireneusz Imiolek
+# Copyright (C) 2012 - 2018 Ireneusz Imiolek
 # This file is distributed under the same license as the eduactiv8 package.
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2013.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-01-30 12:21+0000\n"
+"PO-Revision-Date: 2018-04-11 12:35+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: en_GB\n"
@@ -1280,7 +1280,7 @@ msgid "Fraction Patterns"
 msgstr "Fraction Patterns"
 
 msgid "Shape Patterns"
-msgstr "Shape Patterns\""
+msgstr "Shape Patterns"
 
 msgid "Complete the pattern on the top line."
 msgstr "Complete the pattern on the top line."
@@ -1386,3 +1386,48 @@ msgstr "eduActiv8 update is available. Current version: %s. New version: %s."
 
 msgid "check for updates on start"
 msgstr "check for updates on start"
+
+msgid "Symmetry"
+msgstr "Symmetry"
+
+msgid "Reflection Symmetry - draw with shapes"
+msgstr "Reflection Symmetry - draw with shapes"
+
+msgid "Reflect shapes"
+msgstr "Reflect shapes"
+
+msgid "Reflect a shape in a mirror line"
+msgstr "Reflect a shape in a mirror line"
+
+msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgstr "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+
+msgid "Symmetrical shapes - missing half"
+msgstr "Symmetrical shapes - missing half"
+
+msgid "Draw the other half of the shape"
+msgstr "Draw the other half of the shape"
+
+msgid "Find lines of symmetry."
+msgstr "Find lines of symmetry."
+
+msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
+msgstr "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
+
+msgid "Match equivalent fractions"
+msgstr "Match equivalent fractions"
+
+msgid "Match fractions"
+msgstr "Match fractions"
+
+msgid "Match decimals"
+msgstr "Match decimals"
+
+msgid "Match percentages"
+msgstr "Match percentages"
+
+msgid "Match ratios"
+msgstr "Match ratios"
+
+msgid "Read pie charts"
+msgstr "Read pie charts"

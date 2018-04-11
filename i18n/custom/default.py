@@ -626,3 +626,28 @@ class I18n():
         self.d["upd8 no update"] = _("v.%s")
         self.d["upd8 available"] = _("eduActiv8 update is available. Current version: %s. New version: %s.")
         self.b["check for updates"] = _("check for updates on start")
+
+        self.d["Symmetry"] = _("Symmetry")
+
+        self.d["Reflections - Drawing"] = _("Reflection Symmetry - draw with shapes")
+
+        self.d["Reflecting shapes"] = _("Reflect shapes")
+
+        self.d["DRS - subtitle"] = _("Reflect a shape in a mirror line")
+        self.d["Draw symmetrical shape - instruction"] = _(
+            "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line.")
+
+        self.d["Draw Symmetrical Shapes - half"] = _("Symmetrical shapes - missing half")
+        self.d["DSS - missing half - subtitle"] = _("Draw the other half of the shape")
+
+        self.d["Lines of symmetry"] = _("Find lines of symmetry.")
+        self.d["Lines of symmetry - instruction"] = _("Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them.")
+
+
+        self.d["Match equivalent fractions"] = _("Match equivalent fractions")
+        self.d["Matching fractions"] = _("Match fractions")
+        self.d["Matching decimals"] = _("Match decimals")
+        self.d["Matching percentages"] = _("Match percentages")
+        self.d["Matching ratios"] = _("Match ratios")
+
+        self.d["Reading pie charts"] = _("Read pie charts")
