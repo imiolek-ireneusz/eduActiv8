@@ -98,14 +98,6 @@ class Language:
             self.kbrd = i18n.custom.kbrd.pl
             self.kbrd_course_mod = i18n.custom.kbrd.pl_course
             self.lang_id = 3
-        elif self.lang == 'sk':
-            import i18n.custom.sk
-            import i18n.custom.word_lists.sk_di
-            # self.voice = ["-s 160","-a 100","-p 80","-vpl+m1"] #"-g 5",
-            self.voice = ["-vsk+m1"]
-            self.di = i18n.custom.word_lists.sk_di.di
-            self.lang_file = i18n.custom.sk
-            self.lang_id = 4
         elif self.lang == 'sr':
             import i18n.custom.sr
             import i18n.custom.word_lists.sr_di
@@ -124,20 +116,6 @@ class Language:
             self.di = i18n.custom.word_lists.ca_di.di
             self.lang_file = i18n.custom.ca
             self.lang_id = 5
-        elif self.lang == 'da':
-            import i18n.custom.da
-            import i18n.custom.word_lists.da_di
-            self.voice = ["-vda+m1"]
-            self.di = i18n.custom.word_lists.da_di.di
-            self.lang_file = i18n.custom.da
-            self.lang_id = 6
-        elif self.lang == 'nl':
-            import i18n.custom.nl
-            import i18n.custom.word_lists.nl_di
-            self.voice = ["-vnl+m1"]
-            self.di = i18n.custom.word_lists.nl_di.di
-            self.lang_file = i18n.custom.nl
-            self.lang_id = 7
         elif self.lang == 'es_ES':
             import i18n.custom.es
             import i18n.custom.word_lists.es_di
@@ -244,6 +222,61 @@ class Language:
             # font_variant = 1
             self.ico_suffix = "he"
             self.lang_id = 17
+        elif self.lang == 'lkt':
+            import i18n.custom.lkt
+            import i18n.custom.word_lists.lkt_di
+            self.voice = None
+            self.has_cursive = False
+            self.di = i18n.custom.word_lists.lkt_di.di
+            self.lang_file = i18n.custom.lkt
+            # self.alpha = i18n.custom.cn.alpha
+            # self.n2spk = self.lang_file.n2spk
+            self.ico_suffix = ""
+            self.lang_id = 20
+        elif self.lang == 'te_ST':
+            import i18n.custom.te_st
+            import i18n.custom.word_lists.te_st_di
+            self.voice = ["-ven+m1"]
+            self.di = i18n.custom.word_lists.te_st_di.di
+            self.lang_file = i18n.custom.te_st
+            self.lang_id = 1
+        else:  # self.lang == 'en_GB':
+            import i18n.custom.en_gb
+            import i18n.custom.word_lists.en_gb_di
+            import i18n.custom.kbrd.en_gb
+            import i18n.custom.kbrd.en_course
+            self.voice = ["-ven+m1"]
+            self.di = i18n.custom.word_lists.en_gb_di.di
+            self.lang_file = i18n.custom.en_gb
+            self.kbrd = i18n.custom.kbrd.en_gb
+            self.kbrd_course_mod = i18n.custom.kbrd.en_course
+            self.lang_id = 1
+
+        #  languages that have not been translated are temporarily switched off
+        """
+        elif self.lang == 'sk':
+            import i18n.custom.sk
+            import i18n.custom.word_lists.sk_di
+            # self.voice = ["-s 160","-a 100","-p 80","-vpl+m1"] #"-g 5",
+            self.voice = ["-vsk+m1"]
+            self.di = i18n.custom.word_lists.sk_di.di
+            self.lang_file = i18n.custom.sk
+            self.lang_id = 4
+        elif self.lang == 'da':
+            import i18n.custom.da
+            import i18n.custom.word_lists.da_di
+            self.voice = ["-vda+m1"]
+            self.di = i18n.custom.word_lists.da_di.di
+            self.lang_file = i18n.custom.da
+            self.lang_id = 6
+        elif self.lang == 'nl':
+            import i18n.custom.nl
+            import i18n.custom.word_lists.nl_di
+            self.voice = ["-vnl+m1"]
+            self.di = i18n.custom.word_lists.nl_di.di
+            self.lang_file = i18n.custom.nl
+            self.lang_id = 7
+            
         elif self.lang == 'ar':  # Arabic
             import i18n.custom.ar
             import i18n.custom.word_lists.ar_di
@@ -267,37 +300,7 @@ class Language:
             # self.n2spk = self.lang_file.n2spk
             self.ico_suffix = ""
             self.lang_id = 18
-
-        elif self.lang == 'lkt':
-            import i18n.custom.lkt
-            import i18n.custom.word_lists.lkt_di
-            self.voice = None
-            self.has_cursive = False
-            self.di = i18n.custom.word_lists.lkt_di.di
-            self.lang_file = i18n.custom.lkt
-            # self.alpha = i18n.custom.cn.alpha
-            # self.n2spk = self.lang_file.n2spk
-            self.ico_suffix = ""
-            self.lang_id = 20
-
-        elif self.lang == 'te_ST':
-            import i18n.custom.te_st
-            import i18n.custom.word_lists.te_st_di
-            self.voice = ["-ven+m1"]
-            self.di = i18n.custom.word_lists.te_st_di.di
-            self.lang_file = i18n.custom.te_st
-            self.lang_id = 1
-        else:  # self.lang == 'en_GB':
-            import i18n.custom.en_gb
-            import i18n.custom.word_lists.en_gb_di
-            import i18n.custom.kbrd.en_gb
-            import i18n.custom.kbrd.en_course
-            self.voice = ["-ven+m1"]
-            self.di = i18n.custom.word_lists.en_gb_di.di
-            self.lang_file = i18n.custom.en_gb
-            self.kbrd = i18n.custom.kbrd.en_gb
-            self.kbrd_course_mod = i18n.custom.kbrd.en_course
-            self.lang_id = 1
+        """
 
         if self.lang in ["ar", "he"]:
             self.config.font_multiplier = 1.1
@@ -325,6 +328,8 @@ class Language:
         self.numbers2090 = self.lang_file.numbers2090
         self.n2txt = self.lang_file.n2txt
         self.time2str = self.lang_file.time2str
+        if self.lang in ["en_GB", "en_US", "pl"]:
+            self.fract2str = self.lang_file.fract2str
 
         self.solid_names = self.oi18n.solid_names
         self.shape_names = self.oi18n.shape_names

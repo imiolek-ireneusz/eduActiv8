@@ -23,7 +23,7 @@ class Config:
         self.fs_height = 768
         self.debug_screen_size = None  # [900,600]
         # size_limits - don't let window resizing get out of hand [min_w, min_h, max_w, max_h]
-        self.size_limits = [800, 570, 2000, 2000]
+        self.size_limits = [838, 570, 2000, 2000]
         # [670,480,2000,2000] #800 - minimum to fit all buttons, 2000 - with over 2000 pixels each way pygame is not redrawing very well
         # set total size of OS panels and window decorations on both sides - used in windowed version. Not so much important now with resizing enabled.
         # this will not be auto-detected

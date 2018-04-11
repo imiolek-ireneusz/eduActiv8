@@ -140,7 +140,16 @@ def time2str(h, m):
         elif m == 59:
             return "les %s menys un minut" % hores[h - 1]
 
+#write a fraction in words
+numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
+d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
 
+def fract2str(n, d):
+    if n == 1:
+        return numerators[0] + " " + d_singular[d-1]
+    else:
+        return numerators[n-1] + " " + d_plural[d-1]
 
 d["a4a_animals"] = ["cow", "turkey", "shrimp", "wolf", "panther", "panda", "magpie", "clam", "pony", "mouse", "pug",
                     "koala", "frog", "ladybug", "gorilla", "llama", "vulture", "hamster", "bird", "starfish", "crow",

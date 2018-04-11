@@ -23,10 +23,6 @@ class Board(gd.BoardGame):
         self.ai_enabled = False
         self.board.draw_grid = False
         h = random.randrange(150, 240, 5)
-        bg_col = (255, 255, 255)
-        if self.mainloop.scheme is not None:
-            if self.mainloop.scheme.dark:
-                bg_col = (0, 0, 0)
         color0 = ex.hsv_to_rgb(h, 1, 255)  # highlight 1
         self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
         self.font_color = self.color2
@@ -145,7 +141,6 @@ class Board(gd.BoardGame):
         self.data2 = data2
 
         self.layout.update_layout(data2[0], data2[1])
-        scale = self.layout.scale
         self.board.level_start(data2[0], data2[1], self.layout.scale)
 
         choice = [x for x in range(0, self.square_count // 2)]
@@ -196,13 +191,6 @@ class Board(gd.BoardGame):
         self.chosen = shuffled[0:self.square_count // 2]
         self.chosen = self.chosen * 2
 
-        h1 = (data[1] - data[4]) // 2  # height of the top margin
-        h2 = data[1] - h1 - data[4]  # -1 #height of the bottom margin minus 1 (game label)
-        w2 = 0  # (data[0] - data[3] * 4) // 2   # side margin width
-
-        x = w2
-        y = h1
-
         small_slots = [[0, 3], [0, 0], [3, 0], [6, 0], [9, 0], [9, 3]]
         wide_slots = [[3, 3], [6, 3], [3, 4], [6, 4], [3, 5], [6, 5]]
 
@@ -233,7 +221,6 @@ class Board(gd.BoardGame):
                 self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, 1, classes.board.Letter, caption,
                                     color0, "", text_font_size)
                 self.board.ships[-1].font_color = self.font_color
-
 
             self.board.ships[i].immobilize()
             self.board.ships[i].readable = False

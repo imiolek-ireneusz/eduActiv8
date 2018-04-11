@@ -1,8 +1,9 @@
 Changelog:
-eduActiv8 - 3.80.130-dev:
-    - 11 new experimental activities covering fractions, percentages and ratios added - available for grade 5 and 6 - still need translations to be fully released.
+eduActiv8 - 3.80.411-rc:
+    - 20 new activities covering fractions, decimals, percentages and ratios - translations required for most languages.
+    - 4 new activities covering linear symmetry
     - menu has been slightly redesigned - the activity icons now also have an accompanying icon indicating whether the activity is a simulation/demonstration of a concept or if it is a task that needs solving, or something else.
-    - from this version the game will check for updates and will let users know if a new one has been released - update will still have to be downloaded manually.
+    - from this version the game will check for updates and will let users know if a new one has been released - update will still have to be downloaded manually - can be disabled from the settings in the login screen. This option may need to be hidden before packaging for any distros - will sort it out with next release.
 eduActiv8 - 3.71.115:
     - the feedback mechanism is now implemented in all activities that require completion
     - new section added with 5 new games covering patterns (only in English and Polish at the moment)

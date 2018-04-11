@@ -156,7 +156,17 @@ def time2officialstr(h, m):
         return "%s %s %s минуты" % (numbers[h - 1], sf, n2txt(m))
     else:
         return "%s %s %s минут" % (numbers[h - 1], sf, n2txt(m))
-    return ""
+
+#write a fraction in words
+numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
+d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
+def fract2str(n, d):
+    if n == 1:
+        return numerators[0] + " " + d_singular[d-1]
+    else:
+        return numerators[n-1] + " " + d_plural[d-1]
 
 
 # TIME FOR SPEAKER

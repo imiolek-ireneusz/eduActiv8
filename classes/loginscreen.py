@@ -1676,7 +1676,7 @@ class LoginScreen:
         if m == 0:
             self.db_status = ex.unival(self.lang.b["user deleted"]) % ex.unival(self.dlb1.value)
         else:
-            self.db_status = self.lang.b["Failed to delete."]
+            self.db_status = self.lang.b["Failed to delete"]
         self.reload_selects()
         self.update_scrollbar_top(0)
         self.fdetails(None)

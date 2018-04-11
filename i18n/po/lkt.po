@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.70.807\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-01-30 12:21+0000\n"
+"PO-Revision-Date: 2018-04-10 14:44+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: lkt\n"
@@ -1357,4 +1357,49 @@ msgid "eduActiv8 update is available. Current version: %s. New version: %s."
 msgstr ""
 
 msgid "check for updates on start"
+msgstr ""
+
+msgid "Symmetry"
+msgstr ""
+
+msgid "Reflection Symmetry - draw with shapes"
+msgstr ""
+
+msgid "Reflect shapes"
+msgstr ""
+
+msgid "Reflect a shape in a mirror line"
+msgstr ""
+
+msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgstr ""
+
+msgid "Symmetrical shapes - missing half"
+msgstr ""
+
+msgid "Draw the other half of the shape"
+msgstr ""
+
+msgid "Find lines of symmetry."
+msgstr ""
+
+msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
+msgstr ""
+
+msgid "Match equivalent fractions"
+msgstr ""
+
+msgid "Match fractions"
+msgstr ""
+
+msgid "Match decimals"
+msgstr ""
+
+msgid "Match percentages"
+msgstr ""
+
+msgid "Match ratios"
+msgstr ""
+
+msgid "Read pie charts"
 msgstr ""

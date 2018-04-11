@@ -83,7 +83,6 @@ ht1 = ["перша", "друга", "третя", "четверта", "п’ят�
 ht2 = ["на першу", "на другу", "на третю", "на четверту", "на п’яту", "на шосту", "на сьому", "на восьму", "на дев’яту",
        "на десяту", "на одинадцяту", "на дванадцяту"]
 
-
 def time2str(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
     if m > 0:
@@ -123,7 +122,6 @@ def time2str(h, m):
         return "за %s хвилин %s" % (mt2[60 - m - 1], ht1[h - 1])
     return ""
 
-
 # only if this is used in Ukrainian
 def time2officialstr(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string, ie. six fifty five - for 6:55'
@@ -150,8 +148,17 @@ def time2officialstr(h, m):
         return "%s %s %s хвилини" % (numbers[h - 1], sf, n2txt(m))
     else:
         return "%s %s %s хвилин" % (numbers[h - 1], sf, n2txt(m))
-    return ""
 
+#write a fraction in words
+numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
+d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
+d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
+def fract2str(n, d):
+    if n == 1:
+        return numerators[0] + " " + d_singular[d-1]
+    else:
+        return numerators[n-1] + " " + d_plural[d-1]
 
 # The following 12 categories will be used to activate the 12 Word Builder Games in Ukrainian, bear in mind it's 589 words to translate. Possibly the best way to do it would be to use google translate and correct wrong translations.
 d["a4a_animals"] = ["корова", "індичка", "креветка", "вовк", "пантера", "панда", "сорока", "молюск", "поні", "миша",

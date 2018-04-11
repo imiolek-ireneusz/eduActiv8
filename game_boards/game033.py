@@ -33,14 +33,11 @@ class Board(gd.BoardGame):
             self.bd_color3 = ex.hsv_to_rgb(h3, 57, 155)
         else:
             white = (255, 255, 255)
+            step = 255 //3
 
-            h1 = random.randrange(0, 255, 5)
-            h2 = h1
-            h3 = h1
-            while (abs(max(h2, h1) - min(h2, h1)) < 30) or (abs(max(h3, h1) - min(h3, h1)) < 30) or (abs(max(h3, h2) - min(h3, h2)) < 30):
-                h1 = random.randrange(0, 255, 5)
-                h2 = random.randrange(0, 255, 5)
-                h3 = random.randrange(0, 255, 5)
+            h1 = random.randrange(0, 255)
+            h2 = (h1 + step) % 255
+            h3 = (h1 + step * 2) % 255
 
             color1 = ex.hsv_to_rgb(h1, 127, 255)
             color2 = ex.hsv_to_rgb(h2, 127, 255)
