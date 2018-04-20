@@ -128,7 +128,7 @@ class Board(gd.BoardGame):
                 else:
                     char = event.unicode
                     if char in self.digits:
-                        if len(char) > 0 and lhv < 3:
+                        if len(char) > 0 and lhv < 2:
                             self.home_square.value += char
                         else:
                             self.home_square.value = char
