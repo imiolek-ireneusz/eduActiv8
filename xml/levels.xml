@@ -1516,4 +1516,114 @@
          </levels>
     </game>
 
+    <!-- Time difference games - 107
+    [0 - h1_range_start, 1 - h1_range_end, 2 - h2_range_start_from_h1 [0 - no, 1 - yes, 2 - h2 = h1, 3 - h2 = h1 + 1], 3 - h2_range_start,
+     4 - h2_range_end, 5 - m1_range_start, 6 - m1_range_end, 7 - m2_range_start_from_m1 [0 - no, 1 - yes, 2 - all set to 0, 3 - m2 < m1],
+     8 - m2_range_start, 9 - m2_range_end, 10 - minute range step (ie. 1, 5, 15, etc) 11 - show_24, 12 - show_numbers_on_diff]
+    -->
+    <game dbids="253, 254" min_age="0" max_age="7" show_all="1">
+        <chapters data="[1, 4, 8, 12, 16, 21]" />
+        <levels count="21" games_per_level="10">
+            <level n="1" data="[1, 11, 1, 0, 12, 0, 0, 2, 0, 0, 5, False, True, True]" />
+            <level n="2" data="[1, 11, 1, 0, 12, 0, 0, 2, 0, 0, 5, False, False, True]" />
+            <level n="3" data="[6, 12, 0, 1, 5, 0, 0, 2, 0, 0, 5, False, True, True]" />
+            <level n="4" data="[6, 12, 0, 1, 5, 0, 0, 2, 0, 0, 5, False, False, True]" />
+            <level n="5" data="[1, 12, 2, 0, 0, 0, 51, 1, 5, 56, 5, False, True, True]" />
+            <level n="6" data="[1, 12, 2, 0, 0, 0, 51, 1, 5, 56, 5, False, False, True]" />
+            <level n="7" data="[1, 12, 2, 0, 0, 0, 58, 1, 1, 59, 1, False, True, True]" />
+            <level n="8" data="[1, 12, 2, 0, 0, 0, 58, 1, 1, 59, 1, False, False, True]" />
+            <level n="9" data="[1, 11, 1, 0, 12, 0, 51, 1, 0, 56, 5, False, True, True]" />
+            <level n="10" data="[1, 11, 1, 0, 12, 0, 51, 1, 0, 56, 5, False, False, True]" />
+            <level n="11" data="[1, 11, 1, 0, 12, 0, 58, 1, 1, 59, 1, False, True, True]" />
+            <level n="12" data="[1, 11, 1, 0, 12, 0, 58, 1, 1, 59, 1, False, False, True]" />
+            <level n="13" data="[1, 11, 3, 0, 0, 10, 55, 3, 5, 0, 5, False, True, True]" />
+            <level n="14" data="[1, 11, 3, 0, 0, 10, 55, 3, 5, 0, 5, False, False, True]" />
+            <level n="15" data="[1, 11, 3, 0, 0, 2, 59, 3, 1, 0, 1, False, True, True]" />
+            <level n="16" data="[1, 11, 3, 0, 0, 2, 59, 3, 1, 0, 1, False, False, True]" />
+            <level n="17" data="[1, 11, 0, 1, 12, 2, 59, 3, 1, 0, 1, False, True, True]" />
+            <level n="18" data="[1, 11, 0, 1, 12, 2, 59, 3, 1, 0, 1, False, False, True]" />
+            <level n="19" data="[1, 12, 0, 1, 12, 0, 59, 0, 0, 59, 1, False, False, True]" />
+            <level n="20" data="[0, 12, 0, 13, 23, 0, 59, 0, 0, 59, 1, True, False, True]" />
+            <level n="21" data="[0, 23, 0, 3, 23, 0, 59, 0, 0, 59, 1, True, False, True]" />
+         </levels>
+    </game>
+
+    <game dbids="255, 256" min_age="0" max_age="7" show_all="1">
+        <chapters data="[1, 4, 8, 12, 16, 20]" />
+        <levels count="20" games_per_level="10">
+            <level n="1" data="[1, 11, 1, 0, 12, 0, 0, 2, 0, 0, 5, False, True, True]" />
+            <level n="2" data="[1, 11, 1, 0, 12, 0, 0, 2, 0, 0, 5, False, False, True]" />
+            <level n="3" data="[6, 12, 0, 1, 5, 0, 0, 2, 0, 0, 5, False, True, True]" />
+            <level n="4" data="[6, 12, 0, 1, 5, 0, 0, 2, 0, 0, 5, False, False, True]" />
+            <level n="5" data="[1, 12, 2, 0, 0, 0, 51, 1, 5, 56, 5, False, True, True]" />
+            <level n="6" data="[1, 12, 2, 0, 0, 0, 51, 1, 5, 56, 5, False, False, True]" />
+            <level n="7" data="[1, 12, 2, 0, 0, 0, 58, 1, 1, 59, 1, False, True, True]" />
+            <level n="8" data="[1, 12, 2, 0, 0, 0, 58, 1, 1, 59, 1, False, False, True]" />
+            <level n="9" data="[1, 11, 3, 0, 0, 10, 55, 3, 5, 0, 5, False, True, True]" />
+            <level n="10" data="[1, 11, 3, 0, 0, 10, 55, 3, 5, 0, 5, False, False, True]" />
+            <level n="11" data="[1, 11, 3, 0, 0, 2, 59, 3, 1, 0, 1, False, True, True]" />
+            <level n="12" data="[1, 11, 3, 0, 0, 2, 59, 3, 1, 0, 1, False, False, True]" />
+            <level n="13" data="[1, 11, 0, 1, 12, 2, 59, 3, 1, 0, 1, False, True, True]" />
+            <level n="14" data="[1, 11, 0, 1, 12, 2, 59, 3, 1, 0, 1, False, False, True]" />
+            <level n="15" data="[1, 11, 1, 0, 12, 0, 51, 1, 0, 56, 5, False, True, True]" />
+            <level n="16" data="[1, 11, 1, 0, 12, 0, 51, 1, 0, 56, 5, False, False, True]" />
+            <level n="17" data="[1, 11, 1, 0, 12, 0, 58, 1, 1, 59, 1, False, False, True]" />
+            <level n="18" data="[1, 12, 0, 1, 12, 0, 59, 0, 0, 59, 1, False, False, True]" />
+            <level n="19" data="[1, 12, 0, 1, 12, 0, 59, 0, 0, 59, 1, True, False, True]" />
+            <level n="20" data="[0, 23, 0, 3, 23, 0, 59, 0, 0, 59, 1, True, False, True]" />
+         </levels>
+    </game>
+
+    <game dbids="257" min_age="0" max_age="7" show_all="1">
+        <chapters data="[1, 4, 8, 12]" />
+        <levels count="12" games_per_level="10">
+            <level n="1" data="[1, 11, 1, 0, 12, 0, 0, 2, 0, 0, 5, False, False, False]" />
+            <level n="2" data="[6, 12, 0, 1, 5, 0, 0, 2, 0, 0, 5, False, False, False]" />
+            <level n="3" data="[1, 12, 2, 0, 0, 0, 51, 1, 5, 56, 5, False, False, False]" />
+            <level n="4" data="[1, 12, 2, 0, 0, 0, 58, 1, 1, 59, 1, False, False, False]" />
+            <level n="5" data="[1, 11, 3, 0, 0, 10, 55, 3, 5, 0, 5, False, False, False]" />
+            <level n="6" data="[1, 11, 3, 0, 0, 2, 59, 3, 1, 0, 1, False, False, False]" />
+            <level n="7" data="[1, 11, 0, 1, 12, 2, 59, 3, 1, 0, 1, False, False, False]" />
+            <level n="8" data="[1, 11, 1, 0, 12, 0, 51, 1, 0, 56, 5, False, False, False]" />
+            <level n="9" data="[1, 11, 1, 0, 12, 0, 58, 1, 1, 59, 1, False, False, False]" />
+            <level n="10" data="[1, 12, 0, 1, 12, 0, 59, 0, 0, 59, 1, False, False, False]" />
+            <level n="11" data="[1, 12, 0, 1, 12, 0, 59, 0, 0, 59, 1, True, False, False]" />
+            <level n="12" data="[0, 23, 0, 3, 23, 0, 59, 0, 0, 59, 1, True, False, False]" />
+         </levels>
+    </game>
+
+    <game dbids="258" min_age="0" max_age="7" show_all="1">
+        <chapters data="[1, 4, 8, 10]" />
+        <levels count="10" games_per_level="10">
+            <level n="1" data="[1, 11, 1, 0, 12, 0, 0, 2, 0, 0, 5, False, False, True]" />
+            <level n="2" data="[6, 12, 0, 1, 5, 0, 0, 2, 0, 0, 5, False, False, True]" />
+            <level n="3" data="[1, 12, 2, 0, 0, 0, 51, 1, 5, 56, 5, False, False, True]" />
+            <level n="4" data="[1, 12, 2, 0, 0, 0, 58, 1, 1, 59, 1, False, False, True]" />
+            <level n="5" data="[1, 11, 3, 0, 0, 10, 55, 3, 5, 0, 5, False, False, True]" />
+            <level n="6" data="[1, 11, 3, 0, 0, 2, 59, 3, 1, 0, 1, False, False, True]" />
+            <level n="7" data="[1, 11, 0, 1, 12, 2, 59, 3, 1, 0, 1, False, False, True]" />
+            <level n="8" data="[1, 11, 1, 0, 12, 0, 51, 1, 0, 56, 5, False, False, True]" />
+            <level n="9" data="[1, 11, 1, 0, 12, 0, 58, 1, 1, 59, 1, False, False, True]" />
+            <level n="10" data="[1, 12, 0, 1, 12, 0, 59, 0, 0, 59, 1, False, False, True]" />
+         </levels>
+    </game>
+
+    <game dbids="261" min_age="0" max_age="7" show_all="1">
+        <chapters data="[1, 4, 8, 12]" />
+        <levels count="12" games_per_level="10">
+            <level n="1" data="[1, 11, 1, 0, 12, 0, 0, 2, 0, 0, 5, False, True, True]" />
+            <level n="2" data="[6, 12, 0, 1, 5, 0, 0, 2, 0, 0, 5, False, True, True]" />
+            <level n="3" data="[1, 12, 2, 0, 0, 0, 51, 1, 5, 56, 5, False, True, True]" />
+            <level n="4" data="[1, 12, 2, 0, 0, 0, 58, 1, 1, 59, 1, False, True, True]" />
+            <level n="5" data="[1, 11, 3, 0, 0, 10, 55, 3, 5, 0, 5, False, True, True]" />
+            <level n="6" data="[1, 11, 3, 0, 0, 2, 59, 3, 1, 0, 1, False, True, True]" />
+            <level n="7" data="[1, 11, 0, 1, 12, 2, 59, 3, 1, 0, 1, False, True, True]" />
+            <level n="8" data="[1, 11, 1, 0, 12, 0, 51, 1, 0, 56, 5, False, True, True]" />
+            <level n="9" data="[1, 11, 1, 0, 12, 0, 58, 1, 1, 59, 1, False, True, True]" />
+            <level n="10" data="[1, 12, 0, 1, 12, 0, 59, 0, 0, 59, 1, False, True, True]" />
+            <level n="11" data="[1, 12, 0, 1, 12, 0, 59, 0, 0, 59, 1, True, True, True]" />
+            <level n="12" data="[0, 23, 0, 3, 23, 0, 59, 0, 0, 59, 1, True, True, True]" />
+         </levels>
+    </game>
+
 </levels>
