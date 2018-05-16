@@ -329,8 +329,8 @@ class Board(gd.BoardGame):
             # Draw the line from the center to the calculated end point
             line_through = [[x0, y0], [x1, y1]]
 
-            pygame.draw.aalines(canvas, colors2[i], True, points)
-            pygame.draw.aalines(canvas, colors2[i], True, line_through)
+            pygame.draw.lines(canvas, colors2[i], True, points)
+            pygame.draw.lines(canvas, colors2[i], True, line_through)
         pygame.draw.circle(canvas, colors[0], center, size // 50, 0)
         pygame.draw.circle(canvas, colors2[0], center, size // 50, 1)
         pygame.draw.circle(canvas, colors2[0], center, size // 70, 1)

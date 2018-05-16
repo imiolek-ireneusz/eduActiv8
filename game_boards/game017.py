@@ -26,6 +26,7 @@ class Board(gd.BoardGame):
         self.letter_color = ex.hsv_to_rgb(h, s, v)
         self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
         font_color = ex.hsv_to_rgb(h, 255, 140)
+        arrow_color = ex.hsv_to_rgb(h, 200, 200)
         font_color2 = ex.hsv_to_rgb(h, 255, 50)
         outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
         outline_color2 = (255, 102, 0)
@@ -183,11 +184,14 @@ class Board(gd.BoardGame):
         self.board.units[-1].set_outline(color=outline_color2, width=2)
         self.board.all_sprites_list.move_to_front(self.board.units[-1])
 
-        self.board.add_unit(x - 3 + xd, y, 1, h, classes.board.ImgCenteredShip, "", card_color, img_src='nav_l.png',
-                 alpha=True)
+        self.board.add_unit(x - 3 + xd, y, 1, h, classes.board.ImgCenteredShip, "", card_color,
+                            img_src='nav_l_m.png', alpha=True)
+        self.board.ships[-1].set_tint_color(arrow_color)
+
         self.lt = self.board.ships[-1]
-        self.board.add_unit(x - 2 + xd + w, y, 1, h, classes.board.ImgCenteredShip, "", card_color, img_src='nav_r.png',
-                 alpha=True)
+        self.board.add_unit(x - 2 + xd + w, y, 1, h, classes.board.ImgCenteredShip, "", card_color,
+                            img_src='nav_r_m.png', alpha=True)
+        self.board.ships[-1].set_tint_color(arrow_color)
         self.rt = self.board.ships[-1]
 
         self.slide = self.board.ships[self.abc_len]

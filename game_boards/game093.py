@@ -42,11 +42,12 @@ class Board(gd.BoardGame):
             bd_color1 = ex.hsv_to_rgb(h1, 187, 200)
             bd_color2 = ex.hsv_to_rgb(h2, 100, 200)
 
+        transp = (0, 0, 0, 0)
+
         data = [22, 14]
         f_size = 10
         self.data = data
 
-        #self.vis_buttons = [1, 0, 0, 0, 1, 1, 1, 0, 0]
         self.vis_buttons = [0, 0, 0, 0, 1, 1, 1, 0, 1]
 
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
@@ -73,39 +74,43 @@ class Board(gd.BoardGame):
         self.fraction_canvas = self.board.units[-1]
         self.fraction = classes.drw.fraction_hq.Fraction(1, self.board.scale * f_size, color1, color2, bd_color1,
                                                          bd_color2, self.numbers, 2)
-        # self.fraction.set_offset(15, 10)
         self.fraction.set_offset(0, 0)
         self.fraction_canvas.painting = self.fraction.get_canvas().copy()
 
-        self.board.add_unit(2, f_size, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = bd_color1
+        self.board.add_unit(2, f_size, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color1)
+
         self.board.add_unit(4, f_size, 2, 2, classes.board.Label, str(self.numbers[0]), white, "", 31)
         self.nm1 = self.board.units[-1]
-        #self.nm1.set_outline(color=[255, 0, 0], width=2)
         self.nm1.checkable = True
         self.nm1.init_check_images()
         self.nm1.set_fraction_lines(top=False, bottom=True, color=line_color)
         self.nm1.font_color = bd_color1
-        self.board.add_unit(6, f_size, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = bd_color1
-        self.board.add_unit(2, f_size + 2, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = bd_color2
+
+        self.board.add_unit(6, f_size, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color1)
+
+        self.board.add_unit(2, f_size + 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color2)
+
         self.board.add_unit(4, f_size + 2, 2, 2, classes.board.Label, str(self.numbers[1]), white, "", 31)
         self.nm2 = self.board.units[-1]
-        #self.nm2.set_outline(color=[255, 0, 0], width=2)
         self.nm2.checkable = True
         self.nm2.init_check_images()
-        # self.nm2.set_fraction_lines(top=True, bottom=False, color=bd_color2)
         self.nm2.font_color = bd_color2
-        self.board.add_unit(6, f_size + 2, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = bd_color2
+
+        self.board.add_unit(6, f_size + 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color2)
 
         # add second fraction
         self.board.add_unit(f_size + 2, 0, f_size, f_size, classes.board.Label, "", white, "", 0)
         self.fraction2_canvas = self.board.units[-1]
         self.fraction2 = classes.drw.fraction_hq.Fraction(1, self.board.scale * f_size, color1, color2, bd_color1,
                                                           bd_color2, self.numbers2, 2)
-        # self.fraction2.set_offset(10, 5)
         self.fraction2.set_offset(0, 0)
         self.fraction2_canvas.painting = self.fraction2.get_canvas().copy()
         self.board.add_unit(f_size + 6, f_size, 2, 2, classes.board.Label, str(self.numbers2[0]), white, "", 31)
@@ -217,16 +222,6 @@ class Board(gd.BoardGame):
         self.nm1.set_display_check(None)
         self.nm2.set_display_check(None)
 
-    def change_mlt_btn(self, n):
-        if n == 1:
-            if self.multiplier < 10:
-                self.multiplier += 1
-        if n == -1:
-            if self.multiplier > 1:
-                self.multiplier -= 1
-
-        self.update_fractions()
-
     def change_fract_btn(self, n1, n2):
         if n1 == -1:
             if self.numbers[0] > 1:
@@ -246,6 +241,22 @@ class Board(gd.BoardGame):
         elif n2 == 1:
             if self.numbers[1] <= self.max_num:
                 self.numbers[1] += 1
+
+        if self.numbers[0] == 1:
+            self.board.ships[0].change_image("nav_l_mtsd.png")
+        elif self.numbers[0] == self.max_num:
+            self.board.ships[1].change_image("nav_r_mtsd.png")
+        else:
+            self.board.ships[0].change_image("nav_l_mts.png")
+            self.board.ships[1].change_image("nav_r_mts.png")
+
+        if self.numbers[1] == 2:
+            self.board.ships[2].change_image("nav_l_mtsd.png")
+        elif self.numbers[1] == self.max_num + 1:
+            self.board.ships[3].change_image("nav_r_mtsd.png")
+        else:
+            self.board.ships[2].change_image("nav_l_mts.png")
+            self.board.ships[3].change_image("nav_r_mts.png")
 
         self.update_factors()
         self.update_fractions()
