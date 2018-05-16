@@ -48,6 +48,7 @@ class Unit(pygame.sprite.Sprite):
         self.audible = False  # use true to enable sounds on unit move
         self.outline_highlight = False
         self.font_color = (0, 0, 0, 0)
+        self.tint_color = None
         self.align = 0  # align: 0 - centered, 1 - left, 2 - right
         self.valign = 0  # align: 0 - centered, 1 - top
         self.idx = 0  # position in sequence
@@ -192,6 +193,9 @@ class Unit(pygame.sprite.Sprite):
     def set_color(self, color):
         self.color = color
         self.initcolor = color
+
+    def set_tint_color(self, color):
+        self.tint_color = color
 
     def immobilize(self):
         self.keyable = False
@@ -831,6 +835,8 @@ class ImgCenteredShip(Ship):
             Unit.update(self, board)
             if len(self.img_src) > 0:
                 self.image.blit(self.img, self.img_pos)
+                if self.tint_color is not None:
+                    self.image.fill(self.tint_color, special_flags=pygame.BLEND_ADD)
             if self.unit_id == board.active_ship and self.outline is True:
                 lines = [[0, 0], [self.grid_w * board.scale - 2, 0],
                          [self.grid_w * board.scale - 2, self.grid_h * board.scale - 2],
@@ -1063,6 +1069,8 @@ class Board:
         self.font_path_hand = os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8Hand.ttf')
         self.font_path_print = os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8LatinPrint.ttf')
 
+        self.font_path_clock = os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8Clock.ttf')
+
         self.load_fonts()
 
     def load_fonts(self):
@@ -1147,6 +1155,10 @@ class Board:
         for i in range(len(xsizes)):
             xsizes[i] = xsizes[i] / self.mainloop.config.font_multiplier
             self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(float(self.points) / float(xsizes[i])))))
+
+        #clock font 35
+        self.font_sizes.append(pygame.font.Font(self.font_path_clock, (int(self.points / 0.5))))
+        self.font_sizes.append(pygame.font.Font(self.font_path_clock, (int(self.points / 3))))
 
         self.board_bg = BoardBg(self, 0, 0, x_count, y_count, "", (255, 255, 255))
         self.unit_list.add(self.board_bg)
