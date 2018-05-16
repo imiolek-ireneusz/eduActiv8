@@ -593,8 +593,8 @@ class I18n():
         self.d["Extend fractions"] = _("Extend fractions")
         self.d["To reduce a fraction..."] = _("To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one.")
         self.d["To extend a fraction..."] = _("To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens.")
-        self.d["Use plus or minus..."] = _("Use the plus or minus signs to change your answer or just type it in.")
-        self.d["Use plus or minus... Android"] = _("Use the plus or minus signs to change your answer.")
+        self.d["Use plus or minus..."] = _("Use the arrows to change your answer or just type it in.")
+        self.d["Use plus or minus... Android"] = _("Use the arrows to change your answer.")
         self.d["To add a fraction with the same denominator..."] = _("To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible.")
         self.d["To subtract a fraction with the same denominator..."] = _("To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible.")
         self.d["To multiply two fractions..."] = _("To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible.")
@@ -651,3 +651,22 @@ class I18n():
         self.d["Matching ratios"] = _("Match ratios")
 
         self.d["Reading pie charts"] = _("Read pie charts")
+
+
+        self.d["Calculating with Time"] = _("Calculating with Time")
+        self.d["Elapsed time"] = _("Elapsed time")
+
+        self.d["before"] = _("before")
+        self.d["after"] = _("after")
+        self.d["now"] = _("now")
+        self.d["earlier"] = _("earlier")
+        self.d["later"] = _("later")
+        self.d["then"] = _("then")
+
+        self.d["difference"] = _("time difference")
+
+        self.d["hours"] = _("hours")
+        self.d["minutes"] = _("minutes")
+
+
+        self.d["Temperature - introduction to negative numbers"] = _("Temperature - introduction to negative numbers")

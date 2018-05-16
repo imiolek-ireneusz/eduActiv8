@@ -1382,10 +1382,10 @@ msgstr ""
 msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
 
-msgid "Use the plus or minus signs to change your answer or just type it in."
+msgid "Use the arrows to change your answer or just type it in."
 msgstr ""
 
-msgid "Use the plus or minus signs to change your answer."
+msgid "Use the arrows to change your answer."
 msgstr ""
 
 msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."

@@ -1409,11 +1409,11 @@ msgstr "Aby skrócić ułamek, należy podzielić licznik i mianownik przez tę 
 msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr "Aby rozszerzyć ułamek, należy pomnożyć licznik i mianownik przez tę samą liczbę. Zmień liczbę w środku by zobaczyć co się stanie."
 
-msgid "Use the plus or minus signs to change your answer or just type it in."
-msgstr "Aby wprowadzić odpowiedź użyj przycisku z plusem lub minusem, albo wpisz Twoją odpowiedź na klawiaturze."
+msgid "Use the arrows to change your answer or just type it in."
+msgstr "Aby wprowadzić odpowiedź użyj strzałek, albo wpisz Twoją odpowiedź na klawiaturze."
 
-msgid "Use the plus or minus signs to change your answer."
-msgstr "Aby wprowadzić odpowiedź użyj przycisku z plusem lub minusem."
+msgid "Use the arrows to change your answer."
+msgstr "Aby wprowadzić odpowiedź użyj strzałek."
 
 msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
 msgstr "Aby dodać dwa ułamki zwykłe o tym samym mianowniku należy dodać ich liczniki do siebie pozostawiając mianownik bez zmian. Potem należy uprościć ułamek jeśli to możliwe."
