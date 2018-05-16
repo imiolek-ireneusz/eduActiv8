@@ -87,7 +87,7 @@ class Button(BaseButton):
             self.image.blit(text2, (textpos2[0], 40))
             lvl_lift = -9
         else:
-            lvl_lift = 3
+            lvl_lift = 0
 
         if self.panel.level.lvl_count > 1:
             if self.panel.level.completed > 0:

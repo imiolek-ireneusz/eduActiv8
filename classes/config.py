@@ -8,8 +8,7 @@ from classes.cversion import ver
 
 
 class Config:
-    'holds some basic configuration data - screen size among others'
-
+    """holds some basic configuration data - screen size among others"""
     def __init__(self, android):
         self.font_multiplier = 1
         self.font_line_height_adjustment = 1

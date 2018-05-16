@@ -472,6 +472,9 @@ class GamePlay:
                                 self.fullscreen_toggle(info)
                             elif event.type == pygame.KEYDOWN and event.key == pygame.K_F5:  # refresh - reload level
                                 self.game_board.level.load_level()
+                            elif event.type == pygame.KEYDOWN and event.key == pygame.K_F8:
+                                # auto resize window to prep for screenshots and video
+                                self.on_resize([1280, 720], self.info)
                             elif event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.MOUSEMOTION:
                                 pos = event.pos
                                 if self.show_dialogwnd:
