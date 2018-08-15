@@ -69,31 +69,13 @@ class Board(gd.BoardGame):
 
         th1 = random.randint(self.lvl_data[0], self.lvl_data[1])
         th2 = th1
-        """
-        if self.lvl_data[2] == 3:
-            th2 = th1 + 1
-        elif self.lvl_data[2] == 2:
-            th2 = th1
-        elif self.lvl_data[2] == 1:
-            th2 = random.randint(th1 + 1, self.lvl_data[4])
-        else:
-            th2 = random.randint(self.lvl_data[3], self.lvl_data[4])
-        """
-
         if self.lvl_data[7] == 2:
             tm1 = 0
             tm2 = 0
         else:
             tm1 = random.randrange(self.lvl_data[5], self.lvl_data[6], self.lvl_data[10])
             tm2 = tm1
-            """
-            if self.lvl_data[7] == 1:
-                tm2 = random.randrange(tm1 + self.lvl_data[10], self.lvl_data[9], self.lvl_data[10])
-            elif self.lvl_data[7] == 3:
-                tm2 = random.randrange(self.lvl_data[8], tm1 - self.lvl_data[10]+1, self.lvl_data[10])
-            else:
-                tm2 = random.randrange(self.lvl_data[8], self.lvl_data[9], self.lvl_data[10])
-            """
+
         self.addition = True
 
         self.show_24h = self.data2[4]
@@ -114,17 +96,6 @@ class Board(gd.BoardGame):
                                                              20 * self.size * xw[0] / 500.0))))))
 
         # add buttons for first clock
-        """
-        self.board.add_unit(2, top_margin + 0, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-        self.board.add_unit(2, top_margin + 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-        self.board.add_unit(4, top_margin + 0, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        self.board.add_unit(4, top_margin + 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        """
-
         self.board.add_unit(2, top_margin + 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_u_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.h_col)
@@ -141,7 +112,7 @@ class Board(gd.BoardGame):
         self.board.add_unit(1, 0, xw[0] - 2, 1, classes.board.Letter, self.lang.d["now"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
-        self.board.add_unit(xw[0] + 6 + 1, 0, xw[0] - 2, 1, classes.board.Letter, self.lang.d["then"], white, "", 3)
+        self.board.add_unit(xw[0] + 7, 0, xw[0] - 2, 1, classes.board.Letter, self.lang.d["then"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
         self.board.add_unit(xw[0], 0, 6, 1, classes.board.Letter, self.lang.d["later"], white, "", 2)
@@ -149,34 +120,29 @@ class Board(gd.BoardGame):
         self.add_sub_indicator = self.board.ships[-1]
 
         # add later/earlier switch
-        self.board.add_unit(xw[0]-1, 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
+        self.board.add_unit(xw[0] - 1, 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_l_mt.png', alpha=True)
         self.btnlt = self.board.ships[-1]
         self.btnlt.set_tint_color(self.font_color)
 
-        self.board.add_unit(xw[0]+6, 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
+        self.board.add_unit(xw[0] + 6, 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_r_mt.png', alpha=True)
         self.btnrt = self.board.ships[-1]
         self.btnrt.set_tint_color(self.font_color)
 
-        self.board.add_unit(xw[0], 4, 6, 1, classes.board.Letter, [self.lang.d["hours"], ""], white, "", 4)
-        self.board.ships[-1].font_color = color3
+        self.diff = self.get_diff()
 
-        self.board.add_unit(xw[0], 7, 6, 1, classes.board.Letter, [self.lang.d["minutes"], ""], white, "", 4)
+        self.board.add_unit(xw[0], 4, 6, 1, classes.board.Letter,
+                            [self.lang._n("hour", 0), ""], white, "", 4)
+        self.board.ships[-1].font_color = color3
+        self.h_caption = self.board.ships[-1]
+
+        self.board.add_unit(xw[0], 7, 6, 1, classes.board.Letter,
+                            [self.lang._n("minute", 0), ""], white, "", 4)
         self.board.ships[-1].font_color = color4
+        self.m_caption = self.board.ships[-1]
 
         self.buttons = []
-        """
-        self.board.add_unit(xw[0], 1, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-        self.board.add_unit(xw[0] + 4, 1, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-
-        self.board.add_unit(xw[0], 4, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        self.board.add_unit(xw[0] + 4, 4, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        """
 
         self.board.add_unit(xw[0] + 1, 2, 1, 2, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_l_mt.png', alpha=True)
@@ -199,18 +165,12 @@ class Board(gd.BoardGame):
 
         self.board.add_unit(xw[0] + 2, 2, 2, 2, classes.board.Letter, "0", white, "", 31)
         self.ans_h = self.board.ships[-1]
-        #self.ans_h.checkable = True
-        #self.ans_h.init_check_images()
         self.board.active_ship = self.ans_h.unit_id
         self.home_square = self.ans_h
 
         self.board.add_unit(xw[0] + 2, 5, 2, 2, classes.board.Letter, "0", white, "", 31)
         self.ans_m = self.board.ships[-1]
-        #self.ans_m.checkable = True
-        #self.ans_m.init_check_images()
 
-        #self.ans_h.set_outline(color3, 5)
-        #self.ans_m.set_outline(color4, 5)
         self.ans_h.immobilize()
         self.ans_m.immobilize()
         self.ans_h.readable = False
@@ -232,54 +192,30 @@ class Board(gd.BoardGame):
         self.digi_clocks.append(self.board.ships[-1])
 
         # add second time in digital form
-        self.board.add_unit(xw[0] + 6 + 2, top_margin + 1, 1, 1, classes.board.Letter,
+        self.board.add_unit(xw[0] + 8, top_margin + 1, 1, 1, classes.board.Letter,
                             "%02d" % self.times[1][0], white, "", 0)
         self.board.ships[-1].font_color = self.h_col
         self.digi_clocks.append(self.board.ships[-1])
-        self.board.add_unit(xw[0] + 6 + 3, top_margin + 1, 1, 1, classes.board.Letter, ":", white, "", 0)
+        self.board.add_unit(xw[0] + 9, top_margin + 1, 1, 1, classes.board.Letter, ":", white, "", 0)
         self.board.ships[-1].font_color = colon_col
-        self.board.add_unit(xw[0] + 6 + 4, top_margin + 1, 1, 1, classes.board.Letter,
+        self.board.add_unit(xw[0] + 10, top_margin + 1, 1, 1, classes.board.Letter,
                             "%02d" % self.times[1][1], white, "", 0)
         self.board.ships[-1].font_color = self.m_col
         self.digi_clocks.append(self.board.ships[-1])
 
         # add first clock
-        if self.mainloop.m.game_variant == 1 or self.mainloop.m.game_variant == 3:
-            a = random.randint(0, 1)
-            if a == 0:
-                b = 1
-            else:
-                b = random.randint(0, 1)
-            clock_types = (a, b)
-        elif self.mainloop.m.game_variant == 4:
-            clock_types = (random.randint(0, 1), random.randint(0, 1))
-        else:
-            clock_types = [0, 0]
-
-        clock_types = [0, 0]
-
-        if clock_types[0] == 0:
-            self.board.add_unit(0, 1, xw[0], xw[0], classes.board.Ship, "", white, "", 0)
-            self.clock_wrapper1 = self.board.ships[-1]
-            self.board.active_ship = self.clock_wrapper1.unit_id
-            self.clock1 = classes.drw.clock.Clock(self, self.clock_wrapper1, self.size * xw[0], self.times[0],
-                                                  self.data2[2:11])
-        else:
-            self.board.add_unit(0, 1, xw[0], xw[0], classes.board.MultiColorLetters,
-                                "<1>%02d<3>:<2>%02d" % (self.times[0][0], self.times[0][1]), white, "", 34)
-            self.board.ships[-1].set_font_colors(color3, color4, colon_col)
+        self.board.add_unit(0, 1, xw[0], xw[0], classes.board.Ship, "", white, "", 0)
+        self.clock_wrapper1 = self.board.ships[-1]
+        self.board.active_ship = self.clock_wrapper1.unit_id
+        self.clock1 = classes.drw.clock.Clock(self, self.clock_wrapper1, self.size * xw[0], self.times[0],
+                                              self.data2[2:11])
 
         # add second clock
-        if clock_types[1] == 0:
-            self.board.add_unit(6 + xw[0], 1, xw[0], xw[0], classes.board.Ship, "", white, "", 0)
-            self.clock_wrapper2 = self.board.ships[-1]
-            self.board.active_ship = self.clock_wrapper2.unit_id
-            self.clock2 = classes.drw.clock.Clock(self, self.clock_wrapper2, self.size * xw[0], self.times[1],
+        self.board.add_unit(6 + xw[0], 1, xw[0], xw[0], classes.board.Ship, "", white, "", 0)
+        self.clock_wrapper2 = self.board.ships[-1]
+        self.board.active_ship = self.clock_wrapper2.unit_id
+        self.clock2 = classes.drw.clock.Clock(self, self.clock_wrapper2, self.size * xw[0], self.times[1],
                                                   self.data2[2:11])
-        else:
-            self.board.add_unit(6 + xw[0], 1, xw[0], xw[0], classes.board.MultiColorLetters,
-                                "<1>%02d<3>:<2>%02d" % (self.times[1][0], self.times[1][1]), white, "", 34)
-            self.board.ships[-1].set_font_colors(color3, color4, colon_col)
 
         # linear diff
         if self.lvl_data[13]:
@@ -294,8 +230,6 @@ class Board(gd.BoardGame):
                 self.clock3 = classes.drw.clock_linear_diff2.Clock(self, self.clock_wrapper3,
                                                                    self.size * 10,
                                                                    self.size * 3, self.times, self.data2[2:12])
-
-        self.diff = self.get_diff()
 
         for each in self.board.ships:
             each.readable = False
@@ -348,23 +282,6 @@ class Board(gd.BoardGame):
 
         if not self.show_24h and h == 0:
             h = 12
-        """
-        # calculate minutes
-        if t[1][1] >= t[0][1]:
-            m = t[1][1] - t[0][1]
-        else:
-            m = 60 + t[1][1] - t[0][1]
-            t[1][0] -= 1
-
-        # calculate hours
-        if t[1][0] >= t[0][0]:
-            h = t[1][0] - t[0][0]
-        else:
-            if self.show_24h:
-                h = 24 + t[1][0] - t[0][0]
-            else:
-                h = 12 + t[1][0] - t[0][0]
-        """
         return [h, m]
 
     def handle(self, event):
@@ -481,12 +398,14 @@ class Board(gd.BoardGame):
 
         #update second clock
         self.times[1] = self.time_with_diff([int(self.ans_h.value), int(self.ans_m.value)])
-        #self.clock2.draw_all(self.times[1])
-        #self.clock3.draw_all(self.times)
-        self.update_clocks()
 
+        # update captions
+        self.h_caption.set_value([self.lang._n("hour", int(self.ans_h.value)), ""])
+        self.m_caption.set_value([self.lang._n("minute", int(self.ans_m.value)), ""])
         self.ans_m.update_me = True
         self.ans_h.update_me = True
+
+        self.update_clocks()
 
     def update_clocks(self, clock_id=None):
         if clock_id is None or clock_id == 0:

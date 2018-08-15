@@ -184,13 +184,13 @@ class Board(gd.BoardGame):
         self.board.units[-1].set_outline(color=outline_color2, width=2)
         self.board.all_sprites_list.move_to_front(self.board.units[-1])
 
-        self.board.add_unit(x - 3 + xd, y, 1, h, classes.board.ImgCenteredShip, "", card_color,
-                            img_src='nav_l_m.png', alpha=True)
+        self.board.add_unit(x - 3 + xd, y, 1, h, classes.board.ImgCenteredShip, "", (0, 0, 0, 0),
+                            img_src='nav_l_mt.png', alpha=True)
         self.board.ships[-1].set_tint_color(arrow_color)
 
         self.lt = self.board.ships[-1]
-        self.board.add_unit(x - 2 + xd + w, y, 1, h, classes.board.ImgCenteredShip, "", card_color,
-                            img_src='nav_r_m.png', alpha=True)
+        self.board.add_unit(x - 2 + xd + w, y, 1, h, classes.board.ImgCenteredShip, "", (0, 0, 0, 0),
+                            img_src='nav_r_mt.png', alpha=True)
         self.board.ships[-1].set_tint_color(arrow_color)
         self.rt = self.board.ships[-1]
 

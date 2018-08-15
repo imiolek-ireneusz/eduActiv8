@@ -113,12 +113,12 @@ class Board(gd.BoardGame):
         self.slide.perm_outline = True
 
         self.board.add_unit(x - 3, y+1, 1, 6, classes.board.ImgCenteredShip, "", frame_color,
-                            img_src='nav_l_m.png', alpha=True)
+                            img_src='nav_l_mt.png', alpha=True)
         self.board.ships[-1].set_tint_color(arrow_color)
         self.lt = self.board.ships[-1]
 
         self.board.add_unit(x + 6, y+1, 1, 6, classes.board.ImgCenteredShip, "", frame_color,
-                            img_src='nav_r_m.png', alpha=True)
+                            img_src='nav_r_mt.png', alpha=True)
         self.board.ships[-1].set_tint_color(arrow_color)
         self.rt = self.board.ships[-1]
 

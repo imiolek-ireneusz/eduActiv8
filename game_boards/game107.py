@@ -137,24 +137,20 @@ class Board(gd.BoardGame):
         self.board.add_unit(loc[0][0], loc[0][1], loc[0][2], 1, classes.board.Letter, self.lang.d["difference"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
-        self.board.add_unit(loc[1][0], loc[1][1], 6, 1, classes.board.Letter, [self.lang.d["hours"], ""], white, "", 4)
-        self.board.ships[-1].font_color = color3
+        self.diff = self.get_diff()
 
-        self.board.add_unit(loc[2][0], loc[2][1], 6, 1, classes.board.Letter, [self.lang.d["minutes"], ""], white, "", 4)
+        self.board.add_unit(loc[1][0], loc[1][1], 6, 1, classes.board.Letter,
+                            [self.lang._n("hour", 0), ""], white, "", 4)
+        self.board.ships[-1].font_color = color3
+        self.h_caption = self.board.ships[-1]
+
+        self.board.add_unit(loc[2][0], loc[2][1], 6, 1, classes.board.Letter,
+                            [self.lang._n("minute", 0), ""], white, "", 4)
         self.board.ships[-1].font_color = color4
+        self.m_caption = self.board.ships[-1]
 
         self.buttons = []
-        """
-        self.board.add_unit(loc[3][0], loc[3][1], 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-        self.board.add_unit(loc[4][0], loc[4][1], 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
 
-        self.board.add_unit(loc[5][0], loc[5][1], 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        self.board.add_unit(loc[6][0], loc[6][1], 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        """
         self.board.add_unit(loc[3][0], loc[3][1], 2, 2, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_l_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.h_col)
@@ -241,8 +237,6 @@ class Board(gd.BoardGame):
             elif self.mainloop.m.game_variant == 5:
                 self.clock3 = classes.drw.clock_circular_diff.Clock(self, self.clock_wrapper3, self.size * 11,
                                                                     self.times, self.data2[2:12])
-
-        self.diff = self.get_diff()
 
         for each in self.board.ships:
             each.readable = False
@@ -397,6 +391,11 @@ class Board(gd.BoardGame):
                 self.change_time(-1, 0)
             else:
                 self.ans_m.value = str(int(self.ans_m.value) - 1)
+
+        # update captions
+        diff = self.get_diff()
+        self.h_caption.set_value([self.lang._n("hour", int(self.ans_h.value)), ""])
+        self.m_caption.set_value([self.lang._n("minute", int(self.ans_m.value)), ""])
 
         self.ans_m.update_me = True
         self.ans_h.update_me = True

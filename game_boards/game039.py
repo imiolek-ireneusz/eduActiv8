@@ -147,13 +147,7 @@ class Board(gd.BoardGame):
         y = 1
 
         for i in range(5):
-            if self.num_list2[i] < 0:
-                n2 = "(%d)" % self.num_list2[i]
-            else:
-                n2 = str(self.num_list2[i])
-
-            caption = "%d %s %s" % (self.num_list[i], operator, n2)
-
+            caption = "%d  %s  %d" % (self.num_list[i], operator, self.num_list2[i])
             self.board.add_unit(x-xp, y, w, 1, classes.board.Label, caption, color1, "", data[7])
             self.board.add_unit(x + 2, y, 1, 1, classes.board.Label, "=", color1, "", data[7])
             self.board.add_door(x + 3, y, 1, 1, classes.board.Door, "", color1, "")

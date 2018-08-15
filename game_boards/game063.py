@@ -22,7 +22,7 @@ class Board(gd.BoardGame):
         self.ai_enabled = True
         self.ai_speed = 18
         self.correct = False
-        self.board.draw_grid = True
+        self.board.draw_grid = False
         if self.mainloop.scheme is not None:
             color1 = self.mainloop.scheme.color1  # bright side of short hand
             color3 = self.mainloop.scheme.color3  # inner font color
@@ -49,8 +49,13 @@ class Board(gd.BoardGame):
 
             white = (255, 255, 255)
             gray = (100, 100, 100)
+
+        transp = (0, 0, 0, 0)
         self.color3 = color3
         self.color4 = color4
+
+        self.h_col = ex.hsv_to_rgb(225, 190, 220)
+        self.m_col = ex.hsv_to_rgb(170, 190, 220)
 
         if self.level.lvl == 1:
             data = [19, 10, True, True, False, False, True, False, False, True, True, 15]
@@ -129,22 +134,25 @@ class Board(gd.BoardGame):
         self.data = data
 
         self.layout.update_layout(data[0], data[1])
-        scale = self.layout.scale
+
         self.board.level_start(data[0], data[1], self.layout.scale)
+
+        self.board.board_bg.update_me = True
+        self.board.board_bg.line_color = (20, 20, 20)
 
         size = self.board.scale * 10
         ans_offset = 10 + (data[0] - 15) // 2
         self.board.add_unit(10, 0, data[0] - 10, 2, classes.board.Label, self.lang.d["What time"], white, "", 2)
         self.board.units[-1].font_color = gray
-        self.board.add_unit(ans_offset, 2, 2, 2, classes.board.Letter, "00", white, "", 0)
+        self.board.add_unit(ans_offset, 4, 2, 2, classes.board.Letter, "00", white, "", 34)
         self.ans_h = self.board.ships[-1]
         self.ans_h.checkable = True
         self.ans_h.init_check_images()
         self.board.active_ship = self.ans_h.unit_id
         self.home_square = self.ans_h
 
-        self.board.add_unit(ans_offset + 2, 2, 1, 2, classes.board.Label, ":", white, "", 0)
-        self.board.add_unit(ans_offset + 3, 2, 2, 2, classes.board.Letter, "00", white, "", 0)
+        self.board.add_unit(ans_offset + 2, 4, 1, 2, classes.board.Label, ":", white, "", 34)
+        self.board.add_unit(ans_offset + 3, 4, 2, 2, classes.board.Letter, "00", white, "", 34)
         self.ans_m = self.board.ships[-1]
         self.ans_m.checkable = True
         self.ans_m.init_check_images()
@@ -160,6 +168,29 @@ class Board(gd.BoardGame):
 
         self.ans_h.font_color = color3
         self.ans_m.font_color = color4
+
+        # add up/down buttons
+        self.board.add_unit(ans_offset, 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.h_col)
+
+        self.board.add_unit(ans_offset, 6, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.h_col)
+
+        self.board.add_unit(ans_offset + 3, 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.m_col)
+
+        self.board.add_unit(ans_offset + 3, 6, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.m_col)
+
+        self.buttons = []
+
+        for i in range(4):
+            self.buttons.append(self.board.ships[-4 + i])
+            self.buttons[-1].immobilize()
 
         center = [size // 2, size // 2]
         self.board.add_unit(0, 0, 10, 10, classes.board.Ship, "", white, "", self.font_size)
@@ -340,6 +371,12 @@ class Board(gd.BoardGame):
         if self.show_msg == False:
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 self.auto_check_reset()
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    active = self.board.active_ship
+                    for i in range(4):
+                        if self.buttons[i].unit_id == active:
+                            self.on_btn_click(i)
+                            break
             if event.type == pygame.KEYDOWN and event.key != pygame.K_RETURN and not self.correct:
                 lhv = len(self.home_square.value)
                 self.changed_since_check = True
@@ -410,6 +447,45 @@ class Board(gd.BoardGame):
             self.home_square.perm_outline_width = 1
         self.home_square.update_me = True
         self.mainloop.redraw_needed[0] = True
+
+    def on_btn_click(self, active_id):
+        if active_id == 0:
+            self.change_time(1, 0)
+        elif active_id == 1:
+            self.change_time(-1, 0)
+        elif active_id == 2:
+            self.change_time(0, 1)
+        elif active_id == 3:
+            self.change_time(0, -1)
+
+    def change_time(self, h, m):
+        if h == 1:
+            if self.show_24h and self.ans_h.value == "23":
+                self.ans_h.value = "00"
+            elif not self.show_24h and self.ans_h.value == "12":
+                self.ans_h.value = "01"
+            else:
+                self.ans_h.value = "%02d" % (int(self.ans_h.value) + 1)
+        elif h == -1:
+            if self.show_24h and int(self.ans_h.value) == 0:
+                self.ans_h.value = "23"
+            elif not self.show_24h and int(self.ans_h.value) <= 1:
+                self.ans_h.value = "12"
+            else:
+                self.ans_h.value = "%02d" % (int(self.ans_h.value) - 1)
+        elif m == 1:
+            if self.ans_m.value == "59":
+                self.ans_m.value = "00"
+            else:
+                self.ans_m.value = "%02d" % (int(self.ans_m.value) + 1)
+        elif m == -1:
+            if int(self.ans_m.value) == 0:
+                self.ans_m.value = "59"
+            else:
+                self.ans_m.value = "%02d" % (int(self.ans_m.value) - 1)
+
+        self.ans_m.update_me = True
+        self.ans_h.update_me = True
 
     def update(self, game):
         game.fill((255, 255, 255))

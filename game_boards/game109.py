@@ -50,7 +50,7 @@ class Board(gd.BoardGame):
 
         h = random.randrange(150, 240, 5)
         self.font_color = ex.hsv_to_rgb(h, 255, 170)
-        data = [20, 8, 25]
+        data = [22, 11, 25]
         self.data = data
 
         self.lvl_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid,
@@ -109,7 +109,7 @@ class Board(gd.BoardGame):
         self.digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.clock_fonts = []
         self.points = int(round((self.board.scale * 72 / 96) * 1.2, 0))
-        xw = [7, 0]
+        xw = [10, 0]
         self.clock_fonts.append(pygame.font.Font(os.path.join('res', 'fonts', 'FreeSans', 'FreeSansBold.ttf'),
                                                  (int(self.points / (self.board.scale / (
                                                              42 * self.size * xw[0] / 500.0))))))
@@ -123,26 +123,31 @@ class Board(gd.BoardGame):
         self.board.add_unit(0, 0, xw[0], 1, classes.board.Letter, self.lang.d["now"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
-        self.board.add_unit(xw[0] + 6, 0, xw[0], 1, classes.board.Letter, self.lang.d["then"], white, "", 3)
+        self.board.add_unit(xw[0] + 6, 0, 5, 1, classes.board.Letter, self.lang.d["then"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
         self.board.add_unit(xw[0], 0, 6, 1, classes.board.Letter, self.lat_earlier, white, "", 2)
         self.board.ships[-1].font_color = self.font_color
         self.add_sub_indicator = self.board.ships[-1]
 
-        self.board.add_unit(xw[0], 5, 3, 1, classes.board.Letter, [self.lang.d["hours"], ""], white, "", 4)
-        self.board.ships[-1].font_color = color3
-
-        self.board.add_unit(xw[0]+3, 5, 3, 1, classes.board.Letter, [self.lang.d["minutes"], ""], white, "", 4)
-        self.board.ships[-1].font_color = color4
-
-        self.buttons = []
         self.diff = self.get_diff()
 
-        self.board.add_unit(xw[0], 3, 3, 2, classes.board.Letter, str(self.diff[0]), white, "", 32)
+        self.board.add_unit(xw[0], 5 + 1, 3, 1, classes.board.Letter,
+                            self.lang._n("hour", self.diff[0]), white, "", 4)
+        self.board.ships[-1].font_color = color3
+        self.h_caption = self.board.ships[-1]
+
+        self.board.add_unit(xw[0]+3, 5 + 1, 3, 1, classes.board.Letter,
+                            self.lang._n("minute", self.diff[1]), white, "", 4)
+        self.board.ships[-1].font_color = color4
+        self.m_caption = self.board.ships[-1]
+
+        self.buttons = []
+
+        self.board.add_unit(xw[0], 5, 3, 1, classes.board.Letter, str(self.diff[0]), white, "", 32)
         self.diff_h = self.board.ships[-1]
 
-        self.board.add_unit(xw[0] + 3, 3, 3, 2, classes.board.Letter, str(self.diff[1]), white, "", 32)
+        self.board.add_unit(xw[0] + 3, 5, 3, 1, classes.board.Letter, str(self.diff[1]), white, "", 32)
         self.diff_m = self.board.ships[-1]
 
         self.diff_h.immobilize()
@@ -153,17 +158,17 @@ class Board(gd.BoardGame):
         self.diff_m.font_color = color4
 
         # add answer clock
-        self.board.add_unit(xw[0] + 6, 3, 3, 3, classes.board.Letter, "%02d" % self.times[0][0], white, "", 34)
+        self.board.add_unit(xw[0] + 6, 5, 2, 2, classes.board.Letter, "%02d" % 0, white, "", 34)
         self.ans_h = self.board.ships[-1]
         self.ans_h.checkable = True
         self.ans_h.init_check_images()
         self.board.active_ship = self.ans_h.unit_id
         self.home_square = self.ans_h
 
-        self.board.add_unit(xw[0] + 9, 3, 1, 3, classes.board.Letter, ":", white, "", 34)
+        self.board.add_unit(xw[0] + 8, 5, 1, 2, classes.board.Letter, ":", white, "", 34)
         self.board.ships[-1].font_color = colon_col
 
-        self.board.add_unit(xw[0] + 10, 3, 3, 3, classes.board.Letter, "%02d" % self.times[0][1], white, "", 34)
+        self.board.add_unit(xw[0] + 9, 5, 2, 2, classes.board.Letter, "%02d" % 0, white, "", 34)
         self.ans_m = self.board.ships[-1]
         self.ans_m.checkable = True
         self.ans_m.init_check_images()
@@ -178,23 +183,22 @@ class Board(gd.BoardGame):
         self.ans_m.font_color = color4
 
         # add up/down buttons
-        self.board.add_unit(xw[0] + 6, 3-1, 3, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_u_mt.png', alpha=True)
+        self.board.add_unit(xw[0] + 6, 3, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.h_col)
 
-        self.board.add_unit(xw[0] + 6, 3+3, 3, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_d_mt.png', alpha=True)
+        self.board.add_unit(xw[0] + 6, 7, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.h_col)
 
-        self.board.add_unit(xw[0] + 10, 3-1, 3, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_u_mt.png', alpha=True)
+        self.board.add_unit(xw[0] + 9, 3, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.m_col)
 
-        self.board.add_unit(xw[0] + 10, 3+3, 3, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_d_mt.png', alpha=True)
+        self.board.add_unit(xw[0] + 9, 7, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.m_col)
 
-        self.board.ships[-1].set_tint_color(self.m_col)
         for i in range(4):
             self.buttons.append(self.board.ships[-4 + i])
 
@@ -348,7 +352,7 @@ class Board(gd.BoardGame):
         elif h == -1:
             if self.data2[4] and int(self.ans_h.value) == 0:
                 self.ans_h.value = "23"
-            elif not self.data2[4] and int(self.ans_h.value) == 1:
+            elif not self.data2[4] and int(self.ans_h.value) <= 1:
                 self.ans_h.value = "12"
             else:
                 self.ans_h.value = "%02d" % (int(self.ans_h.value) - 1)

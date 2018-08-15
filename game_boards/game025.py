@@ -27,18 +27,18 @@ class Board(gd.BoardGame):
             self.mainloop.m.lang_change()
 
         #ver_color = (55, 0, 90)
-        s = 70
-        v = 230
+        #s = 70
+        #v = 230
         h = random.randrange(0, 255, 5)
         color0 = ex.hsv_to_rgb(h, 40, 230)
-        color1 = color0
-        font_color = ex.hsv_to_rgb(h, 255, 140)
-        ver_color = (33, 121, 149)
+        #color1 = color0
+        #font_color = ex.hsv_to_rgb(h, 255, 140)
+        #ver_color = (33, 121, 149)
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.scheme_dir = "black"
                 color = (0, 0, 0)
-                ver_color = (255, 255, 0)
+                #ver_color = (255, 255, 0)
             else:
                 self.scheme_dir = "white"
                 color = (255, 255, 255)
