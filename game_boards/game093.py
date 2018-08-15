@@ -126,7 +126,6 @@ class Board(gd.BoardGame):
         self.nm2a.init_check_images()
         self.nm2a.font_color = bd_color2
 
-        self.factorss = self.get_factors(self.numbers)
         self.factor_list = []
         for i in range(12):
             self.board.add_unit(f_size, i, 2, 1, classes.board.Letter, "", white, "", 0)
@@ -175,11 +174,11 @@ class Board(gd.BoardGame):
         :param n: list/tupple of (numerator, denominator)
         :return: a list of common factors for both numbers in n
         """
-        mn = min(n[0], n[1])
-        mx = max(n[0], n[1])
+        mn = int(min(n[0], n[1]))
+        mx = int(max(n[0], n[1]))
         lst = [1]
         if mn > 3:
-            for i in range(2, mn / 2 + 1):
+            for i in range(2, int(mn / 2 + 1)):
                 if mn % i == 0 and mx % i == 0:
                     lst.append(i)
         if mx % mn == 0 and mn != 1:

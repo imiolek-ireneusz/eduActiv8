@@ -305,14 +305,14 @@ class Board(gd.BoardGame):
         :param n: list/tupple of (numerator, denominator)
         :return: a list of common factors for both numbers in n
         """
-        mn = min(n[0], n[1])
-        mx = max(n[0], n[1])
+        mn = int(min(n[0], n[1]))
+        mx = int(max(n[0], n[1]))
         gcf = 1
         if mx % mn == 0:
             return mn
         else:
             if mn > 3:
-                start = mn / 2 + 1
+                start = int(mn / 2 + 1)
             else:
                 start = 3
             for i in range(start, 1, -1):

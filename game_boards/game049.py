@@ -61,7 +61,7 @@ class Board(gd.BoardGame):
         else:  # if self.mainloop.m.game_variant == 0:
             data = [self.alphabet_width, 5, self.alphabet_uc]
         data.extend(lvl_data)
-        nlf = min((self.alphabet_len * data[4] / 100), self.alphabet_len)
+        nlf = min(int(self.alphabet_len * data[4] / 100), self.alphabet_len)
 
         self.data = data
         self.board.set_animation_constraints(0, data[0], 0, data[1])
