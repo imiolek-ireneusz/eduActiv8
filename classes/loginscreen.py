@@ -4,13 +4,11 @@ import os
 import pygame
 import sys
 import math
-import random
 
 import classes.extras as ex
 
 class Colors:
     def __init__(self, mainloop):
-        # Background colors
         self.outer_color = (255, 255, 255, 255)  # color outside of the frame - visible on logout
 
         h1 = 132
@@ -25,11 +23,9 @@ class Colors:
         c3 = ex.hsva_to_rgba(h3, s, v, 115)  # left
         c4 = ex.hsva_to_rgba(h4, s, 20, 200)  # right
 
-        #self.color_mono = (45, 75, 65)
         self.color_mono = (0, 0, 0, 50)
         self.android_backup_color = (45, 75, 65)
 
-        #self.color_mono_focused = (45, 75, 65)
         self.color_mono_focused = (255, 0, 0, 100)
         self.color_mono_font = (27, 44, 39)
 
@@ -51,6 +47,7 @@ class Colors:
 
         # PEdit Colors
         self.bg_color = (255, 255, 255, 50)  # normal edit fields
+        self.bg_hover_color = (255, 255, 255, 75)
         self.bg_focus = (255, 255, 255, 100)
         self.bg_color_disabled = (255, 255, 255, 10)  # default disabled color of the age buttons
         self.border_disabled = (255, 255, 255, 30)  # age buttons disabled
@@ -64,12 +61,14 @@ class Colors:
         #Check boxes
         self.cb_bg_col = (255, 255, 255, 0)
         self.cb_color = (255, 255, 255, 50)
+        self.cb_hover_color = (255, 255, 255, 125)
         self.cb_focus = (255, 255, 255, 100)
         self.cb_border_color = (0, 0, 0)
         self.cb_border_focused = (255, 0, 0)
 
         #PButon
         self.btn_bg_color = (255, 255, 255, 50)  # all butons and non selected age buttons
+        self.btn_hover_color = (255, 255, 255, 75)
         self.btn_bg_focus = (255, 255, 255, 100)  # selected state age and focus on buttons
         self.btn_font_color = self.color_mono_font  # (52, 17, 2)
         self.trans_btn_font_color = (255, 85, 85)
@@ -80,6 +79,7 @@ class Colors:
         self.btn_border_focused_l = self.color_mono_focused #(72, 17, 2)
 
         self.c2a_btn_bg_color = (25, 255, 25, 125)  # all butons and non selected age buttons
+        self.c2a_btn_hover_color = (25, 255, 25, 175)
         self.c2a_btn_bg_focus = (55, 255, 55, 150)  # selected state age and focus on buttons
 
         #PScrollBar
@@ -163,6 +163,7 @@ class Colors:
                 )
                 fn_line(surface, color, (col, y1), (col, y2))
 
+
 class PEdit(pygame.sprite.Sprite):
     def __init__(self, ls, w, h, l, t, focus_order, hide=False, right_align=False, transparent=False):
         pygame.sprite.Sprite.__init__(self)
@@ -177,20 +178,19 @@ class PEdit(pygame.sprite.Sprite):
         if not self.ls.lang.ltr_text and not isinstance(self, PButton):
             self.right_align = True
         self.transparent = transparent
-        # self.value = "Tejsζę"
         self.value = ""
         self.visible = True
         self.select_item = False
+        self.selection_modifier = False
         self.checked = False
         self.disabled = False
         self.users = False
-        # self.displayed_value = ""
         self.cursor_pos = 0
         self.focused = False
+        self.hover = False
         self.update_me = True
-        # self.color = (255,255,255)
-        # self.bg_color = (255,255,255)
         self.bg_color = self.ls.colors.bg_color
+        self.bg_hover_color = self.ls.colors.bg_hover_color
         self.bg_color_disabled = self.ls.colors.bg_color_disabled
         self.border_disabled = self.ls.colors.border_disabled
         self.bg_focus = self.ls.colors.bg_focus
@@ -207,7 +207,7 @@ class PEdit(pygame.sprite.Sprite):
 
     def update(self):
         if self.update_me and self.visible:
-            # self.update_me = False
+            self.update_me = False
             if self.users:
                 if self.focused or self.checked:
                     self.image.fill(self.bg_focus)
@@ -215,8 +215,10 @@ class PEdit(pygame.sprite.Sprite):
                     pygame.draw.line(self.image, self.border_focused, self.lines[2], self.lines[3], 1)
                     pygame.draw.line(self.image, self.border_focused, self.lines[0], self.lines[3], 1)
                 else:
-                    self.image.fill(self.bg_color)
-                    # pygame.draw.lines(self.image, self.border_color, True, self.lines,1)
+                    if self.hover and not self.transparent:
+                        self.image.fill(self.bg_hover_color)
+                    else:
+                        self.image.fill(self.bg_color)
                     pygame.draw.line(self.image, self.border_color, self.lines[0], self.lines[1], 1)
                     pygame.draw.line(self.image, self.border_color, self.lines[2], self.lines[3], 1)
                     pygame.draw.line(self.image, self.border_color, self.lines[0], self.lines[3], 1)
@@ -228,7 +230,10 @@ class PEdit(pygame.sprite.Sprite):
                     self.image.fill(self.bg_focus)
                     pygame.draw.lines(self.image, self.border_focused, True, self.lines_focused, 2)
                 else:
-                    self.image.fill(self.bg_color)
+                    if self.hover and not self.transparent:
+                        self.image.fill(self.bg_hover_color)
+                    else:
+                        self.image.fill(self.bg_color)
                     pygame.draw.lines(self.image, self.border_color, True, self.lines, 1)
             if self.hide:
                 val = ""
@@ -261,10 +266,13 @@ class PEdit(pygame.sprite.Sprite):
             self.image.blit(text, (self.font_x, self.font_y))
             self.image.blit(text, (self.font_x, self.font_y))
         elif self.update_me and not self.visible:
+            self.update_me = False
             self.image.fill(self.bg_color)
 
     def handle(self, event):
         if self.visible:
+            if event.type == pygame.MOUSEMOTION:
+                self.onMouseEnter()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 self.onMouseButtonDown()
             if event.type == pygame.MOUSEBUTTONUP:
@@ -274,6 +282,18 @@ class PEdit(pygame.sprite.Sprite):
 
     def is_editable(self):
         return True
+
+    def onMouseEnter(self):
+        if not self.hover:
+            self.hover = True
+            self.update_me = True
+            self.ls.update_trigger()
+
+    def onMouseOut(self):
+        if self.hover:
+            self.hover = False
+            self.update_me = True
+            self.ls.update_trigger()
 
     def onKeyDown(self, event):
         if not self.select_item:
@@ -294,8 +314,14 @@ class PEdit(pygame.sprite.Sprite):
                             self.value = self.value + char
                         else:
                             self.value = char + self.value
-                self.ls.reload_selects()
-                self.ls.set_scrollbar_top(self.ls.scroll_min_top)
+
+                if self.selection_modifier:
+                    if self.ls.prev_user_checked:
+                        if self.value != self.ls.prev_user_checked.value:
+                            self.ls.prev_user_checked.update_me = True
+                            self.ls.prev_user_checked.checked = False
+                    self.ls.reload_selects()
+                    self.ls.set_scrollbar_top(self.ls.scroll_min_top)
             elif event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER or event.key == pygame.K_TAB:
                 self.nextFocus()
 
@@ -354,7 +380,6 @@ class PEdit(pygame.sprite.Sprite):
         self.ls.mainloop.redraw_needed[0] = True
 
 
-
 class PSelect(PEdit):
     def __init__(self, ls, w, h, l, t, focus_order, right_align=False, transparent=False):
         PEdit.__init__(self, ls, w, h, l, t, focus_order, False, right_align, transparent)
@@ -379,8 +404,10 @@ class PCheckbox(pygame.sprite.Sprite):
         self.cursor_pos = 0
         self.focused = False
         self.update_me = True
+        self.hover = False
         self.bg_color = self.ls.colors.cb_bg_col
         self.cb_color = self.ls.colors.cb_color
+        self.cb_hover_color = self.ls.colors.cb_hover_color
         self.cb_focus = self.ls.colors.cb_focus
         self.visible = True
 
@@ -403,9 +430,13 @@ class PCheckbox(pygame.sprite.Sprite):
 
     def update(self):
         if self.visible and self.update_me:
-            # self.update_me = False
+            self.update_me = False
             self.image.fill(self.bg_color)
-            pygame.draw.polygon(self.image, self.cb_focus, self.lines, 0)
+            if self.hover and not self.checked:
+                pygame.draw.polygon(self.image, self.cb_hover_color, self.lines, 0)
+            else:
+                pygame.draw.polygon(self.image, self.cb_focus, self.lines, 0)
+
             if self.focused:
                 pygame.draw.lines(self.image, self.border_focused, True, self.lines, 1)
             else:
@@ -431,15 +462,18 @@ class PCheckbox(pygame.sprite.Sprite):
             font_y = (self.h - self.ls.font_2.size(val)[1]) // 2
             self.image.blit(text, (font_x, font_y))
         elif self.update_me:
+            self.update_me = False
             self.image.fill(self.bg_color)
 
     def handle(self, event):
         if self.visible:
-            if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEMOTION:
+                self.onMouseEnter()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
                 self.onMouseButtonDown()
-            if event.type == pygame.MOUSEBUTTONUP:
+            elif event.type == pygame.MOUSEBUTTONUP:
                 self.onMouseButtonUp()
-            if event.type == pygame.KEYDOWN:
+            elif event.type == pygame.KEYDOWN:
                 self.onKeyDown(event)
 
     def onKeyDown(self, event):
@@ -454,6 +488,18 @@ class PCheckbox(pygame.sprite.Sprite):
 
     def onMouseButtonUp(self):
         pass
+
+    def onMouseOut(self):
+        if self.hover:
+            self.hover = False
+            self.update_me = True
+            self.ls.update_trigger()
+
+    def onMouseEnter(self):
+        if not self.hover:
+            self.hover = True
+            self.update_me = True
+            self.ls.update_trigger()
 
     def onFocus(self):
         if not self.select_item or (self.select_item and len(self.value) > 0):
@@ -488,8 +534,10 @@ class PLabel(pygame.sprite.Sprite):
             self.right_align = True
         self.font_color = self.ls.colors.font_color
         self.value = value
+        self.visible = True
         self.select_item = False
         self.update_me = True
+        self.hover = False
         self.image = pygame.Surface([w, h], flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [l, t]
@@ -497,6 +545,7 @@ class PLabel(pygame.sprite.Sprite):
 
     def update(self):
         if self.update_me:
+            self.update_me = False
             self.image.fill(self.ls.colors.transparent_fill)
             if sys.version_info < (3, 0):
                 try:
@@ -523,13 +572,25 @@ class PLabel(pygame.sprite.Sprite):
     def handle(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
             self.onMouseButtonDown()
-        if event.type == pygame.MOUSEBUTTONUP:
+        elif event.type == pygame.MOUSEBUTTONUP:
             self.onMouseButtonUp()
-        if event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN:
             self.onKeyDown(event)
 
     def onKeyDown(self, event):
         pass
+
+    def onMouseOut(self):
+        if self.hover:
+            self.hover = False
+            self.update_me = True
+            self.ls.update_trigger()
+
+    def onMouseEnter(self):
+        if not self.hover:
+            self.hover = True
+            self.update_me = True
+            self.ls.update_trigger()
 
     def onMouseButtonDown(self):
         pass
@@ -554,8 +615,8 @@ class PButton(PEdit):
         self.fsubmit = fsubmit
         self.checked = False
         if not self.transparent:
-            # self.bg_color = (205,255,155)
             self.bg_color = self.ls.colors.btn_bg_color
+            self.bg_hover_color = self.ls.colors.btn_hover_color
             self.bg_focus = self.ls.colors.btn_bg_focus
             self.font_color = self.ls.colors.btn_font_color
             self.border_color = self.ls.colors.btn_border_color
@@ -587,6 +648,7 @@ class PButton(PEdit):
 
     def set_call2action_style(self):
         self.bg_color = self.ls.colors.c2a_btn_bg_color
+        self.bg_hover_color = self.ls.colors.c2a_btn_hover_color
         self.bg_focus = self.ls.colors.c2a_btn_bg_focus
 
 
@@ -605,6 +667,7 @@ class PButton2(PButton):
 
     def update(self):
         if self.update_me:
+            self.update_me = False
             if self.disabled:
                 self.image.fill(self.bg_color_disabled)
                 pygame.draw.lines(self.image, self.border_disabled, True, self.lines, 2)
@@ -612,7 +675,11 @@ class PButton2(PButton):
                 self.image.fill(self.bg_focus)
                 pygame.draw.lines(self.image, self.border_focused, True, self.lines_focused, 2)
             else:
-                self.image.fill(self.bg_color)
+
+                if self.hover and not self.transparent:
+                    self.image.fill(self.bg_hover_color)
+                else:
+                    self.image.fill(self.bg_color)
                 pygame.draw.lines(self.image, self.border_color, True, self.lines, 1)
 
             val = ex.unival(self.value)
@@ -653,6 +720,8 @@ class PScrollBar(pygame.sprite.Sprite):
         self.cursor_pos = 0
         self.focused = False
         self.update_me = True
+        self.hover = False
+        self.visible = False
         self.bg_color = self.ls.colors.slb_bg_color
         self.bg_focus = self.ls.colors.slb_bg_focus
         self.border_color = self.ls.colors.slb_border_color
@@ -670,8 +739,9 @@ class PScrollBar(pygame.sprite.Sprite):
 
     def update(self):
         if self.update_me:
+            self.update_me = False
             if self.focused:
-                if self.ls.usr_count > 5:
+                if self.ls.usr_count > self.ls.scroll_item_count:
                     self.image.fill(self.bg_focus)
                     pygame.draw.lines(self.image, self.border_focused, True, self.lines_focused, 2)
                 else:
@@ -686,26 +756,41 @@ class PScrollBar(pygame.sprite.Sprite):
                 pygame.draw.line(self.image, self.ls.colors.slb_mid_lines, s[i], e[i], 1)
 
     def handle(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.type == pygame.MOUSEMOTION:
+            self.onMouseEnter()
+        elif event.type == pygame.MOUSEBUTTONDOWN:
             self.onMouseButtonDown(event)
-        if event.type == pygame.MOUSEBUTTONUP:
+        elif event.type == pygame.MOUSEBUTTONUP:
             self.onMouseButtonUp()
-        if event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN:
             self.onKeyDown(event)
 
     def onKeyDown(self, event):
         pass
 
+    def onMouseOut(self):
+        if self.hover:
+            self.hover = False
+            self.update_me = True
+            self.ls.update_trigger()
+
+    def onMouseEnter(self):
+        if not self.hover:
+            self.hover = True
+            self.update_me = True
+            self.ls.update_trigger()
+
     def onMouseButtonDown(self, event):
         self.onFocus()
-        self.ls.scroll_down = True
+        if self.ls.usr_count > self.ls.scroll_item_count:
+            self.ls.scroll_down = True
         self.dist2top = event.pos[1] - self.top
 
     def onMouseButtonUp(self):
         pass
 
     def onFocus(self):
-        if self.select_item == False or (self.select_item and len(self.value) > 0):
+        if not self.select_item or (self.select_item and len(self.value) > 0):
             self.focused = True
             self.update_trigger()
 
@@ -759,14 +844,16 @@ class PIMGButton(pygame.sprite.Sprite):
 
     def update(self):
         if self.update_me and self.visible:
+            self.update_me = False
             self.image.fill(self.bg_color)
             if self.img_loaded:
-                if self.hover:
+                if self.hover or self.highlight:
                     self.image.blit(self.img2, self.img_pos)
                 else:
                     self.image.blit(self.img, self.img_pos)
 
         elif self.update_me and not self.visible:
+            self.update_me = False
             self.image.fill(self.bg_color)
 
     def handle(self, event):
@@ -787,11 +874,23 @@ class PIMGButton(pygame.sprite.Sprite):
         self.fsubmit()
         self.update_trigger()
 
+    def onMouseOut(self):
+        if self.hover:
+            self.hover = False
+            self.update_me = True
+            self.ls.update_trigger()
+
+    def onMouseEnter(self):
+        if not self.hover:
+            self.hover = True
+            self.update_me = True
+            self.ls.update_trigger()
+
     def onMouseMotion(self, event):
         if not self.highlight:
             pos = event.pos
-            if self.rect.topleft[0] + self.rect.width - 10 >= pos[0] >= self.rect.topleft[0] + 10 and self.rect.topleft[
-                1] + self.rect.height - 10 >= pos[1] >= self.rect.topleft[1] + 10:
+            if self.rect.topleft[0] + self.rect.width >= pos[0] >= self.rect.topleft[0] and self.rect.topleft[
+                1] + self.rect.height >= pos[1] >= self.rect.topleft[1]:
                 if self.hover == False:
                     self.update_trigger()
                 self.hover = True
@@ -940,7 +1039,6 @@ class KbrdKey(pygame.sprite.Sprite):
     def handle(self, event):
         if self.enabled:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                #pos = event.pos
                 if self.fcode == 2: # shift
                     self.ls.keyboard.shift_it()
                     self.activate_color()
@@ -960,9 +1058,15 @@ class KbrdKey(pygame.sprite.Sprite):
                                     self.ls.in_focus.value = self.ls.in_focus.value[0:lhv - 1]
                                 else:
                                     self.ls.in_focus.value = self.ls.in_focus.value[1:lhv]
-                        if self.ls.username_count > 5:
-                            self.ls.reload_selects()
-                        self.ls.set_scrollbar_top(self.ls.scroll_min_top)
+
+                        if self.ls.in_focus.selection_modifier:
+                            if self.ls.prev_user_checked:
+                                if self.ls.in_focus.value != self.ls.prev_user_checked.value:
+                                    self.ls.prev_user_checked.update_me = True
+                                    self.ls.prev_user_checked.checked = False
+                            if self.ls.username_count > 5:
+                                self.ls.reload_selects()
+                            self.ls.set_scrollbar_top(self.ls.scroll_min_top)
                         self.ls.in_focus.update_trigger()
             elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 pass
@@ -1059,7 +1163,6 @@ class Keyboard:
         for each in self.keys:
             each.enable(enabled)
         self.enabled = enabled
-        #self.ls.db_status = " "
         self.ls.update_me = True
 
     def update(self):
@@ -1073,7 +1176,6 @@ class Keyboard:
             for each in self.keys:
                 if each.x < pos[0] < each.x + each.w and each.y < pos[1] < each.y + each.h:
                     each.mouse_over()
-                    #each.handle(event)
                 else:
                     each.mouse_out()
 
@@ -1105,7 +1207,7 @@ class LoginScreen:
         self.colors = Colors(mainloop)
 
         if self.mainloop.android is not None:
-            self.w = self.mainloop.android_login_size[0]  # size[0] 800
+            self.w = self.mainloop.android_login_size[0]
         else:
             self.w = 800
         self.h = 570
@@ -1144,6 +1246,7 @@ class LoginScreen:
         self.load_fonts()
         self.mainloop.redraw_needed[0] = True
         self.update_me = True
+        self.hover = None
 
         self.edit_list = pygame.sprite.LayeredUpdates()
         self.btn_list = pygame.sprite.LayeredUpdates()
@@ -1153,7 +1256,6 @@ class LoginScreen:
         self.img = pygame.image.load(os.path.join('res', 'images', "login_screen_logo.png")).convert_alpha()
         self.img_rect = self.img.get_rect()
 
-        #if self.mainloop.android is not None:
         try:
             self.bg_img = self.scale_img(
                 pygame.image.load(os.path.join('res', 'images', "gradient_large.jpg")).convert(),
@@ -1168,14 +1270,12 @@ class LoginScreen:
             except:
                 self.bg_img = None
 
-            #self.bg_img_rect = self.img.get_rect()
-
-
         # add keyboard
         self.keyboard = Keyboard(self, self.left+5, self.top + self.h - self.keyboard_h - 5, self.w-10, self.keyboard_h)
 
         normal_login = True
         al = self.mainloop.db.get_autologin()
+
         if al is not None:
             if al[1] and not self.mainloop.logged_out:
                 normal_login = False
@@ -1217,20 +1317,17 @@ class LoginScreen:
             else:
                 self.layer1.fill(self.colors.android_backup_color)
 
-
         lines = [[self.left + 0, self.top + 0], [self.left + self.w - 1, self.top + 0],
                  [self.left + self.w - 1, self.top + self.h - 1], [self.left + 0, self.top + self.h - 1]]
         pygame.draw.polygon(layer3, self.colors.inner_color, lines, 0)
         pygame.draw.polygon(layer3, self.colors.alpha_overlay, lines, 0)
         pygame.draw.lines(layer3, (255, 255, 255, 100), True, lines, 1)
 
-
         lines = [[self.left + 10, self.top + 10], [self.left + self.w - self.side_panel_w - 30, self.top + 10],
                  [self.left + self.w - self.side_panel_w - 30, self.top + self.h - 30 - self.keyboard_h],
                  [self.left + 10, self.top + self.h - 30 - self.keyboard_h]]
         pygame.draw.polygon(layer3, self.bg_col, lines, 0)
         pygame.draw.lines(layer3, (255, 255, 255, 100), True, lines, 1)
-
 
         lines = [[self.left + self.w - self.side_panel_w - 10, self.top + 10 + 55],
                  [self.left + self.w - 10, self.top + 10 + 55],
@@ -1281,7 +1378,6 @@ class LoginScreen:
     def add_login_elements(self):
         self.load_usernames()
         self.username_count = len(self.usernames)
-        #self.keyboard.enable()
         self.scroll_item_count = 5
         self.db_status = self.login_welcome_msg
         self.halfw = self.w // 2 - 50
@@ -1297,6 +1393,7 @@ class LoginScreen:
         self.edit_list.add(self.lb4)
 
         self.username = PEdit(self, self.halfw - 40, 30, self.left + 20, self.top + 82, 1)
+        self.username.selection_modifier = True
         if self.username_count > 5:
             self.edit_list.add(self.username)
 
@@ -1323,8 +1420,6 @@ class LoginScreen:
             hs = [120, 150, 180, 210, 240]
             h = 30
         else:
-            #hs = [80, 150, 180, 210, 240]
-
             h = 190 // self.username_count
             hs = []
             for i in range(0, self.username_count):
@@ -1336,7 +1431,6 @@ class LoginScreen:
             editw = self.halfw - 40 - 20
             l = 5
         for i in range(l):
-            #self.select.append(PSelect(self, editw, h, self.left + 20, self.top + hs[i], 0))
             self.select.append(PButton2(self, editw, h, self.left + 20, self.top + hs[i], 0, "", self.change_user_selection))
             self.select[i].select_item = True
             self.select[i].disabled = False
@@ -1352,6 +1446,8 @@ class LoginScreen:
             self.scroll_bg.select_item = True
             self.scroll_bar = PScrollBar(self, 16, 30, self.left + self.halfw - 40 - 20 + 20 + 2, self.top + 122, 0)
             self.edit_list.add(self.scroll_bar)
+        else:
+            self.scroll_bar = None
 
         self.reload_selects()
 
@@ -1391,6 +1487,7 @@ class LoginScreen:
                     each.checked = True
                     if self.prev_checked:
                         self.prev_checked.checked = False
+                        self.prev_checked.update_me = True
                     self.prev_checked = each
                     if self.username.value in self.usernames:
                         self.mainloop.db.update_age_group(self.username.value, each.age_group)
@@ -1404,7 +1501,6 @@ class LoginScreen:
                 self.prev_user_checked = each
 
     def add_admin_login_elements(self):
-        #self.keyboard.enable()
         self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Administrator Login:"])
         self.hlb1.font_color = self.header_font_color
         self.hlb1.font_v = self.font_1
@@ -1436,7 +1532,6 @@ class LoginScreen:
             self.scroll_item_count -= 1
         self.halfw = self.w // 2 - 50
 
-
         self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Default Language:"])
         self.hlb1.font_color = self.header_font_color
         self.hlb1.font_v = self.font_1
@@ -1458,8 +1553,6 @@ class LoginScreen:
 
         self.lang_w = (self.w - 120) // cols
 
-        #print(cols)
-
         h = (360 + 30 - 45) // rows
         w = self.lang_w - 15
         k = 0
@@ -1467,14 +1560,7 @@ class LoginScreen:
         for i in range(self.scroll_item_count):
             if k > rows-1:
                 k = 0
-            """
-            if i <= rows-1:
-                j = 0
-            elif i <= (rows-1) * 2+1:
-                j = 1
-            else:
-                j = 2
-            """
+
             j = int(math.floor(i / frows))
             self.select.append(
                 PButton(self, w, h, self.left + self.lang_w*j+5+13, self.top + 60 + h * k, 0, self.config.lang_titles[i],
@@ -1493,7 +1579,6 @@ class LoginScreen:
         self.fselect_lang()
 
     def add_users_elements(self):
-        #self.keyboard.enable()
         self.db_status = ""
         self.scroll_item_count = 7
         self.halfw = self.w // 2 - 50
@@ -1599,7 +1684,6 @@ class LoginScreen:
             self.edit_list.add(each)
 
     def add_fonts_elements(self):
-        #self.keyboard.enable()
         self.scroll_item_count = 10
         self.db_status = self.login_welcome_msg
         self.halfw = self.w // 2 - 50
@@ -1706,12 +1790,10 @@ class LoginScreen:
     def recheck(self):
         if self.mainloop.android is None:
             self.cb0.checked = self.full_screen
-            self.cb2.checked = self.check_updates
         self.cb3.checked = self.require_pass
         self.cb4.checked = self.require_adminpass
 
     def add_prefs_elements(self):
-        #self.keyboard.enable()
         self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Preferences"])
         self.hlb1.font_color = self.header_font_color
         self.hlb1.font_v = self.font_1
@@ -1724,11 +1806,18 @@ class LoginScreen:
         if self.mainloop.android is not None:
             self.cb0.visible = False
         self.edit_list.add(self.cb0)
+
+        """
         self.cb2 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 150, False,
                              self.lang.b["check for updates"])
+        
         if self.mainloop.android is not None:
             self.cb2.visible = False
+            
         self.edit_list.add(self.cb2)
+        """
+
+
         self.cb3 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 60, False,
                              self.lang.b["require password to log in"])
         self.edit_list.add(self.cb3)
@@ -1810,6 +1899,12 @@ class LoginScreen:
             self.age_groups_trigger()
             self.users_trigger()
 
+        for each in self.edit_list:
+            each.update_me = True
+
+        for each in self.btn_list:
+            each.update_me = True
+
     def reload_font_selects(self, j=0):
         system_font_list = pygame.font.get_fonts()
         sorted_font_list = sorted(system_font_list)
@@ -1846,13 +1941,6 @@ class LoginScreen:
 
         if self.in_focus is not None and self.in_focus.select_item:
             pass
-            #self.prev_user_checked = self.in_focus
-            #self.prev_user_checked.checked = True
-        #age_group = self.mainloop.db.get_age_group(self.username.value)
-        #if age_group is not None:
-        #    self.prev_checked = self.age_groups[age_group]
-        #    self.age_groups[age_group].checked = True
-
 
     def filter_usernames(self):
         if self.state == "LOGIN":
@@ -1872,7 +1960,7 @@ class LoginScreen:
             return usr_fltred
 
     def reload_scroll_bar_h(self):
-        if len(self.usernames) > 5:
+        if len(self.usernames) > self.scroll_item_count:
             if self.usr_count < self.scroll_item_count + 1:
                 self.scroll_h = self.scroll_max_h
             else:
@@ -1888,23 +1976,30 @@ class LoginScreen:
             self.scroll_bar.rect.h = self.scroll_h
             self.scroll_bar.rect_init()
             self.scroll_bar.update()
+        else:
+            self.scroll_bar.h = self.scroll_max_h
+            self.scroll_bar.rect.h = self.scroll_max_h
+            self.scroll_bar.rect_init()
+            self.scroll_bar.update()
 
     def update_scrollbar_top(self, top):
-        if len(self.usernames) > 5:
-            if self.usr_count > self.scroll_item_count:
-                if top > self.scroll_max_top + self.scroll_bar.dist2top:
-                    t = self.scroll_max_top
-                elif top < self.scroll_min_top + self.scroll_bar.dist2top:
-                    t = self.scroll_min_top
-                else:
-                    t = top - self.scroll_bar.dist2top
-                self.set_scrollbar_top(t)
-
-                bar_offset = t - self.scroll_min_top
-                usr_offset = int((bar_offset * (self.usr_count - self.scroll_item_count)) / float(self.max_offset))
-                self.reload_selects(usr_offset)
+        #if len(self.usernames) > 5:
+        if self.usr_count > self.scroll_item_count:
+            if top > self.scroll_max_top + self.scroll_bar.dist2top:
+                t = self.scroll_max_top
+            elif top < self.scroll_min_top + self.scroll_bar.dist2top:
+                t = self.scroll_min_top
             else:
-                self.set_scrollbar_top(self.scroll_min_top)
+                t = top - self.scroll_bar.dist2top
+
+
+            bar_offset = t - self.scroll_min_top
+            usr_offset = int((bar_offset * (self.usr_count - self.scroll_item_count)) / float(self.max_offset))
+            self.reload_selects(usr_offset)
+            self.set_scrollbar_top(t)
+        else:
+            self.set_scrollbar_top(self.scroll_min_top)
+            #self.scroll_h = self.scroll_max_h
 
     def update_fonts_scrollbar_top(self, top):
         if self.usr_count > self.scroll_item_count:
@@ -1923,13 +2018,14 @@ class LoginScreen:
             self.set_scrollbar_top(self.scroll_min_top)
 
     def set_scrollbar_top(self, t):
-        if len(self.usernames) > 5:
-            if (self.state == "USERS" or self.state == "FONTS") and self.scroll_bar.top != t:
-                if self.in_focus is not None:
-                    if self.scroll_down == False:
-                        self.in_focus.onBlur()
-                    if self.state == "USERS":
-                        self.fdetails(None)
+        if self.scroll_bar is not None:
+            if len(self.usernames) > self.scroll_item_count:
+                if (self.state == "USERS" or self.state == "FONTS") and self.scroll_bar.top != t:
+                    if self.in_focus is not None:
+                        if self.scroll_down == False:
+                            self.in_focus.onBlur()
+                        if self.state == "USERS":
+                            self.fdetails(None)
 
             self.scroll_bar.top = t
             self.scroll_bar.rect.top = t
@@ -1937,6 +2033,10 @@ class LoginScreen:
             self.scroll_bar.update()
             self.update_me = True
             self.mainloop.redraw_needed[0] = True
+
+    def update_trigger(self):
+        self.update_me = True
+        self.mainloop.redraw_needed[0] = True
 
     def update(self):
         if self.update_me:
@@ -1950,8 +2050,6 @@ class LoginScreen:
                 if self.db_status != "":
                     self.db_status_lbl.value = self.db_status
                     self.db_status_lbl.update_me = True
-
-                #self.screen.blit(self.layer3, (0, 0), self.screen.get_rect())
 
                 for each_edit in self.edit_list:
                     each_edit.update()
@@ -1972,9 +2070,29 @@ class LoginScreen:
             pos = event.pos
             if pos[1] < self.keyboard.y:
                 if self.scroll_down == False:
+                    hover_found = False
                     for each in self.btn_list:
                         if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
                             each.handle(event)
+                            if self.hover is not None:
+                                if self.hover != each:
+                                    self.hover.onMouseOut()
+                            hover_found = True
+                            self.hover = each
+
+                    for each in self.edit_list:
+                        if each.visible and each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
+                            each.handle(event)
+                            if self.hover is not None:
+                                if self.hover != each:
+                                    self.hover.onMouseOut()
+                            hover_found = True
+                            self.hover = each
+
+                    if not hover_found:
+                        if self.hover is not None:
+                            self.hover.onMouseOut()
+                            self.hover = None
                 else:
                     if self.state == "LOGIN" or self.state == "USERS":
                         self.update_scrollbar_top(pos[1])
@@ -1984,7 +2102,6 @@ class LoginScreen:
             self.keyboard.handle(event)
 
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            #self.draw_background()
             pos = event.pos
             if pos[1] < self.keyboard.y:
                 focus_changed = False
@@ -2013,8 +2130,6 @@ class LoginScreen:
                 self.keyboard.enable(True)
             else:
                 self.keyboard.enable(False)
-
-
 
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 4:
             self.scroll_bar.dist2top = 0
@@ -2093,10 +2208,10 @@ class LoginScreen:
                 self.complete_login()
 
     def fauto_login(self, userid):
-        m = self.mainloop.db.login_auto(userid)
+        self.mainloop.db.login_auto(userid)
+
         self.mainloop.user_name = self.mainloop.db.username
         self.mainloop.userid = self.mainloop.db.userid
-
         self.mainloop.done = True
         self.mainloop.window_state = self.mainloop.window_states[1]
 
@@ -2217,6 +2332,12 @@ class LoginScreen:
         self.side_highlight.highlight = True
         self.side_highlight.update_me = True
 
+        for each in self.edit_list:
+            each.update_me = True
+
+        for each in self.btn_list:
+            each.update_me = True
+
     def fprefs(self):
         self.edit_list.empty()
         if (self.admin_authorised or not self.require_adminpass) or not self.admin_exists:
@@ -2249,17 +2370,10 @@ class LoginScreen:
 
     def flang(self):
         self.edit_list.empty()
-        #if (self.admin_authorised or not self.require_adminpass) or not self.admin_exists:
         self.state = "LANG"
         self.add_lang_elements()
         self.merge_sprite_lists()
-        #else:
-        #    self.state = "ADMINLOGIN"
-        #    self.loginto = "LANG"
-        #    self.add_admin_login_elements()
-        #    self.merge_sprite_lists()
         self.swich_hl(self.lang_tab)
-
         self.update_me = True
         self.mainloop.redraw_needed[0] = True
 
