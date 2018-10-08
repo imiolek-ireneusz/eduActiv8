@@ -128,10 +128,10 @@ class Board(gd.BoardGame):
             loc = [[0, 7, 12], [0, 10], [6, 10], [0, 8], [4, 8], [6, 8],
                    [10, 8], [2, 8], [8, 8], [data[0]-11, 0, 11, 11]]
 
-        self.board.add_unit(0, 0, xw[0], 1, classes.board.Letter, self.lang.d["before"], white, "", 3)
+        self.board.add_unit(0, 0, xw[0], 1, classes.board.Letter, self.lang.d["start_time"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
-        self.board.add_unit(xw[0], 0, xw[0], 1, classes.board.Letter, self.lang.d["after"], white, "", 3)
+        self.board.add_unit(xw[0], 0, xw[0], 1, classes.board.Letter, self.lang.d["end_time"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
         self.board.add_unit(loc[0][0], loc[0][1], loc[0][2], 1, classes.board.Letter, self.lang.d["difference"], white, "", 3)

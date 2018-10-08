@@ -109,26 +109,28 @@ class Board(gd.BoardGame):
                             img_src='nav_d_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.m_col)
 
-        self.board.add_unit(1, 0, xw[0] - 2, 1, classes.board.Letter, self.lang.d["now"], white, "", 3)
+        # add buttons for second clock
+        self.board.add_unit(xw[0] + 8, top_margin + 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.h_col)
+        self.board.add_unit(xw[0] + 8, top_margin + 2, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.h_col)
+        self.board.add_unit(xw[0] + 10, top_margin + 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.m_col)
+        self.board.add_unit(xw[0] + 10, top_margin + 2, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.m_col)
+
+        self.board.add_unit(1, 0, xw[0] - 2, 1, classes.board.Letter, self.lang.d["start_time"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
-        self.board.add_unit(xw[0] + 7, 0, xw[0] - 2, 1, classes.board.Letter, self.lang.d["then"], white, "", 3)
+        self.board.add_unit(xw[0] + 7, 0, xw[0] - 2, 1, classes.board.Letter, self.lang.d["end_time"], white, "", 3)
         self.board.ships[-1].font_color = self.font_color
 
-        self.board.add_unit(xw[0], 0, 6, 1, classes.board.Letter, self.lang.d["later"], white, "", 2)
+        self.board.add_unit(xw[0], 0, 6, 1, classes.board.Letter, self.lang.d["difference"], white, "", 2)
         self.board.ships[-1].font_color = self.font_color
-        self.add_sub_indicator = self.board.ships[-1]
-
-        # add later/earlier switch
-        self.board.add_unit(xw[0] - 1, 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_l_mt.png', alpha=True)
-        self.btnlt = self.board.ships[-1]
-        self.btnlt.set_tint_color(self.font_color)
-
-        self.board.add_unit(xw[0] + 6, 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_r_mt.png', alpha=True)
-        self.btnrt = self.board.ships[-1]
-        self.btnrt.set_tint_color(self.font_color)
 
         self.diff = self.get_diff()
 
@@ -289,21 +291,20 @@ class Board(gd.BoardGame):
         if self.show_msg == False:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 active = self.board.active_ship
-                if self.btnlt.unit_id == active or self.btnrt.unit_id == active:
-                    if self.addition:
-                        self.addition = False
-                        self.add_sub_indicator.set_value(self.lang.d["earlier"])
-                    else:
-                        self.addition = True
-                        self.add_sub_indicator.set_value(self.lang.d["later"])
-                    self.change_time(0, 0)
-                else:
+                if True:
+                    found = False
                     for i in range(4):
                         if self.buttons[i].unit_id == active:
                             self.on_btn_click(i)
+                            found = True
                             break
                         elif self.board.ships[i].unit_id == active:
                             self.on_btn2_click(i)
+                            found = True
+                    if not found:
+                        for i in range(4, 8):
+                            if self.board.ships[i].unit_id == active:
+                                self.on_btn2_click(i-4)
             elif event.type == pygame.MOUSEBUTTONUP:
                 self.home_square.update_me = True
                 if self.board.active_ship == self.ans_h.unit_id:

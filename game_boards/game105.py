@@ -52,7 +52,6 @@ class Board(gd.BoardGame):
         th1 = random.randint(1, 12)
         th2 = random.randint(1, 12)
         self.times = [[th1, 0], [th2, random.randrange(5, 55, 5)]]
-        #self.times = [[12, 40], [12, 38]]
         self.data2 = [12, 6, True, True, False, False, False, True, False, True, True, True]
 
         self.clock_fonts = []
@@ -84,12 +83,9 @@ class Board(gd.BoardGame):
         self.clock1 = classes.drw.clock.Clock(self, self.clock_wrapper, self.size * xw[0], self.times[0],
                                               self.data2[2:11])
 
-        self.board.add_unit(0, xw[0]+3, xw[0], 1, classes.board.Letter, self.lang.d["before"], white, "", 2)
+        self.board.add_unit(0, xw[0]+3, xw[0], 1, classes.board.Letter, self.lang.d["start_time"], white, "", 2)
         self.board.ships[-1].font_color = self.font_color
 
-        #self.board.add_unit(xw[0], 1, xw[0], 1, classes.board.MultiColorLetters,
-        #                    "<1>%02d<2> : <3>%02d" % (self.times[1][0], self.times[1][1]), white, "", 2)
-        #self.board.ships[-1].set_font_colors(self.h_col, self.black, self.m_col)
         self.board.add_unit(xw[0] + 1, 1, 1, 1, classes.board.Letter, "%02d" % self.times[1][0], white, "", 0)
         self.board.ships[-1].font_color = self.h_col
         self.digi_clocks.append(self.board.ships[-1])
@@ -105,7 +101,7 @@ class Board(gd.BoardGame):
         self.clock2 = classes.drw.clock.Clock(self, self.clock_wrapper, self.size * xw[0], self.times[1],
                                               self.data2[2:11])
 
-        self.board.add_unit(xw[0], xw[0]+3, xw[0], 1, classes.board.Letter, self.lang.d["after"], white, "", 2)
+        self.board.add_unit(xw[0], xw[0]+3, xw[0], 1, classes.board.Letter, self.lang.d["end_time"], white, "", 2)
         self.board.ships[-1].font_color = self.font_color
 
         # circular diff
@@ -115,23 +111,8 @@ class Board(gd.BoardGame):
         self.clock3 = classes.drw.clock_circular_diff.Clock(self, self.clock_wrapper, self.size * xw[1],
                                                             self.times, self.data2[2:12])
 
-        # self.board.add_unit(xw[0] * 2, xw[1], xw[1], 1, classes.board.Letter, self.lang.d["difference"],
-        # white, "", 2)
-        # self.board.ships[-1].font_color = self.font_color
-
         self.buttons = []
         # add buttons for first clock
-        """
-        self.board.add_unit(1, 0, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-        self.board.add_unit(1, 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-
-        self.board.add_unit(3, 0, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        self.board.add_unit(3, 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        """
         self.board.add_unit(1, 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_u_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.h_col)
@@ -146,18 +127,6 @@ class Board(gd.BoardGame):
         self.board.ships[-1].set_tint_color(self.m_col)
 
         # add buttons for second clock
-        """
-        self.board.add_unit(xw[0] + 1, 0, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-        self.board.add_unit(xw[0] + 1, 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-
-        self.board.add_unit(xw[0] + 3, 0, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        self.board.add_unit(xw[0] + 3, 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        """
-
         self.board.add_unit(xw[0] + 1, 0, 1, 1, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_u_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.h_col)

@@ -61,8 +61,6 @@ class Board(gd.BoardGame):
 
         tm1 = random.randrange(0, 50, 5)
         tm2 = random.randrange(tm1, 55, 5)
-
-        #self.times = [[th1, tm1], [th2, tm2]]
         self.times = [[th1, tm1], [th2, tm2]]
 
         self.clock_fonts = []
@@ -95,7 +93,7 @@ class Board(gd.BoardGame):
         self.board.active_ship = self.clock_wrapper1.unit_id
         self.clock1 = classes.drw.clock.Clock(self, self.clock_wrapper1, self.size * xw[0], self.times[0], self.data2[2:11])
 
-        self.board.add_unit(margin_left, 0, xw[0], 1, classes.board.Letter, self.lang.d["before"], white, "", 2)
+        self.board.add_unit(margin_left, 0, xw[0], 1, classes.board.Letter, self.lang.d["start_time"], white, "", 2)
         self.board.ships[-1].font_color = self.font_color
 
         self.board.add_unit(margin_left + xw[0] * 2, xw[0] // 2 + 1, 1, 1, classes.board.Letter, "%02d" % self.times[1][0], white, "", 0)
@@ -113,7 +111,7 @@ class Board(gd.BoardGame):
         self.board.active_ship = self.clock_wrapper2.unit_id
         self.clock2 = classes.drw.clock.Clock(self, self.clock_wrapper2, self.size * xw[0], self.times[1], self.data2[2:11])
 
-        self.board.add_unit(margin_left + xw[0], 0, xw[0], 1, classes.board.Letter, self.lang.d["after"], white, "", 2)
+        self.board.add_unit(margin_left + xw[0], 0, xw[0], 1, classes.board.Letter, self.lang.d["end_time"], white, "", 2)
         self.board.ships[-1].font_color = self.font_color
 
         # linear diff
@@ -129,17 +127,6 @@ class Board(gd.BoardGame):
 
         self.buttons = []
         # add buttons for first clock
-        """
-        self.board.add_unit(0, xw[0] // 2, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-        self.board.add_unit(0, xw[0] // 2 + 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-
-        self.board.add_unit(2, xw[0] // 2, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        self.board.add_unit(2, xw[0] // 2 + 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        """
         self.board.add_unit(0, xw[0] // 2, 1, 1, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_u_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.h_col)
@@ -154,18 +141,6 @@ class Board(gd.BoardGame):
         self.board.ships[-1].set_tint_color(self.m_col)
 
         # add buttons for second clock
-        """
-        self.board.add_unit(margin_left + xw[0] * 2, xw[0] // 2, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-        self.board.add_unit(margin_left + xw[0] * 2, xw[0] // 2 + 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.h_col
-
-        self.board.add_unit(margin_left + xw[0] * 2 + 2, xw[0] // 2, 1, 1, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        self.board.add_unit(margin_left + xw[0] * 2 + 2, xw[0] // 2 + 2, 1, 1, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.m_col
-        """
-
         self.board.add_unit(margin_left + xw[0] * 2, xw[0] // 2, 1, 1, classes.board.ImgCenteredShip, "", transp,
                             img_src='nav_u_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(self.h_col)
