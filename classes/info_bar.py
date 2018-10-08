@@ -2,9 +2,7 @@
 
 import os
 import pygame
-
 import classes.extras
-from game_boards import game000
 
 
 class BaseButton(pygame.sprite.Sprite):
@@ -24,7 +22,6 @@ class BaseButton(pygame.sprite.Sprite):
         else:
             self.scheme_dir = "black"
 
-
         self.update_size(width, height)
 
         self.img_src_1 = img_src_1
@@ -32,6 +29,8 @@ class BaseButton(pygame.sprite.Sprite):
         self.img_src_3 = img_src_3
         self.update_fonts()
         self.hasimg = False
+
+        self.hover = False
 
         if self.btntype == "imgbtn":
             self.load_images(rev)
@@ -51,6 +50,12 @@ class BaseButton(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.topleft = self.pos
         self.rect.width = width
+
+    def on_mouse_over(self):
+        pass
+
+    def on_mouse_out(self):
+        pass
 
 
 class Button(BaseButton):
@@ -78,8 +83,25 @@ class Button(BaseButton):
 
         self.update()
 
+    def on_mouse_over(self):
+        if not self.hover:
+            self.hover = True
+            self.panel.mainloop.redraw_needed[1] = True
+            if self.hasimg:
+                if not (((self.btn_id == 1 or self.btn_id == 7)
+                         and self.panel.level.lvl == self.panel.mainloop.game_board.min_level)
+                        or ((self.btn_id == 3 or self.btn_id == 8)
+                            and self.panel.level.lvl == self.panel.level.lvl_count)):
+                    self.img = self.img_1
+
+    def on_mouse_out(self):
+        if self.hover:
+            self.hover = False
+            self.panel.mainloop.redraw_needed[1] = True
+            if self.hasimg:
+                self.img = self.img_2
+
     def update_levels(self):
-        # unsuccessful attempt to center the text
         if 1 < self.panel.level.games_per_lvl != 99:
             text2 = self.font2.render("%s/%s" % (self.panel.level.game_step, self.panel.level.games_per_lvl), 1,
                                       self.panel.font_color)
@@ -99,11 +121,9 @@ class Button(BaseButton):
             self.image.blit(text, (textpos1[0], lvl_lift))
 
     def update_title(self):
-        # book 3
         text = self.font3.render("%s" % (self.panel.title), 1, self.panel.font_color)
         text2 = self.font4.render("%s" % (self.panel.subtitle), 1, self.panel.font_color1)
         text3 = self.font4.render("%s" % (self.panel.game_id), 1, self.panel.font_color4)
-        # print text.rect.w
         tw1 = self.font3.size(self.panel.title)[0]
         tw2 = self.font4.size(self.panel.subtitle)[0]
         tw3 = self.font4.size(self.panel.game_id)[0]
@@ -120,8 +140,6 @@ class Button(BaseButton):
             self.image.blit(text, (ttx, 2))
             if tw2 < self.panel.title_space:
                 self.image.blit(text2, (stx, 39))
-
-        # display game id
         self.image.blit(text3, (idx, 39))
 
     def update(self):
@@ -138,23 +156,22 @@ class InfoBar:
     def __init__(self, mainloop):
         self.mainloop = mainloop
         self.mouse_over = False
+        self.game_board = None
+        self.home_btns_w = 50 + 66
+        self.last_hover = None
         self.create()
 
     def create(self):
         self.btns = []
-        # orange
-        # self.font_color = (255,75,0,0)
-        # self.font_color1 = (255,220,0,0)4
         self.font_color = (255, 75, 0, 0)
         self.font_color1 = (255, 125, 0, 0)
         self.font_color4 = (255, 175, 0, 0)
-
         self.font_color2 = (225, 75, 0, 0)
         self.font_color3 = (255, 175, 0, 0)
 
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                self.bg_color = (40, 40, 40, 0)
+                self.bg_color = (0, 0, 0, 0)
             else:
                 self.bg_color = (255, 255, 255, 0)
             self.font_color = self.mainloop.scheme.info_font_color0
@@ -169,7 +186,6 @@ class InfoBar:
         self.close_dialog = False
         self.margin_top = 3  # 13
         self.lang = self.mainloop.lang
-        self.arrow_down = False
         self.title_space = 0
         self.title = ""
         self.subtitle = ""
@@ -198,10 +214,9 @@ class InfoBar:
         self.game_board = game_board
         self.level = self.game_board.level
         self.screen = screen
-        self.l = self.game_board.layout
-        self.height = self.l.info_bar_h
-        self.height_o = self.l.info_bar_offset_h
-        self.width = self.l.info_bar_pos[2]  # self.game_board.layout.screen_w - self.m_offset
+        self.height = self.mainloop.sizer.info_bar_h
+        self.height_o = self.mainloop.sizer.info_bar_offset_h
+        self.width = self.mainloop.sizer.info_bar_pos[2]  # self.game_board.layout.screen_w - self.m_offset
         if len(self.btns) == 0:
             self.add_btns()
         self.layout_update()
@@ -209,22 +224,27 @@ class InfoBar:
 
     def hover(self, pos, l):
         for btn in self.btns:
-            if btn.rect.topleft[0] < (pos[0] - l.menu_w + 1) < (btn.rect.topleft[0] + btn.width) and btn.rect.topleft[
+            if btn.rect.topleft[0] < (pos[0]) < (btn.rect.topleft[0] + btn.width) and btn.rect.topleft[
                 1] < (pos[1] - l.info_bar_pos[1]) < (btn.rect.topleft[1] + btn.height):
                 if btn.hasimg:
-                    self.mainloop.redraw_needed[1] = True
                     return btn
-        return False
+        return None
 
     def handle(self, event, layout, mainloop):
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                pos = event.pos
+                btn = self.hover(pos, layout)
+                self.mainloop.mbtndno = btn
+
         if event.type == pygame.MOUSEBUTTONUP:
             # Change the x/y screen coordinates to grid coordinates
             pos = event.pos
             btn = self.hover(pos, layout)
             # if left button pressed:
-            if event.button == 1:
+            if event.button == 1 and self.mainloop.mbtndno == btn:
                 self.mainloop.game_board.drag = False
-                if btn != False:
+                if btn is not None:
                     if btn.btn_id == 0:
                         btn.img = btn.img_2
                         self.game_board.check_result()
@@ -255,28 +275,12 @@ class InfoBar:
                             self.level.chapter_up()
                     elif btn.btn_id == 9:
                         self.show_info_dialog()
-                        #self.btns[9].
-                    """
-
-                    elif btn.btn_id == 9:
-                        self.arrow_down = True
-                        self.mainloop.game_board.direction[0] = -1
-                    elif btn.btn_id == 10:
-                        self.arrow_down = True
-                        self.mainloop.game_board.direction[0] = 1
                     elif btn.btn_id == 11:
-                        self.arrow_down = True
-                        self.mainloop.game_board.direction[1] = -1
-                    elif btn.btn_id == 12:
-                        self.arrow_down = True
-                        self.mainloop.game_board.direction[1] = 1
-                    if self.arrow_down:
-                        self.mainloop.game_board.check_direction_kdown()
-                    """
-            if self.arrow_down:
-                self.arrow_down = False
-                self.mainloop.game_board.direction = [0, 0]
-                self.mainloop.game_board.check_direction_kup()
+                        self.show_menu()
+            elif event.button > 1:
+                if btn is not None:
+                    if btn.btn_id == 11 and self.mainloop.mbtndno == btn:
+                        self.show_menu(True)
 
         elif event.type == pygame.MOUSEMOTION:
             self.on_mouse_over()
@@ -287,37 +291,16 @@ class InfoBar:
                     self.buttons_restore()
             pos = event.pos
             btn = self.hover(pos, layout)
-            if btn != False:
-                if btn.hasimg:
-                    if not (((btn.btn_id == 1 or btn.btn_id == 7) and self.level.lvl == self.mainloop.game_board.min_level) or ((btn.btn_id == 3 or btn.btn_id == 8) and self.level.lvl == self.level.lvl_count)):
-                        self.resetbtns()
-                        btn.img = btn.img_1
+            if btn is not None:
+                if self.last_hover is not None and self.last_hover != btn:
+                    self.last_hover.on_mouse_out()
+                self.last_hover = btn
+                btn.on_mouse_over()
             else:
-                self.resetbtns()
+                if self.last_hover is not None:
+                    self.last_hover.on_mouse_out()
+                    self.last_hover = None
                 self.close_dialog = False
-
-        """
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            pos = event.pos
-            btn = self.hover(pos, layout)
-            if event.button == 1:
-                if btn != False:
-                    if btn.btn_id == 9:
-                        self.arrow_down = True
-                        self.mainloop.game_board.direction[0] = -1
-                    elif btn.btn_id == 10:
-                        self.arrow_down = True
-                        self.mainloop.game_board.direction[0] = 1
-                    elif btn.btn_id == 11:
-                        self.arrow_down = True
-                        self.mainloop.game_board.direction[1] = -1
-                    elif btn.btn_id == 12:
-                        self.arrow_down = True
-                        self.mainloop.game_board.direction[1] = 1
-                    if self.arrow_down:
-                        self.mainloop.game_board.check_direction_kdown()
-
-        """
 
     def on_mouse_over(self):
         if not self.mouse_over:
@@ -333,29 +316,50 @@ class InfoBar:
         if self.mainloop.mouse_over[2] is not None:
             self.mainloop.mouse_over[2].on_mouse_out()
         self.mainloop.mouse_over[2] = None
-
         self.mouse_over = True
-        # print("enter info")
 
     def on_mouse_out(self):
         if self.mouse_over:
             self.mouse_over = False
+        if self.last_hover is not None:
+            self.last_hover.on_mouse_out()
+
+    def show_menu(self, start=False):
+        self.mainloop.redraw_needed = [True, True, True]
+        if start:
+            self.mainloop.menu_level = 0
+            self.mainloop.m.start_hidden_game(0)
+        else:
+            if self.mainloop.menu_level == 3:
+                self.mainloop.menu_level = 2
+                self.mainloop.m.start_hidden_game(272)
+            elif self.mainloop.menu_level == 2:
+                self.mainloop.menu_level = 1
+                self.mainloop.m.start_hidden_game(271)
+            else:
+                self.mainloop.menu_level = 0
+                self.mainloop.m.start_hidden_game(0)
+        self.realign()
 
     def reset_titles(self):
         if self.close_dialog == False:
             # book 1
-            # if self.mainloop.m.active_game_id != 0:
             if self.mainloop.m.game_constructor != "game000.Board":
                 self.title = self.mainloop.m.games[self.mainloop.m.active_game_id].title
                 self.subtitle = self.mainloop.m.games[self.mainloop.m.active_game_id].subtitle
-                self.game_id = "#%s/%03i" % (self.mainloop.m.games[self.mainloop.m.active_game_id].game_constructor[4:7], self.mainloop.m.games[self.mainloop.m.active_game_id].dbgameid)
             else:
                 self.title = ""
                 self.subtitle = ""
+
+            if self.mainloop.m.game_constructor not in ["game000.Board", "game001.Board", "game002.Board",
+                                                        "game003.Board", "game004.Board", "game111.Board"]:
+                self.game_id = "#%s/%03i" % (
+                self.mainloop.m.games[self.mainloop.m.active_game_id].game_constructor[4:7],
+                self.mainloop.m.games[self.mainloop.m.active_game_id].dbgameid)
+            else:
                 self.game_id = ""
+
             self.mainloop.redraw_needed[1] = True
-            self.mainloop.m.mouseenter = -1
-            self.mainloop.m.mouseenter_cat = -1
 
     def resetbtns(self):
         for btn in self.btns:
@@ -369,26 +373,29 @@ class InfoBar:
         self.btn_list.add(new_button)
 
     def add_btns(self):
-        self.add_btn(self, 122, 5 + self.margin_top, 84, 66, "imgbtn", "info_ok1.png", "info_ok2.png", "info_ok3.png")
+        self.add_btn(self, self.home_btns_w + 122, 5 + self.margin_top, 84, 66, "imgbtn", "info_ok1.png", "info_ok2.png", "info_ok3.png")
         self.add_btn(self, self.width - 318, 5 + self.margin_top, 64, 66, "imgbtn", "info_arrow1.png",
                      "info_arrow2.png")
         self.add_btn(self, self.width - 253, 5 + self.margin_top, 74, 66, "levels")  # level number label
         self.add_btn(self, self.width - 178, 5 + self.margin_top, 64, 66, "imgbtn", "info_arrow1.png",
                      "info_arrow2.png", "", True)
         self.add_btn(self, self.width - 71, 5 + self.margin_top, 66, 66, "imgbtn", "info_close1.png", "info_close2.png")
-        self.add_btn(self, 222, 5 + self.margin_top, 63, 66, "imgbtn", "info_refresh1.png", "info_refresh2.png")
-        title_width = self.width  # -303 - (168+5+20)-5
-        self.add_btn(self, 300, 5 + self.margin_top, title_width, 69, "titles")
+        self.add_btn(self, self.home_btns_w + 222, 5 + self.margin_top, 63, 66, "imgbtn", "info_refresh1.png", "info_refresh2.png")
+        title_width = self.width
+        self.add_btn(self, self.home_btns_w + 300, 5 + self.margin_top, title_width, 69, "titles")
 
         self.add_btn(self, self.width - 351, 5 + self.margin_top, 33, 66, "imgbtn", "info_lvls1.png", "info_lvls2.png")
         self.add_btn(self, self.width - 113, 5 + self.margin_top, 33, 66, "imgbtn", "info_lvls1.png", "info_lvls2.png",
                      "", True)
 
-        self.add_btn(self, 5, 5 + self.margin_top, 66, 66, "imgbtn", "info1.png", "info2.png") #9
+        self.add_btn(self, self.home_btns_w + 5, 5 + self.margin_top, 66, 66, "imgbtn", "info1.png", "info2.png") #9
         self.btns[-1].hidden = False
 
         # add a layer of solid colour behind right-aligned buttons
         self.add_btn(self, self.width - 323, 5 + self.margin_top, 323, 66, "btn_bg")# 13 - 10
+
+        self.add_btn(self, 25, -200, 66, 66, "imgbtn", "home1.png", "home2.png")  # 11
+        self.btns[-1].hidden = False
 
         self.btn_list.move_to_back(self.btns[10])
         self.btn_list.move_to_back(self.btns[6])
@@ -401,10 +408,8 @@ class InfoBar:
         self.btns[4].rect.left = self.width - 71
         self.btns[7].rect.left = self.width - 351
         self.btns[8].rect.left = self.width - 113
-        self.btns[9].rect.left = 10
+        self.btns[9].rect.left = self.home_btns_w
         self.btns[10].rect.left = self.width - 318
-        #self.btns[11].rect.left = 10
-
         self.reset_alignment()
         self.check_btn_tops()
 
@@ -440,48 +445,61 @@ class InfoBar:
         self.btn_list.move_to_back(self.btns[6])
         self.layout_update()
 
+    def realign(self):
+        if self.mainloop.menu_level > 0:
+            self.home_btns_w = 50 + 66
+            self.btns[11].rect.top = 5 + self.margin_top
+        else:
+            self.home_btns_w = 0
+            self.btns[11].rect.top = -200
+        if self.mainloop.menu_level < 3:
+            self.reset_titles()
+        self.rescale_title_space()
+        self.resetbtns()
+        self.buttons_restore()
+        self.reset_alignment()
+        self.align_to_left()
+
     def align_to_left(self):
+        self.btns[9].rect.left = self.home_btns_w
         if not self.btns[9].hidden and self.mainloop.game_board.show_info_btn:
             info_w = 66 + 10
         else:
             info_w = 0
         if self.visible_btns[8] == 0:
             if self.visible_btns[0] == 0 and self.visible_btns[5] == 1:
-                self.btns[5].rect.left = 5 + info_w
-                self.btns[6].rect.left = 78 + info_w
+                self.btns[5].rect.left = self.home_btns_w + 5 + info_w
+                self.btns[6].rect.left = self.home_btns_w + 78 + info_w
             elif self.visible_btns[0] == 0 and self.visible_btns[5] == 0:
-                self.btns[6].rect.left = 5 + info_w
+                self.btns[6].rect.left = self.home_btns_w + 10 + info_w
             elif self.visible_btns[0] == 1 and self.visible_btns[5] == 0:
-                self.btns[0].rect.left = 5 + info_w
-                self.btns[6].rect.left = 105 + info_w
+                self.btns[0].rect.left = self.home_btns_w + 5 + info_w
+                self.btns[6].rect.left = self.home_btns_w + 105 + info_w
         else:
             if self.visible_btns[0] == 0 and self.visible_btns[5] == 1:
-                self.btns[5].rect.left = 142 + info_w - 50 # 5+117+20
-                self.btns[6].rect.left = 215 + info_w - 50  # 78+117+20
+                self.btns[5].rect.left = self.home_btns_w + 142 + info_w - 50 # 5+117+20
+                self.btns[6].rect.left = self.home_btns_w + 215 + info_w - 50  # 78+117+20
             elif self.visible_btns[0] == 0 and self.visible_btns[5] == 0:
-                self.btns[6].rect.left = 142 + info_w - 50  # 5+117+20
+                self.btns[6].rect.left = self.home_btns_w + 142 + info_w - 50  # 5+117+20
             elif self.visible_btns[0] == 1 and self.visible_btns[5] == 0:
-                self.btns[0].rect.left = 142 + info_w - 50  # 5+117+20
-                self.btns[6].rect.left = 242 + info_w - 50  # 105+117+20
+                self.btns[0].rect.left = self.home_btns_w + 142 + info_w - 50  # 5+117+20
+                self.btns[6].rect.left = self.home_btns_w + 242 + info_w - 50  # 105+117+20
 
     def reset_alignment(self):
+        self.btns[9].rect.left = self.home_btns_w
+
         if not self.btns[9].hidden and self.mainloop.game_board.show_info_btn:
             info_w = 66 + 10
         else:
             info_w = 0
-        if self.visible_btns[7] == 0:
-            pass  # self.btns[1].rect.left = self.width-303
-            # self.btns[2].rect.left = self.width-233
-            # self.btns[3].rect.left = self.width-153
-
         if self.visible_btns[8] == 0:
-            self.btns[0].rect.left = 5 + info_w
-            self.btns[5].rect.left = 105 + info_w
-            self.btns[6].rect.left = 183 + info_w
+            self.btns[0].rect.left = self.home_btns_w + 5 + info_w
+            self.btns[5].rect.left = self.home_btns_w + 105 + info_w
+            self.btns[6].rect.left = self.home_btns_w + 183 + info_w
         else:
-            self.btns[0].rect.left = 122 + info_w
-            self.btns[5].rect.left = 222 + info_w
-            self.btns[6].rect.left = 300 + info_w
+            self.btns[0].rect.left = self.home_btns_w + 122 + info_w
+            self.btns[5].rect.left = self.home_btns_w + 222 + info_w
+            self.btns[6].rect.left = self.home_btns_w + 300 + info_w
 
     def align_to_right(self):
         if self.visible_btns[7] == 1:
@@ -522,11 +540,6 @@ class InfoBar:
                     self.btns[8].rect.top = -200
                 else:
                     self.btns[9].rect.top = -200
-                    """
-                    self.btns[10].rect.top = -200
-                    self.btns[11].rect.top = -200
-                    self.btns[12].rect.top = -200
-                    """
             else:
                 if i < 7:
                     self.btns[i].rect.top = 5 + self.margin_top
@@ -535,12 +548,6 @@ class InfoBar:
                     self.btns[8].rect.top = 5 + self.margin_top
                 else:
                     self.btns[9].rect.top = 5 + self.margin_top
-                    """
-                    self.btns[9].rect.top = 2 + self.margin_top
-                    self.btns[10].rect.top = 2 + self.margin_top
-                    self.btns[11].rect.top = 2 + self.margin_top
-                    self.btns[12].rect.top = 39 + self.margin_top
-                    """
 
         if vb[0] == 0 or vb[5] == 0 or vb[8] == 0:
             self.align_to_left()
@@ -575,8 +582,9 @@ class InfoBar:
             if self.mainloop.scheme.dark:
                 color = (255, 255, 255)
         screen.fill(self.bg_color)
-        pygame.draw.line(screen, color, [0, hs],
-                         [self.game_board.layout.screen_w - self.game_board.layout.menu_w, 80], 2)
+
+        if self.mainloop.m.game_constructor != "game000.Board":
+            pygame.draw.line(screen, color, [0, hs], [self.game_board.layout.screen_w, 80], 2)
 
         for each_item in self.btns:
             each_item.update()

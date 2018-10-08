@@ -18,12 +18,9 @@ class DialogBtn(pygame.sprite.Sprite):
         self.fargs = fargs
         self.caption = ex.unival(caption)
         self.is_mouse_over = False
-
         self.color = (255, 255, 255, 0)
-
         self.image = pygame.Surface([self.w, self.h], flags=pygame.SRCALPHA)
 
-        #self.image.set_colorkey((255, 255, 255))
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.l, self.t]
         self.img_src1 = img_src1
@@ -37,8 +34,6 @@ class DialogBtn(pygame.sprite.Sprite):
                 self.active_img = self.img1
             except:
                 pass
-
-        # self.image.set_colorkey(self.color)
         self.update()
 
     def handle(self, event):
@@ -86,9 +81,6 @@ class TextRectException:
 class DialogWnd:
     def __init__(self, mainloop):
         self.mainloop = mainloop
-        # self.image = pygame.Surface([self.mainloop.layout.dialogwnd_w, self.mainloop.layout.dialogwnd_h])
-        # self.rect = self.image.get_rect()
-        # self.rect.topleft = [0,0]
         self.sbg = None
         self.dialog_type = 0
 
@@ -106,8 +98,6 @@ class DialogWnd:
         self.set_text(self.text, font=1)
         self.elements = []
         self.wnd_close_function = None
-        # self.add_elements()
-        # self.elements.append(DialogBtn(self, 70, 70, 70, 70, "ok", "dialog_close.png", "dialog_close_h.png", self.fsubmit_no, (None)))
 
         self.elements.append(
             DialogBtn(self, 540, 0, 80, 80, "ok", "dialog_close.png", "dialog_close_h.png", self.fsubmit_close_wnd,
@@ -120,7 +110,6 @@ class DialogWnd:
             self.img = pygame.image.load(os.path.join('res', 'images', "dialog_bg.png")).convert_alpha()
         except:
             pass
-        #self.img.set_colorkey((255, 255, 255))
 
         for each in self.elements:
             self.widget_list.add(each)
@@ -148,7 +137,7 @@ class DialogWnd:
 
     def show_dialog(self, dialog_type, txt, f=None, fc=None):
         self.sbg = pygame.Surface(
-            (self.mainloop.layout.screen_w, self.mainloop.layout.screen_h),
+            (self.mainloop.sizer.screen_w, self.mainloop.sizer.screen_h),
             flags=pygame.SRCALPHA)  # the size of your rect
         self.wnd_close_function = fc
         self.mainloop.show_dialogwnd = True
@@ -191,7 +180,6 @@ class DialogWnd:
         self.text_canvas = self.render_textrect(string=self.text, font=self.default_font,
                                                 rect=pygame.Rect((0, 0, 470, 240)), text_color=(0, 0, 0),
                                                 background_color=(255, 249, 194), justification=justification)
-        # self.update()
 
     def hide_dialog(self):
         self.mainloop.show_dialogwnd = False
@@ -202,12 +190,12 @@ class DialogWnd:
 
     def handle(self, event):
         if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.MOUSEBUTTONUP:
-            pos = [event.pos[0] - self.mainloop.game_board.layout.dialogwnd_pos[0],
-                   event.pos[1] - self.mainloop.game_board.layout.dialogwnd_pos[1]]
+            pos = [event.pos[0] - self.mainloop.game_board.sizer.dialogwnd_pos[0],
+                   event.pos[1] - self.mainloop.game_board.sizer.dialogwnd_pos[1]]
             found = False
             for each in self.elements:
-                if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and each.rect.topleft[
-                    1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
+                if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and \
+                        each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
                     each.handle(event)
                     found = True
             if not found:
@@ -219,23 +207,11 @@ class DialogWnd:
     def update(self):
         self.screen = self.mainloop.dialogwnd
         self.screenbg = self.mainloop.dialogbg
-
-        #self.sbg.set_alpha(180)  # alpha level
         self.sbg.fill((255, 255, 255, 180))  # this fills the entire surface
-
-        # self.screenbg.set_alpha(50)
-        # self.screenbg.fill((255,255,255))
         self.screenbg.blit(self.sbg, (0, 0))
-
-        # self.screenbg.set_colorkey((0,0,0))
-        #self.screenbg.set_alpha(50)
-
         self.mainloop.redraw_needed = [True, True, True]
-        # self.screen.fill(self.color)
         self.screen.blit(self.img, self.img_pos)
         self.screen.blit(self.text_canvas, (76, 80))
-
-        # self.screen.set_colorkey(self.color)
 
         for each in self.widget_list:
             each.update()
@@ -244,7 +220,6 @@ class DialogWnd:
             self.widget_list.draw(self.screen)
         else:
             self.widget_list2.draw(self.screen)
-        # self.update_me = False
 
     # Title: Word-wrapped text display module - render_textrect
     # Author: David Clark (da_clark at shaw.ca)
@@ -289,7 +264,6 @@ class DialogWnd:
                 for word in words:
                     if font.size(word)[0] >= rect.width:
                         print("The word " + word + " is too long to fit in the rect passed.")
-                        # raise TextRectException, "The word " + word + " is too long to fit in the rect passed."
                 # Start a new line
                 accumulated_line = ""
                 for word in words:
@@ -313,7 +287,6 @@ class DialogWnd:
         for line in final_lines:
             if accumulated_height + font.size(line)[1] >= rect.height:
                 print("Once word-wrapped, the text string was too tall to fit in the rect.")
-                # raise TextRectException, "Once word-wrapped, the text string was too tall to fit in the rect."
             if line != "":
                 tempsurface = font.render(line, 1, text_color)
                 if justification == 0:
@@ -324,7 +297,6 @@ class DialogWnd:
                     surface.blit(tempsurface, (rect.width - tempsurface.get_width(), accumulated_height))
                 else:
                     print("Invalid justification argument: " + str(justification))
-                    # raise TextRectException, "Invalid justification argument: " + str(justification)
             accumulated_height += font.size(line)[1]
 
         return surface

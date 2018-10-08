@@ -198,10 +198,12 @@ class Config:
         'loads saved settings from pickled file - language and screen size dimensions and mode'
         # load user settings
         u = db.load_user_settings(userid)
+
         self.user_age_group = db.get_age_group(userid=userid)
         # load admin settings
         a = db.get_login_defs()
         # lang, sounds, espeak, screenw, screenh
+
 
         self.settings["check_updates"] = int(a[1][2])
         if self.settings["check_updates"] == 1:
@@ -220,9 +222,6 @@ class Config:
         else:
             self.settings["screenw"] = self.debug_screen_size[0]
             self.settings["screenh"] = self.debug_screen_size[1]
-
-        # self.settings["screenw"] = 1264
-        # self.settings["screenh"] = 672
 
         self.settings["scheme"] = u[5]
         self.loaded_settings = True
