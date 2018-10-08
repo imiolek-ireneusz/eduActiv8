@@ -26,8 +26,12 @@ class Level:
 
     def levelup(self, record=True):
         if record:
-            self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Ready to go to the next level?"],
-                                             self.manual_levelup, self.reset_level)
+            if self.lvl < self.lvl_count:
+                self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Ready to go to the next level?"],
+                                                 self.manual_levelup, self.reset_level)
+            else:
+                self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Ready to go to the next level?"],
+                                                 self.game_won_restart, self.reset_level)
         else:
             self.manual_levelup(record)
 
@@ -155,9 +159,19 @@ class Level:
                 self.game_board.show_msg = True
                 self.completed_time = time.time()
             else:
+
+                if self.all_completed():
+                    all_completed_already = True
+                else:
+                    all_completed_already = False
+
+                if self.mainloop.completions is not None:
+                    self.mainloop.completions[self.lvl - 1] = 1
+
                 self.game_board.mainloop.db.update_completion(self.game_board.mainloop.userid,
                                                               self.game_board.active_game.dbgameid, self.lvl)
-                if self.lvl < self.lvl_count:
+
+                if all_completed_already or not self.all_completed():
                     self.levelup()
                     if tts != None:
                         self.game_board.say(self.dp["Perfect! Level completed!"], 6)
@@ -165,6 +179,7 @@ class Level:
                         # self.game_board.show_msg = True
                 else:
                     self.game_won(tts)
+
                 self.completed_time = time.time()
             self.next_pressed = True
 
@@ -193,10 +208,20 @@ class Level:
         self.game_step = 1
         self.load_level()
 
+    def all_completed(self):
+        if self.mainloop.completions is not None:
+            for each in self.mainloop.completions:
+                if each < 1:
+                    return False
+            return True
+        else:
+            return False
+
     def update_level_dictx(self):
         self.update_level_dict()
         self.completed = self.game_board.mainloop.db.query_completion(self.game_board.mainloop.userid,
-                                                                      self.game_board.active_game.dbgameid, self.lvl)
+                                                                      self.game_board.active_game.dbgameid, self.lvl,
+                                                                      self.game_board.active_game.lang_activity)
 
     def load_level_plus(self, args=None):
         self.game_step = 1
