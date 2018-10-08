@@ -9,53 +9,25 @@ import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 
+import time
+
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.level = lc.Level(self, mainloop, 5, 5)
-        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 40, 30)
+        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 20, 10)
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-
         color = (234, 218, 225)
         self.color = color
+
         border_color = (105, 12, 100)
         letter_bg = (255, 230, 255)
         white = (255, 255, 255)
         font_color = (100, 12, 100)
-        footer_font = (100, 100, 100)
-        data = [17, 10]
 
-        """
-        if self.lang.lang == "pl":
-            data = [26, 12]
-        elif self.lang.lang == "ru":
-            data = [23, 12]
-        elif self.lang.lang == "uk":
-            data = [21, 12]
-        """
-
-        # stretch width to fit the screen size
-        x_count = self.get_x_count(data[1], even=True)
-        if x_count > data[0]:
-            data[0] = x_count
-
-        self.data = data
-
-        self.board.set_animation_constraints(0, data[0], 0, data[1])
-
-        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
-        self.mainloop.info.hide_buttonsa(self.vis_buttons)
-
-        self.layout.update_layout(data[0], data[1])
-        scale = self.layout.scale
-        self.board.level_start(data[0], data[1], scale)
-
-        base_len = data[0] - 2  # (img_left - 1) * 2 + img_size
-        img_size = 4
-        img_left = (base_len - img_size) // 2 + 1
-        img_top = 1 #2
+        img_top = 1
         gv = self.mainloop.m.game_variant
         if gv == 0:
             category = "animals"
@@ -152,7 +124,7 @@ class Board(gd.BoardGame):
         self.level.games_per_lvl = 10
 
         l = 100
-        max_word_len = 17
+        max_word_len = 20
 
         while l > max_word_len:
             self.w_index = random.randint(0, len(self.words) - 1)
@@ -170,6 +142,40 @@ class Board(gd.BoardGame):
             img_src = "speaker_icon.png"
 
         w_len = len(self.word)
+        self.mainloop.redraw_needed = [True, True, True]
+
+        if w_len % 2 == 0:
+            even = True
+            data = [w_len, 10]
+            img_w_size = 4
+        else:
+            even = False
+            data = [w_len, 10]
+            img_w_size = 5
+        img_h_size = 4
+
+        # stretch width to fit the screen size
+        x_count = self.get_x_count(data[1], even=even)
+        if x_count > data[0]:
+            data[0] = x_count
+
+        self.data = data
+
+        self.board.set_animation_constraints(0, data[0], 0, data[1])
+
+        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
+        self.mainloop.info.hide_buttonsa(self.vis_buttons)
+
+        self.layout.update_layout(data[0], data[1])
+        self.mainloop.recreate_game_screen()
+        scale = self.layout.scale
+        self.board.level_start(data[0], data[1], scale)
+
+        self.board.board_bg.update_me = True
+        self.board.board_bg.line_color = (20, 20, 20)
+
+        base_len = data[0] - 2
+        img_left = (base_len - img_w_size) // 2 + 1
 
         n_letters = self.level.lvl + 1
         if self.level.lvl == 3:
@@ -190,31 +196,32 @@ class Board(gd.BoardGame):
         else:
             clx = white
 
-        # frame around image
-        self.board.add_door(img_left - 1, 1, img_size + 2, img_size + 3, classes.board.Door, "", white, "", font_size=2)
+        l = (data[0] - w_len) // 2
+        self.left_offset = l
+
+        # frame around image - white/  clx
+        self.board.add_door(img_left - 1, 1, img_w_size + 2, img_h_size + 3, classes.board.Door, "", white, "", font_size=2)
         self.board.units[-1].image.set_colorkey(None)
         self.board.units[-1].is_door = False
 
-        self.board.add_door(1, img_size + 3, base_len, 3, classes.board.Door, "", clx, "", font_size=2)
+        self.board.add_door(1, img_w_size + 3, base_len, 3, classes.board.Door, "", clx, "", font_size=2)
         self.board.units[-1].image.set_colorkey(None)
         self.board.units[-1].is_door = False
 
         # temp frame around word
-        w = len(self.word)
-        l = (data[0] - w) // 2
-        self.left_offset = l
 
-        # dummy frame hiding bottome line of the image frame
-        self.board.add_door(img_left - 1, img_size + img_top + 1, img_size + 2, 1, classes.board.Door, "", clx, "",
+
+        # dummy frame hiding bottom line of the image frame
+        self.board.add_door(img_left - 1, img_w_size + img_top + 1, img_h_size + 2, 1, classes.board.Door, "", clx, "",
                             font_size=2)
         self.board.units[-1].image.set_colorkey(None)
         self.board.units[-1].is_door = False
         if self.mainloop.m.game_var2 == 0:
-            self.board.add_unit(img_left, img_top, img_size, img_size, classes.board.ImgShip, self.wordp, color,
+            self.board.add_unit(img_left, img_top, img_w_size, img_h_size, classes.board.ImgCenteredShip, self.wordp, color_bg,
                                 os.path.join('art4apps', category, img_src))
         elif self.mainloop.m.game_var2 == 1:
             self.mainloop.sb.toggle_espeak(True)
-            self.board.add_unit(img_left, img_top, img_size, img_size, classes.board.ImgShip, self.wordp, color_bg,
+            self.board.add_unit(img_left, img_top, img_w_size, img_h_size, classes.board.ImgCenteredShip, self.wordp, color_bg,
                                 img_src, alpha=True)
         self.board.ships[-1].immobilize()
         self.board.ships[-1].highlight = False
@@ -239,12 +246,12 @@ class Board(gd.BoardGame):
         # create table to store 'binary' solution
         self.solution_grid = [0 for x in range(data[0])]
         x = l
-        y = img_size + img_top + 1#+ 2
+        y = img_h_size + img_top + 1#+ 2
 
         self.sol_grid_y = y
 
         x2 = (data[0] - len(lowered)) // 2
-        y2 = img_size + img_top + 3#5
+        y2 = img_h_size + img_top + 3#5
 
         j = 0
         for i in range(len(self.word)):

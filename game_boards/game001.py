@@ -17,14 +17,12 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.show_info_btn = False
 
-        self.color = (255, 255, 255)  # (234,218,225)
+        self.color = (255, 255, 255)
 
         font_color = ex.hsv_to_rgb(227, 255, 50)
+
+        font_color2 = (20, 75, 92)
         data = [23, 16]
-        # stretch width to fit the screen size
-        x_count = self.get_x_count(data[1], even=None)
-        if x_count > 23:
-            data[0] = x_count
 
         self.data = data
         self.vis_buttons = [0, 0, 0, 0, 1, 0, 1, 0, 0]
@@ -37,6 +35,7 @@ class Board(gd.BoardGame):
         self.board.board_bg.initcolor = self.color
         self.board.board_bg.color = self.color
         self.board.board_bg.update_me = True
+        self.board.board_bg.line_color = (20, 20, 20)
 
         self.board.add_unit(0, 0, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2018  Ireneusz Imiolek",
                             self.color, "", 1)
@@ -50,14 +49,14 @@ class Board(gd.BoardGame):
             self.board.units[-1].valign = 1
 
         for each in self.board.units:
-            each.font_color = font_color
+            each.font_color = font_color2
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
     def update(self, game):
         game.fill(self.color)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

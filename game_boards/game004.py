@@ -24,10 +24,7 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.show_info_btn = False
 
-        color1 = (220, 220, 220)
-        color2 = (255, 255, 255)
-
-        font_color = (40, 40, 40)
+        color2 = (255, 255, 255, 0)
         data = [35, 21]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=False)
@@ -47,14 +44,10 @@ class Board(gd.BoardGame):
 
         self.results = self.mainloop.db.completion_book(self.mainloop.userid, offset=self.offset)
 
-
         self.ages = [self.lang.b["preschool"], self.lang.b["Year 1"], self.lang.b["Year 2"], self.lang.b["Year 3"], self.lang.b["Year 4"], self.lang.b["Year 5"], self.lang.b["Year 6"], self.lang.b["Year 6"]]  # , self.lang.b["all groups"]
 
         if self.badge_count > 0:
             centre = data[0] // 2
-            gap = 4
-            bw = 3
-            lw = 7
             self.x_positions_odd = [centre - 1 - 4 - 3 - 4 - 3, centre - 1 - 4 - 3, centre - 1, centre + 2 + 4,
                                     centre + 2 + 4 + 3 + 4]
             self.x_positions_even = [centre - 2 - 3 - 4 - 3, centre - 2 - 3, centre + 3, centre + 3 + 3 + 4]
@@ -91,7 +84,7 @@ class Board(gd.BoardGame):
             if self.mainloop.scheme is not None:
                 if self.mainloop.scheme.dark:
                     scheme = "black"
-                    color2 = (0, 0, 0)
+                    color2 = (0, 0, 0, 0)
             y = 2
             for i in range(ln):
                 if i > 4:

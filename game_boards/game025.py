@@ -12,7 +12,6 @@ import classes.drw.splash
 import classes.drw.fraction
 
 
-
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
@@ -20,25 +19,14 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 11)
 
     def create_game_objects(self, level=1):
-        self.update_layout_on_start = True
         self.board.draw_grid = False
         self.show_info_btn = False
-        if self.mainloop.m.badge_count == 0:
-            self.mainloop.m.lang_change()
-
-        #ver_color = (55, 0, 90)
-        #s = 70
-        #v = 230
         h = random.randrange(0, 255, 5)
         color0 = ex.hsv_to_rgb(h, 40, 230)
-        #color1 = color0
-        #font_color = ex.hsv_to_rgb(h, 255, 140)
-        #ver_color = (33, 121, 149)
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.scheme_dir = "black"
                 color = (0, 0, 0)
-                #ver_color = (255, 255, 0)
             else:
                 self.scheme_dir = "white"
                 color = (255, 255, 255)
@@ -46,7 +34,6 @@ class Board(gd.BoardGame):
             self.scheme_dir = "white"
             color = (255, 255, 255)
 
-        # (234,218,225) #ex.hsv_to_rgb(225,15,235)
         self.color = color
 
         """lvl_data = [term_len_min, term_len_max, term_count_min, term_count_max, term_completed_count, semi_completed_count, shuffled]"""
@@ -109,6 +96,7 @@ class Board(gd.BoardGame):
                 self.mixed_colours = False
         elif self.mainloop.m.game_variant == 4:
             self.func_number = random.randint(0, 3)
+
             #create fractions
             self.fractions = []
             full = False
@@ -145,6 +133,7 @@ class Board(gd.BoardGame):
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.board.set_animation_constraints(0, data[0], 0, data[1])
         self.layout.update_layout(data[0], data[1])
+        self.mainloop.recreate_game_screen()
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
         self.board.board_bg.initcolor = color
@@ -172,7 +161,6 @@ class Board(gd.BoardGame):
                 if self.mainloop.m.game_variant == 3:
                     img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                     img_src = os.path.join('art4apps', self.category, img)
-                    # self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.Letter, v, color0, "", 0, alpha=alpha)
                     self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.ImgShip, "", color0, img_src)
 
                 elif self.mainloop.m.game_variant == 5:
@@ -217,7 +205,6 @@ class Board(gd.BoardGame):
                 if self.mainloop.m.game_variant == 3:
                     img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                     img_src = os.path.join('art4apps', self.category, img)
-                    # self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.Letter, v, color0, "", 0, alpha=alpha)
                     self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.ImgShip, "", color0, img_src)
                 elif self.mainloop.m.game_variant == 5:
                     img = "%s.png" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
@@ -262,7 +249,6 @@ class Board(gd.BoardGame):
             if self.mainloop.m.game_variant == 3:
                 img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                 img_src = os.path.join('art4apps', self.category, img)
-                # self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.Letter, v, color0, "", 0, alpha=alpha)
                 self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.ImgShip, "", color0, img_src)
             elif self.mainloop.m.game_variant == 5:
                 img = "%s.png" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
@@ -289,20 +275,13 @@ class Board(gd.BoardGame):
                 self.board.ships[-1].set_color(unit_clrs[int(self.term[i % self.term_len])])
 
             if self.mainloop.m.game_variant == 2 or self.mainloop.m.game_variant == 5:
-                #self.board.ships[-1].outline_highlight = False
                 self.board.ships[-1].outline = False
-                #self.board.ships[-1].perm_outline = False
 
             self.board.ships[-1].pattern_value = self.term[i % self.term_len]
             self.board.ships[-1].highlight = False
             self.board.ships[-1].readable = False
             self.board.ships[-1].checkable = True
             self.board.ships[-1].init_check_images()
-
-        """
-        self.board.add_unit(0, 4, data[0], 1, classes.board.Label, self.lang.d["Complete the pattern"], color1, "", 5)
-        self.board.units[-1].font_color = font_color
-        """
 
         for each in self.board.units:
             self.board.all_sprites_list.move_to_front(each)
@@ -435,9 +414,7 @@ class Board(gd.BoardGame):
         return has_pattern
 
     def initiate_shapes(self):
-        #ri = random.randint(0, 6)
         self.shape_colors = ['blue', 'green', 'olive', 'orange', 'pink', 'purple', 'yellow']
-        #self.shape_color = colors[ri]
         self.imgs = ["s%d" % x for x in range(1, 18)]
 
     def initiate_images(self):
@@ -490,4 +467,3 @@ class Board(gd.BoardGame):
         elif gv == 11:
             self.category = "transport"
             self.imgs = ['taxi', 'car', 'bike', 'raft', 'bus', 'boat', 'truck', 'sleigh', 'carpet', 'motorcycle', 'train', 'ship', 'van', 'canoe', 'rocket', 'sledge', 'bicycle']
-

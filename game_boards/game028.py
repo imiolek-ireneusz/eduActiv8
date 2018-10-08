@@ -15,6 +15,7 @@ class Board(gd.BoardGame):
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 5, 4)
 
     def create_game_objects(self, level=1):
+        self.board.draw_grid = False
         self.allow_unit_animations = False
         self.allow_teleport = False
         self.board.check_laby = True
@@ -43,7 +44,8 @@ class Board(gd.BoardGame):
         self.board.level_start(data[0], data[1], scale)
 
         bg_col = (255, 255, 255)
-        line_col = (0, 0, 0)
+        line_col = (0, 150, 0)
+        line_width = 3
         scheme = "white"
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
@@ -54,7 +56,7 @@ class Board(gd.BoardGame):
         img_src1 = os.path.join("schemes", scheme, "sheep.png")
         img_src2 = os.path.join("schemes", scheme, "sheep_herd.png")
 
-        self.mylaby = classes.laby.laby(data[0], data[1], 0, 0, scale, line_col)
+        self.mylaby = classes.laby.laby(data[0], data[1], 0, 0, scale, line_col, line_width)
         self.mylaby.generate_laby()
 
         self.board.add_unit(0, 0, 1, 1, classes.board.ImgShip, "", bg_col, img_src1)
