@@ -328,7 +328,7 @@ class KeyBoard:
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 1, 1)
+        self.level = lc.Level(self, mainloop, 2, 28)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 9)
 
     def create_game_objects(self, level=1):
@@ -369,6 +369,9 @@ class Board(gd.BoardGame):
 
         if self.lang.lang == "fr":
             self.chapters = [1, 3, 5, 7, 10, 13, 15, 18, 20, 22, 24, 26, 28]
+
+        if self.level.lvl > len(self.course):
+            self.level.lvl = len(self.course) - 1
 
         self.t_string = self.course[self.level.lvl - 1][1]
         self.t_multi = self.course[self.level.lvl - 1][0]
