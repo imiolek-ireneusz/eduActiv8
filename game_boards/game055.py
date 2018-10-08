@@ -11,7 +11,7 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 999, 1)
+        self.level = lc.Level(self, mainloop, 10, 6)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 9)
 
     def create_game_objects(self, level=1):
@@ -21,7 +21,6 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
 
         color = ex.hsv_to_rgb(225, 15, 235)
-        color2 = (255, 255, 255)
         self.col_c = (0, 255, 255)
         self.col_m = (255, 0, 255)
         self.col_y = (255, 255, 0)
@@ -36,7 +35,7 @@ class Board(gd.BoardGame):
             data[0] = x_count
 
         self.data = data
-        self.vis_buttons = [1, 0, 0, 0, 1, 1, 1, 0, 0]
+        self.vis_buttons = [1, 1, 1, 1, 1, 1, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -54,9 +53,13 @@ class Board(gd.BoardGame):
 
         self.picked_steps = []
         self.picked = []
+        self.indexes = [0, 0, 0]
+
+        mn = 1
 
         for i in range(3):
-            self.picked_steps.append(random.randrange(0, 21))
+            self.indexes[i] = random.randrange(0, 21 - mn)
+            self.picked_steps.append(self.indexes[i])
 
         self.cmy = [int(self.picked_steps[i] * step) for i in range(3)]
         self.picked_rgb = [255 - self.cmy[i] for i in range(3)]
@@ -65,9 +68,27 @@ class Board(gd.BoardGame):
         self.rgb_g = [y, y, y]
         self.rgbx3 = [self.col_e, self.col_e, self.col_e]
 
-        self.board.add_unit(1, y, 2, 3, classes.board.ImgShip, "", self.col_bg, "brush_c.png", alpha=True)
-        self.board.add_unit(4, y, 2, 3, classes.board.ImgShip, "", self.col_bg, "brush_m.png", alpha=True)
-        self.board.add_unit(7, y, 2, 3, classes.board.ImgShip, "", self.col_bg, "brush_y.png", alpha=True)
+        if self.level.lvl == 1:
+            posy = [y, self.indexes[1], self.indexes[2]]
+        elif self.level.lvl == 2:
+            posy = [self.indexes[0], y, self.indexes[2]]
+        elif self.level.lvl == 3:
+            posy = [self.indexes[0], self.indexes[1], y]
+
+        elif self.level.lvl == 4:
+            n = random.randint(0, 2)
+            posy = [self.indexes[0], self.indexes[1], self.indexes[2]]
+            posy[n] = y
+        elif self.level.lvl == 5:
+            n = random.randint(0, 2)
+            posy = [y, y, y]
+            posy[n] = self.indexes[n]
+        else:
+            posy = [y, y, y]
+
+        self.board.add_unit(1, posy[0], 2, 3, classes.board.ImgShip, "", self.col_bg, "brush_c.png", alpha=True)
+        self.board.add_unit(4, posy[1], 2, 3, classes.board.ImgShip, "", self.col_bg, "brush_m.png", alpha=True)
+        self.board.add_unit(7, posy[2], 2, 3, classes.board.ImgShip, "", self.col_bg, "brush_y.png", alpha=True)
 
         for each in self.board.ships:
             each.outline = False
