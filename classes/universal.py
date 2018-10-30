@@ -8,9 +8,20 @@ import sys
 
 import classes.extras as ex
 
+""" Template
+self.board.add_universal_unit(grid_x=0, grid_y=0, grid_w=4, grid_h=4, txt="",
+                                      fd_img_src="fg_img.png", bg_img_src="bg_img.png", dc_img_src="decor_img.png",
+                                      bg_color=(0, 0, 0, 255),
+                                      border_color=(255, 255, 0),
+                                      font_color=((255, 0, 255, 255), (255, 255, 0, 255), (255, 255, 0, 255)),
+                                      bg_tint_color=(190, 0, 0, 100), fd_tint_color=(10, 10, 10, 255),
+                                      txt_align=(0, 0), font_type=0,
+                                      multi_color=True, alpha=True, immobilized=True)
+"""
 
 class ImageLayer:
-    def __init__(self, canvas, img_src, alpha):
+    def __init__(self, unit, canvas, img_src, alpha):
+        self.unit = unit
         self.canvas = canvas
         self.img_src = img_src
         self.alpha = alpha
@@ -29,9 +40,24 @@ class ImageLayer:
                     self.img_org = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
                 else:
                     self.img_org = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert()
-                self.img_rect = self.img_org.get_rect()
-                self.img = self.scalled_img(self.img_org, self.rect.w, self.rect.h)
+                #self.img_rect = self.img_org.get_rect()
+                #self.img = self.scalled_img(self.img_org, self.rect.w, self.rect.h)
+                self.img = self.img_org
                 self.img_rect = self.img.get_rect()
+
+                old_h = self.img_rect.h
+                old_w = self.img_rect.w
+                if self.unit.grid_h > self.unit.grid_w:
+                    new_w = self.rect.w
+                    new_h = int((new_w * old_h) / old_w)
+                else:
+                    new_h = self.rect.h
+                    new_w = int((new_h * old_w) / old_h)
+                self.img = self.scalled_img(self.img_org, new_w, new_h)
+                self.img_rect = self.img.get_rect()
+                pos_x = ((self.unit.board.scale * self.unit.grid_w - self.img_rect.w) // 2)
+                pos_y = ((self.unit.board.scale * self.unit.grid_h - self.img_rect.h) // 2)
+                self.img_pos = (pos_x, pos_y)
 
             except:
                 pass
@@ -77,6 +103,7 @@ class Universal(pygame.sprite.Sprite):
         self.grid_last_y = grid_y
         self.alpha = alpha
         self.board = board
+        self.immobilized = immobilized
 
         self.bg_color = bg_color
         self.border_color = border_color
@@ -92,6 +119,7 @@ class Universal(pygame.sprite.Sprite):
         self.txt = txt
         self.txt_align = txt_align[0]  # align: 0 - centered, 1 - left, 2 - right
         self.txt_valign = txt_align[1]  # align: 0 - centered, 1 - top
+        self.font_type = font_type
 
         self.multi_color = multi_color
 
@@ -116,40 +144,52 @@ class Universal(pygame.sprite.Sprite):
 
         self.check_display = None  # None - none, True - correct, False - wrong
         self.checkable = False
+        # scale font size:
+        self.font = self.board.font_sizes[self.font_type]
+        self.text_wrap = True
+
+        self.img_src2 = None
+
+        self.unit_id = len(self.board.ships)
+
+        self.init_images()
+
+    def init_images(self):
 
         # Set height, width, the -1 is to give it some space around for the margin
         if self.alpha:
-            self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1], flags=pygame.SRCALPHA)
+            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
         else:
-            self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
+            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
 
         # Make our top-left corner the passed-in location. The +1 is the margin
         self.rect = self.image.get_rect()
-        self.rect.topleft = [grid_x * board.scale + 1, grid_y * board.scale + 1]
+        self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
 
-        # scale font size:
-        self.font = board.font_sizes[font_type]
-        self.text_wrap = True
+        if self.bg_img_src is not None:
+            self.layer_bg = ImageLayer(self, self.image, self.bg_img_src, self.alpha)
 
-        self.unit_id = len(board.ships)
-        self.img_src2 = None
+        if self.fd_img_src is not None:
+            self.layer_fd = ImageLayer(self, self.image, self.fd_img_src, self.alpha)
 
-        if bg_img_src is not None:
-            self.layer_bg = ImageLayer(self.image, bg_img_src, alpha)
+        if self.dc_img_src is not None:
+            self.layer_dc = ImageLayer(self, self.image, self.dc_img_src, self.alpha)
 
-        if fd_img_src is not None:
-            self.layer_fd = ImageLayer(self.image, fd_img_src, alpha)
-
-        if dc_img_src is not None:
-            self.layer_dc = ImageLayer(self.image, dc_img_src, alpha)
-
-        if immobilized:
+        if self.immobilized:
             self.immobilize()
 
         self.set_value(self.txt)
         if self.border_color is not None:
             self.set_outline(self.border_color, 2)
         self.compose_image()
+
+    def change_colors(self, bg_color, border_color, bg_tint_color, fd_tint_color):
+        self.bg_color = bg_color
+        self.border_color = border_color
+
+        self.bg_tint_color = bg_tint_color
+        self.fd_tint_color = fd_tint_color
+        self.update_me = True
 
     def resize_unit(self, new_grid_w, new_grid_h):
         self.grid_w = new_grid_w
@@ -158,7 +198,7 @@ class Universal(pygame.sprite.Sprite):
             self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
         else:
             self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
-        self.image.fill(self.color)
+        self.image.fill(self.bg_color)
 
     def set_display_check(self, value):
         self.check_display = value
@@ -267,9 +307,9 @@ class Universal(pygame.sprite.Sprite):
             if self.layer_bg.img is not None:
                 # apply background tint
                 if self.bg_tint_color is not None:
-                    self.image.blit(self.layer_bg.get_tinted_img(self.bg_tint_color), (0, 0))
+                    self.image.blit(self.layer_bg.get_tinted_img(self.bg_tint_color), self.layer_bg.img_pos)
                 else:
-                    self.image.blit(self.layer_bg.img, (0, 0))
+                    self.image.blit(self.layer_bg.img, self.layer_bg.img_pos)
 
         # draw background border
         if self.border_color is not None:
@@ -280,9 +320,9 @@ class Universal(pygame.sprite.Sprite):
             if self.layer_fd.img is not None:
                 # apply foreground tint
                 if self.fd_tint_color is not None:
-                    self.image.blit(self.layer_fd.get_tinted_img(self.fd_tint_color), (0, 0))
+                    self.image.blit(self.layer_fd.get_tinted_img(self.fd_tint_color), self.layer_fd.img_pos)
                 else:
-                    self.image.blit(self.layer_fd.img, (0, 0))
+                    self.image.blit(self.layer_fd.img, self.layer_fd.img_pos)
 
         # draw custom drawn image
 
@@ -292,7 +332,7 @@ class Universal(pygame.sprite.Sprite):
         # draw highlight or other decor layer
         if self.dc_img_src is not None:
             if self.layer_dc.img is not None:
-                self.image.blit(self.layer_dc.img, (0, 0))
+                self.image.blit(self.layer_dc.img, self.layer_dc.img_pos)
 
     def update(self, board, **kwargs):
         if self.update_me:
@@ -536,6 +576,12 @@ class Universal(pygame.sprite.Sprite):
 
     def move(self, board, x, y):
         board.move(self.unit_id, x, y)
+
+    def set_grid_pos(self, grid_x, grid_y):
+        #self.board.move_unit(self.unit_id, grid_x, grid_y)
+        self.grid_x = grid_x
+        self.grid_y = grid_y
+        self.pos_update()
 
     def on_mouse_out(self):
         self.update_me = True

@@ -170,6 +170,7 @@ class Level:
 
                 self.game_board.mainloop.db.update_completion(self.game_board.mainloop.userid,
                                                               self.game_board.active_game.dbgameid, self.lvl)
+                self.mainloop.completions_dict[self.game_board.active_game.dbgameid][self.lvl - 1] = 1
 
                 if all_completed_already or not self.all_completed():
                     self.levelup()
@@ -222,6 +223,7 @@ class Level:
         self.completed = self.game_board.mainloop.db.query_completion(self.game_board.mainloop.userid,
                                                                       self.game_board.active_game.dbgameid, self.lvl,
                                                                       self.game_board.active_game.lang_activity)
+        #self.mainloop.completions_dict[self.game_board.active_game.dbgameid][self.lvl] = 1
 
     def load_level_plus(self, args=None):
         self.game_step = 1

@@ -46,6 +46,8 @@ class Unit(pygame.sprite.Sprite):
         self.show_value = True
         self.readable = True
         self.highlight = True
+
+        self.mirror = False
         self.audible = False  # use true to enable sounds on unit move
         self.outline_highlight = False
         self.font_color = (0, 0, 0, 0)
@@ -674,12 +676,18 @@ class ImgShip(Ship):
             except:
                 pass
 
+    def mirror_image(self):
+        self.mirror = True
+
     def update(self, board, **kwargs):
         if self.update_me and not self.hidden:
             Unit.update(self, board)
             if len(self.img_src) > 0:
-                self.image.blit(self.img, self.img_pos)
-            if self.unit_id == board.active_ship and self.outline == True:
+                if not self.mirror:
+                    self.image.blit(self.img, self.img_pos)
+                else:
+                    self.image.blit(pygame.transform.flip(self.img, True, False), self.img_pos)
+            if self.unit_id == board.active_ship and self.outline:
                 lines = [[0, 0], [self.grid_w * board.scale - 2, 0],
                          [self.grid_w * board.scale - 2, self.grid_h * board.scale - 2],
                          [0, self.grid_h * board.scale - 2]]

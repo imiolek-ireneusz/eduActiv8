@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import random
+import classes.extras as ex
+import copy
+
+
+
+
 class Color:
     def __init__(self):
         self.black = (0, 0, 0)
@@ -7,12 +14,82 @@ class Color:
         self.green = (0, 255, 0)
         self.red = (255, 0, 0)
         self.grid_line = (240, 240, 240)
-
-        # orange
         self.menu_l = (255, 75, 0)
-        # self.menu_r   = (60,60,60)
         self.menu_r = (33, 121, 149)
         self.info = (70, 70, 70)
+
+        # color steps
+        self.default_color_sliders = [[1, 16, 15], [1, 2, 16], [1, 16, 15], [1, 2, 16], [9, 16, 12], [1, 16, 15], [0, 0, 0]]
+        self.reset_colors()
+        self.menu_shapes = ["cat_bg_circle", "cat_bg_square", "cat_bg_hex", "cat_bg_star"]
+
+        self.create_colors()
+
+    def load_colors(self, json_data_string):
+        self.color_sliders = json_data_string
+        self.create_colors()
+
+    def reset_colors(self, save=False):
+        self.color_sliders = copy.deepcopy(self.default_color_sliders)
+
+    def create_colors(self):
+        self.tc_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[0][0] * 16,
+                                              self.color_sliders[0][1] * 16,
+                                              self.color_sliders[0][2] * 16)
+
+        self.tc_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[1][0] * 16,
+                                              self.color_sliders[1][1] * 16,
+                                              self.color_sliders[1][2] * 16)
+
+        # category
+        self.c_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[0][0] * 16,
+                                             self.color_sliders[0][1] * 16,
+                                             self.color_sliders[0][2] * 16)
+
+        self.c_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[1][0] * 16,
+                                             self.color_sliders[1][1] * 16,
+                                             self.color_sliders[1][2] * 16)
+
+        # game
+        self.g_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[2][0] * 16,
+                                             self.color_sliders[2][1] * 16,
+                                             self.color_sliders[2][2] * 16)
+
+        self.g_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[3][0] * 16,
+                                             self.color_sliders[3][1] * 16,
+                                             self.color_sliders[3][2] * 16)
+
+        # game progress
+        self.lvl_completed_col = ex.hsv_to_rgb(self.color_sliders[4][0] * 16,
+                                               self.color_sliders[4][1] * 16,
+                                               self.color_sliders[4][2] * 16)
+
+        self.lvl_not_compl_col = ex.hsv_to_rgb(self.color_sliders[4][0] * 16, 96, 255)
+        self.lvl_not_compl_col_dark = ex.hsv_to_rgb(self.color_sliders[4][0] * 16, 96, 96)
+
+        self.info_buttons_col = ex.hsv_to_rgb(self.color_sliders[5][0] * 16,
+                                               self.color_sliders[5][1] * 16,
+                                               self.color_sliders[5][2] * 16)
+
+    def update_cfg_color(self, h, s, v):
+        self.c_fg_tint_color = ex.hsv_to_rgb(h, s, v)
+
+    def update_cbg_color(self, h, s, v):
+        self.c_bg_tint_color = ex.hsv_to_rgb(h, s, v)
+
+    def update_gfg_color(self, h, s, v):
+        self.g_fg_tint_color = ex.hsv_to_rgb(h, s, v)
+
+    def update_gbg_color(self, h, s, v):
+        self.g_bg_tint_color = ex.hsv_to_rgb(h, s, v)
+
+    def update_lvl_color(self, h, s=0, v=0):
+        self.lvl_not_compl_col = ex.hsv_to_rgb(h, 100, 255)
+        self.lvl_not_compl_col_dark = ex.hsv_to_rgb(h, 100, 100)
+        self.lvl_completed_col = ex.hsv_to_rgb(h, 255, 200)
+
+    def update_info_color(self, h, s, v):
+        self.info_buttons_col = ex.hsv_to_rgb(h, s, v)
 
 
 class WBScheme:
@@ -67,18 +144,6 @@ class BWScheme:
         self.info_font_color1 = (200, 200, 200, 0)
         self.info_font_color2 = (255, 75, 0, 0)
         self.info_font_color3 = (255, 200, 50, 0)
-
-
-"""
-class YBScheme:
-    def __init__(self):
-        self.dark = False
-        self.u_initcolor = (255,255,0)
-        self.u_color = (255,255,0)
-        self.u_font_color = (0,0,0)
-        self.u_font_color2 = (255,255,255)
-        self.u_line_color = (240, 240, 0)
-"""
 
 
 class BYScheme:

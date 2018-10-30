@@ -2,7 +2,7 @@
 
 import os
 import pygame
-import classes.extras
+import classes.extras as ex
 
 
 class BaseButton(pygame.sprite.Sprite):
@@ -27,6 +27,7 @@ class BaseButton(pygame.sprite.Sprite):
         self.img_src_1 = img_src_1
         self.img_src_2 = img_src_2
         self.img_src_3 = img_src_3
+        self.img_4 = None
         self.update_fonts()
         self.hasimg = False
 
@@ -67,21 +68,31 @@ class Button(BaseButton):
         BaseButton.__init__(self, panel, pos_x, pos_y, width, height, img_src_1, img_src_2, img_src_3, rev)
 
     def load_images(self, rev):
+        self.rev = rev
         self.img_pos = (0, 0)
-        try:
-            self.img_1 = pygame.image.load(os.path.join('res', 'images', "info_bar", self.img_src_1)).convert_alpha()
-            self.img_2 = pygame.image.load(os.path.join('res', 'images', "info_bar", self.img_src_2)).convert_alpha()
-            if self.img_src_3 != "":
-                self.img_3 = pygame.image.load(os.path.join('res', 'images', "info_bar", self.img_src_3)).convert_alpha()
-            if rev:
-                self.img_1 = pygame.transform.flip(self.img_1, 1, 0)
-                self.img_2 = pygame.transform.flip(self.img_2, 1, 0)
-            self.img = self.img_2
-            self.hasimg = True
-        except:
-            pass
+        self.img_1 = pygame.image.load(os.path.join('res', 'images', "info_bar", "mask", self.img_src_1)).convert_alpha()
+        self.img_1.fill(self.panel.mainloop.cl.info_buttons_col, special_flags=pygame.BLEND_ADD)
 
+        self.img_2 = pygame.image.load(os.path.join('res', 'images', "info_bar", "mask", self.img_src_2)).convert_alpha()
+        self.img_2.fill(self.panel.mainloop.cl.info_buttons_col, special_flags=pygame.BLEND_ADD)
+
+        self.img_4 = pygame.image.load(
+            os.path.join('res', 'images', "info_bar", "decor", self.img_src_2)).convert_alpha()
+
+        if self.img_src_3 != "":
+            self.img_3 = pygame.image.load(
+                os.path.join('res', 'images', "info_bar", self.img_src_3)).convert_alpha()
+        if rev:
+            self.img_1 = pygame.transform.flip(self.img_1, 1, 0)
+            self.img_2 = pygame.transform.flip(self.img_2, 1, 0)
+            self.img_4 = pygame.transform.flip(self.img_4, 1, 0)
+        self.img = self.img_2
+        self.hasimg = True
         self.update()
+
+    def reload_colors(self):
+        self.load_images(self.rev)
+        self.update_fonts()
 
     def on_mouse_over(self):
         if not self.hover:
@@ -146,6 +157,8 @@ class Button(BaseButton):
         self.image.fill(self.color)
         if self.btntype == "imgbtn":
             self.image.blit(self.img, self.img_pos)
+            if self.img_4 is not None:
+                self.image.blit(self.img_4, self.img_pos)
         elif self.btntype == "levels":
             self.update_levels()
         elif self.btntype == "titles":
@@ -163,11 +176,15 @@ class InfoBar:
 
     def create(self):
         self.btns = []
+        """
         self.font_color = (255, 75, 0, 0)
         self.font_color1 = (255, 125, 0, 0)
         self.font_color4 = (255, 175, 0, 0)
         self.font_color2 = (225, 75, 0, 0)
         self.font_color3 = (255, 175, 0, 0)
+        """
+
+        self.load_font_colors()
 
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
@@ -193,6 +210,13 @@ class InfoBar:
         self.btn_list = pygame.sprite.LayeredUpdates()
         self.reset_buttons()
         self.update_fonts()
+
+    def load_font_colors(self):
+        self.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 220)
+        self.font_color1 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 255)
+        self.font_color4 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 150, 255)
+        self.font_color2 = self.font_color
+        self.font_color3 = self.font_color4
 
     def update_fonts(self):
         self.fonts = []
@@ -229,6 +253,13 @@ class InfoBar:
                 if btn.hasimg:
                     return btn
         return None
+
+    def reload_colors(self):
+        self.update_me = True
+        self.mainloop.redraw_needed = [True, True, True]
+        for each in self.btns:
+            if each.btntype == "imgbtn":
+                each.reload_colors()
 
     def handle(self, event, layout, mainloop):
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -279,7 +310,7 @@ class InfoBar:
                         self.show_menu()
             elif event.button > 1:
                 if btn is not None:
-                    if btn.btn_id == 11 and self.mainloop.mbtndno == btn:
+                    if btn.btn_id == 11:
                         self.show_menu(True)
 
         elif event.type == pygame.MOUSEMOTION:
@@ -352,7 +383,7 @@ class InfoBar:
                 self.subtitle = ""
 
             if self.mainloop.m.game_constructor not in ["game000.Board", "game001.Board", "game002.Board",
-                                                        "game003.Board", "game004.Board", "game111.Board"]:
+                                                        "game003.Board", "game004.Board", "game113.Board"]:
                 self.game_id = "#%s/%03i" % (
                 self.mainloop.m.games[self.mainloop.m.active_game_id].game_constructor[4:7],
                 self.mainloop.m.games[self.mainloop.m.active_game_id].dbgameid)
@@ -373,28 +404,30 @@ class InfoBar:
         self.btn_list.add(new_button)
 
     def add_btns(self):
-        self.add_btn(self, self.home_btns_w + 122, 5 + self.margin_top, 84, 66, "imgbtn", "info_ok1.png", "info_ok2.png", "info_ok3.png")
-        self.add_btn(self, self.width - 318, 5 + self.margin_top, 64, 66, "imgbtn", "info_arrow1.png",
-                     "info_arrow2.png")
+        self.add_btn(self, self.home_btns_w + 122, 5 + self.margin_top, 84, 66, "imgbtn", "info_ok2.png", "info_ok1.png")
+        self.add_btn(self, self.width - 315, 5 + self.margin_top, 66, 66, "imgbtn", "info_arrow2.png",
+                     "info_arrow1.png")
         self.add_btn(self, self.width - 253, 5 + self.margin_top, 74, 66, "levels")  # level number label
-        self.add_btn(self, self.width - 178, 5 + self.margin_top, 64, 66, "imgbtn", "info_arrow1.png",
-                     "info_arrow2.png", "", True)
-        self.add_btn(self, self.width - 71, 5 + self.margin_top, 66, 66, "imgbtn", "info_close1.png", "info_close2.png")
-        self.add_btn(self, self.home_btns_w + 222, 5 + self.margin_top, 63, 66, "imgbtn", "info_refresh1.png", "info_refresh2.png")
+        self.add_btn(self, self.width - 182, 5 + self.margin_top, 66, 66, "imgbtn", "info_arrow2.png",
+                     "info_arrow1.png", "", True)
+        self.add_btn(self, self.width - 71, 5 + self.margin_top, 66, 66, "imgbtn", "info_close2.png", "info_close1.png")
+        self.add_btn(self, self.home_btns_w + 222, 5 + self.margin_top, 66, 66, "imgbtn", "info_refresh2.png", "info_refresh1.png")
         title_width = self.width
         self.add_btn(self, self.home_btns_w + 300, 5 + self.margin_top, title_width, 69, "titles")
 
-        self.add_btn(self, self.width - 351, 5 + self.margin_top, 33, 66, "imgbtn", "info_lvls1.png", "info_lvls2.png")
-        self.add_btn(self, self.width - 113, 5 + self.margin_top, 33, 66, "imgbtn", "info_lvls1.png", "info_lvls2.png",
+        self.add_btn(self, self.width - 351, 5 + self.margin_top, 33, 66, "imgbtn", "info_lvls2.png", "info_lvls1.png")
+        self.add_btn(self, self.width - 113, 5 + self.margin_top, 33, 66, "imgbtn", "info_lvls2.png", "info_lvls1.png",
                      "", True)
 
-        self.add_btn(self, self.home_btns_w + 5, 5 + self.margin_top, 66, 66, "imgbtn", "info1.png", "info2.png") #9
+        self.add_btn(self, self.home_btns_w + 5, 5 + self.margin_top, 66, 66, "imgbtn", "info2.png", "info1.png") #9
         self.btns[-1].hidden = False
 
         # add a layer of solid colour behind right-aligned buttons
         self.add_btn(self, self.width - 323, 5 + self.margin_top, 323, 66, "btn_bg")# 13 - 10
 
-        self.add_btn(self, 25, -200, 66, 66, "imgbtn", "home1.png", "home2.png")  # 11
+        #self.add_btn(self, 25, -200, 66, 66, "imgbtn", "home1.png", "home2.png")  # 11
+        self.add_btn(self, 25, -200, 66, 66, "imgbtn", "home2.png", "home1.png")  # 11
+
         self.btns[-1].hidden = False
 
         self.btn_list.move_to_back(self.btns[10])
@@ -402,14 +435,14 @@ class InfoBar:
 
     def layout_update(self):
         self.btns[6].update_size(self.width, self.btns[6].rect.height)
-        self.btns[1].rect.left = self.width - 318
+        self.btns[1].rect.left = self.width - 315
         self.btns[2].rect.left = self.width - 253
-        self.btns[3].rect.left = self.width - 178
+        self.btns[3].rect.left = self.width - 182
         self.btns[4].rect.left = self.width - 71
         self.btns[7].rect.left = self.width - 351
         self.btns[8].rect.left = self.width - 113
         self.btns[9].rect.left = self.home_btns_w
-        self.btns[10].rect.left = self.width - 318
+        self.btns[10].rect.left = self.width - 315
         self.reset_alignment()
         self.check_btn_tops()
 
@@ -427,7 +460,7 @@ class InfoBar:
         self.mainloop.redraw_needed[1] = True
         self.hidden = True
         self.close_dialog = True
-        self.title = classes.extras.unival(self.lang.d["close_confirm"])
+        self.title = ex.unival(self.lang.d["close_confirm"])
         self.subtitle = ""
         self.mainloop.sfx.play(2)
         self.layout_update()
@@ -503,9 +536,9 @@ class InfoBar:
 
     def align_to_right(self):
         if self.visible_btns[7] == 1:
-            self.btns[1].rect.left = self.width - 318
+            self.btns[1].rect.left = self.width - 315
             self.btns[2].rect.left = self.width - 253
-            self.btns[3].rect.left = self.width - 178
+            self.btns[3].rect.left = self.width - 182
         else:
             self.btns[1].rect.left = self.width - 288
             self.btns[2].rect.left = self.width - 223
@@ -576,7 +609,7 @@ class InfoBar:
 
     def draw(self, screen):
         # draw info bar
-        color = (255, 75, 0)
+        color = self.font_color
         hs = 80
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:

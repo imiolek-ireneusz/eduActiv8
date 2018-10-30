@@ -34,6 +34,9 @@ class Layout:
         self.info_top = self.sizer.top_margin - self.sizer.info_bar_h  # self.game_h + self.info_bar_pos[1] + self.top_margin
         self.game_bg_pos = (0, self.sizer.top_margin, self.screen_w, self.screen_h - self.sizer.top_margin)
 
+        if self.mainloop.layout is not None:
+            self.mainloop.recreate_game_screen()
+
         self.mainloop.redraw_needed = [True, True, True]
 
     def draw_layout(self):
