@@ -746,8 +746,8 @@ msgstr "Subtractive Colour Mixing - Paints, Dyes, Inks"
 msgid "Mix cyan, magenta and yellow paint to get other colours"
 msgstr "Mix cyan, magenta and yellow paint to get other colours"
 
-msgid "Find the colour of the circle"
-msgstr "Find the colour of the circle"
+msgid "Find the colour of the circle in the middle"
+msgstr "Find the colour of the circle in the middle"
 
 msgid "Adjust the amount of cyan, magenta and yellow paint"
 msgstr "Adjust the amount of cyan, magenta and yellow paint"
@@ -1407,7 +1407,7 @@ msgstr ""
 msgid "Draw the other half of the shape"
 msgstr ""
 
-msgid "Find lines of symmetry."
+msgid "Find lines of symmetry"
 msgstr ""
 
 msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
@@ -1430,3 +1430,13 @@ msgstr ""
 
 msgid "Read pie charts"
 msgstr ""
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""

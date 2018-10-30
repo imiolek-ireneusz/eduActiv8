@@ -158,7 +158,7 @@ d["a4a_construction"] = ["lighthouse", "door", "circus", "church", "kennel", "te
 d["a4a_nature"] = ["land", "cliff", "hill", "canyon", "rock", "sea", "lake", "coast", "shore", "mountain", "pond",
                    "peak", "lava", "cave", "dune", "island", "forest", "desert", "iceberg"]
 d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "police",
-                 "plumber", "badge", "queen", "farmer", "magic", "knight", "doctor", "bricklayer", "cleaner", "teacher",
+                 "plumber", "badge", "queen", "farmer", "magician", "knight", "doctor", "bricklayer", "cleaner", "teacher",
                  "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun",
                  "pirate", "cowboy", "electrician", "nurse", "king", "president", "office", "carpenter", "jockey",
                  "worker", "mechanic", "pilot", "actor", "cook", "student", "butcher", "accountant", "prince", "pope",
