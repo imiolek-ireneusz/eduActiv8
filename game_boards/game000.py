@@ -2,10 +2,10 @@
 
 import os
 import pygame
-
 import classes.board
 import classes.game_driver as gd
 import classes.level_controller as lc
+import classes.menu_items
 
 
 class Board(gd.BoardGame):
@@ -16,94 +16,202 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
         self.show_info_btn = False
-        if self.mainloop.m.badge_count == 0:
-            self.mainloop.m.lang_change()
+        self.mainloop.menu_level = 0
 
-        #ver_color = (55, 0, 90)
-        ver_color = (33, 121, 149)
+        self.unit_mouse_over = None
+
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.scheme_dir = "black"
-                color = (0, 0, 0)
-                ver_color = (255, 255, 0)
+                color = (0, 0, 0, 0)
             else:
                 self.scheme_dir = "white"
-                color = (255, 255, 255)
+                color = (255, 255, 255, 0)
         else:
             self.scheme_dir = "white"
-            color = (255, 255, 255)
+            color = (255, 255, 255, 0)
 
-        # (234,218,225) #ex.hsv_to_rgb(225,15,235)
         self.color = color
-        font_color = (33, 121, 149)
         font_color2 = (20, 75, 92)
-        data = [17, 11]
-        # stretch width to fit the screen size
+        data = [25, 16]
+
         x_count = self.get_x_count(data[1], even=False)
-        if x_count > 17:
+        if x_count > 25:
             data[0] = x_count
 
         self.data = data
 
         self.vis_buttons = [0, 0, 0, 0, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
         self.board.board_bg.initcolor = color
         self.board.board_bg.color = color
         self.board.board_bg.update_me = True
-        if self.mainloop.config.update_available:
-            txt = self.d["upd8 available"] % (self.mainloop.config.version, self.mainloop.config.avail_version)
-            align = 0
+        self.board.board_bg.line_color = (20, 20, 20)
+
+        self.last_hover = None
+
+        self.board.add_unit(2, 0, data[0]-4, 4, classes.board.ImgCenteredShip, "", color, "home_screen_icon.png", alpha=True)
+
+        self.board.ships[-1].immobilize()
+
+        self.board.add_unit(0, 5, data[0], 3, classes.board.ImgCenteredShip, "", color,
+                            os.path.join("schemes", self.scheme_dir, 'home_logo.png'))
+        self.board.ships[-1].immobilize()
+
+
+        self.board.add_unit((data[0]-11)//2, 14, 11, 2, classes.board.Label,
+                            ["www.eduactiv8.org   |   info%seduactiv8%sorg" % ("@", "."),
+                             "Copyright (C) 2012 - 2018  Ireneusz Imiolek"], color, "", 3)
+        self.board.units[-1].font_color = font_color2
+
+        # add main category items
+        posx =[data[0] // 2 - 8, data[0] // 2 - 2, data[0] // 2 + 4]
+        ico = ["ico_tn_00.png", "ico_tn_01.png", "ico_tn_02.png"]
+
+        self.top_categories = []
+        self.units = []
+        i = 0
+        for each in self.mainloop.m.top_categories:
+            self.top_categories.append(each)
+
+            unit = classes.menu_items.TopCategory(self.board, self.top_categories[-1], posx[i], 8, 5, 5,
+                                               i, self.color, ico[i], decor=self.mainloop.cl.color_sliders[6][0])
+            self.units.append(unit)
+            self.board.all_sprites_list.add(unit)
+            i += 1
+
+        #add home info icons
+        self.home_icons = [["home_icon_1.png", "home_icon_2.png", "home_icon_3.png", "home_icon_4.png"],
+                       ["home_ico_1.png", "home_ico_2.png", "home_ico_3.png", "home_ico_4.png"]]
+
+        self.board.add_unit(data[0]-5, data[1] - 2, 3, 2, classes.board.ImgCenteredShip, "", color,
+                            os.path.join("home_icons", "home_icon_1.png"), alpha=True)
+        self.board.ships[-1].immobilize()
+
+        self.board.add_unit(0, data[1]-2, 2, 2, classes.board.ImgShip, "", color,
+                            os.path.join("home_icons", "home_icon_2.png"), alpha=True)
+        self.board.ships[-1].immobilize()
+
+        self.board.add_unit((data[0]-11)//2-2, data[1]-2, 2, 2, classes.board.ImgShip, "", color,
+                            os.path.join("home_icons", "home_icon_3.png"), alpha=True)
+        self.board.ships[-1].immobilize()
+
+        self.board.add_unit(data[0]//2 + 6, data[1]-2, 2, 2, classes.board.ImgShip, "", color,
+                            os.path.join("home_icons", "home_icon_4.png"), alpha=True)
+        self.board.ships[-1].immobilize()
+
+        #add scheme switchers
+        if self.mainloop.scheme_code is None:
+            img = 'score_hc_anone_l.png'
         else:
-            txt = self.d["upd8 no update"] % self.mainloop.config.version
-            align = 2
-        self.board.add_unit(0, 0, data[0], 1, classes.board.Label, [txt, " ", " "], color, "", 5)
-        self.board.units[-1].align = align
-        self.board.units[-1].font_color = ver_color
+            img = 'score_hc_none_l.png'
+        self.board.add_unit(data[0]-2, data[1]-2, 1, 1, classes.board.ImgShip, "", color,
+                            os.path.join("home_icons", img), alpha=True)
+        self.board.ships[-1].immobilize()
 
-        img_src = os.path.join("schemes", self.scheme_dir, 'home_logo.png')
-        self.board.add_unit(0, 1, data[0], 3, classes.board.ImgCenteredShip, "", color, img_src)
-        self.canvas = self.board.ships[-1]
-        self.canvas.immobilize()
-        self.canvas.outline = False
+        if self.mainloop.scheme_code is "WB":
+            img = 'score_hc_awb_l.png'
+        else:
+            img = 'score_hc_wb_l.png'
+        self.board.add_unit(data[0]-2, data[1]-1, 1, 1, classes.board.ImgShip, "", color,
+                            os.path.join("home_icons", img), alpha=True)
+        self.board.ships[-1].immobilize()
 
-        if self.mainloop.android is None:
-            self.board.add_unit(0, 6, data[0], 1, classes.board.Label, self.lang.d["Check for newer version..."], color, "", 6)
-            self.board.units[-1].font_color = font_color
-            self.board.add_unit(0, 7, data[0], 1, classes.board.Label, "www.sourceforge.net/projects/eduactiv8   |   www.github.com/imiolek-ireneusz/eduactiv8",
-                                color, "", 6)
-            self.board.units[-1].font_color = font_color
+        if self.mainloop.scheme_code is "BW":
+            img = 'score_hc_abw_l.png'
+        else:
+            img = 'score_hc_bw_l.png'
+        self.board.add_unit(data[0]-1, data[1]-2, 1, 1, classes.board.ImgShip, "", color,
+                            os.path.join("home_icons", img), alpha=True)
+        self.board.ships[-1].immobilize()
 
-            # self.board.add_unit(0, 7, data[0], 1, classes.board.Label, ["http://sourceforge.net/projects/eduactiv8/",
-            #                                                            "https://github.com/imiolek-ireneusz/eduactiv8"],color, "", 6)
-            self.board.units[-1].font_color = font_color
-
-        self.board.add_unit(0, 5, data[0], 1, classes.board.Label, ["www.facebook.com/eduactiv8", ""], color, "", 4)
-        self.board.units[-1].font_color = font_color2
-
-        self.board.add_unit(0, 4, data[0], 1, classes.board.Label, "www.eduactiv8.org", color, "", 1)
-        self.board.units[-1].font_color = font_color2
-
-        self.board.add_unit(0, 9, data[0], 1, classes.board.Label,
-                            "info%seduactiv8%sorg   |   bugs%seduactiv8%sorg" % ("@", ".", "@", "."), color, "", 6)
-        self.board.units[-1].font_color = font_color
-
-        self.board.add_unit(0, 10, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2018  Ireneusz Imiolek",
-                            color, "", 6)
-        self.board.units[-1].font_color = font_color
+        if self.mainloop.scheme_code is "BY":
+            img = 'score_hc_aby_l.png'
+        else:
+            img = 'score_hc_by_l.png'
+        self.board.add_unit(data[0]-1, data[1]-1, 1, 1, classes.board.ImgShip, "", color,
+                            os.path.join("home_icons", img), alpha=True)
+        self.board.ships[-1].immobilize()
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
+
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
+            found = False
+            for each in self.units:
+                if (each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom):
+                    if each != self.unit_mouse_over:
+                        if self.unit_mouse_over is not None:
+                            self.unit_mouse_over.mouse_out()
+                        self.unit_mouse_over = each
+                    found = True
+                    each.handle(event)
+                    break
+            if not found:
+                if self.unit_mouse_over is not None:
+                    self.unit_mouse_over.mouse_out()
+                self.unit_mouse_over = None
+
+
+        if event.type == pygame.MOUSEMOTION:
+            pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
+            for i in range(-8, -4):
+                if (self.board.ships[i].rect.left < pos[0] < self.board.ships[i].rect.right
+                and self.board.ships[i].rect.top < pos[1] < self.board.ships[i].rect.bottom):
+                    self.board.ships[i].change_image(os.path.join("home_icons", self.home_icons[1][8 + i]))
+                    self.board.ships[i].update_me = True
+                    self.mainloop.redraw_needed[0] = True
+                else:
+                    self.board.ships[i].change_image(os.path.join("home_icons", self.home_icons[0][8 + i]))
+                    self.board.ships[i].update_me = True
+                    self.mainloop.redraw_needed[0] = True
+
+        if event.type == pygame.MOUSEBUTTONUP:
+            if event.button == 1:
+                active = self.board.active_ship
+                if active > 0:
+                    realign = False
+                    if self.board.ships[active] == self.board.ships[-4]:
+                        self.mainloop.switch_scheme(None)
+                    elif self.board.ships[active] == self.board.ships[-3]:
+                        self.mainloop.switch_scheme("WB")
+                    elif self.board.ships[active] == self.board.ships[-2]:
+                        self.mainloop.switch_scheme("BW")
+                    elif self.board.ships[active] == self.board.ships[-1]:
+                        self.mainloop.switch_scheme("BY")
+
+                    elif self.board.ships[active] == self.board.ships[-8]:
+                        self.mainloop.m.start_hidden_game(273)
+                        self.mainloop.menu_level = 1
+                        realign = True
+
+                    elif self.board.ships[active] == self.board.ships[-7]:
+                        self.mainloop.m.start_hidden_game(3)
+                        self.mainloop.menu_level = 1
+                        realign = True
+                    elif self.board.ships[active] == self.board.ships[-6]:
+                        self.mainloop.m.start_hidden_game(1)
+                        self.mainloop.menu_level = 1
+                        realign = True
+                    elif self.board.ships[active] == self.board.ships[-5]:
+                        self.mainloop.m.start_hidden_game(2)
+                        self.mainloop.menu_level = 1
+                        realign = True
+                    if realign:
+                        self.mainloop.menu_type = 1
+                        self.mainloop.info.realign()
+                        self.mainloop.info.reset_titles()
 
     def start_game(self, gameid):
         self.mainloop.m.start_hidden_game(gameid)
 
     def update(self, game):
         game.fill(self.color)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass
