@@ -59,6 +59,7 @@ import classes.logoimg
 import classes.score_bar
 import classes.dialogwnd
 import classes.updater
+import classes.sizer
 
 # setting the working directory to the directory of this file
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
@@ -79,6 +80,7 @@ class GamePlay:
         self.updater_started = False
         self.show_dialogwnd = False
         self.game_board = None
+        self.layout = None
         self.cl = classes.colors.Color()
         self.sfx = classes.sound.SoundFX(self)
         self.m = None
@@ -87,6 +89,13 @@ class GamePlay:
         self.window_states = ["LOG IN", "GAME"]
         self.window_state = self.window_states[0]
         self.theme = "default"
+        #self.menu_type = 1 #TODO menu type = 0
+
+        self.menu_group = 0
+        self.menu_category = 0
+        self.menu_level = 0  # 0 - home, 1 - categories, 2 games in a category
+        self.completions = None
+        self.completions_dict = None
 
         # As long as this is False the main loop of a state will keep running. If some action sets it to True the loop ends and so does the current state.
         self.done = False
@@ -98,6 +107,8 @@ class GamePlay:
         self.draw_func = None
         self.draw_func_args = None
 
+        self.mbtndno = None  # mouse button down object
+
         if android is not None:
             infoObject = pygame.display.Info()
             h = 770
@@ -107,53 +118,42 @@ class GamePlay:
 
     def set_init_vals(self):
         self.redraw_needed = [True, True, True]
-        self.game_redraw_tick = [0, 0, 0]
         self.flip_needed = True
         self.init_resize = True
-        # menu scrolling speed
-        self.menu_speed = 7
-        self.menu_tick = 7
         self.done = False
 
         # mouse over [surface, group of objects, top most object]
         self.mouse_over = [None, None, None]
 
-    def create_subsurfaces(self, game_board):
-        self.layout = self.game_board.layout
+    def create_subsurfaces(self):
         # create subsurfaces & set some of the initial layout constraints
-        self.menu = self.screen.subsurface(self.game_board.layout.menu_pos)  # menu panel
-        self.menu_l = self.menu.subsurface(self.game_board.layout.menu_l_pos)  # category menu
-        self.menu_r = self.menu.subsurface(
-            self.game_board.layout.menu_r_pos)  # game selection menu - games in a category
-        self.game_bg = self.screen.subsurface(self.game_board.layout.game_bg_pos)
-        self.game = self.screen.subsurface(self.game_board.layout.game_pos)  # game panel - all action happens here
-        self.info_bar = self.screen.subsurface(
-            self.game_board.layout.info_bar_pos)  # info panel - level control, game info, etc.
-        self.score_bar = self.screen.subsurface(
-            self.game_board.layout.score_bar_pos)  # top panel - holding username, score etc.
-        self.misio = self.screen.subsurface(
-            self.game_board.layout.misio_pos)  # holds an image/logo in top left corner - over menu
-        self.misio.set_colorkey((255, 75, 0))
-        self.dialogbg = self.screen.subsurface(self.game_board.layout.dialogbg_pos)
-        self.dialogwnd = self.screen.subsurface(self.game_board.layout.dialogwnd_pos)
+
+        self.game_bg = self.screen.subsurface(self.sizer.game_bg_pos)
+        #self.game = self.screen.subsurface(self.game_board.layout.game_pos)  # game panel - all action happens here
+        self.info_bar = self.screen.subsurface(self.sizer.info_bar_pos)  # info panel - level control, game info, etc.
+        self.score_bar = self.screen.subsurface(self.sizer.score_bar_pos)  # top panel - holding username, score etc.
+        self.dialogbg = self.screen.subsurface(self.sizer.dialogbg_pos)
+        self.dialogwnd = self.screen.subsurface(self.sizer.dialogwnd_pos)
         self.sb.resize()
+
+    def recreate_game_screen(self):
+        self.game = self.screen.subsurface(self.layout.game_pos)
 
     def fs_rescale(self, info):
         """rescale the game after fullscreen toggle, this will restart the board
         could not get all the game objects to scale nicely"""
         # pass new screen resolution
+        self.sizer.update_sizer(self.size[0], self.size[1])
         self.game_board.layout.update_layout_fs(self.size[0], self.size[1], self.game_board.layout.x_count,
                                                 self.game_board.layout.y_count)
         # load new game - create game objects
         self.game_board.level.load_level()
-        if self.game_board.game_type == "Board":
-            # adjust the layout to accommodate changes to number of squares automatically added due to screen ratio change
-            self.game_board.layout.update_layout(self.game_board.data[0], self.game_board.data[1])
-        else:
-            self.game_board.layout.update_layout()
-        self.create_subsurfaces(self.game_board)
+        # adjust the layout to accommodate changes to number of squares automatically added due to screen ratio change
+        self.game_board.layout.update_layout(self.game_board.data[0], self.game_board.data[1])
+        self.create_subsurfaces()
+        self.game = self.screen.subsurface(self.game_board.layout.game_pos)
         info.new_game(self.game_board, self.info_bar)
-        self.m.reset_scroll()
+        #self.m.reset_scroll()
 
     def fullscreen_toggle(self, info):
         """toggle between fullscreen and windowed version with CTRL + F
@@ -196,7 +196,9 @@ class GamePlay:
             self.config.settings["screenh"] = self.size[1]
             self.screen = pygame.display.set_mode(self.size, pygame.RESIZABLE)
 
+            self.sizer.update_sizer(self.size[0], self.size[1])
             self.fs_rescale(info)
+            #self.create_subsurfaces()
             self.config.settings_changed = True
             self.config.save_settings(self.db)
             if repost:
@@ -211,13 +213,15 @@ class GamePlay:
         # load and set up user settings
         self.config.load_settings(self.db, self.userid)
         self.lang.load_language()
+        self.completions_dict = dict()
         self.speaker.talkative = self.config.settings["espeak"]
         self.speaker.start_server()
         self.config.check_updates = self.config.settings["check_updates"]
         if self.android is None and self.config.check_updates and self.first_run:
             self.first_run = False
             self.updater_started = True
-            self.updater.start()
+            if self.updater is not None:
+                self.updater.start()
         if self.config.loaded_settings:
             self.config.fullscreen = self.config.settings["full_screen"]
         # message said at the start of the game
@@ -246,7 +250,7 @@ class GamePlay:
             self.scheme = eval("classes.colors.%sScheme()" % scheme)
         self.info.create()
         self.fs_rescale(self.info)
-        self.m.lang_change()
+        #self.m.lang_change()
         self.game_board.line_color = self.game_board.board.board_bg.line_color
 
         if scheme is None:
@@ -260,6 +264,7 @@ class GamePlay:
         self.config.settings["scheme"] = s_id
         self.config.settings_changed = True
         self.config.save_settings(self.db)
+        self.info.realign()
 
     def set_up_scheme(self):
         s_id = self.config.settings["scheme"]
@@ -286,8 +291,7 @@ class GamePlay:
         self.user_name = None
         self.display_info = pygame.display.Info()
         # Used to manage how fast the screen updates
-        clock = pygame.time.Clock()
-        self.clock = clock
+        self.clock = pygame.time.Clock()
 
         while self.done4good is False:
             if self.window_state == "LOG IN":
@@ -324,12 +328,8 @@ class GamePlay:
                             else:
                                 self.loginscreen.handle(event)
 
-                        if (self.redraw_needed[0] and self.game_redraw_tick[0] < 3) and self.loginscreen.update_me:
+                        if self.redraw_needed[0] and self.loginscreen.update_me:
                             self.loginscreen.update()
-                            self.game_redraw_tick[0] += 1
-                            if self.game_redraw_tick[0] == 2:
-                                self.redraw_needed[0] = False
-                                self.game_redraw_tick[0] = 0
                             self.flip_needed = True
 
                         if self.flip_needed:
@@ -337,12 +337,13 @@ class GamePlay:
                             pygame.display.flip()
                             self.flip_needed = False
 
-                    clock.tick(30)
+                    self.clock.tick(30)
 
             if self.window_state == "GAME":
                 self.set_up_user()
 
                 self.done = False
+                self.game_const = None
                 self.set_init_vals()
                 if android is None:
                     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (self.config.window_pos[0], self.config.window_pos[1])
@@ -384,6 +385,15 @@ class GamePlay:
 
                 # Set title of the window
                 pygame.display.set_caption(self.config.window_caption)
+                self.sizer = classes.sizer.Sizer(self, self.size[0], self.size[1])
+                self.sb = classes.score_bar.ScoreBar(self)
+                self.create_subsurfaces()
+
+                # display splash screen during loading
+                self.screen.fill((255, 255, 255))
+                loading_image = pygame.image.load(os.path.join('res', 'images', 'schemes', 'white', 'home_logo.png'))
+                self.screen.blit(loading_image, ((self.size[0] - 750) // 2, (self.size[1] - 180) // 2))
+                pygame.display.flip()
 
                 # create a list of one sprite holding game image or logo
                 self.sprites_list = pygame.sprite.RenderPlain()
@@ -401,17 +411,11 @@ class GamePlay:
                 m = classes.menu.Menu(self)
                 self.m = m
 
-                self.sb = classes.score_bar.ScoreBar(self)
-
                 # create info panel integrated with level control - holds current level/game and some buttons to change levels, etc.
                 info = classes.info_bar.InfoBar(self)
                 self.info = info
 
                 self.dialog = classes.dialogwnd.DialogWnd(self)
-
-                # create the logo object and add it to the list to render on update
-                self.front_img = classes.logoimg.LogoImg(self)
-                self.sprites_list.add(self.front_img)
 
                 # -------- Main Program Loop ----------- #
                 wait = False
@@ -426,30 +430,33 @@ class GamePlay:
                             wait = False
 
                     if not wait:
-                        if m.active_game_id != m.game_started_id:  # or m.active_game_id == 0: #if game id changed since last frame or selected activity is the Language changing panel
+                        if m.active_game_id != m.game_started_id:  # if game id changed since last frame or selected activity is the Language changing panel
                             if self.game_board is not None:
                                 # if this is not the first start of a game - the self.game_board has been already 'created' at least once
                                 self.game_board.board.clean()  # empty sprite groups, delete lists
                                 del (self.game_board)  # delete all previous game objects
                                 self.game_board = None
-                            # recreate a new game and subsurfaces
+
                             exec("import game_boards.%s" % m.game_constructor[0:7])
-                            game_const = eval("game_boards.%s" % m.game_constructor)
-                            self.game_board = game_const(self, self.speaker, self.config, self.size[0],
-                                                                 self.size[1])
+                            self.game_const = eval("game_boards.%s" % m.game_constructor)
+                            self.game_board = self.game_const(self, self.speaker, self.config, self.size[0], self.size[1])
                             m.game_started_id = m.active_game_id
-                            m.l = self.game_board.layout
-                            self.create_subsurfaces(self.game_board)
+                            self.layout = self.game_board.layout
+                            self.recreate_game_screen()
                             info.new_game(self.game_board, self.info_bar)
                             self.set_up_scheme()
                             gc.collect()  # force garbage collection to remove remaining variables to free memory
 
-                        elif self.game_board.level.lvl != self.game_board.level.prev_lvl or self.game_board.update_layout_on_start:
+                        elif self.game_board.level.lvl != self.game_board.level.prev_lvl:
                             # if game id is the same but the level changed load new level
-                            self.create_subsurfaces(self.game_board)
+
+                            self.layout = self.game_board.layout
+                            self.sizer.update_sizer(self.size[0], self.size[1])
+                            self.recreate_game_screen()
                             info.new_game(self.game_board, self.info_bar)
                             self.game_board.level.prev_lvl = self.game_board.level.lvl
-                            self.game_board.update_layout_on_start = False
+                            self.redraw_needed[0] = True
+
                             gc.collect()
 
                         if not self.show_dialogwnd:
@@ -460,7 +467,7 @@ class GamePlay:
                                     self.game_board.level.next_board_load()
 
                         # Process or delegate events
-                        for event in pygame.event.get():  # pygame.event.get(): # User did something
+                        for event in pygame.event.get():
                             if event.type == pygame.QUIT or (
                                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                                 self.dialog.show_dialog(0, self.lang.d["Do you want to exit the game?"])
@@ -480,25 +487,21 @@ class GamePlay:
                                 if self.show_dialogwnd:
                                     self.dialog.handle(event)
                                 else:
-                                    if pos[0] > self.game_board.layout.menu_a_w and self.game_board.layout.score_bar_h > \
-                                            pos[1]:
+                                    if pos[0] > 0 and self.sizer.score_bar_h > pos[1]:
                                         if self.mouse_over[0] is not None and self.mouse_over[0] != self.sb:
                                             self.mouse_over[0].on_mouse_out()
                                         self.mouse_over[0] = self.sb
 
                                         self.sb.handle(event)
-                                    elif pos[
-                                        0] > self.game_board.layout.menu_a_w and self.game_board.layout.top_margin > \
-                                            pos[1]:
+                                    elif pos[0] > 0 and self.sizer.top_margin > pos[1]:
                                         if self.mouse_over[0] is not None and self.mouse_over[0] != info:
                                             self.mouse_over[0].on_mouse_out()
                                         self.mouse_over[0] = info
 
                                         info.handle(event, self.game_board.layout, self)
 
-                                    elif pos[
-                                        0] > self.game_board.layout.menu_a_w and self.game_board.layout.top_margin < \
-                                            pos[1] < self.game_board.layout.game_h + self.game_board.layout.top_margin:
+                                    elif pos[0] > 0 and self.sizer.top_margin < \
+                                            pos[1] < self.game_board.layout.game_h + self.sizer.top_margin:
                                         # clicked on game board
                                         if event.type == pygame.MOUSEBUTTONDOWN and self.game_board.show_msg is True:
                                             # if dialog after completing the game is shown then hide it and load next game
@@ -506,24 +509,6 @@ class GamePlay:
                                             self.game_board.level.next_board_load()
                                         else:
                                             self.game_board.handle(event)
-                                    elif pos[0] < self.game_board.layout.menu_a_w and pos[1] < \
-                                            self.game_board.layout.misio_pos[3]:
-                                        self.front_img.handle(event)
-                                        if self.mouse_over[0] is not None and self.mouse_over[0] != self.front_img:
-                                            self.mouse_over[0].on_mouse_out()
-                                        self.mouse_over[0] = self.front_img
-                                    elif pos[0] < self.game_board.layout.menu_a_w and pos[1] > \
-                                            self.game_board.layout.misio_pos[3]:
-                                        # clicked on menu panel
-                                        if self.mouse_over[0] is not None and self.mouse_over[0] != m:
-                                            self.mouse_over[0].on_mouse_out()
-                                        self.mouse_over[0] = m
-                                        if pos[0] < self.game_board.layout.menu_l_w:
-                                            # clicked on category menu
-                                            m.handle_menu_l(event)
-                                        else:
-                                            # clicked on game selection menu
-                                            m.handle_menu_r(event, self.game_board.layout.menu_l_w)
                                     else:
                                         # clicked on info panel
                                         if self.mouse_over[0] is not None and self.mouse_over[0] != self.game_board:
@@ -540,28 +525,13 @@ class GamePlay:
                                     self.dialog.handle(event)
                                 else:
                                     gbh = False
-                                    if pos[0] < self.game_board.layout.menu_a_w and pos[1] > \
-                                            self.game_board.layout.misio_pos[3]:
-                                        # clicked on menu panel
-                                        if pos[0] < self.game_board.layout.menu_l_w:
-                                            # clicked on category menu
-                                            m.handle_menu_l(event)
-                                        else:
-                                            # clicked on game selection menu
-                                            m.handle_menu_r(event, self.game_board.layout.menu_l_w)
-                                    elif pos[0] < self.game_board.layout.menu_a_w and pos[1] < \
-                                            self.game_board.layout.misio_pos[3]:
-                                        self.front_img.handle(event)
-                                    elif pos[
-                                        0] > self.game_board.layout.menu_a_w and self.game_board.layout.top_margin < \
-                                            pos[1] < self.game_board.layout.game_h + self.game_board.layout.top_margin:
+                                    if pos[0] > 0 and self.sizer.top_margin < \
+                                            pos[1] < self.game_board.layout.game_h + self.sizer.top_margin:
                                         self.game_board.handle(event)
                                         gbh = True
-                                    elif pos[0] > self.game_board.layout.menu_a_w and pos[1] < \
-                                            self.game_board.layout.score_bar_h:
+                                    elif pos[0] > 0 and pos[1] < self.sizer.score_bar_h:
                                         self.sb.handle(event)
-                                    elif pos[0] > self.game_board.layout.menu_a_w and pos[1] < \
-                                            self.game_board.layout.top_margin:
+                                    elif pos[0] > 0 and pos[1] < self.sizer.top_margin:
                                         # make the game finish drag, etc.
                                         self.game_board.handle(event)
 
@@ -573,7 +543,6 @@ class GamePlay:
 
                                     if android is None:
                                         pygame.mouse.set_cursor(*pygame.cursors.arrow)
-                                    m.swipe_reset()
                             else:
                                 if self.show_dialogwnd:
                                     self.dialog.handle(event)
@@ -581,41 +550,17 @@ class GamePlay:
                                     # let the game handle other events
                                     self.game_board.handle(event)
 
-                        # trying to save the CPU - only update a subsurface entirely, (can't be bothered to play with dirty sprites)
-                        # if anything has changed on the subsurface or it's size has changed
-
-                        # creating list of drawing functions and arguments for each subsurface
-                        self.draw_func = [self.game_board.update, info.draw, m.draw_menu]
-                        self.draw_func_args = [[self.game], [self.info_bar],
-                                          [self.menu, self.menu_l, self.menu_r, self.game_board.layout]]
-
-                        if self.m.scroll_direction != 0:
-                            if self.menu_speed == self.menu_tick:
-                                self.m.scroll_menu()
-                                self.menu_tick = 0
-                            else:
-                                self.menu_tick += 1
-
                         # checking if any of the subsurfaces need updating and updating them if needed
-                        # in reverse order so the menu is being drawn first
 
-                        for i in range(2, -1, -1):
-                            if self.redraw_needed[i]:
-                                self.draw_func[i](*self.draw_func_args[i])
-                                if i > 0:
-                                    self.redraw_needed[i] = False
-                                    self.flip_needed = True
-                                else:
-                                    if self.game_redraw_tick[i] == 2:
-                                        self.redraw_needed[i] = False
-                                        self.flip_needed = True
-                                        self.game_redraw_tick[i] = 0
-                                    else:
-                                        self.game_redraw_tick[i] += 1
+                        if self.redraw_needed[1]:
+                            info.draw(self.info_bar)
+                            self.redraw_needed[1] = False
+                            self.flip_needed = True
 
-                                # draw the logo over menu - top left corner
-                                self.front_img.update()
-                                self.sprites_list.draw(self.misio)
+                        if self.redraw_needed[0]:
+                            self.game_board.update(self.game)
+                            self.redraw_needed[0] = False
+                            self.flip_needed = True
 
                         if self.sb.update_me:
                             self.sb.draw(self.score_bar)
@@ -633,17 +578,16 @@ class GamePlay:
                         # Limit to 30 frames per second but most redraws are made when needed - less often
                         # 30 frames per second used mainly for event handling
                         self.game_board.process_ai()
-                    clock.tick(30)
+                    self.clock.tick(30)
 
                 # close eSpeak process, quit pygame, collect garbage and exit the game.
                 if self.config.settings_changed:
                     self.config.save_settings(self.db)
-                clock.tick(300)
+                self.clock.tick(300)
         self.db.close()
         if self.speaker.process is not None:
             self.speaker.stop_server()
 
-        # self.speaker.stop_server_en()
         pygame.quit()
         gc.collect()
         if android is None:
@@ -659,6 +603,9 @@ def main():
             pygame.init()
             android.init()
             android.map_key(android.KEYCODE_BACK, pygame.K_ESCAPE)
+        else:
+            icon = pygame.image.load(os.path.join('res', 'icon', 'ico256.png'))
+            pygame.display.set_icon(icon)
         configo = classes.config.Config(android)
 
         # create the language object
@@ -667,7 +614,8 @@ def main():
         # create the Thread objects and start the threads
         speaker = classes.speaker.Speaker(lang, configo, android)
 
-        updater = classes.updater.Updater(configo, android)
+        #cancel out checking for updates so that the PC does not have to connect to the Internet
+        updater = None #classes.updater.Updater(configo, android)
 
         app = GamePlay(speaker, lang, configo, updater)
         if android is None:
