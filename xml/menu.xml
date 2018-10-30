@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- max cat id = 24, max game id = 269 -->
+<!-- next cat id = 25, next game id = 276 (271 - 272 - menu, 273 - menu colour chooser) -->
 <!-- title and subtitle must match already existing string from .po file so these can't just be changed here -->
 <!-- visible 0 - hide, 1 - show, use to temporarily hide activities -->
 <!-- "listening" used to mark which activities are listening activities that require TTS engine to work - if not available the activities will be hidden -->
@@ -12,42 +12,42 @@
                   constructor_id="17"
                   title="Your Alphabet" 
                   subtitle="Letter Flashcards"
-                  icon="ico_g_0100.png" ico_group="eico1.png" icosuffix="True" lang_activity="True"
+                  icon="ico_g_0100.png" ico_group="2" icosuffix="True" lang_activity="True"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="4" variant="0" var2="0" min_age="0" max_age="2"
                   constructor_id="37"
                   title="English Alphabet"
                   subtitle="Letter Flashcards"
-                  icon="ico_g_0101.png" ico_group="eico1.png" icosuffix="False" lang_activity="True"
+                  icon="ico_g_0101.png" ico_group="2" icosuffix="False" lang_activity="True"
                   visible="0" lang_incl="['en']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="6" variant="0" var2="0" min_age="0" max_age="2"
                   constructor_id="10"
                   title="Learn to Write"
                   subtitle="Trace Letters"
-                  icon="ico_g_0109.png" ico_group="eico2.png" icosuffix="False" lang_activity="True"
+                  icon="ico_g_0109.png" ico_group="1" icosuffix="False" lang_activity="True"
                   visible="1" lang_incl="['en', 'it', 'pt', 'de']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="7" variant="1" var2="0" min_age="0" max_age="2"
                   constructor_id="10"
                   title="Learn to Write"
                   subtitle="Trace Letters"
-                  icon="ico_g_0110.png" ico_group="eico2.png" icosuffix="False" lang_activity="True"
+                  icon="ico_g_0110.png" ico_group="1" icosuffix="False" lang_activity="True"
                   visible="1" lang_incl="['en', 'it', 'pt', 'de']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="9" variant="2" var2="0"  min_age="0" max_age="2"
                   constructor_id="10"
                   title="Learn to Write"
                   subtitle="local_kbrd"
-                  icon="ico_g_0112.png" ico_group="eico2.png" icosuffix="False" lang_activity="True"
+                  icon="ico_g_0112.png" ico_group="1" icosuffix="False" lang_activity="True"
                   visible="1" lang_incl="['el']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="8" variant="0" var2="0" min_age="0" max_age="2"
                   constructor_id="22"
                   title="Learn to Write"
                   subtitle="local_kbrd"
-                  icon="ico_g_0111.png" ico_group="eico2.png" icosuffix="False" lang_activity="True"
+                  icon="ico_g_0111.png" ico_group="1" icosuffix="False" lang_activity="True"
                   visible="1" lang_incl="['ru']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="11" variant="0" var2="0"  min_age="0" max_age="3"
@@ -483,7 +483,7 @@
                   constructor_id="38"
                   title="Numbers"
                   subtitle="Number Flashcards"
-                  icon="ico_g_0300.png" ico_group="eico1.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0300.png" ico_group="2" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="22" variant="0" var2="0"  min_age="0" max_age="1"
@@ -501,14 +501,14 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="43" variant="0" var2="0"  min_age="0" max_age="2"
-                  constructor_id="5"
+                  constructor_id="111"
                   title="Sorting Numbers"
                   subtitle=""
                   icon="ico_g_0400.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="207" variant="1" var2="0"  min_age="0" max_age="5"
-                  constructor_id="5"
+                  constructor_id="111"
                   title="Sorting Numbers"
                   subtitle=""
                   icon="ico_g_0411.png" ico_group="" icosuffix="False" lang_activity="False"
@@ -532,7 +532,7 @@
                   constructor_id="79"
                   title="Number Spelling"
                   subtitle=""
-                  icon="ico_g_0325.png" ico_group="eico1.png" icosuffix="False" lang_activity="True"
+                  icon="ico_g_0325.png" ico_group="2" icosuffix="False" lang_activity="True"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="21" variant="0" var2="0"  min_age="0" max_age="3"
@@ -597,7 +597,7 @@
                   constructor_id="73"
                   title="Columnar addition"
                   subtitle="Demonstration"
-                  icon="ico_g_1101.png" ico_group="eico1.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1101.png" ico_group="2" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="55" variant="0" var2="0"  min_age="3" max_age="7"
@@ -655,7 +655,7 @@
                   constructor_id="74"
                   title="Columnar subtraction"
                   subtitle="Demonstration"
-                  icon="ico_g_1103.png" ico_group="eico1.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1103.png" ico_group="2" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="57" variant="0" var2="0"  min_age="3" max_age="7"
@@ -727,7 +727,7 @@
                   constructor_id="75"
                   title="Long multiplication"
                   subtitle="Demonstration"
-                  icon="ico_g_1104.png" ico_group="eico1.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1104.png" ico_group="2" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="59" variant="0" var2="0"  min_age="4" max_age="7"
@@ -778,7 +778,7 @@
                   constructor_id="76"
                   title="Long division"
                   subtitle="Demonstration"
-                  icon="ico_g_1106.png" ico_group="eico1.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1106.png" ico_group="2" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="61" variant="0" var2="0"  min_age="4" max_age="7"
@@ -790,16 +790,16 @@
             </game>
         </cat>
         <cat id="20" title="Negative numbers" subtitle="" icon="ico_c_23.png" min_age="4" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
-            <game dbid="999" variant="1" var2="0"  min_age="4" max_age="7"
-                  constructor_id="120"
+            <game dbid="274" variant="1" var2="0"  min_age="4" max_age="7"
+                  constructor_id="114"
                   title="Temperature - introduction to negative numbers"
                   subtitle=""
-                  icon="ico_g_9999.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2315.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
             <game dbid="215" variant="1" var2="0"  min_age="4" max_age="7"
-                  constructor_id="5"
+                  constructor_id="111"
                   title="Sorting Numbers"
                   subtitle=""
                   icon="ico_g_2300.png" ico_group="" icosuffix="False" lang_activity="False"
@@ -868,21 +868,21 @@
                   constructor_id="39"
                   title="Find solution"
                   subtitle="Multiplication"
-                  icon="ico_g_9999.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2309.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="263" variant="2" var2="0"  min_age="4" max_age="7"
                   constructor_id="19"
                   title="Find missing number"
                   subtitle="Multiplication"
-                  icon="ico_g_9999.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2310.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="264" variant="2" var2="0"  min_age="4" max_age="7"
                   constructor_id="60"
                   title="Maths Matching Game"
                   subtitle="Multiplication"
-                  icon="ico_g_9999.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2311.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -890,21 +890,21 @@
                   constructor_id="39"
                   title="Find solution"
                   subtitle="Division"
-                  icon="ico_g_9999.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2312.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="266" variant="3" var2="0"  min_age="4" max_age="7"
                   constructor_id="19"
                   title="Find missing number"
                   subtitle="Division"
-                  icon="ico_g_9999.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2313.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="267" variant="3" var2="0"  min_age="4" max_age="7"
                   constructor_id="60"
                   title="Maths Matching Game"
                   subtitle="Division"
-                  icon="ico_g_9999.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2314.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
@@ -913,7 +913,7 @@
                   constructor_id="14"
                   title="Experiment with fractions"
                   subtitle=""
-                  icon="ico_g_2400.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2400.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="227" variant="0" var2="0"  min_age="1" max_age="7"
@@ -942,7 +942,7 @@
                   constructor_id="83"
                   title="Experiment with fractions"
                   subtitle=""
-                  icon="ico_g_0412.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0412.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             -->
@@ -950,7 +950,7 @@
                   constructor_id="93"
                   title="Reduce fractions"
                   subtitle=""
-                  icon="ico_g_2402.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2402.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -966,7 +966,7 @@
                   constructor_id="91"
                   title="Extend fractions"
                   subtitle=""
-                  icon="ico_g_2401.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2401.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -1006,7 +1006,7 @@
                   constructor_id="94"
                   title="Add fractions with the same denominator"
                   subtitle=""
-                  icon="ico_g_2403.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2403.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -1014,7 +1014,7 @@
                   constructor_id="95"
                   title="Subtract fractions with the same denominator"
                   subtitle=""
-                  icon="ico_g_2404.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2404.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -1023,7 +1023,7 @@
                   constructor_id="96"
                   title="Multiply fractions"
                   subtitle=""
-                  icon="ico_g_2405.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2405.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -1031,7 +1031,7 @@
                   constructor_id="97"
                   title="Divide fractions"
                   subtitle=""
-                  icon="ico_g_2406.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2406.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -1070,7 +1070,7 @@
                   constructor_id="65"
                   title="Experiment with decimals"
                   subtitle=""
-                  icon="ico_g_2450.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2450.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="228" variant="0" var2="0"  min_age="4" max_age="7"
@@ -1101,14 +1101,14 @@
                   constructor_id="43"
                   title="Experiment with percentages"
                   subtitle=""
-                  icon="ico_g_2500.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2500.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="249" variant="1" var2="0"  min_age="1" max_age="7"
                   constructor_id="104"
                   title="Reading pie charts"
                   subtitle=""
-                  icon="ico_g_2400.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2503.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="246" variant="2" var2="0"  min_age="1" max_age="7"
@@ -1132,7 +1132,7 @@
                   constructor_id="33"
                   title="Experiment with ratios"
                   subtitle=""
-                  icon="ico_g_2600.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2600.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -1170,14 +1170,14 @@
                   constructor_id="9"
                   title="Shapes"
                   subtitle="Shape Flashcards"
-                  icon="ico_g_0500.png" ico_group="eico1.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0500.png" ico_group="2" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="63" variant="1" var2="0"  min_age="1" max_age="7"
                   constructor_id="9"
                   title="Solids"
                   subtitle="Solid Flashcards"
-                  icon="ico_g_0501.png" ico_group="eico1.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0501.png" ico_group="2" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="214" variant="2" var2="0"  min_age="0" max_age="7"
@@ -1191,14 +1191,14 @@
                   constructor_id="59"
                   title="ShapeMaker"
                   subtitle="lets_see_what_you_draw"
-                  icon="ico_g_0502.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0502.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="65" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="24"
                   title="ShapeMaker"
                   subtitle="test_yourself"
-                  icon="ico_g_0503.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0502.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
@@ -1206,7 +1206,7 @@
                   constructor_id="98"
                   title="Reflections - Drawing"
                   subtitle=""
-                  icon="ico_g_0505.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0505.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="238" variant="0" var2="0"  min_age="3" max_age="7"
@@ -1233,12 +1233,19 @@
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
-        <cat id="19" title="Patterns" subtitle="" icon="ico_c_22.png" min_age="0" max_age="7" visible="1" lang_incl="['en', 'pl']" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
+        <cat id="19" title="Patterns" subtitle="" icon="ico_c_22.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
             <game dbid="211" variant="3" var2="0"  min_age="0" max_age="7"
                   constructor_id="25"
                   title="Image Patterns"
                   subtitle=""
                   icon="ico_g_2200.png" ico_group="" icosuffix="False" lang_activity="False"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game dbid="275" variant="3" var2="0"  min_age="0" max_age="7"
+                  constructor_id="112"
+                  title="Image Patterns"
+                  subtitle="with mirrored images"
+                  icon="ico_g_2206.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="213" variant="5" var2="0"  min_age="0" max_age="7"
@@ -1266,7 +1273,7 @@
                   constructor_id="25"
                   title="Letter Patterns"
                   subtitle=""
-                  icon="ico_g_2203.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_2203.png" ico_group="" icosuffix="True" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="209" variant="1" var2="0"  min_age="0" max_age="7"
@@ -1282,28 +1289,28 @@
                   constructor_id="66"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1000.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1000.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="104" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="81"
                   title="Catalan clock"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1001.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1010.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="['ca']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="135" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="81"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1001.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1001.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="['ca']" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="142" variant="2" var2="0"  min_age="0" max_age="7"
                   constructor_id="66"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1002.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1002.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="68" variant="0" var2="0"  min_age="0" max_age="7"
@@ -1354,7 +1361,7 @@
                   constructor_id="66"
                   title="Clock0 - Russian official time"
                   subtitle="Russian official - subtitle"
-                  icon="ico_g_1000.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1000.png" ico_group="T" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="['ru']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="106" variant="1" var2="1"  min_age="0" max_age="7"
@@ -1370,21 +1377,21 @@
                   constructor_id="66"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1000.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1000.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="167" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="81"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1001.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1001.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="168" variant="2" var2="0"  min_age="0" max_age="7"
                   constructor_id="66"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1002.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1002.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="170" variant="0" var2="0"  min_age="0" max_age="7"
@@ -1428,21 +1435,21 @@
                   constructor_id="66"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1000.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1000.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="175" variant="0" var2="1"  min_age="0" max_age="7"
                   constructor_id="81"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1001.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1001.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="176" variant="2" var2="1"  min_age="0" max_age="7"
                   constructor_id="66"
                   title="Clock0"
                   subtitle="Play_w_clock"
-                  icon="ico_g_1002.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_1002.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="178" variant="0" var2="1"  min_age="0" max_age="7"
@@ -1485,87 +1492,87 @@
         <cat id="24" title="Calculating with Time" subtitle="" icon="ico_c_27.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
             <game dbid="250" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="105"
-                  title="Elapsed time"
-                  subtitle=""
-                  icon="ico_g_1050.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  title="Experiment with elapsed time"
+                  subtitle="Visualized on a clock dial"
+                  icon="ico_g_1050.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="258" variant="5" var2="0"  min_age="0" max_age="7"
                   constructor_id="107"
-                  title="Elapsed time"
-                  subtitle=""
-                  icon="ico_g_1050.png" ico_group="" icosuffix="False" lang_activity="False"
+                  title="Calculate elapsed time"
+                  subtitle="Visualized on a clock dial"
+                  icon="ico_g_1059.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="251" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="106"
-                  title="Elapsed time"
-                  subtitle=""
-                  icon="ico_g_1051.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  title="Experiment with elapsed time"
+                  subtitle="Visualized on two number lines"
+                  icon="ico_g_1051.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="253" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="107"
-                  title="Elapsed time"
-                  subtitle=""
+                  title="Calculate elapsed time"
+                  subtitle="Visualized on two number lines"
                   icon="ico_g_1051.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="254" variant="1" var2="0"  min_age="0" max_age="7"
                   constructor_id="107"
-                  title="Elapsed time"
-                  subtitle=""
+                  title="Calculate elapsed time"
+                  subtitle="Visualized on two number lines"
                   icon="ico_g_1052.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="252" variant="1" var2="0"  min_age="0" max_age="7"
                   constructor_id="106"
-                  title="Elapsed time"
-                  subtitle=""
-                  icon="ico_g_1053.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  title="Experiment with elapsed time"
+                  subtitle="Visualized on a number line"
+                  icon="ico_g_1053.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="255" variant="2" var2="0"  min_age="0" max_age="7"
                   constructor_id="107"
-                  title="Elapsed time"
-                  subtitle=""
+                  title="Calculate elapsed time"
+                  subtitle="Visualized on a number line"
                   icon="ico_g_1053.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="256" variant="3" var2="0"  min_age="0" max_age="7"
                   constructor_id="107"
-                  title="Elapsed time"
-                  subtitle=""
+                  title="Calculate elapsed time"
+                  subtitle="Visualized on a number line"
                   icon="ico_g_1054.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="257" variant="4" var2="0"  min_age="0" max_age="7"
                   constructor_id="107"
-                  title="Elapsed time"
-                  subtitle=""
+                  title="Calculate elapsed time"
+                  subtitle="With no visualizations"
                   icon="ico_g_1055.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
             <game dbid="259" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="108"
-                  title="Elapsed time"
-                  subtitle=""
-                  icon="ico_g_1056.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  title="Experiment with elapsed time 2"
+                  subtitle="Visualized on two number lines"
+                  icon="ico_g_1056.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
             <game dbid="260" variant="1" var2="0"  min_age="0" max_age="7"
                   constructor_id="108"
-                  title="Elapsed time"
-                  subtitle=""
-                  icon="ico_g_1057.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  title="Experiment with elapsed time 2"
+                  subtitle="Visualized on a number line"
+                  icon="ico_g_1057.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
 
             <game dbid="261" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="109"
-                  title="Elapsed time"
+                  title="Find a start or end time"
                   subtitle=""
                   icon="ico_g_1058.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
@@ -1580,7 +1587,7 @@
                   constructor_id="21"
                   title="Paint"
                   subtitle=""
-                  icon="ico_g_0600.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0600.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="72" variant="0" var2="0"  min_age="0" max_age="7"
@@ -1601,19 +1608,19 @@
                   constructor_id="51"
                   title="Paint Mixer"
                   subtitle="Mixing RYB"
-                  icon="ico_g_0603.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0603.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="75" variant="0" var2="0"  min_age="2" max_age="7"
                   constructor_id="52"
                   title="Ink Mixer"
                   subtitle="Mixing CMY"
-                  icon="ico_g_0605.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0605.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="76" variant="0" var2="0"  min_age="2" max_age="7"
                   constructor_id="55"
-                  title="Find the colour of the circle"
+                  title="Find the colour of the circle in the middle"
                   subtitle="Adjust CMY"
                   icon="ico_g_0605.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
@@ -1622,12 +1629,12 @@
                   constructor_id="53"
                   title="Light Mixer"
                   subtitle="Mixing RGB"
-                  icon="ico_g_0604.png" ico_group="eico2.png" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0604.png" ico_group="1" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game dbid="78" variant="0" var2="0"  min_age="2" max_age="7"
                   constructor_id="54"
-                  title="Find the colour of the circle"
+                  title="Find the colour of the circle in the middle"
                   subtitle="Adjust RGB"
                   icon="ico_g_0604.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
@@ -1638,7 +1645,7 @@
                   constructor_id="12"
                   title="Follow the Arrows"
                   subtitle="remember the directions"
-                  icon="ico_g_0700.png" ico_group="" icosuffix="False" lang_activity="False"
+                  icon="ico_g_0700.png" ico_group="T" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="80" variant="0" var2="0"  min_age="0" max_age="7"
