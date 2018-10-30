@@ -3,6 +3,7 @@
 import pygame
 
 import classes.board
+import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 
@@ -16,10 +17,12 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.show_info_btn = False
 
-        color1 = (220, 220, 220)
-        color2 = (255, 255, 255)
+        #color1 = (220, 220, 220)
+        #color2 = (255, 255, 255)
+        color1 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 50, 255)
+        color2 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 30, 255)
 
-        font_color = (40, 40, 40)
+        font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 50)
         data = [18, 12]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=True)

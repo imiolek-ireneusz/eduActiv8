@@ -22,10 +22,15 @@ class Board(gd.BoardGame):
         color = (234, 218, 225)
         self.color = color
 
-        border_color = (105, 12, 100)
-        letter_bg = (255, 230, 255)
+        #border_color = (105, 12, 100)
+        border_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 200, 200)
+        #letter_bg = (255, 230, 255)
+
+        letter_bg = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 30, 255)
         white = (255, 255, 255)
-        font_color = (100, 12, 100)
+        #font_color = (100, 12, 100)
+
+        font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 150)
 
         img_top = 1
         gv = self.mainloop.m.game_variant
@@ -167,7 +172,6 @@ class Board(gd.BoardGame):
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
-        self.mainloop.recreate_game_screen()
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
 
