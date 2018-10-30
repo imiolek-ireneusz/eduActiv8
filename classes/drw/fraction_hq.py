@@ -73,7 +73,7 @@ class Fraction:
             angle = 360.0 / self.numbers[1]
             angle_start_f = (self.numbers[0] * angle) / 2.0
             for i in range(self.numbers[1]):
-                if i < self.numbers[0]:
+                if i < self.numbers[0] and self.numbers[0] > 0:
                     col = self.color1
                     bd_col = self.border_color1
                     offset = self.offset_selected
@@ -88,8 +88,10 @@ class Fraction:
 
                 #create vector to push the pieces away from the centre towards middle of the arch
                 centre_vect = Vector2().from_points([cx, cy],
-                                                    [cx + (r * cos(((angle*(i+1) - angle / 2.0) - angle_start_f) * pi / 180.0)),
-                                                     cy + (r * sin(((angle*(i+1) - angle / 2.0) - angle_start_f) * pi / 180.0))])
+                                                    [cx + (r * cos(((angle*(i+1) - angle / 2.0) -
+                                                                    angle_start_f) * pi / 180.0)),
+                                                     cy + (r * sin(((angle*(i+1) - angle / 2.0) -
+                                                                    angle_start_f) * pi / 180.0))])
 
                 centre_vect.normalize()
                 #first point

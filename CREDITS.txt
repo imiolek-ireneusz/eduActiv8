@@ -363,6 +363,12 @@ Images for new icons:
     https://openclipart.org/detail/79933/roman-clock
     https://openclipart.org/detail/227434/relogio-digital
 
+    https://openclipart.org/detail/215910/apple-02
+    https://openclipart.org/detail/250352/icon-engineer-white-on-grey
+    https://openclipart.org/detail/11055/users
+    https://openclipart.org/detail/8611/dodge-neon-car
+    https://openclipart.org/detail/94711/blue-basket
+
 New images in eduActiv8:
     https://openclipart.org/detail/95431/star
 

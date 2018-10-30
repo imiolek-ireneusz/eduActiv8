@@ -28,6 +28,7 @@ class Board(gd.BoardGame):
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 scheme = "black"
+                card_color = (0, 0, 0)
 
         data = [15, 10]
 
@@ -52,8 +53,8 @@ class Board(gd.BoardGame):
             c1p = self.dp["area:"]
             c2 = self.d["perimeter:"]
             c2p = self.dp["perimeter:"]
-            fc_image = "flashcard_shapes.jpg"
-            fc_images_thumb = "flashcard_shapes_72.jpg"
+            fc_image = "flashcard_shapes.png"
+            fc_images_thumb = "flashcard_shapes_72.png"
         else:  # self.mainloop.m.game_variant == 1:
             shape_count = 9
             spacing = 2
@@ -73,8 +74,8 @@ class Board(gd.BoardGame):
             c1p = self.dp["surface area:"]
             c2 = self.d["volume:"]
             c2p = self.dp["volume:"]
-            fc_image = "flashcard_solids.jpg"
-            fc_images_thumb = "flashcard_solids_72.jpg"
+            fc_image = "flashcard_solids.png"
+            fc_images_thumb = "flashcard_solids_72.png"
 
 
         # stretch width to fit the screen size
@@ -122,14 +123,14 @@ class Board(gd.BoardGame):
 
         # frame size 288 x 216
         self.board.add_unit(x - 2, y + 3, 4, 4, classes.board.MultiImgSprite, self.shape_names[0], card_color,
-                            os.path.join("schemes", scheme, fc_image), row_data=[shape_count, 1])
+                            fc_image, alpha=True, row_data=[shape_count, 1])
         self.board.ships[-1].speaker_val = self.shape_namesp[0]
         self.board.ships[-1].speaker_val_update = False
 
         self.board.add_door(x - 2, y + 1, 9, 6, classes.board.Door, "", card_color, "")
 
         self.board.add_door(x - spacing, 0, shape_count, 1, classes.board.Door, "", card_color,
-                            os.path.join("schemes", scheme, fc_images_thumb))
+                            fc_images_thumb, alpha=True)
 
         self.board.units[2].door_outline = True
         self.board.units[2].perm_outline_color = font_color

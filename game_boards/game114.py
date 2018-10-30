@@ -54,8 +54,9 @@ class Board(gd.BoardGame):
 
         self.board.add_unit(0, 0, 3, data[1], classes.board.Label, "", white, "", 0)
         self.ther_canvas = self.board.units[-1]
-        self.thermometer = classes.drw.thermometer.Thermometer(self, 3, self.data[1],self.board.scale,
-                                                               color1, bd_color1, self.rng, self.number)
+
+        self.thermometer = classes.drw.thermometer.Thermometer(self, 3, self.data[1], self.board.scale,
+                                                               color1, bd_color1, self.rng, self.number, 5)
         self.ther_canvas.painting = self.thermometer.get_canvas().copy()
 
         self.board.add_unit(4, 6, 2, 2, classes.board.ImgCenteredShip, "", transp,

@@ -5,13 +5,14 @@ from math import pi
 
 
 class Thermometer:
-    def __init__(self, game_board, width, height, scale, color, border_color, rng, number):
+    def __init__(self, game_board, width, height, scale, color, border_color, rng, number, lbl_dist=5):
         self.size = [width * scale, height * scale]
         self.center = [self.size[0] // 2, self.size[1] // 2]
         self.game_board = game_board
         self.color = color
         self.border_color = border_color
         self.number = number
+        self.lbl_dist = lbl_dist
         self.rng = rng
         self.v_margin = int(80 * self.size[0] / 500.0)
         self.marker_len10 = int(20 * self.size[0] / 150.0)
@@ -74,7 +75,7 @@ class Thermometer:
             pygame.draw.line(self.canvas, self.border_color,
                              [r, self.v_gauge_margin_t + i * step],
                              [r + ln, self.v_gauge_margin_t + i * step], 1)
-            if i % 5 == 0:
+            if i % self.lbl_dist == 0:
                 val = str(vl)
                 font_size = self.game_board.t_font.size(val)
                 text = self.game_board.t_font.render(val, 1, self.border_color)

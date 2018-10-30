@@ -133,7 +133,6 @@ class Board(gd.BoardGame):
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.board.set_animation_constraints(0, data[0], 0, data[1])
         self.layout.update_layout(data[0], data[1])
-        self.mainloop.recreate_game_screen()
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
         self.board.board_bg.initcolor = color
