@@ -7,7 +7,7 @@ import classes.extras as ex
 
 
 class DialogBtn(pygame.sprite.Sprite):
-    def __init__(self, wnd, l, t, w, h, caption, img_src1, img_src2, fsubmit, fargs):
+    def __init__(self, wnd, l, t, w, h, caption, img_src1, fsubmit, fargs):
         pygame.sprite.Sprite.__init__(self)
         self.wnd = wnd
         self.w = w
@@ -17,20 +17,28 @@ class DialogBtn(pygame.sprite.Sprite):
         self.fsubmit = fsubmit
         self.fargs = fargs
         self.caption = ex.unival(caption)
-        self.is_mouse_over = False
+        self.hover = False
         self.color = (255, 255, 255, 0)
         self.image = pygame.Surface([self.w, self.h], flags=pygame.SRCALPHA)
 
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.l, self.t]
         self.img_src1 = img_src1
-        self.img_src2 = img_src2
         self.active_img = None
+        self.load_images()
+
+    def load_images(self):
+        self.bg_tint_color = ex.hsv_to_rgb(self.wnd.mainloop.cl.color_sliders[5][0] * 16, 255, 100)
         if len(self.img_src1) > 0:
             self.img_pos = (0, 0)
             try:
-                self.img1 = pygame.image.load(os.path.join('res', 'images', self.img_src1)).convert_alpha()
-                self.img2 = pygame.image.load(os.path.join('res', 'images', self.img_src2)).convert_alpha()
+                self.img1 = pygame.image.load(os.path.join('res', 'images', "dialog",  self.img_src1)).convert_alpha()
+                self.img3 = pygame.image.load(os.path.join('res', 'images', "dialog", "dialog_bg_n.png")).convert_alpha()
+                self.img3.fill(self.bg_tint_color, special_flags=pygame.BLEND_ADD)
+
+                self.img4 = pygame.image.load(os.path.join('res', 'images', "dialog", "dialog_bg_h.png")).convert_alpha()
+                self.img4.fill(self.bg_tint_color, special_flags=pygame.BLEND_ADD)
+
                 self.active_img = self.img1
             except:
                 pass
@@ -48,17 +56,17 @@ class DialogBtn(pygame.sprite.Sprite):
         self.fsubmit = f
 
     def mouse_over(self):
-        self.active_img = self.img2
-        if not self.is_mouse_over:
-            self.is_mouse_over = True
+        self.active_img = self.img1
+        if not self.hover:
+            self.hover = True
             self.update()
             self.wnd.update_me = True
             self.wnd.update()
 
     def mouse_out(self):
         self.active_img = self.img1
-        if self.is_mouse_over:
-            self.is_mouse_over = False
+        if self.hover:
+            self.hover = False
             self.update()
             self.wnd.update_me = True
             self.wnd.update()
@@ -66,6 +74,11 @@ class DialogBtn(pygame.sprite.Sprite):
     def update(self):
         self.wnd.mainloop.flip_needed = True
         self.image.fill(self.color)
+        if self.hover:
+            self.image.blit(self.img4, self.img_pos)
+        else:
+            self.image.blit(self.img3, self.img_pos)
+
         if len(self.img_src1) > 0:
             self.image.blit(self.active_img, self.img_pos)
 
@@ -87,6 +100,25 @@ class DialogWnd:
         self.color = (255, 255, 255)
         self.widget_list = pygame.sprite.LayeredUpdates()
         self.widget_list2 = pygame.sprite.LayeredUpdates()
+
+        self.elements = []
+
+        self.elements.append(
+            DialogBtn(self, 540, 0, 80, 80, "ok", "dialog_close.png", self.fsubmit_close_wnd,
+                      (None)))
+        self.elements.append(
+            DialogBtn(self, 0, 320, 80, 80, "ok", "dialog_ok.png", self.fsubmit_none, (None)))
+
+
+        for each in self.elements:
+            self.widget_list.add(each)
+
+
+        self.widget_list2.add(self.elements[1])
+
+        self.bg_type = 0
+        self.decor_type = 0
+
         self.font_l = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 40)
         self.font_s = pygame.font.Font(
@@ -94,27 +126,40 @@ class DialogWnd:
         self.font_xs = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 20)
         self.default_font = None
-        self.text = ""
-        self.set_text(self.text, font=1)
-        self.elements = []
-        self.wnd_close_function = None
+        #self.text = ""
+        #self.set_text(self.text, font=1)
 
-        self.elements.append(
-            DialogBtn(self, 540, 0, 80, 80, "ok", "dialog_close.png", "dialog_close_h.png", self.fsubmit_close_wnd,
-                      (None)))
-        self.elements.append(
-            DialogBtn(self, 0, 320, 80, 80, "ok", "dialog_ok.png", "dialog_ok_h.png", self.fsubmit_none, (None)))
+        self.wnd_close_function = None
+        self.load_images()
+
+    def load_images(self):
+        self.bg_tint_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 100)
+        self.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 100)
+
+        for each in self.elements:
+            each.load_images()
 
         self.img_pos = (40, 40)
         try:
-            self.img = pygame.image.load(os.path.join('res', 'images', "dialog_bg.png")).convert_alpha()
+            #self.img = pygame.image.load(os.path.join('res', 'images', "dialog_bg.png")).convert_alpha()
+            self.img1 = pygame.image.load(os.path.join('res', 'images', "dialog", "dialog_bg.png")).convert_alpha()
+            self.img1.fill(self.bg_tint_color, special_flags=pygame.BLEND_ADD)
+
+            self.img2 = pygame.image.load(os.path.join('res', 'images', "dialog", "dialog_bg_star.png")).convert_alpha()
+            self.img2.fill(self.bg_tint_color, special_flags=pygame.BLEND_ADD)
+
+            self.img3 = pygame.image.load(
+                os.path.join('res', 'images', "dialog", "dialog_bg_d.png")).convert_alpha()
+
+            self.img4 = pygame.image.load(
+                os.path.join('res', 'images', "dialog", "dialog_bg_star_d.png")).convert_alpha()
+
+            self.img5 = pygame.image.load(
+                os.path.join('res', 'images', "dialog", "dialog_bg_allstar_d.png")).convert_alpha()
+            self.images = [self.img1, self.img2]
+            self.decors = [self.img3, self.img4, self.img5]
         except:
             pass
-
-        for each in self.elements:
-            self.widget_list.add(each)
-
-        self.widget_list2.add(self.elements[1])
 
     def fsubmit_none(self, args):
         pass
@@ -135,7 +180,7 @@ class DialogWnd:
     def fsubmit_close_wnd(self, args):
         self.hide_dialog()
 
-    def show_dialog(self, dialog_type, txt, f=None, fc=None):
+    def show_dialog(self, dialog_type, txt, f=None, fc=None, bg_type=0, decor_type=0):
         self.sbg = pygame.Surface(
             (self.mainloop.sizer.screen_w, self.mainloop.sizer.screen_h),
             flags=pygame.SRCALPHA)  # the size of your rect
@@ -143,6 +188,8 @@ class DialogWnd:
         self.mainloop.show_dialogwnd = True
         self.mainloop.redraw_needed = [True, True, True]
         self.dialog_type = dialog_type
+        self.bg_type = bg_type
+        self.decor_type = decor_type
 
         # close the game
         if dialog_type == 0:
@@ -178,8 +225,8 @@ class DialogWnd:
         self.set_font(font)
         self.text = text
         self.text_canvas = self.render_textrect(string=self.text, font=self.default_font,
-                                                rect=pygame.Rect((0, 0, 470, 240)), text_color=(0, 0, 0),
-                                                background_color=(255, 249, 194), justification=justification)
+                                                rect=pygame.Rect((0, 0, 470, 240)), text_color=self.font_color,
+                                                background_color=(0, 0, 0, 0), justification=justification)
 
     def hide_dialog(self):
         self.mainloop.show_dialogwnd = False
@@ -210,7 +257,11 @@ class DialogWnd:
         self.sbg.fill((255, 255, 255, 180))  # this fills the entire surface
         self.screenbg.blit(self.sbg, (0, 0))
         self.mainloop.redraw_needed = [True, True, True]
-        self.screen.blit(self.img, self.img_pos)
+
+        self.screen.blit(self.images[self.bg_type], self.img_pos)
+
+        self.screen.blit(self.decors[self.decor_type], self.img_pos)
+
         self.screen.blit(self.text_canvas, (76, 80))
 
         for each in self.widget_list:
@@ -280,7 +331,7 @@ class DialogWnd:
 
         # Let's try to write the text out on the surface.
 
-        surface = pygame.Surface(rect.size)
+        surface = pygame.Surface(rect.size, flags=pygame.SRCALPHA)
         surface.fill(background_color)
 
         accumulated_height = 0

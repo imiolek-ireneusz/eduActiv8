@@ -52,8 +52,12 @@ class Board(gd.BoardGame):
         self.board.board_bg.line_color = (20, 20, 20)
 
         self.last_hover = None
+        self.board.add_unit(data[0] - 7, 0, 7, 1, classes.board.Label, "v.%s" % self.mainloop.config.version,
+                            color, "", 2)
+        self.board.units[-1].align = 2
+        self.board.units[-1].font_color = font_color2
 
-        self.board.add_unit(2, 0, data[0]-4, 4, classes.board.ImgCenteredShip, "", color, "home_screen_icon.png", alpha=True)
+        self.board.add_unit(7, 0, data[0]-14, 4, classes.board.ImgCenteredShip, "", color, "home_screen_icon.png", alpha=True)
 
         self.board.ships[-1].immobilize()
 

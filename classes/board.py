@@ -1218,13 +1218,13 @@ class Board:
 
     def add_universal_unit(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, txt=None, fg_img_src=None, bg_img_src=None,
                            dc_img_src=None, bg_color=None, border_color=None, font_color=None,
-                           bg_tint_color=None, fd_tint_color=None,
+                           bg_tint_color=None, fg_tint_color=None,
                            txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False):
         'adds a new unit to the board'
         if self._isfree(grid_x, grid_y, grid_w, grid_h):
             unit = classes.universal.Universal(self, grid_x, grid_y, grid_w, grid_h, txt, fg_img_src, bg_img_src,
                                                dc_img_src, bg_color, border_color, font_color, bg_tint_color,
-                                               fd_tint_color, txt_align, font_type, multi_color, alpha, immobilized)
+                                               fg_tint_color, txt_align, font_type, multi_color, alpha, immobilized)
             self.ships.append(unit)  # add a ship to the ship list
             self.ship_list.add(unit)  # add the ship to the sprites list
             self.all_sprites_list.add(unit)

@@ -86,7 +86,7 @@ class Board(gd.BoardGame):
                                       bg_img_src="info_m.png", dc_img_src="info_d.png", bg_color=self.bg_color,
                                       border_color=None, font_color=None,
                                       bg_tint_color=self.mainloop.cl.info_buttons_col,
-                                      fd_tint_color=self.mainloop.cl.info_buttons_col,
+                                      fg_tint_color=self.mainloop.cl.info_buttons_col,
                                       txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False)
 
         self.info_ind = self.board.ships[-1]
@@ -105,13 +105,13 @@ class Board(gd.BoardGame):
                 self.board.add_universal_unit(grid_x=self.shape_loc2[i][0], grid_y=self.shape_loc2[i][1], grid_w=4, grid_h=4,
                                               bg_img_src=self.shape_imgs[i],
                                               dc_img_src=None, bg_color=self.bg_color,
-                                              bg_tint_color=self.mainloop.cl.info_buttons_col, fd_tint_color=None,
+                                              bg_tint_color=self.mainloop.cl.info_buttons_col, fg_tint_color=None,
                                               immobilized=True)
             else:
                 self.board.add_universal_unit(grid_x=self.shape_loc1[i][0], grid_y=self.shape_loc1[i][1], grid_w=2, grid_h=2,
                                               bg_img_src=self.shape_imgs[i],
                                               dc_img_src=None, bg_color=self.bg_color,
-                                              bg_tint_color=self.mainloop.cl.info_buttons_col, fd_tint_color=None,
+                                              bg_tint_color=self.mainloop.cl.info_buttons_col, fg_tint_color=None,
                                               immobilized=True)
 
             self.shape_inds.append(self.board.ships[-1])
@@ -238,7 +238,8 @@ class Board(gd.BoardGame):
         self.active_color.append(127)
 
         if self.active_selection.my_id == 5:
-            self.info_ind.change_colors(self.bg_color, None, self.active_color, None)
+            self.info_ind.change_colors(self.bg_color, None, self.active_color, self.active_color)
+            self.mainloop.dialog.load_images()
             self.mainloop.info.load_font_colors()
             self.mainloop.info.reload_colors()
 
@@ -350,6 +351,7 @@ class Board(gd.BoardGame):
         self.shape_select(self.shape_inds[0])
         self.mainloop.info.load_font_colors()
         self.mainloop.info.reload_colors()
+        self.mainloop.dialog.load_images()
         self.mainloop.db.save_user_colors()
         #recreate game to reset all items
         self.create_game_objects()
@@ -387,7 +389,7 @@ class Board(gd.BoardGame):
             found = False
             if self.info_ind.rect.left < pos[0] < self.info_ind.rect.right and self.info_ind.rect.top < pos[1] < self.info_ind.rect.bottom:
                 self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Reset colors back to default?"],
-                                                 self.reset_colors)
+                                                 self.reset_colors, fc=None, bg_type=0, decor_type=0)
                 found = True
             for each in self.menu_inds:
                 if each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom:

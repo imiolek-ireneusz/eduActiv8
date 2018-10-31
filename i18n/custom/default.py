@@ -691,4 +691,4 @@ class I18n():
         self.d["Theme Editor"] = _("Theme Editor")
         self.d["Make the game look your way"] = _("Make the game look your way")
 
-        self.d["Reset colors back to default?"] = _("Reset colors back to default?")
+        self.d["Reset colors back to default?"] = _("Reset colors back to the default ones?")

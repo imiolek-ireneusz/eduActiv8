@@ -26,12 +26,8 @@ class Level:
 
     def levelup(self, record=True):
         if record:
-            if self.lvl < self.lvl_count:
-                self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Ready to go to the next level?"],
-                                                 self.manual_levelup, self.reset_level)
-            else:
-                self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Ready to go to the next level?"],
-                                                 self.game_won_restart, self.reset_level)
+            self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Ready to go to the next level?"],
+                                             self.manual_levelup, self.reset_level, bg_type=1, decor_type=1)
         else:
             self.manual_levelup(record)
 
@@ -120,7 +116,7 @@ class Level:
         """
         self.mainloop.dialog.show_dialog(
             2, self.mainloop.lang.d["Congratulations! Game Completed."],
-            self.game_won_restart, self.reset_level)
+            self.game_won_restart, self.reset_level, bg_type=1, decor_type=2)
 
     def game_won_restart(self, args=None):
         self.game_restart()

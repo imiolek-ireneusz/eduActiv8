@@ -14,7 +14,7 @@ self.board.add_universal_unit(grid_x=0, grid_y=0, grid_w=4, grid_h=4, txt="",
                                       bg_color=(0, 0, 0, 255),
                                       border_color=(255, 255, 0),
                                       font_color=((255, 0, 255, 255), (255, 255, 0, 255), (255, 255, 0, 255)),
-                                      bg_tint_color=(190, 0, 0, 100), fd_tint_color=(10, 10, 10, 255),
+                                      bg_tint_color=(190, 0, 0, 100), fg_tint_color=(10, 10, 10, 255),
                                       txt_align=(0, 0), font_type=0,
                                       multi_color=True, alpha=True, immobilized=True)
 """
@@ -86,7 +86,7 @@ class Universal(pygame.sprite.Sprite):
                  border_color=None,
                  font_colors=None,
                  bg_tint_color=None,
-                 fd_tint_color=None,
+                 fg_tint_color=None,
                  txt_align=(0, 0),
                  font_type=0,
                  multi_color=False,
@@ -112,7 +112,7 @@ class Universal(pygame.sprite.Sprite):
         self.font_colors = font_colors  # needs to be a list
 
         self.bg_tint_color = bg_tint_color
-        self.fd_tint_color = fd_tint_color
+        self.fg_tint_color = fg_tint_color
 
         self.bg_img_src = bg_img_src
         self.fg_img_src = fg_img_src
@@ -176,7 +176,7 @@ class Universal(pygame.sprite.Sprite):
             self.layer_bg = ImageLayer(self, self.image, self.bg_img_src, self.alpha)
 
         if self.fg_img_src is not None:
-            self.layer_fd = ImageLayer(self, self.image, self.fg_img_src, self.alpha)
+            self.layer_fg = ImageLayer(self, self.image, self.fg_img_src, self.alpha)
 
         if self.dc_img_src is not None:
             self.layer_dc = ImageLayer(self, self.image, self.dc_img_src, self.alpha)
@@ -189,12 +189,12 @@ class Universal(pygame.sprite.Sprite):
             self.set_outline(self.border_color, 2)
         self.compose_image()
 
-    def change_colors(self, bg_color, border_color, bg_tint_color, fd_tint_color):
+    def change_colors(self, bg_color, border_color, bg_tint_color, fg_tint_color):
         self.bg_color = bg_color
         self.border_color = border_color
 
         self.bg_tint_color = bg_tint_color
-        self.fd_tint_color = fd_tint_color
+        self.fg_tint_color = fg_tint_color
         self.update_me = True
 
     def resize_unit(self, new_grid_w, new_grid_h):
@@ -325,13 +325,13 @@ class Universal(pygame.sprite.Sprite):
         # draw foreground image or hover image if used as hover
 
         if self.fg_img_src is not None:
-            if self.layer_fd.img is not None:
+            if self.layer_fg.img is not None:
                 if (not self.fg_as_hover) or (self.hover and self.fg_as_hover):
                     # apply foreground tint
-                    if self.fd_tint_color is not None:
-                        self.image.blit(self.layer_fd.get_tinted_img(self.fd_tint_color), self.layer_fd.img_pos)
+                    if self.fg_tint_color is not None:
+                        self.image.blit(self.layer_fg.get_tinted_img(self.fg_tint_color), self.layer_fg.img_pos)
                     else:
-                        self.image.blit(self.layer_fd.img, self.layer_fd.img_pos)
+                        self.image.blit(self.layer_fg.img, self.layer_fg.img_pos)
 
         # draw custom drawn image
 
