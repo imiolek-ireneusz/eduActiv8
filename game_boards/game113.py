@@ -20,6 +20,8 @@ class Board(gd.BoardGame):
         self.board.decolorable = False
         self.board.draw_grid = False
 
+        self.unit_mouse_over = None
+
         self.bg_color = [255, 255, 255]
         color = [255, 255, 255]
         self.transp = (0, 0, 0, 0)
@@ -76,15 +78,19 @@ class Board(gd.BoardGame):
         self.menu_inds = [self.cat_ind, self.cat_ind2, self.game_ind, self.game_ind2]
 
         for each in self.menu_inds:
+            each.show_titles_on_hover = False
             self.board.all_sprites_list.add(each)
 
-        self.board.add_universal_unit(grid_x=self.btns_left - 6, grid_y=14, grid_w=4, grid_h=4, txt="", fd_img_src=None,
+        self.board.add_universal_unit(grid_x=self.btns_left - 6, grid_y=14, grid_w=4, grid_h=4, txt="",
+                                      fg_img_src="info_m_h.png",
                                       bg_img_src="info_m.png", dc_img_src="info_d.png", bg_color=self.bg_color,
                                       border_color=None, font_color=None,
-                                      bg_tint_color=self.mainloop.cl.info_buttons_col, fd_tint_color=None,
+                                      bg_tint_color=self.mainloop.cl.info_buttons_col,
+                                      fd_tint_color=self.mainloop.cl.info_buttons_col,
                                       txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False)
 
         self.info_ind = self.board.ships[-1]
+        self.info_ind.use_fg_as_hover()
         if self.data[0] > 30:
             l_shift = 1
         else:
@@ -350,6 +356,31 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)
+        if event.type == pygame.MOUSEMOTION:
+            pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
+            found = False
+            for each in self.menu_inds:
+                if (each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom):
+                    if each != self.unit_mouse_over:
+                        if self.unit_mouse_over is not None:
+                            self.unit_mouse_over.mouse_out()
+                        self.unit_mouse_over = each
+                    found = True
+                    each.handle(event)
+                    break
+            if self.info_ind.rect.left < pos[0] < self.info_ind.rect.right and self.info_ind.rect.top < pos[1] < self.info_ind.rect.bottom:
+                if self.info_ind != self.unit_mouse_over:
+                    if self.unit_mouse_over is not None:
+                        self.unit_mouse_over.mouse_out()
+                    self.unit_mouse_over = self.info_ind
+                    self.info_ind.handle(event)
+                found = True
+
+            if not found:
+                if self.unit_mouse_over is not None:
+                    self.unit_mouse_over.mouse_out()
+                self.unit_mouse_over = None
+
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             active = self.board.active_ship
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]

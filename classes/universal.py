@@ -10,7 +10,7 @@ import classes.extras as ex
 
 """ Template
 self.board.add_universal_unit(grid_x=0, grid_y=0, grid_w=4, grid_h=4, txt="",
-                                      fd_img_src="fg_img.png", bg_img_src="bg_img.png", dc_img_src="decor_img.png",
+                                      fg_img_src="fg_img.png", bg_img_src="bg_img.png", dc_img_src="decor_img.png",
                                       bg_color=(0, 0, 0, 255),
                                       border_color=(255, 255, 0),
                                       font_color=((255, 0, 255, 255), (255, 255, 0, 255), (255, 255, 0, 255)),
@@ -79,7 +79,7 @@ class ImageLayer:
 class Universal(pygame.sprite.Sprite):
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1,
                  txt=None,
-                 fd_img_src=None,
+                 fg_img_src=None,
                  bg_img_src=None,
                  dc_img_src=None,
                  bg_color=(0, 0, 0, 0),
@@ -105,6 +105,8 @@ class Universal(pygame.sprite.Sprite):
         self.board = board
         self.immobilized = immobilized
 
+        self.fg_as_hover = False
+
         self.bg_color = bg_color
         self.border_color = border_color
         self.font_colors = font_colors  # needs to be a list
@@ -113,7 +115,7 @@ class Universal(pygame.sprite.Sprite):
         self.fd_tint_color = fd_tint_color
 
         self.bg_img_src = bg_img_src
-        self.fd_img_src = fd_img_src
+        self.fg_img_src = fg_img_src
         self.dc_img_src = dc_img_src
 
         self.txt = txt
@@ -141,6 +143,7 @@ class Universal(pygame.sprite.Sprite):
         self.outline_highlight = False
         self.update_me = True
         self.hidden = False
+        self.hover = False
 
         self.check_display = None  # None - none, True - correct, False - wrong
         self.checkable = False
@@ -153,6 +156,9 @@ class Universal(pygame.sprite.Sprite):
         self.unit_id = len(self.board.ships)
 
         self.init_images()
+
+    def use_fg_as_hover(self):
+        self.fg_as_hover = True
 
     def init_images(self):
 
@@ -169,8 +175,8 @@ class Universal(pygame.sprite.Sprite):
         if self.bg_img_src is not None:
             self.layer_bg = ImageLayer(self, self.image, self.bg_img_src, self.alpha)
 
-        if self.fd_img_src is not None:
-            self.layer_fd = ImageLayer(self, self.image, self.fd_img_src, self.alpha)
+        if self.fg_img_src is not None:
+            self.layer_fd = ImageLayer(self, self.image, self.fg_img_src, self.alpha)
 
         if self.dc_img_src is not None:
             self.layer_dc = ImageLayer(self, self.image, self.dc_img_src, self.alpha)
@@ -305,24 +311,27 @@ class Universal(pygame.sprite.Sprite):
         # draw background image
         if self.bg_img_src is not None:
             if self.layer_bg.img is not None:
-                # apply background tint
-                if self.bg_tint_color is not None:
-                    self.image.blit(self.layer_bg.get_tinted_img(self.bg_tint_color), self.layer_bg.img_pos)
-                else:
-                    self.image.blit(self.layer_bg.img, self.layer_bg.img_pos)
+                if (not self.fg_as_hover) or (not self.hover and self.fg_as_hover):
+                    # apply background tint
+                    if self.bg_tint_color is not None:
+                        self.image.blit(self.layer_bg.get_tinted_img(self.bg_tint_color), self.layer_bg.img_pos)
+                    else:
+                        self.image.blit(self.layer_bg.img, self.layer_bg.img_pos)
 
         # draw background border
         if self.border_color is not None:
             self.draw_outline()
 
-        # draw foreground image
-        if self.fd_img_src is not None:
+        # draw foreground image or hover image if used as hover
+
+        if self.fg_img_src is not None:
             if self.layer_fd.img is not None:
-                # apply foreground tint
-                if self.fd_tint_color is not None:
-                    self.image.blit(self.layer_fd.get_tinted_img(self.fd_tint_color), self.layer_fd.img_pos)
-                else:
-                    self.image.blit(self.layer_fd.img, self.layer_fd.img_pos)
+                if (not self.fg_as_hover) or (self.hover and self.fg_as_hover):
+                    # apply foreground tint
+                    if self.fd_tint_color is not None:
+                        self.image.blit(self.layer_fd.get_tinted_img(self.fd_tint_color), self.layer_fd.img_pos)
+                    else:
+                        self.image.blit(self.layer_fd.img, self.layer_fd.img_pos)
 
         # draw custom drawn image
 
@@ -583,23 +592,26 @@ class Universal(pygame.sprite.Sprite):
         self.grid_y = grid_y
         self.pos_update()
 
-    def on_mouse_out(self):
-        self.update_me = True
-        self.hover = False
+    def mouse_out(self):
+        if self.hover:
+            self.update_me = True
+            self.hover = False
+            self.board.mainloop.redraw_needed[0] = True
+            self.update(self.board)
 
-    def on_mouse_click(self):
+    def mouse_click(self):
         pass
 
-    def on_mouse_enter(self):
-        self.hover = True
-        self.update_me = True
-        self.board.mainloop.redraw_needed[1] = True
-        self.update(self.board)
+    def mouse_enter(self):
+        if not self.hover:
+            self.hover = True
+            self.update_me = True
+            self.board.mainloop.redraw_needed[0] = True
+            self.update(self.board)
 
     def handle(self, event):
         if event.type == pygame.MOUSEMOTION:
-            if not self.hover:
-                self.on_mouse_enter()
+            self.mouse_enter()
         elif event.type == pygame.MOUSEBUTTONUP:
-            self.on_mouse_click()
+            self.mouse_click()
 

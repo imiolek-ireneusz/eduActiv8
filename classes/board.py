@@ -1216,13 +1216,13 @@ class Board:
             grid_x, grid_y, grid_w, grid_h, self.x_count, self.y_count, self.mainloop.m.active_game_id,
             self.mainloop.size[0], self.mainloop.size[1]))
 
-    def add_universal_unit(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, txt=None, fd_img_src=None, bg_img_src=None,
+    def add_universal_unit(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, txt=None, fg_img_src=None, bg_img_src=None,
                            dc_img_src=None, bg_color=None, border_color=None, font_color=None,
                            bg_tint_color=None, fd_tint_color=None,
                            txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False):
         'adds a new unit to the board'
         if self._isfree(grid_x, grid_y, grid_w, grid_h):
-            unit = classes.universal.Universal(self, grid_x, grid_y, grid_w, grid_h, txt, fd_img_src, bg_img_src,
+            unit = classes.universal.Universal(self, grid_x, grid_y, grid_w, grid_h, txt, fg_img_src, bg_img_src,
                                                dc_img_src, bg_color, border_color, font_color, bg_tint_color,
                                                fd_tint_color, txt_align, font_type, multi_color, alpha, immobilized)
             self.ships.append(unit)  # add a ship to the ship list

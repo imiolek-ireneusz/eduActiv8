@@ -160,6 +160,7 @@ class Category(pygame.sprite.Sprite):
         self.color = color
         self.update_me = True
         self.hover = False
+        self.show_titles_on_hover = True
 
         self.bg_style = self.board.mainloop.cl.menu_shapes[self.board.mainloop.cl.color_sliders[6][2]]
         self.decor_style = decor
@@ -270,7 +271,8 @@ class Category(pygame.sprite.Sprite):
             self.image.blit(self.img1, self.img1_pos)
 
     def mouse_out(self):
-        self.board.mainloop.m.reset_titles()
+        if self.show_titles_on_hover:
+            self.board.mainloop.m.reset_titles()
         self.hover = False
         self.update_me = True
         self.update()
@@ -288,10 +290,11 @@ class Category(pygame.sprite.Sprite):
     def handle(self, event):
         if event.type == pygame.MOUSEMOTION:
             if not self.hover:
-                self.board.mainloop.redraw_needed[1] = True
-                self.board.mainloop.info.title = self.cat_obj.title
-                self.board.mainloop.info.subtitle = self.cat_obj.subtitle
-                self.board.mainloop.info.game_id = "#%03i" % self.cat_obj.cat_id
+                if self.show_titles_on_hover:
+                    self.board.mainloop.redraw_needed[1] = True
+                    self.board.mainloop.info.title = self.cat_obj.title
+                    self.board.mainloop.info.subtitle = self.cat_obj.subtitle
+                    self.board.mainloop.info.game_id = "#%03i" % self.cat_obj.cat_id
                 self.hover = True
                 self.update_me = True
                 self.update()
@@ -339,6 +342,8 @@ class GameIcon(pygame.sprite.Sprite):
 
         self.update_me = True
         self.hover = False
+        self.show_titles_on_hover = True
+
         self.size = 256
 
         if self.game_obj.img_src2 == "":
@@ -553,7 +558,8 @@ class GameIcon(pygame.sprite.Sprite):
                 self.image.blit(self.img3d, self.img2_pos)
 
     def mouse_out(self):
-        self.board.mainloop.m.reset_titles()
+        if self.show_titles_on_hover:
+            self.board.mainloop.m.reset_titles()
         self.update_me = True
         self.hover = False
         self.update()
@@ -567,10 +573,11 @@ class GameIcon(pygame.sprite.Sprite):
         if event.type == pygame.MOUSEMOTION:
             if not self.hover:
                 self.hover = True
-                self.board.mainloop.redraw_needed[1] = True
-                self.board.mainloop.info.title = self.game_obj.title
-                self.board.mainloop.info.subtitle = self.game_obj.subtitle
-                self.board.mainloop.info.game_id = "#%s/%03i" % (self.game_obj.game_constructor[4:7], self.game_obj.dbgameid)
+                if self.show_titles_on_hover:
+                    self.board.mainloop.redraw_needed[1] = True
+                    self.board.mainloop.info.title = self.game_obj.title
+                    self.board.mainloop.info.subtitle = self.game_obj.subtitle
+                    self.board.mainloop.info.game_id = "#%s/%03i" % (self.game_obj.game_constructor[4:7], self.game_obj.dbgameid)
                 self.update_me = True
                 self.update()
         elif event.type == pygame.MOUSEBUTTONUP:
