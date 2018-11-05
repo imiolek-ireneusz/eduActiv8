@@ -192,15 +192,17 @@ class GamePlay:
             if size != self.fs_size or self.config.platform == "macos":
                 self.wn_size = size[:]
                 self.size = size[:]
-            self.config.settings["screenw"] = self.size[0]
-            self.config.settings["screenh"] = self.size[1]
             self.screen = pygame.display.set_mode(self.size, pygame.RESIZABLE)
 
             self.sizer.update_sizer(self.size[0], self.size[1])
             self.fs_rescale(info)
             #self.create_subsurfaces()
+
+            self.config.settings["screenw"] = self.size[0]
+            self.config.settings["screenh"] = self.size[1]
             self.config.settings_changed = True
             self.config.save_settings(self.db)
+
             if repost:
                 pygame.event.post(
                     pygame.event.Event(pygame.VIDEORESIZE, size=self.size[:], w=self.size[0], h=self.size[1]))
@@ -297,9 +299,12 @@ class GamePlay:
             if self.window_state == "LOG IN":
                 self.done = False
                 self.set_init_vals()
+                """
                 if self.config.platform != "windows" and android is None:
                     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (
                     self.config.window_pos[0], self.config.window_pos[1])
+                """
+                os.environ['SDL_VIDEO_CENTERED'] = '1'
                 if android is None:
                     if not self.logged_out:
                         self.size = [800, 570]
@@ -345,8 +350,13 @@ class GamePlay:
                 self.done = False
                 self.game_const = None
                 self.set_init_vals()
+                """
                 if android is None:
                     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (self.config.window_pos[0], self.config.window_pos[1])
+                """
+
+                os.environ['SDL_VIDEO_CENTERED'] = '1'
+
                 self.config.fs_width = self.display_info.current_w
                 self.config.fs_height = self.display_info.current_h
 

@@ -177,6 +177,10 @@ class DialogWnd:
         self.mainloop.logged_out = True
         self.mainloop.db.unset_autologin()
 
+        self.mainloop.size = self.mainloop.wn_size[:]
+        self.mainloop.fs_rescale(self.mainloop.info)
+        self.mainloop.sizer.update_sizer(self.mainloop.size[0], self.mainloop.size[1])
+
     def fsubmit_close_wnd(self, args):
         self.hide_dialog()
 
