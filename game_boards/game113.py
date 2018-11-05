@@ -52,26 +52,23 @@ class Board(gd.BoardGame):
 
         self.board.board_bg.line_color = (20, 20, 20)
 
-        if self.mainloop.android is None:
-            self.grid_density_div = 0
-        else:
-            self.grid_density_div = 1
+        self.template_units = None
 
         self.btns_left = self.data[0] - 7
 
-        self.cat_ind = classes.menu_items.Category(self.board, self.mainloop.m.categories[0], 1, 1, 6, 6,
+        self.cat_ind = classes.menu_items.Category(self, self.mainloop.m.categories[0], 1, 1, 6, 6,
                                                    self.mainloop.m.categories[0].cat_id,
-                                                   self.bg_color, "ico_c_13.png", 0)
+                                                   self.bg_color, "ico_c_13.png", 0, sequence_id=0)
 
-        self.game_ind = classes.menu_items.GameIcon(self.board, self.mainloop.m.games[20], 1, 8, 6, 6, self.bg_color, [0, 5],
-                                                    [1, 0, 0, 0, 1], "ico_c_13.png", 0)
+        self.game_ind = classes.menu_items.GameIcon(self, self.mainloop.m.games[20], 1, 8, 6, 6, self.bg_color, [0, 5],
+                                                    [1, 0, 0, 0, 1], "ico_c_13.png", 0, sequence_id=0)
 
-        self.cat_ind2 = classes.menu_items.Category(self.board, self.mainloop.m.categories[0], 8, 2, 4, 4,
+        self.cat_ind2 = classes.menu_items.Category(self, self.mainloop.m.categories[0], 8, 2, 4, 4,
                                                     self.mainloop.m.categories[0].cat_id,
-                                                    self.bg_color, "ico_c_13.png", 1)
+                                                    self.bg_color, "ico_c_13.png", 1, sequence_id=0)
 
-        self.game_ind2 = classes.menu_items.GameIcon(self.board, self.mainloop.m.games[20], 8, 9, 4, 4, self.bg_color,
-                                                     [0, 5], [1, 0, 0, 0, 1], "ico_c_13.png", 1)
+        self.game_ind2 = classes.menu_items.GameIcon(self, self.mainloop.m.games[20], 8, 9, 4, 4, self.bg_color,
+                                                     [0, 5], [1, 0, 0, 0, 1], "ico_c_13.png", 1, sequence_id=0)
 
         self.scale_buttons()
 

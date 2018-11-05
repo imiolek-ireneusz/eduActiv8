@@ -4,10 +4,12 @@ import os
 import pygame
 from math import pi, cos, sin, sqrt
 
+
 class TopCategory(pygame.sprite.Sprite):
     """basic class for all on-board objects"""
 
-    def __init__(self, board, cat_obj, grid_x=0, grid_y=0, grid_w=1, grid_h=1, item_id="", color=(0, 0, 0, 0), img_src='', decor=0):
+    def __init__(self, board, cat_obj, grid_x=0, grid_y=0, grid_w=1, grid_h=1, item_id="", color=(0, 0, 0, 0),
+                 img_src='', decor=0, sequence_id=0):
         pygame.sprite.Sprite.__init__(self)
         self.grid_x = grid_x
         self.grid_y = grid_y
@@ -16,6 +18,7 @@ class TopCategory(pygame.sprite.Sprite):
         self.item_id = item_id
         self.board = board
         self.cat_obj = cat_obj
+        self.sequence_id = sequence_id
         self.bg_style = self.board.mainloop.cl.menu_shapes[self.board.mainloop.cl.color_sliders[6][2]]
         self.decor_style = decor
 
@@ -40,35 +43,51 @@ class TopCategory(pygame.sprite.Sprite):
             self.update_me = True
             self.img = self.image
             self.img_pos = (0, 0)
+
+            if self.sequence_id > 0:
+                prev = self.board.units[-1]
+            else:
+                prev = None
+
             try:
                 self.img1_org = pygame.image.load(os.path.join('res', 'icons', self.img_src)).convert_alpha()
-                self.img2_org = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_bg.png")).convert_alpha()
-                self.img2_org_h = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_bg_h.png")).convert_alpha()
-                if self.decor_style == 1:
-                    self.img2_org_decor = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_decor.png")).convert_alpha()
-                    self.img2d = self.scaled_img(self.img2_org_decor, self.rect.w, self.rect.h)
-
                 self.img1_rect = self.img1_org.get_rect()
                 inner_w = int(self.rect.w * 0.8)
                 self.img1 = self.scaled_img(self.img1_org, inner_w, inner_w)
-                self.img2 = self.scaled_img(self.img2_org, self.rect.w, self.rect.h)
-                self.img2h = self.scaled_img(self.img2_org_h, self.rect.w, self.rect.h)
-
                 self.img1.fill(self.board.mainloop.cl.c_fg_tint_color, special_flags=pygame.BLEND_ADD)
-                self.img2.fill(self.board.mainloop.cl.c_bg_tint_color, special_flags=pygame.BLEND_ADD)
-                self.img2h.fill(self.board.mainloop.cl.c_bg_tint_color, special_flags=pygame.BLEND_ADD)
-
                 self.img1_rect = self.img1.get_rect()
-                self.img2_rect = self.img2.get_rect()
                 pos_x = ((self.board.scale * self.grid_w - inner_w) // 2)
                 pos_y = ((self.board.scale * self.grid_h - inner_w) // 2)
                 self.img1_pos = (pos_x, pos_y)
 
-                pos2_x = ((self.board.scale * self.grid_w - self.img2_rect.w) // 2)
-                pos2_y = ((self.board.scale * self.grid_h - self.img2_rect.h) // 2)
-                self.img2_pos = (pos2_x, pos2_y)
             except:
                 pass
+
+            if prev is None:
+                try:
+                    self.img2_org = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_bg.png")).convert_alpha()
+                    self.img2_org_h = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_bg_h.png")).convert_alpha()
+                    if self.decor_style == 1:
+                        self.img2_org_decor = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_decor.png")).convert_alpha()
+                        self.img2d = self.scaled_img(self.img2_org_decor, self.rect.w, self.rect.h)
+                    self.img2 = self.scaled_img(self.img2_org, self.rect.w, self.rect.h)
+                    self.img2h = self.scaled_img(self.img2_org_h, self.rect.w, self.rect.h)
+                    self.img2.fill(self.board.mainloop.cl.c_bg_tint_color, special_flags=pygame.BLEND_ADD)
+                    self.img2h.fill(self.board.mainloop.cl.c_bg_tint_color, special_flags=pygame.BLEND_ADD)
+
+                except:
+                    pass
+            else:
+                self.img2 = prev.img2
+                self.img2h = prev.img2h
+                if self.decor_style == 1:
+                    self.img2d = prev.img2d
+
+            self.img2_rect = self.img2.get_rect()
+            pos2_x = ((self.board.scale * self.grid_w - self.img2_rect.w) // 2)
+            pos2_y = ((self.board.scale * self.grid_h - self.img2_rect.h) // 2)
+            self.img2_pos = (pos2_x, pos2_y)
+
 
     def resize_unit(self, new_grid_w, new_grid_h):
         self.grid_w = new_grid_w
@@ -148,13 +167,14 @@ class Category(pygame.sprite.Sprite):
     """basic class for all on-board objects"""
 
     def __init__(self, board, cat_obj, grid_x=0, grid_y=0, grid_w=1, grid_h=1, item_id="", color=(0, 0, 0, 0),
-                 img_src='', decor=0):
+                 img_src='', decor=0, sequence_id=0):
         pygame.sprite.Sprite.__init__(self)
         self.grid_x = grid_x
         self.grid_y = grid_y
         self.grid_w = grid_w
         self.grid_h = grid_h
         self.item_id = item_id
+        self.sequence_id = sequence_id
         self.board = board
         self.cat_obj = cat_obj
         self.color = color
@@ -188,35 +208,47 @@ class Category(pygame.sprite.Sprite):
             self.update_me = True
             self.img = self.image
             self.img_pos = (0, 0)
+            if self.sequence_id > 0:
+                prev = self.board.units[-1]
+            else:
+                prev = None
+
             try:
                 self.img1_org = pygame.image.load(os.path.join('res', 'icons', self.img_src)).convert_alpha()
-                self.img2_org = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_bg.png")).convert_alpha()
-                self.img2_org_h = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_bg_h.png")).convert_alpha()
-                if self.decor_style == 1:
-                    self.img2_org_decor = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_decor.png")).convert_alpha()
-                    self.img2d = self.scaled_img(self.img2_org_decor, self.rect.w, self.rect.h)
-
                 self.img1_rect = self.img1_org.get_rect()
                 inner_w = int(sqrt(pow(self.rect.w / 2, 2) * 2) * 0.8)
                 self.img1 = self.scaled_img(self.img1_org, inner_w, inner_w)
-                self.img2 = self.scaled_img(self.img2_org, self.rect.w, self.rect.h)
-                self.img2h = self.scaled_img(self.img2_org_h, self.rect.w, self.rect.h)
-
                 self.img1.fill(self.board.mainloop.cl.c_fg_tint_color, special_flags=pygame.BLEND_ADD)
-                self.img2.fill(self.board.mainloop.cl.c_bg_tint_color, special_flags=pygame.BLEND_ADD)
-                self.img2h.fill(self.board.mainloop.cl.c_bg_tint_color, special_flags=pygame.BLEND_ADD)
-
                 self.img1_rect = self.img1.get_rect()
-                self.img2_rect = self.img2.get_rect()
                 pos_x = ((self.board.scale * self.grid_w - inner_w) // 2)
                 pos_y = ((self.board.scale * self.grid_h - inner_w) // 2)
                 self.img1_pos = (pos_x, pos_y)
-
-                pos2_x = ((self.board.scale * self.grid_w - self.img2_rect.w) // 2)
-                pos2_y = ((self.board.scale * self.grid_h - self.img2_rect.h) // 2)
-                self.img2_pos = (pos2_x, pos2_y)
             except:
                 pass
+
+            if prev is None:
+                try:
+                    self.img2_org = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_bg.png")).convert_alpha()
+                    self.img2_org_h = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_bg_h.png")).convert_alpha()
+                    if self.decor_style == 1:
+                        self.img2_org_decor = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_c_decor.png")).convert_alpha()
+                        self.img2d = self.scaled_img(self.img2_org_decor, self.rect.w, self.rect.h)
+                    self.img2 = self.scaled_img(self.img2_org, self.rect.w, self.rect.h)
+                    self.img2h = self.scaled_img(self.img2_org_h, self.rect.w, self.rect.h)
+                    self.img2.fill(self.board.mainloop.cl.c_bg_tint_color, special_flags=pygame.BLEND_ADD)
+                    self.img2h.fill(self.board.mainloop.cl.c_bg_tint_color, special_flags=pygame.BLEND_ADD)
+                except:
+                    pass
+            else:
+                self.img2 = prev.img2
+                self.img2h = prev.img2h
+                if self.decor_style == 1:
+                    self.img2d = prev.img2d
+
+            self.img2_rect = self.img2.get_rect()
+            pos2_x = ((self.board.scale * self.grid_w - self.img2_rect.w) // 2)
+            pos2_y = ((self.board.scale * self.grid_h - self.img2_rect.h) // 2)
+            self.img2_pos = (pos2_x, pos2_y)
 
     def resize_unit(self, new_grid_w, new_grid_h):
         self.grid_w = new_grid_w
@@ -306,7 +338,7 @@ class GameIcon(pygame.sprite.Sprite):
     """basic class for all on-board objects"""
 
     def __init__(self, board, game_obj, grid_x=0, grid_y=0, grid_w=1, grid_h=1, color=(0, 0, 0, 0),
-                 lvl_count=None, completions=None, img_src=None, decor=0):
+                 lvl_count=None, completions=None, img_src=None, decor=0, sequence_id=0):
         pygame.sprite.Sprite.__init__(self)
         self.grid_x = grid_x
         self.grid_y = grid_y
@@ -314,21 +346,20 @@ class GameIcon(pygame.sprite.Sprite):
         self.grid_h = grid_h
         self.game_obj = game_obj
         self.item_id = game_obj.dbgameid
+        self.sequence_id = sequence_id
         if img_src is None:
             self.img_src = game_obj.img_src
         else:
             self.img_src = img_src
         self.completions = completions
         self.level_count = lvl_count
-
+        self.board = board
         self.challenge_completed = False
         if self.completions is not None:
             if self.completions and 0 not in self.completions:
                 self.challenge_completed = True
 
-        self.board = board
         self.color = color
-
         self.lvl_not_compl_col = self.board.mainloop.cl.lvl_not_compl_col
 
         if self.board.mainloop.scheme is not None:
@@ -343,7 +374,6 @@ class GameIcon(pygame.sprite.Sprite):
         self.update_me = True
         self.hover = False
         self.show_titles_on_hover = True
-
         self.size = 256
 
         if self.game_obj.img_src2 == "":
@@ -351,6 +381,14 @@ class GameIcon(pygame.sprite.Sprite):
         else:
             self.challenge = False
 
+        #add object to the dictionary to reuse its images
+        if self.board.template_units is not None:
+            if self.challenge and not self.challenge_completed and self.board.template_units[0] is None:
+                self.board.template_units[0] = self
+            elif self.challenge and self.challenge_completed and self.board.template_units[1] is None:
+                self.board.template_units[1] = self
+            elif not self.challenge and self.board.template_units[2] is None:
+                self.board.template_units[2] = self
 
         self.bg_style = "game_bg"
         self.decor_style = decor
@@ -369,7 +407,6 @@ class GameIcon(pygame.sprite.Sprite):
         self.update()
 
     def redraw_image(self):
-
         self.lvl_not_compl_col = self.board.mainloop.cl.lvl_not_compl_col
 
         if self.board.mainloop.scheme is not None:
@@ -402,67 +439,94 @@ class GameIcon(pygame.sprite.Sprite):
             self.update_me = True
             self.img = self.image
             self.img_pos = (0, 0)
+            if self.sequence_id > 0:
+                prev2 = self.board.units[-1]
+            else:
+                prev2 = None
+            if self.board.template_units is not None:
+                if self.challenge and not self.challenge_completed and self.board.template_units[0] is not None \
+                        and self.board.template_units[0] != self:
+                    prev3 = self.board.template_units[0]
+                elif self.challenge and self.challenge_completed and self.board.template_units[1] is not None \
+                        and self.board.template_units[1] != self:
+                    prev3 = self.board.template_units[1]
+                elif not self.challenge and self.board.template_units[2] is not None \
+                        and self.board.template_units[2] != self:
+                    prev3 = self.board.template_units[2]
+                else:
+                    prev3 = None
+            else:
+                prev3 = None
+
             try:
                 self.img1_org = pygame.image.load(os.path.join('res', 'icons', self.img_src)).convert_alpha()
-                self.img2_org = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_bg_n.png")).convert_alpha()
-                self.img2_org_h = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_bg_h.png")).convert_alpha()
-                if self.decor_style == 1:
-                    self.img2_org_decor = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_bg_decor.png")).convert_alpha()
-                if not self.challenge:
-                    self.img3_org = pygame.image.load(os.path.join('res', 'icons', "menu_ring_demo_n.png")).convert_alpha()
-                    self.img3_org_h = pygame.image.load(os.path.join('res', 'icons', "menu_ring_demo_h.png")).convert_alpha()
-
-                    self.img3 = self.scaled_img(self.img3_org, self.rect.w, self.rect.h)
-                    self.img3h = self.scaled_img(self.img3_org_h, self.rect.w, self.rect.h)
-
-                    self.img3_org_d = pygame.image.load(os.path.join('res', 'icons', "menu_ring_demo_decor.png")).convert_alpha()
-                    self.img3d = self.scaled_img(self.img3_org_d, self.rect.w, self.rect.h)
-
-                elif self.challenge_completed:
-                    self.img3_org = pygame.image.load(os.path.join('res', 'icons', "menu_ring_comp_n.png")).convert_alpha()
-                    self.img3_org_h = pygame.image.load(
-                        os.path.join('res', 'icons', "menu_ring_comp_h.png")).convert_alpha()
-
-                    self.img3 = self.scaled_img(self.img3_org, self.rect.w, self.rect.h)
-                    self.img3h = self.scaled_img(self.img3_org_h, self.rect.w, self.rect.h)
-                    self.img3_org_d = pygame.image.load(
-                        os.path.join('res', 'icons', "menu_ring_comp_decor.png")).convert_alpha()
-                    self.img3d = self.scaled_img(self.img3_org_d, self.rect.w, self.rect.h)
-                else:
-                    self.img3_org = pygame.image.load(os.path.join('res', 'icons', "menu_ring_03.png")).convert_alpha()
-                    self.img3_org_h = pygame.image.load(
-                        os.path.join('res', 'icons', "menu_ring_03h.png")).convert_alpha()
-                    self.img3 = self.scaled_img(self.img3_org, self.rect.w, self.rect.h)
-                    self.img3h = self.scaled_img(self.img3_org_h, self.rect.w, self.rect.h)
-                    self.img3d = None
-
                 self.img1_rect = self.img1_org.get_rect()
-
                 self.img1 = self.scaled_img(self.img1_org, self.rect.w // 2, self.rect.h // 2)
-                self.img2 = self.scaled_img(self.img2_org, self.rect.w, self.rect.h)
-                self.img2h = self.scaled_img(self.img2_org_h, self.rect.w, self.rect.h)
-                if self.decor_style == 1:
-                    self.img2d = self.scaled_img(self.img2_org_decor, self.rect.w, self.rect.h)
-
                 self.img1.fill(self.board.mainloop.cl.g_fg_tint_color, special_flags=pygame.BLEND_ADD)
-                self.img2.fill(self.board.mainloop.cl.g_bg_tint_color, special_flags=pygame.BLEND_ADD)
-                self.img2h.fill(self.board.mainloop.cl.g_bg_tint_color, special_flags=pygame.BLEND_ADD)
-
-                if self.img3d is not None:
-                    self.img3.fill(self.lvl_completed_col, special_flags=pygame.BLEND_ADD)
-                    self.img3h.fill(self.lvl_completed_col, special_flags=pygame.BLEND_ADD)
-
                 self.img1_rect = self.img1.get_rect()
-                self.img2_rect = self.img2.get_rect()
                 pos_x = ((self.board.scale * self.grid_w - self.img1_rect.w) // 2)
                 pos_y = ((self.board.scale * self.grid_h - self.img1_rect.h) // 2)
                 self.img1_pos = (pos_x, pos_y)
-
-                pos2_x = ((self.board.scale * self.grid_w - self.img2_rect.w) // 2)
-                pos2_y = ((self.board.scale * self.grid_h - self.img2_rect.h) // 2)
-                self.img2_pos = (pos2_x, pos2_y)
             except:
                 pass
+
+            if prev2 is None:
+                try:
+                    self.img2_org = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_bg_n.png")).convert_alpha()
+                    self.img2_org_h = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_bg_h.png")).convert_alpha()
+                    if self.decor_style == 1:
+                        self.img2_org_decor = pygame.image.load(os.path.join('res', 'icons', "schemes", self.bg_style, "menu_bg_decor.png")).convert_alpha()
+                    self.img2 = self.scaled_img(self.img2_org, self.rect.w, self.rect.h)
+                    self.img2h = self.scaled_img(self.img2_org_h, self.rect.w, self.rect.h)
+                    if self.decor_style == 1:
+                        self.img2d = self.scaled_img(self.img2_org_decor, self.rect.w, self.rect.h)
+                    self.img2.fill(self.board.mainloop.cl.g_bg_tint_color, special_flags=pygame.BLEND_ADD)
+                    self.img2h.fill(self.board.mainloop.cl.g_bg_tint_color, special_flags=pygame.BLEND_ADD)
+                except:
+                    pass
+            else:
+                self.img2 = prev2.img2
+                self.img2d = prev2.img2d
+                self.img2h = prev2.img2h
+            self.img2_rect = self.img2.get_rect()
+            pos2_x = ((self.board.scale * self.grid_w - self.img2_rect.w) // 2)
+            pos2_y = ((self.board.scale * self.grid_h - self.img2_rect.h) // 2)
+            self.img2_pos = (pos2_x, pos2_y)
+
+            if prev3 is None:
+                try:
+                    if not self.challenge:
+                        self.img3_org = pygame.image.load(os.path.join('res', 'icons', "menu_ring_demo_n.png")).convert_alpha()
+                        self.img3_org_h = pygame.image.load(os.path.join('res', 'icons', "menu_ring_demo_h.png")).convert_alpha()
+                        self.img3 = self.scaled_img(self.img3_org, self.rect.w, self.rect.h)
+                        self.img3h = self.scaled_img(self.img3_org_h, self.rect.w, self.rect.h)
+                        self.img3_org_d = pygame.image.load(os.path.join('res', 'icons', "menu_ring_demo_decor.png")).convert_alpha()
+                        self.img3d = self.scaled_img(self.img3_org_d, self.rect.w, self.rect.h)
+                    elif self.challenge_completed:
+                        self.img3_org = pygame.image.load(os.path.join('res', 'icons', "menu_ring_comp_n.png")).convert_alpha()
+                        self.img3_org_h = pygame.image.load(
+                            os.path.join('res', 'icons', "menu_ring_comp_h.png")).convert_alpha()
+                        self.img3 = self.scaled_img(self.img3_org, self.rect.w, self.rect.h)
+                        self.img3h = self.scaled_img(self.img3_org_h, self.rect.w, self.rect.h)
+                        self.img3_org_d = pygame.image.load(
+                            os.path.join('res', 'icons', "menu_ring_comp_decor.png")).convert_alpha()
+                        self.img3d = self.scaled_img(self.img3_org_d, self.rect.w, self.rect.h)
+                    else:
+                        self.img3_org = pygame.image.load(os.path.join('res', 'icons', "menu_ring_03.png")).convert_alpha()
+                        self.img3_org_h = pygame.image.load(
+                            os.path.join('res', 'icons', "menu_ring_03h.png")).convert_alpha()
+                        self.img3 = self.scaled_img(self.img3_org, self.rect.w, self.rect.h)
+                        self.img3h = self.scaled_img(self.img3_org_h, self.rect.w, self.rect.h)
+                        self.img3d = None
+                    if self.img3d is not None:
+                        self.img3.fill(self.lvl_completed_col, special_flags=pygame.BLEND_ADD)
+                        self.img3h.fill(self.lvl_completed_col, special_flags=pygame.BLEND_ADD)
+                except:
+                    pass
+            else:
+                self.img3 = prev3.img3
+                self.img3h = prev3.img3h
+                self.img3d = prev3.img3d
 
     def resize_unit(self, new_grid_w, new_grid_h):
         self.grid_w = new_grid_w

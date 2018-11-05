@@ -44,8 +44,8 @@ class Board(gd.BoardGame):
         self.vis_buttons = [0, 0, 0, 0, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.layout.update_layout(data[0], data[1])
-        scale = self.layout.scale
-        self.board.level_start(data[0], data[1], scale)
+        self.scale = self.layout.scale
+        self.board.level_start(data[0], data[1], self.scale)
         self.board.board_bg.initcolor = color
         self.board.board_bg.color = color
         self.board.board_bg.update_me = True
@@ -81,8 +81,9 @@ class Board(gd.BoardGame):
         for each in self.mainloop.m.top_categories:
             self.top_categories.append(each)
 
-            unit = classes.menu_items.TopCategory(self.board, self.top_categories[-1], posx[i], 8, 5, 5,
-                                               i, self.color, ico[i], decor=self.mainloop.cl.color_sliders[6][0])
+            unit = classes.menu_items.TopCategory(self, self.top_categories[-1], posx[i], 8, 5, 5,
+                                                  i, self.color, ico[i],
+                                                  decor=self.mainloop.cl.color_sliders[6][0], sequence_id=i)
             self.units.append(unit)
             self.board.all_sprites_list.add(unit)
             i += 1

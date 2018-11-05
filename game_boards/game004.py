@@ -5,6 +5,7 @@ import classes.game_driver as gd
 import classes.level_controller as lc
 import classes.menu_items
 
+import time
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
@@ -59,8 +60,8 @@ class Board(gd.BoardGame):
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
-        scale = self.layout.scale
-        self.board.level_start(data[0], data[1], scale)
+        self.scale = self.layout.scale
+        self.board.level_start(data[0], data[1], self.scale)
         self.board.board_bg.initcolor = color
         self.board.board_bg.color = color
         self.board.board_bg.update_me = True
@@ -98,10 +99,14 @@ class Board(gd.BoardGame):
             py3 = [y3 for i in range(l - self.h_count * 2)]
             posy = py1 + py2 + py3
 
+        #t0 = time.time()
+        self.template_units = {0: None, 1: None, 2: None}
+
         if self.mainloop.menu_level == 1:
             for i in range(l):
-                unit = classes.menu_items.Category(self.board, self.categories[i], posx[i] + 1, posy[i], 5, 5, self.categories[i].cat_id,
-                                self.color, self.categories[i].img_src, self.mainloop.cl.color_sliders[6][0])
+                unit = classes.menu_items.Category(self, self.categories[i], posx[i] + 1, posy[i], 5, 5, self.categories[i].cat_id,
+                                self.color, self.categories[i].img_src, self.mainloop.cl.color_sliders[6][0],
+                                sequence_id=i)
                 self.units.append(unit)
                 self.board.all_sprites_list.add(unit)
         else:
@@ -133,10 +138,13 @@ class Board(gd.BoardGame):
 
                     self.mainloop.completions_dict[self.games[i].dbgameid] = completions
 
-                unit = classes.menu_items.GameIcon(self.board, self.games[i], posx[i] + 1, posy[i], 5, 5, self.color,
-                                                   lvl_count, completions, decor=self.mainloop.cl.color_sliders[6][1])
+                unit = classes.menu_items.GameIcon(self, self.games[i], posx[i] + 1, posy[i], 5, 5, self.color,
+                                                   lvl_count, completions, decor=self.mainloop.cl.color_sliders[6][1],
+                                                   sequence_id=i)
                 self.units.append(unit)
                 self.board.all_sprites_list.add(unit)
+        #t1 = time.time()
+        #print("Add games: %f" % (t1 - t0))
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)
