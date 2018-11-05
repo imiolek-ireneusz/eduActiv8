@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
+
 import gc
 import random
 import time
 
 
-# file initialising level control
 class Level:
     def __init__(self, board, mainloop, gpl, lvl_count):
         self.game_board = board
@@ -79,14 +79,6 @@ class Level:
             return None
 
     def update_level_dict(self):
-        # saved_levels = self.game_board.mainloop.m.saved_levels
-        active_item = self.game_board.mainloop.m.games[self.game_board.mainloop.m.active_game_id]
-        # saved_levels[active_item.game_constructor][str(active_item.variant)] = self.lvl
-
-        # print(self.lvl)
-        # print("self.lvl: %d" % self.lvl)
-        # self.game_board.mainloop.m.saved_levels[active_item.dbgameid] = self.lvl
-
         self.game_board.mainloop.db.update_cursor(self.game_board.mainloop.userid, self.game_board.active_game.dbgameid,
                                                   self.lvl)
         self.game_board.mainloop.m.load_levels()
@@ -95,7 +87,6 @@ class Level:
         pass
 
     def game_over(self, tts=""):
-        # self.load_level()
         if tts == "":
             self.game_board.say(self.dp["Game Over!"], 6)
         else:
@@ -107,15 +98,7 @@ class Level:
         self.game_board.mainloop.redraw_needed[0] = True
 
     def game_won(self, tts=""):
-        # print("Congratulations you won the game")
-        """
-        if tts != None:
-            self.game_board.say(self.dp["Congratulations! Game Completed."], 6)
-            self.game_won_restart()
-        else:
-        """
-        self.mainloop.dialog.show_dialog(
-            2, self.mainloop.lang.d["Congratulations! Game Completed."],
+        self.mainloop.dialog.show_dialog(2, self.mainloop.lang.d["Congratulations! Game Completed."],
             self.game_won_restart, self.reset_level, bg_type=1, decor_type=2)
 
     def game_won_restart(self, args=None):
@@ -125,16 +108,12 @@ class Level:
         self.restart()
         self.game_step = 1
         self.load_level()
-        # self.dialog_type = 0
-        # self.game_board.show_msg = True
         self.game_board.mainloop.score = 0
 
     def try_again(self, silent=False):
-        self.mainloop.info.btns[0].img = self.mainloop.info.btns[0].img_3
         self.game_board.changed_since_check = False
         if not silent:
             self.mainloop.sfx.play(8)
-            # self.game_board.say("Not really",6)
 
     def next_board(self, tts=""):
         if not self.next_pressed:
@@ -163,17 +142,13 @@ class Level:
 
                 if self.mainloop.completions is not None:
                     self.mainloop.completions[self.lvl - 1] = 1
-
                 self.game_board.mainloop.db.update_completion(self.game_board.mainloop.userid,
                                                               self.game_board.active_game.dbgameid, self.lvl)
                 self.mainloop.completions_dict[self.game_board.active_game.dbgameid][self.lvl - 1] = 1
-
                 if all_completed_already or not self.all_completed():
                     self.levelup()
                     if tts != None:
                         self.game_board.say(self.dp["Perfect! Level completed!"], 6)
-                        # self.dialog_type = 0
-                        # self.game_board.show_msg = True
                 else:
                     self.game_won(tts)
 
@@ -188,11 +163,10 @@ class Level:
             if self.lvl < self.lvl_count:
                 self.levelup()
             else:
-                pass  # self.game_won()
+                pass
 
     def load_level(self, args=None):
         self.game_board.create_game_objects(self.lvl)
-
         gc.collect()
         if self.game_board.game_type == "Board":
             self.game_board.board.board_bg.update_me = True
@@ -219,7 +193,6 @@ class Level:
         self.completed = self.game_board.mainloop.db.query_completion(self.game_board.mainloop.userid,
                                                                       self.game_board.active_game.dbgameid, self.lvl,
                                                                       self.game_board.active_game.lang_activity)
-        #self.mainloop.completions_dict[self.game_board.active_game.dbgameid][self.lvl] = 1
 
     def load_level_plus(self, args=None):
         self.game_step = 1
