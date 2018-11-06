@@ -11,7 +11,7 @@ import classes.menu_items
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.level = lc.Level(self, mainloop, 1, 1)
-        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 17, 11)
+        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 25, 16)
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False

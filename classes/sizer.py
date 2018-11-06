@@ -13,7 +13,7 @@ class Sizer:
         self.info_bar_h = 90  # 76
         self.info_bar_offset_h_init = 80  # 76
         self.top_margin = self.score_bar_h + self.info_bar_h
-        self.bottom_margin = 20
+        self.bottom_margin = 10
         self.avail_game_w = self.screen_w - 10
         self.avail_game_h = self.screen_h - self.top_margin - self.bottom_margin # - self.info_bar_h
         self.info_bar_offset_h = self.screen_h - self.avail_game_h - self.top_margin

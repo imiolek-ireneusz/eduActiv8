@@ -1588,7 +1588,7 @@
                   title="Paint"
                   subtitle=""
                   icon="ico_g_0600.png" ico_group="1" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="72" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="42"
@@ -1616,28 +1616,28 @@
                   title="Ink Mixer"
                   subtitle="Mixing CMY"
                   icon="ico_g_0605.png" ico_group="1" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="76" variant="0" var2="0"  min_age="2" max_age="7"
                   constructor_id="55"
                   title="Find the colour of the circle in the middle"
                   subtitle="Adjust CMY"
                   icon="ico_g_0605.png" ico_group="" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="77" variant="0" var2="0"  min_age="2" max_age="7"
                   constructor_id="53"
                   title="Light Mixer"
                   subtitle="Mixing RGB"
                   icon="ico_g_0604.png" ico_group="1" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="78" variant="0" var2="0"  min_age="2" max_age="7"
                   constructor_id="54"
                   title="Find the colour of the circle in the middle"
                   subtitle="Adjust RGB"
                   icon="ico_g_0604.png" ico_group="" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
         </cat>
         <cat id="17" title="Memory" subtitle="" icon="ico_c_17.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True">
@@ -1697,14 +1697,14 @@
                   title="Mouse Maze"
                   subtitle="Let's have some cheese"
                   icon="ico_g_0800.png" ico_group="" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="87" variant="0" var2="0"  min_age="0" max_age="7"
                   constructor_id="28"
                   title="Sheep Maze"
                   subtitle="Find the rest"
                   icon="ico_g_0801.png" ico_group="" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game dbid="88" variant="4" var2="0"  min_age="0" max_age="7"
                   constructor_id="60"

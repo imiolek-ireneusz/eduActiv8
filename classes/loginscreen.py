@@ -7,6 +7,7 @@ import math
 
 import classes.extras as ex
 
+
 class Colors:
     def __init__(self, mainloop):
         self.outer_color = (255, 255, 255, 255)  # color outside of the frame - visible on logout
@@ -916,6 +917,7 @@ class PIMGButton(pygame.sprite.Sprite):
     def onKeyDown(self, event):
         pass
 
+
 class KbrdKey(pygame.sprite.Sprite):
     def __init__(self, ls, x, y, w, h, lower, upper, fcode = 0):
         pygame.sprite.Sprite.__init__(self)
@@ -1198,6 +1200,7 @@ class Keyboard:
                         return
             self.update()
             self.ls.update_me = True
+
 
 class LoginScreen:
     def __init__(self, mainloop, screen, size):
@@ -1696,9 +1699,9 @@ class LoginScreen:
 
         btn_top = 333
 
-        self.loginbtn = PButton(self, self.halfw // 2 - 40, 30, self.left + 20 + self.halfw // 2,
+        self.font_apply = PButton(self, self.halfw // 2 - 40, 30, self.left + 20 + self.halfw // 2,
                                 self.top + btn_top + 30, 3, self.lang.b["Apply"], self.fapplyfont)
-        self.edit_list.add(self.loginbtn)
+        self.edit_list.add(self.font_apply)
         self.select = []
 
         hs = [60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
@@ -1807,9 +1810,10 @@ class LoginScreen:
             self.cb0.visible = False
         self.edit_list.add(self.cb0)
 
-        """
+
         self.cb2 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 150, False,
                              self.lang.b["check for updates"])
+        """
         
         if self.mainloop.android is not None:
             self.cb2.visible = False
@@ -1824,6 +1828,10 @@ class LoginScreen:
         self.cb4 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 90, False,
                              self.lang.b["require password to access admin area"])
         self.edit_list.add(self.cb4)
+
+        #self.font_prefs = PButton(self, 200, 30, self.left + 20, self.top + 150, 4, self.lang.b["Font Preferences"],
+        #                       self.fontprefs)
+
         if self.admin_exists:
             self.lb1 = PLabel(self, self.w - 140, 30, self.left + 20, self.top + 220, self.lang.b["Update admin's password:"])
 
@@ -1858,6 +1866,8 @@ class LoginScreen:
         self.edit_list.add(self.password)
         self.edit_list.add(self.cpassword)
         self.edit_list.add(self.savebtn)
+
+        #self.edit_list.add(self.font_prefs)
 
     def add_side_btns(self):
         sp = 20
@@ -1907,16 +1917,18 @@ class LoginScreen:
 
     def reload_font_selects(self, j=0):
         system_font_list = pygame.font.get_fonts()
-        sorted_font_list = sorted(system_font_list)
-        self.usr_count = len(sorted_font_list)
-        self.reload_scroll_bar_h()
+        self.sorted_font_list = sorted(system_font_list)
+        self.usr_count = len(self.sorted_font_list)
+        self.reload_font_scroll_bar_h()
         index = 0
         for i in range(j, j + self.scroll_item_count):
             if i < self.usr_count:
-                self.select[index].value = sorted_font_list[i].title()
+                self.select[index].value = self.sorted_font_list[i].title()
+                self.select[index].update_me = True
                 index += 1
             else:
                 self.select[index].value = ""
+                self.select[index].update_me = True
                 index += 1
 
     def age_groups_trigger(self):
@@ -1980,6 +1992,42 @@ class LoginScreen:
             self.scroll_bar.h = self.scroll_max_h
             self.scroll_bar.rect.h = self.scroll_max_h
             self.scroll_bar.rect_init()
+            self.scroll_bar.update()
+
+    def reload_font_scroll_bar_h(self):
+        if self.usr_count > self.scroll_item_count:
+            if self.usr_count < self.scroll_item_count + 1:
+                self.scroll_h = self.scroll_max_h
+            else:
+                h = int((self.scroll_item_count * 30) / (self.usr_count / float(self.scroll_item_count)))
+                if h > self.scroll_min_h:
+                    self.scroll_h = h
+                else:
+                    self.scroll_h = self.scroll_min_h
+
+            self.scroll_max_top = self.scroll_min_top + (self.scroll_item_count * 30) - self.scroll_h - 4
+            self.max_offset = self.scroll_max_top - self.scroll_min_top
+            self.scroll_bar.h = self.scroll_h
+            self.scroll_bar.rect.h = self.scroll_h
+            self.scroll_bar.rect_init()
+            self.scroll_bar.update_me = True
+            self.scroll_bar.update()
+        else:
+
+            h = int((self.scroll_item_count * 30) / (self.usr_count / float(self.scroll_item_count)))
+            if h > self.scroll_min_h:
+                self.scroll_h = h
+            else:
+                self.scroll_h = self.scroll_min_h
+
+            self.scroll_max_top = self.scroll_min_top + (self.scroll_item_count * 30) - self.scroll_h - 4
+            self.max_offset = self.scroll_max_top - self.scroll_min_top
+
+            self.scroll_bar.h = self.scroll_max_h
+            self.scroll_bar.rect.h = self.scroll_max_h
+            self.scroll_bar.rect_init()
+
+            self.scroll_bar.update_me = True
             self.scroll_bar.update()
 
     def update_scrollbar_top(self, top):
@@ -2171,7 +2219,7 @@ class LoginScreen:
                 self.in_focus.onFocus()
 
     def fapplyfont(self):
-        pass
+        print("font apply")
 
     def flogin(self):
         if self.require_pass:
@@ -2421,6 +2469,11 @@ class LoginScreen:
                     self.flang()
                 elif self.loginto == "FONTS":
                     self.ffonts()
+
+    def fontprefs(self):
+        self.update_me = True
+        self.loginto = "FONTS"
+        self.ffonts()
 
     def fprefsave(self):
         self.update_me = True

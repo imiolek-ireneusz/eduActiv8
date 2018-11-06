@@ -522,6 +522,9 @@ class DBConnection():
             row = self.c.fetchone()
             if row[0] is not None and len(row[0]) > 0:
                 self.mainloop.cl.load_colors(json.loads(row[0]))
+            else:
+                self.mainloop.cl.reset_colors()
+                self.mainloop.cl.create_colors()
 
     def load_user_settings(self, userid):
         if self.db_connected:

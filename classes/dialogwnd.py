@@ -119,6 +119,8 @@ class DialogWnd:
         self.bg_type = 0
         self.decor_type = 0
 
+        self.font_size = 0
+
         self.font_l = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 40)
         self.font_s = pygame.font.Font(
@@ -218,6 +220,7 @@ class DialogWnd:
         self.update()
 
     def set_font(self, font):
+        self.font_size = font
         if font == 0:
             self.default_font = self.font_l
         elif font == 1:
@@ -228,8 +231,12 @@ class DialogWnd:
     def set_text(self, text, font, justification=1):
         self.set_font(font)
         self.text = text
+        if font == 2:
+            rect = pygame.Rect((0, 0, 478, 260))
+        else:
+            rect = pygame.Rect((0, 0, 484, 276))
         self.text_canvas = self.render_textrect(string=self.text, font=self.default_font,
-                                                rect=pygame.Rect((0, 0, 470, 240)), text_color=self.font_color,
+                                                rect=rect, text_color=self.font_color,
                                                 background_color=(0, 0, 0, 0), justification=justification)
 
     def hide_dialog(self):
@@ -265,8 +272,10 @@ class DialogWnd:
         self.screen.blit(self.images[self.bg_type], self.img_pos)
 
         self.screen.blit(self.decors[self.decor_type], self.img_pos)
-
-        self.screen.blit(self.text_canvas, (76, 80))
+        if self.font_size == 2:
+            self.screen.blit(self.text_canvas, (72, 70))
+        else:
+            self.screen.blit(self.text_canvas, (69, 62))
 
         for each in self.widget_list:
             each.update()

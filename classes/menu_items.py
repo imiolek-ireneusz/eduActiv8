@@ -486,7 +486,8 @@ class GameIcon(pygame.sprite.Sprite):
                     pass
             else:
                 self.img2 = prev2.img2
-                self.img2d = prev2.img2d
+                if self.decor_style == 1:
+                    self.img2d = prev2.img2d
                 self.img2h = prev2.img2h
             self.img2_rect = self.img2.get_rect()
             pos2_x = ((self.board.scale * self.grid_w - self.img2_rect.w) // 2)

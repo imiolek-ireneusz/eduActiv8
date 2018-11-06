@@ -692,3 +692,5 @@ class I18n():
         self.d["Make the game look your way"] = _("Make the game look your way")
 
         self.d["Reset colors back to default?"] = _("Reset colors back to the default ones?")
+
+        self.b["Font Preferences"] = _("Font Preferences")

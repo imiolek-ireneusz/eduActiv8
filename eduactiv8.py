@@ -137,7 +137,10 @@ class GamePlay:
         self.sb.resize()
 
     def recreate_game_screen(self):
-        self.game = self.screen.subsurface(self.layout.game_pos)
+        try:
+            self.game = self.screen.subsurface(self.layout.game_pos)
+        except:
+            pass
 
     def fs_rescale(self, info):
         """rescale the game after fullscreen toggle, this will restart the board
@@ -203,9 +206,12 @@ class GamePlay:
             self.config.settings_changed = True
             self.config.save_settings(self.db)
 
+            # TODO check if commenting out the following code affects Windows/MacOS
+            """
             if repost:
                 pygame.event.post(
                     pygame.event.Event(pygame.VIDEORESIZE, size=self.size[:], w=self.size[0], h=self.size[1]))
+            """
 
         if android is not None:
             self.size = self.android_screen_size[:]
