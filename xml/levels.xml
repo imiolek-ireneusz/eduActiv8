@@ -1798,6 +1798,10 @@
         <levels count="3" games_per_level="5"/>
     </game>
 
+    <game dbids="277" min_age="0" max_age="7" show_all="1">
+        <levels count="3" games_per_level="5"/>
+    </game>
+
     <!-- end placeholders -->
 
 </levels>
