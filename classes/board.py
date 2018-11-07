@@ -532,6 +532,7 @@ class MultiColorLetters(Letter):
         value = ex.unival(new_value)
         self.coltxt = self.split_tags(value)
         self.value = "".join(self.coltxt[1])
+        self.update_me = True
 
     def set_font_colors(self, color1, color2, color3=(0, 0, 0), color4=(0, 0, 0)):
         self.colors = [color1, color2, color3, color4]
@@ -597,6 +598,8 @@ class MultiColorLetters(Letter):
 
             if self.perm_outline:
                 self.draw_outline()
+
+            self.draw_fraction_lines()
 
 
 class ImgSurf(pygame.sprite.Sprite):

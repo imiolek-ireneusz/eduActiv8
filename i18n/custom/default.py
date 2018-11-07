@@ -694,3 +694,6 @@ class I18n():
         self.d["Reset colors back to default?"] = _("Reset colors back to the default ones?")
 
         self.b["Font Preferences"] = _("Font Preferences")
+
+        self.d["Add, subtract, multiply and divide"] = _("Addition, subtraction, multiplication and division of fractions")
+        self.d["cross simplification"] = _("Using cross simplification")

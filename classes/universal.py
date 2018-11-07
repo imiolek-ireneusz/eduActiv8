@@ -238,10 +238,12 @@ class Universal(pygame.sprite.Sprite):
 
     def set_value(self, new_value):
         self.value = ex.unival(new_value)
+        self.txt = self.value
         self.update_me = True
         if self.multi_color:
             self.coltxt = self.split_tags(self.value)
             self.value = "".join(self.coltxt[1])
+        self.update(self.board)
 
     def split_tags(self, text):
         txt = []
@@ -343,16 +345,30 @@ class Universal(pygame.sprite.Sprite):
             if self.layer_dc.img is not None:
                 self.image.blit(self.layer_dc.img, self.layer_dc.img_pos)
 
+    def hide(self):
+        self.hidden = True
+        self.update_me = True
+        self.update(self.board)
+
+    def show(self):
+        self.hidden = False
+        self.update_me = True
+        self.update(self.board)
+
     def update(self, board, **kwargs):
-        if self.update_me:
+        if self.update_me and not self.hidden:
             self.update_me = False
             self.compose_image()
 
             # apply checkmarks
             self.draw_check_marks()
+        elif self.update_me and self.hidden:
+            self.update_me = False
+            self.image.fill(self.bg_color)
+
 
     def display_text(self):
-        if self.txt is not None and self.show_value:
+        if self.value is not None and self.show_value:
             if not self.multi_color:
                 if sys.version_info < (3, 0):
                     if isinstance(self.value, basestring):
