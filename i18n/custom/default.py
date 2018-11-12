@@ -590,9 +590,9 @@ class I18n():
         self.d["Compare decimals and fractions"] = _("Compare decimals and fractions")
         self.d["Compare fractions"] = _("Compare fractions")
         self.d["Reduce fractions"] = _("Reduce fractions")
-        self.d["Extend fractions"] = _("Extend fractions")
+        self.d["Expand fractions"] = _("Expand fractions")
         self.d["To reduce a fraction..."] = _("To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one.")
-        self.d["To extend a fraction..."] = _("To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens.")
+        self.d["To expand a fraction..."] = _("To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens.")
         self.d["Use plus or minus..."] = _("Use the arrows to change your answer or just type it in.")
         self.d["Use plus or minus... Android"] = _("Use the arrows to change your answer.")
         self.d["To add a fraction with the same denominator..."] = _("To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible.")
@@ -697,3 +697,8 @@ class I18n():
 
         self.d["Add, subtract, multiply and divide"] = _("Addition, subtraction, multiplication and division of fractions")
         self.d["cross simplification"] = _("Using cross simplification")
+
+        self.d["Positive numbers"] = _("Positive numbers")
+        self.d["Basics"] = _("Basics")
+        self.d["Equivalent fractions"] = _("Equivalent fractions")
+        self.d["Expanding and reducing fractions"] = _("Expanding and reducing fractions")

@@ -137,27 +137,14 @@ class Board(gd.BoardGame):
                             white, "", 25)
         self.sm1b = self.board.units[-1]
         self.sm1b.font_color = font_color
-        # optional simplified labels
-        self.board.add_unit(self.positions[2][0], self.positions[2][1], 1, 2, classes.board.Label, "a", white, "", 31)
-        self.nmeq2 = self.board.units[-1]
-        self.nmeq2.font_color = font_color
 
-        self.board.add_unit(self.positions[3][0], self.positions[3][1], 1, 1, classes.board.Label, "", white, "", 25)
-        self.sm2a = self.board.units[-1]
-        self.sm2a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
-        self.sm2a.font_color = font_color
-
-        self.board.add_unit(self.positions[4][0], self.positions[4][1], 1, 1, classes.board.Label, "", white, "", 25)
-        self.sm2b = self.board.units[-1]
-        self.sm2b.font_color = font_color
-
-        #optional 1 if over 1
-        self.board.add_unit(f_size * 3 + f_size // 2, f_size, 1, 2, classes.board.Label, "", white, "", 31)
+        #optional
+        self.board.add_unit(f_size * 3 + f_size // 2, f_size, 2, 2, classes.board.Label, "", white, "", 31)
         self.nmeq3 = self.board.units[-1]
         self.nmeq3.font_color = font_color
         self.positions2 = [(f_size * 3 + f_size // 2 + 4 - 1, f_size),
                            (f_size * 3 + f_size // 2 + 4 - 1, f_size + 1),
-                           (f_size * 3 + f_size // 2 +3, f_size)]
+                           (f_size * 3 + f_size // 2 + 3, f_size)]
         self.board.add_unit(self.positions2[0][0], self.positions2[0][1], 3, 1, classes.board.Label, "", white, "", 25)
         self.sm3a = self.board.units[-1]
         self.sm3a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
@@ -256,19 +243,6 @@ class Board(gd.BoardGame):
         else:
             self.nmeq3.set_value("")
 
-        if self.numbers[0] - self.numbers2[0] == self.numbers[1] or self.sim2_numbers[0] == 0 or self.res2_numbers[0] == self.sum_numbers[0] or self.gcf == 1:
-            v0 = ""
-            v1 = ""
-            v2 = ""
-        else:
-            v0 = "="
-            v1 = str(self.res2_numbers[0])
-            v2 = str(self.res2_numbers[1])
-
-        self.nmeq2.set_value(v0)
-        self.sm2a.set_value(v1)
-        self.sm2b.set_value(v2)
-
         if self.sim2_numbers[0] == 0:
             v0 = ""
             v1 = ""
@@ -282,12 +256,7 @@ class Board(gd.BoardGame):
         self.sm3a.set_value(v1)
         self.sm3b.set_value(v2)
 
-        if self.numbers[0] + self.numbers2[0] == self.numbers[1] or self.sim2_numbers[0] == 0 or self.res2_numbers[0] == self.sum_numbers[0] or self.gcf == 1:
-            self.sm2a.set_fraction_lines(top=False, bottom=False, color=self.bd_color1)
-        else:
-            self.sm2a.set_fraction_lines(top=False, bottom=True, color=self.bd_color1)
-
-        if self.numbers[0] + self.numbers2[0] == self.numbers[1] or self.sim2_numbers[0] == 0:
+        if self.sim2_numbers[0] == 0:
             self.sm3a.set_fraction_lines(top=False, bottom=False, color=self.bd_color1)
         else:
             self.sm3a.set_fraction_lines(top=False, bottom=True, color=self.bd_color1)

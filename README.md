@@ -11,4 +11,4 @@ To find out more please visit: www.eduactiv8.org and http://www.facebook.com/edu
 
 The installation guide is available at the following address: www.eduactiv8.org/installation/
 
-To download the official source or the 'compiled' package visit: https://sourceforge.net/projects/eduactiv8
+To download the 'compiled' package visit: https://sourceforge.net/projects/eduactiv8

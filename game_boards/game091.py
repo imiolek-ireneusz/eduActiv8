@@ -150,7 +150,7 @@ class Board(gd.BoardGame):
             each.immobilize()
 
     def show_info_dialog(self):
-        self.mainloop.dialog.show_dialog(3, self.lang.d["To extend a fraction..."])
+        self.mainloop.dialog.show_dialog(3, self.lang.d["To expand a fraction..."])
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
