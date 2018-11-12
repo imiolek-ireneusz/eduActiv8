@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 import ast
 import classes.extras as ex
 
@@ -22,10 +21,11 @@ class MenuCategoryGroup:
 
 
 class MenuCategory:
-    def __init__(self, menu, top_id, cat_id, title, subtitle, img_src):
+    def __init__(self, menu, top_id, cat_id, title, subtitle, img_src, has_inner):
         self.menu = menu
         self.cat_id = cat_id
         self.top_id = top_id
+        self.has_inner = has_inner
         self.title = ex.unival(title)
         self.subtitle = ex.unival(subtitle)
         self.img_src = img_src
@@ -54,6 +54,7 @@ class Menu:
         self.mainloop = mainloop
         self.lang = self.mainloop.lang
         self.uage = self.mainloop.config.user_age_group
+        self.categories_dict = dict()
         self.create_lists()
         self.active_game_id = 0
         self.active_o = None
@@ -61,13 +62,13 @@ class Menu:
         self.game_started_id = -1
         self.active_cat = 0
         self.lang_activity = False
+        self.current_inner = False
         self.show_all = 0
         self.game_constructor = "game000.Board"
         self.game_dbid = 0
         self.game_variant = 0
         self.game_var2 = 0
         self.en_list = []  # list of games that need the speaker to be switched to English
-        #self.id2icon = dict()
         self.xml = self.mainloop.xml_conn
         self.create_menu()
 
@@ -80,16 +81,18 @@ class Menu:
             self.saved_levels = temp
 
     def create_lists(self):
-        self.categories = []
         self.top_categories = []
+        self.categories = []
+        self.categories_dict.clear()
         self.elements = []
         self.games = []
         self.games_current = []
+        self.cats_current = []
         self.saved_levels = dict()
 
     def add_categories_to_groups(self):
         for each in self.categories:
-            if each.top_id > 0:
+            if each.top_id > 0 and each.top_id < 3:
                 self.top_categories[each.top_id - 1].categories.append(each)
 
     def create_menu(self):
@@ -111,13 +114,7 @@ class Menu:
         for each in self.games:
             if each.dbgameid == gameid:
                 self.active_game_id = each.item_id
-                if self.active_o is not None:
-                    if each != self.active_o:
-                        self.active_o.state = 0
-                        self.play_sound(4)
-                else:
-                    self.play_sound(4)
-                self.active_o = each
+                self.play_sound(4)
                 self.mainloop.config.max_age = each.max_age
                 self.game_constructor = each.game_constructor
                 self.game_dbid = each.dbgameid
@@ -141,7 +138,7 @@ class Menu:
         self.elements.append(new_top_category)
 
     def add_all(self):
-        self.add_category(0, 0, self.lang.d["Info Category"], "", "ico_c_00.png")
+        self.add_category(0, 0, self.lang.d["Info Category"], "", "ico_c_00.png", False)
 
         self.badge_count = self.mainloop.db.get_completion_count(self.mainloop.userid)
         # [0   1   2   3   4   5   6   7]
@@ -181,115 +178,119 @@ class Menu:
             #add category groups
             self.add_top_category(ast.literal_eval(top_cat.attrib['id']), self.lang.d[top_cat.attrib['title']], "",
                                   top_cat.attrib['icon'])
-            for cat in top_cat:
-                #add categories
-                cat_add = True
+            self.add_cats_from_topcat(top_cat)
 
-                if cat.attrib['visible'] == "0":
+    def add_cats_from_topcat(self, top_cat):
+        for cat in top_cat:
+            #add categories
+            cat_add = True
+
+            if cat.attrib['visible'] == "0":
+                cat_add = False
+            # check the age range if not in display all
+            elif self.uage != 7:
+                if self.uage < ast.literal_eval(cat.attrib['min_age']):
                     cat_add = False
-                # check the age range if not in display all
-                elif self.uage != 7:
-                    if self.uage < ast.literal_eval(cat.attrib['min_age']):
-                        cat_add = False
-                    elif self.uage > ast.literal_eval(cat.attrib['max_age']):
-                        cat_add = False
+                elif self.uage > ast.literal_eval(cat.attrib['max_age']):
+                    cat_add = False
 
+            # check for languages included/excluded
+            if cat.attrib['lang_incl'] != "":
+                lin = ast.literal_eval(cat.attrib['lang_incl'])
+                if self.mainloop.lang.lang[0:2] not in lin:
+                    cat_add = False
+            elif cat.attrib['lang_excl'] != "":
+                lex = ast.literal_eval(cat.attrib['lang_excl'])
+                if self.mainloop.lang.lang[0:2] in lex:
+                    cat_add = False
+            # check if the activity requires espeak to work correctly
+            if self.mainloop.speaker.started is False and ast.literal_eval(cat.attrib['listening']) is True:
+                cat_add = False
+
+            if cat_add:
+                c_id = ast.literal_eval(cat.attrib['id'])
+                if ast.literal_eval(cat.attrib["icosuffix"]):
+                    ico = cat.attrib['icon'][0:8] + self.lang.ico_suffix + cat.attrib['icon'][8:]
+                else:
+                    ico = cat.attrib['icon']
+                self.add_category(ast.literal_eval(top_cat.attrib['id']), c_id,
+                                  self.lang.d[cat.attrib['title']], self.lang.d[cat.attrib['subtitle']], ico,
+                                  ast.literal_eval(cat.attrib['has_inner']))
+
+                if ast.literal_eval(cat.attrib['has_inner']) is True:
+                    self.add_cats_from_topcat(cat)
+                else:
+                    self.add_games_from_cat(cat, c_id)
+
+    def add_games_from_cat(self, cat, c_id):
+        for game in cat:
+            # add games in current category
+            add = True
+
+            if game.attrib['visible'] == "0":
+                add = False
+            # check the age range and display code
+            elif self.uage != 7:
+                if self.uage < int(game.attrib['min_age']):
+                    add = False
+                elif self.uage > int(game.attrib['max_age']):
+                    add = False
+
+            if add:
                 # check for languages included/excluded
-                if cat.attrib['lang_incl'] != "":
-                    lin = ast.literal_eval(cat.attrib['lang_incl'])
+                if game.attrib['lang_incl'] != "":
+                    lin = ast.literal_eval(game.attrib['lang_incl'])
                     if self.mainloop.lang.lang[0:2] not in lin:
-                        cat_add = False
-                elif cat.attrib['lang_excl'] != "":
-                    lex = ast.literal_eval(cat.attrib['lang_excl'])
+                        add = False
+                elif game.attrib['lang_excl'] != "":
+                    lex = ast.literal_eval(game.attrib['lang_excl'])
                     if self.mainloop.lang.lang[0:2] in lex:
-                        cat_add = False
-                # check if the activity requires espeak to work correctly
-                if self.mainloop.speaker.started is False and ast.literal_eval(cat.attrib['listening']) is True:
-                    cat_add = False
+                        add = False
 
-                if cat_add:
-                    c_id = ast.literal_eval(cat.attrib['id'])
-                    if ast.literal_eval(cat.attrib["icosuffix"]):
-                        ico = cat.attrib['icon'][0:8] + self.lang.ico_suffix + cat.attrib['icon'][8:]
-                        self.add_category(ast.literal_eval(top_cat.attrib['id']), c_id,
-                                          self.lang.d[cat.attrib['title']], self.lang.d[cat.attrib['subtitle']],
-                                          ico)
-                    else:
-                        self.add_category(ast.literal_eval(top_cat.attrib['id']), c_id,
-                                          self.lang.d[cat.attrib['title']], self.lang.d[cat.attrib['subtitle']],
-                                          cat.attrib['icon'])
+                # check if the game requires the alphabet to have upper case
+                if self.lang.has_uc is False and ast.literal_eval(
+                        game.attrib['require_uc']) is True:
+                    add = False
+                elif self.mainloop.android is not None and ast.literal_eval(
+                        game.attrib['android']) is False:
+                    add = False
+                elif self.mainloop.speaker.started is False and ast.literal_eval(
+                        game.attrib['listening']) is True:
+                    add = False
 
-                    for game in cat:
-                        # add games in current category
-                        add = True
+            if add:
+                # dbgameid, cat_id, min_age, max_age, constructor, title, subtitle, img_src, variant=0, var2=0
+                if ast.literal_eval(game.attrib["icosuffix"]):
+                    ico = game.attrib['icon'][0:10] + self.lang.ico_suffix + game.attrib[
+                                                                                 'icon'][10:]
+                    self.add_game(int(game.attrib['dbid']),
+                                  c_id,
+                                  int(game.attrib["min_age"]),
+                                  int(game.attrib["max_age"]),
+                                  "game%03i.Board" % int(game.attrib["constructor_id"]),
+                                  self.lang.d[game.attrib['title']],
+                                  self.lang.d[game.attrib['subtitle']],
+                                  ico, game.attrib['ico_group'],
+                                  int(game.attrib["variant"]),
+                                  int(game.attrib["var2"]))
+                else:
+                    self.add_game(int(game.attrib['dbid']),
+                                  c_id,
+                                  int(game.attrib["min_age"]),
+                                  int(game.attrib["max_age"]),
+                                  "game%03i.Board" % int(game.attrib["constructor_id"]),
+                                  self.lang.d[game.attrib['title']],
+                                  self.lang.d[game.attrib['subtitle']],
+                                  game.attrib['icon'], game.attrib['ico_group'],
+                                  int(game.attrib["variant"]),
+                                  int(game.attrib["var2"]))
 
-                        if game.attrib['visible'] == "0":
-                            add = False
-                        # check the age range and display code
-                        elif self.uage != 7:
-                            if self.uage < int(game.attrib['min_age']):
-                                add = False
-                            elif self.uage > int(game.attrib['max_age']):
-                                add = False
+                self.games[-1].lang_activity = ast.literal_eval(game.attrib['lang_activity'])
 
-                        if add:
-                            # check for languages included/excluded
-                            if game.attrib['lang_incl'] != "":
-                                lin = ast.literal_eval(game.attrib['lang_incl'])
-                                if self.mainloop.lang.lang[0:2] not in lin:
-                                    add = False
-                            elif game.attrib['lang_excl'] != "":
-                                lex = ast.literal_eval(game.attrib['lang_excl'])
-                                if self.mainloop.lang.lang[0:2] in lex:
-                                    add = False
-
-                            # check if the game requires the alphabet to have upper case
-                            if self.lang.has_uc is False and ast.literal_eval(
-                                    game.attrib['require_uc']) is True:
-                                add = False
-                            elif self.mainloop.android is not None and ast.literal_eval(
-                                    game.attrib['android']) is False:
-                                add = False
-                            elif self.mainloop.speaker.started is False and ast.literal_eval(
-                                    game.attrib['listening']) is True:
-                                add = False
-
-                        if add:
-                            # dbgameid, cat_id, min_age, max_age, constructor, title, subtitle, img_src, variant=0, var2=0
-                            if ast.literal_eval(game.attrib["icosuffix"]):
-                                ico = game.attrib['icon'][0:10] + self.lang.ico_suffix + game.attrib[
-                                                                                             'icon'][10:]
-                                self.add_game(int(game.attrib['dbid']),
-                                              c_id,
-                                              int(game.attrib["min_age"]),
-                                              int(game.attrib["max_age"]),
-                                              "game%03i.Board" % int(game.attrib["constructor_id"]),
-                                              self.lang.d[game.attrib['title']],
-                                              self.lang.d[game.attrib['subtitle']],
-                                              ico, game.attrib['ico_group'],
-                                              int(game.attrib["variant"]),
-                                              int(game.attrib["var2"]))
-                            else:
-                                self.add_game(int(game.attrib['dbid']),
-                                              c_id,
-                                              int(game.attrib["min_age"]),
-                                              int(game.attrib["max_age"]),
-                                              "game%03i.Board" % int(game.attrib["constructor_id"]),
-                                              self.lang.d[game.attrib['title']],
-                                              self.lang.d[game.attrib['subtitle']],
-                                              game.attrib['icon'], game.attrib['ico_group'],
-                                              int(game.attrib["variant"]),
-                                              int(game.attrib["var2"]))
-
-                            self.games[-1].lang_activity = ast.literal_eval(game.attrib['lang_activity'])
-                        #self.id2icon[int(game.attrib['dbid'])] = game.attrib['icon']
-                #else:
-                #    for game in cat:
-                #        self.id2icon[int(game.attrib['dbid'])] = game.attrib['icon']
-
-    def add_category(self, top_id, cat_id, title, subtitle, img_src):
-        new_category = MenuCategory(self, top_id, cat_id, title, subtitle, img_src)
+    def add_category(self, top_id, cat_id, title, subtitle, img_src, has_inner):
+        new_category = MenuCategory(self, top_id, cat_id, title, subtitle, img_src, has_inner)
         self.categories.append(new_category)
+        self.categories_dict[cat_id] = self.categories[-1]
 
     def add_game(self, dbgameid, cat_id, min_age, max_age, constructor, title, subtitle, img_src, img_src2="",
                  variant=0, var2=0):
@@ -300,11 +301,13 @@ class Menu:
         self.saved_levels[dbgameid] = 1
 
     def change_cat(self, cat_id):
-        self.games_current = []
-        for each_item in self.games:
-            if each_item.cat_id == cat_id:
-                self.games_current.append(each_item)
-                if self.active_o is not None:
-                    if each_item.item_id == self.active_o.item_id:
-                        self.active_o = each_item
-                        self.active_o.state = 2
+        if self.categories_dict[cat_id].has_inner is not True:
+            self.games_current = []
+            for each_item in self.games:
+                if each_item.cat_id == cat_id:
+                    self.games_current.append(each_item)
+        else:
+            self.cats_current = []
+            for each_item in self.categories:
+                if each_item.top_id == cat_id:
+                    self.cats_current.append(each_item)

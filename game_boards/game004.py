@@ -36,6 +36,11 @@ class Board(gd.BoardGame):
                 if each.top_id == self.mainloop.menu_group:
                     l += 1
                     self.categories.append(each)
+        elif self.mainloop.menu_level == 2:
+            self.categories = []
+            for each in self.mainloop.m.cats_current:
+                l += 1
+                self.categories.append(each)
         else:
             self.games = []
             for each in self.mainloop.m.games_current:
@@ -99,14 +104,13 @@ class Board(gd.BoardGame):
             py3 = [y3 for i in range(l - self.h_count * 2)]
             posy = py1 + py2 + py3
 
-        #t0 = time.time()
         self.template_units = {0: None, 1: None, 2: None}
 
-        if self.mainloop.menu_level == 1:
+        if self.mainloop.menu_level < 3:
             for i in range(l):
-                unit = classes.menu_items.Category(self, self.categories[i], posx[i] + 1, posy[i], 5, 5, self.categories[i].cat_id,
-                                self.color, self.categories[i].img_src, self.mainloop.cl.color_sliders[6][0],
-                                sequence_id=i)
+                unit = classes.menu_items.Category(self, self.categories[i], posx[i] + 1, posy[i], 5, 5,
+                                                   self.categories[i].cat_id, self.color, self.categories[i].img_src,
+                                                   self.mainloop.cl.color_sliders[6][0], sequence_id=i)
                 self.units.append(unit)
                 self.board.all_sprites_list.add(unit)
         else:
@@ -143,8 +147,6 @@ class Board(gd.BoardGame):
                                                    sequence_id=i)
                 self.units.append(unit)
                 self.board.all_sprites_list.add(unit)
-        #t1 = time.time()
-        #print("Add games: %f" % (t1 - t0))
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)

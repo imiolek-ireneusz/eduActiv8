@@ -93,6 +93,7 @@ class GamePlay:
 
         self.menu_group = 0
         self.menu_category = 0
+        self.menu_inner_cat = 0
         self.menu_level = 0  # 0 - home, 1 - categories, 2 games in a category
         self.completions = None
         self.completions_dict = None

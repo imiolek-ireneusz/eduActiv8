@@ -21,7 +21,6 @@ class BaseButton(pygame.sprite.Sprite):
                 self.scheme_dir = "black"
         else:
             self.scheme_dir = "black"
-
         self.update_size(width, height)
 
         self.img_src_1 = img_src_1
@@ -30,7 +29,6 @@ class BaseButton(pygame.sprite.Sprite):
         self.img_4 = None
         self.update_fonts()
         self.hasimg = False
-
         self.hover = False
 
         if self.btntype == "imgbtn":
@@ -72,10 +70,8 @@ class Button(BaseButton):
         self.img_pos = (0, 0)
         self.img_1 = pygame.image.load(os.path.join('res', 'images', "info_bar", "mask", self.img_src_1)).convert_alpha()
         self.img_1.fill(self.panel.mainloop.cl.info_buttons_col, special_flags=pygame.BLEND_ADD)
-
         self.img_2 = pygame.image.load(os.path.join('res', 'images', "info_bar", "mask", self.img_src_2)).convert_alpha()
         self.img_2.fill(self.panel.mainloop.cl.info_buttons_col, special_flags=pygame.BLEND_ADD)
-
         self.img_4 = pygame.image.load(
             os.path.join('res', 'images', "info_bar", "decor", self.img_src_2)).convert_alpha()
 
@@ -86,6 +82,7 @@ class Button(BaseButton):
             self.img_1 = pygame.transform.flip(self.img_1, 1, 0)
             self.img_2 = pygame.transform.flip(self.img_2, 1, 0)
             self.img_4 = pygame.transform.flip(self.img_4, 1, 0)
+
         self.img = self.img_2
         self.hasimg = True
         self.update()
@@ -359,17 +356,27 @@ class InfoBar:
         self.mainloop.redraw_needed = [True, True, True]
         if start:
             self.mainloop.menu_level = 0
-            self.mainloop.m.start_hidden_game(0)
         else:
-            if self.mainloop.menu_level == 3:
-                self.mainloop.menu_level = 2
-                self.mainloop.m.start_hidden_game(272)
+            if self.mainloop.menu_level == 4:
+                self.mainloop.menu_level = 3
+            elif self.mainloop.menu_level == 3:
+                if self.mainloop.m.current_inner:
+                    self.mainloop.m.current_inner = False
+                    self.mainloop.menu_level = 2
+                else:
+                    self.mainloop.m.current_inner = False
+                    self.mainloop.menu_level = 1
             elif self.mainloop.menu_level == 2:
                 self.mainloop.menu_level = 1
-                self.mainloop.m.start_hidden_game(271)
             else:
                 self.mainloop.menu_level = 0
-                self.mainloop.m.start_hidden_game(0)
+        if self.mainloop.menu_level == 0:
+            self.mainloop.m.start_hidden_game(0)
+        else:
+            if self.mainloop.m.game_dbid == 271:
+                self.mainloop.m.start_hidden_game(272)
+            else:
+                self.mainloop.m.start_hidden_game(271)
         self.realign()
 
     def reset_titles(self):
