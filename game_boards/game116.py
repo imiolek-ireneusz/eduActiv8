@@ -43,7 +43,6 @@ class Board(gd.BoardGame):
         self.bd_color1 = bd_color1
         transp = (0, 0, 0, 0)
         data = [19, 8]
-        f_size = 5
         self.data = data
         self.vis_buttons = [0, 0, 0, 0, 1, 1, 1, 0, 1]
 
@@ -94,7 +93,7 @@ class Board(gd.BoardGame):
 
             unit2 = classes.universal.Universal(board=self.board, grid_x=mainloc[i][0]+1, grid_y=mainloc[i][1],
                                                 grid_w=1, grid_h=1, txt="", bg_color=transp, immobilized=True,
-                                                font_colors=((f2_colors[i], )), font_type=2,
+                                                font_colors=(f2_colors[i], ), font_type=2,
                                                 txt_align=(2, 1))
 
             self.cross_lines.append(unit)
@@ -137,12 +136,7 @@ class Board(gd.BoardGame):
         self.board.add_unit(13, 3, 1, 2, classes.board.Label, "=", white, "", 31)
         self.board.units[-1].font_color = self.font_color
 
-        self.positions = [(f_size * 2 + 2 + f_size // 2, f_size - 2),
-                          (f_size * 2 + 2 + f_size // 2, f_size + 1 - 2),
-                          (f_size * 3 + 1, f_size - 2),
-                          (f_size * 3 + 3, f_size - 2),
-                          (f_size * 3 + 3, f_size + 1 - 2),
-                          (f_size * 3 + 2, f_size - 2)]
+        self.positions = [(14, 3), (14, 4), (16, 3), (18, 3), (18, 3), (17, 3)]
 
         self.board.add_unit(self.positions[0][0], self.positions[0][1], 2, 1, classes.board.Label, str(self.sum_numbers[0]),
                             white, "", 25)
@@ -156,16 +150,16 @@ class Board(gd.BoardGame):
         self.sm1b.font_color = self.font_color
 
         #optional
-        self.board.add_unit(f_size * 3 + f_size // 2 - 1, f_size - 2, 1, 2, classes.board.Label, "", white, "", 31)
+        self.board.add_unit(16, 3, 1, 2, classes.board.Label, "", white, "", 31)
         self.nmeq3 = self.board.units[-1]
         self.nmeq3.font_color = self.font_color
 
-        self.board.add_unit(f_size * 3 + f_size // 2 + 4 - 1 - 3, f_size - 2, 2, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(17, 3, 2, 1, classes.board.Label, "", white, "", 25)
         self.sm3a = self.board.units[-1]
         self.sm3a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
         self.sm3a.font_color = self.font_color
 
-        self.board.add_unit(f_size * 3 + f_size // 2 + 4 - 1 - 3, f_size + 1 - 2, 2, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(17, 4, 2, 1, classes.board.Label, "", white, "", 25)
         self.sm3b = self.board.units[-1]
         self.sm3b.font_color = self.font_color
 
