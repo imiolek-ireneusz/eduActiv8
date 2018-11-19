@@ -10,6 +10,7 @@ import classes.level_controller as lc
 import classes.extras as ex
 import classes.universal
 
+
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.level = lc.Level(self, mainloop, 15, 3)
@@ -25,34 +26,33 @@ class Board(gd.BoardGame):
             color1 = ex.hsv_to_rgb(h1, 255, 255)
             bd_color1 = ex.hsv_to_rgb(h1, 127, 155)
             self.font_color = bd_color1
-            self.font_color2 = ex.hsv_to_rgb(5, 255, 240)
-            self.font_color3 = ex.hsv_to_rgb(160, 255, 240)
-            self.font_color4 = ex.hsv_to_rgb(5, 150, 240)
-            self.font_color5 = ex.hsv_to_rgb(160, 150, 240)
         else:
             white = (255, 255, 255)
             h1 = 17
             color1 = ex.hsv_to_rgb(h1, 255, 255)
             bd_color1 = ex.hsv_to_rgb(h1, 255, 200)
             self.font_color = ex.hsv_to_rgb(h1, 255, 175)
-            self.font_color2 = ex.hsv_to_rgb(5, 255, 240)
-            self.font_color3 = ex.hsv_to_rgb(160, 255, 240)
-            self.font_color4 = ex.hsv_to_rgb(5, 150, 240)
-            self.font_color5 = ex.hsv_to_rgb(160, 150, 240)
+
+        self.font_color2 = ex.hsv_to_rgb(5, 255, 240)
+        self.font_color3 = ex.hsv_to_rgb(160, 255, 240)
+        self.font_color4 = ex.hsv_to_rgb(5, 150, 240)
+        self.font_color5 = ex.hsv_to_rgb(160, 150, 240)
+
+        self.font_color6 = ex.hsv_to_rgb(60, 255, 220)
+        self.font_color7 = ex.hsv_to_rgb(195, 255, 240)
+        self.font_color8 = ex.hsv_to_rgb(60, 150, 220)
+        self.font_color9 = ex.hsv_to_rgb(195, 150, 240)
 
         self.bd_color1 = bd_color1
         transp = (0, 0, 0, 0)
-        data = [19, 8]
+        data = [21, 8]
         self.data = data
         self.vis_buttons = [0, 0, 0, 0, 1, 1, 1, 0, 1]
-
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
         self.board.board_bg.update_me = True
-
         self.board.board_bg.line_color = (20, 20, 20)
 
         self.multiplier = 2
@@ -78,29 +78,76 @@ class Board(gd.BoardGame):
         self.cs2b = self.board.units[-1]
         self.cs2b.font_color = self.font_color2
 
+        # add second simplification fields
+        self.board.add_unit(0+10, 1, 1, 1, classes.board.Label, "a", white, "", 25)
+        self.cs1xa = self.board.units[-1]
+        self.cs1xa.font_color = self.font_color6
+
+        self.board.add_unit(0+10, 6, 1, 1, classes.board.Label, "b", white, "", 25)
+        self.cs1xb = self.board.units[-1]
+        self.cs1xb.font_color = self.font_color6
+
+        self.board.add_unit(8+8, 1, 1, 1, classes.board.Label, "c", white, "", 25)
+        self.cs2xa = self.board.units[-1]
+        self.cs2xa.font_color = self.font_color7
+
+        self.board.add_unit(8+8, 6, 1, 1, classes.board.Label, "d", white, "", 25)
+        self.cs2xb = self.board.units[-1]
+        self.cs2xb.font_color = self.font_color7
+
         # add cross line
         mainloc = [[1, 2], [1, 4], [6, 2], [6, 4]]
-        images = ["cross_line_la.png", "cross_line_ra.png", "cross_line_ra.png", "cross_line_la.png"]
+        mainloc2 = [[1+10, 2], [1+10, 4], [6+8, 2], [6+8, 4]]
         f_colors = [self.font_color2, self.font_color3, self.font_color3, self.font_color2]
         f2_colors = [self.font_color4, self.font_color5, self.font_color5, self.font_color4]
-        self.cross_lines = []
+
+        f_colors2 = [self.font_color6, self.font_color6, self.font_color7, self.font_color7]
+        f2_colors2 = [self.font_color8, self.font_color8, self.font_color9, self.font_color9]
+
         self.divisors = []
+        self.divisors2 = []
+
+        self.cross_lines = []
+        self.cross_lines2 = []
+        self.cross_lines3 = []
 
         for i in range(4):
-            unit = classes.universal.Universal(board=self.board, grid_x=mainloc[i][0], grid_y=mainloc[i][1],
-                                               grid_w=2, grid_h=2, bg_img_src=images[i], bg_color=transp,
+            unit1c = classes.universal.Universal(board=self.board, grid_x=mainloc[i][0], grid_y=mainloc[i][1],
+                                               grid_w=2, grid_h=2, bg_img_src="cross_line_la.png", bg_color=transp,
                                                bg_tint_color=f_colors[i], immobilized=True)
 
-            unit2 = classes.universal.Universal(board=self.board, grid_x=mainloc[i][0]+1, grid_y=mainloc[i][1],
+            unit1d = classes.universal.Universal(board=self.board, grid_x=mainloc[i][0]+1, grid_y=mainloc[i][1],
                                                 grid_w=1, grid_h=1, txt="", bg_color=transp, immobilized=True,
                                                 font_colors=(f2_colors[i], ), font_type=2,
                                                 txt_align=(2, 1))
 
-            self.cross_lines.append(unit)
-            self.board.all_sprites_list.add(unit)
+            unit2c = classes.universal.Universal(board=self.board, grid_x=mainloc2[i][0], grid_y=mainloc2[i][1],
+                                               grid_w=2, grid_h=2, bg_img_src="cross_line_la.png", bg_color=transp,
+                                               bg_tint_color=f_colors2[i], immobilized=True)
 
-            self.divisors.append(unit2)
-            self.board.all_sprites_list.add(unit2)
+            unit2d = classes.universal.Universal(board=self.board, grid_x=mainloc2[i][0] + 1, grid_y=mainloc2[i][1],
+                                                grid_w=1, grid_h=1, txt="", bg_color=transp, immobilized=True,
+                                                font_colors=(f2_colors2[i],), font_type=2,
+                                                txt_align=(2, 1))
+
+            unit3c = classes.universal.Universal(board=self.board, grid_x=mainloc[i][0], grid_y=mainloc[i][1],
+                                                 grid_w=2, grid_h=2, bg_img_src="cross_line_la.png", bg_color=transp,
+                                                 bg_tint_color=f_colors2[i], immobilized=True)
+
+            self.cross_lines.append(unit1c)
+            self.board.all_sprites_list.add(unit1c)
+
+            self.divisors.append(unit1d)
+            self.board.all_sprites_list.add(unit1d)
+
+            self.cross_lines2.append(unit2c)
+            self.board.all_sprites_list.add(unit2c)
+
+            self.divisors2.append(unit2d)
+            self.board.all_sprites_list.add(unit2d)
+
+            self.cross_lines3.append(unit3c)
+            self.board.all_sprites_list.add(unit3c)
 
         self.calc_added = False
         self.initialize_numbers(num1, num2, num3, num4)
@@ -131,37 +178,45 @@ class Board(gd.BoardGame):
         self.board.add_unit(9, 3, 1, 2, classes.board.Label, "=", white, "", 31)
         self.board.units[-1].font_color = self.font_color
 
-        # calculations added further down
+        # add labels for second simplifications
+        self.board.add_unit(1 + 10, 2, 2, 2, classes.board.Label, str(self.numbers[0]), white, "", 31)
+        self.nm1xa = self.board.units[-1]
+        self.nm1xa.set_fraction_lines(top=False, bottom=True, color=bd_color1, length=100)
+        self.nm1xa.font_color = self.font_color
 
-        self.board.add_unit(13, 3, 1, 2, classes.board.Label, "=", white, "", 31)
+        self.board.add_unit(1 + 10, 4, 2, 2, classes.board.Label, str(self.numbers[1]), white, "", 31)
+        self.nm1xb = self.board.units[-1]
+        self.nm1xb.font_color = self.font_color
+
+        self.board.add_unit(4 + 9, 2, 1, 2, classes.board.Label, chr(215), white, "", 31)
+        self.board.units[-1].font_color = self.font_color
+        self.board.units[-1].set_fraction_lines(top=False, bottom=True, color=bd_color1, length=100)
+
+        self.board.add_unit(4 + 9, 4, 1, 2, classes.board.Label, chr(215), white, "", 31)
         self.board.units[-1].font_color = self.font_color
 
-        self.positions = [(14, 3), (14, 4), (16, 3), (18, 3), (18, 3), (17, 3)]
+        self.board.add_unit(6+8, 2, 2, 2, classes.board.Label, str(self.numbers2[0]), white, "", 31)
+        self.nm2xa = self.board.units[-1]
+        self.nm2xa.set_fraction_lines(top=False, bottom=True, color=bd_color1, length=100)
+        self.nm2xa.font_color = self.font_color
 
-        self.board.add_unit(self.positions[0][0], self.positions[0][1], 2, 1, classes.board.Label, str(self.sum_numbers[0]),
-                            white, "", 25)
+        self.board.add_unit(6+8, 4, 2, 2, classes.board.Label, str(self.numbers2[1]), white, "", 31)
+        self.nm2xb = self.board.units[-1]
+        self.nm2xb.font_color = self.font_color
+
+        # calculations added further down
+
+        self.board.add_unit(13+4, 3, 1, 2, classes.board.Label, "=", white, "", 31)
+        self.board.units[-1].font_color = self.font_color
+        self.board.add_unit(18, 2, 3, 2, classes.board.Label, str(self.sum_numbers[0]),
+                            white, "", 31)
         self.sm1a = self.board.units[-1]
-        self.sm1a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
+        self.sm1a.set_fraction_lines(top=False, bottom=True, color=bd_color1, length=70)
         self.sm1a.font_color = self.font_color
-
-        self.board.add_unit(self.positions[1][0], self.positions[1][1], 2, 1, classes.board.Label, str(self.sum_numbers[1]),
-                            white, "", 25)
+        self.board.add_unit(18, 4, 3, 2, classes.board.Label, str(self.sum_numbers[1]),
+                            white, "", 31)
         self.sm1b = self.board.units[-1]
         self.sm1b.font_color = self.font_color
-
-        #optional
-        self.board.add_unit(16, 3, 1, 2, classes.board.Label, "", white, "", 31)
-        self.nmeq3 = self.board.units[-1]
-        self.nmeq3.font_color = self.font_color
-
-        self.board.add_unit(17, 3, 2, 1, classes.board.Label, "", white, "", 25)
-        self.sm3a = self.board.units[-1]
-        self.sm3a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
-        self.sm3a.font_color = self.font_color
-
-        self.board.add_unit(17, 4, 2, 1, classes.board.Label, "", white, "", 25)
-        self.sm3b = self.board.units[-1]
-        self.sm3b.font_color = self.font_color
 
         #num 1 numerator
         self.board.add_unit(0, 2, 1, 2, classes.board.ImgCenteredShip, "", transp,
@@ -203,14 +258,6 @@ class Board(gd.BoardGame):
         self.board.ships[-1].set_tint_color(color1)
         self.nm2brt = self.board.ships[-1]
 
-        # add calculations line
-        self.board.add_unit(10, 3, 3, 1, classes.board.MultiColorLetters, "", white, "", 25)
-        self.calc_line_1 = self.board.ships[-1]
-        self.calc_line_1.set_fraction_lines(top=False, bottom=True, color=bd_color1)
-
-        self.board.add_unit(10, 4, 3, 1, classes.board.MultiColorLetters, "", white, "", 25)
-        self.calc_line_2 = self.board.ships[-1]
-
         self.calc_added = True
         self.initialize_numbers(self.numbers[0], self.numbers2[0], self.numbers[1], self.numbers2[1])
         self.update_fractions()
@@ -222,16 +269,56 @@ class Board(gd.BoardGame):
 
         for each in self.cross_lines:
             self.board.all_sprites_list.move_to_front(each)
+        for each in self.cross_lines2:
+            self.board.all_sprites_list.move_to_front(each)
+        for each in self.cross_lines3:
+            self.board.all_sprites_list.move_to_front(each)
 
         for each in self.divisors:
             self.board.all_sprites_list.move_to_front(each)
+        for each in self.divisors2:
+            self.board.all_sprites_list.move_to_front(each)
 
-    def simplify(self, num, gcf):
+    def set_s1_cross_simp_colors(self):
+        self.divisors[0].font_colors = (self.font_color2, )
+        self.divisors[3].font_colors = (self.font_color2, )
+        self.divisors[1].font_colors = (self.font_color3, )
+        self.divisors[2].font_colors = (self.font_color3, )
+        self.cs1a.font_color = self.font_color2
+        self.cs2b.font_color = self.font_color2
+        self.cs1b.font_color = self.font_color3
+        self.cs2a.font_color = self.font_color3
+        for each in self.divisors:
+            each.update_me = True
+            each.update(self.board)
+
+    def set_s1_vert_simp_colors(self):
+        self.divisors[0].font_colors = (self.font_color6, )
+        self.divisors[3].font_colors = (self.font_color7, )
+        self.divisors[1].font_colors = (self.font_color6, )
+        self.divisors[2].font_colors = (self.font_color7, )
+        self.cs1a.font_color = self.font_color6
+        self.cs2b.font_color = self.font_color7
+        self.cs1b.font_color = self.font_color6
+        self.cs2a.font_color = self.font_color7
+        for each in self.divisors:
+            each.update_me = True
+            each.update(self.board)
+
+    def hide_first_simp(self):
+        for each in self.cross_lines3:
+            each.hide()
+
+    def show_first_simp(self):
+        for each in self.cross_lines3:
+            each.show()
+
+    def s1_cross_simplify(self, num, gcf):
         if num == 1 and gcf is not None:
-            self.csm[0][0] = self.numbers[0] // gcf
-            self.csm[1][1] = self.numbers2[1] // gcf
-            self.cs1a.set_value(str(self.csm[0][0]))
-            self.cs2b.set_value(str(self.csm[1][1]))
+            self.csm1[0][0] = self.numbers[0] // gcf
+            self.csm1[1][1] = self.numbers2[1] // gcf
+            self.cs1a.set_value(str(self.csm1[0][0]))
+            self.cs2b.set_value(str(self.csm1[1][1]))
             self.cross_lines[0].show()
             self.cross_lines[3].show()
             self.divisors[0].set_value("%s%s" % (chr(247), str(gcf)))
@@ -245,10 +332,10 @@ class Board(gd.BoardGame):
             self.divisors[3].set_value("")
 
         elif num == 2 and gcf is not None:
-            self.csm[0][1] = self.numbers[1] // gcf
-            self.csm[1][0] = self.numbers2[0] // gcf
-            self.cs1b.set_value(str(self.csm[0][1]))
-            self.cs2a.set_value(str(self.csm[1][0]))
+            self.csm1[0][1] = self.numbers[1] // gcf
+            self.csm1[1][0] = self.numbers2[0] // gcf
+            self.cs1b.set_value(str(self.csm1[0][1]))
+            self.cs2a.set_value(str(self.csm1[1][0]))
             self.cross_lines[1].show()
             self.cross_lines[2].show()
             self.divisors[1].set_value("%s%s" % (chr(247), str(gcf)))
@@ -261,70 +348,255 @@ class Board(gd.BoardGame):
             self.divisors[1].set_value("")
             self.divisors[2].set_value("")
 
+    def s2_vert_simplify(self, num, gcf):
+        if num == 1 and gcf is not None:
+            self.csm3[0][0] = self.simp_numbers[0] // gcf
+            self.csm3[0][1] = self.simp_numbers[1] // gcf
+            self.cs1xa.set_value(str(self.csm3[0][0]))
+            self.cs1xb.set_value(str(self.csm3[0][1]))
+            self.cross_lines2[0].show()
+            self.cross_lines2[1].show()
+            self.divisors2[0].set_value("%s%s" % (chr(247), str(gcf)))
+            self.divisors2[1].set_value("%s%s" % (chr(247), str(gcf)))
+        elif num == 1 and gcf is None:
+            self.cs1xa.set_value("")
+            self.cs1xb.set_value("")
+            self.cross_lines2[0].hide()
+            self.cross_lines2[1].hide()
+            self.divisors2[0].set_value("")
+            self.divisors2[1].set_value("")
+
+        elif num == 2 and gcf is not None:
+            self.csm3[1][0] = self.simp_numbers[2] // gcf
+            self.csm3[1][1] = self.simp_numbers[3] // gcf
+            self.cs2xa.set_value(str(self.csm3[1][0]))
+            self.cs2xb.set_value(str(self.csm3[1][1]))
+            self.cross_lines2[2].show()
+            self.cross_lines2[3].show()
+            self.divisors2[2].set_value("%s%s" % (chr(247), str(gcf)))
+            self.divisors2[3].set_value("%s%s" % (chr(247), str(gcf)))
+        elif num == 2 and gcf is None:
+            self.cs2xa.set_value("")
+            self.cs2xb.set_value("")
+            self.cross_lines2[2].hide()
+            self.cross_lines2[3].hide()
+            self.divisors2[2].set_value("")
+            self.divisors2[3].set_value("")
+
+    def s1_vert_simplify(self, num, gcf):
+        if num == 1 and gcf is not None:
+            self.csm2[0][0] = self.numbers[0] // gcf
+            self.csm2[0][1] = self.numbers[1] // gcf
+            self.cs1a.set_value(str(self.csm2[0][0]))
+            self.cs1b.set_value(str(self.csm2[0][1]))
+            self.cross_lines3[0].show()
+            self.cross_lines3[1].show()
+            self.divisors[0].set_value("%s%s" % (chr(247), str(gcf)))
+            self.divisors[1].set_value("%s%s" % (chr(247), str(gcf)))
+        elif num == 1 and gcf is None:
+            self.cs1a.set_value("")
+            self.cs1b.set_value("")
+            self.cross_lines3[0].hide()
+            self.cross_lines3[1].hide()
+            self.divisors[0].set_value("")
+            self.divisors[1].set_value("")
+
+        elif num == 2 and gcf is not None:
+            self.csm2[1][0] = self.numbers2[0] // gcf
+            self.csm2[1][1] = self.numbers2[1] // gcf
+            self.cs2a.set_value(str(self.csm2[1][0]))
+            self.cs2b.set_value(str(self.csm2[1][1]))
+            self.cross_lines3[2].show()
+            self.cross_lines3[3].show()
+            self.divisors[2].set_value("%s%s" % (chr(247), str(gcf)))
+            self.divisors[3].set_value("%s%s" % (chr(247), str(gcf)))
+        elif num == 2 and gcf is None:
+            self.cs2a.set_value("")
+            self.cs2b.set_value("")
+            self.cross_lines3[2].hide()
+            self.cross_lines3[3].hide()
+            self.divisors[2].set_value("")
+            self.divisors[3].set_value("")
+
     def initialize_numbers(self, num1, num2, num3, num4):
         self.numbers = [num1, num3]
         self.numbers2 = [num2, num4]
+
+        # try cross simplification
+        self.step_1_cross_simplification(num1, num2, num3, num4)
+
+        # if none of the numbers can be cross simplified try to simplify each fraction separately
+        if self.csm1 == [[None, None], [None, None]]:
+            self.set_s1_vert_simp_colors()
+            self.step_1_vertical_simplification(num1, num2, num3, num4)
+        else:
+            self.set_s1_cross_simp_colors()
+            self.hide_first_simp()
+
+        # try to simplify the resulting fractions
+        self.step_2_vertical_simplification()
+
+        for each in self.board.units:
+            each.update_me = True
+        self.mainloop.redraw_needed[0] = True
+
+    def step_1_cross_simplification(self, num1, num2, num3, num4):
+        # cross simplified numbers
+        self.csm1 = [[None, None], [None, None]]
 
         # initial cross simplification
         gcf1 = self.get_GCF((num1, num4))
         gcf2 = self.get_GCF((num2, num3))
 
-        # cross simplified numbers
-        self.csm = [[None, None], [None, None]]
         if gcf1 > 1:
-            self.simplify(1, gcf1)
+            self.s1_cross_simplify(1, gcf1)
         else:
-            self.simplify(1, None)
+            self.s1_cross_simplify(1, None)
         if gcf2 > 1:
-            self.simplify(2, gcf2)
+            self.s1_cross_simplify(2, gcf2)
         else:
-            self.simplify(2, None)
+            self.s1_cross_simplify(2, None)
 
-        self.sum_numbers = [num1 * num2, num3 * num4]
-        if self.csm[0][0] is not None and self.csm[1][0] is not None:
-            self.sum_numbers = [self.csm[0][0] * self.csm[1][0], self.csm[0][1] * self.csm[1][1]]
+        # display resulting numbers after cross simplification - change font color if necessary
+        if self.csm1[0][0] is not None and self.csm1[1][0] is not None:
+            self.sum_numbers = [self.csm1[0][0] * self.csm1[1][0], self.csm1[0][1] * self.csm1[1][1]]
+            self.simp_numbers = [self.csm1[0][0], self.csm1[0][1], self.csm1[1][0], self.csm1[1][1]]
             if self.calc_added:
-                self.calc_line_1.set_value("<1>%d<2> %s <3>%d" % (self.csm[0][0], chr(215), self.csm[1][0]))
-                self.calc_line_1.set_font_colors(self.font_color2, self.font_color, self.font_color3)
-                self.calc_line_2.set_value("<1>%d<2> %s <3>%d" % (self.csm[0][1], chr(215), self.csm[1][1]))
-                self.calc_line_2.set_font_colors(self.font_color3, self.font_color, self.font_color2)
-
-        elif self.csm[0][0] is not None:
-            self.sum_numbers = [self.csm[0][0] * num2, num3 * self.csm[1][1]]
+                self.nm1xa.set_value(str(self.csm1[0][0]))
+                self.nm1xa.set_font_color(self.font_color2)
+                self.nm1xb.set_value(str(self.csm1[0][1]))
+                self.nm1xb.set_font_color(self.font_color3)
+                self.nm2xa.set_value(str(self.csm1[1][0]))
+                self.nm2xa.set_font_color(self.font_color3)
+                self.nm2xb.set_value(str(self.csm1[1][1]))
+                self.nm2xb.set_font_color(self.font_color2)
+        elif self.csm1[0][0] is not None:
+            self.sum_numbers = [self.csm1[0][0] * num2, num3 * self.csm1[1][1]]
+            self.simp_numbers = [self.csm1[0][0], num3, num2, self.csm1[1][1]]
             if self.calc_added:
-                self.calc_line_1.set_value("<1>%d<2> %s <3>%d" % (self.csm[0][0], chr(215), num2))
-                self.calc_line_1.set_font_colors(self.font_color2, self.font_color, self.font_color)
-                self.calc_line_2.set_value("<1>%d<2> %s <3>%d" % (num3, chr(215), self.csm[1][1]))
-                self.calc_line_2.set_font_colors(self.font_color, self.font_color, self.font_color2)
-
-        elif self.csm[0][1] is not None:
-            self.sum_numbers = [num1 * self.csm[1][0], self.csm[0][1] * num4]
+                self.nm1xa.set_value(str(self.csm1[0][0]))
+                self.nm1xa.set_font_color(self.font_color2)
+                self.nm1xb.set_value(str(num3))
+                self.nm1xb.set_font_color(self.font_color)
+                self.nm2xa.set_value(str(num2))
+                self.nm2xa.set_font_color(self.font_color)
+                self.nm2xb.set_value(str(self.csm1[1][1]))
+                self.nm2xb.set_font_color(self.font_color2)
+        elif self.csm1[0][1] is not None:
+            self.sum_numbers = [num1 * self.csm1[1][0], self.csm1[0][1] * num4]
+            self.simp_numbers = [num1, self.csm1[0][1], self.csm1[1][0], num4]
             if self.calc_added:
-                self.calc_line_1.set_value("<1>%d<2> %s <3>%d" % (num1, chr(215), self.csm[1][0]))
-                self.calc_line_1.set_font_colors(self.font_color, self.font_color, self.font_color3)
-                self.calc_line_2.set_value("<1>%d<2> %s <3>%d" % (self.csm[0][1], chr(215), num4))
-                self.calc_line_2.set_font_colors(self.font_color3, self.font_color, self.font_color)
+                self.nm1xa.set_value(str(num1))
+                self.nm1xa.set_font_color(self.font_color)
+                self.nm1xb.set_value(str(self.csm1[0][1]))
+                self.nm1xb.set_font_color(self.font_color3)
+                self.nm2xa.set_value(str(self.csm1[1][0]))
+                self.nm2xa.set_font_color(self.font_color3)
+                self.nm2xb.set_value(str(num4))
+                self.nm2xb.set_font_color(self.font_color)
         else:
+            self.sum_numbers = [num1 * num2, num3 * num4]
+            self.simp_numbers = [num1, num3, num2, num4]
             if self.calc_added:
-                self.calc_line_1.set_value("<1>%d<2> %s <3>%d" % (num1, chr(215), num2))
-                self.calc_line_1.set_font_colors(self.font_color, self.font_color, self.font_color)
-                self.calc_line_2.set_value("<1>%d<2> %s <3>%d" % (num3, chr(215), num4))
-                self.calc_line_2.set_font_colors(self.font_color, self.font_color, self.font_color)
+                self.nm1xa.set_value(str(num1))
+                self.nm1xa.set_font_color(self.font_color)
+                self.nm1xb.set_value(str(num3))
+                self.nm1xb.set_font_color(self.font_color)
+                self.nm2xa.set_value(str(num2))
+                self.nm2xa.set_font_color(self.font_color)
+                self.nm2xb.set_value(str(num4))
+                self.nm2xb.set_font_color(self.font_color)
 
-        self.gcf = 1
-        self.res2_numbers = self.sum_numbers[:]
+    def step_1_vertical_simplification(self, num1, num2, num3, num4):
+        # cross simplified numbers
+        self.csm2 = [[None, None], [None, None]]
 
-        # simplifiy if needed print
-        self.gcf = self.get_GCF(self.res2_numbers)
-        if self.gcf > 1:
-            self.sim2_numbers = [int(round(self.res2_numbers[0] / float(self.gcf))),
-                                 int(round(self.res2_numbers[1] / float(self.gcf)))]
+        # initial simplification
+        gcf1 = self.get_GCF((num1, num3))
+        gcf2 = self.get_GCF((num2, num4))
+
+        if gcf1 > 1:
+            self.s1_vert_simplify(1, gcf1)
         else:
-            self.sim2_numbers = [0, 0]
+            self.s1_vert_simplify(1, None)
+        if gcf2 > 1:
+            self.s1_vert_simplify(2, gcf2)
+        else:
+            self.s1_vert_simplify(2, None)
 
-        for each in self.board.units:
-            each.update_me = True
-        self.mainloop.redraw_needed[0] = True
+        if self.csm2[0][0] is not None and self.csm2[1][0] is not None:
+            self.sum_numbers = [self.csm2[0][0] * self.csm2[1][0], self.csm2[0][1] * self.csm2[1][1]]
+            self.simp_numbers = [self.csm2[0][0], self.csm2[0][1], self.csm2[1][0], self.csm2[1][1]]
+            if self.calc_added:
+                self.nm1xa.set_value(str(self.csm2[0][0]))
+                self.nm1xa.set_font_color(self.font_color6)
+                self.nm1xb.set_value(str(self.csm2[0][1]))
+                self.nm1xb.set_font_color(self.font_color6)
+                self.nm2xa.set_value(str(self.csm2[1][0]))
+                self.nm2xa.set_font_color(self.font_color7)
+                self.nm2xb.set_value(str(self.csm2[1][1]))
+                self.nm2xb.set_font_color(self.font_color7)
+        elif self.csm2[0][0] is not None:
+            self.sum_numbers = [self.csm2[0][0] * self.csm2[0][1], num3 * num4]
+            self.simp_numbers = [self.csm2[0][0], self.csm2[0][1], num2, num4]
+            if self.calc_added:
+                self.nm1xa.set_value(str(self.csm2[0][0]))
+                self.nm1xa.set_font_color(self.font_color6)
+                self.nm1xb.set_value(str(self.csm2[0][1]))
+                self.nm1xb.set_font_color(self.font_color6)
+                self.nm2xa.set_value(str(num2))
+                self.nm2xa.set_font_color(self.font_color)
+                self.nm2xb.set_value(str(num4))
+                self.nm2xb.set_font_color(self.font_color)
+        elif self.csm2[1][1] is not None:
+            self.sum_numbers = [num1 * num2, self.csm2[1][0] * self.csm2[1][1]]
+            self.simp_numbers = [num1, num3, self.csm2[1][0], self.csm2[1][1]]
+            if self.calc_added:
+                self.nm1xa.set_value(str(num1))
+                self.nm1xa.set_font_color(self.font_color)
+                self.nm1xb.set_value(str(num3))
+                self.nm1xb.set_font_color(self.font_color)
+                self.nm2xa.set_value(str(self.csm2[1][0]))
+                self.nm2xa.set_font_color(self.font_color7)
+                self.nm2xb.set_value(str(self.csm2[1][1]))
+                self.nm2xb.set_font_color(self.font_color7)
+        else:
+            self.sum_numbers = [num1 * num2, num3 * num4]
+            self.simp_numbers = [num1, num3, num2, num4]
+            if self.calc_added:
+                self.nm1xa.set_value(str(num1))
+                self.nm1xa.set_font_color(self.font_color)
+                self.nm1xb.set_value(str(num3))
+                self.nm1xb.set_font_color(self.font_color)
+                self.nm2xa.set_value(str(num2))
+                self.nm2xa.set_font_color(self.font_color)
+                self.nm2xb.set_value(str(num4))
+                self.nm2xb.set_font_color(self.font_color)
+
+    def step_2_vertical_simplification(self):
+        # simplify the cross simplified result if possible
+        self.csm3 = [[None, None], [None, None]]
+
+        gcf1x = self.get_GCF((self.simp_numbers[0], self.simp_numbers[1]))
+        gcf2x = self.get_GCF((self.simp_numbers[2], self.simp_numbers[3]))
+        if gcf1x > 1:
+            self.s2_vert_simplify(1, gcf1x)
+        else:
+            self.s2_vert_simplify(1, None)
+        if gcf2x > 1:
+            self.s2_vert_simplify(2, gcf2x)
+        else:
+            self.s2_vert_simplify(2, None)
+
+        # calculate new result
+        if self.csm3[0][0] is not None and self.csm3[1][1] is not None:
+            self.sum_numbers = [self.csm3[0][0] * self.csm3[1][0], self.csm3[0][1] * self.csm3[1][1]]
+        elif self.csm3[0][0] is not None:
+            self.sum_numbers = [self.csm3[0][0] * self.simp_numbers[2], self.csm3[0][1] * self.simp_numbers[3]]
+        elif self.csm3[1][1] is not None:
+            self.sum_numbers = [self.simp_numbers[0] * self.csm3[1][0], self.simp_numbers[1] * self.csm3[1][1]]
+        else:
+            self.sum_numbers = [self.simp_numbers[0] * self.simp_numbers[2], self.simp_numbers[1] * self.simp_numbers[3]]
 
     def update_fractions(self):
         self.nm1a.set_value(str(self.numbers[0]))
@@ -333,30 +605,6 @@ class Board(gd.BoardGame):
         self.nm2b.set_value(str(self.numbers2[1]))
         self.sm1a.set_value(str(self.sum_numbers[0]))
         self.sm1b.set_value(str(self.sum_numbers[1]))
-
-        #if can be simplified - is more than 1 or has gcf > 1
-        if self.sum_numbers[0] >= self.sum_numbers[1] or self.gcf > 1:
-            self.nmeq3.set_value("=")
-        else:
-            self.nmeq3.set_value("")
-
-        if self.sim2_numbers[0] == 0:
-            v0 = ""
-            v1 = ""
-            v2 = ""
-        else:
-            v0 = "="
-            v1 = str(self.sim2_numbers[0])
-            v2 = str(self.sim2_numbers[1])
-
-        self.nmeq3.set_value(v0)
-        self.sm3a.set_value(v1)
-        self.sm3b.set_value(v2)
-
-        if self.sim2_numbers[0] == 0:
-            self.sm3a.set_fraction_lines(top=False, bottom=False, color=self.bd_color1)
-        else:
-            self.sm3a.set_fraction_lines(top=False, bottom=True, color=self.bd_color1)
 
     def show_info_dialog(self):
         self.mainloop.dialog.show_dialog(3, self.lang.d["To multiply two fractions..."])

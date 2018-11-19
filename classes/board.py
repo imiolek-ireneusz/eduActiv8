@@ -113,10 +113,14 @@ class Unit(pygame.sprite.Sprite):
         self.value = ex.unival(new_value)
         self.update_me = True
 
+    def set_font_color(self, color):
+        self.font_color = color
+        self.update_me = True
+
     def update_font_size(self, font_size):
         self.font = self.board.font_sizes[font_size]
 
-    def set_fraction_lines(self, top, bottom, color):
+    def set_fraction_lines(self, top, bottom, color, length=90):
         if top:
             self.fraction_line_top = True
         else:
@@ -125,12 +129,13 @@ class Unit(pygame.sprite.Sprite):
             self.fraction_line_bottom = True
         else:
             self.fraction_line_bottom = False
+        self.fraction_line_length = length
         self.fraction_line_color = color
 
     def draw_fraction_lines(self):
         if self.fraction_line_top or self.fraction_line_bottom:
             width = self.board.scale // 20
-            margin = (self.board.scale * self.grid_w) // 8
+            margin = (self.board.scale * self.grid_w - (self.board.scale * self.grid_w) * self.fraction_line_length // 100) // 2
             if width > 1:
                 x = width // 2 - 1
                 y = width // 2 - 1
