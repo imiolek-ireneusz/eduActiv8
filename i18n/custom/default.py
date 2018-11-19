@@ -649,7 +649,7 @@ class I18n():
         self.d["Matching percentages"] = _("Match percentages")
         self.d["Matching ratios"] = _("Match ratios")
 
-        self.d["Reading pie charts"] = _("Read pie charts")
+        self.d["Reading pie charts"] = _("Percentages in a pie chart")
 
         self.d["Calculating with Time"] = _("Calculating with Time")
         #self.d["Elapsed time"] = _("Calculate difference between times")
@@ -696,7 +696,7 @@ class I18n():
         self.b["Font Preferences"] = _("Font Preferences")
 
         self.d["Add, subtract, multiply and divide"] = _("Addition, subtraction, multiplication and division of fractions")
-        self.d["cross simplification"] = _("Using cross simplification")
+        self.d["with simplifying"] = _("with simplifying")
 
         self.d["Positive numbers"] = _("Positive numbers")
         self.d["Basics"] = _("Basics")

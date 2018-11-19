@@ -21,6 +21,7 @@ class TopCategory(pygame.sprite.Sprite):
         self.sequence_id = sequence_id
         self.bg_style = self.board.mainloop.cl.menu_shapes[self.board.mainloop.cl.color_sliders[6][2]]
         self.decor_style = decor
+        self.double_icon = True
 
         self.color = color
         self.update_me = True
@@ -139,6 +140,8 @@ class TopCategory(pygame.sprite.Sprite):
             if self.decor_style == 1:
                 self.image.blit(self.img2d, self.img2_pos)
             self.image.blit(self.img1, self.img1_pos)
+            if self.double_icon:
+                self.image.blit(self.img1, self.img1_pos)
 
     def mouse_out(self):
         self.board.mainloop.m.reset_titles()
@@ -184,6 +187,7 @@ class Category(pygame.sprite.Sprite):
 
         self.bg_style = self.board.mainloop.cl.menu_shapes[self.board.mainloop.cl.color_sliders[6][2]]
         self.decor_style = decor
+        self.double_icon = True
 
         self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
         self.rect = self.image.get_rect()
@@ -301,6 +305,8 @@ class Category(pygame.sprite.Sprite):
             if self.decor_style == 1:
                 self.image.blit(self.img2d, self.img2_pos)
             self.image.blit(self.img1, self.img1_pos)
+            if self.double_icon:
+                self.image.blit(self.img1, self.img1_pos)
 
     def mouse_out(self):
         if self.show_titles_on_hover:
@@ -406,6 +412,7 @@ class GameIcon(pygame.sprite.Sprite):
 
         self.bg_style = "game_bg"
         self.decor_style = decor
+        self.double_icon = True
 
         self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
         self.rect = self.image.get_rect()
@@ -629,6 +636,8 @@ class GameIcon(pygame.sprite.Sprite):
             if self.decor_style == 1:
                 self.image.blit(self.img2d, self.img2_pos)
             self.image.blit(self.img1, self.img1_pos)
+            if self.double_icon:
+                self.image.blit(self.img1, self.img1_pos)
             if self.hover:
                 self.image.blit(self.img3h, self.img2_pos)
             else:

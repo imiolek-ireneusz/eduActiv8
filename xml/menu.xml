@@ -1075,7 +1075,7 @@
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
                 <!--
-                <game dbid="277" variant="0" var2="0"  min_age="1" max_age="7"
+                <game dbid="???" variant="0" var2="0"  min_age="1" max_age="7"
                       constructor_id="115"
                       title="Add fractions with the same denominator"
                       subtitle="test_yourself"
@@ -1100,8 +1100,15 @@
                 <game dbid="276" variant="0" var2="0"  min_age="1" max_age="7"
                       constructor_id="116"
                       title="Multiply fractions"
-                      subtitle="cross simplification"
+                      subtitle="with simplifying"
                       icon="ico_g_2416.png" ico_group="1" icosuffix="False" lang_activity="False"
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                </game>
+                <game dbid="277" variant="0" var2="0"  min_age="1" max_age="7"
+                      constructor_id="117"
+                      title="Multiply fractions"
+                      subtitle="with simplifying"
+                      icon="ico_g_2416.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
                 <game dbid="235" variant="0" var2="0"  min_age="1" max_age="7"

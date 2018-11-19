@@ -1674,6 +1674,20 @@
          </levels>
     </game>
 
+    <!-- Multiplication of fractions with simplification
+    level_data = [max denominator, show simp cross line, show divisors, show result of division by gcf, show result of multiplication]
+    -->
+    <game dbids="277" min_age="0" max_age="7" show_all="1">
+        <levels count="6" games_per_level="15">
+            <level n="1" data="[6, True, True, True, True]" />
+            <level n="2" data="[8, True, True, True, True]" />
+            <level n="3" data="[12, True, True, True, True]" />
+            <level n="4" data="[12, True, True, False, False]" />
+            <level n="5" data="[12, True, False, False, False]" />
+            <level n="6" data="[12, False, False, False, False]" />
+        </levels>
+    </game>
+
     <!-- placeholders -->
     <game dbids="15" min_age="0" max_age="7" show_all="1">
         <levels count="16" games_per_level="2"/>
@@ -1797,11 +1811,6 @@
     <game dbids="194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205" min_age="0" max_age="7" show_all="1">
         <levels count="3" games_per_level="5"/>
     </game>
-
-    <game dbids="277" min_age="0" max_age="7" show_all="1">
-        <levels count="3" games_per_level="5"/>
-    </game>
-
     <!-- end placeholders -->
 
 </levels>
