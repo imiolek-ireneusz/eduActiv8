@@ -1127,6 +1127,14 @@
                       icon="ico_g_2406.png" ico_group="1" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
+
+                <game dbid="280" variant="0" var2="0"  min_age="1" max_age="7"
+                      constructor_id="118"
+                      title="Divide fractions"
+                      subtitle="with simplifying"
+                      icon="ico_g_2417.png" ico_group="1" icosuffix="False" lang_activity="False"
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                </game>
             </cat>
         </cat>
 
