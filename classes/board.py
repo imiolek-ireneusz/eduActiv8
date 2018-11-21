@@ -208,6 +208,14 @@ class Unit(pygame.sprite.Sprite):
         self.draggable = False
         self.highlight = False
 
+    def hide(self):
+        self.hidden = True
+        self.update_me = True
+
+    def show(self):
+        self.hidden = False
+        self.update_me = True
+
     # Update color, image or text
     def update(self, board, **kwargs):
         if self.update_me:
@@ -219,155 +227,156 @@ class Unit(pygame.sprite.Sprite):
                 self.font_color = self.board.mainloop.scheme.u_font_color  # (0,0,0)
 
             self.image.fill(self.color)
-            self.image.blit(self.painting, (0, 0))
-            if not self.hasimg:
-                if len(self.value) > 0:
-                    if self.show_value:
-                        if sys.version_info < (3, 0):
-                            if isinstance(self.value, basestring):
-                                # if a passed argument is a string turn it into a 1 item list
-                                if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
-                                    value = [self.value]
-                                else:
-                                    # else enter extra line breaks
-                                    if len(self.value) > 5:
-                                        line = ""
-                                        test_line = ""
-                                        word = ""
-                                        value = []
-                                        valx = ""
-                                        try:
-                                            valx = unicode(self.value, "utf-8")
-                                        except UnicodeDecodeError:
-                                            valx = self.value
-                                        except TypeError:
-                                            valx = self.value
-                                        linelen = len(valx)
-
-                                        for i in range(linelen):
-                                            if valx[i] == "\n":
-                                                test_line = "" + word
-                                                word = ""
-                                                value.append(line)
-                                                line = "" + test_line
-                                            elif valx[i] == " " or i == linelen - 1:
-                                                test_line = test_line + word + valx[i]
-                                                if self.font.size(test_line)[0] < self.rect.w:
-                                                    line = "" + test_line
-                                                    word = ""
-                                                else:
-                                                    test_line = "" + word + valx[i]
-                                                    word = ""
-                                                    value.append(line)
-                                                    line = "" + test_line
-                                            else:
-                                                word += valx[i]
-                                        if len(test_line) > 0:
-                                            value.append(test_line)
-                                    else:
-                                        value = [self.value]
-                            else:
-                                value = self.value
-                        else:
-                            if isinstance(self.value, str):
-                                # if a passed argument is a string turn it into a 1 item list
-                                # value = [self.value]
-                                # if a passed argument is a string turn it into a 1 item list
-                                if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
-                                    value = [self.value]
-                                else:
-                                    # else enter extra line breaks
-                                    if len(self.value) > 5:
-                                        line = ""
-                                        test_line = ""
-                                        word = ""
-                                        value = []
-                                        valx = self.value
-                                        linelen = len(valx)
-
-                                        for i in range(linelen):
-                                            if valx[i] == "\n":
-                                                test_line = "" + word
-                                                word = ""
-                                                value.append(line)
-                                                line = "" + test_line
-                                            elif valx[i] == " " or i == linelen - 1:
-                                                test_line = test_line + word + valx[i]
-                                                if self.font.size(test_line)[0] < self.rect.w:
-                                                    line = "" + test_line
-                                                    word = ""
-                                                else:
-                                                    test_line = "" + word + valx[i]
-                                                    word = ""
-                                                    value.append(line)
-                                                    line = "" + test_line
-                                            else:
-                                                word += valx[i]
-                                        if len(test_line) > 0:
-                                            value.append(test_line)
-                                    else:
-                                        value = [self.value]
-                            else:
-                                value = self.value
-
-                        lv = len(value)
-                        for i in range(lv):
+            if not self.hidden:
+                self.image.blit(self.painting, (0, 0))
+                if not self.hasimg:
+                    if len(self.value) > 0:
+                        if self.show_value:
                             if sys.version_info < (3, 0):
-                                try:
-                                    val = unicode(value[i], "utf-8")
-                                except UnicodeDecodeError:
-                                    val = value[i]
-                                except TypeError:
-                                    val = value[i]
-                            else:
-                                val = value[i]
-                            try:
-                                text = self.font.render("%s" % (val), 1, self.font_color)
-                            except:
-                                pass
+                                if isinstance(self.value, basestring):
+                                    # if a passed argument is a string turn it into a 1 item list
+                                    if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                                        value = [self.value]
+                                    else:
+                                        # else enter extra line breaks
+                                        if len(self.value) > 5:
+                                            line = ""
+                                            test_line = ""
+                                            word = ""
+                                            value = []
+                                            valx = ""
+                                            try:
+                                                valx = unicode(self.value, "utf-8")
+                                            except UnicodeDecodeError:
+                                                valx = self.value
+                                            except TypeError:
+                                                valx = self.value
+                                            linelen = len(valx)
 
-                            if self.align == 0:
-                                font_x = ((board.scale * self.grid_w - self.font.size(val)[0]) // 2)
-                            elif self.align == 1:
-                                font_x = 5
-                            elif self.align == 2:
-                                font_x = board.scale * self.grid_w - self.font.size(val)[0] - 5
-                            if lv == 1:
-                                font_y = ((board.scale * self.grid_h - self.font.size(val)[1]) // 2)
-                            elif lv == self.grid_h:  # number of items is equal to grid height of an object - distribute lines equally in each grid square
-                                font_y = ((board.scale - self.font.size(val)[1]) // 2) + board.scale * i
-                            else:
-                                if self.valign == 0:
-                                    # lv - total
-                                    line_h = self.font.size(value[0])[
-                                                 1] / self.board.mainloop.config.font_line_height_adjustment
-                                    line_margin = 0
-                                    step = line_h + line_margin
-                                    center = (board.scale * self.grid_h) // 2
-                                    start_at = center - (
-                                                        step * lv - line_margin) // 2 - self.board.mainloop.config.font_start_at_adjustment
-                                    font_y = start_at + step * i
+                                            for i in range(linelen):
+                                                if valx[i] == "\n":
+                                                    test_line = "" + word
+                                                    word = ""
+                                                    value.append(line)
+                                                    line = "" + test_line
+                                                elif valx[i] == " " or i == linelen - 1:
+                                                    test_line = test_line + word + valx[i]
+                                                    if self.font.size(test_line)[0] < self.rect.w:
+                                                        line = "" + test_line
+                                                        word = ""
+                                                    else:
+                                                        test_line = "" + word + valx[i]
+                                                        word = ""
+                                                        value.append(line)
+                                                        line = "" + test_line
+                                                else:
+                                                    word += valx[i]
+                                            if len(test_line) > 0:
+                                                value.append(test_line)
+                                        else:
+                                            value = [self.value]
                                 else:
-                                    # lv - total
-                                    line_h = self.font.size(value[0])[
-                                                 1] / self.board.mainloop.config.font_line_height_adjustment
-                                    line_margin = 0
-                                    step = line_h + line_margin
-                                    start_at = 5
-                                    font_y = start_at + step * i
-                            try:
-                                self.image.blit(text, (font_x, font_y))
-                            except:
-                                pass
+                                    value = self.value
+                            else:
+                                if isinstance(self.value, str):
+                                    # if a passed argument is a string turn it into a 1 item list
+                                    # value = [self.value]
+                                    # if a passed argument is a string turn it into a 1 item list
+                                    if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                                        value = [self.value]
+                                    else:
+                                        # else enter extra line breaks
+                                        if len(self.value) > 5:
+                                            line = ""
+                                            test_line = ""
+                                            word = ""
+                                            value = []
+                                            valx = self.value
+                                            linelen = len(valx)
 
-            if self.speaker_val_update:
-                self.speaker_val = self.value
+                                            for i in range(linelen):
+                                                if valx[i] == "\n":
+                                                    test_line = "" + word
+                                                    word = ""
+                                                    value.append(line)
+                                                    line = "" + test_line
+                                                elif valx[i] == " " or i == linelen - 1:
+                                                    test_line = test_line + word + valx[i]
+                                                    if self.font.size(test_line)[0] < self.rect.w:
+                                                        line = "" + test_line
+                                                        word = ""
+                                                    else:
+                                                        test_line = "" + word + valx[i]
+                                                        word = ""
+                                                        value.append(line)
+                                                        line = "" + test_line
+                                                else:
+                                                    word += valx[i]
+                                            if len(test_line) > 0:
+                                                value.append(test_line)
+                                        else:
+                                            value = [self.value]
+                                else:
+                                    value = self.value
 
-            if self.perm_outline:
-                self.draw_outline()
+                            lv = len(value)
+                            for i in range(lv):
+                                if sys.version_info < (3, 0):
+                                    try:
+                                        val = unicode(value[i], "utf-8")
+                                    except UnicodeDecodeError:
+                                        val = value[i]
+                                    except TypeError:
+                                        val = value[i]
+                                else:
+                                    val = value[i]
+                                try:
+                                    text = self.font.render("%s" % (val), 1, self.font_color)
+                                except:
+                                    pass
 
-            self.draw_fraction_lines()
-            self.draw_check_marks()
+                                if self.align == 0:
+                                    font_x = ((board.scale * self.grid_w - self.font.size(val)[0]) // 2)
+                                elif self.align == 1:
+                                    font_x = 5
+                                elif self.align == 2:
+                                    font_x = board.scale * self.grid_w - self.font.size(val)[0] - 5
+                                if lv == 1:
+                                    font_y = ((board.scale * self.grid_h - self.font.size(val)[1]) // 2)
+                                elif lv == self.grid_h:  # number of items is equal to grid height of an object - distribute lines equally in each grid square
+                                    font_y = ((board.scale - self.font.size(val)[1]) // 2) + board.scale * i
+                                else:
+                                    if self.valign == 0:
+                                        # lv - total
+                                        line_h = self.font.size(value[0])[
+                                                     1] / self.board.mainloop.config.font_line_height_adjustment
+                                        line_margin = 0
+                                        step = line_h + line_margin
+                                        center = (board.scale * self.grid_h) // 2
+                                        start_at = center - (
+                                                            step * lv - line_margin) // 2 - self.board.mainloop.config.font_start_at_adjustment
+                                        font_y = start_at + step * i
+                                    else:
+                                        # lv - total
+                                        line_h = self.font.size(value[0])[
+                                                     1] / self.board.mainloop.config.font_line_height_adjustment
+                                        line_margin = 0
+                                        step = line_h + line_margin
+                                        start_at = 5
+                                        font_y = start_at + step * i
+                                try:
+                                    self.image.blit(text, (font_x, font_y))
+                                except:
+                                    pass
+
+                if self.speaker_val_update:
+                    self.speaker_val = self.value
+
+                if self.perm_outline:
+                    self.draw_outline()
+
+                self.draw_fraction_lines()
+                self.draw_check_marks()
 
     def draw_check_marks(self):
         if self.check_display is not None:
@@ -656,9 +665,6 @@ class ImgShip(Ship):
         Ship.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha, **kwargs)
         self.img_src2 = None
         self.change_image(img_src)
-
-    def hide(self):
-        self.hidden = True
 
     def change_image(self, img_src):
         self.img_src = img_src

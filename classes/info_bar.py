@@ -371,8 +371,12 @@ class InfoBar:
             else:
                 self.mainloop.menu_level = 0
         if self.mainloop.menu_level == 0:
+            self.mainloop.game_board.vis_buttons = (0, 0, 0, 0, 1, 0, 1, 0, 0)
+            self.buttons_restore()
             self.mainloop.m.start_hidden_game(0)
         else:
+            self.title = ""
+            self.subtitle = ""
             if self.mainloop.m.game_dbid == 271:
                 self.mainloop.m.start_hidden_game(272)
             else:
