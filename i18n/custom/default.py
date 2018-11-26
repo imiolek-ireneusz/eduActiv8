@@ -706,4 +706,4 @@ class I18n():
         self.d["Add fractions with unlike denominators"] = _("Add fractions with unlike denominators")
         self.d["Subtract fractions with unlike denominators"] = _("Subtract fractions with unlike denominators")
 
-        self.d["Add and subtract with unlike denom. - instr"] = _("To add or subtract fractions when their denominators are not the same you have to simplify the fractions first if necessary and then find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that.")
+        self.d["Add and subtract with unlike denom. - instr"] = _("To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that.")

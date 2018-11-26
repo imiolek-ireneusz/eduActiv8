@@ -57,6 +57,12 @@ class Board(gd.BoardGame):
         self.board.level_start(data[0], data[1], scale)
         self.board.board_bg.update_me = True
         self.board.board_bg.line_color = (20, 20, 20)
+        """
+        num1 = 1
+        num3 = 4
+        num2 = 4
+        num4 = 8
+        """
 
         num3 = random.randint(2, 12)
         num4 = random.randint(2, 12)
@@ -96,7 +102,6 @@ class Board(gd.BoardGame):
             self.divisors2.append(unit2d)
             self.board.all_sprites_list.add(unit2d)
 
-        #self.initialize_numbers(num1, num2, num3, num4)
         self.max_num = 11
 
         # add labels
@@ -249,18 +254,82 @@ class Board(gd.BoardGame):
             if self.mainloop.m.game_variant == 0:
                 self.sum_numbers = [num1 + num2, num3]
             else:
-                #self.sum_numbers = [num1 + num2, num3]
+                # self.sum_numbers = [num1 + num2, num3]
                 self.get_difference(num1, num2, num3)
             self.show(step=1, display=False)
             self.show(step=2, display=False)
             self.set_s1_colors()
             self.hidden_sim = [True, True]
+        else:
+            # check if simplifying fractions helps in finding lower common factor
+            f_sim = [None, None, None, None]
+            f_com = [None, None, None, None]
+            simplified_1 = False
+            simplified_2 = False
 
-        else: # simplify both fractions
+            # simplify none
+            f_com[0] = self.lcd_fractions(num1, num3, num2, num4)
+            f_sim[0] = self.lcd_fractions(num1, num3, num2, num4)
+
+            # simplify first only
             gcf1 = self.gcf((num1, num3))
             if gcf1 > 1:
-                num1 = int(num1 / gcf1)
-                num3 = int(num3 / gcf1)
+                num1x = int(num1 / gcf1)
+                num3x = int(num3 / gcf1)
+                f_com[1] = self.lcd_fractions(num1x, num3x, num2, num4)
+                f_sim[1] = [[num1x, num3x], [num2, num4]]
+
+            # simplify second only
+            gcf2 = self.gcf((num2, num4))
+            if gcf2 > 1:
+                num2x = int(num2 / gcf2)
+                num4x = int(num4 / gcf2)
+                f_com[2] = self.lcd_fractions(num1, num3, num2x, num4x)
+                f_sim[2] = [[num1, num3], [num2x, num4x]]
+
+            # simplify both
+            if gcf1 > 1 and gcf2 > 1:
+                f_com[3] = self.lcd_fractions(num1x, num3x, num2x, num4x)
+                f_sim[3] = [[num1x, num3x], [num2x, num4x]]
+
+            # find the best option
+            if f_com[3] is not None:
+                # check for redundancies
+                if f_com[3] == f_com[2]:
+                    # simplify second only
+                    num2 = num2x
+                    num4 = num4x
+                    simplified_2 = True
+                elif f_com[3] == f_com[1]:
+                    # simplify first only
+                    num1 = num1x
+                    num3 = num3x
+                    simplified_1 = True
+                else:
+                    # simplify both
+                    num1 = num1x
+                    num3 = num3x
+                    num2 = num2x
+                    num4 = num4x
+                    simplified_1 = True
+                    simplified_2 = True
+            elif f_com[2] is not None:
+                # check if second simplification is needed
+                if f_com[2] != f_com[0]:
+                    # simplify second
+                    num2 = num2x
+                    num4 = num4x
+                    simplified_2 = True
+            elif f_com[1] is not None:
+                # check if first simplification is needed
+                if f_com[1] != f_com[0]:
+                    # simplify first
+                    num1 = num1x
+                    num3 = num3x
+                    simplified_1 = True
+
+            # display simplification helpers
+            if simplified_1:
                 self.divisors[0].set_value("%s%s" % (chr(247), str(gcf1)))
                 self.divisors[1].set_value("%s%s" % (chr(247), str(gcf1)))
                 self.nm1xa.set_font_color(self.font_color2)
@@ -269,10 +338,7 @@ class Board(gd.BoardGame):
                 self.divisors[0].set_value("")
                 self.divisors[1].set_value("")
 
-            gcf2 = self.gcf((num2, num4))
-            if gcf2 > 1:
-                num2 = int(num2 / gcf2)
-                num4 = int(num4 / gcf2)
+            if simplified_2:
                 self.divisors[2].set_value("%s%s" % (chr(247), str(gcf2)))
                 self.divisors[3].set_value("%s%s" % (chr(247), str(gcf2)))
                 self.nm2xa.set_font_color(self.font_color3)
@@ -281,33 +347,26 @@ class Board(gd.BoardGame):
                 self.divisors[2].set_value("")
                 self.divisors[3].set_value("")
 
-            if gcf1 > 1:
-                simplified_1 = True
-            else:
-                simplified_1 = False
-
-            if gcf2 > 1:
-                simplified_2 = True
-            else:
-                simplified_2 = False
-
-            if gcf1 > 1 or gcf2 > 1:
+            # set correct simplification colours
+            if simplified_1 or simplified_2:
                 self.set_s1_colors()
                 self.show(step=1, display=True)
             else:
                 self.set_s2_colors()
                 self.hidden_sim[0] = True
                 self.show(step=1, display=False)
+
+            #show simplified numbers
             self.step_1_simplify(num1, num2, num3, num4)
-            self.find_common_den(num1, num3, num2, num4, simplified_1, simplified_2)
+
+            # find common denominator
+            self.display_common_den(num1, num3, num2, num4, simplified_1, simplified_2)
 
         if self.mainloop.m.game_variant == 0:
             self.show_simp()
 
         self.move_result()
-
         self.move_2_add_minus()
-
         for each in self.board.units:
             each.update_me = True
         self.mainloop.redraw_needed[0] = True
@@ -372,7 +431,14 @@ class Board(gd.BoardGame):
     def lcm(self, a, b):
         return (a * b) / self.gcd(a, b)
 
-    def find_common_den(self, num1, den1, num2, den2, simplified_1, simplified_2):
+    def lcd_fractions(self, num1, den1, num2, den2):
+        lcd = self.lcm(den1, den2)
+        num1 *= (lcd / den1)
+        num2 *= (lcd / den2)
+
+        return [[num1, lcd], [num2, lcd]]
+
+    def display_common_den(self, num1, den1, num2, den2, simplified_1, simplified_2):
         lcd = self.lcm(den1, den2)
         num1 *= (lcd / den1)
         num2 *= (lcd / den2)
@@ -444,7 +510,6 @@ class Board(gd.BoardGame):
             self.get_difference(num1, num2, lcd)
 
     def get_difference(self, num1, num2, den):
-        #print("%d, %d, %d, %d" % (num1, den, num2, den))
         self.sum_numbers = [int(abs(num1 - num2)), int(den)]
         if num1 > num2:
             self.sm1a.show()
@@ -499,7 +564,6 @@ class Board(gd.BoardGame):
                 self.nm1xb.show()
                 self.nm2xa.show()
                 self.nm2xb.show()
-
                 self.board.move_unit(self.eq1.unit_id, 9, 3)
                 self.board.move_unit(self.nm1xa.unit_id, 10, 2)
                 self.board.move_unit(self.nm1xb.unit_id, 10, 4)
@@ -513,7 +577,6 @@ class Board(gd.BoardGame):
                 self.nm1xb.hide()
                 self.nm2xa.hide()
                 self.nm2xb.hide()
-
                 self.board.move_unit(self.eq1.unit_id, 9, 0)
                 self.board.move_unit(self.nm1xa.unit_id, 10, 0)
                 self.board.move_unit(self.nm1xb.unit_id, 10, 6)
@@ -522,7 +585,6 @@ class Board(gd.BoardGame):
                 self.board.move_unit(self.nm2xb.unit_id, 13, 6)
                 self.pl1.set_value("")
                 self.eq1.set_value("")
-
                 self.divisors[0].set_value("")
                 self.divisors[1].set_value("")
                 self.divisors[2].set_value("")
@@ -547,7 +609,6 @@ class Board(gd.BoardGame):
                     self.board.move_unit(self.pl2.unit_id, 12, 3)
                     self.board.move_unit(self.nm2xa2.unit_id, 13, 2)
                     self.board.move_unit(self.nm2xb2.unit_id, 13, 4)
-
                 self.pl2.set_value(self.sign)
                 self.eq2.set_value("=")
             else:
@@ -555,7 +616,6 @@ class Board(gd.BoardGame):
                 self.nm1xb2.hide()
                 self.nm2xa2.hide()
                 self.nm2xb2.hide()
-
                 self.board.move_unit(self.eq2.unit_id, 15, 0)
                 self.board.move_unit(self.nm1xa2.unit_id, 16, 0)
                 self.board.move_unit(self.nm1xb2.unit_id, 16, 6)
@@ -564,7 +624,6 @@ class Board(gd.BoardGame):
                 self.board.move_unit(self.nm2xb2.unit_id, 19, 6)
                 self.pl2.set_value("")
                 self.eq2.set_value("")
-
                 self.divisors2[0].set_value("")
                 self.divisors2[1].set_value("")
                 self.divisors2[2].set_value("")
@@ -622,7 +681,6 @@ class Board(gd.BoardGame):
                 self.change_fract_btn(self.numbers, 0, -1)
             elif active == 3:
                 self.change_fract_btn(self.numbers, 0, 1)
-
             elif active == 4:
                 self.change_fract_btn(self.numbers2, -1, 0)
             elif active == 5:
@@ -631,7 +689,6 @@ class Board(gd.BoardGame):
                 self.change_fract_btn(self.numbers2, 0, -1)
             elif active == 7:
                 self.change_fract_btn(self.numbers2, 0, 1)
-
             self.auto_check_reset()
         elif event.type == pygame.KEYDOWN and (event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER):
             self.check_result()
