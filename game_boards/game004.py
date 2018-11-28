@@ -30,22 +30,30 @@ class Board(gd.BoardGame):
         self.color = color
 
         l = 0
+        self.lncnt = [0, 0, 0]
         if self.mainloop.menu_level == 1:
             self.categories = []
             for each in self.mainloop.m.categories:
                 if each.top_id == self.mainloop.menu_group:
                     l += 1
                     self.categories.append(each)
+                    if each.menu_line > 0:
+                        self.lncnt[each.menu_line - 1] += 1
+
         elif self.mainloop.menu_level == 2:
             self.categories = []
             for each in self.mainloop.m.cats_current:
                 l += 1
                 self.categories.append(each)
+                if each.menu_line > 0:
+                    self.lncnt[each.menu_line - 1] += 1
         else:
             self.games = []
             for each in self.mainloop.m.games_current:
                 l += 1
                 self.games.append(each)
+                if each.menu_line > 0:
+                    self.lncnt[each.menu_line - 1] += 1
 
         if l <= 15:
             data = [31, 19]
@@ -74,35 +82,59 @@ class Board(gd.BoardGame):
 
         self.units = []
 
-        if l < self.h_count+1:
-            x = (data[0] - l * 6) // 2
-            y = 1
-            posx = [x + (i * 6) for i in range(l)]
-            posy = [y for i in range(l)]
-        elif l < self.h_count * 2 + 1:
-            x1 = (data[0] - self.h_count * 6) // 2
-            x2 = (data[0] - (l - self.h_count) * 6) // 2
-            y1 = 1
-            y2 = 7
-            px1 = [x1 + (i * 6) for i in range(self.h_count)]
-            px2 = [x2 + (i * 6) for i in range(l - self.h_count)]
-            posx = px1 + px2
-            py1 = [y1 for i in range(self.h_count)]
-            py2 = [y2 for i in range(l - self.h_count)]
-            posy = py1 + py2
-        else:
-            x1 = x2 = (data[0] - (self.h_count * 6)) // 2
-            x3 = (data[0] - (l - (self.h_count * 2)) * 6) // 2
-            y1 = 1
-            y2 = 7
-            y3 = 13
-            px1 = [x1 + (i * 6) for i in range(self.h_count)]
-            px3 = [x3 + (i * 6) for i in range(l - self.h_count * 2)]
-            posx = px1 + px1 + px3
-            py1 = [y1 for i in range(self.h_count)]
-            py2 = [y2 for i in range(self.h_count)]
-            py3 = [y3 for i in range(l - self.h_count * 2)]
+        if self.lncnt != [0, 0, 0]:
+            # remove any empty rows of icons in the menu
+            ln2 = [0, 0, 0]
+            j = 0
+            for i in range(3):
+                if self.lncnt[i] > 0:
+                    ln2[j] = self.lncnt[i]
+                    j += 1
+            self.lncnt = ln2
+
+            x1 = (data[0] - (self.lncnt[0] * 6)) // 2
+            x2 = (data[0] - (self.lncnt[1] * 6)) // 2
+            x3 = (data[0] - (self.lncnt[2] * 6)) // 2
+
+            px1 = [x1 + (i * 6) for i in range(self.lncnt[0])]
+            px2 = [x2 + (i * 6) for i in range(self.lncnt[1])]
+            px3 = [x3 + (i * 6) for i in range(self.lncnt[2])]
+
+            py1 = [1 for i in range(self.lncnt[0])]
+            py2 = [7 for i in range(self.lncnt[1])]
+            py3 = [13 for i in range(self.lncnt[2])]
+            posx = px1 + px2 + px3
             posy = py1 + py2 + py3
+        else:
+            if l < self.h_count+1:
+                x = (data[0] - l * 6) // 2
+                y = 1
+                posx = [x + (i * 6) for i in range(l)]
+                posy = [y for i in range(l)]
+            elif l < self.h_count * 2 + 1:
+                x1 = (data[0] - self.h_count * 6) // 2
+                x2 = (data[0] - (l - self.h_count) * 6) // 2
+                y1 = 1
+                y2 = 7
+                px1 = [x1 + (i * 6) for i in range(self.h_count)]
+                px2 = [x2 + (i * 6) for i in range(l - self.h_count)]
+                posx = px1 + px2
+                py1 = [y1 for i in range(self.h_count)]
+                py2 = [y2 for i in range(l - self.h_count)]
+                posy = py1 + py2
+            else:
+                x1 = x2 = (data[0] - (self.h_count * 6)) // 2
+                x3 = (data[0] - (l - (self.h_count * 2)) * 6) // 2
+                y1 = 1
+                y2 = 7
+                y3 = 13
+                px1 = [x1 + (i * 6) for i in range(self.h_count)]
+                px3 = [x3 + (i * 6) for i in range(l - self.h_count * 2)]
+                posx = px1 + px1 + px3
+                py1 = [y1 for i in range(self.h_count)]
+                py2 = [y2 for i in range(self.h_count)]
+                py3 = [y3 for i in range(l - self.h_count * 2)]
+                posy = py1 + py2 + py3
 
         self.template_units = {0: None, 1: None, 2: None}
 
