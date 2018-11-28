@@ -91,7 +91,7 @@ ht2 = ["первого", "второго", "третьего", "четвёрто
        "десятого", "одиннадцатого", "двенадцатого"]
 
 
-def time2str(h, m):
+def time2str_short(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string, ie. six fifty five - for 6:55'
     if m > 0:
         if h == 12:
@@ -131,7 +131,7 @@ def time2str(h, m):
     return ""
 
 
-def time2officialstr(h, m):
+def time2str(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
 
     # get the right "suffix" for hour
@@ -187,7 +187,7 @@ spknumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13
               "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"]
 
 
-def time2spk(h, m):
+def time2spk_short(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string but in exception format for espeak Russian language'
     if m > 0:
         if h == 12:
@@ -227,7 +227,7 @@ def time2spk(h, m):
     return ""
 
 
-def time2officialspk(h, m):
+def time2spk(h, m):
     'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
 
     # get the right "suffix" for hour

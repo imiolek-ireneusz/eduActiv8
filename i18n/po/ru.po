@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-04-10 14:44+0100\n"
+"PO-Revision-Date: 2018-11-28 10:30+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Russian <imiolek.i@gmail.com>\n"
 "Language: ru\n"
@@ -1203,6 +1203,12 @@ msgstr "Искусство языка"
 
 msgid "Other"
 msgstr "Разное"
+
+msgid "long form"
+msgstr "Официальное русское время"
+
+msgid "short form"
+msgstr " "
 
 msgid "Educational Activities for Kids"
 msgstr "Образовательный пакет для детей"

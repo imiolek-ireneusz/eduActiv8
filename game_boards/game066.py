@@ -180,7 +180,7 @@ class Board(gd.BoardGame):
                 self.text_time.speaker_val = spk_txt
                 self.text_time.speaker_val_update = False
         elif self.mainloop.m.game_variant == 1:
-            self.text_string = self.lang.time2officialstr(tt[0], tt[1])
+            self.text_string = self.lang.time2officistr(tt[0], tt[1])
             if self.lang.lang == "ru":
                 spk_txt = self.lang.time2officialspk(tt[0], tt[1])
                 self.text_time.speaker_val = spk_txt

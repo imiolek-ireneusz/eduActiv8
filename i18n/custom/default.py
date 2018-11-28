@@ -531,8 +531,8 @@ class I18n():
         self.d["Ratios"] = _("Ratios")
         self.d["Percentages"] = _("Percentages")
 
-        self.d["long form"] = _("long form")  # Serbian only
-        self.d["short form"] = _("short form")  # Serbian only
+        self.d["long form"] = _("long form")  # Serbian and Russian only
+        self.d["short form"] = _("short form")  # Serbian and Russian only
 
         self.d["Catalan clock"] = _("Catalan clock")  # Catalan only
 

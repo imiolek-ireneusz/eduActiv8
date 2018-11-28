@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
-
 import gettext
 import locale
 import os
@@ -171,9 +169,9 @@ class Language:
             self.lang_file = i18n.custom.ru
             self.kbrd = i18n.custom.kbrd.ru
             self.kbrd_course_mod = i18n.custom.kbrd.ru_course
+            self.time2spk_short = self.lang_file.time2spk_short
+            self.time2str_short = self.lang_file.time2str_short
             self.time2spk = self.lang_file.time2spk
-            self.time2officialstr = self.lang_file.time2officialstr
-            self.time2officialspk = self.lang_file.time2officialspk
             self.ico_suffix = "ru"
             self.lang_id = 13
         elif self.lang == 'uk':

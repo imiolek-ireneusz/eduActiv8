@@ -120,7 +120,7 @@ class Board(gd.BoardGame):
             self.text_string = self.lang.time2str(tt[0], tt[1])
         else:
             if self.lang.lang == "ru":
-                self.text_string = self.lang.time2officialstr(tt[0], tt[1])
+                self.text_string = self.lang.time2str_short(tt[0], tt[1])
             else:
                 self.text_string = self.lang.time2str_short(tt[0], tt[1])
         self.time = [6, 0]
@@ -227,9 +227,10 @@ class Board(gd.BoardGame):
             self.board.ships[-1].immobilize()
             self.board.ships[-1].font_color = gray
         if gv == 0 and self.lang.lang in ["ru", "he"]:
-            spk_txt = self.lang.time2spk(tt[0], tt[1])
             if self.lang.lang == "ru" and self.mainloop.m.game_var2 == 1:
-                spk_txt = self.lang.time2officialspk(tt[0], tt[1])
+                spk_txt = self.lang.time2spk_short(tt[0], tt[1])
+            else:
+                spk_txt = self.lang.time2spk(tt[0], tt[1])
             self.board.ships[-1].speaker_val = spk_txt
             self.board.ships[-1].speaker_val_update = False
         if gv == 2:

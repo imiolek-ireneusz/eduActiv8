@@ -1431,7 +1431,7 @@ msgstr ""
 msgid "Match ratios"
 msgstr ""
 
-msgid "Read pie charts"
+msgid "Percentages in a pie chart"
 msgstr ""
 
 msgid "hour"
