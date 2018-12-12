@@ -1444,3 +1444,83 @@ msgid_plural "minutes"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "Find equivalent fraction"
+msgstr ""
+
+msgid "Calculating with Time"
+msgstr ""
+
+msgid "start time"
+msgstr ""
+
+msgid "end time"
+msgstr ""
+
+msgid "elapsed time"
+msgstr ""
+
+msgid "Temperature - introduction to negative numbers"
+msgstr ""
+
+msgid "Experiment with elapsed time"
+msgstr ""
+
+msgid "Experiment with elapsed time 2"
+msgstr ""
+
+msgid "Calculate elapsed time"
+msgstr ""
+
+msgid "Find the start or the end time"
+msgstr ""
+
+msgid "Visualized on a clock dial"
+msgstr ""
+
+msgid "Visualized on a number line"
+msgstr ""
+
+msgid "Visualized on two number lines"
+msgstr ""
+
+msgid "With no visualizations"
+msgstr ""
+
+msgid "with mirrored images"
+msgstr ""
+
+msgid "Theme Editor"
+msgstr ""
+
+msgid "Make the game look your way"
+msgstr ""
+
+msgid "Reset colors back to the default ones?"
+msgstr ""
+
+msgid "Font Preferences"
+msgstr ""
+
+msgid "with simplifying"
+msgstr ""
+
+msgid "Positive numbers"
+msgstr ""
+
+msgid "Basics"
+msgstr ""
+
+msgid "Equivalent fractions"
+msgstr ""
+
+msgid "Expanding and reducing fractions"
+msgstr ""
+
+msgid "Add fractions with unlike denominators"
+msgstr ""
+
+msgid "Subtract fractions with unlike denominators"
+msgstr ""
+
+msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
+msgstr ""

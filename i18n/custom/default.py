@@ -651,59 +651,36 @@ class I18n():
 
         self.d["Reading pie charts"] = _("Percentages in a pie chart")
 
+        self.d["hours"] = _("hours")
+        self.d["minutes"] = _("minutes")
+
         self.d["Calculating with Time"] = _("Calculating with Time")
-        #self.d["Elapsed time"] = _("Calculate difference between times")
-
-        self.d["before"] = _("before")
-        self.d["after"] = _("after")
-        self.d["now"] = _("start time")
-        self.d["earlier"] = _("earlier")
-        self.d["later"] = _("later")
-        self.d["then"] = _("end time")
-
 
         self.d["start_time"] = _("start time")
         self.d["end_time"] = _("end time")
 
-
         self.d["difference"] = _("elapsed time")
-
-        self.d["hours"] = _("hours")
-        self.d["minutes"] = _("minutes")
-
-
         self.d["Temperature - introduction to negative numbers"] = _("Temperature - introduction to negative numbers")
-
         self.d["Find equivalent fraction"] = _("Find equivalent fraction")
-
         self.d["Experiment with elapsed time"] = _("Experiment with elapsed time")
         self.d["Experiment with elapsed time 2"] = _("Experiment with elapsed time 2")
         self.d["Calculate elapsed time"] = _("Calculate elapsed time")
-        self.d["Find a start or end time"] = _("Find a start or end time")
-
+        self.d["Find a start or end time"] = _("Find the start or the end time")
         self.d["Visualized on a clock dial"] = _("Visualized on a clock dial")
         self.d["Visualized on a number line"] = _("Visualized on a number line")
         self.d["Visualized on two number lines"] = _("Visualized on two number lines")
         self.d["With no visualizations"] = _("With no visualizations")
-
         self.d["with mirrored images"] = _("with mirrored images")
-        
         self.d["Theme Editor"] = _("Theme Editor")
         self.d["Make the game look your way"] = _("Make the game look your way")
-
         self.d["Reset colors back to default?"] = _("Reset colors back to the default ones?")
-
         self.b["Font Preferences"] = _("Font Preferences")
-
-        self.d["Add, subtract, multiply and divide"] = _("Addition, subtraction, multiplication and division of fractions")
+        #self.d["Add, subtract, multiply and divide"] = _("Addition, subtraction, multiplication and division of fractions")
         self.d["with simplifying"] = _("with simplifying")
-
         self.d["Positive numbers"] = _("Positive numbers")
         self.d["Basics"] = _("Basics")
         self.d["Equivalent fractions"] = _("Equivalent fractions")
         self.d["Expanding and reducing fractions"] = _("Expanding and reducing fractions")
-
         self.d["Add fractions with unlike denominators"] = _("Add fractions with unlike denominators")
         self.d["Subtract fractions with unlike denominators"] = _("Subtract fractions with unlike denominators")
-
         self.d["Add and subtract with unlike denom. - instr"] = _("To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that.")

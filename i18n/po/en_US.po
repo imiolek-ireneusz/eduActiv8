@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-04-10 14:44+0100\n"
+"PO-Revision-Date: 2018-12-12 14:37+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: en_US\n"
@@ -1432,8 +1432,8 @@ msgstr "Match percentages"
 msgid "Match ratios"
 msgstr "Match ratios"
 
-msgid "Read pie charts"
-msgstr "Read pie charts"
+msgid "Percentages in a pie chart"
+msgstr "Percentages in a pie chart"
 
 msgid "hour"
 msgid_plural "hours"
@@ -1444,3 +1444,84 @@ msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minute"
 msgstr[1] "minutes"
+
+msgid "Find equivalent fraction"
+msgstr "Find equivalent fraction"
+
+msgid "Calculating with Time"
+msgstr "Calculating with Time"
+
+msgid "start time"
+msgstr "start time"
+
+msgid "end time"
+msgstr "end time"
+
+msgid "elapsed time"
+msgstr "elapsed time"
+
+msgid "Temperature - introduction to negative numbers"
+msgstr "Temperature - introduction to negative numbers"
+
+msgid "Experiment with elapsed time"
+msgstr "Experiment with elapsed time"
+
+msgid "Experiment with elapsed time 2"
+msgstr "Experiment with elapsed time 2"
+
+msgid "Calculate elapsed time"
+msgstr "Calculate elapsed time"
+
+msgid "Find the start or the end time"
+msgstr "Find the start or the end time"
+
+msgid "Visualized on a clock dial"
+msgstr "Visualized on a clock dial"
+
+msgid "Visualized on a number line"
+msgstr "Visualized on a number line"
+
+msgid "Visualized on two number lines"
+msgstr "Visualized on two number lines"
+
+msgid "With no visualizations"
+msgstr "With no visualizations"
+
+msgid "with mirrored images"
+msgstr "with mirrored images"
+
+msgid "Theme Editor"
+msgstr "Theme Editor"
+
+msgid "Make the game look your way"
+msgstr "Make the game look your way"
+
+msgid "Reset colors back to the default ones?"
+msgstr "Reset colors back to the default ones?"
+
+msgid "Font Preferences"
+msgstr "Font Preferences"
+
+msgid "with simplifying"
+msgstr "with simplifying"
+
+msgid "Positive numbers"
+msgstr "Positive numbers"
+
+msgid "Basics"
+msgstr "Basics"
+
+msgid "Equivalent fractions"
+msgstr "Equivalent fractions"
+
+msgid "Expanding and reducing fractions"
+msgstr "Expanding and reducing fractions"
+
+msgid "Add fractions with unlike denominators"
+msgstr "Add fractions with unlike denominators"
+
+msgid "Subtract fractions with unlike denominators"
+msgstr "Subtract fractions with unlike denominators"
+
+msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
+msgstr "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
