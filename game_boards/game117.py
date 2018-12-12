@@ -68,6 +68,8 @@ class Board(gd.BoardGame):
 
         self.response = [0, 1]
 
+        self.current_txt = ""
+
         self.digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
         if self.lang.lang == "gr":
@@ -221,14 +223,14 @@ class Board(gd.BoardGame):
         self.board.units[-1].font_color = self.font_color
         self.board.add_unit(17, 2, 3, 2, classes.board.Label, self.qm, white, "", 31)
         self.sm1a = self.board.units[-1]
-        self.sm1a.set_outline(color=self.font_color, width=2)
+        self.sm1a.set_outline(color=self.font_color, width=1)
         self.sm1a.checkable = True
         self.sm1a.init_check_images()
 
         self.sm1a.font_color = self.font_color
         self.board.add_unit(17, 4, 3, 2, classes.board.Label, self.qm, white, "", 31)
         self.sm1b = self.board.units[-1]
-        self.sm1b.set_outline(color=self.font_color, width=2)
+        self.sm1b.set_outline(color=self.font_color, width=1)
         self.sm1b.checkable = True
         self.sm1b.init_check_images()
         self.sm1b.font_color = self.font_color
@@ -286,6 +288,7 @@ class Board(gd.BoardGame):
         o1.set_outline(color=self.font_color, width=5)
         self.active_fract = o1
         o1.update_me = True
+        self.current_txt = ""
         self.mainloop.redraw_needed[0] = True
 
     def initialize_numbers(self, num1, num2, num3, num4):
@@ -730,12 +733,19 @@ class Board(gd.BoardGame):
             self.check_result()
         elif event.type == pygame.KEYDOWN:
             self.auto_check_reset()
-            lhv = len(self.active_fract.value)
+            lhv = len(self.current_txt)
             self.changed_since_check = True
             if event.key == pygame.K_BACKSPACE:
                 if lhv > 0:
-                    self.active_fract.value = self.active_fract.value[0:lhv - 1]
+                    self.current_txt = self.current_txt[0:lhv - 1]
+                    self.active_fract.value = self.current_txt
                 self.active_fract.update_me = True
+                if len(self.current_txt) > 0:
+                    if self.active_fract == self.sm1a:
+                        self.response[0] = int(self.active_fract.value)
+                    elif self.active_fract == self.sm1b:
+                        self.response[1] = int(self.active_fract.value)
+
 
             elif event.key == pygame.K_TAB:
                 if self.active_fract == self.sm1a:
@@ -746,9 +756,11 @@ class Board(gd.BoardGame):
                 char = event.unicode
                 if char in self.digits:
                     if len(char) > 0 and lhv < 3 and self.active_fract.value != self.qm:
-                        self.active_fract.value += char
+                        self.current_txt += char
                     else:
-                        self.active_fract.value = char
+                        self.current_txt = char
+
+                    self.active_fract.value = self.current_txt
 
                     if self.active_fract == self.sm1a:
                         self.response[0] = int(self.active_fract.value)
@@ -765,6 +777,8 @@ class Board(gd.BoardGame):
         self.sm1b.set_display_check(None)
 
     def change_fract_btn(self, ns, n1, n2):
+        self.current_txt = ""
+
         if n1 == -1:
             if ns[0] > 1:
                 ns[0] -= 1
@@ -783,6 +797,11 @@ class Board(gd.BoardGame):
         elif n2 == 1:
             if ns[1] <= self.max_num:
                 ns[1] += 1
+
+        if n1 != 0:
+            self.toggle_active_fract(self.sm1a)
+        elif n2 != 0:
+            self.toggle_active_fract(self.sm1b)
 
         self.update_arrows()
         self.update_fractions()

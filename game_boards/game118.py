@@ -18,7 +18,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.max_size = 99
-        self.board.draw_grid = True
+        self.board.draw_grid = False
 
         if self.mainloop.scheme is not None:
             white = self.mainloop.scheme.u_color

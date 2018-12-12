@@ -1,5 +1,5 @@
 Changelog:
-eduActiv8 - 4.18.11:
+eduActiv8 - 4.18.12:
     - the menu has been replaced with a full screen activity selection screen
         - this allows to display all activity icons without scrolling
         - more space for activities since the menu does not take up any screen space while in activity mode
@@ -7,7 +7,8 @@ eduActiv8 - 4.18.11:
         - the category and activity icons have been redesigned and scaled up
         - categories rearranged into sub-groups to display less choices at a time.
     - theme editing screen added to customize UI and menu colours
-    - a number of new activities added - covering elapsed time as well as negative numbers and equivalent fractions
+    - a number of new activities added - covering elapsed time as well as negative numbers
+    - new activities on equivalent fractions as well as addition, subtraction, multiplication and division of fractions
     - a lot of cosmetic fixes across the application
 
 eduActiv8 - 3.80.411:

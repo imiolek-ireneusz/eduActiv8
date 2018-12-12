@@ -178,7 +178,7 @@ class Board(gd.BoardGame):
             self.board.add_unit(24, 3, 1, 2, classes.board.Label, "=", white, "", 31)
             self.eq4 = self.board.units[-1]
 
-            self.board.add_unit(25, 3, 1, 2, classes.board.Label, "", white, "", 31)
+            self.board.add_unit(25, 3, 1, 2, classes.board.Label, "", white, "", 36)
             self.sm_one = self.board.units[-1]
 
             self.board.add_unit(26, 2, 2, 2, classes.board.Label, "", white, "", 31)
@@ -188,7 +188,7 @@ class Board(gd.BoardGame):
             self.board.add_unit(26, 4, 2, 2, classes.board.Label, "", white, "", 31)
             self.sm2b = self.board.units[-1]
         else:
-            self.board.add_unit(24, 0, 1, 2, classes.board.Label, "-", white, "", 31)
+            self.board.add_unit(24, 0, 1, 2, classes.board.Label, "-", white, "", 36)
             self.minus = self.board.units[-1]
 
         # arrows for numerator 1

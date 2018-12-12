@@ -1146,9 +1146,12 @@ class Board:
             xsizes[i] = xsizes[i] / self.mainloop.config.font_multiplier
             self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(float(self.points) / float(xsizes[i])))))
 
-        #clock font 35
+        #clock font 34, 35
         self.font_sizes.append(pygame.font.Font(self.font_path_clock, (int(self.points / 0.5))))
         self.font_sizes.append(pygame.font.Font(self.font_path_clock, (int(self.points / 3))))
+
+        #font 36
+        self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(self.points / 0.5))))
 
         self.board_bg = BoardBg(self, 0, 0, x_count, y_count, "", (255, 255, 255))
         self.unit_list.add(self.board_bg)
@@ -1353,11 +1356,15 @@ class Board:
     def moved(self):
         pass
 
-    def move_unit(self, unit_id, x, y):
-        self._move_unit_to(unit_id, x, y)
+    def move_unit(self, unit_id, x, y, ship=False):
+        self._move_unit_to(unit_id, x, y, ship)
 
-    def _move_unit_to(self, unit_id, x, y):
-        ship = self.units[unit_id]
+    def _move_unit_to(self, unit_id, x, y, ship_unit=False):
+        if ship_unit:
+            ship = self.ships[unit_id]
+        else:
+            ship = self.units[unit_id]
+
         if self.check_laby is False or (self.check_laby is True and self.laby_dir > -1 and not
         self.mainloop.game_board.mylaby.get_cell(ship.grid_x, ship.grid_y).laby_doors[self.laby_dir]):
             self.laby_dir = -1

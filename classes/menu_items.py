@@ -21,7 +21,7 @@ class TopCategory(pygame.sprite.Sprite):
         self.sequence_id = sequence_id
         self.bg_style = self.board.mainloop.cl.menu_shapes[self.board.mainloop.cl.color_sliders[6][2]]
         self.decor_style = decor
-        self.double_icon = True
+        self.double_icon = False
 
         self.color = color
         self.update_me = True
@@ -187,7 +187,7 @@ class Category(pygame.sprite.Sprite):
 
         self.bg_style = self.board.mainloop.cl.menu_shapes[self.board.mainloop.cl.color_sliders[6][2]]
         self.decor_style = decor
-        self.double_icon = True
+        self.double_icon = False
 
         self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
         self.rect = self.image.get_rect()
@@ -412,7 +412,7 @@ class GameIcon(pygame.sprite.Sprite):
 
         self.bg_style = "game_bg"
         self.decor_style = decor
-        self.double_icon = True
+        self.double_icon = False
 
         self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
         self.rect = self.image.get_rect()

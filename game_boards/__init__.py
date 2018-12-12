@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-__all__ = ["game%03i" % i for i in range(111)]
+__all__ = ["game%03i" % i for i in range(120)]

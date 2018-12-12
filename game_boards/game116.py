@@ -192,7 +192,7 @@ class Board(gd.BoardGame):
         self.board.add_unit(13, 4, 1, 2, classes.board.Label, chr(215), white, "", 31)
         self.board.units[-1].font_color = self.font_color
 
-        self.board.add_unit(6+8, 2, 2, 2, classes.board.Label, "", white, "", 31)
+        self.board.add_unit(14, 2, 2, 2, classes.board.Label, "", white, "", 31)
         self.nm2xa = self.board.units[-1]
         self.nm2xa.set_fraction_lines(top=False, bottom=True, color=bd_color1, length=100)
         self.nm2xa.font_color = self.font_color

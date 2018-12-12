@@ -71,7 +71,7 @@ class BuildExe:
         # Auhor of program
         self.author_name = "Ireneusz Imiolek"
         self.author_email = "imiolek.i@gmail.com"
-        self.copyright = "Copyright (c) 2012-2017 Ireneusz Imiolek"
+        self.copyright = "Copyright (c) 2012-2018 Ireneusz Imiolek"
 
         # Description
         self.project_description = "eduActiv8 - Educational Activities for Kids"
