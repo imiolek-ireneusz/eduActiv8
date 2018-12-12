@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-04-11 12:45+0100\n"
+"PO-Revision-Date: 2018-12-12 14:37+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language: pl\n"
@@ -438,7 +438,7 @@ msgid "Collect all letters in the right order"
 msgstr "Zbierz wszystkie litery"
 
 msgid "Word Maze + 4"
-msgstr "Labirynt słów + 4"
+msgstr "Labirynt nowych słówek + 4"
 
 msgid "Numbers"
 msgstr "Liczby"
@@ -756,13 +756,13 @@ msgid "Mix red, green and blue light to get other colours"
 msgstr "Uzyskaj inne kolory z czerwonego, zielonego i niebieskiego"
 
 msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
-msgstr "Mieszamy Kolory - Farba, Tusz"
+msgstr "Mieszamy kolory - farba, tusz"
 
 msgid "Mix cyan, magenta and yellow paint to get other colours"
 msgstr "Uzyskaj inne kolory z kolorów: cyjan, magenta i żółty"
 
-msgid "Find the colour of the circle"
-msgstr "Znajdź Kolor Koła"
+msgid "Find the colour of the circle in the middle"
+msgstr "Znajdź kolor koła w środku"
 
 msgid "Adjust the amount of cyan, magenta and yellow paint"
 msgstr "Dopasuj ilość koloru cyjan, magenta i żółtego"
@@ -843,7 +843,7 @@ msgid "Match fraction charts to the fractions on the left"
 msgstr "Dopasuj graficzne reprezentacje ułamków po prawej do ułamków zwykłych po lewej"
 
 msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
-msgstr "Dopasuj graficzne reprezentacje ułamków, ułamki zwykłe i dziesiętne  do procentów po lewej"
+msgstr "Dopasuj graficzne reprezentacje ułamków, ułamki zwykłe i dziesiętne do procentów po lewej"
 
 msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
 msgstr "Dopasuj graficzne reprezentacje stosunku kolorowych części do białych do ich liczbowego zapisu po lewej"
@@ -1409,11 +1409,11 @@ msgstr "Aby skrócić ułamek, należy podzielić licznik i mianownik przez tę 
 msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr "Aby rozszerzyć ułamek, należy pomnożyć licznik i mianownik przez tę samą liczbę. Zmień liczbę w środku by zobaczyć co się stanie."
 
-msgid "Use the plus or minus signs to change your answer or just type it in."
-msgstr "Aby wprowadzić odpowiedź użyj przycisku z plusem lub minusem, albo wpisz Twoją odpowiedź na klawiaturze."
+msgid "Use the arrows to change your answer or just type it in."
+msgstr "Aby wprowadzić odpowiedź użyj strzałek, albo wpisz Twoją odpowiedź na klawiaturze."
 
-msgid "Use the plus or minus signs to change your answer."
-msgstr "Aby wprowadzić odpowiedź użyj przycisku z plusem lub minusem."
+msgid "Use the arrows to change your answer."
+msgstr "Aby wprowadzić odpowiedź użyj strzałek."
 
 msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
 msgstr "Aby dodać dwa ułamki zwykłe o tym samym mianowniku należy dodać ich liczniki do siebie pozostawiając mianownik bez zmian. Potem należy uprościć ułamek jeśli to możliwe."
@@ -1463,7 +1463,7 @@ msgstr "Figury symetryczne - brakująca połowa"
 msgid "Draw the other half of the shape"
 msgstr "Narysuj drugą połowę figury"
 
-msgid "Find lines of symmetry."
+msgid "Find lines of symmetry"
 msgstr "Znajdź wszystkie osie symetrii"
 
 msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
@@ -1484,5 +1484,98 @@ msgstr "Dopasuj procenty"
 msgid "Match ratios"
 msgstr "Dopasuj proporcje"
 
-msgid "Read pie charts"
+msgid "Percentages in a pie chart"
 msgstr "Procenty na wykresach kołowych"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "godzina"
+msgstr[1] "godziny"
+msgstr[2] "godzin"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minuta"
+msgstr[1] "minuty"
+msgstr[2] "minut"
+
+msgid "Find equivalent fraction"
+msgstr "Znajdź ułamki równoważne"
+
+msgid "Calculating with Time"
+msgstr "Obliczenia różnicy w czasie"
+
+msgid "start time"
+msgstr "czas początkowy"
+
+msgid "end time"
+msgstr "czas końcowy"
+
+msgid "elapsed time"
+msgstr "czas jaki upłynął"
+
+msgid "Temperature - introduction to negative numbers"
+msgstr "Termometr - wprowadzenie do liczb ujemnych"
+
+msgid "Experiment with elapsed time"
+msgstr "Eksperyment z różnicą czasu"
+
+msgid "Experiment with elapsed time 2"
+msgstr "Eksperyment z różnicą czasu 2"
+
+msgid "Calculate elapsed time"
+msgstr "Oblicz różnicę czasu"
+
+msgid "Find the start or the end time"
+msgstr "Znajdż godzinę startu lub końca"
+
+msgid "Visualized on a clock dial"
+msgstr "Pokazane na tarczy zegara"
+
+msgid "Visualized on a number line"
+msgstr "Pokazane na osi liczbowej"
+
+msgid "Visualized on two number lines"
+msgstr "Pokazane na dwóch osiach liczbowych"
+
+msgid "With no visualizations"
+msgstr "Bez ułatwień"
+
+msgid "with mirrored images"
+msgstr "z odwróconymi obrazkami"
+
+msgid "Theme Editor"
+msgstr "Ustawienia kolorów"
+
+msgid "Make the game look your way"
+msgstr "Spraw aby ta gra wyglądała tak jak chcesz"
+
+msgid "Reset colors back to the default ones?"
+msgstr "Przeywróć domyślne kolory"
+
+msgid "Font Preferences"
+msgstr "Ustawienia czcionki"
+
+msgid "with simplifying"
+msgstr "ze skracaniem"
+
+msgid "Positive numbers"
+msgstr "Liczby dodatnie"
+
+msgid "Basics"
+msgstr "Podstawy"
+
+msgid "Equivalent fractions"
+msgstr "Ułamki równoważne"
+
+msgid "Expanding and reducing fractions"
+msgstr "Rozszerzanie i upraszczanie ułamków"
+
+msgid "Add fractions with unlike denominators"
+msgstr "Dodawanie ułamków o różnych mianownikach"
+
+msgid "Subtract fractions with unlike denominators"
+msgstr "Odejmowanie ułamków o różnych mianownikach"
+
+msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
+msgstr "Aby dodać lub odjąć dwa ułamki o różnch mianownikach należy najpierw znaleźć dwa równoważne ułamki które mają wspólny mianownik i dodać liczebniki do siebie, pozostawiając mianownik bez zmian. Znalezienie najmniejszej wspólnej wielokrotności mianowników ułatwi to zadanie."

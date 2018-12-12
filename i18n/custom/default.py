@@ -279,7 +279,7 @@ class I18n():
         self.d["Ink Mixer"] = _("Subtractive Colour Mixing - Paints, Dyes, Inks")
         self.d["Mixing CMY"] = _("Mix cyan, magenta and yellow paint to get other colours")
 
-        self.d["Find the colour of the circle"] = _("Find the colour of the circle")
+        self.d["Find the colour of the circle in the middle"] = _("Find the colour of the circle in the middle")
         self.d["Adjust CMY"] = _("Adjust the amount of cyan, magenta and yellow paint")
         self.d["Adjust RGB"] = _("Adjust the intensity of red, green and blue light")
 
@@ -531,8 +531,8 @@ class I18n():
         self.d["Ratios"] = _("Ratios")
         self.d["Percentages"] = _("Percentages")
 
-        self.d["long form"] = _("long form")  # Serbian only
-        self.d["short form"] = _("short form")  # Serbian only
+        self.d["long form"] = _("long form")  # Serbian and Russian only
+        self.d["short form"] = _("short form")  # Serbian and Russian only
 
         self.d["Catalan clock"] = _("Catalan clock")  # Catalan only
 
@@ -590,11 +590,11 @@ class I18n():
         self.d["Compare decimals and fractions"] = _("Compare decimals and fractions")
         self.d["Compare fractions"] = _("Compare fractions")
         self.d["Reduce fractions"] = _("Reduce fractions")
-        self.d["Extend fractions"] = _("Extend fractions")
+        self.d["Expand fractions"] = _("Expand fractions")
         self.d["To reduce a fraction..."] = _("To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one.")
-        self.d["To extend a fraction..."] = _("To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens.")
-        self.d["Use plus or minus..."] = _("Use the plus or minus signs to change your answer or just type it in.")
-        self.d["Use plus or minus... Android"] = _("Use the plus or minus signs to change your answer.")
+        self.d["To expand a fraction..."] = _("To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens.")
+        self.d["Use plus or minus..."] = _("Use the arrows to change your answer or just type it in.")
+        self.d["Use plus or minus... Android"] = _("Use the arrows to change your answer.")
         self.d["To add a fraction with the same denominator..."] = _("To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible.")
         self.d["To subtract a fraction with the same denominator..."] = _("To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible.")
         self.d["To multiply two fractions..."] = _("To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible.")
@@ -640,9 +640,8 @@ class I18n():
         self.d["Draw Symmetrical Shapes - half"] = _("Symmetrical shapes - missing half")
         self.d["DSS - missing half - subtitle"] = _("Draw the other half of the shape")
 
-        self.d["Lines of symmetry"] = _("Find lines of symmetry.")
+        self.d["Lines of symmetry"] = _("Find lines of symmetry")
         self.d["Lines of symmetry - instruction"] = _("Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them.")
-
 
         self.d["Match equivalent fractions"] = _("Match equivalent fractions")
         self.d["Matching fractions"] = _("Match fractions")
@@ -650,4 +649,38 @@ class I18n():
         self.d["Matching percentages"] = _("Match percentages")
         self.d["Matching ratios"] = _("Match ratios")
 
-        self.d["Reading pie charts"] = _("Read pie charts")
+        self.d["Reading pie charts"] = _("Percentages in a pie chart")
+
+        self.d["hours"] = _("hours")
+        self.d["minutes"] = _("minutes")
+
+        self.d["Calculating with Time"] = _("Calculating with Time")
+
+        self.d["start_time"] = _("start time")
+        self.d["end_time"] = _("end time")
+
+        self.d["difference"] = _("elapsed time")
+        self.d["Temperature - introduction to negative numbers"] = _("Temperature - introduction to negative numbers")
+        self.d["Find equivalent fraction"] = _("Find equivalent fraction")
+        self.d["Experiment with elapsed time"] = _("Experiment with elapsed time")
+        self.d["Experiment with elapsed time 2"] = _("Experiment with elapsed time 2")
+        self.d["Calculate elapsed time"] = _("Calculate elapsed time")
+        self.d["Find a start or end time"] = _("Find the start or the end time")
+        self.d["Visualized on a clock dial"] = _("Visualized on a clock dial")
+        self.d["Visualized on a number line"] = _("Visualized on a number line")
+        self.d["Visualized on two number lines"] = _("Visualized on two number lines")
+        self.d["With no visualizations"] = _("With no visualizations")
+        self.d["with mirrored images"] = _("with mirrored images")
+        self.d["Theme Editor"] = _("Theme Editor")
+        self.d["Make the game look your way"] = _("Make the game look your way")
+        self.d["Reset colors back to default?"] = _("Reset colors back to the default ones?")
+        self.b["Font Preferences"] = _("Font Preferences")
+        #self.d["Add, subtract, multiply and divide"] = _("Addition, subtraction, multiplication and division of fractions")
+        self.d["with simplifying"] = _("with simplifying")
+        self.d["Positive numbers"] = _("Positive numbers")
+        self.d["Basics"] = _("Basics")
+        self.d["Equivalent fractions"] = _("Equivalent fractions")
+        self.d["Expanding and reducing fractions"] = _("Expanding and reducing fractions")
+        self.d["Add fractions with unlike denominators"] = _("Add fractions with unlike denominators")
+        self.d["Subtract fractions with unlike denominators"] = _("Subtract fractions with unlike denominators")
+        self.d["Add and subtract with unlike denom. - instr"] = _("To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that.")

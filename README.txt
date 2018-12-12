@@ -97,12 +97,12 @@ The compiled version currently does not work with espeak.
 ______________________________________________
 
 The first time the application is run will be in normal windowed mode (not in fullscreen).
-To display it in fullscreen press Ctrl+F at the start of the or go to Preferences (in login screen) and enable full screen.
+To display it in fullscreen press Ctrl+F after logging in or go to Preferences (in login screen) and enable full screen.
 
 ----------------------------------------------
 Translating:
     If you would like to help translating this application please use one of the included files within the i18n/po directory.
-    If your langauage is not there yet copy the default.pot file rename it temporarily to te_ST.po and start working with the new file using ie. the Poedit.
+    If your language is not there yet copy the default.pot file rename it temporarily to te_ST.po and start working with the new file using ie. the Poedit.
     To test your translation save the file - Poedit will create the .mo file for you - move the .mo file to the locale/te_ST/ directory and rename the file to eduactiv8.mo and start the app select the Test Language.
     Alternatively you can run the cleanup.py program to get the file renamed and moved where it should be (this program will also remove .pyc and some other temp files under eduactiv8 - this is used to automate the process of stripping eduactiv8 before compressing/packaging).
 
@@ -115,10 +115,6 @@ Translating:
 ----------------------------------------------
 
 Interface:
-Menu Panel - left:
-    left column         - list of categories
-    right column        - list of activities in the current category
-
 Top Panel:
     sound               - toggle sound effects
     voice               - toggle espeak voice synthesiser (if espeak is not installed this icon will not be available)
@@ -152,7 +148,8 @@ Controls - top:
     close button          - closes the application (2 clicks needed)
 
 Activity Panel - centre - the largest part of screen:
-    piece of screen where all activity objects are placed for you to drag around :)
+    Piece of screen where all activity objects are placed for you to drag around :)
+    This is also used to display the menu in the latest version - starting from home screen - where top categories are displayed users can navigate through the series of categories to start individual activities.
 
 
 Sorry for all the mess in the code, but this is my first and only pygame project after reading some books/tutorials, so do not expect professional product - this was my programming sandbox.

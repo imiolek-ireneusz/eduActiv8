@@ -59,6 +59,14 @@ class Clock:
         self.clock_wrapper.font2 = game_board.clock_fonts[1]
         self.clock_wrapper.font3 = game_board.clock_fonts[2]
 
+        self.clock_wrapper.hidden_value = [2, 3]
+        self.clock_wrapper.font_color = color2
+        self.draw_all(self.time)
+
+    def draw_all(self, time=None):
+        if time is not None:
+            self.time = time
+
         self.canvas = pygame.Surface([self.size, self.size - 1])
         if self.game_board.mainloop.scheme is not None:
             self.canvas.fill(self.game_board.mainloop.scheme.u_color)
@@ -66,26 +74,21 @@ class Clock:
             self.canvas.fill((255, 255, 255))
         self.hands_vars()
         self.draw_hands()
-
-        self.clock_wrapper.hidden_value = [2, 3]
-        self.clock_wrapper.font_color = color2
         self.clock_wrapper.painting = self.canvas.copy()
 
     def hands_vars(self):
-        numbers = [2, 2]
         self.angle_step_12 = 2 * pi / 12
         self.angle_step_60 = 2 * pi / 60
 
         self.angle_start = -pi / 2
-        angle_arc_start = -pi / 2
         self.r = self.size // 3 + self.size // 10
 
         self.rs = [int(90 * self.size / 500.0), int(170 * self.size / 500.0), int(110 * self.size / 500.0)]
 
     def draw_hands(self):
         if self.show_hour_offset:
-            a1 = self.angle_start + (2 * pi / 12) * self.time[0] + (self.angle_step_12 * (2 * pi / 60) * self.time[
-                1]) / (2 * pi)
+            a1 = self.angle_start + (2 * pi / 12) * self.time[0] + \
+                 (self.angle_step_12 * (2 * pi / 60) * self.time[1]) / (2 * pi)
         else:
             a1 = self.angle_start + (2 * pi / 12) * self.time[0]
         a2 = self.angle_start + (2 * pi / 60) * self.time[1]
@@ -176,14 +179,14 @@ class Clock:
                 text = pygame.transform.rotate(text, text_angle)
                 rect = text.get_rect()
                 x3 = (rs[2] + 10 + 7 * self.size / 500.0 + font_size[1] // 2) * cos(a) + self.center[0] - rect.width / 2
-                y3 = (rs[2] + 10 + 7 * self.size / 500.0 + font_size[1] // 2) * sin(a) + self.center[
-                    1] - rect.height / 2
+                y3 = (rs[2] + 10 + 7 * self.size / 500.0 + font_size[1] // 2) * sin(a) + \
+                     self.center[1] - rect.height / 2
 
             else:
-                x3 = (rs[2] + 10 + 7 * self.size / 500.0 + font_size[1] / 2) * cos(a) + self.center[0] - font_size[
-                                                                                                             0] / 2
-                y3 = (rs[2] + 10 + 7 * self.size / 500.0 + font_size[1] / 2) * sin(a) + self.center[1] - font_size[
-                                                                                                             1] / 2
+                x3 = (rs[2] + 10 + 7 * self.size / 500.0 +
+                      font_size[1] / 2) * cos(a) + self.center[0] - font_size[0] / 2
+                y3 = (rs[2] + 10 + 7 * self.size / 500.0 +
+                      font_size[1] / 2) * sin(a) + self.center[1] - font_size[1] / 2
             self.canvas.blit(text, (x3, y3))
 
             if self.show_24h:
@@ -199,8 +202,8 @@ class Clock:
                 else:
                     text = self.clock_wrapper.font2.render("%s" % (val), 1, self.colors[0])
 
-                x3 = (rs[0] + font_size[1] // 2) * cos(a) + self.center[0] - font_size[0] / 2
-                y3 = (rs[0] + font_size[1] // 2) * sin(a) + self.center[1] - font_size[1] / 2
+                x3 = (rs[0] + font_size[1] // 4) * cos(a) + self.center[0] - font_size[0] / 2
+                y3 = (rs[0] + font_size[1] // 4) * sin(a) + self.center[1] - font_size[1] / 2
                 self.canvas.blit(text, (x3, y3))
         hand_width = [self.r // 14, self.r // 18]
         start_offset = [self.size // 10, self.size // 12]

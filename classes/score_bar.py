@@ -41,13 +41,11 @@ class PToggleBtn(PScoreItem):
         self.fsubmit = fsubmit
         self.fargs = fargs
         h = self.score_bar.btn_h
-        #if True:
         try:
             self.img_on = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_on)).convert(), h, h)
             self.img_off = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_off)).convert(), h, h)
             self.img_pos = (0, 0)
             self.img_loaded = True
-        # except IOError:
         except:
             pass
 
@@ -120,17 +118,14 @@ class PLabel(PScoreItem):
                     val = self.value
             else:
                 val = self.value
-            #if self.bold is None:
-            #    fnt = self.score_bar.font_clock
             if self.bold == True:
                 fnt = self.score_bar.font_bold
             else:
                 fnt = self.score_bar.font
             text = fnt.render("%s" % (val), 1, self.font_color)
 
-
             font_x = 0
-            font_y = (self.pos_rect[3] - fnt.size(val)[1]) // 2  # (self.pos_rect[3] - self.score_bar.font.size(val)[1])//2
+            font_y = (self.pos_rect[3] - fnt.size(val)[1]) // 2
             self.image.blit(text, (font_x, font_y))
 
 
@@ -152,7 +147,6 @@ class PLinkLabel(PLabel):
 
 class ScoreBar:
     def __init__(self, mainloop):
-        # self.bg_color = (45,45,45)
         self.mainloop = mainloop
         self.lang = self.mainloop.lang
         self.bg_color = (70, 70, 70)
@@ -170,7 +164,7 @@ class ScoreBar:
             self.img_ext = ".png"
         else:
             points_multiplicator = 3.0
-            self.btn_h = 48 #56
+            self.btn_h = 48
             self.link_lbl_h = 48
             self.btn_spacing = 5
             self.img_ext = "_l.png"
@@ -180,13 +174,6 @@ class ScoreBar:
         self.font_bold = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1),
             (int(self.points * points_multiplicator)))
-        #self.font_clock = pygame.font.Font(os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8Clock.ttf'),
-        #                                   (int(self.points * 4.0)))
-        """
-        self.widget_list = pygame.sprite.LayeredUpdates()
-        self.elements = []
-        self.add_scroll_bar_elements()
-        """
 
     def add_scroll_bar_elements(self):
         # toggle sounds
@@ -202,33 +189,8 @@ class ScoreBar:
             l += self.btn_h + 15 + self.btn_spacing
         else:
             l += 10 + self.btn_spacing
-        l += 0 + self.btn_spacing
-        self.elements.append(
-            PSelectBtn(self, (l, 2, self.btn_h, self.btn_h), "score_hc_none" + self.img_ext, "score_hc_anone" + self.img_ext, self.switch_scheme, None))
-        l += self.btn_h + self.btn_spacing
-        self.elements.append(
-            PSelectBtn(self, (l, 2, self.btn_h, self.btn_h), "score_hc_wb" + self.img_ext, "score_hc_awb" + self.img_ext, self.switch_scheme, "WB"))
-        l += self.btn_h + self.btn_spacing
-        self.elements.append(
-            PSelectBtn(self, (l, 2, self.btn_h, self.btn_h), "score_hc_bw" + self.img_ext, "score_hc_abw" + self.img_ext, self.switch_scheme, "BW"))
-        l += self.btn_h + self.btn_spacing
-        self.elements.append(
-            PSelectBtn(self, (l, 2, self.btn_h, self.btn_h), "score_hc_by" + self.img_ext, "score_hc_aby" + self.img_ext, self.switch_scheme, "BY"))
-        l += self.btn_h + self.btn_spacing
-        l += 10
-        # score label
-        # label = "Score" #self.lang.d["Score: "] + "0" #"Score: 12345"
-        # w = self.font_bold.size(label)[0]
-        #self.elements.append(PLabel(self, (l, 2, 300, self.btn_h), ""))
-        #self.score = self.elements[-1]
-        #self.score.font_color = (136, 201, 255)
-        #self.score.bold = None
-        # self.set_score(self.mainloop.)
-        #self.mainloop.game_board.update_score(0)
-        # self.score.bold = True
 
         # logout link
-
         label = self.lang.d["(Log out)"][:]
 
         if sys.version_info < (3, 0):
@@ -271,15 +233,11 @@ class ScoreBar:
         self.update()
 
     def set_score(self, new_score):
-        # self.score.value = self.lang.d["Score: "] + str(new_score)
-        # self.score.value = str(new_score)
-        self.score.value = ""  # str(new_score)
-        self.score.update_me = True
-        self.update_me = True
+        pass
 
     def resize(self):
-        self.width = self.mainloop.game_board.layout.score_bar_pos[2]
-        self.height = self.mainloop.game_board.layout.score_bar_pos[3]
+        self.width = self.mainloop.sizer.score_bar_pos[2]
+        self.height = self.mainloop.sizer.score_bar_pos[3]
         if self.widget_list is not None:
             self.widget_list.empty()
         self.widget_list = pygame.sprite.LayeredUpdates()
@@ -295,7 +253,7 @@ class ScoreBar:
     def draw(self, screen):
         # draw info bar
         self.update()
-        score_bar_pos = self.mainloop.game_board.layout.score_bar_pos[:]
+        score_bar_pos = self.mainloop.sizer.score_bar_pos[:]
         rect = [0, 0, score_bar_pos[2], score_bar_pos[3] - 4]
         screen.fill(self.bg_color)
         pygame.draw.rect(screen, self.fbg_color, rect, 0)
@@ -308,13 +266,21 @@ class ScoreBar:
         self.update_me = False
 
     def handle(self, event):
-        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.MOUSEBUTTONUP:
+        if event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.MOUSEBUTTONUP:
             self.on_mouse_over()
-            pos = [event.pos[0] - self.mainloop.game_board.layout.score_bar_pos[0], event.pos[1]]
+            pos = [event.pos[0] - self.mainloop.sizer.score_bar_pos[0], event.pos[1]]
+            found = False
             for each in self.elements:
                 if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and each.rect.topleft[
                     1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
-                    each.handle(event)
+                    found = True
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        self.mainloop.mbtndno = each
+                    elif event.type == pygame.MOUSEBUTTONUP and self.mainloop.mbtndno == each:
+                        each.handle(event)
+                    break
+            if event.type == pygame.MOUSEBUTTONDOWN and not found:
+                self.mainloop.mbtndno = None
         else:
             pass
 
@@ -332,9 +298,7 @@ class ScoreBar:
         if self.mainloop.mouse_over[2] is not None:
             self.mainloop.mouse_over[2].on_mouse_out()
         self.mainloop.mouse_over[2] = None
-
         self.mouse_over = True
-        # print("enter score")
 
     def on_mouse_out(self):
         if self.mouse_over:

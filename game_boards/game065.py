@@ -20,7 +20,6 @@ class Board(gd.BoardGame):
 
         if self.mainloop.scheme is not None:
             white = self.mainloop.scheme.u_color
-
             h1 = 170
             h2 = 40
             color1 = ex.hsv_to_rgb(h1, 255, 255)
@@ -29,14 +28,14 @@ class Board(gd.BoardGame):
             bd_color2 = ex.hsv_to_rgb(h2, 127, 155)
         else:
             white = (255, 255, 255)
-
             h1 = random.randrange(0, 255)
             h2 = (h1 + 128) % 255
-
             color1 = ex.hsv_to_rgb(h1, 150, 255)
             color2 = ex.hsv_to_rgb(h2, 40, 255)
             bd_color1 = ex.hsv_to_rgb(h1, 187, 200)
             bd_color2 = ex.hsv_to_rgb(h2, 100, 200)
+
+        transp = (0, 0, 0, 0)
 
         data = [12, 8]
         self.data = data
@@ -48,10 +47,7 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
-        # self.board.board_bg.initcolor = color
-        # self.board.board_bg.color = color
         self.board.board_bg.update_me = True
-
         self.board.board_bg.line_color = (20, 20, 20)
 
         num2 = 10
@@ -63,13 +59,17 @@ class Board(gd.BoardGame):
         self.fraction = classes.drw.fraction_hq.Fraction(1, self.board.scale * data[1], color1, color2, bd_color1, bd_color2, self.numbers, 2)
         self.fraction_canvas.painting = self.fraction.get_canvas().copy()
 
-        self.board.add_unit(data[1] + 1, 5, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = bd_color1
+        self.board.add_unit(data[1] + 1, 5, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color1)
+
         self.board.add_unit(data[1] + 1, 3, 2, 2, classes.board.Label, "0.%d" % num1, white, "", 31)
         self.nm1 = self.board.units[-1]
         self.board.units[-1].font_color = bd_color1
-        self.board.add_unit(data[1] + 1, 1, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = bd_color1
+
+        self.board.add_unit(data[1] + 1, 1, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color1)
 
         for each in self.board.ships:
             each.readable = False
@@ -91,6 +91,16 @@ class Board(gd.BoardGame):
         elif n1 == 1:
             if self.numbers[0] < 9:
                 self.numbers[0] += 1
+
+        if self.numbers[0] == 1:
+            self.board.ships[0].change_image("nav_d_mtsd.png")
+        else:
+            self.board.ships[0].change_image("nav_d_mts.png")
+
+        if self.numbers[0] == 9:
+            self.board.ships[1].change_image("nav_u_mtsd.png")
+        else:
+            self.board.ships[1].change_image("nav_u_mts.png")
 
         self.nm1.set_value("0.%d" % self.numbers[0])
         self.fraction.update_values(self.numbers)

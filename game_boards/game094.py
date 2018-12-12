@@ -20,8 +20,6 @@ class Board(gd.BoardGame):
 
         if self.mainloop.scheme is not None:
             white = self.mainloop.scheme.u_color
-            line_color = self.mainloop.scheme.u_font_color
-
             h1 = 170
             h2 = h1 #40
             color1 = ex.hsv_to_rgb(h1, 255, 255)
@@ -31,34 +29,20 @@ class Board(gd.BoardGame):
             font_color = bd_color1
         else:
             white = (255, 255, 255)
-            line_color = (0, 0, 0)
-
-            h1 = 17 # random.randrange(0, 255, 5)
+            h1 = 17
             h2 = h1
-            #while (abs(h2 - h1) < 40):
-            #    h2 = random.randrange(0, 255, 5)
-
             color1 = ex.hsv_to_rgb(h1, 255, 255)
             color2 = ex.hsv_to_rgb(h2, 40, 255)
-
-
             bd_color1 = ex.hsv_to_rgb(h1, 255, 200)
             bd_color2 = ex.hsv_to_rgb(h2, 100, 200)
-
             font_color = ex.hsv_to_rgb(h1, 255, 175)
+
         self.bd_color1 = bd_color1
-        bd_color3 = ex.hsv_to_rgb((abs(h2 - h1)) // 2, 255, 150)
-
         transp = (0, 0, 0, 0)
-
-        ins_font_color = ex.hsv_to_rgb(h1, 255, 140)
 
         data = [24, 12]
         f_size = 5
         self.data = data
-
-        #self.vis_buttons = [1, 0, 0, 0, 1, 1, 1, 0, 0]
-        #self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 1]
         self.vis_buttons = [0, 0, 0, 0, 1, 1, 1, 0, 1]
 
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
@@ -124,7 +108,7 @@ class Board(gd.BoardGame):
         self.sim2.set_offset(20, 30)
         self.sim2_canvas.painting = self.sim2.get_canvas().copy()
 
-        #add labels
+        # add labels
         self.board.add_unit(f_size // 2, f_size, 1, 1, classes.board.Label, str(self.numbers[0]), white, "", 25)
         self.nm1a = self.board.units[-1]
         self.nm1a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
@@ -156,7 +140,6 @@ class Board(gd.BoardGame):
                           (f_size * 3 + 3, f_size),
                           (f_size * 3 + 3, f_size + 1),
                           (f_size * 3 + 2, f_size)]
-        #self.positions = [sm1a, sm1b, nmeq2, sm2a, sm2b, smone1]
 
         self.board.add_unit(self.positions[0][0], self.positions[0][1], 1, 1, classes.board.Label, str(self.sum_numbers[0]),
                             white, "", 25)
@@ -168,8 +151,7 @@ class Board(gd.BoardGame):
                             white, "", 25)
         self.sm1b = self.board.units[-1]
         self.sm1b.font_color = font_color
-        #______________________________________________________
-        #optional simplified labels
+        # optional simplified labels
         self.board.add_unit(self.positions[2][0], self.positions[2][1], 1, 2, classes.board.Label, "", white, "", 31)
         self.nmeq2 = self.board.units[-1]
         self.nmeq2.font_color = font_color
@@ -183,7 +165,7 @@ class Board(gd.BoardGame):
         self.sm2b = self.board.units[-1]
         self.sm2b.font_color = font_color
 
-        #optional 1 if over 1
+        # optional 1 if over 1
         self.board.add_unit(self.positions[5][0], self.positions[5][1] + 2, 1, 2, classes.board.Label, "", white, "", 31)
         self.smone1 = self.board.units[-1]
         self.smone1.font_color = font_color
@@ -194,7 +176,7 @@ class Board(gd.BoardGame):
         self.positions2 = [(f_size * 3 + f_size // 2 + 4, f_size),
                            (f_size * 3 + f_size // 2 + 4, f_size + 1),
                            (f_size * 3 + f_size // 2 +3, f_size)]
-        #self.positions2 = [sm3a, sm3b, smone2]
+
         self.board.add_unit(self.positions2[0][0], self.positions2[0][1], 1, 1, classes.board.Label, "", white, "", 25)
         self.sm3a = self.board.units[-1]
         self.sm3a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
@@ -204,45 +186,49 @@ class Board(gd.BoardGame):
         self.sm3b = self.board.units[-1]
         self.sm3b.font_color = font_color
 
-        #optional 1 if over 1
+        # optional 1 if over 1
         self.board.add_unit(self.positions2[2][0], self.positions2[2][1], 1, 2, classes.board.Label, "", white, "", 31)
         self.smone2 = self.board.units[-1]
         self.smone2.font_color = font_color
 
-        #num 1 numerator
-        self.board.add_unit(f_size // 2 - 1, f_size, 1, 1, classes.board.ImgCenteredShip, "", transp, img_src='nav_l.png',
-                            alpha=True)
+        # num 1 numerator
+        self.board.add_unit(f_size // 2 - 1, f_size, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(color1)
         self.nm1alt = self.board.ships[-1]
-        self.board.add_unit(f_size // 2 + 1, f_size, 1, 1, classes.board.ImgCenteredShip, "", transp, img_src='nav_r.png',
-                            alpha=True)
+        self.board.add_unit(f_size // 2 + 1, f_size, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(color1)
         self.nm1art = self.board.ships[-1]
 
         # num 1 denominator
-        self.board.add_unit(f_size // 2 - 1, f_size + 1, 1, 1, classes.board.ImgCenteredShip, "", transp, img_src='nav_l.png',
-                            alpha=True)
+        self.board.add_unit(f_size // 2 - 1, f_size + 1, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(color1)
         self.nm1blt = self.board.ships[-1]
-        self.board.add_unit(f_size // 2 + 1, f_size + 1, 1, 1, classes.board.ImgCenteredShip, "", transp, img_src='nav_r.png',
-                            alpha=True)
+        self.board.add_unit(f_size // 2 + 1, f_size + 1, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(color1)
         self.nm1brt = self.board.ships[-1]
 
         # num 2 numerator
         self.board.add_unit(f_size + f_size // 2 - 1, f_size, 1, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_l.png',
-                            alpha=True)
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(color1)
         self.nm2alt = self.board.ships[-1]
         self.board.add_unit(f_size + f_size // 2 + 1, f_size, 1, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_r.png',
-                            alpha=True)
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(color1)
         self.nm2art = self.board.ships[-1]
 
         # num 2 denominator
         self.board.add_unit(f_size + f_size // 2 - 1, f_size + 1, 1, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_l.png',
-                            alpha=True)
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(color1)
         self.nm2blt = self.board.ships[-1]
         self.board.add_unit(f_size + f_size // 2 + 1, f_size + 1, 1, 1, classes.board.ImgCenteredShip, "", transp,
-                            img_src='nav_r.png',
-                            alpha=True)
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(color1)
         self.nm2brt = self.board.ships[-1]
 
         self.update_fractions()
@@ -291,7 +277,6 @@ class Board(gd.BoardGame):
             each.update_me = True
         self.mainloop.redraw_needed[0] = True
 
-
     def update_fractions(self):
         self.fraction.update_values(self.numbers)
         self.fraction_canvas.painting = self.fraction.get_canvas().copy()
@@ -313,7 +298,7 @@ class Board(gd.BoardGame):
         self.sm1a.set_value(str(self.sum_numbers[0]))
         self.sm1b.set_value(str(self.sum_numbers[1]))
 
-        #if can be simplified - is more than 1 or has gcf > 1
+        # if can be simplified - is more than 1 or has gcf > 1
         if self.sum_numbers[0] >= self.sum_numbers[1] or self.gcf > 1:
             self.nmeq3.set_value("=")
         else:
@@ -342,7 +327,6 @@ class Board(gd.BoardGame):
 
         if self.numbers[0] + self.numbers2[0] >= self.numbers[1]:
             v = "1"
-            #self.nmeq3.set_value("*")
         else:
             v = ""
         self.smone2.set_value(v)
@@ -373,8 +357,8 @@ class Board(gd.BoardGame):
         else:
             self.sm3a.set_fraction_lines(top=False, bottom=True, color=self.bd_color1)
 
-        #reposition
-        #if one exactly
+        # reposition
+        # if one exactly
         if self.numbers[0] + self.numbers2[0] == self.numbers[1]:
             self.board.move_unit(self.sm3a.unit_id, self.positions2[0][0]-1, self.positions2[0][1])
             self.board.move_unit(self.sm3b.unit_id, self.positions2[1][0]-1, self.positions2[1][1])
@@ -384,7 +368,7 @@ class Board(gd.BoardGame):
             self.board.move_unit(self.sm3b.unit_id, self.positions2[1][0], self.positions2[1][1])
             self.board.move_unit(self.smone2.unit_id, self.positions2[2][0], self.positions2[2][1])
 
-        #if not simplified move the first simplification down and move the = sign
+        # if not simplified move the first simplification down and move the = sign
         if self.move_sm2_down:
             self.nmeq3.resize_unit(2, 2)
             self.board.move_unit(self.sm2a.unit_id, self.positions[3][0], self.positions[3][1]+2)
@@ -453,8 +437,6 @@ class Board(gd.BoardGame):
 
     def auto_check_reset(self):
         pass
-        #self.nm1.set_display_check(None)
-        #self.nm2.set_display_check(None)
 
     def change_fract_btn(self, ns, n1, n2):
         if n1 == -1:
@@ -486,7 +468,6 @@ class Board(gd.BoardGame):
             self.numbers[1] = mn
             self.numbers2[1] = mn
 
-
         if self.numbers[0] >= self.numbers[1]:
             self.numbers[0] = self.numbers[1] - 1
         if self.numbers2[0] >= self.numbers2[1]:
@@ -499,54 +480,50 @@ class Board(gd.BoardGame):
     def update_arrows(self):
         # enable/dissable arrows
         if self.numbers[0] == 1:
-            if self.nm1alt.img_src != "nav_ld.png":
-                self.nm1alt.change_image("nav_ld.png")
+            if self.nm1alt.img_src != "nav_l_mtsd.png":
+                self.nm1alt.change_image("nav_l_mtsd.png")
         else:
-            if self.nm1alt.img_src != "nav_l.png":
-                self.nm1alt.change_image("nav_l.png")
-
+            if self.nm1alt.img_src != "nav_l_mts.png":
+                self.nm1alt.change_image("nav_l_mts.png")
 
         if self.numbers[0] == 11:
-            if self.nm1art.img_src != "nav_rd.png":
-                self.nm1art.change_image("nav_rd.png")
+            if self.nm1art.img_src != "nav_r_mtsd.png":
+                self.nm1art.change_image("nav_r_mtsd.png")
         else:
-            if self.nm1art.img_src != "nav_r.png":
-                self.nm1art.change_image("nav_r.png")
+            if self.nm1art.img_src != "nav_r_mts.png":
+                self.nm1art.change_image("nav_r_mts.png")
 
         if self.numbers2[0] == 1:
-            if self.nm2alt.img_src != "nav_ld.png":
-                self.nm2alt.change_image("nav_ld.png")
+            if self.nm2alt.img_src != "nav_l_mtsd.png":
+                self.nm2alt.change_image("nav_l_mtsd.png")
         else:
-            if self.nm2alt.img_src != "nav_l.png":
-                self.nm2alt.change_image("nav_l.png")
-
+            if self.nm2alt.img_src != "nav_l_mts.png":
+                self.nm2alt.change_image("nav_l_mts.png")
 
         if self.numbers2[0] == 11:
-            if self.nm2art.img_src != "nav_rd.png":
-                self.nm2art.change_image("nav_rd.png")
+            if self.nm2art.img_src != "nav_r_mtsd.png":
+                self.nm2art.change_image("nav_r_mtsd.png")
         else:
-            if self.nm2art.img_src != "nav_r.png":
-                self.nm2art.change_image("nav_r.png")
-
+            if self.nm2art.img_src != "nav_r_mts.png":
+                self.nm2art.change_image("nav_r_mts.png")
 
         if self.numbers[1] == 2:
-            if self.nm1blt.img_src != "nav_ld.png":
-                self.nm1blt.change_image("nav_ld.png")
-                self.nm2blt.change_image("nav_ld.png")
+            if self.nm1blt.img_src != "nav_l_mtsd.png":
+                self.nm1blt.change_image("nav_l_mtsd.png")
+                self.nm2blt.change_image("nav_l_mtsd.png")
         else:
-            if self.nm1blt.img_src != "nav_l.png":
-                self.nm1blt.change_image("nav_l.png")
-                self.nm2blt.change_image("nav_l.png")
-
+            if self.nm1blt.img_src != "nav_l_mts.png":
+                self.nm1blt.change_image("nav_l_mts.png")
+                self.nm2blt.change_image("nav_l_mts.png")
 
         if self.numbers[1] == 12:
-            if self.nm1brt.img_src != "nav_rd.png":
-                self.nm1brt.change_image("nav_rd.png")
-                self.nm2brt.change_image("nav_rd.png")
+            if self.nm1brt.img_src != "nav_r_mtsd.png":
+                self.nm1brt.change_image("nav_r_mtsd.png")
+                self.nm2brt.change_image("nav_r_mtsd.png")
         else:
-            if self.nm1brt.img_src != "nav_r.png":
-                self.nm1brt.change_image("nav_r.png")
-                self.nm2brt.change_image("nav_r.png")
+            if self.nm1brt.img_src != "nav_r_mts.png":
+                self.nm1brt.change_image("nav_r_mts.png")
+                self.nm2brt.change_image("nav_r_mts.png")
 
     def update(self, game):
         game.fill((255, 255, 255))

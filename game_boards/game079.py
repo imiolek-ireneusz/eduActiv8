@@ -31,6 +31,7 @@ class Board(gd.BoardGame):
 
         self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
         self.font_color = self.color2
+        arrow_color = ex.hsv_to_rgb(h, 200, 200)
         trans_color = (0, 0, 0, 0)
 
         if self.lang.lang == "fi":
@@ -82,12 +83,16 @@ class Board(gd.BoardGame):
 
         self.outline_all(self.color2, 1)
 
-        self.board.add_unit(x1, 2, 2, 11, classes.board.ImgCenteredShip, "", trans_color, img_src='nav_l.png',
-                            alpha=True)
+        self.board.add_unit(x1, 2, 2, 11, classes.board.ImgCenteredShip, "", trans_color,
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(arrow_color)
+
         self.lt = self.board.ships[-1]
         self.lt.outline = False
-        self.board.add_unit(x2+bw+2, 2, 2, 11, classes.board.ImgCenteredShip, "", trans_color, img_src='nav_r.png',
-                            alpha=True)
+        self.board.add_unit(x2+bw+2, 2, 2, 11, classes.board.ImgCenteredShip, "", trans_color,
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(arrow_color)
+
         self.rt = self.board.ships[-1]
         self.rt.outline = False
 

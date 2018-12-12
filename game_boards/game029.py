@@ -52,7 +52,6 @@ class Board(gd.BoardGame):
             data[0] = x_count
 
         self.data = data
-        self.points = (data[0] + data[1]) // 5
         self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
@@ -102,7 +101,6 @@ class Board(gd.BoardGame):
 
     def check_result(self):
         if self.board.ships[self.board.active_ship].grid_pos == self.solution:
-            # self.update_score(self.points)
             self.board.ships[0].draggable = False
             self.level.next_board()
         else:

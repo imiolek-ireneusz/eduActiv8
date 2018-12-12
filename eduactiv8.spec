@@ -62,7 +62,7 @@ elif p == "darwin":
               strip=False,
               upx=True,
               console=False,
-              icon='res/icon/eduactiv8.icns')
+              icon='res/icon/eduactiv8.ico')
 
     app = BUNDLE(exe,
                  name='eduActiv8.app',

@@ -27,6 +27,7 @@ class Board(gd.BoardGame):
         self.letter_color = ex.hsv_to_rgb(h, s, v)  # [round(each*255) for each in rgb]
         self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
         font_color = ex.hsv_to_rgb(h, s, 140)
+        arrow_color = ex.hsv_to_rgb(h, 200, 200)
         outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
         outline_color2 = (255, 102, 0)
         frame_color = [255, 255, 255, 0]
@@ -111,11 +112,14 @@ class Board(gd.BoardGame):
         self.slide = self.board.ships[21]
         self.slide.perm_outline = True
 
-        self.board.add_unit(x - 3, y+1, 1, 6, classes.board.ImgCenteredShip, "", frame_color, img_src='nav_l.png',
-                            alpha=True)
+        self.board.add_unit(x - 3, y+1, 1, 6, classes.board.ImgCenteredShip, "", frame_color,
+                            img_src='nav_l_mt.png', alpha=True)
+        self.board.ships[-1].set_tint_color(arrow_color)
         self.lt = self.board.ships[-1]
-        self.board.add_unit(x + 6, y+1, 1, 6, classes.board.ImgCenteredShip, "", frame_color, img_src='nav_r.png',
-                            alpha=True)
+
+        self.board.add_unit(x + 6, y+1, 1, 6, classes.board.ImgCenteredShip, "", frame_color,
+                            img_src='nav_r_mt.png', alpha=True)
+        self.board.ships[-1].set_tint_color(arrow_color)
         self.rt = self.board.ships[-1]
 
         for each in self.board.ships:

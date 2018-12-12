@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-04-10 14:44+0100\n"
+"PO-Revision-Date: 2018-12-12 14:37+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language: it\n"
@@ -745,7 +745,7 @@ msgstr "Miscela sottrattiva di colori - Pitture, tinte, inchiostri"
 msgid "Mix cyan, magenta and yellow paint to get other colours"
 msgstr "Miscelare pitture ciano, magenta e gialla per ottenere altri colori"
 
-msgid "Find the colour of the circle"
+msgid "Find the colour of the circle in the middle"
 msgstr "Scopri il colore del cerchio"
 
 msgid "Adjust the amount of cyan, magenta and yellow paint"
@@ -1355,10 +1355,10 @@ msgstr ""
 msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
 
-msgid "Use the plus or minus signs to change your answer or just type it in."
+msgid "Use the arrows to change your answer or just type it in."
 msgstr ""
 
-msgid "Use the plus or minus signs to change your answer."
+msgid "Use the arrows to change your answer."
 msgstr ""
 
 msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
@@ -1409,7 +1409,7 @@ msgstr ""
 msgid "Draw the other half of the shape"
 msgstr ""
 
-msgid "Find lines of symmetry."
+msgid "Find lines of symmetry"
 msgstr ""
 
 msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
@@ -1430,5 +1430,96 @@ msgstr ""
 msgid "Match ratios"
 msgstr ""
 
-msgid "Read pie charts"
+msgid "Percentages in a pie chart"
+msgstr ""
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Find equivalent fraction"
+msgstr ""
+
+msgid "Calculating with Time"
+msgstr ""
+
+msgid "start time"
+msgstr ""
+
+msgid "end time"
+msgstr ""
+
+msgid "elapsed time"
+msgstr ""
+
+msgid "Temperature - introduction to negative numbers"
+msgstr ""
+
+msgid "Experiment with elapsed time"
+msgstr ""
+
+msgid "Experiment with elapsed time 2"
+msgstr ""
+
+msgid "Calculate elapsed time"
+msgstr ""
+
+msgid "Find the start or the end time"
+msgstr ""
+
+msgid "Visualized on a clock dial"
+msgstr ""
+
+msgid "Visualized on a number line"
+msgstr ""
+
+msgid "Visualized on two number lines"
+msgstr ""
+
+msgid "With no visualizations"
+msgstr ""
+
+msgid "with mirrored images"
+msgstr ""
+
+msgid "Theme Editor"
+msgstr ""
+
+msgid "Make the game look your way"
+msgstr ""
+
+msgid "Reset colors back to the default ones?"
+msgstr ""
+
+msgid "Font Preferences"
+msgstr ""
+
+msgid "with simplifying"
+msgstr ""
+
+msgid "Positive numbers"
+msgstr ""
+
+msgid "Basics"
+msgstr ""
+
+msgid "Equivalent fractions"
+msgstr ""
+
+msgid "Expanding and reducing fractions"
+msgstr ""
+
+msgid "Add fractions with unlike denominators"
+msgstr ""
+
+msgid "Subtract fractions with unlike denominators"
+msgstr ""
+
+msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
 msgstr ""

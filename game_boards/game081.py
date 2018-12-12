@@ -34,6 +34,8 @@ class Board(gd.BoardGame):
             color4 = self.mainloop.scheme.color4  # ex.hsv_to_rgb(170,255,255)#outer font color
             color6 = self.mainloop.scheme.color6  # dark side of long hand
             color8 = self.mainloop.scheme.color8  # outer circle filling
+            self.h_col = color5
+            self.m_col = color6
 
             white = self.mainloop.scheme.u_color
             gray = (100, 100, 100)
@@ -47,9 +49,14 @@ class Board(gd.BoardGame):
             color4 = ex.hsv_to_rgb(170, 255, 255)
             color6 = ex.hsv_to_rgb(170, 180, 240)
             color8 = ex.hsv_to_rgb(170, 10, 255)
+            self.h_col = ex.hsv_to_rgb(225, 190, 220)
+            self.m_col = ex.hsv_to_rgb(170, 190, 220)
 
             white = (255, 255, 255)
             gray = (100, 100, 100)
+
+        transp = (0, 0, 0, 0)
+
 
         self.colors = [color1, color2]
         self.colors2 = [color3, color4]
@@ -91,7 +98,6 @@ class Board(gd.BoardGame):
         self.data = data
 
         self.layout.update_layout(data[0], data[1])
-        scale = self.layout.scale
         self.board.level_start(data[0], data[1], self.layout.scale)
 
         self.size = self.board.scale * 10
@@ -103,22 +109,23 @@ class Board(gd.BoardGame):
         ans_offset = 10 + (data[0] - 15) // 2
         self.board.add_unit(10, 0, data[0] - 10, 2, classes.board.Label, self.lang.d["Set_clock_instr"], white, "", 2)
         self.board.units[-1].font_color = gray
-        self.board.add_unit(ans_offset + 1, 3, 1, 1, classes.board.Letter, "+", white, "", 25)
-        self.board.ships[-1].readable = False
+
+        self.board.add_unit(ans_offset + 1, 3, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.h_col)
         self.h_plus = self.board.ships[-1]
-        self.h_plus.font_color = color3
-        self.board.add_unit(ans_offset + 3, 3, 1, 1, classes.board.Letter, "+", white, "", 25)
-        self.board.ships[-1].readable = False
+        self.board.add_unit(ans_offset + 3, 3, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.m_col)
         self.m_plus = self.board.ships[-1]
-        self.m_plus.font_color = color4
-        self.board.add_unit(ans_offset + 1, 5, 1, 1, classes.board.Letter, "-", white, "", 25)
-        self.board.ships[-1].readable = False
+        self.board.add_unit(ans_offset + 1, 5, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.h_col)
         self.h_min = self.board.ships[-1]
-        self.h_min.font_color = color3
-        self.board.add_unit(ans_offset + 3, 5, 1, 1, classes.board.Letter, "-", white, "", 25)
-        self.board.ships[-1].readable = False
+        self.board.add_unit(ans_offset + 3, 5, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.m_col)
         self.m_min = self.board.ships[-1]
-        self.m_min.font_color = color4
 
         lst = [self.h_plus, self.h_min, self.m_plus, self.m_min]
         for each in lst:
@@ -130,9 +137,6 @@ class Board(gd.BoardGame):
         self.board.add_unit(ans_offset + 2, 4, 1, 1, classes.board.Label, ":", white, "", 0)
         self.board.add_unit(ans_offset + 3, 4, 1, 1, classes.board.Label, "%02d" % self.time[1], white, "", 0)
         self.ans_m = self.board.units[-1]
-
-        self.ans_h.align = 2
-        self.ans_m.align = 1
 
         self.ans_h.immobilize()
         self.ans_m.immobilize()
@@ -185,7 +189,6 @@ class Board(gd.BoardGame):
             self.lang.numbers[0] = "u"
 
     def hands_vars(self):
-        numbers = [2, 2]
         self.angle_step_12 = 2 * pi / 12
         self.angle_step_60 = 2 * pi / 60
 

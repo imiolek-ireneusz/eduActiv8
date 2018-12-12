@@ -31,26 +31,23 @@ class Board(gd.BoardGame):
         h = random.randrange(0, 255, 1)
         self.bg_color = [255, 255, 255]
         color = [255, 255, 255]
-        white = (255, 255, 255)
         self.active_color = ex.hsv_to_rgb(h, 127, 255)
         self.border_color = ex.hsv_to_rgb(h, 200, 205)
 
         self.lbl_font_color = ex.hsv_to_rgb(h, 200, 255)
         self.guides_color = [200, 200, 200]
         self.axis_color = [255, 0, 0]
+        self.transp = (0, 0, 0, 0)
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                white = (0, 0, 0)
                 self.bg_color = (0, 0, 0)
                 color = (0, 0, 0)
                 self.guides_color = (30, 30, 30)
-
 
         lvl_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
                                                          self.level.lvl)
         self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
                                                             self.mainloop.config.user_age_group)
-
         self.data = data = lvl_data
 
         if lvl_data[2] == 0:
@@ -78,26 +75,33 @@ class Board(gd.BoardGame):
             self.grid_density_div = lvl_data[0]
         else:
             self.grid_density_div = 1
-
         self.selected = [0, 0, 0, 0]
 
         # add mid selectors
         # --
-        self.board.add_unit(0, self.data[1]//2 - 1, 1, 2, classes.board.ImgCenteredShip, "", white, os.path.join("symmetry", "shl.png"), 0, alpha=True)
-        self.board.add_unit(self.data[1] - 1, self.data[1]//2 - 1, 1, 2, classes.board.ImgCenteredShip, "", white, os.path.join("symmetry", "shr.png"), 0, alpha=True)
+        self.board.add_unit(0, self.data[1]//2 - 1, 1, 2, classes.board.ImgCenteredShip, "", self.transp,
+                            os.path.join("symmetry", "shl.png"), 0, alpha=True)
+        self.board.add_unit(self.data[1] - 1, self.data[1]//2 - 1, 1, 2, classes.board.ImgCenteredShip, "", self.transp,
+                            os.path.join("symmetry", "shr.png"), 0, alpha=True)
 
         # |
-        self.board.add_unit(self.data[1]//2 - 1, 0, 2, 1, classes.board.ImgCenteredShip, "", white, os.path.join("symmetry", "svt.png"), 0, alpha=True)
-        self.board.add_unit(self.data[1]//2 - 1, self.data[1]-1, 2, 1, classes.board.ImgCenteredShip, "", white, os.path.join("symmetry", "svb.png"), 0, alpha=True)
+        self.board.add_unit(self.data[1]//2 - 1, 0, 2, 1, classes.board.ImgCenteredShip, "", self.transp,
+                            os.path.join("symmetry", "svt.png"), 0, alpha=True)
+        self.board.add_unit(self.data[1]//2 - 1, self.data[1]-1, 2, 1, classes.board.ImgCenteredShip, "", self.transp,
+                            os.path.join("symmetry", "svb.png"), 0, alpha=True)
 
         #add corner selectors
         # \
-        self.board.add_unit(0, 0, 1, 1, classes.board.ImgShip, "", white, os.path.join("symmetry", "stl.png"), 0, alpha=True)
-        self.board.add_unit(self.data[1]-1, self.data[1]-1, 1, 1, classes.board.ImgShip, "", white, os.path.join("symmetry", "sbr.png"), 0, alpha=True)
+        self.board.add_unit(0, 0, 1, 1, classes.board.ImgShip, "", self.transp,
+                            os.path.join("symmetry", "stl.png"), 0, alpha=True)
+        self.board.add_unit(self.data[1]-1, self.data[1]-1, 1, 1, classes.board.ImgShip, "", self.transp,
+                            os.path.join("symmetry", "sbr.png"), 0, alpha=True)
 
         # /
-        self.board.add_unit(self.data[1]-1, 0, 1, 1, classes.board.ImgShip, "", white, os.path.join("symmetry", "str.png"), 0, alpha=True)
-        self.board.add_unit(0, self.data[1]-1, 1, 1, classes.board.ImgShip, "", white, os.path.join("symmetry", "sbl.png"), 0, alpha=True)
+        self.board.add_unit(self.data[1]-1, 0, 1, 1, classes.board.ImgShip, "", self.transp,
+                            os.path.join("symmetry", "str.png"), 0, alpha=True)
+        self.board.add_unit(0, self.data[1]-1, 1, 1, classes.board.ImgShip, "", self.transp,
+                            os.path.join("symmetry", "sbl.png"), 0, alpha=True)
 
         self.selectors = self.board.ships[:]
 
@@ -208,7 +212,8 @@ class Board(gd.BoardGame):
             #copy quarter to the right
             lp = len(points)
             for i in range(lp - 2, -1, -1):
-                x = (self.canvas_side // 2) * self.guide_scale + (self.canvas_side // 2) * self.guide_scale - points[i][0]
+                x = (self.canvas_side // 2) * self.guide_scale + (self.canvas_side // 2) * \
+                    self.guide_scale - points[i][0]
                 y = points[i][1]
                 points.append([x, y])
 
@@ -244,7 +249,7 @@ class Board(gd.BoardGame):
             # copy quarter to the bottom right
             lp = len(points)
             for i in range(lp - 2, -1, -1):
-                x = self.canvas_side * self.guide_scale - points[i][1]  # (self.canvas_side // 2) * self.guide_scale + (self.canvas_side // 2) * self.guide_scale - points[i][0]
+                x = self.canvas_side * self.guide_scale - points[i][1]
                 y = self.canvas_side * self.guide_scale - points[i][0]
                 points.append([x, y])
 
@@ -294,7 +299,8 @@ class Board(gd.BoardGame):
 
             # add remaining points
             while n < self.max_points - 2:
-                pn = [random.randrange(1, self.canvas_side - 1) * self.guide_scale, random.randrange(1, self.canvas_side // 2 - 2) * self.guide_scale]
+                pn = [random.randrange(1, self.canvas_side - 1) * self.guide_scale,
+                      random.randrange(1, self.canvas_side // 2 - 2) * self.guide_scale]
                 if pn not in points:
                     points.append(pn)
                     n += 1
@@ -308,15 +314,18 @@ class Board(gd.BoardGame):
         elif self.direction == 1:
             # add 2 points on a line and one outside
             while inner:
-                p1 = [(self.canvas_side // 2) * self.guide_scale, random.randrange(1, self.canvas_side - 1) * self.guide_scale]
-                p2 = [(self.canvas_side // 2) * self.guide_scale, random.randrange(1, self.canvas_side - 1) * self.guide_scale]
+                p1 = [(self.canvas_side // 2) * self.guide_scale,
+                      random.randrange(1, self.canvas_side - 1) * self.guide_scale]
+                p2 = [(self.canvas_side // 2) * self.guide_scale,
+                      random.randrange(1, self.canvas_side - 1) * self.guide_scale]
                 if abs(p1[1] - p2[1]) > 2 * self.guide_scale:
                     inner = False
             points.append(p1)
 
             # add remaining points
             while n < self.max_points - 2:
-                pn = [random.randrange(1, self.canvas_side // 2 - 2) * self.guide_scale, random.randrange(1, self.canvas_side - 1) * self.guide_scale]
+                pn = [random.randrange(1, self.canvas_side // 2 - 2) * self.guide_scale,
+                      random.randrange(1, self.canvas_side - 1) * self.guide_scale]
                 if pn not in points:
                     points.append(pn)
                     n += 1
@@ -376,7 +385,8 @@ class Board(gd.BoardGame):
                 pn = [x * self.guide_scale, y * self.guide_scale]
                 if pn not in points:
                     points.append(pn)
-                    mirrored.append([(self.canvas_side - y) * self.guide_scale, (self.canvas_side - x) * self.guide_scale])
+                    mirrored.append([(self.canvas_side - y) * self.guide_scale,
+                                     (self.canvas_side - x) * self.guide_scale])
                     n += 1
 
             points.append(p2)
@@ -450,7 +460,8 @@ class Board(gd.BoardGame):
         l = len(p)
         b = False
         for i in range(l):
-            b = b or (ccw(p[i-0], p[i-2], p[i-3]) != ccw(p[i-1], p[i-2], p[i-3]) and ccw(p[i-0], p[i-1], p[i-2]) != ccw(p[i-0], p[i-1], p[i-3]))
+            b = b or (ccw(p[i-0], p[i-2], p[i-3]) != ccw(p[i-1], p[i-2], p[i-3]) and
+                      ccw(p[i-0], p[i-1], p[i-2]) != ccw(p[i-0], p[i-1], p[i-3]))
         return b
 
     def collinear(self, p0, p1, p2):
@@ -717,16 +728,3 @@ class Board(gd.BoardGame):
                 self.level.next_board()
 
             self.mainloop.redraw_needed[0] = True
-
-    """
-    def draw_tmp_shape(self, points):
-        # draw shape
-        #points = self.random_points[:]
-        points.append(points[0])
-        pygame.draw.polygon(self.canvas, self.active_color, points, 0)
-
-        # redraw outlines
-        pygame.draw.polygon(self.canvas, self.border_color, points, 3)
-        self.reset()
-        self.copy_to_screen()
-    """

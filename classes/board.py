@@ -7,6 +7,7 @@ import pygame
 import random
 import sys
 
+import classes.universal
 import classes.extras as ex
 
 
@@ -45,13 +46,17 @@ class Unit(pygame.sprite.Sprite):
         self.show_value = True
         self.readable = True
         self.highlight = True
+
+        self.mirror = False
         self.audible = False  # use true to enable sounds on unit move
         self.outline_highlight = False
         self.font_color = (0, 0, 0, 0)
+        self.tint_color = None
         self.align = 0  # align: 0 - centered, 1 - left, 2 - right
         self.valign = 0  # align: 0 - centered, 1 - top
         self.idx = 0  # position in sequence
         self.update_me = True
+        self.hidden = False
 
         self.check_display = None  # None - none, True - correct, False - wrong
         self.checkable = False
@@ -85,9 +90,6 @@ class Unit(pygame.sprite.Sprite):
             self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
         self.image.fill(self.color)
 
-        #self.rect = self.image.get_rect()
-        #self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
-
     def set_display_check(self, value):
         self.check_display = value
         self.update_me = True
@@ -102,19 +104,23 @@ class Unit(pygame.sprite.Sprite):
             self.check_x = ((self.grid_w * self.board.scale) - w) // 2
             self.check_y = ((self.grid_h * self.board.scale) - h) // 2
 
-        self.check_img1 = self.scaled_img(
+        self.check_img1 = self.scalled_img(
             pygame.image.load(os.path.join('res', 'images', "check_ok.png")).convert_alpha(), w, h)
-        self.check_img2 = self.scaled_img(
+        self.check_img2 = self.scalled_img(
             pygame.image.load(os.path.join('res', 'images', "check_wrong.png")).convert_alpha(), w, h)
 
     def set_value(self, new_value):
         self.value = ex.unival(new_value)
         self.update_me = True
 
+    def set_font_color(self, color):
+        self.font_color = color
+        self.update_me = True
+
     def update_font_size(self, font_size):
         self.font = self.board.font_sizes[font_size]
 
-    def set_fraction_lines(self, top, bottom, color):
+    def set_fraction_lines(self, top, bottom, color, length=90):
         if top:
             self.fraction_line_top = True
         else:
@@ -123,12 +129,13 @@ class Unit(pygame.sprite.Sprite):
             self.fraction_line_bottom = True
         else:
             self.fraction_line_bottom = False
+        self.fraction_line_length = length
         self.fraction_line_color = color
 
     def draw_fraction_lines(self):
         if self.fraction_line_top or self.fraction_line_bottom:
             width = self.board.scale // 20
-            margin = (self.board.scale * self.grid_w) // 8
+            margin = (self.board.scale * self.grid_w - (self.board.scale * self.grid_w) * self.fraction_line_length // 100) // 2
             if width > 1:
                 x = width // 2 - 1
                 y = width // 2 - 1
@@ -177,7 +184,7 @@ class Unit(pygame.sprite.Sprite):
         else:
             self.img = self.img_org = pygame.transform.scale(self.img, (new_w, new_h))
 
-    def scaled_img(self, image, new_w, new_h):
+    def scalled_img(self, image, new_w, new_h):
         'scales image depending on pygame version and bit depth using either smoothscale or scale'
         if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             img = pygame.transform.smoothscale(image, (new_w, new_h))
@@ -193,10 +200,21 @@ class Unit(pygame.sprite.Sprite):
         self.color = color
         self.initcolor = color
 
+    def set_tint_color(self, color):
+        self.tint_color = color
+
     def immobilize(self):
         self.keyable = False
         self.draggable = False
         self.highlight = False
+
+    def hide(self):
+        self.hidden = True
+        self.update_me = True
+
+    def show(self):
+        self.hidden = False
+        self.update_me = True
 
     # Update color, image or text
     def update(self, board, **kwargs):
@@ -209,159 +227,156 @@ class Unit(pygame.sprite.Sprite):
                 self.font_color = self.board.mainloop.scheme.u_font_color  # (0,0,0)
 
             self.image.fill(self.color)
-            self.image.blit(self.painting, (0, 0))
-            if not self.hasimg:
-                if len(self.value) > 0:
-                    if self.show_value:
-                        if sys.version_info < (3, 0):
-                            if isinstance(self.value, basestring):
-                                # if a passed argument is a string turn it into a 1 item list
-                                if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
-                                    value = [self.value]
-                                else:
-                                    # else enter extra line breaks
-                                    if len(self.value) > 5:
-                                        line = ""
-                                        test_line = ""
-                                        word = ""
-                                        value = []
-                                        valx = ""
-                                        try:
-                                            valx = unicode(self.value, "utf-8")
-                                        except UnicodeDecodeError:
-                                            valx = self.value
-                                        except TypeError:
-                                            valx = self.value
-                                        linelen = len(valx)
-
-                                        for i in range(linelen):
-                                            if valx[i] == "\n":
-                                                test_line = "" + word
-                                                word = ""
-                                                value.append(line)
-                                                line = "" + test_line
-                                            elif valx[i] == " " or i == linelen - 1:
-                                                test_line = test_line + word + valx[i]
-                                                if self.font.size(test_line)[0] < self.rect.w:
-                                                    line = "" + test_line
-                                                    word = ""
-                                                else:
-                                                    test_line = "" + word + valx[i]
-                                                    word = ""
-                                                    value.append(line)
-                                                    line = "" + test_line
-                                            else:
-                                                word += valx[i]
-                                        if len(test_line) > 0:
-                                            value.append(test_line)
-
-                                            # value = [self.value]
-                                    else:
-                                        value = [self.value]
-                            else:
-                                value = self.value
-                        else:
-                            if isinstance(self.value, str):
-                                # if a passed argument is a string turn it into a 1 item list
-                                # value = [self.value]
-                                # if a passed argument is a string turn it into a 1 item list
-                                if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
-                                    value = [self.value]
-                                else:
-                                    # else enter extra line breaks
-                                    if len(self.value) > 5:
-                                        line = ""
-                                        test_line = ""
-                                        word = ""
-                                        value = []
-                                        valx = self.value
-                                        linelen = len(valx)
-
-                                        for i in range(linelen):
-                                            if valx[i] == "\n":
-                                                test_line = "" + word
-                                                word = ""
-                                                value.append(line)
-                                                line = "" + test_line
-                                            elif valx[i] == " " or i == linelen - 1:
-                                                test_line = test_line + word + valx[i]
-                                                if self.font.size(test_line)[0] < self.rect.w:
-                                                    line = "" + test_line
-                                                    word = ""
-                                                else:
-                                                    test_line = "" + word + valx[i]
-                                                    word = ""
-                                                    value.append(line)
-                                                    line = "" + test_line
-                                            else:
-                                                word += valx[i]
-                                        if len(test_line) > 0:
-                                            value.append(test_line)
-                                            # value = [self.value]
-                                    else:
-                                        value = [self.value]
-                            else:
-                                value = self.value
-
-                        lv = len(value)
-                        for i in range(lv):
+            if not self.hidden:
+                self.image.blit(self.painting, (0, 0))
+                if not self.hasimg:
+                    if len(self.value) > 0:
+                        if self.show_value:
                             if sys.version_info < (3, 0):
-                                try:
-                                    val = unicode(value[i], "utf-8")
-                                except UnicodeDecodeError:
-                                    val = value[i]
-                                except TypeError:
-                                    val = value[i]
-                            else:
-                                val = value[i]
-                            try:
-                                text = self.font.render("%s" % (val), 1, self.font_color)
-                            except:
-                                pass
+                                if isinstance(self.value, basestring):
+                                    # if a passed argument is a string turn it into a 1 item list
+                                    if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                                        value = [self.value]
+                                    else:
+                                        # else enter extra line breaks
+                                        if len(self.value) > 5:
+                                            line = ""
+                                            test_line = ""
+                                            word = ""
+                                            value = []
+                                            valx = ""
+                                            try:
+                                                valx = unicode(self.value, "utf-8")
+                                            except UnicodeDecodeError:
+                                                valx = self.value
+                                            except TypeError:
+                                                valx = self.value
+                                            linelen = len(valx)
 
-                            if self.align == 0:
-                                font_x = ((board.scale * self.grid_w - self.font.size(val)[0]) // 2)
-                            elif self.align == 1:
-                                font_x = 5
-                            elif self.align == 2:
-                                font_x = board.scale * self.grid_w - self.font.size(val)[0] - 5
-                            if lv == 1:
-                                font_y = ((board.scale * self.grid_h - self.font.size(val)[1]) // 2)
-                            elif lv == self.grid_h:  # number of items is equal to grid height of an object - distribute lines equally in each grid square
-                                font_y = ((board.scale - self.font.size(val)[1]) // 2) + board.scale * i
-                            else:
-                                if self.valign == 0:
-                                    # lv - total
-                                    line_h = self.font.size(value[0])[
-                                                 1] / self.board.mainloop.config.font_line_height_adjustment
-                                    line_margin = 0  # (board.scale*self.grid_h - line_h*lv)//lv # self.font.size(value[0])[1]//4
-                                    step = line_h + line_margin
-                                    center = (board.scale * self.grid_h) // 2
-                                    start_at = center - (
-                                                        step * lv - line_margin) // 2 - self.board.mainloop.config.font_start_at_adjustment
-                                    font_y = start_at + step * i
+                                            for i in range(linelen):
+                                                if valx[i] == "\n":
+                                                    test_line = "" + word
+                                                    word = ""
+                                                    value.append(line)
+                                                    line = "" + test_line
+                                                elif valx[i] == " " or i == linelen - 1:
+                                                    test_line = test_line + word + valx[i]
+                                                    if self.font.size(test_line)[0] < self.rect.w:
+                                                        line = "" + test_line
+                                                        word = ""
+                                                    else:
+                                                        test_line = "" + word + valx[i]
+                                                        word = ""
+                                                        value.append(line)
+                                                        line = "" + test_line
+                                                else:
+                                                    word += valx[i]
+                                            if len(test_line) > 0:
+                                                value.append(test_line)
+                                        else:
+                                            value = [self.value]
                                 else:
-                                    # lv - total
-                                    line_h = self.font.size(value[0])[
-                                                 1] / self.board.mainloop.config.font_line_height_adjustment
-                                    line_margin = 0  # (board.scale*self.grid_h - line_h*lv)//lv # self.font.size(value[0])[1]//4
-                                    step = line_h + line_margin
-                                    # center = (board.scale*self.grid_h)//2
-                                    start_at = 5  # center - (step*lv - line_margin)//2
-                                    font_y = start_at + step * i
-                            try:
-                                self.image.blit(text, (font_x, font_y))
-                            except:
-                                pass
+                                    value = self.value
+                            else:
+                                if isinstance(self.value, str):
+                                    # if a passed argument is a string turn it into a 1 item list
+                                    # value = [self.value]
+                                    # if a passed argument is a string turn it into a 1 item list
+                                    if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                                        value = [self.value]
+                                    else:
+                                        # else enter extra line breaks
+                                        if len(self.value) > 5:
+                                            line = ""
+                                            test_line = ""
+                                            word = ""
+                                            value = []
+                                            valx = self.value
+                                            linelen = len(valx)
 
-            if self.speaker_val_update:
-                self.speaker_val = self.value
+                                            for i in range(linelen):
+                                                if valx[i] == "\n":
+                                                    test_line = "" + word
+                                                    word = ""
+                                                    value.append(line)
+                                                    line = "" + test_line
+                                                elif valx[i] == " " or i == linelen - 1:
+                                                    test_line = test_line + word + valx[i]
+                                                    if self.font.size(test_line)[0] < self.rect.w:
+                                                        line = "" + test_line
+                                                        word = ""
+                                                    else:
+                                                        test_line = "" + word + valx[i]
+                                                        word = ""
+                                                        value.append(line)
+                                                        line = "" + test_line
+                                                else:
+                                                    word += valx[i]
+                                            if len(test_line) > 0:
+                                                value.append(test_line)
+                                        else:
+                                            value = [self.value]
+                                else:
+                                    value = self.value
 
-            if self.perm_outline:
-                self.draw_outline()
+                            lv = len(value)
+                            for i in range(lv):
+                                if sys.version_info < (3, 0):
+                                    try:
+                                        val = unicode(value[i], "utf-8")
+                                    except UnicodeDecodeError:
+                                        val = value[i]
+                                    except TypeError:
+                                        val = value[i]
+                                else:
+                                    val = value[i]
+                                try:
+                                    text = self.font.render("%s" % (val), 1, self.font_color)
+                                except:
+                                    pass
 
-            self.draw_fraction_lines()
-            self.draw_check_marks()
+                                if self.align == 0:
+                                    font_x = ((board.scale * self.grid_w - self.font.size(val)[0]) // 2)
+                                elif self.align == 1:
+                                    font_x = 5
+                                elif self.align == 2:
+                                    font_x = board.scale * self.grid_w - self.font.size(val)[0] - 5
+                                if lv == 1:
+                                    font_y = ((board.scale * self.grid_h - self.font.size(val)[1]) // 2)
+                                elif lv == self.grid_h:  # number of items is equal to grid height of an object - distribute lines equally in each grid square
+                                    font_y = ((board.scale - self.font.size(val)[1]) // 2) + board.scale * i
+                                else:
+                                    if self.valign == 0:
+                                        # lv - total
+                                        line_h = self.font.size(value[0])[
+                                                     1] / self.board.mainloop.config.font_line_height_adjustment
+                                        line_margin = 0
+                                        step = line_h + line_margin
+                                        center = (board.scale * self.grid_h) // 2
+                                        start_at = center - (
+                                                            step * lv - line_margin) // 2 - self.board.mainloop.config.font_start_at_adjustment
+                                        font_y = start_at + step * i
+                                    else:
+                                        # lv - total
+                                        line_h = self.font.size(value[0])[
+                                                     1] / self.board.mainloop.config.font_line_height_adjustment
+                                        line_margin = 0
+                                        step = line_h + line_margin
+                                        start_at = 5
+                                        font_y = start_at + step * i
+                                try:
+                                    self.image.blit(text, (font_x, font_y))
+                                except:
+                                    pass
+
+                if self.speaker_val_update:
+                    self.speaker_val = self.value
+
+                if self.perm_outline:
+                    self.draw_outline()
+
+                self.draw_fraction_lines()
+                self.draw_check_marks()
 
     def draw_check_marks(self):
         if self.check_display is not None:
@@ -437,10 +452,7 @@ class Unit(pygame.sprite.Sprite):
             self.perm_outline_color = outline_color
         elif hasattr(self, "door_outline") is False:
             self.perm_outline_color = color
-        else:
-            pass
-        # self.perm_outline_color = color
-        # self.perm_outline_color = [255,0,0]
+
         self.perm_outline_width = width
         self.init_pow = width
 
@@ -528,13 +540,13 @@ class MultiColorLetters(Letter):
         Letter.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha, **kwargs)
         self.set_font_colors((0, 0, 0), (0, 0, 0))
         self.set_value(value)
-        # print(self.value)
 
     def set_value(self, new_value):
         self.value = ex.unival(new_value)
         value = ex.unival(new_value)
         self.coltxt = self.split_tags(value)
         self.value = "".join(self.coltxt[1])
+        self.update_me = True
 
     def set_font_colors(self, color1, color2, color3=(0, 0, 0), color4=(0, 0, 0)):
         self.colors = [color1, color2, color3, color4]
@@ -545,7 +557,6 @@ class MultiColorLetters(Letter):
         col = []
         txtln = []
         tmp = ""
-        # for i in range(ln-1):
         ln = len(text)
         i = 0
         while i < ln:
@@ -572,8 +583,6 @@ class MultiColorLetters(Letter):
 
     # Update color, image or text
     def update(self, board, **kwargs):
-        # print(self.value)
-        # self.update_me = True
         if self.update_me:
             self.update_me = False
             if self.board.mainloop.scheme is not None and self.board.decolorable and self.decolorable and self.board.mainloop.game_board is not None and (
@@ -584,11 +593,8 @@ class MultiColorLetters(Letter):
 
             self.image.fill(self.color)
             self.image.blit(self.painting, (0, 0))
-            # if self.hasimg == False:
-            # if len(self.value) > 0:
             if self.show_value:
                 val = ex.unival(self.value)
-                # lv = len(val)
                 if self.align == 0:
                     font_x = ((board.scale * self.grid_w - self.font.size(val)[0]) // 2)
                 elif self.align == 1:
@@ -607,13 +613,13 @@ class MultiColorLetters(Letter):
             if self.perm_outline:
                 self.draw_outline()
 
+            self.draw_fraction_lines()
+
 
 class ImgSurf(pygame.sprite.Sprite):
     def __init__(self, board, grid_w=1, grid_h=1, color=(255, 157, 23), img_src='', alpha=False):
         pygame.sprite.Sprite.__init__(self)
-        # Ship.__init__(self,board,grid_x,grid_y,grid_w,grid_h,value,initcolor,**kwargs)
         self.img_src = img_src
-        # grid location and size
         self.grid_w = grid_w
         self.grid_h = grid_h
         self.board = board
@@ -667,7 +673,6 @@ class ImgShip(Ship):
             self.hasimg = True
             self.img = self.image
             self.img_pos = (0, 0)
-            #self.outline = True
             try:
                 if self.alpha:
                     self.img_org = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
@@ -685,12 +690,18 @@ class ImgShip(Ship):
             except:
                 pass
 
+    def mirror_image(self):
+        self.mirror = True
+
     def update(self, board, **kwargs):
-        if self.update_me:
+        if self.update_me and not self.hidden:
             Unit.update(self, board)
             if len(self.img_src) > 0:
-                self.image.blit(self.img, self.img_pos)
-            if self.unit_id == board.active_ship and self.outline == True:
+                if not self.mirror:
+                    self.image.blit(self.img, self.img_pos)
+                else:
+                    self.image.blit(pygame.transform.flip(self.img, True, False), self.img_pos)
+            if self.unit_id == board.active_ship and self.outline:
                 lines = [[0, 0], [self.grid_w * board.scale - 2, 0],
                          [self.grid_w * board.scale - 2, self.grid_h * board.scale - 2],
                          [0, self.grid_h * board.scale - 2]]
@@ -723,7 +734,6 @@ class TwoImgsShip(Ship):
             self.img_pos = (0, 0)
             self.outline = True
             try:
-                # if True:
                 if self.alpha:
                     self.img_org = pygame.image.load(self.img_src).convert_alpha()
                     self.img2_org = pygame.image.load(self.img2_src).convert_alpha()
@@ -783,8 +793,6 @@ class ImgAlphaShip(ImgShip):
             except:
                 pass
 
-                # self.image.set_colorkey(self.initcolor)
-
 
 class ImgCenteredShip(Ship):
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 157, 23), img_src='',
@@ -824,20 +832,20 @@ class ImgCenteredShip(Ship):
                 self.img_pos = (pos_x, pos_y)
             except:
                 pass
-                # self.image.set_colorkey(self.initcolor)
 
     def update(self, board, **kwargs):
         if self.update_me:
             Unit.update(self, board)
             if len(self.img_src) > 0:
                 self.image.blit(self.img, self.img_pos)
+                if self.tint_color is not None:
+                    self.image.fill(self.tint_color, special_flags=pygame.BLEND_ADD)
             if self.unit_id == board.active_ship and self.outline is True:
                 lines = [[0, 0], [self.grid_w * board.scale - 2, 0],
                          [self.grid_w * board.scale - 2, self.grid_h * board.scale - 2],
                          [0, self.grid_h * board.scale - 2]]
                 pygame.draw.lines(self.image, (255, 200, 200), True, lines)
             if hasattr(self, "door_outline") and self.door_outline is True:
-                # self.set_outline([255,0,0],2)
                 self.set_outline(self.perm_outline_color, self.perm_outline_width)
             if self.perm_outline:
                 self.draw_outline()
@@ -903,15 +911,13 @@ class MultiImgSprite(ImgShip):
             # shift the image by 1px to the right every x frames - to avoid scaling problem with very long images
             shift_x = int(float(xg) / self.correction_factor)
             shift_y = int(
-                float(yg) / self.correction_factor)  # int(float(self.frame_flow[self.frame]) / self.correction_factor)
+                float(yg) / self.correction_factor)
         else:
             shift_x = 0
             shift_y = 0
         x = -(xg * (self.frame_w - 1)) + shift_x
         y = -(yg * (self.frame_h - 1)) + shift_y
         self.img_pos = (x, y)
-
-        # self.img_pos = (-(self.frame_flow[self.frame]*(self.frame_w-1))+shift,0)
 
     def build_frame_flow(self, frame_count, frame_flow=[]):
         self.frame_count = frame_count
@@ -928,14 +934,11 @@ class MultiImgSprite(ImgShip):
 class Door(ImgShip):
     def __init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, font_size, door_alpha=True, alpha=False, **kwargs):
         ImgShip.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha=door_alpha, **kwargs)
-        # (self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 157, 23), img_src='',
-        #         alpha=False, **kwargs)
         self.font = board.font_sizes[font_size]
         if door_alpha:
             self.color = (initcolor[0], initcolor[1], initcolor[2], 0)
         else:
             self.color = initcolor
-        # self.image.set_colorkey(self.initcolor)
         self.is_door = True
 
     def set_pos(self, pos):
@@ -955,7 +958,7 @@ class PickUp(ImgShip):
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 255, 255), img_src='',
                  alpha=False, **kwargs):
         ImgShip.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, img_src, alpha, **kwargs)
-        door_outline = False
+        self.door_outline = False
 
 
 class ImgShipRota(ImgShip):
@@ -994,27 +997,19 @@ class BoardBg(Unit):
     # def update(self,screen,color,screen_w,screen_h,grid_line_w):
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 255, 255), alpha=False,
                  **kwargs):
-        # self.initcolor = initcolor
         Unit.__init__(self, board, grid_x, grid_y, grid_w, grid_h, "", initcolor, alpha, **kwargs)
         self.rect.topleft = [0, 0]
-        # game,self.cl_grid_line,l.screen_w-l.menu_w,l.game_h,l.grid_line_w
         if self.board.mainloop.scheme is not None:
             self.line_color = self.board.mainloop.scheme.u_line_color
         else:
             self.line_color = (240, 240, 240)  # gb.cl_grid_line
-        self.screen_w = self.board.x_count * self.board.scale  # gb.l.screen_w-gb.l.menu_w
+        self.screen_w = self.board.x_count * self.board.scale
         self.screen_h = self.board.y_count * self.board.scale
         self.grid_line_w = 1
 
     def update(self, board, **kwargs):
         Unit.update(self, board)
         self.painting.fill(self.color)
-        """
-        if self.board.mainloop.scheme is not None:
-            self.line_color = self.board.mainloop.scheme.u_line_color
-        else:
-            self.line_color = (240, 240, 240)# gb.cl_grid_line
-        """
         if self.board.draw_grid:
             for row in range(self.board.x_count + 1):  # draw vertical lines
                 pygame.draw.line(self.painting, self.line_color, [row * self.board.scale, 0],
@@ -1063,10 +1058,13 @@ class Board:
         self.font_path_hand = os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8Hand.ttf')
         self.font_path_print = os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8LatinPrint.ttf')
 
+        self.font_path_clock = os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8Clock.ttf')
+
         self.load_fonts()
 
     def load_fonts(self):
-        system_font_list = pygame.font.get_fonts()
+        pass
+        #system_font_list = pygame.font.get_fonts()
         """
         if len(system_font_list) > 0:
             #print(system_font_list[0:10])
@@ -1148,6 +1146,13 @@ class Board:
             xsizes[i] = xsizes[i] / self.mainloop.config.font_multiplier
             self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(float(self.points) / float(xsizes[i])))))
 
+        #clock font 34, 35
+        self.font_sizes.append(pygame.font.Font(self.font_path_clock, (int(self.points / 0.5))))
+        self.font_sizes.append(pygame.font.Font(self.font_path_clock, (int(self.points / 3))))
+
+        #font 36
+        self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(self.points / 0.5))))
+
         self.board_bg = BoardBg(self, 0, 0, x_count, y_count, "", (255, 255, 255))
         self.unit_list.add(self.board_bg)
         self.all_sprites_list.add(self.board_bg)
@@ -1166,14 +1171,12 @@ class Board:
         self.unit_list.empty()
         self.ship_list.empty()
         self.all_sprites_list.empty()
-        # self.sprites_to_draw.empty()
         del (self.ships)
         del (self.units)
         del (self.aiunits)
         del (self.unit_list)
         del (self.ship_list)
         del (self.all_sprites_list)
-        # del(self.sprites_to_draw)
 
     def _create_board(self, sx, sy):
         'Creates an empty board for the initialisation method'
@@ -1229,6 +1232,25 @@ class Board:
             'Sorry: position taken: (x:%d, y:%d, w:%d, h:%d), board size: %d x %d, game_id: %d, screen size: %d x %d' % (
             grid_x, grid_y, grid_w, grid_h, self.x_count, self.y_count, self.mainloop.m.active_game_id,
             self.mainloop.size[0], self.mainloop.size[1]))
+
+    def add_universal_unit(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, txt=None, fg_img_src=None, bg_img_src=None,
+                           dc_img_src=None, bg_color=None, border_color=None, font_color=None,
+                           bg_tint_color=None, fg_tint_color=None,
+                           txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False):
+        'adds a new unit to the board'
+        if self._isfree(grid_x, grid_y, grid_w, grid_h):
+            unit = classes.universal.Universal(self, grid_x, grid_y, grid_w, grid_h, txt, fg_img_src, bg_img_src,
+                                               dc_img_src, bg_color, border_color, font_color, bg_tint_color,
+                                               fg_tint_color, txt_align, font_type, multi_color, alpha, immobilized)
+            self.ships.append(unit)  # add a ship to the ship list
+            self.ship_list.add(unit)  # add the ship to the sprites list
+            self.all_sprites_list.add(unit)
+            self._set(grid_x, grid_y, grid_w, grid_h)
+        else:
+            print(
+                    'Sorry: position taken: (x:%d, y:%d, w:%d, h:%d), board size: %d x %d, game_id: %d, screen size: %d x %d' % (
+                grid_x, grid_y, grid_w, grid_h, self.x_count, self.y_count, self.mainloop.m.active_game_id,
+                self.mainloop.size[0], self.mainloop.size[1]))
 
     def add_door(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, unit_class=Door, value="", color=(0, 0, 0), img_src='',
                  font_size=0, door_alpha=True, alpha=False, frame_flow=[0], frame_count=1, row_data=[1, 1]):
@@ -1332,13 +1354,17 @@ class Board:
                     self._move_unit(ship_id, ai, mdir[0], mdir[1])
 
     def moved(self):
-        pass  # print("board - movedunit_id")
+        pass
 
-    def move_unit(self, unit_id, x, y):
-        self._move_unit_to(unit_id, x, y)
+    def move_unit(self, unit_id, x, y, ship=False):
+        self._move_unit_to(unit_id, x, y, ship)
 
-    def _move_unit_to(self, unit_id, x, y):
-        ship = self.units[unit_id]
+    def _move_unit_to(self, unit_id, x, y, ship_unit=False):
+        if ship_unit:
+            ship = self.ships[unit_id]
+        else:
+            ship = self.units[unit_id]
+
         if self.check_laby is False or (self.check_laby is True and self.laby_dir > -1 and not
         self.mainloop.game_board.mylaby.get_cell(ship.grid_x, ship.grid_y).laby_doors[self.laby_dir]):
             self.laby_dir = -1
@@ -1388,7 +1414,9 @@ class Board:
         # check direction and move if fields in that direction are free
         # set out what squares need checking if move has been taken in each direction
         new_rect = (x, y, ship.grid_w, ship.grid_h)
-        if self._isfree(*new_rect) and self.is_within_bounds(x, y):  # if is free place unit in the square
+        if (ship.grid_x == x and ship.grid_y == y) or self._isfree(*new_rect) and self.is_within_bounds(x, y):
+            # if landing on initial square or new one is free - place unit in the square
+
             # remove ship from board grid - take off
             self._set(ship.grid_x, ship.grid_y, ship.grid_w, ship.grid_h, False)
 
@@ -1420,8 +1448,6 @@ class Board:
             self.board_changed = True
 
     def anim_hover(self, x, y):
-        # self.mainloop.info.subtitle = "%s %s %s %s %s %s" % (x, y, self.ac_l, self.ac_r, self.ac_t, self.ac_b)
-        # self.mainloop.redraw_needed[1] = True
         ship = self.ships[self.active_ship]
         if x < self.ac_l:
             x = self.ac_l
@@ -1437,15 +1463,7 @@ class Board:
         if self.is_within_bounds(x, y) and self._isfree(*new_rect):
             ship.grid_last_x = x
             ship.grid_last_y = y
-        else:
-            pass
-            """
-            new_rect = (x, y, ship.grid_w, ship.grid_h)
-            if self._isfree(*new_rect):
-                if self.is_within_bounds(x, y):
-                    ship.grid_last_x = x
-                    ship.grid_last_y = y
-            """
+
 
     def _place_unit(self, ship_id, pos):
         ship = self.ships[ship_id]
@@ -1474,7 +1492,7 @@ class Board:
     def follow_cursor(self, ship_id, x, y):
         ship = self.ships[ship_id]
         l = x - self.mainloop.layout.game_left
-        t = y - self.mainloop.layout.info_bar_h - self.mainloop.layout.score_bar_h
+        t = y - self.mainloop.sizer.info_bar_h - self.mainloop.sizer.score_bar_h
         # if l > 0 and l < self.mainloop.layout.game_right - self.mainloop.layout.game_left:
 
         # update subtitle - logging
@@ -1572,16 +1590,6 @@ class Board:
 
     def update_ships(self, circle_lock_pos, **kwargs):
         for each_ship in self.ships:
-            """
-            if each_ship.unit_id == self.active_ship:
-                each_ship.color = each_ship.brighter
-                if each_ship.outline_highlight:
-                    each_ship.perm_outline_width = 3
-            else:
-                each_ship.color = each_ship.initcolor
-                if each_ship.outline_highlight:
-                    each_ship.perm_outline_width = each_ship.init_pow
-            """
             each_ship.update(self, point=circle_lock_pos)
 
         for each_unit in self.units:

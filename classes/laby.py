@@ -66,10 +66,11 @@ class Laby_cell:
 
 
 class laby:
-    def __init__(self, w, h, sx=0, sy=0, scale=30, col=(0, 0, 0)):
+    def __init__(self, w, h, sx=0, sy=0, scale=30, col=(0, 0, 0), line_width = 3):
         self.w = w
         self.h = h
         self.color = col
+        self.line_width = line_width
         self.Laby_cells = []
         self.wc = scale  # const.wc
         self.hc = scale  # const.hc
@@ -134,22 +135,22 @@ class laby:
                 c = self.get_cell(x, y)
                 if c.laby_doors[const.right]:
                     pygame.draw.line(buffer, self.color, (sx + (x + 1) * W, sy + y * H),
-                                     (sx + (x + 1) * W, sy + (y + 1) * H), 3)
+                                     (sx + (x + 1) * W, sy + (y + 1) * H), self.line_width)
                 if c.laby_doors[const.down]:
                     pygame.draw.line(buffer, self.color, (sx + (x) * W, sy + (y + 1) * H),
-                                     (sx + (x + 1) * W, sy + (y + 1) * H), 3)
+                                     (sx + (x + 1) * W, sy + (y + 1) * H), self.line_width)
         x = self.w - 1
         for y in range(self.h - 1):
             c = self.get_cell(x, y)
             if c.laby_doors[const.down]:
                 pygame.draw.line(buffer, self.color, (sx + x * W, sy + (y + 1) * H),
-                                 (sx + (x + 1) * W, sy + (y + 1) * H), 3)
+                                 (sx + (x + 1) * W, sy + (y + 1) * H), self.line_width)
         y = self.h - 1
         for x in range(self.w - 1):
             c = self.get_cell(x, y)
             if c.laby_doors[const.right]:
                 pygame.draw.line(buffer, self.color, (sx + (x + 1) * W, sy + (y) * H),
-                                 (sx + (x + 1) * W, sy + (y + 1) * H), 3)
+                                 (sx + (x + 1) * W, sy + (y + 1) * H), self.line_width)
 
     """ create the labyrinth grid table twice as big as the original laby"""
 

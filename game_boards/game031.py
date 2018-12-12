@@ -28,7 +28,7 @@ class Board(gd.BoardGame):
         self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
                                                             self.mainloop.config.user_age_group)
 
-        if self.level.lvl < 14:
+        if len(str(level_data[0] * level_data[1])) < 3:
             self.max_len = 2
         else:
             self.max_len = 3

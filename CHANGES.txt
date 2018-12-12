@@ -1,9 +1,22 @@
 Changelog:
-eduActiv8 - 3.80.411-rc:
+eduActiv8 - 4.18.12:
+    - the menu has been replaced with a full screen activity selection screen
+        - this allows to display all activity icons without scrolling
+        - more space for activities since the menu does not take up any screen space while in activity mode
+        - the icons on new menu screen now display progress for each challenge activity
+        - the category and activity icons have been redesigned and scaled up
+        - categories rearranged into sub-groups to display less choices at a time.
+    - theme editing screen added to customize UI and menu colours
+    - a number of new activities added - covering elapsed time as well as negative numbers
+    - new activities on equivalent fractions as well as addition, subtraction, multiplication and division of fractions
+    - a lot of cosmetic fixes across the application
+
+eduActiv8 - 3.80.411:
     - 20 new activities covering fractions, decimals, percentages and ratios - translations required for most languages.
     - 4 new activities covering linear symmetry
     - menu has been slightly redesigned - the activity icons now also have an accompanying icon indicating whether the activity is a simulation/demonstration of a concept or if it is a task that needs solving, or something else.
     - from this version the game will check for updates and will let users know if a new one has been released - update will still have to be downloaded manually - can be disabled from the settings in the login screen. This option may need to be hidden before packaging for any distros - will sort it out with next release.
+
 eduActiv8 - 3.71.115:
     - the feedback mechanism is now implemented in all activities that require completion
     - new section added with 5 new games covering patterns (only in English and Polish at the moment)

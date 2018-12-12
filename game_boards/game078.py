@@ -23,6 +23,22 @@ class Board(gd.BoardGame):
         self.hand_coords = [[], []]
         self.board.draw_grid = False
 
+        if self.mainloop.scheme is not None:
+            if self.mainloop.scheme.dark:
+                self.colon_col = (255, 255, 255)
+            else:
+                self.colon_col = (0, 0, 0)
+
+            self.h_col = self.mainloop.scheme.color3
+            self.m_col = self.mainloop.scheme.color4
+
+        else:
+            self.colon_col = (0, 0, 0)
+            self.h_col = ex.hsv_to_rgb(225, 190, 220)
+            self.m_col = ex.hsv_to_rgb(170, 190, 220)
+
+
+
         color = (255, 255, 255)
         white = (255, 255, 255)
         gray = (100, 100, 100)
@@ -176,8 +192,9 @@ class Board(gd.BoardGame):
                 self.board.active_ship = self.clock_wrapper.unit_id
                 self.clock = classes.drw.clock.Clock(self, self.clock_wrapper, self.size, self.time[i], self.data[2:11])
             else:
-                self.board.add_unit(slots[i][0], slots[i][1], 1, 1, classes.board.Letter,
-                                    "%02d:%02d" % (self.time[i - switch][0], self.time[i - switch][1]), white, "", 8)
+                self.board.add_unit(slots[i][0], slots[i][1], 1, 1, classes.board.MultiColorLetters,
+                                    "<1>%02d<3>:<2>%02d" % (self.time[i - switch][0], self.time[i - switch][1]), white, "", 35)
+                self.board.ships[-1].set_font_colors(self.h_col, self.m_col, self.colon_col)
                 self.board.ships[-1].font_color = color4
             self.immo(self.board.ships[-1])
             self.board.ships[i].checkable = True

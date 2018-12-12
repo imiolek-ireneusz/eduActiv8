@@ -80,3 +80,12 @@ class XMLConn:
                     for levels in game.iter("levels"):
                         return [int(levels.attrib["games_per_level"]), int(levels.attrib["count"])]
         return None
+
+    def get_show_all_ages(self, dbgameid):
+        """Checks the xml structure to find a matching dbgameid and level,
+        if found returns a list containing data used to build a level"""
+        for game in self.lvl_root.iter('game'):
+            if str(dbgameid) in (game.attrib["dbids"]).split(", "):
+                if int(game.attrib["show_all"]) == 1:
+                    return [int(game.attrib["min_age"]), int(game.attrib["max_age"])]
+        return None

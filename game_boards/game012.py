@@ -102,7 +102,7 @@ class Board(gd.BoardGame):
             self.ship_id = 0
             if self.moveable == True:
                 pos = event.pos
-                column = (pos[0] - self.layout.menu_w) // (self.layout.width)
+                column = pos[0] // (self.layout.width)
                 row = (pos[1] - self.layout.top_margin) // (self.layout.height)
                 self.direction = [0, 0]
                 arrow_clicked = False

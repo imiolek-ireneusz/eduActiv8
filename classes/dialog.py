@@ -13,18 +13,10 @@ class Dialog:
             if self.game_board.mainloop.scheme.dark:
                 self.scheme = "black"
                 self.color = (0, 0, 0, 150)
-        """
-        if self.game_board.lang.lang in ['en_GB', 'en_US']:
-            self.img_src = "congrats.png"
-            self.img_src2 = "game_over_en.jpg"
-        else:
-            self.img_src = "congrats.png"
-            self.img_src2 = "game_over.jpg"
-        """
 
         self.img_src = "congrats.png"
         self.img_src2 = "game_over.png"
-        self.layout = game_board.layout
+        self.sizer = game_board.mainloop.sizer
         self.layout_update()
         self.level = game_board.level
 
@@ -35,8 +27,8 @@ class Dialog:
             if self.game_board.mainloop.scheme.dark:
                 self.scheme = "black"
                 self.color = (0, 0, 0, 150)
-        self.width = self.layout.game_w
-        self.height = self.layout.game_h
+        self.width = self.sizer.screen_w
+        self.height = self.sizer.screen_h
         self.image = pygame.Surface([self.width, self.height], flags=pygame.SRCALPHA)
         self.image.fill(self.color)
         self.rect = self.image.get_rect()
@@ -52,10 +44,10 @@ class Dialog:
     def update(self, screen):
         self.image.fill(self.color)
         if self.level.dialog_type == 0:
-            self.image.blit(self.img, (self.img_pos))
+            self.image.blit(self.img, self.img_pos)
 
         elif self.level.dialog_type == 1:
-            self.image.blit(self.img2, (self.img_pos))
+            self.image.blit(self.img2, self.img_pos)
 
         elif self.level.dialog_type == 2:
             pass

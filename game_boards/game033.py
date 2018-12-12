@@ -21,7 +21,6 @@ class Board(gd.BoardGame):
 
         if self.mainloop.scheme is not None:
             white = self.mainloop.scheme.u_color
-
             h1 = 170
             h2 = 40
             h3 = 0
@@ -34,11 +33,9 @@ class Board(gd.BoardGame):
         else:
             white = (255, 255, 255)
             step = 255 //3
-
             h1 = random.randrange(0, 255)
             h2 = (h1 + step) % 255
             h3 = (h1 + step * 2) % 255
-
             color1 = ex.hsv_to_rgb(h1, 127, 255)
             color2 = ex.hsv_to_rgb(h2, 127, 255)
             color3 = ex.hsv_to_rgb(h3, 127, 255)
@@ -46,26 +43,23 @@ class Board(gd.BoardGame):
             self.bd_color2 = ex.hsv_to_rgb(h2, 187, 200)
             self.bd_color3 = ex.hsv_to_rgb(h3, 187, 200)
 
+        transp = (0, 0, 0, 0)
+
         self.disabled_font_color = (200, 200, 200)
 
         data = [18, 10]
         self.data = data
 
         self.vis_buttons = [0, 0, 0, 0, 1, 1, 1, 0, 0]
-
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
-        # self.board.board_bg.initcolor = color
-        # self.board.board_bg.color = color
         self.board.board_bg.update_me = True
-
         self.board.board_bg.line_color = (20, 20, 20)
 
         self.max_total = 20
-
         num1 = num2 = num3 = 11
         while num1 + num2 + num3 > self.max_total:
             num1 = random.randint(1, 3)
@@ -73,46 +67,50 @@ class Board(gd.BoardGame):
             num3 = random.randint(1, 3)
         self.numbers = [num1, num2, num3]
 
-        if self.numbers[2] == 0:
-            offset = 2
-        else:
-            offset = 0
-
-
-
         self.board.add_unit(0, 0, data[1], data[1], classes.board.Label, "", white, "", 0)
         self.fraction_canvas = self.board.units[-1]
         self.fraction = classes.drw.ratio_hq.Ratio(1, self.board.scale * data[1], color1, color2, color3, self.bd_color1, self.bd_color2, self.bd_color3, self.numbers)
         self.fraction_canvas.painting = self.fraction.get_canvas().copy()
 
-        self.board.add_unit(data[1], 2, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.bd_color1
+        self.board.add_unit(data[1], 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.bd_color1)
+
         self.board.add_unit(data[1], 4, 2, 2, classes.board.Label, str(num1), white, "", 31)
         self.nm1 = self.board.units[-1]
         self.board.units[-1].font_color = self.bd_color1
-        self.board.add_unit(data[1], 6, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.bd_color1
+
+        self.board.add_unit(data[1], 6, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.bd_color1)
 
         self.board.add_unit(data[1] + 2, 4, 1, 2, classes.board.Label, ":", white, "", 31)
 
-        self.board.add_unit(data[1] + 3, 2, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.bd_color2
+        self.board.add_unit(data[1] + 3, 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.bd_color2)
+
         self.board.add_unit(data[1] + 3, 4, 2, 2, classes.board.Label, str(num2), white, "", 31)
         self.nm2 = self.board.units[-1]
         self.board.units[-1].font_color = self.bd_color2
-        self.board.add_unit(data[1] + 3, 6, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.bd_color2
+
+        self.board.add_unit(data[1] + 3, 6, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.bd_color2)
 
         self.board.add_unit(data[1] + 5, 4, 1, 2, classes.board.Label, ":", white, "", 31)
 
-        self.board.add_unit(data[1] + 6, 2, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = self.bd_color3
+        self.board.add_unit(data[1] + 6, 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.bd_color3)
+
         self.board.add_unit(data[1] + 6, 4, 2, 2, classes.board.Label, str(num3), white, "", 31)
         self.nm3 = self.board.units[-1]
         self.board.units[-1].font_color = self.bd_color3
-        self.board.add_unit(data[1] + 6, 6, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = self.bd_color3
 
+        self.board.add_unit(data[1] + 6, 6, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.bd_color3)
 
         for each in self.board.ships:
             each.readable = False
@@ -135,46 +133,45 @@ class Board(gd.BoardGame):
             elif active == 5:
                 self.change_fract_btn(0, 0, -1)
 
-
     def change_fract_btn(self, n1, n2, n3):
         if n1 == 1:
             if fsum(self.numbers) < self.max_total:
                 self.numbers[0] += 1
                 if self.numbers[0] > 1:
-                    self.board.ships[1].font_color = self.bd_color1
+                    self.board.ships[1].change_image("nav_d_mts.png")
         if n1 == -1:
             if self.numbers[0] > 1:
                 self.numbers[0] -= 1
                 if self.numbers[0] == 1:
-                    self.board.ships[1].font_color = self.disabled_font_color
+                    self.board.ships[1].change_image("nav_d_mtsd.png")
         if n2 == 1:
             if fsum(self.numbers) < self.max_total:
                 self.numbers[1] += 1
                 if self.numbers[1] > 1:
-                    self.board.ships[3].font_color = self.bd_color2
+                    self.board.ships[3].change_image("nav_d_mts.png")
         if n2 == -1:
             if self.numbers[1] > 1:
                 self.numbers[1] -= 1
                 if self.numbers[1] == 1:
-                    self.board.ships[3].font_color = self.disabled_font_color
+                    self.board.ships[3].change_image("nav_d_mtsd.png")
         if n3 == 1:
             if fsum(self.numbers) < self.max_total:
                 self.numbers[2] += 1
                 if self.numbers[2] > 1:
-                    self.board.ships[5].font_color = self.bd_color3
+                    self.board.ships[5].change_image("nav_d_mts.png")
         if n3 == -1:
             if self.numbers[2] > 1:
                 self.numbers[2] -= 1
                 if self.numbers[2] == 1:
-                    self.board.ships[5].font_color = self.disabled_font_color
+                    self.board.ships[5].change_image("nav_d_mtsd.png")
         if fsum(self.numbers) == self.max_total:
-            self.board.ships[0].font_color = self.disabled_font_color
-            self.board.ships[2].font_color = self.disabled_font_color
-            self.board.ships[4].font_color = self.disabled_font_color
+            self.board.ships[0].change_image("nav_u_mtsd.png")
+            self.board.ships[2].change_image("nav_u_mtsd.png")
+            self.board.ships[4].change_image("nav_u_mtsd.png")
         else:
-            self.board.ships[0].font_color = self.bd_color1
-            self.board.ships[2].font_color = self.bd_color2
-            self.board.ships[4].font_color = self.bd_color3
+            self.board.ships[0].change_image("nav_u_mts.png")
+            self.board.ships[2].change_image("nav_u_mts.png")
+            self.board.ships[4].change_image("nav_u_mts.png")
         for each in self.board.ships:
             each.update_me = True
 
@@ -185,8 +182,6 @@ class Board(gd.BoardGame):
         self.fraction_canvas.painting = self.fraction.get_canvas().copy()
         self.fraction_canvas.update_me = True
         self.mainloop.redraw_needed[0] = True
-
-
 
     def update(self, game):
         game.fill((255, 255, 255))

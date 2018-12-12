@@ -4,17 +4,20 @@
 import datetime
 import hashlib
 import os
-import sqlite3
 import sys
+import sqlite3
+import json
+
+import random
 
 
 class DBConnection():
     def __init__(self, dbname, mainloop):
         self.dbname = dbname
         self.mainloop = mainloop
-        self.userid = 0
+        self.userid = 1
         self.username = ""
-        db_version = 1
+        db_version = 2
         self.connect()
         if self.db_connected:
             #self.db_fix()
@@ -35,7 +38,7 @@ class DBConnection():
                             continue
 
                 self.c.execute(
-                    "CREATE TABLE users (username TEXT, password TEXT, date_added TEXT, last_login TEXT, lang TEXT, sounds INTEGER, espeak INTEGER, screenw INTEGER, screenh INTEGER, score INTEGER, scheme INTEGER, age_group INTEGER)")
+                    "CREATE TABLE users (username TEXT, password TEXT, date_added TEXT, last_login TEXT, lang TEXT, sounds INTEGER, espeak INTEGER, screenw INTEGER, screenh INTEGER, score INTEGER, scheme INTEGER, age_group INTEGER, colors TEXT)")
                 self.c.execute("CREATE TABLE levelcursors (userid INTEGER KEY, gameid INTEGER KEY,lastlvl INTEGER)")
                 # self.c.execute("CREATE TABLE completions (userid integer, constructor text, variant integer, lvl_completed integer)")
                 self.c.execute(
@@ -66,6 +69,19 @@ class DBConnection():
 
                 self.c.execute("SELECT db_version FROM admin WHERE (admin_id = 0)")
                 self.conn.commit()
+                row = self.c.fetchone()
+                current_db_ver = row[0]
+                if 0 < current_db_ver < 2:
+                    print("Thanks for downloading the latest version of the game.\nThe database structure has changed in this version.\nUpdating the database to version 2...")
+
+                if current_db_ver == 1:
+                    #print("ALTER TABLE users ADD COLUMN colors TEXT")
+                    self.c.execute("ALTER TABLE users ADD COLUMN colors TEXT")
+                    self.c.execute("UPDATE admin SET db_version = ? WHERE (admin_id = 0)", (db_version,))
+                    self.conn.commit()
+
+                    print("Database updated.")
+
                 """
                 row = self.c.fetchone()
                 current_db_ver = row[0]
@@ -123,6 +139,7 @@ class DBConnection():
             self.conn.commit()
             row = self.c.fetchone()
             if row[1] == 1:
+                self.userid = row[0]
                 return row
             else:
                 return None
@@ -244,11 +261,12 @@ class DBConnection():
             return self.mainloop.lang.lang_id
 
     def db_fix(self):
+        pass
         #self.c.execute("SELECT num_completed FROM completions WHERE (gameid = ?)", (26,))
         #self.conn.commit()
         #count = self.c.fetchone()
-        self.c.execute("DELETE FROM completions WHERE (gameid = ?)", (26,))
-        self.conn.commit()
+        #self.c.execute("DELETE FROM completions WHERE (gameid = ?)", (26,))
+        #self.conn.commit()
 
     def update_completion(self, userid, gameid, lvl):
         if self.db_connected:
@@ -269,19 +287,93 @@ class DBConnection():
                     (count[0] + 1, userid, gameid, lng, lvl, age))
             self.conn.commit()
 
-    def query_completion(self, userid, gameid, lvl):
+    def update_completion_populate_db_heavy_stress_test(self):
+        """Used for testing only.
+        Adds completion records across 250 games with 10 levels completed each in 4 languages for all age groups
+        for 100 users making the database take over 130MB"""
+        if self.db_connected:
+            for lvl in range(1, 11):
+                for gameid in range(250):
+                    for userid in range(100):
+                        for lng in range(4):
+                            for age in range(7):
+                                self.c.execute("INSERT INTO completions VALUES (?, ?, ?, ?, ?, ?)", (userid, gameid, lvl, lng, random.randint(1, 5), age))
+            self.conn.commit()
+
+    def update_completion_populate_db_light_stress_test(self):
+        """Used for testing only. 30 kids across 7 classes - speaking 2 languages."""
+        if self.db_connected:
+            for lvl in range(1, 6):
+                for gameid in range(250):
+                    for userid in range(30):
+                        for lng in range(2):
+                            for age in range(0, 7):
+                                self.c.execute("INSERT INTO completions VALUES (?, ?, ?, ?, ?, ?)", (userid, gameid, lvl, lng, random.randint(1, 5), age))
+            self.conn.commit()
+
+    def update_completion_populate_db_test(self):
+        """Used for testing only. Each year go one level higher."""
+        if self.db_connected:
+            for age in range(0, 7):
+                for lvl in range(1, 9):
+                    if lvl < age + 2:
+                        for gameid in range(270):
+                            for userid in range(3):
+                                for lng in range(3):
+                                    self.c.execute("INSERT INTO completions VALUES (?, ?, ?, ?, ?, ?)", (userid, gameid, lvl, lng, random.randint(1, 5), age))
+            self.conn.commit()
+
+    def query_completion(self, userid, gameid, lvl, lang_activ=False):
         if self.db_connected:
             age = self.get_age()
-            lng = self.get_lang_id()
+            if not lang_activ:
+                lng = self.get_lang_id()
+            else:
+                lng = self.mainloop.lang.lang_id
+
             self.c.execute(
                 "SELECT num_completed FROM completions WHERE (userid = ? AND gameid = ? AND lang_id = ? AND lvl_completed = ? AND age = ?)",
                 (userid, gameid, lng, lvl, age))
+
             self.conn.commit()
             count = self.c.fetchone()
             if count is None:
                 return 0
             else:
                 return count[0]
+
+    def query_completion_all_levels(self, userid, gameid, lang_activ=False):
+        if self.db_connected:
+            age = self.get_age()
+            if not lang_activ:
+                lng = self.get_lang_id()
+            else:
+                lng = self.mainloop.lang.lang_id
+
+            self.c.execute(
+                "SELECT * FROM completions WHERE (userid = ? AND gameid = ? AND lang_id = ? AND age = ?)",
+                (userid, gameid, lng, age))
+
+            self.conn.commit()
+            #count = self.c.fetchone()
+            all = self.c.fetchall()
+            return all
+
+    def query_completion_all_ages(self, userid, gameid, lang_activ=False):
+        if self.db_connected:
+            if not lang_activ:
+                lng = self.get_lang_id()
+            else:
+                lng = self.mainloop.lang.lang_id
+
+            self.c.execute(
+                "SELECT * FROM completions WHERE (userid = ? AND gameid = ? AND lang_id = ?)",
+                (userid, gameid, lng))
+
+            self.conn.commit()
+            #count = self.c.fetchone()
+            all = self.c.fetchall()
+            return all
 
     def get_completion_count(self, userid):
         if self.db_connected:
@@ -378,8 +470,8 @@ class DBConnection():
             m.update(password.encode("utf-8"))
             md5password = m.hexdigest()
             if count[0] == 0:
-                self.c.execute("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (
-                username, md5password, self.get_now(), "", lang, sounds, espeak, screenw, screenh, 0, 0, 0))
+                self.c.execute("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (
+                username, md5password, self.get_now(), "", lang, sounds, espeak, screenw, screenh, 0, 0, 0, ""))
                 self.conn.commit()
                 return 0  # "%s added" % username
             else:
@@ -417,8 +509,26 @@ class DBConnection():
             self.c.execute("UPDATE users SET lang = ? WHERE (ROWID=?)", (lang, self.userid))
             self.conn.commit()
 
+    def save_user_colors(self):
+        if self.db_connected:
+            self.c.execute("UPDATE users SET colors = ? WHERE (ROWID=?)", (json.dumps(self.mainloop.cl.color_sliders),
+                                                                           self.userid))
+            self.conn.commit()
+
+    def load_user_colors(self):
+        if self.db_connected:
+            self.c.execute("SELECT colors FROM users WHERE (ROWID=?)", (self.userid,))
+            self.conn.commit()
+            row = self.c.fetchone()
+            if row[0] is not None and len(row[0]) > 0:
+                self.mainloop.cl.load_colors(json.loads(row[0]))
+            else:
+                self.mainloop.cl.reset_colors()
+                self.mainloop.cl.create_colors()
+
     def load_user_settings(self, userid):
         if self.db_connected:
+            self.load_user_colors()
             self.c.execute("SELECT lang, sounds, espeak, screenw, screenh, scheme FROM users WHERE (ROWID=?)",
                            (self.userid,))
             self.conn.commit()

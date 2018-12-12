@@ -85,26 +85,26 @@ class Board(gd.BoardGame):
                             "", 2)
         self.canvas_block = self.board.ships[-1]
         self.canvas_block.set_outline([0, 54, 229], 1)
-        self.board.add_unit(0, 0, 2, 2, classes.board.ImgShip, "", white, os.path.join("symmetry", "ax_h.png"), 0, alpha=True)
+        self.board.add_unit(0, 0, 2, 2, classes.board.ImgShip, "", self.transp, os.path.join("symmetry", "ax_h.png"), 0, alpha=True)
         self.ax_h_btn = self.board.ships[-1]
 
-        self.board.add_unit(0, 2, 2, 2, classes.board.ImgShip, "", white, os.path.join("symmetry", "ax_v.png"), 0, alpha=True)
+        self.board.add_unit(0, 2, 2, 2, classes.board.ImgShip, "", self.transp, os.path.join("symmetry", "ax_v.png"), 0, alpha=True)
         self.ax_v_btn = self.board.ships[-1]
 
-        self.board.add_unit(0, 4, 2, 2, classes.board.ImgShip, "", white, os.path.join("symmetry", "ax_hv.png"), 0, alpha=True)
+        self.board.add_unit(0, 4, 2, 2, classes.board.ImgShip, "", self.transp, os.path.join("symmetry", "ax_hv.png"), 0, alpha=True)
         self.ax_hv_btn = self.board.ships[-1]
 
-        self.board.add_unit(0, 6, 2, 2, classes.board.ImgShip, "", white,os.path.join("symmetry", "ax_d1.png"), 0, alpha=True)
+        self.board.add_unit(0, 6, 2, 2, classes.board.ImgShip, "", self.transp, os.path.join("symmetry", "ax_d1.png"), 0, alpha=True)
         self.ax_d1_btn = self.board.ships[-1]
 
-        self.board.add_unit(0, 8, 2, 2, classes.board.ImgShip, "", white, os.path.join("symmetry", "ax_d2.png"), 0, alpha=True)
+        self.board.add_unit(0, 8, 2, 2, classes.board.ImgShip, "", self.transp, os.path.join("symmetry", "ax_d2.png"), 0, alpha=True)
         self.ax_d2_btn = self.board.ships[-1]
 
-        self.board.add_unit(0, 10, 2, 2, classes.board.ImgShip, "", white, os.path.join("symmetry", "ax_dd.png"), 0, alpha=True)
+        self.board.add_unit(0, 10, 2, 2, classes.board.ImgShip, "", self.transp, os.path.join("symmetry", "ax_dd.png"), 0, alpha=True)
         self.ax_dd_btn = self.board.ships[-1]
 
 
-        self.board.add_unit(0, 12, 2, 2, classes.board.ImgShip, "", white, os.path.join("symmetry", "ax_hvdd.png"), 0, alpha=True)
+        self.board.add_unit(0, 12, 2, 2, classes.board.ImgShip, "", self.transp, os.path.join("symmetry", "ax_hvdd.png"), 0, alpha=True)
         self.ax_hvdd_btn = self.board.ships[-1]
 
         #up]

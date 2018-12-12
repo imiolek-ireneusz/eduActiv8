@@ -12,7 +12,7 @@ import classes.simple_vector as sv
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 1, 1)
+        self.level = lc.Level(self, mainloop, 1, 2)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 9)
         self.max_size = 99
         self.history_capacity = 25
@@ -26,150 +26,237 @@ class Board(gd.BoardGame):
         self.brush_height = 4  # used by brush2 only
         self.var_brush = 1
         self.sizing = False
+        if self.level.lvl == 1:
+            self.horizontal = True
+        else:
+            self.horizontal = False
 
         self.history = []
         self.undo_step = 0
-        self.bg_color = [255, 255, 255]
-        color = [255, 255, 255]
-        data = [39, 27]
+        font_color = (0, 54, 229)
+        if self.mainloop.scheme is not None:
+            font_color = self.mainloop.scheme.u_font_color
+            if self.mainloop.scheme.dark:
+                self.bg_color = [0, 0, 0]
+                color = [0, 0, 0]
+            else:
+                self.bg_color = [255, 255, 255]
+                color = [255, 255, 255]
+        else:
+            self.bg_color = [255, 255, 255]
+            color = [255, 255, 255]
+        if self.horizontal:
+            data = [38, 27]
+        else:
+            data = [20, 38]
         self.slider_color = [50, 50, 250]
         self.slider_bg_col = [200, 200, 255]
+
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=None)
         if x_count > data[0]:
             data[0] = x_count
-        else:
-            y_count = self.get_y_count(data[0], even=None)
-            data[1] = y_count - 1
         self.data = data
 
-        self.vis_buttons = [0, 0, 0, 0, 1, 1, 1, 0, 0]
+        self.vis_buttons = [0, 1, 1, 1, 1, 1, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
-        self.slider_min = self.mainloop.size[0] - self.layout.game_margin - 8 * self.layout.scale
-        self.slider_max = self.mainloop.size[0] - self.layout.game_margin - 2
+        self.board.board_bg.update_me = True
+        self.board.board_bg.line_color = (20, 20, 20)
 
-        # canvas
-        self.board.add_unit(0, 3, data[0], data[1] - 6, classes.board.Letter, "", color, "", 2)
+        if self.horizontal:
+            txt = self.d["brush size"] + ": " + str(self.brush_size)
+            canvas_pos = [0, 3, data[0], data[1] - 6]
+            self.slider_min = self.mainloop.size[0] - self.layout.game_margin - 8 * self.layout.scale
+            self.slider_max = self.mainloop.size[0] - self.layout.game_margin - 2
+        else:
+            txt = str(self.brush_size)
+            canvas_pos = [3, 0, data[0] - 6, data[1]]
+            self.slider_max = self.layout.game_pos[1] + self.layout.game_pos[3]
+            self.slider_min = self.slider_max - 7 * self.layout.scale
+
+        self.board.add_unit(canvas_pos[0], canvas_pos[1], canvas_pos[2], canvas_pos[3],
+                            classes.board.Letter, "", color, "", 2)
         self.canvas_block = self.board.ships[0]
         self.canvas_block.set_outline([0, 54, 229], 1)
         # tools
         images = ["paint_pencil.png", "paint_brush.png", "paint_wide_brush.png", "paint_line.png", "paint_rect.png",
                   "paint_circle.png", "paint_eraser.png", "paint_bucket.png"]
-        j = 7
-        for i in range(8):
-            self.board.add_unit(j, 0, 3, 3, classes.board.ImgShip, "", color, images[i])
-            j += 3
-        if data[0] - j - 8 > 0:
-            self.board.add_unit(j, 0, data[0] - j - 8, 3, classes.board.Obstacle, "", self.bg_color, "",
-                                0)  # gap filler
+        if self.horizontal:
+            j = 7
+            for i in range(8):
+                self.board.add_unit(j, 0, 3, 3, classes.board.ImgShip, "", color, images[i], alpha=True)
+                j += 3
 
-        self.board.add_unit(data[0] - 8, 1, 8, 2, classes.board.Letter, "", color, "", 0)
+            size_disp_pos = [[data[0] - 8, 1, 8, 2], [data[0] - 8, 0, 8, 1]]
+        else:
+            j = 6
+            for i in range(8):
+                self.board.add_unit(0, j, 3, 3, classes.board.ImgShip, "", color, images[i], alpha=True)
+                j += 3
+            size_disp_pos = [[0, data[1] - 7, 3, 7], [0, data[1] - 8, 3, 1]]
+
+        self.board.add_unit(size_disp_pos[0][0], size_disp_pos[0][1], size_disp_pos[0][2], size_disp_pos[0][3],
+                            classes.board.Letter, "", color, "", 0)
         self.size_slider = self.board.ships[-1]
 
-        self.board.add_unit(data[0] - 8, 0, 8, 1, classes.board.Label,
-                            self.d["brush size"] + ": " + str(self.brush_size), color, "", 0)
+        self.board.add_unit(size_disp_pos[1][0], size_disp_pos[1][1], size_disp_pos[1][2], size_disp_pos[1][3],
+                            classes.board.Label, txt, color, "", 0)
+        self.board.units[-1].font_color = font_color
+
         self.size_display = self.board.units[-1]
-        self.board.add_unit(0, 0, 3, 3, classes.board.ImgShip, "", color, "paint_undo.png")
-        self.board.add_unit(3, 0, 3, 3, classes.board.ImgShip, "", color, "paint_redo.png")
-        self.board.add_unit(6, 0, 1, 3, classes.board.Obstacle, "", self.bg_color, "", 0)  # gap filler
+        self.board.add_unit(0, 0, 3, 3, classes.board.ImgShip, "", color, "paint_undo.png", alpha=True)
+        if self.horizontal:
+            self.board.add_unit(3, 0, 3, 3, classes.board.ImgShip, "", color, "paint_redo.png", alpha=True)
+            self.board.add_door(7, 0, 3, 3, classes.board.Door, "", color, "")
 
-        self.board.add_door(7, 0, 3, 3, classes.board.Door, "", color, "")
-        self.board.add_door(0, data[1] - 3, 1, 1, classes.board.Door, "", color, "")
-        tool_len = len(self.board.ships)
-        # color pallette
-        h = 0
-        s = 250
-        v = 100
-        # number of available color spaces minus 2 for black and white
-        number_of_colors = data[0] * 3 - 2
-        number_of_hues = 13
-        number_of_col_per_hue = number_of_colors // number_of_hues
-        if number_of_col_per_hue > 3:
-            v_num = (255 - v) // (number_of_col_per_hue - 3)
+            self.step = 256.0 / (self.data[0] - 1)
+            self.custom_color_hsv = [data[0] // 2 * self.step, (data[0] - 1) * self.step, (data[0] - 1) * self.step]
         else:
-            v_num = 150
+            self.board.add_unit(0, 3, 3, 3, classes.board.ImgShip, "", color, "paint_redo.png", alpha=True)
+            self.board.add_door(0, 6, 3, 3, classes.board.Door, "", color, "")
 
-        # greyscale
-        grey_num = number_of_colors + 2 - number_of_hues * number_of_col_per_hue
-        if grey_num > 1:
-            grey_v_num = (255 // (grey_num - 1))
-        else:
-            grey_v_num = 0
-        grey_count = 0
+            self.step = 256.0 / (self.data[1] - 1)
+            self.custom_color_hsv = [data[1] // 2 * self.step, (data[1] - 1) * self.step, (data[1] - 1) * self.step]
 
+        self.tool_door = self.board.units[-1]
         self.color_start = len(self.board.ships)
-        for j in range(data[1] - 3, data[1]):
-            for i in range(data[0]):
-                color2 = ex.hsv_to_rgb(h, s, v)
-                self.board.add_unit(i, j, 1, 1, classes.board.Letter, "", color2, "", 2)
-                if h < 255:
-                    if v <= (255 - v_num):
-                        v += v_num
-                    else:
-                        if s > 115:
-                            s -= 70
-                        else:
-                            v = 100
-                            s = 250
-                            h += 20
-                if h > 255:
-                    if grey_count == 0:
-                        s = 0
-                        v = 0
-                        grey_count += 1
-                    else:
-                        v += grey_v_num
 
-        self.active_color = self.board.ships[tool_len + 1].initcolor
+        self.h_units = []
+        self.s_units = []
+        self.v_units = []
 
-        self.tool_door = self.board.units[-2]
-        self.color_door = self.board.units[-1]
-        self.btn_down = False
-        self.paint_function = [self.paint_pencil, self.paint_brush1, self.paint_brush2, self.paint_line,
-                               self.paint_rect, self.paint_circle, self.paint_eraser, self.paint_bucket]
+        if self.horizontal:
+            door_loc = [[data[0] // 2, data[1] - 3], [data[0] - 1, data[1] - 2], [data[0] - 1, data[1] - 1]]
+            self.board.add_unit(0, data[1] - 3, 1, 1, classes.board.Label, "H", color, "", 0)
+            self.board.add_unit(0, data[1] - 2, 1, 1, classes.board.Label, "S", color, "", 0)
+            self.board.add_unit(0, data[1] - 1, 1, 1, classes.board.Label, "V", color, "", 0)
 
-        # points
-        self.p_first = [0, 0]
-        self.p_last = [0, 0]
-        self.p_prev = [0, 0]
-        self.p_current = [0, 0]
+            # hue selectors
+            for i in range(0, self.data[0]-1):
+                c0 = ex.hsv_to_rgb(self.step * i, 255, 255)
+                self.board.add_unit(i + 1, data[1] - 3, 1, 1, classes.board.Ship, "", c0, "", 0)
+                self.h_units.append(self.board.ships[-1])
 
-        doors = [self.tool_door, self.color_door]
-        for each in doors:
-            each.door_outline = True
-            self.board.all_sprites_list.move_to_front(each)
+            # saturation selectors
+            for i in range(0, self.data[0]-1):
+                c1 = ex.hsv_to_rgb(0, self.step * i, 255)
+                self.board.add_unit(i + 1, data[1] - 2, 1, 1, classes.board.Ship, "", c1, "", 0)
+                self.s_units.append(self.board.ships[-1])
+
+            # vibrance selectors
+            for i in range(0, self.data[0]-1):
+                c2 = ex.hsv_to_rgb(0, 255, self.step * i)
+                self.board.add_unit(i + 1, data[1] - 1, 1, 1, classes.board.Ship, "", c2, "", 0)
+                self.v_units.append(self.board.ships[-1])
+        else:
+            door_loc = [[data[0] - 3, data[1] // 2], [data[0] - 2, data[1] - 1], [data[0] - 1, data[1] - 1]]
+            self.board.add_unit(data[0] - 3, 0, 1, 1, classes.board.Label, "H", color, "", 0)
+            self.board.add_unit(data[0] - 2, 0, 1, 1, classes.board.Label, "S", color, "", 0)
+            self.board.add_unit(data[0] - 1, 0, 1, 1, classes.board.Label, "V", color, "", 0)
+
+            # hue selectors
+            for i in range(0, self.data[1] - 1):
+                c0 = ex.hsv_to_rgb(self.step * i, 255, 255)
+                self.board.add_unit(data[0] - 3, i + 1, 1, 1, classes.board.Ship, "", c0, "", 0)
+                self.h_units.append(self.board.ships[-1])
+
+            # saturation selectors
+            for i in range(0, self.data[1] - 1):
+                c1 = ex.hsv_to_rgb(0, self.step * i, 255)
+                self.board.add_unit(data[0] - 2, i + 1, 1, 1, classes.board.Ship, "", c1, "", 0)
+                self.s_units.append(self.board.ships[-1])
+
+            # vibrance selectors
+            for i in range(0, self.data[1] - 1):
+                c2 = ex.hsv_to_rgb(0, 255, self.step * i)
+                self.board.add_unit(data[0] - 1, i + 1, 1, 1, classes.board.Ship, "", c2, "", 0)
+                self.v_units.append(self.board.ships[-1])
+
+        for i in range(1, 4):
+            self.board.units[-i].font_color = font_color
 
         for each in self.board.ships:
             each.outline = False
             each.immobilize()
             each.readable = False
 
+        self.board.add_door(door_loc[0][0], door_loc[0][1], 1, 1, classes.board.Door, "", color, "")
+        self.h_door = self.board.units[-1]
+        self.h_door.door_outline = True
+        self.h_door.perm_outline_color = (200, 0, 0)
+        self.board.all_sprites_list.move_to_front(self.h_door)
+
+        self.board.add_door(door_loc[1][0], door_loc[1][1], 1, 1, classes.board.Door, "", color, "")
+        self.s_door = self.board.units[-1]
+        self.s_door.door_outline = True
+        self.s_door.perm_outline_color = (200, 0, 0)
+        self.board.all_sprites_list.move_to_front(self.s_door)
+
+        self.board.add_door(door_loc[2][0], door_loc[2][1], 1, 1, classes.board.Door, "", color, "")
+        self.v_door = self.board.units[-1]
+        self.v_door.door_outline = True
+        self.v_door.perm_outline_color = (200, 0, 0)
+        self.board.all_sprites_list.move_to_front(self.v_door)
+
+        self.btn_down = False
+        self.paint_function = [self.paint_pencil, self.paint_brush1, self.paint_brush2, self.paint_line,
+                               self.paint_rect, self.paint_circle, self.paint_eraser, self.paint_bucket]
+        # points
+        self.p_first = [0, 0]
+        self.p_last = [0, 0]
+        self.p_prev = [0, 0]
+        self.p_current = [0, 0]
+
+        self.tool_door.door_outline = True
+        self.board.all_sprites_list.move_to_front(self.tool_door)
+
+        for each in self.board.ships:
+            each.outline = False
+            each.immobilize()
+            each.readable = False
+
+        """
         # set outline for tools
         for i in range(1, self.color_start):
             self.board.ships[i].set_outline([0, 54, 229], 1)
 
         for i in range(2):
             self.board.units[i].set_outline([0, 54, 229], 1)
+        """
 
         self.canvas = pygame.Surface(
             [self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1])
+
         self.canvas.fill(self.canvas_block.initcolor)
-        self.canvas_org = self.canvas.copy()  # pygame.Surface([self.canvas_block.grid_w*self.board.scale, self.canvas_block.grid_h*self.board.scale-1])
+        self.canvas_org = self.canvas.copy()
         self.history.append(self.canvas.copy())
 
         self.slider_canvas = pygame.Surface(
             [self.size_slider.grid_w * self.board.scale, self.size_slider.grid_h * self.board.scale - 1])
-        self.slider_bg_lines = [[0, self.board.scale], [8 * self.board.scale, 2],
-                                [8 * self.board.scale, 2 * self.board.scale - 4]]
+
+        if self.horizontal:
+            self.slider_bg_lines = [[0, self.board.scale], [8 * self.board.scale, 2],
+                                    [8 * self.board.scale, 2 * self.board.scale - 4]]
+            self.update_color_choosers(self.data[0] // 2 - 1, self.data[0]-1, self.data[0]-1)
+        else:
+            self.slider_bg_lines = [[2, 2], [3 * self.board.scale - 2, 2],
+                                    [1.5 * self.board.scale, self.size_slider.grid_h * self.board.scale - 2]]
+            self.update_color_choosers(self.data[1] // 2 - 1, self.data[1]-1, self.data[1]-1)
+
         self.draw_slider(self.brush_size)
 
     def draw_slider(self, size):
-        x = (((self.size_slider.grid_w * self.board.scale) - 10) * size) / 100
-        slider_rect = [x, 0, 10, 2 * self.board.scale]
+        if self.horizontal:
+            x = (((self.size_slider.grid_w * self.board.scale) - 10) * size) / 100
+            slider_rect = [x, 0, 10, 2 * self.board.scale]
+        else:
+            size = 99 - size
+            y = (((self.size_slider.grid_h * self.board.scale) - 10) * size) / 100
+            slider_rect = [0, y, 3 * self.board.scale, 10]
         self.slider_canvas.fill(self.size_slider.initcolor)
         pygame.draw.polygon(self.slider_canvas, self.slider_bg_col, self.slider_bg_lines, 0)
         pygame.draw.rect(self.slider_canvas, self.slider_color, slider_rect, 0)
@@ -179,22 +266,20 @@ class Board(gd.BoardGame):
         self.mainloop.redraw_needed[0] = True
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN:
-            # Change the x/y screen coordinates to grid coordinates
             pos = event.pos
             active = self.board.active_ship
             if event.button == 1:
                 if active == 0:
                     self.btn_down = True
-                    canvas_pos = [pos[0] - self.layout.game_left,
-                                  pos[1] - self.layout.top_margin - 3 * self.layout.scale]
+                    canvas_pos = [pos[0] - self.layout.game_left - self.canvas_block.grid_x * self.layout.scale,
+                                  pos[1] - self.layout.top_margin - self.canvas_block.grid_y * self.layout.scale]
                     self.p_first = canvas_pos
                     self.p_prev = canvas_pos
                     self.p_current = canvas_pos
                     self.paint_function[self.active_tool](0)
                     pygame.mouse.set_cursor(*pygame.cursors.broken_x)
-                    # start of painting done here
                 elif 0 < active < 9:
                     self.active_tool = active - 1
                     self.tool_door.set_pos(self.board.active_ship_pos)
@@ -205,20 +290,34 @@ class Board(gd.BoardGame):
                 elif active == 11:
                     self.redo()
                 elif active >= self.color_start:
-                    self.active_color = self.board.ships[active].initcolor
-                    self.color_door.set_pos(self.board.active_ship_pos)
+                    if self.board.ships[active] in self.h_units:
+                        self.h_door.set_pos(self.board.active_ship_pos)
+                        c = active - self.h_units[0].unit_id
+                        self.update_color_choosers(c, None, None)
+                        self.mainloop.redraw_needed[0] = True
+                    elif self.board.ships[active] in self.s_units:
+                        self.s_door.set_pos(self.board.active_ship_pos)
+                        c = active - self.s_units[0].unit_id
+                        self.update_color_choosers(None, c, None)
+                        self.mainloop.redraw_needed[0] = True
+                    elif self.board.ships[active] in self.v_units:
+                        self.v_door.set_pos(self.board.active_ship_pos)
+                        c = active - self.v_units[0].unit_id
+                        self.update_color_choosers(None, None, c)
+                        self.mainloop.redraw_needed[0] = True
 
-        elif event.type == pygame.MOUSEMOTION and self.btn_down == True:
+        elif event.type == pygame.MOUSEMOTION and self.btn_down:
             active = self.board.active_ship
             pos = event.pos
             column = (pos[0] - self.layout.game_left) // (self.layout.width)
             row = (pos[1] - self.layout.top_margin) // (self.layout.height)
-            if active == 0 and column >= 0 and 2 < row < self.data[1] - 3:
-                canvas_pos = [pos[0] - self.layout.game_left, pos[1] - self.layout.top_margin - 3 * self.layout.scale]
+            if active == 0 and ((self.horizontal and column >= 0 and 2 < row < self.data[1] - 3) or (not self.horizontal and row >= 0 and 2 < column < self.data[0] - 3)):
+                canvas_pos = [pos[0] - self.layout.game_left - self.canvas_block.grid_x * self.layout.scale,
+                              pos[1] - self.layout.top_margin - self.canvas_block.grid_y * self.layout.scale]
                 self.p_prev = self.p_current
                 self.p_current = canvas_pos
                 self.paint_function[self.active_tool](1)
-            elif active == 9 and self.sizing == True and row < 3:  # column >= self.data[0]-8 and :
+            elif active == 9 and self.sizing and ((self.horizontal and row < 3) or (not self.horizontal and column < 3)):  # column >= self.data[0]-8 and :
                 self.change_size(pos, 1)
             elif active == 9:
                 self.sizing = False
@@ -229,23 +328,57 @@ class Board(gd.BoardGame):
             pos = event.pos
             column = (pos[0] - self.layout.game_left) // (self.layout.width)
             row = (pos[1] - self.layout.top_margin) // (self.layout.height)
-            if active == 0 and column >= 0 and 2 < row < self.data[1] - 3:
-                # drop the new object onto the painting
-                canvas_pos = [pos[0] - self.layout.game_left, pos[1] - self.layout.top_margin - 3 * self.layout.scale]
+            if active == 0 and ((self.horizontal and column >= 0 and 2 < row < self.data[1] - 3) or (not self.horizontal and row >= 0 and 2 < column < self.data[0] - 3)):
+                canvas_pos = [pos[0] - self.layout.game_left - self.canvas_block.grid_x * self.layout.scale,
+                              pos[1] - self.layout.top_margin - self.canvas_block.grid_y * self.layout.scale]
                 self.p_last = canvas_pos
                 self.paint_function[self.active_tool](2)
                 self.update_history()
-            elif active == 9 and self.sizing == True and row < 3:  # column >= self.data[0]-8 and :
+            elif active == 9 and self.sizing and ((self.horizontal and row < 3) or (not self.horizontal and column < 3)):  # column >= self.data[0]-8 and :
                 self.change_size(pos, 2)
             else:
                 if self.btn_down:
                     self.screen_restore()
                     self.copy_to_screen()
-            self.sizing == False
+            self.sizing = False
             self.btn_down = False
 
+    def update_color_choosers(self, h=None, s=None, v=None):
+        if h is not None:
+            self.custom_color_hsv[0] = h * self.step
+        if s is not None:
+            self.custom_color_hsv[1] = s * self.step
+        if v is not None:
+            self.custom_color_hsv[2] = v * self.step
+
+        if self.horizontal:
+            ind = 0
+        else:
+            ind = 1
+
+        for i in range(0, self.data[ind]-1):
+            self.h_units[i].color = ex.hsv_to_rgb(i * self.step, self.custom_color_hsv[1], self.custom_color_hsv[2])
+            self.h_units[i].initcolor = self.h_units[i].color
+            self.h_units[i].update_me = True
+
+        for i in range(0, self.data[ind]-1):
+            self.s_units[i].color = ex.hsv_to_rgb(self.custom_color_hsv[0], i * self.step, self.custom_color_hsv[2])
+            self.s_units[i].initcolor = self.s_units[i].color
+            self.s_units[i].update_me = True
+
+        for i in range(0, self.data[ind]-1):
+            self.v_units[i].color = ex.hsv_to_rgb(self.custom_color_hsv[0], self.custom_color_hsv[1], i * self.step)
+            self.v_units[i].initcolor = self.v_units[i].color
+            self.v_units[i].update_me = True
+
+        self.active_color = ex.hsv_to_rgb(self.custom_color_hsv[0], self.custom_color_hsv[1], self.custom_color_hsv[2])
+
     def change_size(self, pos, stage):
-        if self.slider_min < pos[0] < self.slider_max:
+        if self.horizontal:
+            ind = 0
+        else:
+            ind = 1
+        if self.slider_min < pos[ind] < self.slider_max:
             if stage == 0:
                 self.sizing = True
                 self.btn_down = True
@@ -261,9 +394,14 @@ class Board(gd.BoardGame):
             self.mainloop.redraw_needed[0] = True
 
     def apply_size(self, pos):
-        size = int(((pos[0] - self.slider_min) * 100.0) / (self.slider_max - self.slider_min))
-        self.brush_size = size
-        self.size_display.value = self.d["brush size"] + ": " + str(self.brush_size)
+        if self.horizontal:
+            size = int(((pos[0] - self.slider_min) * 100.0) / (self.slider_max - self.slider_min))
+            self.brush_size = size
+            self.size_display.value = self.d["brush size"] + ": " + str(self.brush_size)
+        else:
+            size = 99 - int(((pos[1] - self.slider_min) * 100.0) / (self.slider_max - self.slider_min))
+            self.brush_size = size
+            self.size_display.value = str(self.brush_size)
         self.draw_slider(size)
 
     # states => mouse states => 0 - mouse_btn_down, 1 - mouse_move, 2 - mouse_btn_up
@@ -272,7 +410,6 @@ class Board(gd.BoardGame):
         if self.brush_size > 0:
             if state == 0:
                 self.backup_canvas()
-
                 pygame.draw.circle(self.canvas, self.active_color, self.p_current, self.brush_size // 2, 0)
                 self.copy_to_screen()
             elif state == 1:
@@ -284,7 +421,6 @@ class Board(gd.BoardGame):
                     else:
                         r = self.brush_size // 2  # - 1
                         width = self.brush_size + 2
-
                     pygame.draw.circle(self.canvas, self.active_color, self.p_current, r, 0)
                 if self.brush_size > 3:
                     self.draw_line(self.p_prev, self.p_current, self.brush_size, self.brush_size)
@@ -383,12 +519,10 @@ class Board(gd.BoardGame):
             points = []
             points.append([int(p1[0] - x1), int(p1[1] + y1)])
             points.append([int(p1[0] + x1), int(p1[1] - y1)])
-
             points.append([int(p2[0] + x2), int(p2[1] - y2)])
             points.append([int(p2[0] - x2), int(p2[1] + y2)])
             pygame.draw.polygon(self.canvas, self.active_color, points)
             pygame.draw.aalines(self.canvas, self.active_color, True, points, 1)
-
             pygame.draw.circle(self.canvas, self.active_color, p1, bs1, 0)
             pygame.draw.circle(self.canvas, self.active_color, p2, bs2, 0)
 
@@ -432,7 +566,6 @@ class Board(gd.BoardGame):
                     border_width = 0
             else:
                 border_width = 0
-            # rectangle = [self.p_first[0], self.p_first[1], self.p_last[0]-self.p_first[0],self.p_last[1]-self.p_first[1]]
             pygame.draw.rect(self.canvas, self.active_color, rectangle, border_width)
             self.copy_to_screen()
 

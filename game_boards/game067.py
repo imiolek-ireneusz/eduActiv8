@@ -38,6 +38,8 @@ class Board(gd.BoardGame):
             bd_color1 = ex.hsv_to_rgb(h1, 187, 200)
             bd_color2 = ex.hsv_to_rgb(h2, 100, 200)
 
+        transp = (0, 0, 0, 0)
+
         data = [15, 9]
         self.data = data
 
@@ -71,27 +73,36 @@ class Board(gd.BoardGame):
         self.fraction = classes.drw.fraction_hq.Fraction(1, self.board.scale * data[1], color1, color2, bd_color1, bd_color2, self.numbers, 2)
         self.fraction_canvas.painting = self.fraction.get_canvas().copy()
 
-        self.board.add_unit(data[1], 2, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = bd_color1
+        self.board.add_unit(data[1], 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color1)
+
         self.board.add_unit(data[1] + 2, 2, 2, 2, classes.board.Label, self.qm, white, "", 31)
         self.nm1 = self.board.units[-1]
         self.nm1.set_outline(color=[255, 0, 0], width=2)
         self.nm1.checkable = True
         self.nm1.init_check_images()
         self.nm1.font_color = bd_color1
-        self.board.add_unit(data[1] + 4, 2, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = bd_color1
+
+        self.board.add_unit(data[1] + 4, 2, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color1)
+
         self.board.add_unit(data[1] + 2, 4, 2, 1, classes.board.Label, "―", white, "", 31)
-        self.board.add_unit(data[1], 5, 2, 2, classes.board.Letter, "-", white, "", 31)
-        self.board.ships[-1].font_color = bd_color2
+
+        self.board.add_unit(data[1], 5, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_l_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color2)
+
         self.board.add_unit(data[1] + 2, 5, 2, 2, classes.board.Label, self.qm, white, "", 31)
         self.nm2 = self.board.units[-1]
         self.nm2.set_outline(color=[255, 0, 0], width=2)
         self.nm2.checkable = True
         self.nm2.init_check_images()
         self.nm2.font_color = bd_color2
-        self.board.add_unit(data[1] + 4, 5, 2, 2, classes.board.Letter, "+", white, "", 31)
-        self.board.ships[-1].font_color = bd_color2
+        self.board.add_unit(data[1] + 4, 5, 2, 2, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_r_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(bd_color2)
 
         for each in self.board.ships:
             each.readable = False
@@ -189,11 +200,24 @@ class Board(gd.BoardGame):
         if self.numbers_disp[1] < 2:
             self.numbers_disp[1] = 2
 
+        if self.numbers_disp[0] == 1:
+            self.board.ships[0].change_image("nav_l_mtsd.png")
+        elif self.numbers_disp[0] == 8:
+            self.board.ships[1].change_image("nav_r_mtsd.png")
+        else:
+            self.board.ships[0].change_image("nav_l_mts.png")
+            self.board.ships[1].change_image("nav_r_mts.png")
+
+        if self.numbers_disp[1] == 2:
+            self.board.ships[2].change_image("nav_l_mtsd.png")
+        elif self.numbers_disp[1] == 9:
+            self.board.ships[3].change_image("nav_r_mtsd.png")
+        else:
+            self.board.ships[2].change_image("nav_l_mts.png")
+            self.board.ships[3].change_image("nav_r_mts.png")
+
         self.nm1.set_value(str(self.numbers_disp[0]))
         self.nm2.set_value(str(self.numbers_disp[1]))
-        #self.fraction.update_values(self.numbers)
-        #self.fraction_canvas.painting = self.fraction.get_canvas().copy()
-        #self.fraction_canvas.update_me = True
         self.mainloop.redraw_needed[0] = True
 
     def update(self, game):

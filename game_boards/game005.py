@@ -1,139 +1,169 @@
 # -*- coding: utf-8 -*-
 
-import random
+import math
+import os
 import pygame
 
 import classes.board
-import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
-        self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
-        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 6)
+        self.level = lc.Level(self, mainloop, 1, 1)
+        self.badge_count = mainloop.db.get_completion_count(mainloop.userid)
+        self.pages_total = int(math.ceil(self.badge_count / 10.0))
+        if self.pages_total == 0:
+            self.pages_total = 1
+        self.current_page = 1
+
+        gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 10)
 
     def create_game_objects(self, level=1):
         self.board.draw_grid = False
-        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 1]
-        self.mainloop.info.hide_buttonsa(self.vis_buttons)
-        s = 100  # random.randrange(150, 190, 5)
-        v = 255  # random.randrange(230, 255, 5)
-        h = random.randrange(0, 255, 5)
-        color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
-        font_color = ex.hsv_to_rgb(h, 255, 140)
+        self.show_info_btn = False
 
-        # data = [x_count, y_count, number_count, bottom_limit, top_limit, ordered, font_size]
-        data = [11, 4]
-        data.extend(self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group, self.level.lvl))
-        self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
-                                                            self.mainloop.config.user_age_group)
+        color2 = (255, 255, 255, 0)
+        data = [35, 21]
+        # stretch width to fit the screen size
+        x_count = self.get_x_count(data[1], even=False)
+        if x_count > 35:
+            data[0] = x_count
 
         self.data = data
 
-        self.board.set_animation_constraints(0, data[0], 0, data[1])
         self.layout.update_layout(data[0], data[1])
-        self.board.level_start(data[0], data[1], self.layout.scale)
+        scale = self.layout.scale
+        self.board.level_start(data[0], data[1], scale)
 
-        self.num_list = []
+        self.vis_buttons = [0, 0, 0, 0, 1, 0, 1, 0, 0]
+        self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
-        if data[5] == True:
-            index = random.randrange(data[3], data[4]-data[2]+2)
-            n = 0
-            for i in range(data[2]):
-                self.num_list.append(index + n)
-                n += 1
+        self.offset = (self.current_page - 1) * 10
+
+        self.results = self.mainloop.db.completion_book(self.mainloop.userid, offset=self.offset)
+
+        self.ages = [self.lang.b["preschool"], self.lang.b["Year 1"], self.lang.b["Year 2"], self.lang.b["Year 3"], self.lang.b["Year 4"], self.lang.b["Year 5"], self.lang.b["Year 6"], self.lang.b["Year 6"]]  # , self.lang.b["all groups"]
+
+        if self.badge_count > 0:
+            centre = data[0] // 2
+            self.x_positions_odd = [centre - 1 - 4 - 3 - 4 - 3, centre - 1 - 4 - 3, centre - 1, centre + 2 + 4,
+                                    centre + 2 + 4 + 3 + 4]
+            self.x_positions_even = [centre - 2 - 3 - 4 - 3, centre - 2 - 3, centre + 3, centre + 3 + 3 + 4]
+
+            bpos = []
+
+            # badges = range(1,random.randint(2,11))
+            ln = len(self.results)
+            if ln == 1:
+                tpos = self.x_positions_odd[2:3]
+            elif ln == 2:
+                tpos = self.x_positions_even[1:3]
+            elif ln == 3:
+                tpos = self.x_positions_odd[1:4]
+            elif ln == 4:
+                tpos = self.x_positions_even[:]
+            else:  # ln = 5:
+                tpos = self.x_positions_odd[:]
+                if ln == 6:
+                    bpos = self.x_positions_odd[2:3]
+                elif ln == 7:
+                    bpos = self.x_positions_even[1:3]
+                elif ln == 8:
+                    bpos = self.x_positions_odd[1:4]
+                elif ln == 9:
+                    bpos = self.x_positions_even[:]
+                else:  # ln = 10:
+                    bpos = self.x_positions_odd[:]
+
+            apos = []
+            apos.extend(tpos)
+            apos.extend(bpos)
+            scheme = "white"
+            if self.mainloop.scheme is not None:
+                if self.mainloop.scheme.dark:
+                    scheme = "black"
+                    color2 = (0, 0, 0, 0)
+            y = 2
+            for i in range(ln):
+                if i > 4:
+                    y = 10
+                if self.results[i][0] in self.mainloop.m.id2icon:
+                    self.board.add_unit(apos[i], y - 1, 3, 1, classes.board.Label, "%d x" % (self.results[i][3]),
+                                        color2, "", 1)
+                    self.board.units[-1].font_color = (0, 75, 255)
+                    if self.results[i][0] not in self.mainloop.m.lang_customized_icons:
+                        img2_src = os.path.join("res", "icons", self.mainloop.m.id2icon[self.results[i][0]])
+                    else:
+                        file2_src = "%s%s%s" % (self.mainloop.m.id2icon[self.results[i][0]][0:10],
+                                                self.mainloop.config.id2imgsuffix[self.results[i][2]], ".png")
+                        img2_src = os.path.join("res", "icons", file2_src)
+
+                    self.board.add_unit(apos[i], y, 3, 4, classes.board.TwoImgsShip, "", color2,
+                                        img_src=os.path.join("res", "themes", self.mainloop.theme, "images", "badge_bg.png"),
+                                        img2_src=img2_src, row_data=(21, 21), alpha=True)
+                    self.board.ships[-1].immobilize()
+                    self.board.ships[-1].outline = False
+                    if self.lang.ltr_text:
+                        levtxt = "%s %d" % (self.lang.d["Level"], self.results[i][1])
+                    else:
+                        levtxt = "%d %s" % (self.results[i][1], self.lang.d["Level"])
+                    if self.results[i][2] != 0:
+                        lng = "(" + self.mainloop.config.id2lng[self.results[i][2]] + ")"
+                    else:
+                        lng = ""
+                    self.board.add_unit(apos[i] - 2, y + 4, 7, 3, classes.board.Label, [self.ages[self.results[i][4]], levtxt, lng, ""], color2, "", 1)
+                    self.board.units[-1].font_color = (255, 75, 0)
+                    self.board.units[-1].font_color = (255, 75, 0)
+                else:
+                    print(self.results[i][0])
+
+            if self.badge_count > 10:
+                if self.current_page == 1:
+                    self.board.add_unit(centre - 4 - 3, 17, 3, 3, classes.board.ImgShip, "", color2,
+                                        os.path.join("schemes", scheme, "pglu.png"))
+                else:
+                    self.board.add_unit(centre - 4 - 3, 17, 3, 3, classes.board.ImgShip, "", color2,
+                                        os.path.join("schemes", scheme, "pgl.png"))
+                self.btn_prev = self.board.ships[-1]
+                self.btn_prev.immobilize()
+                self.btn_prev.outline = False
+
+                self.board.add_unit(centre - 1 - 3, 17, 9, 3, classes.board.Label,
+                                    "%d / %d" % (self.current_page, self.pages_total), color2, "", 21)
+                if self.current_page == self.pages_total:
+                    self.board.add_unit(centre + 2 + 3, 17, 3, 3, classes.board.ImgShip, "", color2,
+                                        os.path.join("schemes", scheme, "pgru.png"))
+                else:
+                    self.board.add_unit(centre + 2 + 3, 17, 3, 3, classes.board.ImgShip, "", color2,
+                                        os.path.join("schemes", scheme, "pgr.png"))
+                self.btn_next = self.board.ships[-1]
+                self.btn_next.immobilize()
+                self.btn_next.outline = False
         else:
-            while len(self.num_list) < data[2]:
-                num = random.randint(data[3], data[4])
-                if num not in self.num_list:
-                    self.num_list.append(num)
-        shuffled = self.num_list[:]
-        self.ordered = sorted(self.num_list[:])
-        random.shuffle(shuffled)
-
-        color = ((255, 255, 255))
-
-        # create table to store 'binary' solution
-        self.solution_grid = [0 for x in range(data[0])]
-
-        # find position of first door square
-        # x = (data[0] - data[2]) // 2
-        self.left_offset = (data[0] - data[2]) // 2
-
-        # add objects to the board
-        for i in range(data[2]):
-            self.board.add_door(self.left_offset + i, 0, 1, 1, classes.board.Door, "", color, "")
-            self.board.units[i].door_outline = True
-            h = random.randrange(0, 255, 5)
-            y = random.randrange(1, 3)
-            number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
-            caption = str(shuffled[i])
-            self.board.add_unit(self.left_offset + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[6])
-            self.board.ships[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
-            self.solution_grid[self.left_offset + i] = 1
-            self.board.ships[-1].readable = False
-
-            self.board.ships[i].checkable = True
-            self.board.ships[i].init_check_images()
-
-        for each in self.board.units:
-            self.board.all_sprites_list.move_to_front(each)
-
-        """
-        instruction = self.d["Re-arrange ascending"]
-        self.board.add_unit(0, 5, 11, 1, classes.board.Letter, instruction, color0, "", 7)
-        self.board.ships[-1].immobilize()
-        self.board.ships[-1].font_color = font_color
-        self.board.ships[-1].speaker_val = self.dp["Re-arrange ascending"]
-        self.board.ships[-1].speaker_val_update = False
-        self.outline_all(0, 1)
-        """
-
-    def show_info_dialog(self):
-        self.mainloop.dialog.show_dialog(3, self.d["Re-arrange ascending"])
+            self.board.add_unit(0, 2, data[0], 2, classes.board.Label, self.lang.d["Achievements"], color2, "", 25)
+            self.board.units[-1].font_color = (255, 75, 0, 0)
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if event.type == pygame.MOUSEBUTTONUP:
-            for each in self.board.units:
-                if each.is_door is True:
-                    self.board.all_sprites_list.move_to_front(each)
-            self.check_result()
+        if self.badge_count > 10:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    active = self.board.active_ship
+                    if active > 0:
+                        if self.board.ships[active] == self.btn_prev and self.current_page > 1:
+                            self.change_page(-1)
+                        elif self.board.ships[active] == self.btn_next and self.current_page < self.pages_total:
+                            self.change_page(1)
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            self.auto_check_reset()
+    def change_page(self, page_inc):
+        self.current_page = self.current_page + page_inc
+        self.create_game_objects()
 
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
-    def auto_check_reset(self):
-        for each in self.board.ships:
-            each.update_me = True
-            each.set_display_check(None)
-
-    def auto_check(self):
-        if self.board.grid[0] == self.solution_grid:
-            for i in range(self.data[2]):
-                if self.ordered[self.board.ships[i].grid_x - self.left_offset] == int(self.board.ships[i].value):
-                    self.board.ships[i].set_display_check(True)
-                else:
-                    self.board.ships[i].set_display_check(False)
-
     def check_result(self):
-        if self.board.grid[0] == self.solution_grid:
-            correct = True
-            for i in range(self.data[2]):
-                if self.ordered[self.board.ships[i].grid_x - self.left_offset] != int(self.board.ships[i].value):
-                    correct = False
-                    break
-
-            if correct:
-                self.auto_check()
-                self.level.next_board()
-            else:
-                self.auto_check()
-        self.mainloop.redraw_needed[0] = True
+        pass

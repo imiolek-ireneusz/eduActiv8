@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from __future__ import with_statement
 
 import pygame
 from math import ceil
 
 import classes.board
+import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 
@@ -116,7 +116,7 @@ class Board(gd.BoardGame):
                 each.font_color = (40, 40, 40)
                 each.font = self.board.font_sizes[2]
             else:
-                each.font_color = (130, 0, 180)
+                each.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 200)
                 each.font = self.board.font_sizes[0]
             each.update_me = True
 

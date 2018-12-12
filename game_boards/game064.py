@@ -35,6 +35,9 @@ class Board(gd.BoardGame):
             color6 = self.mainloop.scheme.color6  # dark side of long hand
             color8 = self.mainloop.scheme.color8  # outer circle filling
 
+            self.h_col = color5
+            self.m_col = color6
+
             color = self.mainloop.scheme.u_color
             white = self.mainloop.scheme.u_color
             gray = (100, 100, 100)
@@ -49,9 +52,14 @@ class Board(gd.BoardGame):
             color6 = ex.hsv_to_rgb(170, 180, 240)
             color8 = ex.hsv_to_rgb(170, 10, 255)
 
+            self.h_col = ex.hsv_to_rgb(225, 190, 220)
+            self.m_col = ex.hsv_to_rgb(170, 190, 220)
+
             color = (255, 255, 255)
             white = (255, 255, 255)
             gray = (100, 100, 100)
+
+        transp = (0, 0, 0, 0)
 
         self.color3 = color3
         self.color4 = color4
@@ -112,7 +120,7 @@ class Board(gd.BoardGame):
             self.text_string = self.lang.time2str(tt[0], tt[1])
         else:
             if self.lang.lang == "ru":
-                self.text_string = self.lang.time2officialstr(tt[0], tt[1])
+                self.text_string = self.lang.time2str_short(tt[0], tt[1])
             else:
                 self.text_string = self.lang.time2str_short(tt[0], tt[1])
         self.time = [6, 0]
@@ -187,32 +195,30 @@ class Board(gd.BoardGame):
         self.ans_m.checkable = True
         self.ans_m.init_check_images()
 
-        self.ans_h.align = 2
-        self.ans_m.align = 1
-
         self.ans_h.immobilize()
         self.ans_m.immobilize()
 
         self.ans_h.font_color = color3
         self.ans_m.font_color = color4
 
-
-        self.board.add_unit(ans_offset + 1, top_offset + 3, 1, 1, classes.board.Letter, "+", white, "", 25)
-        self.board.ships[-1].readable = False
+        self.board.add_unit(ans_offset + 1, top_offset + 3, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.h_col)
         self.h_plus = self.board.ships[-1]
-        self.h_plus.font_color = color3
-        self.board.add_unit(ans_offset + 3, top_offset + 3, 1, 1, classes.board.Letter, "+", white, "", 25)
-        self.board.ships[-1].readable = False
+        self.board.add_unit(ans_offset + 3, top_offset + 3, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_u_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.m_col)
         self.m_plus = self.board.ships[-1]
-        self.m_plus.font_color = color4
-        self.board.add_unit(ans_offset + 1, top_offset + 5, 1, 1, classes.board.Letter, "-", white, "", 25)
-        self.board.ships[-1].readable = False
+        self.board.add_unit(ans_offset + 1, top_offset + 5, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.h_col)
         self.h_min = self.board.ships[-1]
-        self.h_min.font_color = color3
-        self.board.add_unit(ans_offset + 3, top_offset + 5, 1, 1, classes.board.Letter, "-", white, "", 25)
-        self.board.ships[-1].readable = False
+        self.board.add_unit(ans_offset + 3, top_offset + 5, 1, 1, classes.board.ImgCenteredShip, "", transp,
+                            img_src='nav_d_mts.png', alpha=True)
+        self.board.ships[-1].set_tint_color(self.m_col)
         self.m_min = self.board.ships[-1]
-        self.m_min.font_color = color4
+
+
         lst = [self.h_plus, self.h_min, self.m_plus, self.m_min]
         for each in lst:
             each.immobilize()
@@ -221,9 +227,10 @@ class Board(gd.BoardGame):
             self.board.ships[-1].immobilize()
             self.board.ships[-1].font_color = gray
         if gv == 0 and self.lang.lang in ["ru", "he"]:
-            spk_txt = self.lang.time2spk(tt[0], tt[1])
             if self.lang.lang == "ru" and self.mainloop.m.game_var2 == 1:
-                spk_txt = self.lang.time2officialspk(tt[0], tt[1])
+                spk_txt = self.lang.time2spk_short(tt[0], tt[1])
+            else:
+                spk_txt = self.lang.time2spk(tt[0], tt[1])
             self.board.ships[-1].speaker_val = spk_txt
             self.board.ships[-1].speaker_val_update = False
         if gv == 2:

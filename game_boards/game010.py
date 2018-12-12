@@ -63,7 +63,6 @@ class Board(gd.BoardGame):
             font_size = 13
 
         font_size2 = 14
-        self.brush_size = data[3]
 
         # stretch width to fit the screen size
         max_x_count = self.get_x_count(data[1], even=None)
@@ -77,6 +76,8 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
+
+        self.brush_size = scale // 2 #data[3]
 
         # canvas
         self.board.add_unit(10, 0, data[0] - 16, data[1], classes.board.Letter, "", color, "", font_size)
@@ -193,7 +194,7 @@ class Board(gd.BoardGame):
                     self.p_first = canvas_pos
                     self.p_prev = canvas_pos
                     self.p_current = canvas_pos
-                    self.brush_size = self.data[3]
+                    #self.brush_size = self.data[3]
                     self.paint_pencil(0)
                     pygame.mouse.set_cursor(*pygame.cursors.broken_x)
                 elif 0 < active < self.count + 1:

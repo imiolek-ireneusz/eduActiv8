@@ -71,7 +71,7 @@ class BuildExe:
         # Auhor of program
         self.author_name = "Ireneusz Imiolek"
         self.author_email = "imiolek.i@gmail.com"
-        self.copyright = "Copyright (c) 2012-2017 Ireneusz Imiolek"
+        self.copyright = "Copyright (c) 2012-2018 Ireneusz Imiolek"
 
         # Description
         self.project_description = "eduActiv8 - Educational Activities for Kids"
@@ -83,7 +83,8 @@ class BuildExe:
         self.extra_datas = ["classes", "game_boards", "i18n", "locale", "res", "xml"]
 
         # Extra/excludes python modules
-        self.extra_modules = []
+        # TODO change this number to include all new games
+        self.extra_modules = [["game_boards.game%03i" % i for i in range(111)]]
 
         # showed missing in result compilation
         self.exclude_modules = []
@@ -145,6 +146,7 @@ class BuildExe:
 
         # List all data files to add
         extra_datas = ["__init__.py", "CHANGES.txt", "CREDITS.txt", "eduactiv8.py", "LICENSE", "README.txt"]
+
         for data in self.extra_datas:
             if os.path.isdir(data):
                 extra_datas.extend(self.find_data_files(data, '*'))

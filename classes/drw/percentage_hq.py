@@ -38,7 +38,8 @@ class Percentage:
         angles = (self.number * 3.6, (100 - self.number) * 3.6)
         #angle_start = [int(angles[0]), 0] #int(round((self.number * angle) / 2.0))
         #angle_start = [int(round(angles[0] / 2.0 - angles[0])), int(round(angles[0] / 2.0)) + int(angles[0])]
-        angle_start = [int(round(angles[0] / 2.0 - angles[0])) + 1, int(round(angles[0] / 2.0 - angles[0]))+int(angles[0]) + 1]
+        angle_start = [int(round(angles[0] / 2.0 - angles[0])), int(round(angles[0] / 2.0 - angles[0]))+int(angles[0])]
+        angle_start_float = [angles[0] / 2.0 - angles[0], angles[0] / 2.0]
         #angle_start = [270, 270+int(angles[0])]
         for i in range(2):
             if i == 0:
@@ -56,16 +57,26 @@ class Percentage:
 
             #create vector to push the pieces away from the centre towards middle of the arch
             centre_vect = Vector2().from_points([cx, cy],
-                                                [cx + int(round(r * cos(((angles[i] - angles[i] / 2.0) + angle_start[i]) * pi / 180))),
-                                                 cy + int(round(r * sin(((angles[i] - angles[i] / 2.0) + angle_start[i]) * pi / 180)))])
+                                                [cx + int(round(r * cos(((angles[i] - angles[i] / 2.0) + angle_start_float[i]) * pi / 180))),
+                                                 cy + int(round(r * sin(((angles[i] - angles[i] / 2.0) + angle_start_float[i]) * pi / 180)))])
 
             centre_vect.normalize()
+            #first point
             p = [(cx + centre_vect[0] * offset, cy + centre_vect[1] * offset)]
+
             # Get points on arc
-            for n in range(-1 + angle_start[i], angle_start[i] + int(round(angles[i]))):
-                x = cx + int(round(r * cos((n) * pi / 180))) + centre_vect[0] * offset
-                y = cy + int(round(r * sin((n) * pi / 180))) + centre_vect[1] * offset
+            for n in range(angle_start[i], angle_start[i] + int(round(angles[i])), 1):
+                x = cx + int(round(r * cos(n * pi / 180))) + centre_vect[0] * offset
+                y = cy + int(round(r * sin(n * pi / 180))) + centre_vect[1] * offset
                 p.append((x, y))
+
+            # final point on arc
+            n = int(round(angle_start[i] + angles[i]))
+            x = cx + int(round(r * cos(n * pi / 180))) + centre_vect[0] * offset
+            y = cy + int(round(r * sin(n * pi / 180))) + centre_vect[1] * offset
+            p.append((x, y))
+
+            #last point
             p.append((cx + centre_vect[0] * offset, cy + centre_vect[1] * offset))
 
             # Draw pie segment

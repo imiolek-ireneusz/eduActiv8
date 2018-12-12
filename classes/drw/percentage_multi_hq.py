@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pygame
-from math import pi, cos, sin
+from math import pi, cos, sin, radians
 
 from classes.simple_vector import Vector2
 
@@ -26,14 +26,14 @@ class Percentage:
 
     def redraw(self):
         self.canvas.fill((0, 0, 0, 0))
-        self.draw_circles()
+        self.draw_slices()
 
     def update_values(self, numbers):
         self.numbers = numbers
         self.canvas.fill((0, 0, 0, 0))
-        self.draw_circles()
+        self.draw_slices()
 
-    def draw_circles(self):
+    def draw_slices(self):
         r = self.size // 2 - self.size // 10
         m = (self.size - r * 2) // 2
         angles = []
@@ -42,11 +42,11 @@ class Percentage:
         for i in range(len(self.numbers)):
             angles.append(self.numbers[i] * 3.6)
             if i == 0:
-                angle_start.append(0)
-                angle_start_float.append(0)
+                angle_start.append(270)
+                angle_start_float.append(270)
             else:
-                angle_start.append(int(angle_start_float[-1] - angles[i]))
-                angle_start_float.append(angle_start_float[-1] - angles[i])
+                angle_start.append(int(angle_start_float[-1] + angles[i-1]))
+                angle_start_float.append(angle_start_float[-1] + angles[i-1])
 
         for i in range(len(self.numbers)):
             offset = 0
@@ -61,13 +61,22 @@ class Percentage:
                                                  cy + int(round(r * sin(((angles[i] - angles[i] / 2.0) + angle_start_float[i]) * pi / 180)))])
 
             centre_vect.normalize()
+            #first point
             p = [(cx + centre_vect[0] * offset, cy + centre_vect[1] * offset)]
 
             # Get points on arc
-            for n in range(-1 + angle_start[i], 1 + int(round(angle_start_float[i] + angles[i]))):
-                x = cx + int(round(r * cos((n) * pi / 180))) + centre_vect[0] * offset
-                y = cy + int(round(r * sin((n) * pi / 180))) + centre_vect[1] * offset
+            for n in range(angle_start[i], int(round(angle_start_float[i] + angles[i])), 3):
+                x = cx + int(round(r * cos(n * pi / 180))) + centre_vect[0] * offset
+                y = cy + int(round(r * sin(n * pi / 180))) + centre_vect[1] * offset
                 p.append((x, y))
+
+            #final point on arc
+            n = int(round(angle_start_float[i] + angles[i]))
+            x = cx + int(round(r * cos(n * pi / 180))) + centre_vect[0] * offset
+            y = cy + int(round(r * sin(n * pi / 180))) + centre_vect[1] * offset
+            p.append((x, y))
+
+            #last point
             p.append((cx + centre_vect[0] * offset, cy + centre_vect[1] * offset))
 
             # Draw pie segment

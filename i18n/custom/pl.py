@@ -193,9 +193,9 @@ d["a4a_construction"] = ["latarnia morska", "drzwi", "cyrk", "kościół", "buda
 d["a4a_nature"] = ["ziemia", "klif", "wzgórze", "kanion", "skała", "morze", "jezioro", "wybrzeże", "plaża", "góra",
                    "staw", "szczyt", "lawa", "jaskinia", "wydma", "wyspa", "las", "pustynia", "góra lodowa"]
 
-# d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "police", "plumber", "badge", "queen", "farmer", "magic", "knight", "doctor", "bricklayer", "cleaner", "teacher", "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun", "pirate", "cowboy", "electrician", "nurse", "king", "president", "office", "carpenter", "jockey", "worker", "mechanic", "pilot", "actor", "cook", "student", "butcher", "accountant", "prince", "pope", "sailor", "boxer", "ballet", "coach", "astronaut", "painter", "anaesthesiologist", "scientist"]
+# d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "police", "plumber", "badge", "queen", "farmer", "magician", "knight", "doctor", "bricklayer", "cleaner", "teacher", "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun", "pirate", "cowboy", "electrician", "nurse", "king", "president", "office", "carpenter", "jockey", "worker", "mechanic", "pilot", "actor", "cook", "student", "butcher", "accountant", "prince", "pope", "sailor", "boxer", "ballet", "coach", "astronaut", "painter", "anaesthesiologist", "scientist"]
 d["a4a_jobs"] = ['klaun', 'inżynier', 'ksiądz', 'weterynarz', 'sędzia', 'szef kuchni', 'sportowiec', 'bibliotekarz',
-                 'żongler', 'policjant', 'hydraulik', 'medal', 'królowa', 'rolnik', 'magia', 'rycerz', 'lekarz',
+                 'żongler', 'policjant', 'hydraulik', 'medal', 'królowa', 'rolnik', 'magik', 'rycerz', 'lekarz',
                  'murarz', 'sprzątaczka', 'nauczyciel', 'myśliwy', 'żołnierz', 'muzyk', 'prawnik', 'wędkarz',
                  'księżniczka', 'strażak', 'zakonnica', 'pirat', 'kowboj', 'elektryk', 'pielęgniarka', 'król',
                  'prezydent', 'pracownik biurowy', 'stolarz', 'dżokej', 'pracownik', 'mechanik', 'pilot', 'aktor', 'kucharz',
