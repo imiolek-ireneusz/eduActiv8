@@ -44,15 +44,13 @@ class Board(gd.BoardGame):
         self.font_color9 = ex.hsv_to_rgb(195, 150, 240)
         self.bd_color1 = bd_color1
         transp = (0, 0, 0, 0)
-        data = [21, 8]
+        data = [28, 8]
         self.data = data
         self.level_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid,
                                                                self.mainloop.config.user_age_group,
                                                                self.level.lvl)
         self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
                                                             self.mainloop.config.user_age_group)
-
-        #self.vis_buttons = [0, 0, 0, 0, 1, 1, 1, 0, 1]
         self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         self.layout.update_layout(data[0], data[1])
@@ -62,9 +60,9 @@ class Board(gd.BoardGame):
         self.board.board_bg.line_color = (20, 20, 20)
 
         num3 = random.randint(2, self.level_data[0])
-        num4 = random.randint(2, self.level_data[0])
+        num2 = random.randint(2, self.level_data[0])
         num1 = random.randint(1, num3-1)
-        num2 = random.randint(1, num4-1)
+        num4 = random.randint(1, num2-1)
 
         self.response = [0, 1]
 
@@ -78,42 +76,42 @@ class Board(gd.BoardGame):
             self.qm = "?"
 
         # add cross simplification fields
-        self.board.add_unit(0, 1, 1, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(0+7, 1, 1, 1, classes.board.Label, "", white, "", 25)
         self.cs1a = self.board.units[-1]
         self.cs1a.font_color = self.font_color2
 
-        self.board.add_unit(0, 6, 1, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(0+7, 6, 1, 1, classes.board.Label, "", white, "", 25)
         self.cs1b = self.board.units[-1]
         self.cs1b.font_color = self.font_color3
 
-        self.board.add_unit(6, 1, 1, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(8-2+7, 1, 1, 1, classes.board.Label, "", white, "", 25)
         self.cs2a = self.board.units[-1]
         self.cs2a.font_color = self.font_color3
 
-        self.board.add_unit(6, 6, 1, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(8-2+7, 6, 1, 1, classes.board.Label, "", white, "", 25)
         self.cs2b = self.board.units[-1]
         self.cs2b.font_color = self.font_color2
 
         # add second simplification fields
-        self.board.add_unit(8, 1, 1, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(0+10-2+7, 1, 1, 1, classes.board.Label, "", white, "", 25)
         self.cs1xa = self.board.units[-1]
         self.cs1xa.font_color = self.font_color6
 
-        self.board.add_unit(8, 6, 1, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(0+10-2+7, 6, 1, 1, classes.board.Label, "", white, "", 25)
         self.cs1xb = self.board.units[-1]
         self.cs1xb.font_color = self.font_color6
 
-        self.board.add_unit(14, 1, 1, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(8+8-2+7, 1, 1, 1, classes.board.Label, "", white, "", 25)
         self.cs2xa = self.board.units[-1]
         self.cs2xa.font_color = self.font_color7
 
-        self.board.add_unit(14, 6, 1, 1, classes.board.Label, "", white, "", 25)
+        self.board.add_unit(8+8-2+7, 6, 1, 1, classes.board.Label, "", white, "", 25)
         self.cs2xb = self.board.units[-1]
         self.cs2xb.font_color = self.font_color7
 
         # add cross line
-        mainloc = [[1, 2], [1, 4], [4, 2], [4, 4]]
-        mainloc2 = [[9, 2], [9, 4], [12, 2], [12, 4]]
+        mainloc = [[1+7, 2], [1+7, 4], [4+7, 2], [4+7, 4]]
+        mainloc2 = [[9+7, 2], [9+7, 4], [12+7, 2], [12+7, 4]]
         f_colors = [self.font_color2, self.font_color3, self.font_color3, self.font_color2]
         f2_colors = [self.font_color4, self.font_color5, self.font_color5, self.font_color4]
 
@@ -167,68 +165,93 @@ class Board(gd.BoardGame):
 
         self.max_num = 143
 
-        # add labels
-        self.board.add_unit(1, 2, 2, 2, classes.board.Label, str(num1), white, "", 31)
+        # add division labels
+        self.board.add_unit(0, 2, 2, 2, classes.board.Label, str(num1), white, "", 31)
+        self.dnm1a = self.board.units[-1]
+        self.dnm1a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
+        self.dnm1a.font_color = self.font_color
+
+        self.board.add_unit(0, 4, 2, 2, classes.board.Label, str(num3), white, "", 31)
+        self.dnm1b = self.board.units[-1]
+        self.dnm1b.font_color = self.font_color
+
+        self.board.add_unit(2, 3, 1, 2, classes.board.Label, chr(247), white, "", 31)
+        self.board.units[-1].font_color = self.font_color
+
+        self.board.add_unit(3, 2, 2, 2, classes.board.Label, str(num4), white, "", 31)
+        self.dnm2a = self.board.units[-1]
+        self.dnm2a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
+        self.dnm2a.font_color = self.font_color
+
+        self.board.add_unit(3, 4, 2, 2, classes.board.Label, str(num2), white, "", 31)
+        self.dnm2b = self.board.units[-1]
+        self.dnm2b.font_color = self.font_color
+
+        self.board.add_unit(6, 3, 1, 2, classes.board.Label, "=", white, "", 31)
+        self.board.units[-1].font_color = self.font_color
+
+        # add inversed multiplication labels
+        self.board.add_unit(1+7, 2, 2, 2, classes.board.Label, str(num1), white, "", 31)
         self.nm1a = self.board.units[-1]
         self.nm1a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
         self.nm1a.font_color = self.font_color
 
-        self.board.add_unit(1, 4, 2, 2, classes.board.Label, str(num3), white, "", 31)
+        self.board.add_unit(1+7, 4, 2, 2, classes.board.Label, str(num3), white, "", 31)
         self.nm1b = self.board.units[-1]
         self.nm1b.font_color = self.font_color
 
-        self.board.add_unit(3, 3, 1, 2, classes.board.Label, chr(215), white, "", 31)
+        self.board.add_unit(3+7, 3, 1, 2, classes.board.Label, chr(215), white, "", 31)
         self.board.units[-1].font_color = self.font_color
 
-        self.board.add_unit(4, 2, 2, 2, classes.board.Label, str(num2), white, "", 31)
+        self.board.add_unit(4+7, 2, 2, 2, classes.board.Label, str(num2), white, "", 31)
         self.nm2a = self.board.units[-1]
         self.nm2a.set_fraction_lines(top=False, bottom=True, color=bd_color1)
         self.nm2a.font_color = self.font_color
 
-        self.board.add_unit(4, 4, 2, 2, classes.board.Label, str(num4), white, "", 31)
+        self.board.add_unit(4+7, 4, 2, 2, classes.board.Label, str(num4), white, "", 31)
         self.nm2b = self.board.units[-1]
         self.nm2b.font_color = self.font_color
 
-        self.board.add_unit(7, 3, 1, 2, classes.board.Label, "=", white, "", 31)
+        self.board.add_unit(7+7, 3, 1, 2, classes.board.Label, "=", white, "", 31)
         self.board.units[-1].font_color = self.font_color
 
         # add labels for second simplifications
-        self.board.add_unit(9, 2, 2, 2, classes.board.Label, "", white, "", 31)
+        self.board.add_unit(9+7, 2, 2, 2, classes.board.Label, "", white, "", 31)
         self.nm1xa = self.board.units[-1]
         self.nm1xa.set_fraction_lines(top=False, bottom=True, color=bd_color1, length=100)
         self.nm1xa.font_color = self.font_color
 
-        self.board.add_unit(9, 4, 2, 2, classes.board.Label, "", white, "", 31)
+        self.board.add_unit(9+7, 4, 2, 2, classes.board.Label, "", white, "", 31)
         self.nm1xb = self.board.units[-1]
         self.nm1xb.font_color = self.font_color
 
-        self.board.add_unit(11, 2, 1, 2, classes.board.Label, chr(215), white, "", 31)
+        self.board.add_unit(11+7, 2, 1, 2, classes.board.Label, chr(215), white, "", 31)
         self.board.units[-1].font_color = self.font_color
         self.board.units[-1].set_fraction_lines(top=False, bottom=True, color=bd_color1, length=100)
 
-        self.board.add_unit(11, 4, 1, 2, classes.board.Label, chr(215), white, "", 31)
+        self.board.add_unit(11+7, 4, 1, 2, classes.board.Label, chr(215), white, "", 31)
         self.board.units[-1].font_color = self.font_color
 
-        self.board.add_unit(12, 2, 2, 2, classes.board.Label, "", white, "", 31)
+        self.board.add_unit(12+7, 2, 2, 2, classes.board.Label, "", white, "", 31)
         self.nm2xa = self.board.units[-1]
         self.nm2xa.set_fraction_lines(top=False, bottom=True, color=bd_color1, length=100)
         self.nm2xa.font_color = self.font_color
 
-        self.board.add_unit(12, 4, 2, 2, classes.board.Label, "", white, "", 31)
+        self.board.add_unit(12+7, 4, 2, 2, classes.board.Label, "", white, "", 31)
         self.nm2xb = self.board.units[-1]
         self.nm2xb.font_color = self.font_color
 
         # calculations added further down
-        self.board.add_unit(15, 3, 1, 2, classes.board.Label, "=", white, "", 31)
+        self.board.add_unit(15+7, 3, 1, 2, classes.board.Label, "=", white, "", 31)
         self.board.units[-1].font_color = self.font_color
-        self.board.add_unit(17, 2, 3, 2, classes.board.Label, self.qm, white, "", 31)
+        self.board.add_unit(17+7, 2, 3, 2, classes.board.Label, self.qm, white, "", 31)
         self.sm1a = self.board.units[-1]
         self.sm1a.set_outline(color=self.font_color, width=1)
         self.sm1a.checkable = True
         self.sm1a.init_check_images()
 
         self.sm1a.font_color = self.font_color
-        self.board.add_unit(17, 4, 3, 2, classes.board.Label, self.qm, white, "", 31)
+        self.board.add_unit(17+7, 4, 3, 2, classes.board.Label, self.qm, white, "", 31)
         self.sm1b = self.board.units[-1]
         self.sm1b.set_outline(color=self.font_color, width=1)
         self.sm1b.checkable = True
@@ -236,24 +259,24 @@ class Board(gd.BoardGame):
         self.sm1b.font_color = self.font_color
 
         # response numerator
-        self.board.add_unit(16, 2, 1, 2, classes.board.ImgCenteredShip, "", transp, img_src='nav_l_mtsd.png', alpha=True)
+        self.board.add_unit(16+7, 2, 1, 2, classes.board.ImgCenteredShip, "", transp, img_src='nav_l_mtsd.png', alpha=True)
         self.board.ships[-1].set_tint_color(color1)
         self.nm1alt = self.board.ships[-1]
-        self.board.add_unit(20, 2, 1, 2, classes.board.ImgCenteredShip, "", transp, img_src='nav_r_mts.png', alpha=True)
+        self.board.add_unit(20+7, 2, 1, 2, classes.board.ImgCenteredShip, "", transp, img_src='nav_r_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(color1)
         self.nm1art = self.board.ships[-1]
 
         # response denominator
-        self.board.add_unit(16, 4, 1, 2, classes.board.ImgCenteredShip, "", transp, img_src='nav_l_mtsd.png', alpha=True)
+        self.board.add_unit(16+7, 4, 1, 2, classes.board.ImgCenteredShip, "", transp, img_src='nav_l_mtsd.png', alpha=True)
         self.board.ships[-1].set_tint_color(color1)
         self.nm1blt = self.board.ships[-1]
-        self.board.add_unit(20, 4, 1, 2, classes.board.ImgCenteredShip, "", transp, img_src='nav_r_mts.png', alpha=True)
+        self.board.add_unit(20+7, 4, 1, 2, classes.board.ImgCenteredShip, "", transp, img_src='nav_r_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(color1)
         self.nm1brt = self.board.ships[-1]
         self.text_fields = [self.sm1a, self.sm1b]
         self.initialize_numbers(num1, num2, num3, num4)
 
-        unit_fraction_line = classes.universal.Universal(board=self.board, grid_x=17, grid_y=3,
+        unit_fraction_line = classes.universal.Universal(board=self.board, grid_x=17+7, grid_y=3,
                                                          grid_w=3, grid_h=2, bg_img_src="fraction_line.png",
                                                          bg_color=transp,
                                                          bg_tint_color=self.font_color, immobilized=True)
@@ -683,12 +706,22 @@ class Board(gd.BoardGame):
         self.nm2xb.set_outline(color=self.font_color, width=1)
         self.text_fields.extend([self.nm1xa, self.nm1xb, self.nm2xa, self.nm2xb])
 
+        self.nm1a.set_value(self.qm)
+        self.nm1b.set_value(self.qm)
+        self.nm2a.set_value(self.qm)
+        self.nm2b.set_value(self.qm)
+        self.nm1a.set_outline(color=self.font_color, width=1)
+        self.nm1b.set_outline(color=self.font_color, width=1)
+        self.nm2a.set_outline(color=self.font_color, width=1)
+        self.nm2b.set_outline(color=self.font_color, width=1)
+        self.text_fields.extend([self.nm1a, self.nm1b, self.nm2a, self.nm2b])
+
     def update_fractions(self):
         self.sm1a.set_value(str(self.response[0]))
         self.sm1b.set_value(str(self.response[1]))
 
     def show_info_dialog(self):
-        self.mainloop.dialog.show_dialog(3, self.lang.d["To multiply two fractions..."])
+        self.mainloop.dialog.show_dialog(3, self.lang.d["To divide a fraction by a fraction..."])
 
     def get_GCF(self, n):
         """
@@ -785,14 +818,10 @@ class Board(gd.BoardGame):
         elif n1 == 1:
             if ns[0] < self.max_num:
                 ns[0] += 1
-            if ns[0] >= ns[1]:
-                ns[1] = ns[0]+1
 
         elif n2 == -1:
-            if ns[1] > 2:
+            if ns[1] > 1:
                 ns[1] -= 1
-            if ns[0] >= ns[1]:
-                ns[0] = ns[1]-1
 
         elif n2 == 1:
             if ns[1] <= self.max_num:

@@ -615,7 +615,7 @@ class Board(gd.BoardGame):
 
     def show_info_dialog(self):
         # TODO update the dialog
-        self.mainloop.dialog.show_dialog(3, self.lang.d["To multiply two fractions..."])
+        self.mainloop.dialog.show_dialog(3, self.lang.d["To divide a fraction by a fraction..."])
 
     def get_GCF(self, n):
         """

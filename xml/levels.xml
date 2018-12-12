@@ -1674,10 +1674,10 @@
          </levels>
     </game>
 
-    <!-- Multiplication of fractions with simplification
+    <!-- Multiplication and division of fractions with simplification
     level_data = [max denominator, show simp cross line, show divisors, show result of division by gcf, show result of multiplication, all result boxes hidden]
     -->
-    <game dbids="277" min_age="0" max_age="7" show_all="1">
+    <game dbids="277, 285" min_age="0" max_age="7" show_all="1">
         <levels count="6" games_per_level="15">
             <level n="1" data="[6, True, True, True, True, False]" />
             <level n="2" data="[8, True, True, True, True, False]" />
