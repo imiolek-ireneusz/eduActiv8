@@ -134,7 +134,10 @@ class Board(gd.BoardGame):
         while l > max_word_len:
             self.w_index = random.randint(0, len(self.words) - 1)
             self.word = ex.unival(self.words[self.w_index])
-            l = len(self.word)
+            if self.word[0] != "<":
+                l = len(self.word)
+            else:
+                l = 100
 
         if self.mainloop.lang.lang == "ru" and gv > 12:
             self.wordsp = eval("self.dp['a4a_%s']" % category)
