@@ -124,7 +124,7 @@
         </cat>
         <cat mline="2" id="2" title="Word Builders" subtitle=""
              icon="ico_c_02.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="['en', 'es', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk']" lang_excl="" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="107" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="82"
@@ -213,7 +213,7 @@
         </cat>
         <cat mline="2" id="3" title="Word Builders" subtitle="Listening Exercises"
              icon="ico_c_20.png" min_age="0" max_age="7" listening="True" android="True"
-             visible="1" lang_incl="['en', 'es', 'pl', 'ru', 'fr', 'de', 'el']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'ru', 'fr', 'de', 'el']" lang_excl="" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="182" variant="0" var2="1" min_age="0" max_age="7"
                   constructor_id="82"
@@ -302,7 +302,7 @@
         </cat>
         <cat mline="2" id="4" title="Word Matchers" subtitle=""
              icon="ico_c_16.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="['en', 'es', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk']" lang_excl="" icosuffix="False"
              has_inner="False">
             <!-- matching games using arts4apps -->
             <game mline="1" dbid="154" variant="0" var2="0" min_age="0" max_age="7"
@@ -392,7 +392,7 @@
         </cat>
         <cat mline="2" id="5" title="Word Matchers" subtitle="Listening Exercises"
              icon="ico_c_21.png" min_age="0" max_age="7" listening="True" android="True"
-             visible="1" lang_incl="['en', 'es', 'pl', 'ru', 'fr', 'de', 'el']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'ru', 'fr', 'de', 'el']" lang_excl="" icosuffix="False"
              has_inner="False">
             <!-- matching games using arts4apps -->
             <game mline="1" dbid="194" variant="0" var2="0" min_age="0" max_age="7"
