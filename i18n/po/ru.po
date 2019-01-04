@@ -1,23 +1,23 @@
 # eduActiv8 - Educational Activity Pack - translation file.
-# Copyright (C) 2012 - 2014 Ireneusz Imiolek
+# Copyright (C) 2012 - 2019 Ireneusz Imiolek
 # This file is distributed under the same license as the eduactiv8 package.
 # Initially translated by Anton Kayukov, 2012
-# Updated and retranslated by Алексей Логинов, 2013-2014
+# Updated and retranslated by Алексей Логинов, 2013-2019
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.31.105\n"
+"Project-Id-Version: 4.18.12\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-12-12 14:37+0000\n"
-"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
+"PO-Revision-Date: 2019-01-04 10:06+0300\n"
+"Last-Translator: Alexey Loginov <alexl@mageia.org>\n"
 "Language-Team: Russian <imiolek.i@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0: n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.9\n"
 
 msgid "green apple"
 msgid_plural "green apples"
@@ -137,10 +137,10 @@ msgid "Hexagon"
 msgstr "Шестиугольник"
 
 msgid "Heptagon"
-msgstr ""
+msgstr "Семиугольник"
 
 msgid "Octagon"
-msgstr ""
+msgstr "Восьмиугольник"
 
 msgid "Circle"
 msgstr "Круг"
@@ -209,7 +209,7 @@ msgid "Administrator Login:"
 msgstr "Войти под администратором:"
 
 msgid "User Management"
-msgstr "Управление пользователями:"
+msgstr "Управление пользователями"
 
 msgid "Please select a user from the list."
 msgstr "Пожалуйста, выберите пользователя из списка."
@@ -231,7 +231,7 @@ msgid "Failed to delete the user."
 msgstr "Не удалось удалить пользователя."
 
 msgid "Preferences"
-msgstr "Предпочтения:"
+msgstr "Предпочтения"
 
 msgid "switch to full screen after login"
 msgstr "переключаться в полноэкранный режим после входа"
@@ -285,7 +285,7 @@ msgid "This username and password combination doesn't exist."
 msgstr "Такая комбинация имени пользователя и пароля не существует."
 
 msgid "This username doesn't exist."
-msgstr "Такой пользователь не существует"
+msgstr "Такой пользователь не существует."
 
 msgid "Passwords don't match"
 msgstr "Пароли не совпадают"
@@ -406,13 +406,13 @@ msgid "Learn to Write"
 msgstr "Учитесь писать"
 
 msgid "Trace Letters and Numbers"
-msgstr "Обведите буквы и цифры"
+msgstr "Обведите буквы и числа"
 
 msgid "Complete the ABC"
 msgstr "Заполните алфавит"
 
 msgid "English"
-msgstr "английский"
+msgstr "Английский"
 
 msgid "Your language"
 msgstr "Русский"
@@ -448,10 +448,10 @@ msgid "Learn to Count"
 msgstr "Учитесь считать"
 
 msgid "Basic Addition"
-msgstr "Сложение"
+msgstr "Сложение (основы)"
 
 msgid "Basic Subtraction"
-msgstr "Вычитание"
+msgstr "Вычитание (основы)"
 
 msgid "Shopping List"
 msgstr "Список покупок"
@@ -577,10 +577,10 @@ msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Перетащите один из меньше, больше или равно в красный квадрат."
 
 msgid "Rearrange the numbers so they are in the right order"
-msgstr "Переставьте цифры, чтобы они были в правильном порядке"
+msgstr "Переставьте числа, чтобы они были в правильном порядке"
 
 msgid "Complete the abc using the letters above."
-msgstr "Заполните алфавит с помощью букв"
+msgstr "Заполните алфавит с помощью букв выше."
 
 msgid "Write a word:"
 msgstr "Напишите слово:"
@@ -595,7 +595,7 @@ msgid "Rearrange the letters so they are in the alphabetical order."
 msgstr "Переставьте буквы, чтобы они были в алфавитном порядке."
 
 msgid "Rearrange the numbers so they are in the ascending order."
-msgstr "Переставьте цифры, чтобы они были в порядке возрастания."
+msgstr "Переставьте числа, чтобы они были в порядке возрастания."
 
 msgid "Please try again."
 msgstr "Пожалуйста, попробуйте ещё раз."
@@ -646,7 +646,7 @@ msgid "surface area:"
 msgstr "площадь поверхности:"
 
 msgid "volume:"
-msgstr "объём"
+msgstr "объём:"
 
 msgid "Perfect!"
 msgstr "Великолепно!"
@@ -667,66 +667,67 @@ msgid "Odd"
 msgstr "Нечётные"
 
 msgid "white"
-msgstr "Белый"
+msgstr "белый"
 
 msgid "black"
-msgstr "Чёрный"
+msgstr "чёрный"
 
 msgid "grey"
-msgstr "Серый"
+msgstr "серый"
 
 msgid "red"
-msgstr "Красный"
+msgstr "красный"
 
 msgid "orange [color]"
-msgstr "Оранжевый"
+msgstr "оранжевый"
 
 msgid "yellow"
-msgstr "Жёлтый"
+msgstr "жёлтый"
 
 msgid "olive"
-msgstr "Оливковый"
+msgstr "оливковый"
 
 msgid "green"
-msgstr "Зелёный"
+msgstr "зелёный"
 
 msgid "sea green"
-msgstr "Морской волны"
+msgstr "морской волны"
 
 msgid "teal"
-msgstr "Сине-зелёный"
+msgstr "сине-зелёный"
 
 msgid "blue"
-msgstr "Синий"
+msgstr "синий"
 
 msgid "navy"
-msgstr "Тёмно-синий"
+msgstr "тёмно-синий"
 
 msgid "purple"
-msgstr "Фиолетовый"
+msgstr "фиолетовый"
 
-# msgid "violet"
-# msgstr "Лиловый"
+msgid "violet"
+msgstr "лиловый"
+
 msgid "magenta"
-msgstr "Пурпурный"
+msgstr "пурпурный"
 
 msgid "indigo"
-msgstr "Индиго"
+msgstr "индиго"
 
 msgid "pink"
-msgstr "Розовый"
+msgstr "розовый"
 
 msgid "maroon"
-msgstr "Бордовый"
+msgstr "бордовый"
 
 msgid "brown"
-msgstr "Коричневый"
+msgstr "коричневый"
 
 msgid "aqua"
-msgstr "Голубой"
+msgstr "голубой"
 
 msgid "lime"
-msgstr "Лайм"
+msgstr "лайм"
 
 msgid "Rainbow Keyboard"
 msgstr "Радужная клавиатура"
@@ -807,7 +808,7 @@ msgid "Match Vegetables - Memory Game"
 msgstr "Соответствие овощей"
 
 msgid "Match Numbers - Memory Game"
-msgstr "Соответствие цифр"
+msgstr "Соответствие чисел"
 
 msgid "Find matching pairs of the same image"
 msgstr "Найдите пары одинаковых изображений"
@@ -822,7 +823,7 @@ msgid "Fruit Slider"
 msgstr "Фрукты"
 
 msgid "Number Slider"
-msgstr "Цифры"
+msgstr "Числа"
 
 msgid "Fraction Groups"
 msgstr "Обыкновенные дроби"
@@ -864,10 +865,10 @@ msgid "Check for newer version, report bugs, discuss, translate or review this p
 msgstr "Проверьте новую версию, сообщите о переводах, ошибках, идеях на сайте проекта:"
 
 msgid "Match numbers to their spelling"
-msgstr "Сопоставьте цифры их написанию словами"
+msgstr "Сопоставьте числа их написанию словами"
 
 msgid "Number Spelling"
-msgstr "Напишите цифры словами"
+msgstr "Напишите числа словами"
 
 msgid "Find all matching animals"
 msgstr "Найдите всех соответствующих животных"
@@ -959,10 +960,10 @@ msgid "Clock"
 msgstr "Часы"
 
 msgid "learn to read the time"
-msgstr "научитесь читать время"
+msgstr "Научитесь читать время"
 
 msgid "learn to set the clock"
-msgstr "научитесь устанавливать часы"
+msgstr "Научитесь устанавливать часы"
 
 msgid "Set the clock to:"
 msgstr "Установите часы на:"
@@ -1034,7 +1035,7 @@ msgid "Ratio"
 msgstr "Отношение"
 
 msgid "Working with large numbers"
-msgstr "Работа с большими цифрами"
+msgstr "Работа с большими числами"
 
 msgid "rewrite "
 msgstr "переписать "
@@ -1133,13 +1134,13 @@ msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative
 msgstr "Изображения с сайта: http://www.art4apps.org/ - Art4Apps by Smart4Kids - лицензия Creative Commons License (CC BY-SA)"
 
 msgid "Decimals and Fractions"
-msgstr "Десятичные и обычные дроби"
+msgstr "Десятичные и обыкновенные дроби"
 
 msgid "Decimals, fractions and percentages"
-msgstr "Десятичные, обычные дроби и проценты"
+msgstr "Десятичные, обыкновенные дроби и проценты"
 
 msgid "Decimals, fractions, ratios and percentages"
-msgstr "Десятичные, обычные дроби, соотношения и проценты"
+msgstr "Десятичные, обыкновенные дроби, соотношения и проценты"
 
 msgid "Shapes and Solids"
 msgstr "Фигуры и тела"
@@ -1163,10 +1164,10 @@ msgid "Select age group:"
 msgstr "Выберите возрастную группу:"
 
 msgid "show activities for:"
-msgstr "Показать деятельность для:"
+msgstr "показать деятельность для:"
 
 msgid "preschool"
-msgstr "Дошкольный"
+msgstr "дошкольный"
 
 msgid "Year 1"
 msgstr "1-ый класс"
@@ -1187,7 +1188,7 @@ msgid "Year 6"
 msgstr "6-ой класс"
 
 msgid "show all"
-msgstr "Показать все"
+msgstr "показать все"
 
 msgid "Do you want to exit the game?"
 msgstr "Вы уверены, что хотите выйти из программы?"
@@ -1205,10 +1206,10 @@ msgid "Other"
 msgstr "Разное"
 
 msgid "long form"
-msgstr "Официальное русское время"
+msgstr "Длинная форма"
 
 msgid "short form"
-msgstr " "
+msgstr "Короткая форма"
 
 msgid "Educational Activities for Kids"
 msgstr "Образовательный пакет для детей"
@@ -1217,12 +1218,14 @@ msgid ""
 "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
 "http://espeak.sourceforge.net/"
 msgstr ""
+"Вы можете установить espeak, чтобы использовать функцию преобразования текста в речь, однако это необязательно для успешного использования игры:\n"
+"http://espeak.sourceforge.net/"
 
 msgid "Decimals (Category)"
 msgstr "Десятичные"
 
 msgid "Fractions (Category)"
-msgstr "Обычные дроби"
+msgstr "Обыкновенные дроби"
 
 msgid "Ratios (Category)"
 msgstr "Соотношения"
@@ -1234,313 +1237,366 @@ msgid "Word Builders"
 msgstr "Словопостроитель"
 
 msgid "Word Matchers"
-msgstr "Сопоставьте изображения с словами"
+msgstr "Сопоставьте изображения со словами"
 
 msgid "Match images to words"
-msgstr "Сопоставьте изображения с словами"
+msgstr "Сопоставьте изображения со словами"
 
 msgid "Animals"
-msgstr "животные"
+msgstr "Животные"
 
 msgid "Sports"
-msgstr "спорт"
+msgstr "Спорт"
 
 msgid "Body"
-msgstr "тело"
+msgstr "Тело"
 
 msgid "People"
-msgstr "люди"
+msgstr "Люди"
 
 msgid "Actions"
-msgstr "действия"
+msgstr "Действия"
 
 msgid "Constructions"
-msgstr "конструкции"
+msgstr "Конструкции"
 
 msgid "Nature"
-msgstr "природа"
+msgstr "Природа"
 
 msgid "Jobs"
-msgstr "работа и занятия"
+msgstr "Работа и занятия"
 
 msgid "Clothes and Accessories"
-msgstr "одежда и аксессуары"
+msgstr "Одежда и аксессуары"
 
 msgid "Fruits and Vegetables"
-msgstr "фрукты и овощи"
+msgstr "Фрукты и овощи"
 
 msgid "Transport"
-msgstr "транспорт"
+msgstr "Транспорт"
 
 msgid "Food"
-msgstr "пища"
+msgstr "Пища"
 
 msgid "Listening Exercises"
-msgstr ""
+msgstr "Упражнения на прослушивание"
 
 msgid "Match sounds to words"
-msgstr ""
+msgstr "Сопоставьте звуки со словами"
 
 msgid "Patterns"
-msgstr ""
+msgstr "Шаблоны"
 
 msgid "Number Patterns"
-msgstr ""
+msgstr "Шаблоны чисел"
 
 msgid "Letter Patterns"
-msgstr ""
+msgstr "Шаблоны букв"
 
 msgid "Color Patterns"
-msgstr ""
+msgstr "Шаблоны цветов"
 
 msgid "Image Patterns"
-msgstr ""
+msgstr "Шаблоны изображений"
 
 msgid "Fraction Patterns"
-msgstr ""
+msgstr "Шаблоны дробей"
 
 msgid "Shape Patterns"
-msgstr ""
+msgstr "Шаблоны фигур"
 
 msgid "Complete the pattern on the top line."
-msgstr ""
+msgstr "Заполните шаблон в верхней строке."
 
 msgid "Match shapes to their names"
-msgstr ""
+msgstr "Сопоставьте фигуры с их названиями"
 
 msgid "Negative numbers"
-msgstr ""
+msgstr "Отрицательные числа"
 
 msgid "numerator"
-msgstr ""
+msgstr "числитель"
 
 msgid "denominator"
-msgstr ""
+msgstr "знаменатель"
 
 msgid "Experiment with fractions"
-msgstr ""
+msgstr "Эксперимент с дробями"
 
 msgid "Experiment with decimal fractions"
-msgstr ""
+msgstr "Эксперимент с десятичными дробями"
 
 msgid "Experiment with ratios"
-msgstr ""
+msgstr "Эксперимент с соотношениями"
 
 msgid "Experiment with percentages"
-msgstr ""
+msgstr "Эксперимент с процентами"
 
 msgid "What fraction is it?"
-msgstr ""
+msgstr "Что это за дробь?"
 
 msgid "What decimal fraction is it?"
-msgstr ""
+msgstr "Что это за десятичная дробь?"
 
 msgid "Add fractions with the same denominator"
-msgstr ""
+msgstr "Добавьте дроби с одинаковым знаменателем"
 
 msgid "Subtract fractions with the same denominator"
-msgstr ""
+msgstr "Вычтите дроби с одинаковым знаменателем"
 
 msgid "Multiply fractions"
-msgstr ""
+msgstr "Умножьте дроби"
 
 msgid "Divide fractions"
-msgstr ""
+msgstr "Разделите дроби"
 
 msgid "Exercise 1"
-msgstr ""
+msgstr "Упражнение 1"
 
 msgid "Exercise 2"
-msgstr ""
+msgstr "Упражнение 2"
 
 msgid "Exercise 3"
-msgstr ""
+msgstr "Упражнение 3"
 
 msgid "Compare decimals and fractions"
-msgstr ""
+msgstr "Сравните десятичные и обыкновенные дроби"
 
 msgid "Compare fractions"
-msgstr ""
+msgstr "Сравните дроби"
 
 msgid "Reduce fractions"
-msgstr ""
+msgstr "Сократите дроби"
 
 msgid "Extend fractions"
-msgstr ""
+msgstr "Расширьте дроби"
 
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
+"Чтобы сократить дробь, разделите числитель и знаменатель на один из их общих делителей, отображаемый между двумя дробями. Выберите один из них, чтобы увидеть, что происходит. Если 1 является единственным общим делителем, то дробь больше не может быть сокращена - попробуйте выбрать другую."
 
 msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
-msgstr ""
+msgstr "Чтобы расширить дробь, умножьте числитель и знаменатель на одно и то же число. Измените множитель, чтобы увидеть, что происходит."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr ""
+msgstr "Используйте стрелки, чтобы изменить свой ответ или просто введите его."
 
 msgid "Use the arrows to change your answer."
-msgstr ""
+msgstr "Используйте стрелки, чтобы изменить свой ответ."
 
 msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
-msgstr ""
+msgstr "Чтобы сложить две дроби с одинаковыми знаменателями, сложите их числители и оставьте знаменатель без изменений. Упростите результат, если числитель больше знаменателя, и сократите дробь, если это возможно."
 
 msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
-msgstr ""
+msgstr "Чтобы вычесть одну дробь из другой с тем же знаменателем, вычтите числители и оставьте знаменатель без изменений. Сократите полученную дробь, если это возможно."
 
 msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
-msgstr ""
+msgstr "Чтобы умножить две дроби, умножьте их числители, а затем умножьте их знаменатели. Сократите полученную дробь, если это возможно."
 
 msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
-msgstr ""
+msgstr "Чтобы разделить дробь на другую дробь, умножьте первую дробь на вторую, перевернутую сверху вниз. Упростите и сократите полученную дробь, если это возможно."
 
 msgid "Group fractions together"
-msgstr ""
+msgstr "Сгруппируйте дроби вместе"
 
 msgid "Group percentages together"
-msgstr ""
+msgstr "Сгруппируйте проценты вместе"
 
 msgid "Group ratios together"
-msgstr ""
+msgstr "Сгруппируйте отношения вместе"
 
 msgid "eduActiv8 update is available. Current version: %s. New version: %s."
-msgstr ""
+msgstr "Доступно обновление eduActiv8. Текущая версия: %s. Новая версия: %s."
 
 msgid "check for updates on start"
-msgstr ""
+msgstr "проверять наличие обновлений при запуске"
 
 msgid "Symmetry"
-msgstr ""
+msgstr "Симметрия"
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr ""
+msgstr "Симметрия отражения - рисуйте фигурами"
 
 msgid "Reflect shapes"
-msgstr ""
+msgstr "Отразите фигуры"
 
 msgid "Reflect a shape in a mirror line"
-msgstr ""
+msgstr "Фигуры, симметричные по отношению к прямой"
 
 msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
-msgstr ""
+msgstr "Нарисуйте фигуру, которая является отражением уже изображённой. Красная линия - это линия зеркала."
 
 msgid "Symmetrical shapes - missing half"
-msgstr ""
+msgstr "Симметричные фигуры - недостающая половина"
 
 msgid "Draw the other half of the shape"
-msgstr ""
+msgstr "Нарисуйте вторую половину фигуры"
 
 msgid "Find lines of symmetry"
-msgstr ""
+msgstr "Найдите линии симметрии"
 
 msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
-msgstr ""
+msgstr "Найдите и выберите все линии симметрии для изображённой фигуры. Нажмите на стрелки вокруг области рисования, чтобы выбрать их."
 
 msgid "Match equivalent fractions"
-msgstr ""
+msgstr "Сопоставьте эквивалентные дроби"
 
 msgid "Match fractions"
-msgstr ""
+msgstr "Сопоставьте обыкновенные дроби"
 
 msgid "Match decimals"
-msgstr ""
+msgstr "Сопоставьте десятичные дроби"
 
 msgid "Match percentages"
-msgstr ""
+msgstr "Сопоставьте проценты"
 
 msgid "Match ratios"
-msgstr ""
+msgstr "Сопоставьте отношения"
 
 msgid "Percentages in a pie chart"
-msgstr ""
+msgstr "Проценты в круговой диаграмме"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "час"
+msgstr[1] "часа"
+msgstr[2] "часов"
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "минута"
+msgstr[1] "минуты"
+msgstr[2] "минут"
 
 msgid "Find equivalent fraction"
-msgstr ""
+msgstr "Найдите эквивалентную дробь"
 
 msgid "Calculating with Time"
-msgstr ""
+msgstr "Расчёт времени"
 
 msgid "start time"
-msgstr ""
+msgstr "начальное время"
 
 msgid "end time"
-msgstr ""
+msgstr "конечное время"
 
 msgid "elapsed time"
-msgstr ""
+msgstr "истёкшее время"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr ""
+msgstr "Температура - введение в отрицательные числа"
 
 msgid "Experiment with elapsed time"
-msgstr ""
+msgstr "Эксперимент с истёкшим временем"
 
 msgid "Experiment with elapsed time 2"
-msgstr ""
+msgstr "Эксперимент с истёкшим временем 2"
 
 msgid "Calculate elapsed time"
-msgstr ""
+msgstr "Рассчитайте истёкшее время"
 
 msgid "Find the start or the end time"
-msgstr ""
+msgstr "Найдите начальное или конечное время"
 
 msgid "Visualized on a clock dial"
-msgstr ""
+msgstr "Визуализируется на циферблате часов"
 
 msgid "Visualized on a number line"
-msgstr ""
+msgstr "Визуализируется на числовом отрезке"
 
 msgid "Visualized on two number lines"
-msgstr ""
+msgstr "Визуализируется на двух числовых отрезках"
 
 msgid "With no visualizations"
-msgstr ""
+msgstr "Без визуализаций"
 
 msgid "with mirrored images"
-msgstr ""
+msgstr "С зеркальными изображениями"
 
 msgid "Theme Editor"
-msgstr ""
+msgstr "Редактор тем"
 
 msgid "Make the game look your way"
-msgstr ""
+msgstr "Сделайте так, чтобы игра выглядела по-вашему"
 
 msgid "Reset colors back to the default ones?"
-msgstr ""
+msgstr "Сбросить цвета до значений по умолчанию?"
 
 msgid "Font Preferences"
-msgstr ""
+msgstr "Настройки шрифтов"
 
 msgid "with simplifying"
-msgstr ""
+msgstr "С упрощением"
 
 msgid "Positive numbers"
-msgstr ""
+msgstr "Положительные числа"
 
 msgid "Basics"
-msgstr ""
+msgstr "Основы"
 
 msgid "Equivalent fractions"
-msgstr ""
+msgstr "Эквивалентные дроби"
 
 msgid "Expanding and reducing fractions"
-msgstr ""
+msgstr "Расширение и сокращение дробей"
 
 msgid "Add fractions with unlike denominators"
-msgstr ""
+msgstr "Сложите дроби с разными знаменателями"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr ""
+msgstr "Вычтите дроби с разными знаменателями"
 
 msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
-msgstr ""
+msgstr "Чтобы сложить или вычесть дроби, когда их знаменатели не совпадают, вы должны найти эквивалентные дроби, у которых есть общий знаменатель. Поиск наименьшего общего множителя из двух знаменателей поможет вам в этом."
+
+msgid "Hi Stranger :) Would you like to log in so we know who you are?"
+msgstr "Привет, незнакомец :) Хотели бы вы войти, чтобы знать, кто вы?"
+
+msgid "Catalan clock"
+msgstr "Каталонские часы"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "Nothing here yet..."
+msgstr "Здесь пока ничего нет..."
+
+#, python-format
+msgid "v.%s"
+msgstr "v.%s"
+
+msgid "Decimals"
+msgstr "Десятичные"
+
+msgid "Complete the alphabet using letters from the middle line."
+msgstr "Завершите алфавит, используя буквы из средней строки."
+
+msgid "minutes"
+msgstr "минуты"
+
+msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgstr "Найдите и отделите чётные числа от нечётных чисел в сериях выше."
+
+msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgstr "Переставьте вышеперечисленные буквы так, чтобы они были в алфавитном порядке."
+
+msgid "Re-arrange the above numbers so they are in the ascending order."
+msgstr "Переставьте вышеуказанные числа так, чтобы они были в порядке возрастания."
+
+msgid "Re-arrange the above numbers so they are in the right order"
+msgstr "Переставьте вышеуказанные числа так, чтобы они были в правильном порядке"
+
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Переставьте числа так, чтобы они были в правильном порядке."
+
+msgid "Expand fractions"
+msgstr "Расширение дробей"
+
+msgid "Learn to count"
+msgstr "Учитесь считать"
+
+msgid "hours"
+msgstr "часы"
+
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgstr "Чтобы расширить дробь, умножьте числитель и знаменатель на одно и то же число. Измените множитель, чтобы увидеть, что происходит."
