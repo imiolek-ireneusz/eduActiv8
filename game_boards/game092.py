@@ -133,6 +133,8 @@ class Board(gd.BoardGame):
         # Maximum words per screen 19 (nature)
 
         self.captions = self.d["a4a_%s" % category]
+        if self.mainloop.lang.lang == "ru":
+            self.captionsp = eval("self.dp['a4a_%s']" % category)
 
         if self.level.lvl > self.level.lvl_count:
             self.level.lvl = self.level.lvl_count
@@ -204,7 +206,10 @@ class Board(gd.BoardGame):
         switch = self.square_count // 2
         for i in range(self.square_count):
             if i < switch:
-                caption = self.captions[drawn_numbers[i]]
+                if self.mainloop.lang.lang == "ru":
+                    caption = self.captionsp[drawn_numbers[i]]
+                else:
+                    caption = self.captions[drawn_numbers[i]]
                 img = "%s.jpg" % self.imgs[drawn_numbers[i]]
                 img_src ="speaker_icon.png"
                 position_list = small_slots

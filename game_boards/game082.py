@@ -139,7 +139,7 @@ class Board(gd.BoardGame):
             else:
                 l = 100
 
-        if self.mainloop.lang.lang == "ru" and gv > 12:
+        if self.mainloop.lang.lang == "ru":
             self.wordsp = eval("self.dp['a4a_%s']" % category)
             self.wordp = ex.unival(self.wordsp[self.w_index])
         else:
