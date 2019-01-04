@@ -154,7 +154,7 @@ class Board(gd.BoardGame):
             for i in range(len(self.board.ships)):
                 if self.board.ships[i].grid_y == 2:
                     self.board.ships[i].update_me = True
-                    if self.board.ships[i].value == self.word[self.board.ships[i].grid_x - self.left_offset]:
+                    if self.board.ships[i].value == self.word_l[self.board.ships[i].grid_x - self.left_offset]:
                         self.board.ships[i].set_display_check(True)
                     else:
                         self.board.ships[i].set_display_check(False)
