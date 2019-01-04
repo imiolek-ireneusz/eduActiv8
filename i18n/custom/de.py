@@ -126,7 +126,7 @@ d["a4a_animals"] = ["Kuh", "Truthahn", "Schrimps", "Wolf", "Panther", "Panda", "
                     "Schimpanse", "Reh", "Erdhörnchen", "Elefant", "Giraffe", "Spinne", "Hundewelpe", "Tölpel",
                     "Seelöwe", "Hahn", "Schildkröte", "Bulle", "Katze", "Ratte", "Schnecke", "Büffel", "Amsel",
                     "Schwan", "Hummer", "Hund", "Moskito", "Schlange", "Hühnchen", "Ameisenbär"]
-d["a4a_sport"] = ["Judo", "Billard", "Reiten", "Dehnen", "Helm", "Schlittschuh Laufen", "Gehen", "Rennen", "Laufen",
+d["a4a_sport"] = ["Judo", "Billard", "Reiten", "Dehnen", "Helm", "Schlittschuh Laufen", "Gehen", "Laufen",
                   "Schwimmen", "Springen", "Wandern", "Boxen", "Hockey", "Rennen", "Werfen", "Skaten", "Gewinnen",
                   "Kniebeuge", "Skifahren", "Golf", "Pfeife", "Fackel", "Segeln", "Stehen", "Tennis", "Hochsprung",
                   "Rudern", "Joggen", "Seilspringen"]

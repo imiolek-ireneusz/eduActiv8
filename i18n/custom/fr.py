@@ -142,7 +142,6 @@ def fract2str(n, d):
     else:
         return numerators[n-1] + " " + d_plural[d-1]
 
-# d["a4a_animals"] = ["cow", "turkey", "shrimp", "wolf", "panther", "panda", "magpie", "clam", "pony", "mouse", "pug", "koala", "frog", "ladybug", "gorilla", "llama", "vulture", "hamster", "bird", "starfish", "crow", "parakeet", "caterpillar", "tiger", "hummingbird", "piranha", "pig", "scorpion", "fox", "leopard", "iguana", "dolphin", "bat", "chick", "crab", "hen", "wasp", "chameleon", "whale", "hedgehog", "fawn", "moose", "bee", "viper", "shrike", "donkey", "guinea pig", "sloth", "horse", "penguin", "otter", "bear", "zebra", "ostrich", "camel", "antelope", "lemur", "pigeon", "lama", "mole", "ray", "ram", "skunk", "jellyfish", "sheep", "shark", "kitten", "deer", "snail", "flamingo", "rabbit", "oyster", "beaver", "sparrow", "dove", "eagle", "beetle", "hippopotamus", "owl", "cobra", "salamander", "goose", "kangaroo", "dragonfly", "toad", "pelican", "squid", "lion cub", "jaguar", "duck", "lizard", "rhinoceros", "hyena", "ox", "peacock", "parrot", "elk", "alligator", "ant", "goat", "baby rabbit", "lion", "squirrel", "opossum", "chimp", "doe", "gopher", "elephant", "giraffe", "spider", "puppy", "jay", "seal", "rooster", "turtle", "bull", "cat", "rat", "slug", "buffalo", "blackbird", "swan", "lobster", "dog", "mosquito", "snake", "chicken", "anteater"]
 d["a4a_animals"] = ["vache", "dinde", "crevettes", "loup", "panthère", "panda", "pie", "palourde", "poney", "souris",
                     "carlin", "koala", "grenouille", "coccinelle", "gorille", "lama", "vautour", "hamster", "oiseau",
                     "étoile de mer", "corbeau", "perruche", "chenille", "tigre", "colibri", "piranha", "cochon",
@@ -158,24 +157,22 @@ d["a4a_animals"] = ["vache", "dinde", "crevettes", "loup", "panthère", "panda",
                     "araignée", "chiot", "geai", "phoque", "coq", "tortue", "taureau", "chat", "rat",
                     "limace", "buffle", "merle", "cygne", "homard", "chien", "moustique", "serpent", "poulet",
                     "tamanoir"]
-# d["a4a_sport"] = ["judo", "pool", "ride", "stretch", "helmet", "ice skating", "walk", "ran", "run", "swim", "hop", "hike", "boxing", "hockey", "race", "throw", "skate", "win", "squat", "ski", "golf", "whistle", "torch", "sailing", "stand", "tennis", "jump", "rowing", "jog", "rope"]
-d["a4a_sport"] = ["judo", "piscine", "vélo", "étirements", "casque", "patinage", "marche", "courrir", "course", "nager",
+
+d["a4a_sport"] = ["judo", "piscine", "vélo", "étirements", "casque", "patinage", "marche", "courrir", "nager",
                   "sauter", "randonnée", "boxe", "hockey", "course", "javelot", "skate", "gagner", "squat", "ski",
                   "golf", "sifflet", "torche", "voile", "stand", "tennis", "saut", "aviron", "jogging", "corde"]
-# d["a4a_body"] = ["teeth", "cheek", "ankle", "knee", "toe", "muscle", "mouth", "feet", "hand", "elbow", "hair", "eyelash", "beard", "belly button", "thumb", "breast", "nostril", "nose", "hip", "arm", "eyebrow", "fist", "neck", "wrist", "throat", "eye", "leg", "spine", "ear", "finger", "foot", "braid", "face", "back", "chin", "bottom", "thigh", "belly"]
+
 d["a4a_body"] = ["dents", "joues", "cheville", "genou", "orteil", "muscle", "bouche", "pieds", "main", "coude",
                  "cheveux", "cils", "barbe", "nombril", "pouce", "poitrine", "narine", "nez", "hanche", "bras",
                  "sourcils", "poing", "cou", "poignet", "gorge", "oeil", "jambe", "colonne vertébrale", "oreille",
                  "doigt", "pied", "tresse", "visage", "dos", "menton", "bas", "cuisse", "ventre"]
 
 # check me for: "lad:garçon"
-# d["a4a_people"] = ["girl", "male", "son", "mates", "friends", "baby", "child", "dad", "mom", "twin boys", "brothers", "man", "mother", "grandfather", "family", "female", "wife", "husband", "bride", "madam", "grandmother", "couple", "lad", "twin girls", "tribe", "boy", "sisters", "woman", "lady"]
 d["a4a_people"] = ["fille", "male", "fils", "écoliers", "amis", "bébé", "enfant", "papa", "maman", "jumeaux", "frères",
                    "homme", "mère", "grand-père", "famille", "femelle", "femme", "mari", "mariée", "madame",
                    "grand-mère", "couple", "garçon", "jumelles", "tribu", "garçon", "soeurs", "femme", "dame"]
 
 # check me for: "fudge:fondant", "spread:tartiner"
-# d["a4a_food"] = ["candy", "sausage", "hamburger", "steak", "fudge", "doughnut", "coconut", "rice", "ice cream", "jelly", "yoghurt", "dessert", "pretzel", "peanut", "jam", "feast", "cookie", "bacon", "spice", "coffee", "pie", "lemonade", "chocolate", "water bottle", "lunch", "ice", "sugar", "sauce", "soup", "juice", "fries", "cake", "mashed potatoes", "tea", "bun", "cheese", "beef", "sandwich", "slice", "sprinkle", "pizza", "flour", "gum", "spaghetti", "roast", "drink", "stew", "spread", "meat", "milk", "meal", "corn", "bread", "walnut", "egg", "hot dog", "ham"]
 d["a4a_food"] = ["bonbons", "saucisse", "hamburger", "steak", "fondant", "beignet", "noix de coco", "riz",
                  "crème glacée", "gelée", "yaourt", "dessert", "bretzel", "cacahuète", "confiture", "fête", "cookie",
                  "bacon", "épice", "café", "tarte", "limonade", "chocolat", "bouteille d'eau", "déjeuner", "glace",
@@ -185,7 +182,6 @@ d["a4a_food"] = ["bonbons", "saucisse", "hamburger", "steak", "fondant", "beigne
                  "hot dog", "jambon"]
 
 # check me for: "trainer:survêtement"
-# d["a4a_clothes_n_accessories"] = ["jewellery", "sock", "jacket", "heel", "smock", "shorts", "pocket", "necklace", "sweatshirt", "uniform", "raincoat", "trousers", "sunglasses", "coat", "pullover", "shirt", "sandals", "suit", "pyjamas", "skirt", "zip", "shoes", "jewel", "tie", "slippers", "gloves", "hat", "sleeve", "cap", "swimming suit", "trainer", "vest", "glasses", "shoelace", "patch", "scarf", "shoe", "button", "dress", "sash", "shoe sole", "robe", "pants", "kimono", "overalls"]
 d["a4a_clothes_n_accessories"] = ["bijoux", "chaussette", "veste", "talon", "blouse", "short", "poche", "collier",
                                   "sweat", "uniforme", "imperméable", "pantalon", "lunettes de soleil", "manteau",
                                   "pull", "chemise", "sandales", "costume", "pyjama", "jupe", "braguette", "chaussures",
@@ -195,7 +191,6 @@ d["a4a_clothes_n_accessories"] = ["bijoux", "chaussette", "veste", "talon", "blo
                                   "kimono", "salopette"]
 
 # check me for: "slam:viser","dig:creuser","nap:dormir","clay:façonner","strum:jouer","sob:souffrir","bit:ronger","fetch:rapporter","stare:impressioner"
-# d["a4a_actions"] = ["lick", "slam", "beg", "fell", "scratch", "touch", "sniff", "see", "climb", "dig", "howl", "sleep", "explore", "draw", "hug", "teach", "nap", "clay", "catch", "clap", "cry", "sing", "meet", "sell", "peck", "beat", "kneel", "find", "dance", "cough", "cut", "think", "bark", "speak", "cheer", "bake", "write", "punch", "strum", "study", "plow", "dream", "post", "dive", "whisper", "sob", "shake", "feed", "crawl", "camp", "spill", "clean", "scream", "tear", "float", "pull", "ate", "kiss", "sit", "hatch", "blink", "hear", "smooch", "play", "wash", "chat", "drive", "drink", "fly", "juggle", "bit", "sweep", "look", "knit", "lift", "fetch", "read", "croak", "stare", "eat"]
 d["a4a_actions"] = ["lécher", "viser", "mendier", "tomber", "griffer", "toucher", "sentir", "voir", "grimper",
                     "creuser", "hurler", "dormir", "explorer", "dessiner", "serrer", "enseigner", "dormir", "façonner",
                     "capturer", "taper", "pleurer", "chanter", "rencontrer", "vendre", "picorer", "heurter",
@@ -207,16 +202,15 @@ d["a4a_actions"] = ["lécher", "viser", "mendier", "tomber", "griffer", "toucher
                     "jongler", "ronger", "balayer", "regarder", "tricoter", "soulever", "rapporter", "lire", "croasser",
                     "impressioner", "manger"]
 
-# d["a4a_construction"] = ["lighthouse", "door", "circus", "church", "kennel", "temple", "smoke", "chimney", "brick", "well", "street", "castle", "store", "staircase", "school", "farm", "bridge", "dam", "pyramid", "barn", "mill", "window", "cabin", "step", "shop", "shed", "roof", "steeple", "garage", "mosque", "hospital", "tent", "house", "wall", "bank", "shutter", "hut"]
 d["a4a_construction"] = ["phare", "porte", "cirque", "église", "chenil", "temple", "fumée", "cheminée", "brique",
                          "puits", "rue", "château", "magasin", "escalier", "école", "ferme", "pont", "barrage",
                          "pyramide", "grange", "moulin", "fenêtre", "cabine", "étape", "boutique", "hangar", "toit",
                          "clocher", "garage", "mosquée", "hôpital", "tente", "maison", "mur", "banque", "volet",
                          "cabane"]
-# d["a4a_nature"] = ["land", "cliff", "hill", "canyon", "rock", "sea", "lake", "coast", "shore", "mountain", "pond", "peak", "lava", "cave", "dune", "island", "forest", "desert", "iceberg"]
+
 d["a4a_nature"] = ["terre", "falaise", "colline", "canyon", "rocher", "mer", "lac", "côte", "rivage", "montagne",
                    "étang", "pic", "lave", "grotte", "dune", "île", "forêt", "désert", "iceberg"]
-# d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "police", "plumber", "badge", "queen", "farmer", "magician", "knight", "doctor", "bricklayer", "cleaner", "teacher", "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun", "pirate", "cowboy", "electrician", "nurse", "king", "president", "office", "carpenter", "jockey", "worker", "mechanic", "pilot", "actor", "cook", "student", "butcher", "accountant", "prince", "pope", "sailor", "boxer", "ballet", "coach", "astronaut", "painter", "anaesthesiologist", "scientist"]
+
 d["a4a_jobs"] = ["clown", "ingénieur", "prêtre", "vétérinaire", "juge", "chef", "athlète", "libraire", "jongleur",
                  "police", "plombier", "insigne", "reine", "agriculteur", "magicien", "chevalier", "docteur", "maçon",
                  "nettoyeur", "enseignant", "chasseur", "soldat", "musicien", "avocat", "pêcheur", "princesse",
@@ -224,14 +218,14 @@ d["a4a_jobs"] = ["clown", "ingénieur", "prêtre", "vétérinaire", "juge", "che
                  "bureau", "charpentier", "jockey", "travailleur", "mécanicien", "pilote", "acteur", "cuisinier",
                  "étudiant", "boucher", "comptable", "prince", "pape", "marin", "boxeur", "ballet", "coach",
                  "astronaute", "peintre", "anesthésiste", "scientifique"]
-# d["a4a_fruit_n_veg"] = ["carrot", "blackberries", "celery", "turnip", "cacao", "peach", "melon", "grapefruit", "broccoli", "grapes", "spinach", "fig", "kernel", "radish", "tomato", "kiwi", "asparagus", "olives", "cucumbers", "beans", "strawberry", "peppers", "raspberry", "apricot", "potatoes", "peas", "cabbage", "cherries", "squash", "blueberries", "pear", "orange", "pumpkin", "avocado", "garlic", "onion", "apple", "lime", "cauliflower", "mango", "lettuce", "lemon", "aubergine", "artichokes", "plums", "leek", "bananas", "papaya"]
+
 d["a4a_fruit_n_veg"] = ["carotte", "mûres", "céleri", "navet", "cacao", "pêche", "melon", "pamplemousse", "brocoli",
                         "raisin", "épinards", "figue", "noyau", "radis", "tomate", "kiwi", "asperges", "olives",
                         "concombres", "haricots", "fraise", "poivrons", "framboise", "abricot", "pommes de terre",
                         "pois", "chou", "cerises", "courge", "myrtille", "poire", "orange", "citrouille", "avocat",
                         "ail", "oignon", "pomme", "citon vert", "chou-fleur", "mangue", "laitue", "citron", "aubergine",
                         "artichauts", "prunes", "poireau", "bananes", "papaye"]
-# d["a4a_transport"] = ["sail", "taxi", "car", "bike", "raft", "pedal", "bus", "handlebar", "boat", "truck", "sleigh", "carpet", "motorcycle", "train", "ship", "van", "canoe", "rocket", "mast", "sledge", "bicycle"]
+
 d["a4a_transport"] = ["voile", "taxi", "voiture", "vélo", "radeau", "pédale", "bus", "guidon", "bateau", "camion",
                       "traîneau", "tapis", "moto", "train", "navire", "fourgonette", "canot", "fusée", "mât", "luge",
                       "bicyclette"]

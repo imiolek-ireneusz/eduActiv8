@@ -57,7 +57,7 @@ class Board(gd.BoardGame):
                          'blackbird', 'swan', 'lobster', 'dog', 'mosquito', 'snake', 'chicken', 'anteater']
         elif gv == 1:
             category = "sport"
-            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'helmet', 'ice_skating', 'walk', '', 'run', 'swim',
+            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'helmet', 'ice_skating', 'walk', 'run', 'swim',
                          '', '', 'boxing', 'hockey', 'race', 'throw', 'skate', 'win', 'squat', 'ski', 'golf',
                          'whistle', 'torch', 'sailing', 'stand', 'tennis', 'jump', 'rowing', '', 'rope']
         elif gv == 2:

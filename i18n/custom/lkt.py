@@ -125,7 +125,9 @@ d["a4a_animals"] = ["ptegléška", "waglékšuŋ", "hokáš’iŋla", "šuŋgmá
                     "tȟahú háŋska", "iktómi", "šuŋȟpála", "ziŋtkátȟoglegleǧa", "mniwáŋča šúŋka", "kȟokȟóyaȟ’aŋla wíŋyela", "khéya", "tȟablóka", "igmú", "itȟúŋktȟaŋka",
                     "zugzúkela", "tȟatȟáŋka", "wábloša", "maǧáska", "matúgna tȟáŋka", "šúŋka", "čhapȟúŋka", "zuzéča", "kȟokȟóyaȟ’aŋla",
                     "tȟažúška yúta"]
-d["a4a_sport"] = ["ksabyá kichízapi", "nuŋwÁŋ", "hunáhomni akáŋyaŋkA", "iglúzičA", "wapȟóštaŋ sutá", "čhaȟ’íčazo", "máni", "íkačhaŋ", "napȟÁ", "oyúso úŋ", "psípsičA",
+
+#ran removed: "íkačhaŋ"
+d["a4a_sport"] = ["ksabyá kichízapi", "nuŋwÁŋ", "hunáhomni akáŋyaŋkA", "iglúzičA", "wapȟóštaŋ sutá", "čhaȟ’íčazo", "máni", "napȟÁ", "oyúso úŋ", "psípsičA",
                   "imáǧaǧaya máni", "napé uŋ kičhízapi", "čháǧa tȟabkápsičapi", "khiíŋyaŋkapi", "kaȟ’ól iyéyA", "čhaŋbláska kič’úŋ", "ohíyA", "pustág nážiŋ", "waákaŋ čhaŋwóslohaŋ kič’úŋ", "tȟab’ákozA", "wayázopi",
                   "pȟetížaŋžaŋye", "tȟatéwata", "hóšnašna kič’úŋ", "tȟabhíŋšma škátapi", "waŋkáyeič’iyA", "watópȟA", "íŋyaŋkA", "wíkȟaŋ uŋ psípsičA"]
 d["a4a_body"] = ["hí", "tȟapȟúŋ", "iškáhu", "čhaŋkpé", "sipȟá", "kȟaŋíyuwi", "í", "sí", "napé", "išpá", "pȟehíŋ",
