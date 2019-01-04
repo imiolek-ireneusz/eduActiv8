@@ -172,7 +172,7 @@ class Menu:
         self.add_game(272, c_id, 0, 7, "game004.Board", "", "", "ico_g_0001.png", "0")
         self.games[-1].hidden = True
 
-        self.add_game(273, c_id, 0, 7, "game113.Board", "Theme Editor", "Make the game look your way", "ico_g_0001.png", "0")
+        self.add_game(273, c_id, 0, 7, "game113.Board", self.lang.d["Theme Editor"], self.lang.d["Make the game look your way"], "ico_g_0001.png", "0")
         self.games[-1].hidden = True
 
         #self.id2icon.update(home_cat_icons)
