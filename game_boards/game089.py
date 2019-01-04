@@ -172,7 +172,7 @@ class Board(gd.BoardGame):
         while len(drawn_numbers) < data[1] * 2:
             r = random.randint(0, l-1)
             if r not in drawn_numbers:
-                if self.imgs[r] != '':
+                if self.imgs[r] != '' and self.captions[r][0] != "<":
                     drawn_numbers.append(r)
 
         self.completed_mode = False

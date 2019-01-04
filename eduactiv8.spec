@@ -9,9 +9,9 @@ block_cipher = None
 
 # hiddenimports=["_io", "pyimod03_importers", "colorsys", "_struct", "struct"],
 if p == "linux" or p == "linux2":
-    hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct", "sqlite3", "ast", "xml.etree.ElementTree"]
+    hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct", "sqlite3", "ast", "xml.etree.ElementTree", "json"]
 else:
-    hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct"]
+    hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct", "json", "sqlite3", "ast", "xml.etree.ElementTree"]
 
 a = Analysis(['eduactiv8.py'],
              pathex=['/Users/cextested/Documents/eduActiv8/eduActiv8-3.70.823/dist/eduActiv8'],

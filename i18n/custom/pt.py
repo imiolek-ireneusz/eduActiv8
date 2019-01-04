@@ -108,66 +108,19 @@ def fract2str(n, d):
     else:
         return numerators[n-1] + " " + d_plural[d-1]
 
-d["a4a_animals"] = ["cow", "turkey", "shrimp", "wolf", "panther", "panda", "magpie", "clam", "pony", "mouse", "pug",
-                    "koala", "frog", "ladybug", "gorilla", "llama", "vulture", "hamster", "bird", "starfish", "crow",
-                    "parakeet", "caterpillar", "tiger", "hummingbird", "piranha", "pig", "scorpion", "fox", "leopard",
-                    "iguana", "dolphin", "bat", "chick", "crab", "hen", "wasp", "chameleon", "whale", "hedgehog",
-                    "fawn", "moose", "bee", "viper", "shrike", "donkey", "guinea pig", "sloth", "horse", "penguin",
-                    "otter", "bear", "zebra", "ostrich", "camel", "antelope", "lemur", "pigeon", "lama", "mole", "ray",
-                    "ram", "skunk", "jellyfish", "sheep", "shark", "kitten", "deer", "snail", "flamingo", "rabbit",
-                    "oyster", "beaver", "sparrow", "dove", "eagle", "beetle", "hippopotamus", "owl", "cobra",
-                    "salamander", "goose", "kangaroo", "dragonfly", "toad", "pelican", "squid", "lion cub", "jaguar",
-                    "duck", "lizard", "rhinoceros", "hyena", "ox", "peacock", "parrot", "elk", "alligator", "ant",
-                    "goat", "baby rabbit", "lion", "squirrel", "opossum", "chimp", "doe", "gopher", "elephant",
-                    "giraffe", "spider", "puppy", "jay", "seal", "rooster", "turtle", "bull", "cat", "rat",
-                    "slug", "buffalo", "blackbird", "swan", "lobster", "dog", "mosquito", "snake", "chicken",
-                    "anteater"]
-d["a4a_sport"] = ["judo", "pool", "ride", "stretch", "helmet", "ice skating", "walk", "ran", "run", "swim", "hop",
-                  "hike", "boxing", "hockey", "race", "throw", "skate", "win", "squat", "ski", "golf", "whistle",
-                  "torch", "sailing", "stand", "tennis", "jump", "rowing", "jog", "rope"]
-d["a4a_body"] = ["teeth", "cheek", "ankle", "knee", "toe", "muscle", "mouth", "feet", "hand", "elbow", "hair",
-                 "eyelash", "beard", "belly button", "thumb", "breast", "nostril", "nose", "hip", "arm", "eyebrow",
-                 "fist", "neck", "wrist", "throat", "eye", "leg", "spine", "ear", "finger", "foot", "braid", "face",
-                 "back", "chin", "bottom", "thigh", "belly"]
-d["a4a_people"] = ["girl", "male", "son", "mates", "friends", "baby", "child", "dad", "mom", "twin boys", "brothers",
-                   "man", "mother", "grandfather", "family", "female", "wife", "husband", "bride", "madam",
-                   "grandmother", "couple", "lad", "twin girls", "tribe", "boy", "sisters", "woman", "lady"]
-d["a4a_food"] = ["candy", "sausage", "hamburger", "steak", "fudge", "doughnut", "coconut", "rice", "ice cream", "jelly",
-                 "yoghurt", "dessert", "pretzel", "peanut", "jam", "feast", "cookie", "bacon", "spice", "coffee", "pie",
-                 "lemonade", "chocolate", "water bottle", "lunch", "ice", "sugar", "sauce", "soup", "juice", "fries",
-                 "cake", "mashed potatoes", "tea", "bun", "cheese", "beef", "sandwich", "slice", "sprinkle", "pizza",
-                 "flour", "gum", "spaghetti", "roast", "drink", "stew", "spread", "meat", "milk", "meal", "corn",
-                 "bread", "walnut", "egg", "hot dog", "ham"]
-d["a4a_clothes_n_accessories"] = ["jewellery", "sock", "jacket", "heel", "smock", "shorts", "pocket", "necklace",
-                                  "sweatshirt", "uniform", "raincoat", "trousers", "sunglasses", "coat", "pullover",
-                                  "shirt", "sandals", "suit", "pyjamas", "skirt", "zip", "shoes", "jewel", "tie",
-                                  "slippers", "gloves", "hat", "sleeve", "cap", "swimming suit", "trainer", "vest",
-                                  "glasses", "shoelace", "patch", "scarf", "shoe", "button", "dress", "sash",
-                                  "shoe sole", "robe", "pants", "kimono", "overalls"]
-d["a4a_actions"] = ["lick", "slam", "beg", "fell", "scratch", "touch", "sniff", "see", "climb", "dig", "howl", "sleep",
-                    "explore", "draw", "hug", "teach", "nap", "clay", "catch", "clap", "cry", "sing", "meet", "sell",
-                    "peck", "beat", "kneel", "find", "dance", "cough", "cut", "think", "bark", "speak", "cheer", "bake",
-                    "write", "punch", "strum", "study", "plow", "dream", "post", "dive", "whisper", "sob", "shake",
-                    "feed", "crawl", "camp", "spill", "clean", "scream", "tear", "float", "pull", "ate", "kiss", "sit",
-                    "hatch", "blink", "hear", "smooch", "play", "wash", "chat", "drive", "drink", "fly", "juggle",
-                    "bit", "sweep", "look", "knit", "lift", "fetch", "read", "croak", "stare", "eat"]
-d["a4a_construction"] = ["lighthouse", "door", "circus", "church", "kennel", "temple", "smoke", "chimney", "brick",
-                         "well", "street", "castle", "store", "staircase", "school", "farm", "bridge", "dam", "pyramid",
-                         "barn", "mill", "window", "cabin", "step", "shop", "shed", "roof", "steeple", "garage",
-                         "mosque", "hospital", "tent", "house", "wall", "bank", "shutter", "hut"]
-d["a4a_nature"] = ["land", "cliff", "hill", "canyon", "rock", "sea", "lake", "coast", "shore", "mountain", "pond",
-                   "peak", "lava", "cave", "dune", "island", "forest", "desert", "iceberg"]
-d["a4a_jobs"] = ["clown", "engineer", "priest", "vet", "judge", "chef", "athlete", "librarian", "juggler", "police",
-                 "plumber", "badge", "queen", "farmer", "magician", "knight", "doctor", "bricklayer", "cleaner", "teacher",
-                 "hunter", "soldier", "musician", "lawyer", "fisherman", "princess", "fireman", "nun",
-                 "pirate", "cowboy", "electrician", "nurse", "king", "president", "office", "carpenter", "jockey",
-                 "worker", "mechanic", "pilot", "actor", "cook", "student", "butcher", "accountant", "prince", "pope",
-                 "sailor", "boxer", "ballet", "coach", "astronaut", "painter", "anaesthesiologist", "scientist"]
-d["a4a_fruit_n_veg"] = ["carrot", "blackberries", "celery", "turnip", "cacao", "peach", "melon", "grapefruit",
-                        "broccoli", "grapes", "spinach", "fig", "kernel", "radish", "tomato", "kiwi", "asparagus",
-                        "olives", "cucumbers", "beans", "strawberry", "peppers", "raspberry", "apricot", "potatoes",
-                        "peas", "cabbage", "cherries", "squash", "blueberries", "pear", "orange", "pumpkin", "avocado",
-                        "garlic", "onion", "apple", "lime", "cauliflower", "mango", "lettuce", "lemon", "aubergine",
-                        "artichokes", "plums", "leek", "bananas", "papaya"]
-d["a4a_transport"] = ["sail", "taxi", "car", "bike", "raft", "pedal", "bus", "handlebar", "boat", "truck", "sleigh",
-                      "carpet", "motorcycle", "train", "ship", "van", "canoe", "rocket", "mast", "sledge", "bicycle"]
+# word list adapted from GCompris:
+# https://github.com/gcompris/GCompris-qt/blob/master/src/activities/lang/resource/content-pt_BR.json
+
+d["a4a_animals"] = ['vaca', '<turkey>', 'camarão', '<wolf>', '<panther>', '<panda>', '<magpie>', 'molusco', '<pony>', '<mouse>', 'pug', '<koala>', 'sapo', '<ladybug>', '<gorilla>', '<llama>', '<vulture>', '<hamster>', 'pássaro', 'estrela do mar', 'corvo', '<parakeet>', '<caterpillar>', '<tiger>', '<hummingbird>', '<piranha>', 'porco', '<scorpion>', 'raposa', '<leopard>', '<iguana>', '<dolphin>', 'morcego', 'pintinho', 'caranguejo', 'galinha', '<wasp>', '<chameleon>', '<whale>', '<hedgehog>', '<fawn>', '<moose>', 'abelha', '<viper>', '<shrike>', '<donkey>', '<guinea pig>', '<sloth>', '<horse>', '<penguin>', '<otter>', '<bear>', '<zebra>', '<ostrich>', 'camelo', '<antelope>', '<lemur>', '<pigeon>', '<lama>', 'toupeira', '<ray>', '<ram>', 'gambá', '<jellyfish>', '<sheep>', 'tubarão', '<kitten>', '<deer>', 'caracol', '<flamingo>', '<rabbit>', '<oyster>', '<beaver>', '<sparrow>', '<dove>', '<eagle>', 'besouro', '<hippopotamus>', 'coruja', '<cobra>', '<salamander>', '<goose>', '<kangaroo>', '<dragonfly>', '<toad>', '<pelican>', 'lula', '<lion cub>', '<jaguar>', 'pato', '<lizard>', '<rhinoceros>', '<hyena>', 'boi', '<peacock>', '<parrot>', '<elk>', 'jacaré', '<ant>', 'cabra', '<baby rabbit>', '<lion>', 'esquilo', '<opossum>', 'chimpanzé', '<doe>', '<gopher>', '<elephant>', 'girafa', 'aranha', 'cachorro', '<jay>', '<seal>', '<rooster>', '<turtle>', '<bull>', 'gato', 'rato', '<slug>', '<buffalo>', '<blackbird>', 'cisne', '<lobster>', 'cachorro', 'mosquito', 'cobra', 'frango', '<anteater>']
+d["a4a_sport"] = ['<judo>', 'piscina', 'pedalar', 'alongar', '<helmet>', '<ice skating>', 'andar', 'correr', 'correr', 'nadar', 'saltar', 'caminhar', '<boxing>', '<hockey>', '<race>', 'arremessar', 'patinar', 'ganhar', 'agachar', 'esquiar', '<golf>', '<whistle>', 'tocha', '<sailing>', 'de pé', '<tennis>', 'pular', '<rowing>', 'correr', 'corda']
+d["a4a_body"] = ['dentes', '<cheek>', '<ankle>', 'joelho', '<toe>', '<muscle>', 'boca', '<feet>', 'mão', '<elbow>', 'cabelo', '<eyelash>', '<beard>', '<belly button>', '<thumb>', '<breast>', '<nostril>', 'nariz', 'quadril', '<arm>', '<eyebrow>', 'punho', 'pescoço', 'pulso', 'garganta', '<eye>', '<leg>', '<spine>', 'orelha', '<finger>', 'pé', 'trança', 'rosto', 'costas', 'queixo', '<bottom>', 'coxa', '<belly>']
+d["a4a_people"] = ['menina', '<male>', '<son>', '<mates>', '<friends>', '<baby>', 'criança', 'pai', '<mom>', '<twin boys>', '<brothers>', '<man>', '<mother>', '<grandfather>', '<family>', '<female>', '<wife>', '<husband>', 'noiva', '<madam>', '<grandmother>', '<couple>', 'rapaz', '<twin girls>', '<tribe>', 'menino', '<sisters>', '<woman>', '<lady>']
+d["a4a_food"] = ['doce', '<sausage>', '<hamburger>', '<steak>', 'doce de chocolate', '<doughnut>', '<coconut>', 'arroz', '<ice cream>', '<jelly>', '<yoghurt>', '<dessert>', '<pretzel>', '<peanut>', '<jam>', 'banquete', 'biscoito', '<bacon>', '<spice>', '<coffee>', '<pie>', '<lemonade>', 'chocolate', '<water bottle>', 'lanche', 'gelo', '<sugar>', 'molho', '<soup>', 'suco', '<fries>', 'bolo', '<mashed potatoes>', '<tea>', 'brioche', 'queijo', '<beef>', 'sanduíche', '<slice>', 'granulado', '<pizza>', 'farinha', 'chiclete', 'espaguete', '<roast>', 'bebida', 'ensopado', 'espalhar', '<meat>', '<milk>', '<meal>', 'milho', 'pão', '<walnut>', '<egg>', '<hot dog>', '<ham>']
+d["a4a_clothes_n_accessories"] = ['<jewellery>', 'meia', '<jacket>', '<heel>', 'jaleco', '<shorts>', '<pocket>', '<necklace>', '<sweatshirt>', '<uniform>', '<raincoat>', '<trousers>', '<sunglasses>', 'casaco', '<pullover>', 'camisa', '<sandals>', 'terno', '<pyjamas>', 'saia', '<zip>', '<shoes>', 'jóia', '<tie>', '<slippers>', '<gloves>', 'chapéu', 'manga', 'boné', '<swimming suit>', '<trainer>', '<vest>', '<glasses>', '<shoelace>', 'remendo', 'cachecol', 'sapato', '<button>', 'vestido', '<sash>', '<shoe sole>', '<robe>', '<pants>', '<kimono>', '<overalls>']
+d["a4a_actions"] = ['lamber', '<slam>', 'implorar', '<fell>', 'arranhar', 'tocar', 'farejar', 'observar', 'escalar', 'escavar', 'uivar', 'dormir', 'explorar', 'desenhar', 'abraçar', 'ensinar', 'cochilar', 'argila', 'pegar', 'palma', 'chorar', 'cantar', 'encontrar', '<sell>', 'bicar', '<beat>', 'ajoelhar', 'encontrar', 'dança', '<cough>', 'cortar', 'pensar', 'latir', '<speak>', 'torcer', '<bake>', 'escrever', '<punch>', '<strum>', 'estudar', 'arar', 'sonhar', '<post>', 'mergulho', 'cochichar', '<sob>', 'sacudir', '<feed>', 'engatinhar', 'acampamento', 'derramar', 'limpar', 'gritar', 'rasgar', 'boiar', '<pull>', '<ate>', '<kiss>', 'sentar', 'chocar', 'piscar', 'escutar', 'beijar', 'brincar', 'lavar', 'conversar', 'dirigir', 'bebida', 'voar', '<juggle>', 'mordida', '<sweep>', 'olhar', 'tricotar', 'levantar', 'buscar', 'ler', 'coaxar', 'olhar', 'comer']
+d["a4a_construction"] = ['<lighthouse>', 'porta', '<circus>', '<church>', '<kennel>', '<temple>', 'fumaça', '<chimney>', 'tijolo', '<well>', 'rua', 'castelo', 'mercearia', '<staircase>', 'escola', 'fazenda', 'ponte', '<dam>', '<pyramid>', 'celeiro', '<mill>', '<window>', 'cabana', '<step>', 'loja', 'celeiro', 'telhado', '<steeple>', '<garage>', '<mosque>', '<hospital>', '<tent>', '<house>', '<wall>', 'banco', '<shutter>', 'oca']
+d["a4a_nature"] = ['terreno', 'penhasco', '<hill>', '<canyon>', 'rocha', '<sea>', 'lago', '<coast>', 'costa', '<mountain>', '<pond>', '<peak>', '<lava>', 'caverna', 'duna', '<island>', '<forest>', '<desert>', '<iceberg>']
+d["a4a_jobs"] = ['palhaço', '<engineer>', '<priest>', 'veterinário', 'juiz', '<chef>', 'atleta', '<librarian>', '<juggler>', '<policeman>', '<plumber>', 'insígnia', 'rainha', '<farmer>', '<magician>', 'cavaleiro', '<doctor>', '<bricklayer>', '<cleaner>', 'professor', 'caçador', '<soldier>', '<musician>', '<lawyer>', '<fisherman>', 'princesa', '<fireman>', '<nun>', '<pirate>', 'vaqueiro', '<electrician>', '<nurse>', '<king>', '<president>', '<office worker>', '<carpenter>', '<jockey>', '<worker>', '<mechanic>', '<pilot>', '<actor>', 'cozinhar', '<student>', '<butcher>', '<accountant>', 'príncipe', 'papa', '<sailor>', '<boxer>', '<ballet dancer>', 'treinador', '<astronaut>', '<painter>', '<anaesthesiologist>', '<scientist>']
+d["a4a_fruit_n_veg"] = ['cenoura', '<blackberries>', '<celery>', '<turnip>', '<cacao>', 'pêssego', '<melon>', '<grapefruit>', '<broccoli>', '<grapes>', '<spinach>', '<fig>', '<kernel>', '<radish>', '<tomato>', '<kiwi>', '<asparagus>', '<olives>', '<cucumbers>', '<beans>', 'morango', '<peppers>', '<raspberry>', '<apricot>', '<potatoes>', '<peas>', '<cabbage>', '<cherries>', 'abóbora', '<blueberries>', '<pear>', 'laranja', '<pumpkin>', '<avocado>', '<garlic>', '<onion>', '<apple>', 'limão', '<cauliflower>', '<mango>', '<lettuce>', '<lemon>', '<aubergine>', '<artichokes>', '<plums>', '<leek>', '<bananas>', '<papaya>']
+d["a4a_transport"] = ['veleiro', '<taxi>', 'carro', 'bicicleta', '<raft>', '<pedal>', '<bus>', '<handlebar>', 'barco', 'caminhão', 'trenó', '<carpet>', '<motorcycle>', 'trem', 'navio', 'van', 'canoa', '<rocket>', '<mast>', '<sledge>', '<bicycle>']
+
