@@ -1600,3 +1600,6 @@ msgstr "часы"
 
 msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr "Чтобы расширить дробь, умножьте числитель и знаменатель на одно и то же число. Измените множитель, чтобы увидеть, что происходит."
+
+msgid "Learn new words"
+msgstr "Учитесь новые слова"

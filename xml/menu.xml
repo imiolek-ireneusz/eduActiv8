@@ -122,6 +122,95 @@
                   visible="1" lang_incl="['fr']" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
         </cat>
+        <cat mline="2" id="39" title="Learn new words" subtitle=""
+             icon="ico_c_39.png" min_age="0" max_age="7" listening="False" android="True"
+             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
+             has_inner="False">
+            <game mline="1" dbid="286" variant="0" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Animals"
+                  subtitle="Learn new words"
+                  icon="ico_g_3903.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="1" dbid="287" variant="3" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="People"
+                  subtitle="Learn new words"
+                  icon="ico_g_3906.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="1" dbid="288" variant="7" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Jobs"
+                  subtitle="Learn new words"
+                  icon="ico_g_3912.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="2" dbid="289" variant="2" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Body"
+                  subtitle="Learn new words"
+                  icon="ico_g_3905.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="2" dbid="290" variant="8" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Clothes and Accessories"
+                  subtitle="Learn new words"
+                  icon="ico_g_3908.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="2" dbid="291" variant="1" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Sports"
+                  subtitle="Learn new words"
+                  icon="ico_g_3904.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="2" dbid="292" variant="4" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Actions"
+                  subtitle="Learn new words"
+                  icon="ico_g_3909.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="3" dbid="293" variant="6" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Nature"
+                  subtitle="Learn new words"
+                  icon="ico_g_3911.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="3" dbid="294" variant="9" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Fruits and Vegetables"
+                  subtitle="Learn new words"
+                  icon="ico_g_3913.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="3" dbid="295" variant="11" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Food"
+                  subtitle="Learn new words"
+                  icon="ico_g_3907.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="3" dbid="296" variant="10" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Transport"
+                  subtitle="Learn new words"
+                  icon="ico_g_3914.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+            <game mline="3" dbid="297" variant="5" var2="0" min_age="0" max_age="7"
+                  constructor_id="121"
+                  title="Constructions"
+                  subtitle="Learn new words"
+                  icon="ico_g_3910.png" ico_group="1" icosuffix="False" lang_activity="True"
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+            </game>
+        </cat>
         <cat mline="2" id="2" title="Word Builders" subtitle=""
              icon="ico_c_02.png" min_age="0" max_age="7" listening="False" android="True"
              visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk']" lang_excl="" icosuffix="False"

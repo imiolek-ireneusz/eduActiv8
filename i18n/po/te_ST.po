@@ -1521,3 +1521,6 @@ msgstr "Subtract fractions with unlike denominators"
 
 msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
 msgstr "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
+
+msgid "Learn new words"
+msgstr ""
