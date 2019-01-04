@@ -173,16 +173,19 @@ class Board(gd.BoardGame):
         if self.mainloop.m.game_variant in [0, 2]:
             if self.mainloop.m.game_var2 == 0:
                 self.text_string = self.lang.time2str(tt[0], tt[1])
+                if self.lang.lang == "ru":
+                    spk_txt = self.lang.time2spk(tt[0], tt[1])
+                    self.text_time.speaker_val = spk_txt
+                    self.text_time.speaker_val_update = False
             else:
                 self.text_string = self.lang.time2str_short(tt[0], tt[1])
-            if self.lang.lang in ["ru", "he"]:
+                if self.lang.lang == "ru":
+                    spk_txt = self.lang.time2spk_short(tt[0], tt[1])
+                    self.text_time.speaker_val = spk_txt
+                    self.text_time.speaker_val_update = False
+
+            if self.lang.lang == "he":
                 spk_txt = self.lang.time2spk(tt[0], tt[1])
-                self.text_time.speaker_val = spk_txt
-                self.text_time.speaker_val_update = False
-        elif self.mainloop.m.game_variant == 1:
-            self.text_string = self.lang.time2officistr(tt[0], tt[1])
-            if self.lang.lang == "ru":
-                spk_txt = self.lang.time2officialspk(tt[0], tt[1])
                 self.text_time.speaker_val = spk_txt
                 self.text_time.speaker_val_update = False
 
