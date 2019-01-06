@@ -1700,7 +1700,7 @@ class LoginScreen:
         btn_top = 333
 
         self.font_apply = PButton(self, self.halfw // 2 - 40, 30, self.left + 20 + self.halfw // 2,
-                                self.top + btn_top + 30, 3, self.lang.b["Apply"], self.fapplyfont)
+                                self.top + btn_top + 30, 3, "TMPBTN", self.fapplyfont)
         self.edit_list.add(self.font_apply)
         self.select = []
 

@@ -32,7 +32,7 @@ class I18n():
         self.b = dict()
         self.b["Default Language:"] = _("Default Language:")
         self.b["Guest"] = _("Guest")
-        self.b["Hi Stranger"] = _("Hi Stranger :) Would you like to log in so we know who you are?") #DEL
+        #self.b["Hi Stranger"] = _("Hi Stranger :) Would you like to log in so we know who you are?") #DEL
         self.b["Log in:"] = _("Log in:")
         self.b["user name:"] = _("user name:")
         self.b["password:"] = _("password:")
@@ -106,7 +106,6 @@ class I18n():
         self.b["all groups"] = _("show all")
         self.b["show activities for:"] = _("show activities for:")
 
-        self.b["Apply"] = _("Apply")
         self.b["Hello"] = _("Hello")
 
         # self.d["Educational Activities for Kids"] = _("Educational Activities for Kids")
@@ -511,7 +510,6 @@ class I18n():
         #self.d["Decimals, fractions and percentages"] = _("Decimals, fractions and percentages")
         #self.d["Decimals, fractions, ratios and percentages"] = _("Decimals, fractions, ratios and percentages")
         self.d["Shapes and Solids"] = _("Shapes and Solids")
-        self.d["Nothing here yet..."] = _("Nothing here yet...")
         self.d["Translation Credits"] = _("Translation Credits")
         self.d["Level"] = _("Level")
         self.d["Build the following word using the letters below."] = _(
@@ -534,7 +532,7 @@ class I18n():
         self.d["long form"] = _("long form")  # Serbian and Russian only
         self.d["short form"] = _("short form")  # Serbian and Russian only
 
-        self.d["Catalan clock"] = _("Catalan clock")  # Catalan only
+        self.d["Catalan clock"] = "Rellotge amb horari en català" # Catalan only does not need translating
 
         self.d["Word Builders"] = _("Word Builders")
         self.d["Word Matchers"] = _("Word Matchers")
@@ -623,8 +621,8 @@ class I18n():
         """
         self.d["Re-arrange alphabetical"] = _("Rearrange the letters so they are in the alphabetical order.")
         self.d["Re-arrange ascending"] = _("Rearrange the numbers so they are in the ascending order.")
-        self.d["upd8 no update"] = _("v.%s")
-        self.d["upd8 available"] = _("eduActiv8 update is available. Current version: %s. New version: %s.")
+        #self.d["upd8 no update"] = _("v.%s")
+        #self.d["upd8 available"] = _("eduActiv8 update is available. Current version: %s. New version: %s.")
         self.b["check for updates"] = _("check for updates on start")
 
         self.d["Symmetry"] = _("Symmetry")

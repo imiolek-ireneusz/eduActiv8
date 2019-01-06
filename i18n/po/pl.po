@@ -18,84 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0: n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-msgid "green apple"
-msgid_plural "green apples"
-msgstr[0] "zielone jabłko"
-msgstr[1] "zielone jabłka"
-msgstr[2] "zielonych jabłek"
-
-msgid "red apple"
-msgid_plural "red apples"
-msgstr[0] "czerwone jabłko"
-msgstr[1] "czerwone jabłka"
-msgstr[2] "czerwonych jabłek"
-
-msgid "strawberry"
-msgid_plural "strawberries"
-msgstr[0] "truskawka"
-msgstr[1] "truskawki"
-msgstr[2] "truskawek"
-
-msgid "pear"
-msgid_plural "pears"
-msgstr[0] "gruszka"
-msgstr[1] "gruszki"
-msgstr[2] "gruszek"
-
-msgid "orange [fruit]"
-msgid_plural "oranges"
-msgstr[0] "pomarańcza"
-msgstr[1] "pomarańcze"
-msgstr[2] "pomarańczy"
-
-msgid "onion"
-msgid_plural "onions"
-msgstr[0] "cebula"
-msgstr[1] "cebule"
-msgstr[2] "cebul"
-
-msgid "tomato"
-msgid_plural "tomatoes"
-msgstr[0] "pomidor"
-msgstr[1] "pomidory"
-msgstr[2] "pomidorów"
-
-msgid "lemon"
-msgid_plural "lemons"
-msgstr[0] "cytryna"
-msgstr[1] "cytryny"
-msgstr[2] "cytryn"
-
-msgid "cherry"
-msgid_plural "cherries"
-msgstr[0] "wiśnia"
-msgstr[1] "wiśnie"
-msgstr[2] "wiśni"
-
-msgid "pepper"
-msgid_plural "peppers"
-msgstr[0] "papryka"
-msgstr[1] "papryki"
-msgstr[2] "papryk"
-
-msgid "carrot"
-msgid_plural "carrots"
-msgstr[0] "marchewka"
-msgstr[1] "marchewki"
-msgstr[2] "marchewek"
-
-msgid "banana"
-msgid_plural "bananas"
-msgstr[0] "banan"
-msgstr[1] "banany"
-msgstr[2] "bananów"
-
-msgid "watermelon"
-msgid_plural "watermelons"
-msgstr[0] "arbuz"
-msgstr[1] "arbuzy"
-msgstr[2] "arbuzów"
-
 msgid "Equilateral Triangle"
 msgstr "Trójkąt równoboczny"
 
@@ -394,9 +316,6 @@ msgstr "Informacje o grze..."
 
 msgid "Copyright & Credits"
 msgstr "Prawa autorskie"
-
-msgid "Hit the Mole"
-msgstr "Złap Krecika"
 
 msgid "Letters"
 msgstr "Litery"
@@ -1486,18 +1405,6 @@ msgstr "Dopasuj proporcje"
 
 msgid "Percentages in a pie chart"
 msgstr "Procenty na wykresach kołowych"
-
-msgid "hour"
-msgid_plural "hours"
-msgstr[0] "godzina"
-msgstr[1] "godziny"
-msgstr[2] "godzin"
-
-msgid "minute"
-msgid_plural "minutes"
-msgstr[0] "minuta"
-msgstr[1] "minuty"
-msgstr[2] "minut"
 
 msgid "Find equivalent fraction"
 msgstr "Znajdź ułamki równoważne"

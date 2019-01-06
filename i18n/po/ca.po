@@ -371,8 +371,6 @@ msgstr "Informació del joc…"
 msgid "Copyright & Credits"
 msgstr "Drets de còpia i crèdits"
 
-msgid "Hit the Mole"
-msgstr ""
 
 msgid "Letters"
 msgstr "Lletres"

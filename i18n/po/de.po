@@ -376,9 +376,6 @@ msgstr "Spielinformation..."
 msgid "Copyright & Credits"
 msgstr "Copyright & Credits"
 
-msgid "Hit the Mole"
-msgstr "Treff den Maulwurf"
-
 msgid "Letters"
 msgstr "Buchstaben"
 

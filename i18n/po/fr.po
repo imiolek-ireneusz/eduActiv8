@@ -377,9 +377,6 @@ msgstr "Info sur le jeu..."
 msgid "Copyright & Credits"
 msgstr "Copyright & Credits"
 
-msgid "Hit the Mole"
-msgstr "Frappe la taupe"
-
 msgid "Letters"
 msgstr "Lettres"
 

@@ -377,9 +377,6 @@ msgstr "Πληροφορίες Παιχνιδιού"
 msgid "Copyright & Credits"
 msgstr "Πνευματικά δικαιώματα & Συντελεστές"
 
-msgid "Hit the Mole"
-msgstr "Χτύπα τον τυφλοπόντικα"
-
 msgid "Letters"
 msgstr "Γράμματα"
 

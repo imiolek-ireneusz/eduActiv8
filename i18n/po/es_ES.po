@@ -380,9 +380,6 @@ msgstr "Información sobre el juego"
 msgid "Copyright & Credits"
 msgstr "Autoría y Créditos"
 
-msgid "Hit the Mole"
-msgstr "Golpea al topo"
-
 msgid "Letters"
 msgstr "Letras"
 

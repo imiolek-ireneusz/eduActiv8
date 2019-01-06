@@ -375,9 +375,6 @@ msgstr "Wóškate wóopȟe kiŋ..."
 msgid "Copyright & Credits"
 msgstr "Tuwáwa káǧe kiŋ hená"
 
-msgid "Hit the Mole"
-msgstr "Wahíŋheya kiŋ Apȟá yo/ye"
-
 msgid "Letters"
 msgstr "Oówa"
 

@@ -376,9 +376,6 @@ msgstr "Tietoja pelistä..."
 msgid "Copyright & Credits"
 msgstr "Tekijänoikeustiedot"
 
-msgid "Hit the Mole"
-msgstr "Mätki myyrää"
-
 msgid "Letters"
 msgstr "Kirjaimet"
 

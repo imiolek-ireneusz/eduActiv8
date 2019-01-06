@@ -376,9 +376,6 @@ msgstr "Informação do Jogo..."
 msgid "Copyright & Credits"
 msgstr "Copyright & Créditos"
 
-msgid "Hit the Mole"
-msgstr "Acerta na Toupeira"
-
 msgid "Letters"
 msgstr "Letras"
 

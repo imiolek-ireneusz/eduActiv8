@@ -1,7 +1,7 @@
 # eduActiv8 - Educational Activity Pack - translation file.
-# Copyright (C) 2012 - 2013 Ireneusz Imiolek
+# Copyright (C) 2012 - 2019 Ireneusz Imiolek
 # This file is distributed under the same license as the eduactiv8 package.
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2013.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
 #
 msgid ""
 msgstr ""
@@ -122,6 +122,12 @@ msgstr ""
 msgid "Hexagon"
 msgstr ""
 
+msgid "Heptagon"
+msgstr ""
+
+msgid "Octagon"
+msgstr ""
+
 msgid "Circle"
 msgstr ""
 
@@ -159,9 +165,6 @@ msgid "Default Language:"
 msgstr ""
 
 msgid "Guest"
-msgstr ""
-
-msgid "Hi Stranger :) Would you like to log in so we know who you are?"
 msgstr ""
 
 msgid "Log in:"
@@ -373,9 +376,6 @@ msgstr ""
 msgid "Copyright & Credits"
 msgstr ""
 
-msgid "Hit the Mole"
-msgstr ""
-
 msgid "Letters"
 msgstr ""
 
@@ -556,7 +556,7 @@ msgstr ""
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr ""
 
-msgid "Re-arrange the above numbers so they are in the right order"
+msgid "Rearrange the numbers so they are in the right order"
 msgstr ""
 
 msgid "Complete the abc using the letters above."
@@ -565,13 +565,13 @@ msgstr ""
 msgid "Build the following word using the letters below."
 msgstr ""
 
-msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
+msgid "Find and separate even numbers from odd numbers."
 msgstr ""
 
-msgid "Re-arrange the above letters so they are in the alphabetical order."
+msgid "Rearrange the letters so they are in the alphabetical order."
 msgstr ""
 
-msgid "Re-arrange the above numbers so they are in the ascending order."
+msgid "Rearrange the numbers so they are in the ascending order."
 msgstr ""
 
 msgid "Please try again."
@@ -1086,8 +1086,7 @@ msgstr ""
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
-"Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 
@@ -1095,9 +1094,8 @@ msgid "Licence"
 msgstr ""
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, "
-"either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If "
-"not, see <http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General "
+"Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
 
 msgid "A collection of educational activities for kids"
@@ -1172,6 +1170,7 @@ msgstr ""
 msgid "Do you want to log out of the game?"
 msgstr ""
 
+# alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
 msgid "Ready to go to the next level?"
 msgstr ""
 
@@ -1189,25 +1188,16 @@ msgid ""
 "http://espeak.sourceforge.net/"
 msgstr ""
 
-msgid "Decimals"
+msgid "Decimals (Category)"
 msgstr ""
 
-msgid "Fractions"
+msgid "Fractions (Category)"
 msgstr ""
 
-msgid "Ratios"
+msgid "Ratios (Category)"
 msgstr ""
 
-msgid "Percentages"
-msgstr ""
-
-msgid "long form"
-msgstr ""
-
-msgid "short form"
-msgstr ""
-
-msgid "Catalan clock"
+msgid "Percentages (Category)"
 msgstr ""
 
 msgid "Word Builders"
@@ -1321,7 +1311,6 @@ msgstr ""
 msgid "Subtract fractions with the same denominator"
 msgstr ""
 
-
 msgid "Multiply fractions"
 msgstr ""
 
@@ -1382,12 +1371,8 @@ msgstr ""
 msgid "Group ratios together"
 msgstr ""
 
-msgid "eduActiv8 update is available. Current version: %s. New version: %s."
-msgstr ""
-
 msgid "check for updates on start"
 msgstr ""
-
 
 msgid "Symmetry"
 msgstr ""
@@ -1526,4 +1511,12 @@ msgid "To add or subtract fractions when their denominators are not the same you
 msgstr ""
 
 msgid "Learn new words"
+msgstr ""
+
+# used for the ways of telling time in Russian and Serbian translations only
+msgid "long form"
+msgstr ""
+
+# used for the ways of telling time used in Russian and Serbian translations only
+msgid "short form"
 msgstr ""

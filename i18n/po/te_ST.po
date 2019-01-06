@@ -380,9 +380,6 @@ msgstr "Game info..."
 msgid "Copyright & Credits"
 msgstr "Copyright & Credits"
 
-msgid "Hit the Mole"
-msgstr "Hit the Mole"
-
 msgid "Letters"
 msgstr "Letters"
 

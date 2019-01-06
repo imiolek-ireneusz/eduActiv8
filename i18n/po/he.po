@@ -19,71 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-msgid "green apple"
-msgid_plural "green apples"
-msgstr[0] "תפוח ירוק"
-msgstr[1] "תפוחים ירוקים"
-
-msgid "red apple"
-msgid_plural "red apples"
-msgstr[0] "תפוח אדום"
-msgstr[1] "תפוחים אדומים"
-
-msgid "strawberry"
-msgid_plural "strawberries"
-msgstr[0] "תות"
-msgstr[1] "תותים"
-
-msgid "pear"
-msgid_plural "pears"
-msgstr[0] "אגס"
-msgstr[1] "אגסים"
-
-msgid "orange [fruit]"
-msgid_plural "oranges"
-msgstr[0] "תפוז"
-msgstr[1] "תפוזים"
-
-msgid "onion"
-msgid_plural "onions"
-msgstr[0] "בצל"
-msgstr[1] "בצלים"
-
-msgid "tomato"
-msgid_plural "tomatoes"
-msgstr[0] "עגבניה"
-msgstr[1] "עגבניות"
-
-msgid "lemon"
-msgid_plural "lemons"
-msgstr[0] "לימון"
-msgstr[1] "לימונים"
-
-msgid "cherry"
-msgid_plural "cherries"
-msgstr[0] "דובדבן"
-msgstr[1] "דובדבנים"
-
-msgid "pepper"
-msgid_plural "peppers"
-msgstr[0] "פלפל"
-msgstr[1] "פלפלים"
-
-msgid "carrot"
-msgid_plural "carrots"
-msgstr[0] "גזר"
-msgstr[1] "גזרים"
-
-msgid "banana"
-msgid_plural "bananas"
-msgstr[0] "בננה"
-msgstr[1] "בננות"
-
-msgid "watermelon"
-msgid_plural "watermelons"
-msgstr[0] "מלון"
-msgstr[1] "מלונים"
-
 msgid "Equilateral Triangle"
 msgstr "משולש שווה צלעות"
 
@@ -376,9 +311,6 @@ msgstr "מידע על המשחק"
 
 msgid "Copyright & Credits"
 msgstr "זכויות יוצרים וקרדיטים"
-
-msgid "Hit the Mole"
-msgstr "הכו בחפרפרת"
 
 msgid "Letters"
 msgstr "אותיות"
@@ -1429,16 +1361,6 @@ msgstr ""
 
 msgid "Percentages in a pie chart"
 msgstr ""
-
-msgid "hour"
-msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "minute"
-msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
 
 msgid "Find equivalent fraction"
 msgstr ""

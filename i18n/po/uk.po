@@ -403,9 +403,6 @@ msgstr "Дані щодо гри…"
 msgid "Copyright & Credits"
 msgstr "Авторські права та подяки"
 
-msgid "Hit the Mole"
-msgstr "Впіймайте крота"
-
 msgid "Letters"
 msgstr "Літери"
 

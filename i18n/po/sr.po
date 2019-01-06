@@ -390,9 +390,6 @@ msgstr "Подаци о игри..."
 msgid "Copyright & Credits"
 msgstr "Ауторска права и заслуге"
 
-msgid "Hit the Mole"
-msgstr "Звекни кртицу"
-
 msgid "Letters"
 msgstr "Слова"
 
