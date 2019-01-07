@@ -15,8 +15,7 @@ d = dict()  # messages for display
 dp = dict()  # messages with pronunciation exceptions - this dictionary will override entries in a copy of d
 
 d["local_kbrd"] = "Русскими буквами"
-d[
-    "Clock0 - Russian official time"] = "Научитесь читать официальное русское время"  # Learn to read Russian official time
+d["Clock0 - Russian official time"] = "Научитесь читать официальное русское время"  # Learn to read Russian official time
 d["Russian official - subtitle"] = ""
 
 d["Clock2 - Russian official time"] = "Официальное русское время"  # Russian official time
