@@ -385,6 +385,12 @@ msgstr "Division"
 msgid "Sorting Numbers"
 msgstr "Sorting Numbers"
 
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
+
 msgid "Number Comparison"
 msgstr "Number Comparison"
 

@@ -456,6 +456,12 @@ msgstr "Khiwáyušpapi"
 msgid "Sorting Numbers"
 msgstr "Wóiyawa Ečhékčhe Égnakapi"
 
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
+
 msgid "Number Comparison"
 msgstr "Wóiyawa Íčhiwaŋyaŋkapi"
 

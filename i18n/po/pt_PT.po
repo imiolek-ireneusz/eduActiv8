@@ -390,6 +390,12 @@ msgstr "Divisão"
 msgid "Sorting Numbers"
 msgstr "Ordenar Números"
 
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
+
 msgid "Number Comparison"
 msgstr "Comparação de Números"
 

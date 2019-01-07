@@ -606,14 +606,14 @@
                 <game mline="2" dbid="43" variant="0" var2="0" min_age="0" max_age="2"
                       constructor_id="111"
                       title="Sorting Numbers"
-                      subtitle=""
+                      subtitle="Consecutive numbers"
                       icon="ico_g_0400.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
                 <game mline="2" dbid="207" variant="1" var2="0" min_age="0" max_age="5"
                       constructor_id="111"
                       title="Sorting Numbers"
-                      subtitle=""
+                      subtitle="Random numbers"
                       icon="ico_g_0411.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
@@ -917,7 +917,7 @@
                 <game mline="0" dbid="215" variant="1" var2="0" min_age="4" max_age="7"
                       constructor_id="111"
                       title="Sorting Numbers"
-                      subtitle=""
+                      subtitle="Random numbers"
                       icon="ico_g_2300.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>

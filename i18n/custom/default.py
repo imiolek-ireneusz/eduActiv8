@@ -160,6 +160,8 @@ class I18n():
         self.d["Find the multiplier"] = _("Find the multiplier")
         self.d["Division"] = _("Division")
         self.d["Sorting Numbers"] = _("Sorting Numbers")
+        self.d["Consecutive numbers"] = _("Consecutive numbers")
+        self.d["Random numbers"] = _("Random numbers")
         self.d["Number Comparison"] = _("Number Comparison")
         self.d["Addition & Subtraction"] = _("Addition & Subtraction")
         self.d["Comparison"] = _("Comparison")

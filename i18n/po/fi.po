@@ -390,6 +390,12 @@ msgstr "Jakolasku"
 msgid "Sorting Numbers"
 msgstr "Lukujen järjestäminen"
 
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
+
 msgid "Number Comparison"
 msgstr "Lukujen vertaileminen"
 

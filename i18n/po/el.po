@@ -394,6 +394,12 @@ msgstr "Διαίρεση"
 msgid "Sorting Numbers"
 msgstr "Ταξινόμησε τους αριθμούς"
 
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
+
 msgid "Number Comparison"
 msgstr "Σύγκρινε τους αριθμούς"
 

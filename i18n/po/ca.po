@@ -384,6 +384,12 @@ msgstr "Divisió"
 msgid "Sorting Numbers"
 msgstr "Ordena els números"
 
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
+
 msgid "Number Comparison"
 msgstr "Compara els números"
 

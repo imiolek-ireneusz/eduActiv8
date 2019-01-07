@@ -367,6 +367,12 @@ msgstr ""
 msgid "Sorting Numbers"
 msgstr ""
 
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
+
 msgid "Number Comparison"
 msgstr ""
 

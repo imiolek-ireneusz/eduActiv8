@@ -383,6 +383,12 @@ msgstr "חלוקה"
 msgid "Sorting Numbers"
 msgstr "מיון מספרים"
 
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
+
 msgid "Number Comparison"
 msgstr "מספר השוואה"
 
