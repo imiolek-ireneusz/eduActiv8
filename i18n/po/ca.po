@@ -486,7 +486,7 @@ msgstr ""
 msgid "Shape Matching"
 msgstr ""
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "ajuda'm a trobar la meva ombra"
 
 msgid "Paint"
@@ -495,13 +495,13 @@ msgstr "Pinta"
 msgid "Colour Matching"
 msgstr ""
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "etiqueta els colors"
 
 msgid "Follow the Arrows"
 msgstr "Segueix les fletxes"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "recorda les direccions"
 
 msgid "Photographic Memory"
@@ -552,7 +552,7 @@ msgstr ""
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr ""
 
-msgid "Rearrange the numbers so they are in the right order"
+msgid "Rearrange the numbers so they are in the right order."
 msgstr ""
 
 msgid "Complete the abc using the letters above."
@@ -929,11 +929,11 @@ msgstr ""
 msgid "Clock"
 msgstr "Rellotge"
 
-msgid "learn to read the time"
-msgstr "aprèn a llegit l'hora"
+msgid "Learn to read the time"
+msgstr "Aprèn a llegit l'hora"
 
-msgid "learn to set the clock"
-msgstr "aprèn a posar el rellotge"
+msgid "Learn to set the clock"
+msgstr "Aprèn a posar el rellotge"
 
 msgid "Set the clock to:"
 msgstr "Posa el rellotge a:"
@@ -1343,7 +1343,7 @@ msgstr ""
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1476,7 +1476,7 @@ msgstr ""
 msgid "With no visualizations"
 msgstr ""
 
-msgid "with mirrored images"
+msgid "With mirrored images"
 msgstr ""
 
 msgid "Theme Editor"
@@ -1491,7 +1491,7 @@ msgstr ""
 msgid "Font Preferences"
 msgstr ""
 
-msgid "with simplifying"
+msgid "With simplifying"
 msgstr ""
 
 msgid "Positive numbers"

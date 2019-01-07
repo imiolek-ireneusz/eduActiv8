@@ -137,9 +137,8 @@ class Board(gd.BoardGame):
             self.score.update_me = True
 
     def game_over(self):
-        tts = self.dp["work harder"]
         self.level.game_step = self.total_
-        self.level.game_over(tts)
+        self.level.game_over()
 
     def check_result(self):
         if self.total_ < self.data[2]:

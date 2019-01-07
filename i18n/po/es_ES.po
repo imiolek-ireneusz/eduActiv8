@@ -494,7 +494,7 @@ msgstr "Aprende geometría de los sólidos con tarjetas didácticas"
 msgid "Shape Matching"
 msgstr "Empareja las formas"
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "ayúdame a encontrar mi sombra"
 
 msgid "Paint"
@@ -503,13 +503,13 @@ msgstr "Pinta"
 msgid "Colour Matching"
 msgstr "Empareja los colores"
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "Etiqueta los colores"
 
 msgid "Follow the Arrows"
 msgstr "Sigue las flechas"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "recuerda las direcciones"
 
 msgid "Photographic Memory"
@@ -560,8 +560,8 @@ msgstr "Arrastra hasta el cuadrado rojo: <, > ó = (menor, mayor, o igual que)."
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Arrastra hasta el cuadrado rojo uno de los símbolos de menor que, mayor que, o igual."
 
-msgid "Rearrange the numbers so they are in the right order"
-msgstr "Reordena los números de arriba para que estén en el orden correcto"
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Reordena los números de arriba para que estén en el orden correcto."
 
 msgid "Complete the abc using the letters above."
 msgstr "Completa el abecedario utilizando las letras de arriba."
@@ -943,10 +943,10 @@ msgstr "Ponte a prueba"
 msgid "Clock"
 msgstr "Reloj"
 
-msgid "learn to read the time"
+msgid "Learn to read the time"
 msgstr "Aprende a leer el reloj"
 
-msgid "learn to set the clock"
+msgid "Learn to set the clock"
 msgstr "Aprende a ajustar el reloj"
 
 msgid "Set the clock to:"
@@ -1350,7 +1350,7 @@ msgstr ""
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1483,7 +1483,7 @@ msgstr ""
 msgid "With no visualizations"
 msgstr ""
 
-msgid "with mirrored images"
+msgid "With mirrored images"
 msgstr ""
 
 msgid "Theme Editor"
@@ -1498,7 +1498,7 @@ msgstr ""
 msgid "Font Preferences"
 msgstr ""
 
-msgid "with simplifying"
+msgid "With simplifying"
 msgstr ""
 
 msgid "Positive numbers"

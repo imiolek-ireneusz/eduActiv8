@@ -1811,8 +1811,7 @@ class LoginScreen:
         self.edit_list.add(self.cb0)
 
 
-        self.cb2 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 150, False,
-                             self.lang.b["check for updates"])
+        self.cb2 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 150, False, "")
         """
         
         if self.mainloop.android is not None:

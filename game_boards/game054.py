@@ -220,40 +220,30 @@ class Board(gd.BoardGame):
         b = self.rgbx3[2][2]
 
         if self.picked != [r, g, b]:
-            help = ""
             if self.picked[0] > r:
                 self.guides[0].value = "⇑"
-                help += self.dp['more red'] + ", "
             elif self.picked[0] < r:
                 self.guides[0].value = "⇓"
-                help += self.dp['less red'] + ", "
             else:
                 self.guides[0].value = " "
-                help += self.dp['red is ok'] + ", "
                 self.guides[0].set_display_check(True)
 
             if self.picked[1] > g:
                 self.guides[1].value = "⇑"
-                help += self.dp['more green'] + ", "
             elif self.picked[1] < g:
                 self.guides[1].value = "⇓"
-                help += self.dp['less green'] + ", "
             else:
                 self.guides[1].value = " "
-                help += self.dp['green is ok'] + ", "
                 self.guides[1].set_display_check(True)
 
             if self.picked[2] > b:
                 self.guides[2].value = "⇑"
-                help += self.dp['more blue'] + ". "
             elif self.picked[2] < b:
                 self.guides[2].value = "⇓"
-                help += self.dp['less blue'] + ". "
             else:
                 self.guides[2].value = " "
-                help += self.dp['blue is ok'] + ". "
                 self.guides[2].set_display_check(True)
-            #self.say(help)
+
             self.level.try_again(silent=self.mainloop.speaker.talkative)
 
             for each in self.guides:
@@ -265,4 +255,3 @@ class Board(gd.BoardGame):
                 each.value = ""
             self.level.next_board()
         self.mainloop.redraw_needed[0] = True
-

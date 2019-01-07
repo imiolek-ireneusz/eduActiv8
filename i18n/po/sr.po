@@ -504,7 +504,7 @@ msgstr "Геометријска тела са картицама"
 msgid "Shape Matching"
 msgstr "Поређење облика"
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "помози ми да нађем моју сенку"
 
 msgid "Paint"
@@ -513,13 +513,13 @@ msgstr "Цртање"
 msgid "Colour Matching"
 msgstr "Поређење боја"
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "премести натпис испод одговарајуће боје"
 
 msgid "Follow the Arrows"
 msgstr "Прати стрелице"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "запамти правце"
 
 msgid "Photographic Memory"
@@ -570,7 +570,7 @@ msgstr "Превуци <, > или = (мање, веће или једнако) 
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Превуци мање, веће или једнако у црвени квадрат."
 
-msgid "Rearrange the numbers so they are in the right order"
+msgid "Rearrange the numbers so they are in the right order."
 msgstr "Поређај горње бројеве одговарајућим редом"
 
 msgid "Complete the abc using the letters above."
@@ -950,11 +950,11 @@ msgstr "Тестирај себе"
 msgid "Clock"
 msgstr "Сат"
 
-msgid "learn to read the time"
+msgid "Learn to read the time"
 msgstr "научи да гледаш на сат"
 
-msgid "learn to set the clock"
-msgstr "научи да подесиш сат"
+msgid "Learn to set the clock"
+msgstr "Научи да подесиш сат"
 
 msgid "Set the clock to:"
 msgstr "Постави сат на:"
@@ -1372,7 +1372,7 @@ msgstr ""
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1507,7 +1507,7 @@ msgstr ""
 msgid "With no visualizations"
 msgstr ""
 
-msgid "with mirrored images"
+msgid "With mirrored images"
 msgstr ""
 
 msgid "Theme Editor"
@@ -1522,7 +1522,7 @@ msgstr ""
 msgid "Font Preferences"
 msgstr ""
 
-msgid "with simplifying"
+msgid "With simplifying"
 msgstr ""
 
 msgid "Positive numbers"

@@ -429,7 +429,7 @@ msgstr "Пространственная геометрия по карточк�
 msgid "Shape Matching"
 msgstr "Сравнение фигур"
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "Помогите мне найти мою тень"
 
 msgid "Paint"
@@ -438,13 +438,13 @@ msgstr "Рисование"
 msgid "Colour Matching"
 msgstr "Соответствие цветов"
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "Названия цветов"
 
 msgid "Follow the Arrows"
 msgstr "Следуйте по стрелкам"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "Запоминайте направления"
 
 msgid "Photographic Memory"
@@ -495,8 +495,8 @@ msgstr "Перетащите один из <, > или = (меньше, боль
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Перетащите один из меньше, больше или равно в красный квадрат."
 
-msgid "Rearrange the numbers so they are in the right order"
-msgstr "Переставьте числа, чтобы они были в правильном порядке"
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Переставьте числа, чтобы они были в правильном порядке."
 
 msgid "Complete the abc using the letters above."
 msgstr "Заполните алфавит с помощью букв выше."
@@ -878,10 +878,10 @@ msgstr "Проверьте себя"
 msgid "Clock"
 msgstr "Часы"
 
-msgid "learn to read the time"
+msgid "Learn to read the time"
 msgstr "Научитесь читать время"
 
-msgid "learn to set the clock"
+msgid "Learn to set the clock"
 msgstr "Научитесь устанавливать часы"
 
 msgid "Set the clock to:"
@@ -1294,7 +1294,7 @@ msgid "To reduce a fraction divide the numerator and the denominator by one of t
 msgstr ""
 "Чтобы сократить дробь, разделите числитель и знаменатель на один из их общих делителей, отображаемый между двумя дробями. Выберите один из них, чтобы увидеть, что происходит. Если 1 является единственным общим делителем, то дробь больше не может быть сокращена - попробуйте выбрать другую."
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr "Чтобы расширить дробь, умножьте числитель и знаменатель на одно и то же число. Измените множитель, чтобы увидеть, что происходит."
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1417,7 +1417,7 @@ msgstr "Визуализируется на двух числовых отрез
 msgid "With no visualizations"
 msgstr "Без визуализаций"
 
-msgid "with mirrored images"
+msgid "With mirrored images"
 msgstr "С зеркальными изображениями"
 
 msgid "Theme Editor"
@@ -1432,7 +1432,7 @@ msgstr "Сбросить цвета до значений по умолчани�
 msgid "Font Preferences"
 msgstr "Настройки шрифтов"
 
-msgid "with simplifying"
+msgid "With simplifying"
 msgstr "С упрощением"
 
 msgid "Positive numbers"
@@ -1499,14 +1499,8 @@ msgstr "Переставьте числа так, чтобы они были в 
 msgid "Expand fractions"
 msgstr "Расширение дробей"
 
-msgid "Learn to count"
-msgstr "Учитесь считать"
-
 msgid "hours"
 msgstr "часы"
-
-msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
-msgstr "Чтобы расширить дробь, умножьте числитель и знаменатель на одно и то же число. Измените множитель, чтобы увидеть, что происходит."
 
 msgid "Learn new words"
 msgstr "Учитесь новые слова"

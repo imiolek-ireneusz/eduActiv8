@@ -431,7 +431,7 @@ msgstr "Geometria przestrzenna"
 msgid "Shape Matching"
 msgstr "Przeciągnij zwierzaki do ich cieni"
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "Przeciągnij zwierzaki do ich cieni"
 
 msgid "Paint"
@@ -440,13 +440,13 @@ msgstr "Artystycznie"
 msgid "Colour Matching"
 msgstr "Kolory"
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "Przyporządkuj nazwy do kolorów"
 
 msgid "Follow the Arrows"
 msgstr "Podążaj za strzałkami"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "zapamiętaj drogę"
 
 msgid "Photographic Memory"
@@ -497,8 +497,8 @@ msgstr "Przeciągnij jeden z <, > lub = (mniejsze, większe lub równe) do czerw
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Przeciągnij większy, mniejszy lub równy do czerwonego kwadratu."
 
-msgid "Rearrange the numbers so they are in the right order"
-msgstr "Ułóż liczby we właściwej kolejności"
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Ułóż liczby we właściwej kolejności."
 
 msgid "Complete the abc using the letters above."
 msgstr "Uzupełnij alfabet."
@@ -881,11 +881,11 @@ msgstr "Sprawdź się"
 msgid "Clock"
 msgstr "Zegar"
 
-msgid "learn to read the time"
-msgstr "odczytaj czas"
+msgid "Learn to read the time"
+msgstr "Odczytaj czas"
 
-msgid "learn to set the clock"
-msgstr "ustaw właściwy czas na zegarze"
+msgid "Learn to set the clock"
+msgstr "Ustaw właściwy czas na zegarze"
 
 msgid "Set the clock to:"
 msgstr "Ustaw zegar na godzinę:"
@@ -1325,7 +1325,7 @@ msgstr "Rozszerzanie ułamków zwykłych"
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr "Aby skrócić ułamek, należy podzielić licznik i mianownik przez tę samą liczbę. Wybierz jedną z liczb między ułamkami by zobaczyć co się stanie. Jeśli jest tam tylko 1 to znaczy, że ułamka nie da się bardziej uprościć. Zmień ułamek na inny."
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr "Aby rozszerzyć ułamek, należy pomnożyć licznik i mianownik przez tę samą liczbę. Zmień liczbę w środku by zobaczyć co się stanie."
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1448,8 +1448,8 @@ msgstr "Pokazane na dwóch osiach liczbowych"
 msgid "With no visualizations"
 msgstr "Bez ułatwień"
 
-msgid "with mirrored images"
-msgstr "z odwróconymi obrazkami"
+msgid "With mirrored images"
+msgstr "Z odwróconymi obrazkami"
 
 msgid "Theme Editor"
 msgstr "Ustawienia kolorów"
@@ -1463,8 +1463,8 @@ msgstr "Przeywróć domyślne kolory"
 msgid "Font Preferences"
 msgstr "Ustawienia czcionki"
 
-msgid "with simplifying"
-msgstr "ze skracaniem"
+msgid "With simplifying"
+msgstr "Ze skracaniem"
 
 msgid "Positive numbers"
 msgstr "Liczby dodatnie"

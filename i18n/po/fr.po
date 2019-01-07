@@ -491,7 +491,7 @@ msgstr "Géométrie de formes avec Flashcards"
 msgid "Shape Matching"
 msgstr "Trouve la forme"
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "Aide moi à retrouver mon ombre"
 
 msgid "Paint"
@@ -500,13 +500,13 @@ msgstr "Dessin"
 msgid "Colour Matching"
 msgstr "Trouve la couleur"
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "étiquette les couleurs"
 
 msgid "Follow the Arrows"
 msgstr "Suivre les flèches"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "Souviens-toi des directions"
 
 msgid "Photographic Memory"
@@ -557,8 +557,8 @@ msgstr "Fais glisser le <, > ou = (inférieur, supérieur ou égal) afin que le 
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Fais glisser le signe inférieur, supérieur ou égal à la bonne place."
 
-msgid "Rearrange the numbers so they are in the right order"
-msgstr "Réarrange les nombres ci-dessus dans le bon ordre"
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Réarrange les nombres ci-dessus dans le bon ordre."
 
 msgid "Complete the abc using the letters above."
 msgstr "Compléte l'abc à l'aide des lettres ci-dessus."
@@ -937,10 +937,10 @@ msgstr "Testes-toi"
 msgid "Clock"
 msgstr "Horloge"
 
-msgid "learn to read the time"
+msgid "Learn to read the time"
 msgstr "Apprend à lire l'heure"
 
-msgid "learn to set the clock"
+msgid "Learn to set the clock"
 msgstr "Apprend à régler l'heure"
 
 msgid "Set the clock to:"
@@ -1347,7 +1347,7 @@ msgstr ""
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1480,7 +1480,7 @@ msgstr ""
 msgid "With no visualizations"
 msgstr ""
 
-msgid "with mirrored images"
+msgid "With mirrored images"
 msgstr ""
 
 msgid "Theme Editor"
@@ -1495,7 +1495,7 @@ msgstr ""
 msgid "Font Preferences"
 msgstr ""
 
-msgid "with simplifying"
+msgid "With simplifying"
 msgstr ""
 
 msgid "Positive numbers"
