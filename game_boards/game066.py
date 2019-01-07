@@ -400,7 +400,6 @@ class Board(gd.BoardGame):
         return False
 
     def current_angle(self, pos, r):
-
         cosa = (pos[0] - self.center[0]) / r
         sina = (pos[1] - self.center[1]) / r
 
@@ -422,7 +421,8 @@ class Board(gd.BoardGame):
         if event.type == pygame.MOUSEMOTION and self.hand_id > 0:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             r = self.vector_len([pos[0] - self.center[0], pos[1] - self.center[1]])
-            if r == 0: r = 0.1
+            if r == 0:
+                r = 0.1
 
             if self.hand_id == 1:
                 h = (self.current_angle(pos, r)) / self.angle_step_12
@@ -443,15 +443,12 @@ class Board(gd.BoardGame):
                         self.tm[0] = 12
                     else:
                         self.tm[0] -= 1
-
-
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             active = self.board.active_ship
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             if active == 0:
                 r = self.vector_len([pos[0] - self.center[0], pos[1] - self.center[1]])
                 if r == 0: r = 0.1
-
                 self.hand_id = 0
                 if self.is_contained(pos, coords_id=0):
                     self.hand_id = 1

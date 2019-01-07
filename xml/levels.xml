@@ -1745,7 +1745,7 @@
         <levels count="3" games_per_level="0"/>
     </game>
 
-    <game dbids="68, 69, 206" min_age="0" max_age="7" show_all="1">
+    <game dbids="68, 69, 206, 299, 300" min_age="0" max_age="7" show_all="1">
          <levels count="8" games_per_level="0"/>
     </game>
 
