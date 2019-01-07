@@ -1,179 +1,66 @@
 # eduActiv8 - Educational Activity Pack - translation file.
-# Copyright (C) 2012 - 2017 Ireneusz Imiolek
+# Copyright (C) 2012 - 2019 Ireneusz Imiolek
 # This file is distributed under the same license as the eduactiv8 package.
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2017.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2017.
-#
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+# 
+# Translators:
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-12-12 14:36+0000\n"
-"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
-"Language-Team: Serbian <(nothing)>\n"
-"Language: sr\n"
+"PO-Revision-Date: 2019-01-04 22:25+0000\n"
+"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
+"Language-Team: Serbian (https://www.transifex.com/eduactiv8/teams/94947/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: sr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-msgid "green apple"
-msgid_plural "green apples"
-msgstr[0] "зелена јабука"
-msgstr[1] "зелене јабуке"
-msgstr[2] "зелених јабука"
+# Translated by Miroslav Nikolic (Мирослав Николић)
 
-msgid "red apple"
-msgid_plural "red apples"
-msgstr[0] "црвена јабука"
-msgstr[1] "црвене јабуке"
-msgstr[2] "црвених јабука"
-
-msgid "strawberry"
-msgid_plural "strawberries"
-msgstr[0] "јагода"
-msgstr[1] "јагоде"
-msgstr[2] "јагода"
-
-msgid "pear"
-msgid_plural "pears"
-msgstr[0] "крушка"
-msgstr[1] "крушке"
-msgstr[2] "крушака"
-
-msgid "orange [fruit]"
-msgid_plural "oranges"
-msgstr[0] "поморанџа"
-msgstr[1] "поморанџе"
-msgstr[2] "поморанџи"
-
-msgid "onion"
-msgid_plural "onions"
-msgstr[0] "главица црног лука"
-msgstr[1] "главице црног лука"
-msgstr[2] "главица црног лука"
-
-msgid "tomato"
-msgid_plural "tomatoes"
-msgstr[0] "парадајз"
-msgstr[1] "парадајза"
-msgstr[2] "парадајза"
-
-msgid "lemon"
-msgid_plural "lemons"
-msgstr[0] "лимун"
-msgstr[1] "лимуна"
-msgstr[2] "лимуна"
-
-msgid "cherry"
-msgid_plural "cherries"
-msgstr[0] "трешња"
-msgstr[1] "трешње"
-msgstr[2] "трешњи"
-
-msgid "pepper"
-msgid_plural "peppers"
-msgstr[0] "паприка"
-msgstr[1] "паприке"
-msgstr[2] "паприка"
-
-msgid "carrot"
-msgid_plural "carrots"
-msgstr[0] "шаргарепа"
-msgstr[1] "шаргарепе"
-msgstr[2] "шаргарепи"
-
-msgid "banana"
-msgid_plural "bananas"
-msgstr[0] "банана"
-msgstr[1] "банане"
-msgstr[2] "банана"
-
-msgid "watermelon"
-msgid_plural "watermelons"
-msgstr[0] "лубеница"
-msgstr[1] "лубенице"
-msgstr[2] "лубеница"
-
-msgid "Equilateral Triangle"
-msgstr "Једнакостранични троугао"
-
-msgid "Isosceles Triangle"
-msgstr "Једнакокраки троугао"
-
-msgid "Obtuse Triangle"
-msgstr "Туп троугао"
-
-msgid "Right Triangle"
-msgstr "Правоугли троугао"
-
-msgid "Acute Triangle"
-msgstr "Неједнакостраничан троугао"
-
-msgid "Square"
-msgstr "Квадрат"
-
-msgid "Rectangle"
-msgstr "Правоугаоник"
-
-msgid "Right Trapezium"
-msgstr "Правоугли трапез"
-
-msgid "Isosceles Trapezium"
-msgstr "Једнакокраки трапез"
-
-msgid "Rhombus"
-msgstr "Ромб"
-
-msgid "Parallelogram"
-msgstr "Паралелограм"
-
-msgid "Pentagon"
-msgstr "Петоугаоник"
-
-msgid "Hexagon"
-msgstr "Шестоугаоник"
-
-msgid "Heptagon"
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
+"Лаби, 2010 Меди Кери (mehdidc) \n"
+" Разни аутори су допринели звуку својим радовима на „freesound.org“. \n"
+" Разни аутори су допринели сликама својим радовима на „openclipart.org“-у (Јавни домен) и „http://www.art4apps.org/“-у — „Art4Apps“ од „Smart4Kids“ — под дозволом Заједничког стваралаштва (CC BY-SA). \n"
+" Погледајте датотеку „credits.txt“ за више података о ауторима медијских датотека коришћеним у овом пројекту"
 
-msgid "Octagon"
+msgid ""
+"This program is free software: you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation, either version 3 of the License, or (at your option) "
+"any later version. You should have received a copy of the GNU General Public"
+" License along with this program. If not, see "
+"<http://www.gnu.org/licenses/>."
 msgstr ""
+"Овај програм је слободан софтвер; можете га расподељивати\n"
+"и/или мењати под условима Гнуове опште јавне лиценце коју је\n"
+"објавила Задужбина слободног софтвера; издања 3 лиценце или\n"
+"(по вашем избору) било којег новијег издања. Требали сте да\n"
+"примите примерак Гнуове Опште јавне лиценце уз овај програм.\n"
+"Ако нисте, погледајте „http://www.gnu.org/licenses/“."
 
-msgid "Circle"
-msgstr "Круг"
+msgid "A collection of educational activities for kids"
+msgstr "Малени скуп образовних програма за дечицу"
 
-msgid "Ellipse"
-msgstr "Елипса"
+msgid "Educational Activities for Kids"
+msgstr "Комплет образовних активности за дечицу"
 
-msgid "Cube"
-msgstr "Коцка"
-
-msgid "Square Prism"
-msgstr "Четворострана призма"
-
-msgid "Triangular Prism"
-msgstr "Тространа призма"
-
-msgid "Square Pyramid"
-msgstr "Четворострана пирамида"
-
-msgid "Triangular Pyramid"
-msgstr "Тространа пирамида"
-
-msgid "Sphere"
-msgstr "Сфера"
-
-msgid "Cylinder"
-msgstr "Ваљак"
-
-msgid "Cone"
-msgstr "Купа"
-
-msgid "Torus"
-msgstr "Торус"
+msgid ""
+"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
+"Commons License (CC BY-SA)"
+msgstr ""
+"Слике су са „http://www.art4apps.org/“ — „Art4Apps“ од „Smart4Kids“ — "
+"Дозвола Заједничког стваралаштва (CC BY-SA)"
 
 msgid "Default Language:"
 msgstr "Основни језик:"
@@ -236,8 +123,8 @@ msgstr "пребаците се на цео екран након пријаве
 msgid "allow adding new users on login screen"
 msgstr "дозволи додавање нових корисника на екрану пријављивања"
 
-msgid "display languages with uncompleted translations"
-msgstr "прикажи језике са недовршеним преводима"
+msgid "User Name"
+msgstr "Корисничко име"
 
 msgid "require password to log in"
 msgstr "уахтевај лозинку при пријави"
@@ -318,17 +205,54 @@ msgstr "Последње пријављивање:"
 msgid "Preferences saved..."
 msgstr "Поставке су сачуване..."
 
-msgid "Score: "
-msgstr "Резултат: "
-
 msgid "Logged in as: "
 msgstr "Пријављен као: "
 
 msgid "(Log out)"
 msgstr "(Одјави ме)"
 
-msgid "Addition Table"
-msgstr "Додатна табела"
+msgid "remember me"
+msgstr "упамти ме"
+
+msgid "Select age group:"
+msgstr "Изабери групу година:"
+
+msgid "show activities for:"
+msgstr "прикажи активности за:"
+
+msgid "preschool"
+msgstr "предшколско"
+
+msgid "Year 1"
+msgstr "1. годину"
+
+msgid "Year 2"
+msgstr "2. године"
+
+msgid "Year 3"
+msgstr "3. године"
+
+msgid "Year 4"
+msgstr "4. године"
+
+msgid "Year 5"
+msgstr "5. година"
+
+msgid "Year 6"
+msgstr "6. година"
+
+msgid "show all"
+msgstr "прикажи све"
+
+msgid "Do you want to log out of the game?"
+msgstr "Да ли желиш да се одјавиш из игре?"
+
+msgid "Do you want to exit the game?"
+msgstr "Да ли желиш да изађеш из игре?"
+
+# alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
+msgid "Ready to go to the next level?"
+msgstr "Да ли си спреман/на за следећи ниво?"
 
 msgid "Hello"
 msgstr "Здраво"
@@ -336,17 +260,23 @@ msgstr "Здраво"
 msgid "Welcome back in the game."
 msgstr "Добродошли назад у игру."
 
+msgid "Licence"
+msgstr "Дозвола"
+
+msgid "Copyright & Credits"
+msgstr "Ауторска права и заслуге"
+
+msgid "Translators"
+msgstr "Преводиоци"
+
 msgid "Language"
 msgstr "Језик"
 
 msgid "Translations"
 msgstr "Преводи"
 
-msgid "Info & Settings"
-msgstr "Подаци и подешавања"
-
-msgid "Keyboard & Mouse"
-msgstr "Тастатура и миш"
+msgid "Addition Table"
+msgstr "Додатна табела"
 
 msgid "Discover Letters"
 msgstr "Откриј слова"
@@ -357,18 +287,6 @@ msgstr "Научи нове речи"
 msgid "Mathematics"
 msgstr "Математика"
 
-msgid "Numbers & Basic Operations"
-msgstr "Бројеви и основне радње"
-
-msgid "Basic Operations - Exercises"
-msgstr "Основне радње — вежбе"
-
-msgid "Sorting and Comparing"
-msgstr "Ређање и упоређивање"
-
-msgid "Geometry and Shape Recognition"
-msgstr "Геометрија и препознавање облика"
-
 msgid "Art and Colour"
 msgstr "Уметност и боја"
 
@@ -377,18 +295,6 @@ msgstr "Меморија"
 
 msgid "Games & Mazes"
 msgstr "Игре и лавиринти"
-
-msgid "Multiplayer Games"
-msgstr "Игре за више играча"
-
-msgid "About."
-msgstr "Информације."
-
-msgid "Game info..."
-msgstr "Подаци о игри..."
-
-msgid "Copyright & Credits"
-msgstr "Ауторска права и заслуге"
 
 msgid "Letters"
 msgstr "Слова"
@@ -404,12 +310,6 @@ msgstr "Испиши слова и бројеве"
 
 msgid "Complete the ABC"
 msgstr "Доврши азбуку"
-
-msgid "English"
-msgstr "Енглески"
-
-msgid "Your language"
-msgstr "Ваш језик"
 
 msgid "Sorting Letters"
 msgstr "Ређање слова"
@@ -432,8 +332,27 @@ msgstr "Прикупи сва слова одговарајућим редосл
 msgid "Word Maze + 4"
 msgstr "Лавиринт са речима + 4"
 
+msgid "Rainbow Keyboard"
+msgstr "Шарена тастатура"
+
+msgid "Touch Typing Tutor"
+msgstr "Учитељ куцања"
+
+msgid "English Alphabet"
+msgstr "Енглески алфабет"
+
+# Replace "Your" with your language, ie. translation of French Alphabet
+msgid "Your Alphabet"
+msgstr "Српска азбука"
+
 msgid "Numbers"
 msgstr "Бројеви"
+
+msgid "Number Spelling"
+msgstr "Изговор бројева"
+
+msgid "Match numbers to their spelling"
+msgstr "Упари бројеве са писаним облицима"
 
 msgid "Learn Numbers with Flashcards"
 msgstr "Научи бројеве са картицама"
@@ -480,14 +399,17 @@ msgstr "Сабирање и одузимање"
 msgid "Comparison"
 msgstr "Поређење"
 
-msgid "Fractions"
-msgstr "Разломци"
-
-msgid "Decimal Fractions"
-msgstr "Децимални разломци"
-
 msgid "Even or Odd"
 msgstr "Паран или непаран"
+
+msgid "Even"
+msgstr "Парно"
+
+msgid "Odd"
+msgstr "Непарно"
+
+msgid "Shapes and Solids"
+msgstr "Облици и чврста тела"
 
 msgid "Shapes"
 msgstr "Облици"
@@ -500,6 +422,12 @@ msgstr "Тела"
 
 msgid "Solid Geometry with Flashcards"
 msgstr "Геометријска тела са картицама"
+
+msgid "Time Matching"
+msgstr "Поређење времена"
+
+msgid "Complete the word"
+msgstr "Доврши реч"
 
 msgid "Shape Matching"
 msgstr "Поређење облика"
@@ -528,9 +456,6 @@ msgstr "Фотографско памћење"
 msgid "Training"
 msgstr "Вежбање"
 
-msgid "Automatic Levels"
-msgstr "Аутоматски нивои"
-
 msgid "Mouse Maze"
 msgstr "Лавиринт и миш"
 
@@ -554,186 +479,6 @@ msgstr "Педесетица"
 
 msgid "With a Twist"
 msgstr "Са увијањем"
-
-msgid "Drag the slider up or down so that the right sign is in the red square."
-msgstr "Превуци клизач горе или доле тако да је одговарајући знак у црвеном квадрату."
-
-msgid "Take your sheep to the rest of the herd."
-msgstr "Одведи твоју овчицу до остатка стада."
-
-msgid "Check the shopping list and drag all needed items into the basket."
-msgstr "Провери списак за куповину и убаци све потребне састојке у корпу."
-
-msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
-msgstr "Превуци <, > или = (мање, веће или једнако) у црвени квадрат."
-
-msgid "Drag one of the lesser, greater or equal to the red square."
-msgstr "Превуци мање, веће или једнако у црвени квадрат."
-
-msgid "Rearrange the numbers so they are in the right order."
-msgstr "Поређај горње бројеве одговарајућим редом"
-
-msgid "Complete the abc using the letters above."
-msgstr "Доврши азбуку користећи слова испод."
-
-msgid "Build the following word using the letters below."
-msgstr "Испиши следећу реч користећи слова испод."
-
-msgid "Find and separate even numbers from odd numbers."
-msgstr "Нађи и одвој парне бројеве од непарних у горњим низовима."
-
-msgid "Rearrange the letters so they are in the alphabetical order."
-msgstr "Поређај горња слова азбучним редом."
-
-msgid "Rearrange the numbers so they are in the ascending order."
-msgstr "Поређај горње бројеве од мањег ка већем."
-
-msgid "Please try again."
-msgstr "Пробај опет."
-
-msgid "Sorry! It is wrong."
-msgstr "Извини! Погрешно је."
-
-msgid "Perfect! Task solved!"
-msgstr "Одлични! Задатак је решен!"
-
-msgid "You need to work a little bit harder next time."
-msgstr "Потруди се мало више следећи пут."
-
-msgid "Game Over!"
-msgstr "Игра је готова!"
-
-msgid "Congratulations! You have completed all tasks in this game."
-msgstr "Честитам! Сви задаци у овој игри су завршени."
-
-msgid "Great job!"
-msgstr "Одличан посао!"
-
-msgid "Perfect!!!"
-msgstr "Савршено!!!"
-
-msgid "Awesome!"
-msgstr "Задивљујуће!"
-
-msgid "Fantastic job!"
-msgstr "Брависимо!"
-
-msgid "Well done!"
-msgstr "Одлично урађено!"
-
-msgid "Perfect! Level completed!"
-msgstr "Савршено! Ниво је завршен!"
-
-msgid "area:"
-msgstr "област:"
-
-msgid "perimeter:"
-msgstr "полупречник:"
-
-msgid "circumference:"
-msgstr "обим:"
-
-msgid "surface area:"
-msgstr "површина области:"
-
-msgid "volume:"
-msgstr "запремина:"
-
-msgid "Perfect!"
-msgstr "Савршено!"
-
-msgid "divided by"
-msgstr "подељено са"
-
-msgid "times"
-msgstr "пута"
-
-msgid "equals"
-msgstr "једнако"
-
-msgid "Even"
-msgstr "Парно"
-
-msgid "Odd"
-msgstr "Непарно"
-
-msgid "white"
-msgstr "бела"
-
-msgid "black"
-msgstr "црна"
-
-msgid "grey"
-msgstr "сива"
-
-msgid "red"
-msgstr "црвена"
-
-msgid "orange [color]"
-msgstr "наранџаста"
-
-msgid "yellow"
-msgstr "жута"
-
-msgid "olive"
-msgstr "маслинаста"
-
-msgid "green"
-msgstr "зелена"
-
-msgid "sea green"
-msgstr "морска зелена"
-
-msgid "teal"
-msgstr "гроготовац"
-
-msgid "blue"
-msgstr "плава"
-
-msgid "navy"
-msgstr "морнарска"
-
-msgid "purple"
-msgstr "љубичаста"
-
-msgid "violet"
-msgstr "љубичаста"
-
-msgid "magenta"
-msgstr "ружичаста"
-
-msgid "indigo"
-msgstr "индиго"
-
-msgid "pink"
-msgstr "розе"
-
-msgid "maroon"
-msgstr "кестењаста"
-
-msgid "brown"
-msgstr "браон"
-
-msgid "aqua"
-msgstr "водена"
-
-msgid "lime"
-msgstr "жуто-зелена"
-
-msgid "Rainbow Keyboard"
-msgstr "Шарена тастатура"
-
-msgid "Touch Typing Tutor"
-msgstr "Учитељ куцања"
-
-msgid "Translators"
-msgstr "Преводиоци"
-
-msgid "English Alphabet"
-msgstr "Енглески алфабет"
-
-msgid "Your Alphabet"
-msgstr "Српска азбука"
 
 msgid "Mixing Colours for Painting"
 msgstr "Мешање боја за бојење"
@@ -762,32 +507,14 @@ msgstr "Дотерај количину плавичасте, ружичасте
 msgid "Adjust the intensity of red, green and blue light"
 msgstr "Дотерај јакост црвеног, зеленог и плавог светла"
 
-msgid "brush size"
-msgstr "величина четкице"
-
-msgid "Noughts and Crosses 2"
-msgstr "Икс-Окс 2"
-
-msgid "Noughts and Crosses 3"
-msgstr "Икс-Окс 3"
-
-msgid "Get as many lines of 3 as possible to win"
-msgstr "Повежи што више можеш скупова од 3 елемента за победу"
-
-msgid "Player"
-msgstr "Играч"
-
-msgid "Won"
-msgstr "Победа"
-
-msgid "Draw"
-msgstr "Нерешено"
-
-msgid "User Name"
-msgstr "Корисничко име"
-
 msgid "Match Animals"
 msgstr "Упореди животиње"
+
+msgid "Find all matching animals"
+msgstr "Нађи све одговарајуће животиње"
+
+msgid "Match animals to their shadows"
+msgstr "Упореди животиње са њиховим сенкама"
 
 msgid "Match Animals - Memory Game"
 msgstr "Упореди животиње — игра памћења"
@@ -816,30 +543,6 @@ msgstr "Клизач воћа"
 msgid "Number Slider"
 msgstr "Клизач бројева"
 
-msgid "Fraction Groups"
-msgstr "Групе разломака"
-
-msgid "Percentages"
-msgstr "Проценти"
-
-msgid "Ratios"
-msgstr "Односи"
-
-msgid "Match fraction charts on the right to the ones on the left"
-msgstr "Премести графике разломака са десне стране на одговарајућа места на левој страни"
-
-msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
-msgstr "Премести графике разломака и разломке са десне стране на одговарајућа места на левој страни"
-
-msgid "Match fraction charts to the fractions on the left"
-msgstr "Премести графике разломака са десне стране на одговарајућа места на левој страни"
-
-msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
-msgstr "Премести графике разломака, разломке и децималне разломке са десне стране поред одговарајућих процената на левој страни"
-
-msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
-msgstr "Премести графике са десне стране поред одговарајућих односа на левој страни. Односи су представљени као однос обојених делова и белих делова"
-
 msgid "Maths Matching Game"
 msgstr "Математичке игре поређења"
 
@@ -852,372 +555,23 @@ msgstr "Одузимање"
 msgid "Multiplication"
 msgstr "Множење"
 
-msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
-msgstr "Потражите нова издања, пријавите грешке, расправљајте, преведите или прегледајте овај пројекат на:"
+msgid "Fractions"
+msgstr "Разломци"
 
-msgid "Match numbers to their spelling"
-msgstr "Упари бројеве са писаним облицима"
+msgid "Decimal Fractions"
+msgstr "Децимални разломци"
 
-msgid "Number Spelling"
-msgstr "Изговор бројева"
+msgid "Percentages"
+msgstr "Проценти"
 
-msgid "Find all matching animals"
-msgstr "Нађи све одговарајуће животиње"
+msgid "Ratios"
+msgstr "Односи"
 
-msgid "Match animals to their shadows"
-msgstr "Упореди животиње са њиховим сенкама"
-
-msgid "Shape Maker"
-msgstr "Цртач облика"
-
-#, python-format
-msgid "Shape to draw: %s"
-msgstr "Облик за цртање: %s"
-
-#, python-format
-msgid "such that lengths of its bases are equal to %d and %d and height to %d"
-msgstr "тако да су дужине његових основа једнаке %d и %d а висина %d"
-
-#, python-format
-msgid "such that lengths of its sides are equal to %d"
-msgstr "тако да су дужине његових страна једнаке %d"
-
-#, python-format
-msgid "such that lengths of its sides are equal to %d and %d"
-msgstr "тако да су дужине његових страна једнаке %d и %d"
-
-#, python-format
-msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
-msgstr "тако да су дужине 2 његове паралелне основе једнаке %d а висина %d"
-
-#, python-format
-msgid "such that length of its base is equal to %d and height to %d"
-msgstr "тако да је дужина његове основе једнака %d а висина %d"
-
-#, python-format
-msgid "such that lengths of its catheti are equal to %d and %d"
-msgstr "тако да је дужина његове катете једнаке %d и %d"
-
-#, python-format
-msgid "such that lengths of both of its catheti are equal to %d"
-msgstr "тако да су дужине његових катета једнаке %d"
-
-#, python-format
-msgid "such that length of its hypotenuse is equal to %d"
-msgstr "тако да је дужина његове хипотенузе једнака %d"
-
-#, python-format
-msgid "such that length of one of its sides is equal to %d and height to %d"
-msgstr "тако да је дужина једне његове странице једнака %d а висина %d"
-
-#, python-format
-msgid "such that length of its radius is equal to %d"
-msgstr "тако да је дужина његовог полупречника једнака %d"
-
-msgid "Quadrilateral"
-msgstr "Четвороугао"
-
-msgid "Trapezium"
-msgstr "Трапезоид"
-
-msgid "Trapezium "
-msgstr "Трапезоид "
-
-msgid "Triangle"
-msgstr "Троугао"
-
-msgid "Ouch... squished quadrilateral"
-msgstr "Јао... згњечени четрвоространик"
-
-msgid "Right isosceles triangle"
-msgstr "Десни једнакокраки троугао"
-
-msgid "Obtuse isosceles triangle"
-msgstr "Туп једнакокраки троугао"
-
-msgid "Acute isosceles triangle"
-msgstr "Оштар једнакокраки троугао"
-
-msgid "Ouch... squished triangle"
-msgstr "Јао... згњечени троугао"
-
-msgid "Triangle? Well, not really..."
-msgstr "Троугао? Добро, није баш..."
-
-msgid "Test yourself"
-msgstr "Тестирај себе"
-
-msgid "Clock"
-msgstr "Сат"
-
-msgid "Learn to read the time"
-msgstr "научи да гледаш на сат"
-
-msgid "Learn to set the clock"
-msgstr "Научи да подесиш сат"
-
-msgid "Set the clock to:"
-msgstr "Постави сат на:"
-
-msgid "Drag the clock hands to set the time"
-msgstr "Помери сказаљке да подесиш време"
-
-msgid "What time is it?"
-msgstr "Колико је сати?"
-
-msgid "Click again to exit"
-msgstr "Кликни опет да изађеш"
+msgid "Fraction Groups"
+msgstr "Групе разломака"
 
 msgid "Type your answer and hit enter"
 msgstr "Упиши одговор и притисни тастер „Унеси“"
-
-msgid "Time"
-msgstr "Време"
-
-msgid "Turn the clock hands and see what happens."
-msgstr "Окрени сказаљке сата да видиш шта ће се десити."
-
-msgid "Let's see what shapes you can draw"
-msgstr "Да видимо које облике знаш да нацрташ"
-
-msgid "Time in text version only"
-msgstr "Време само у текстуачном издању"
-
-msgid "How clock works?"
-msgstr "Како ради сат?"
-
-msgid "Columnar addition"
-msgstr "Сабирање у колонама"
-
-msgid "Columnar subtraction"
-msgstr "Одузимање у колонама"
-
-msgid "Long multiplication"
-msgstr "Множење великих бројева"
-
-msgid "Long division"
-msgstr "Дељење великих бројева"
-
-msgid "borrow 10"
-msgstr "додајемо 10"
-
-msgid "carry"
-msgstr "преносимо"
-
-msgid "Start >>"
-msgstr "Почни >>"
-
-msgid "Next example >>"
-msgstr "Следећи пример >>"
-
-msgid "Next step >>"
-msgstr "Следећи корак >>"
-
-msgid "write "
-msgstr "пишемо "
-
-msgid "Demonstration"
-msgstr "Обучавање"
-
-msgid "Do it yourself"
-msgstr "Ајде сад сами, мали моји °_°"
-
-msgid "Ratio"
-msgstr "Однос"
-
-msgid "Working with large numbers"
-msgstr "Рад са великим бројевима"
-
-msgid "rewrite "
-msgstr "преписујемо "
-
-msgid "remainder"
-msgstr "остаје"
-
-msgid "result"
-msgstr "резултат"
-
-msgid "Time Matching"
-msgstr "Поређење времена"
-
-msgid "Add some red"
-msgstr "Додај мало црвене"
-
-msgid "Add some green"
-msgstr "Додај мало зелене"
-
-msgid "Add some blue"
-msgstr "Додај мало плаве"
-
-msgid "Add some cyan"
-msgstr "Додај мало плавичасте"
-
-msgid "Add some magenta"
-msgstr "Додај мало ружичасте"
-
-msgid "Add some yellow"
-msgstr "Додај мало жуте"
-
-msgid "Too much red"
-msgstr "Превише црвене"
-
-msgid "Too much green"
-msgstr "Превише зелене"
-
-msgid "Too much blue"
-msgstr "Превише плаве"
-
-msgid "Too much cyan"
-msgstr "Превише плавичасте"
-
-msgid "Too much magenta"
-msgstr "Превише ружичасте"
-
-msgid "Too much yellow"
-msgstr "Превише жуте"
-
-msgid "red is spot on"
-msgstr "црвена је замрљана"
-
-msgid "green is spot on"
-msgstr "зелена је замрљана"
-
-msgid "blue is spot on"
-msgstr "плава је замрљана"
-
-msgid "cyan is spot on"
-msgstr "плавичаста је замрљана"
-
-msgid "magenta is spot on"
-msgstr "ружичаста је замрљана"
-
-msgid "yellow is spot on"
-msgstr "жута је замрљана"
-
-msgid "remember me"
-msgstr "упамти ме"
-
-msgid ""
-"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
-" Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
-" Please view credits.txt for more info about authors of media files used in this project"
-msgstr ""
-"Лаби, 2010 Меди Кери (mehdidc) \n"
-" Разни аутори су допринели звуку својим радовима на „freesound.org“. \n"
-" Разни аутори су допринели сликама својим радовима на „openclipart.org“-у (Јавни домен) и „http://www.art4apps.org/“-у — „Art4Apps“ од „Smart4Kids“ — под дозволом Заједничког стваралаштва (CC BY-SA). \n"
-" Погледајте датотеку „credits.txt“ за више података о ауторима медијских датотека коришћеним у овом пројекту"
-
-msgid "Licence"
-msgstr "Дозвола"
-
-msgid ""
-"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General "
-"Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Овај програм је слободан софтвер; можете га расподељивати\n"
-"и/или мењати под условима Гнуове опште јавне лиценце коју је\n"
-"објавила Задужбина слободног софтвера; издања 3 лиценце или\n"
-"(по вашем избору) било којег новијег издања. Требали сте да\n"
-"примите примерак Гнуове Опште јавне лиценце уз овај програм.\n"
-"Ако нисте, погледајте „http://www.gnu.org/licenses/“."
-
-msgid "A collection of educational activities for kids"
-msgstr "Малени скуп образовних програма за дечицу"
-
-msgid "Complete the word"
-msgstr "Доврши реч"
-
-msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
-msgstr "Слике су са „http://www.art4apps.org/“ — „Art4Apps“ од „Smart4Kids“ — Дозвола Заједничког стваралаштва (CC BY-SA)"
-
-msgid "Decimals and Fractions"
-msgstr "Децимални бројеви и разломци"
-
-msgid "Decimals, fractions and percentages"
-msgstr "Децимални бројеви, разломци и проценти"
-
-msgid "Decimals, fractions, ratios and percentages"
-msgstr "Децимални бројеви, разломци, односи и проценти"
-
-msgid "Shapes and Solids"
-msgstr "Облици и чврста тела"
-
-msgid "Translation Credits"
-msgstr "Заслуге преводилаца"
-
-msgid "Level"
-msgstr "Ниво"
-
-msgid "Find solution"
-msgstr "Нађи решење"
-
-msgid "Find missing number"
-msgstr "Нађи број који недостаје"
-
-msgid "Achievements"
-msgstr "Достигнућа"
-
-msgid "Select age group:"
-msgstr "Изабери групу година:"
-
-msgid "show activities for:"
-msgstr "прикажи активности за:"
-
-msgid "preschool"
-msgstr "предшколско"
-
-msgid "Year 1"
-msgstr "1. годину"
-
-msgid "Year 2"
-msgstr "2. године"
-
-msgid "Year 3"
-msgstr "3. године"
-
-msgid "Year 4"
-msgstr "4. године"
-
-msgid "Year 5"
-msgstr "5. година"
-
-msgid "Year 6"
-msgstr "6. година"
-
-msgid "show all"
-msgstr "прикажи све"
-
-msgid "Do you want to exit the game?"
-msgstr "Да ли желиш да изађеш из игре?"
-
-msgid "Do you want to log out of the game?"
-msgstr "Да ли желиш да се одјавиш из игре?"
-
-msgid "Ready to go to the next level?"
-msgstr "Да ли си спреман/на за следећи ниво?"
-
-msgid "Language arts"
-msgstr "Језичка уметност"
-
-msgid "Other"
-msgstr "Друго"
-
-msgid "long form"
-msgstr "полная форма"
-
-msgid "short form"
-msgstr "краткая форма"
-
-msgid "Educational Activities for Kids"
-msgstr "Комплет образовних активности за дечицу"
-
-msgid ""
-"You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
-"http://espeak.sourceforge.net/"
-msgstr ""
-"Можеш да инсталираш е-говорника да би користио његову могућност изговарања текста, али није толико ни неопходно за успешно коришћење игре: \n"
-"http://espeak.sourceforge.net/"
 
 msgid "Decimals (Category)"
 msgstr "Децимални бројеви"
@@ -1230,6 +584,9 @@ msgstr "Односи"
 
 msgid "Percentages (Category)"
 msgstr "Проценти"
+
+msgid "Learn new words"
+msgstr ""
 
 msgid "Word Builders"
 msgstr "Градитељ речи"
@@ -1312,6 +669,255 @@ msgstr ""
 msgid "Negative numbers"
 msgstr ""
 
+msgid "Complete the alphabet using letters from the middle line."
+msgstr ""
+
+msgid ""
+"Drag the slider up or down so that the right sign is in the red square."
+msgstr ""
+"Превуци клизач горе или доле тако да је одговарајући знак у црвеном "
+"квадрату."
+
+msgid "Take your sheep to the rest of the herd."
+msgstr "Одведи твоју овчицу до остатка стада."
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr "Провери списак за куповину и убаци све потребне састојке у корпу."
+
+msgid ""
+"Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Превуци <, > или = (мање, веће или једнако) у црвени квадрат."
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr "Превуци мање, веће или једнако у црвени квадрат."
+
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Поређај горње бројеве одговарајућим редом"
+
+msgid "Build the following word using the letters below."
+msgstr "Испиши следећу реч користећи слова испод."
+
+msgid "Find and separate even numbers from odd numbers."
+msgstr "Нађи и одвој парне бројеве од непарних у горњим низовима."
+
+msgid "Rearrange the letters so they are in the alphabetical order."
+msgstr "Поређај горња слова азбучним редом."
+
+msgid "Rearrange the numbers so they are in the ascending order."
+msgstr "Поређај горње бројеве од мањег ка већем."
+
+msgid "Perfect! Task solved!"
+msgstr "Одлични! Задатак је решен!"
+
+msgid "Game Over!"
+msgstr "Игра је готова!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Честитам! Сви задаци у овој игри су завршени."
+
+msgid "Great job!"
+msgstr "Одличан посао!"
+
+msgid "Perfect!!!"
+msgstr "Савршено!!!"
+
+msgid "Awesome!"
+msgstr "Задивљујуће!"
+
+msgid "Fantastic job!"
+msgstr "Брависимо!"
+
+msgid "Well done!"
+msgstr "Одлично урађено!"
+
+msgid "Perfect! Level completed!"
+msgstr "Савршено! Ниво је завршен!"
+
+msgid "Perfect!"
+msgstr "Савршено!"
+
+msgid "divided by"
+msgstr "подељено са"
+
+msgid "times"
+msgstr "пута"
+
+msgid "equals"
+msgstr "једнако"
+
+msgid "brush size"
+msgstr "величина четкице"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr ""
+"Премести графике разломака са десне стране на одговарајућа места на левој "
+"страни"
+
+msgid ""
+"Match fraction charts and fractions on the right to the fraction charts on "
+"the left"
+msgstr ""
+"Премести графике разломака и разломке са десне стране на одговарајућа места "
+"на левој страни"
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr ""
+"Премести графике разломака са десне стране на одговарајућа места на левој "
+"страни"
+
+msgid ""
+"Match fraction charts, fractions and decimal fractions on the right to their"
+" percentage representations"
+msgstr ""
+"Премести графике разломака, разломке и децималне разломке са десне стране "
+"поред одговарајућих процената на левој страни"
+
+msgid ""
+"Match charts to the ratios on the left. Ratios are expressed as ratio of "
+"coloured pieces to white pieces"
+msgstr ""
+"Премести графике са десне стране поред одговарајућих односа на левој страни."
+" Односи су представљени као однос обојених делова и белих делова"
+
+msgid "Shape Maker"
+msgstr "Цртач облика"
+
+msgid "Let's see what shapes you can draw"
+msgstr "Да видимо које облике знаш да нацрташ"
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Облик за цртање: %s"
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "тако да су дужине његових основа једнаке %d и %d а висина %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr "тако да су дужине његових страна једнаке %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr "тако да су дужине његових страна једнаке %d и %d"
+
+#, python-format
+msgid ""
+"such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "тако да су дужине 2 његове паралелне основе једнаке %d а висина %d"
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr "тако да је дужина његове основе једнака %d а висина %d"
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr "тако да је дужина његове катете једнаке %d и %d"
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr "тако да су дужине његових катета једнаке %d"
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr "тако да је дужина његове хипотенузе једнака %d"
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr "тако да је дужина једне његове странице једнака %d а висина %d"
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr "тако да је дужина његовог полупречника једнака %d"
+
+msgid "Test yourself"
+msgstr "Тестирај себе"
+
+msgid "Clock"
+msgstr "Сат"
+
+msgid "Learn to read the time"
+msgstr "научи да гледаш на сат"
+
+msgid "Learn to set the clock"
+msgstr "Научи да подесиш сат"
+
+msgid "Set the clock to:"
+msgstr "Постави сат на:"
+
+msgid "Drag the clock hands to set the time"
+msgstr "Помери сказаљке да подесиш време"
+
+msgid "What time is it?"
+msgstr "Колико је сати?"
+
+msgid "Time"
+msgstr "Време"
+
+msgid "Turn the clock hands and see what happens."
+msgstr "Окрени сказаљке сата да видиш шта ће се десити."
+
+msgid "Time in text version only"
+msgstr "Време само у текстуачном издању"
+
+msgid "How clock works?"
+msgstr "Како ради сат?"
+
+msgid "Columnar addition"
+msgstr "Сабирање у колонама"
+
+msgid "Columnar subtraction"
+msgstr "Одузимање у колонама"
+
+msgid "Long multiplication"
+msgstr "Множење великих бројева"
+
+msgid "Long division"
+msgstr "Дељење великих бројева"
+
+msgid "Demonstration"
+msgstr "Обучавање"
+
+msgid "Do it yourself"
+msgstr "Ајде сад сами, мали моји °_°"
+
+msgid "borrow 10"
+msgstr "додајемо 10"
+
+# in columnar addition, ie. in case of 4 + 8 you write 2 under the column and
+# carry 1
+msgid "carry"
+msgstr "преносимо"
+
+msgid "Start >>"
+msgstr "Почни >>"
+
+msgid "Next example >>"
+msgstr "Следећи пример >>"
+
+msgid "Next step >>"
+msgstr "Следећи корак >>"
+
+# used to show which digit of the result should be entered in a box, ie.
+# "enter 5")
+msgid "write "
+msgstr "пишемо "
+
+msgid "rewrite "
+msgstr "преписујемо "
+
+msgid "remainder"
+msgstr "остаје"
+
+msgid "result"
+msgstr "резултат"
+
+msgid "Find solution"
+msgstr "Нађи решење"
+
+msgid "Find missing number"
+msgstr "Нађи број који недостаје"
+
 msgid "numerator"
 msgstr ""
 
@@ -1323,6 +929,9 @@ msgstr ""
 
 msgid "Experiment with decimal fractions"
 msgstr ""
+
+msgid "Ratio"
+msgstr "Однос"
 
 msgid "Experiment with ratios"
 msgstr ""
@@ -1366,13 +975,19 @@ msgstr ""
 msgid "Reduce fractions"
 msgstr ""
 
-msgid "Extend fractions"
+msgid "Expand fractions"
 msgstr ""
 
-msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
+msgid ""
+"To reduce a fraction divide the numerator and the denominator by one of "
+"their common factors which are displayed between the two fractions. Select "
+"one of them to see what happens. If 1 is the only common factor then the "
+"fraction can't be reduced any more - try choosing a different one."
 msgstr ""
 
-msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid ""
+"To expand a fraction multiply the numerator and the denominator by the same "
+"number. Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1381,16 +996,28 @@ msgstr ""
 msgid "Use the arrows to change your answer."
 msgstr ""
 
-msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgid ""
+"To add two fractions with the same denominators add their numerators "
+"together and keep the denominator unchanged. Simplify the result if the "
+"numerator is greater than the denominator and reduce the fraction if "
+"possible."
 msgstr ""
 
-msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgid ""
+"To subtract one fraction from another one with the same denominator subtract"
+" numerators and keep the denominator unchanged. Reduce the resulting "
+"fraction if possible."
 msgstr ""
 
-msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgid ""
+"To multiply two fractions multiply the numerators together and then multiply"
+" the denominators together. Reduce the resulting fraction if possible."
 msgstr ""
 
-msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgid ""
+"To divide a fraction by another fraction multiply the first fraction by the "
+"second fraction flipped up side down. Simplify and reduce the resulting "
+"fraction if possible."
 msgstr ""
 
 msgid "Group fractions together"
@@ -1400,12 +1027,6 @@ msgid "Group percentages together"
 msgstr ""
 
 msgid "Group ratios together"
-msgstr ""
-
-msgid "eduActiv8 update is available. Current version: %s. New version: %s."
-msgstr ""
-
-msgid "check for updates on start"
 msgstr ""
 
 msgid "Symmetry"
@@ -1420,7 +1041,9 @@ msgstr ""
 msgid "Reflect a shape in a mirror line"
 msgstr ""
 
-msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgid ""
+"Draw a shape that is a reflection of the one already displayed. The red line"
+" is the mirror line."
 msgstr ""
 
 msgid "Symmetrical shapes - missing half"
@@ -1432,7 +1055,9 @@ msgstr ""
 msgid "Find lines of symmetry"
 msgstr ""
 
-msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
+msgid ""
+"Find and select all lines of symmetry for a displayed shape. Click on the "
+"arrows around the drawing area to select them."
 msgstr ""
 
 msgid "Match equivalent fractions"
@@ -1452,18 +1077,6 @@ msgstr ""
 
 msgid "Percentages in a pie chart"
 msgstr ""
-
-msgid "hour"
-msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-msgid "minute"
-msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
 
 msgid "Find equivalent fraction"
 msgstr ""
@@ -1519,9 +1132,6 @@ msgstr ""
 msgid "Reset colors back to the default ones?"
 msgstr ""
 
-msgid "Font Preferences"
-msgstr ""
-
 msgid "With simplifying"
 msgstr ""
 
@@ -1543,8 +1153,297 @@ msgstr ""
 msgid "Subtract fractions with unlike denominators"
 msgstr ""
 
-msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
+msgid ""
+"To add or subtract fractions when their denominators are not the same you "
+"have to find equivalent fractions which do have a common denominator. "
+"Finding the least common multiple of the two denominators will help you with"
+" that."
 msgstr ""
 
-msgid "Learn new words"
+# used for the 2 ways of telling time in Russian and Serbian translations only
+msgid "long form"
+msgstr "полная форма"
+
+# used for the 2 ways of telling time used in Russian and Serbian translations
+# only
+msgid "short form"
+msgstr "краткая форма"
+
+msgid "white"
+msgstr "бела"
+
+msgid "black"
+msgstr "црна"
+
+msgid "grey"
+msgstr "сива"
+
+msgid "red"
+msgstr "црвена"
+
+msgid "orange [color]"
+msgstr "наранџаста"
+
+msgid "yellow"
+msgstr "жута"
+
+msgid "olive"
+msgstr "маслинаста"
+
+msgid "green"
+msgstr "зелена"
+
+msgid "sea green"
+msgstr "морска зелена"
+
+msgid "teal"
+msgstr "гроготовац"
+
+msgid "blue"
+msgstr "плава"
+
+msgid "navy"
+msgstr "морнарска"
+
+msgid "purple"
+msgstr "љубичаста"
+
+msgid "violet"
+msgstr "љубичаста"
+
+msgid "magenta"
+msgstr "ружичаста"
+
+msgid "indigo"
+msgstr "индиго"
+
+msgid "pink"
+msgstr "розе"
+
+msgid "maroon"
+msgstr "кестењаста"
+
+msgid "brown"
+msgstr "браон"
+
+msgid "aqua"
+msgstr "водена"
+
+msgid "lime"
+msgstr "жуто-зелена"
+
+msgid "Equilateral Triangle"
+msgstr "Једнакостранични троугао"
+
+msgid "Isosceles Triangle"
+msgstr "Једнакокраки троугао"
+
+msgid "Obtuse Triangle"
+msgstr "Туп троугао"
+
+msgid "Right Triangle"
+msgstr "Правоугли троугао"
+
+msgid "Acute Triangle"
+msgstr "Неједнакостраничан троугао"
+
+msgid "Square"
+msgstr "Квадрат"
+
+msgid "Rectangle"
+msgstr "Правоугаоник"
+
+msgid "Right Trapezium"
+msgstr "Правоугли трапез"
+
+msgid "Isosceles Trapezium"
+msgstr "Једнакокраки трапез"
+
+msgid "Rhombus"
+msgstr "Ромб"
+
+msgid "Parallelogram"
+msgstr "Паралелограм"
+
+msgid "Pentagon"
+msgstr "Петоугаоник"
+
+msgid "Hexagon"
+msgstr "Шестоугаоник"
+
+msgid "Heptagon"
 msgstr ""
+
+msgid "Octagon"
+msgstr ""
+
+msgid "Circle"
+msgstr "Круг"
+
+msgid "Ellipse"
+msgstr "Елипса"
+
+msgid "Cube"
+msgstr "Коцка"
+
+msgid "Square Prism"
+msgstr "Четворострана призма"
+
+msgid "Triangular Prism"
+msgstr "Тространа призма"
+
+msgid "Square Pyramid"
+msgstr "Четворострана пирамида"
+
+msgid "Triangular Pyramid"
+msgstr "Тространа пирамида"
+
+msgid "Sphere"
+msgstr "Сфера"
+
+msgid "Cylinder"
+msgstr "Ваљак"
+
+msgid "Cone"
+msgstr "Купа"
+
+msgid "Torus"
+msgstr "Торус"
+
+msgid "Quadrilateral"
+msgstr "Четвороугао"
+
+msgid "Trapezium"
+msgstr "Трапезоид"
+
+msgid "Triangle"
+msgstr "Троугао"
+
+# used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all
+# points on one line
+msgid "Ouch... squished quadrilateral"
+msgstr "Јао... згњечени четрвоространик"
+
+msgid "Right isosceles triangle"
+msgstr "Десни једнакокраки троугао"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Туп једнакокраки троугао"
+
+msgid "Acute isosceles triangle"
+msgstr "Оштар једнакокраки троугао"
+
+# used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on
+# one line
+msgid "Ouch... squished triangle"
+msgstr "Јао... згњечени троугао"
+
+# used to label a drawn "quadrilateral" with one of its angles equal to 180º -
+# in effect making it look like triangle
+msgid "Triangle? Well, not really..."
+msgstr "Троугао? Добро, није баш..."
+
+msgid "area:"
+msgstr "област:"
+
+msgid "perimeter:"
+msgstr "полупречник:"
+
+msgid "circumference:"
+msgstr "обим:"
+
+msgid "surface area:"
+msgstr "површина области:"
+
+msgid "volume:"
+msgstr "запремина:"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "зелена јабука"
+msgstr[1] "зелене јабуке"
+msgstr[2] "зелених јабука"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "црвена јабука"
+msgstr[1] "црвене јабуке"
+msgstr[2] "црвених јабука"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "јагода"
+msgstr[1] "јагоде"
+msgstr[2] "јагода"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "крушка"
+msgstr[1] "крушке"
+msgstr[2] "крушака"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] "поморанџа"
+msgstr[1] "поморанџе"
+msgstr[2] "поморанџи"
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "главица црног лука"
+msgstr[1] "главице црног лука"
+msgstr[2] "главица црног лука"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "парадајз"
+msgstr[1] "парадајза"
+msgstr[2] "парадајза"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "лимун"
+msgstr[1] "лимуна"
+msgstr[2] "лимуна"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "трешња"
+msgstr[1] "трешње"
+msgstr[2] "трешњи"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "паприка"
+msgstr[1] "паприке"
+msgstr[2] "паприка"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "шаргарепа"
+msgstr[1] "шаргарепе"
+msgstr[2] "шаргарепи"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "банана"
+msgstr[1] "банане"
+msgstr[2] "банана"
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "лубеница"
+msgstr[1] "лубенице"
+msgstr[2] "лубеница"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""

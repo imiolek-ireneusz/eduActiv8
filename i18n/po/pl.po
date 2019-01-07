@@ -1,100 +1,68 @@
 # eduActiv8 - Educational Activity Pack - translation file.
-# Copyright (C) 2012 - 2018 Ireneusz Imiolek
+# Copyright (C) 2012 - 2019 Ireneusz Imiolek
 # This file is distributed under the same license as the eduactiv8 package.
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2018.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+#
+# Translators:
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-12-12 14:37+0000\n"
+"PO-Revision-Date: 2019-01-07 16:54+0000\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
-"Language-Team: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
-"Language: pl\n"
+"Language-Team: Polish (https://www.transifex.com/eduactiv8/teams/94947/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0: n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n"
+"%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n"
+"%100<=14) ? 2 : 3);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-msgid "Equilateral Triangle"
-msgstr "Trójkąt równoboczny"
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public "
+"Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+msgstr ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public "
+"Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
 
-msgid "Isosceles Triangle"
-msgstr "Trójkąt równoramienny"
+msgid ""
+"This program is free software: you can redistribute it and/or modify it under the terms "
+"of the GNU General Public License as published by the Free Software Foundation, either "
+"version 3 of the License, or (at your option) any later version. You should have "
+"received a copy of the GNU General Public License along with this program. If not, see "
+"<http://www.gnu.org/licenses/>."
+msgstr ""
+"This program is free software: you can redistribute it and/or modify it under the terms "
+"of the GNU General Public License as published by the Free Software Foundation, either "
+"version 3 of the License, or (at your option) any later version. You should have "
+"received a copy of the GNU General Public License along with this program. If not, see "
+"<http://www.gnu.org/licenses/>."
 
-msgid "Obtuse Triangle"
-msgstr "Trójkąt rozwartokątny"
+msgid "A collection of educational activities for kids"
+msgstr "Zbiór programów edukacyjnych dla dzieci"
 
-msgid "Right Triangle"
-msgstr "Trójkąt prostokątny"
+msgid "Educational Activities for Kids"
+msgstr "Zbiór edukacyjnych zadań"
 
-msgid "Acute Triangle"
-msgstr "Trójkąt ostrokątny"
-
-msgid "Square"
-msgstr "Kwadrat"
-
-msgid "Rectangle"
-msgstr "Prostokąt"
-
-msgid "Right Trapezium"
-msgstr "Trapez prostokątny"
-
-msgid "Isosceles Trapezium"
-msgstr "Trapez równoramienny"
-
-msgid "Rhombus"
-msgstr "Romb"
-
-msgid "Parallelogram"
-msgstr "Równoległobok"
-
-msgid "Pentagon"
-msgstr "Pięciokąt"
-
-msgid "Hexagon"
-msgstr "Sześciokąt"
-
-msgid "Heptagon"
-msgstr "Siedmiokąt"
-
-msgid "Octagon"
-msgstr "Ośmiokąt"
-
-msgid "Circle"
-msgstr "Koło"
-
-msgid "Ellipse"
-msgstr "Elipsa"
-
-msgid "Cube"
-msgstr "Sześcian"
-
-msgid "Square Prism"
-msgstr "Prostopadłościan"
-
-msgid "Triangular Prism"
-msgstr "Graniastosłup prawidłowy trójkątny"
-
-msgid "Square Pyramid"
-msgstr "Ostrosłup prawidłowy czworokątny"
-
-msgid "Triangular Pyramid"
-msgstr "Ostrosłup prawidłowy trójkątny"
-
-msgid "Sphere"
-msgstr "Kula"
-
-msgid "Cylinder"
-msgstr "Walec"
-
-msgid "Cone"
-msgstr "Stożek"
-
-msgid "Torus"
-msgstr "Torus"
+msgid ""
+"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons "
+"License (CC BY-SA)"
+msgstr ""
+"Grafiki pobrane z: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons "
+"License (CC BY-SA)"
 
 msgid "Default Language:"
 msgstr "Domyślny język:"
@@ -157,8 +125,8 @@ msgstr "włącz pełny ekran po zalogowaniu"
 msgid "allow adding new users on login screen"
 msgstr "zezwól na dodawanie nowych użytkowników na ekranie logowania"
 
-msgid "display languages with uncompleted translations"
-msgstr "wyświetl języki z niekompletnymi tłumaczeniami"
+msgid "User Name"
+msgstr "Imię"
 
 msgid "require password to log in"
 msgstr "wymagaj hasła do zalogowania"
@@ -239,17 +207,54 @@ msgstr "ostatnio zalogowany:"
 msgid "Preferences saved..."
 msgstr "Ustawienia zostały zapisane..."
 
-msgid "Score: "
-msgstr "Punktów: "
-
 msgid "Logged in as: "
 msgstr "Zalogowany/a jako: "
 
 msgid "(Log out)"
 msgstr "(Wyloguj)"
 
-msgid "Addition Table"
-msgstr "Tabliczka dodawania"
+msgid "remember me"
+msgstr "zapamiętaj mnie"
+
+msgid "Select age group:"
+msgstr "Wybierz grupę wiekową:"
+
+msgid "show activities for:"
+msgstr "pokaż zadania dla:"
+
+msgid "preschool"
+msgstr "Przedszkole"
+
+msgid "Year 1"
+msgstr "Klasa 1"
+
+msgid "Year 2"
+msgstr "Klasa 2"
+
+msgid "Year 3"
+msgstr "Klasa 3"
+
+msgid "Year 4"
+msgstr "Klasa 4"
+
+msgid "Year 5"
+msgstr "Klasa 5"
+
+msgid "Year 6"
+msgstr "Klasa 6"
+
+msgid "show all"
+msgstr "Pokaż wszystkie"
+
+msgid "Do you want to log out of the game?"
+msgstr "Chcesz się wylogować?"
+
+msgid "Do you want to exit the game?"
+msgstr "Chcesz wyjść z gry?"
+
+# alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
+msgid "Ready to go to the next level?"
+msgstr "Gotów na następny poziom?"
 
 msgid "Hello"
 msgstr "Cześć"
@@ -257,23 +262,23 @@ msgstr "Cześć"
 msgid "Welcome back in the game."
 msgstr "Fajnie, że już jesteś spowrotem. A teraz w co zagramy?"
 
+msgid "Licence"
+msgstr "Licencja"
+
+msgid "Copyright & Credits"
+msgstr "Prawa autorskie"
+
+msgid "Translators"
+msgstr "Tłumaczenia"
+
 msgid "Language"
 msgstr "Język"
 
 msgid "Translations"
 msgstr "Tłumaczenia"
 
-msgid "eSpeak"
-msgstr "Lektor (eSpeak)"
-
-msgid "Read Instructions at the start of games"
-msgstr "Czytaj Instrukcje przy starcie gier"
-
-msgid "Info & Settings"
-msgstr "Ustawienia"
-
-msgid "Keyboard & Mouse"
-msgstr "Klawiatura i Mysz"
+msgid "Addition Table"
+msgstr "Tabliczka dodawania"
 
 msgid "Discover Letters"
 msgstr "Poznaj alfabet"
@@ -284,18 +289,6 @@ msgstr "Poznaj nowe słowa"
 msgid "Mathematics"
 msgstr "Matematyka"
 
-msgid "Numbers & Basic Operations"
-msgstr "Liczby i podstawowe działania"
-
-msgid "Basic Operations - Exercises"
-msgstr "Podstawowe działania"
-
-msgid "Sorting and Comparing"
-msgstr "Sortowanie i porównywanie liczb"
-
-msgid "Geometry and Shape Recognition"
-msgstr "Geometria i rozpoznawanie kształtów"
-
 msgid "Art and Colour"
 msgstr "Twórcze"
 
@@ -304,18 +297,6 @@ msgstr "Trening pamięci"
 
 msgid "Games & Mazes"
 msgstr "Łamigłówki"
-
-msgid "Multiplayer Games"
-msgstr "Gry Multiplayer"
-
-msgid "About."
-msgstr "Info."
-
-msgid "Game info..."
-msgstr "Informacje o grze..."
-
-msgid "Copyright & Credits"
-msgstr "Prawa autorskie"
 
 msgid "Letters"
 msgstr "Litery"
@@ -331,12 +312,6 @@ msgstr "Przepisz litery i cyfry"
 
 msgid "Complete the ABC"
 msgstr "Uzupełnij alfabet"
-
-msgid "English"
-msgstr "angielski"
-
-msgid "Your language"
-msgstr "polski"
 
 msgid "Sorting Letters"
 msgstr "Sortowanie liter"
@@ -359,8 +334,27 @@ msgstr "Zbierz wszystkie litery"
 msgid "Word Maze + 4"
 msgstr "Labirynt nowych słówek + 4"
 
+msgid "Rainbow Keyboard"
+msgstr "Tęczowa Klawiatura"
+
+msgid "Touch Typing Tutor"
+msgstr "Nauka szybkiego pisania na klawiaturze"
+
+msgid "English Alphabet"
+msgstr "Angielski alfabet"
+
+# Replace "Your" with your language, ie. translation of French Alphabet
+msgid "Your Alphabet"
+msgstr "Polski Alfabet"
+
 msgid "Numbers"
 msgstr "Liczby"
+
+msgid "Number Spelling"
+msgstr "Zapis słowny liczb"
+
+msgid "Match numbers to their spelling"
+msgstr "Dopasuj liczby do ich słownego zapisu"
 
 msgid "Learn Numbers with Flashcards"
 msgstr "Poznaj cyfry"
@@ -407,14 +401,17 @@ msgstr "Dodawanie i odejmowanie"
 msgid "Comparison"
 msgstr "Porównanie"
 
-msgid "Fractions"
-msgstr "Ułamki"
-
-msgid "Decimal Fractions"
-msgstr "Ułamki dziesiętne"
-
 msgid "Even or Odd"
 msgstr "Parzyste i nieparzyste"
+
+msgid "Even"
+msgstr "Parzyste"
+
+msgid "Odd"
+msgstr "Nieparzyste"
+
+msgid "Shapes and Solids"
+msgstr "Kształty i figury geometryczne"
 
 msgid "Shapes"
 msgstr "Kształty"
@@ -427,6 +424,12 @@ msgstr "Bryły"
 
 msgid "Solid Geometry with Flashcards"
 msgstr "Geometria przestrzenna"
+
+msgid "Time Matching"
+msgstr "Zegarkowa dopasowanka"
+
+msgid "Complete the word"
+msgstr "Uzupełnij słowo"
 
 msgid "Shape Matching"
 msgstr "Przeciągnij zwierzaki do ich cieni"
@@ -455,9 +458,6 @@ msgstr "Ćwiczenie pamięci"
 msgid "Training"
 msgstr "fotograficznej"
 
-msgid "Automatic Levels"
-msgstr "automatyczne poziomy"
-
 msgid "Mouse Maze"
 msgstr "Mysi Labirynt"
 
@@ -481,186 +481,6 @@ msgstr "Piętnaście"
 
 msgid "With a Twist"
 msgstr "mniej więcej"
-
-msgid "Drag the slider up or down so that the right sign is in the red square."
-msgstr "Przeciągnij suwak tak by właściwy znak był w czerwonym kwadracie."
-
-msgid "Take your sheep to the rest of the herd."
-msgstr "Doprowadź owce do reszty stada."
-
-msgid "Check the shopping list and drag all needed items into the basket."
-msgstr "Sprawdź listę zakupów i przeciągnij potrzebne owoce do koszyka."
-
-msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
-msgstr "Przeciągnij jeden z <, > lub = (mniejsze, większe lub równe) do czerwonego kwadratu w środku."
-
-msgid "Drag one of the lesser, greater or equal to the red square."
-msgstr "Przeciągnij większy, mniejszy lub równy do czerwonego kwadratu."
-
-msgid "Rearrange the numbers so they are in the right order."
-msgstr "Ułóż liczby we właściwej kolejności."
-
-msgid "Complete the abc using the letters above."
-msgstr "Uzupełnij alfabet."
-
-msgid "Build the following word using the letters below."
-msgstr "Ułóż słowo z liter poniżej."
-
-msgid "Find and separate even numbers from odd numbers."
-msgstr "Znajdź i oddziel liczby parzyste od nieparzystych."
-
-msgid "Rearrange the letters so they are in the alphabetical order."
-msgstr "Ułóż litery w kolejności alfabetycznej."
-
-msgid "Rearrange the numbers so they are in the ascending order."
-msgstr "Ułóż liczby w porządku rosnącym."
-
-msgid "Please try again."
-msgstr "Spróbuj ponownie."
-
-msgid "Sorry! It is wrong."
-msgstr "Niestety! Coś jeszcze nie jest dobrze."
-
-msgid "Perfect! Task solved!"
-msgstr "Świetnie! Zadanie rozwiązane!"
-
-msgid "You need to work a little bit harder next time."
-msgstr "Musisz popracować trochę ciężej następnym razem."
-
-msgid "Game Over!"
-msgstr "Koniec Gry!"
-
-msgid "Congratulations! You have completed all tasks in this game."
-msgstr "Gratulacje! Wszystkie zadania wykonane."
-
-msgid "Great job!"
-msgstr "Świetnie!"
-
-msgid "Perfect!!!"
-msgstr "Super!"
-
-msgid "Awesome!"
-msgstr "Idealnie!"
-
-msgid "Fantastic job!"
-msgstr "Wspaniale!"
-
-msgid "Well done!"
-msgstr "Super!"
-
-msgid "Perfect! Level completed!"
-msgstr "Rewelacja! Poziom ukończony!"
-
-msgid "area:"
-msgstr "powierzchnia:"
-
-msgid "perimeter:"
-msgstr "obwód:"
-
-msgid "circumference:"
-msgstr "obwód:"
-
-msgid "surface area:"
-msgstr "powierzchnia:"
-
-msgid "volume:"
-msgstr "objętość:"
-
-msgid "Perfect!"
-msgstr "Perfekcyjnie!"
-
-msgid "divided by"
-msgstr "podzielone przez"
-
-msgid "times"
-msgstr "razy"
-
-msgid "equals"
-msgstr "równa się"
-
-msgid "Even"
-msgstr "Parzyste"
-
-msgid "Odd"
-msgstr "Nieparzyste"
-
-msgid "white"
-msgstr "biały"
-
-msgid "black"
-msgstr "czarny"
-
-msgid "grey"
-msgstr "szary"
-
-msgid "red"
-msgstr "czerwony"
-
-msgid "orange [color]"
-msgstr "pomarańczowy"
-
-msgid "yellow"
-msgstr "żółty"
-
-msgid "olive"
-msgstr "oliwkowy"
-
-msgid "green"
-msgstr "zielony"
-
-msgid "sea green"
-msgstr "morska zieleń"
-
-msgid "teal"
-msgstr "morski"
-
-msgid "blue"
-msgstr "niebieski"
-
-msgid "navy"
-msgstr "granatowy"
-
-msgid "purple"
-msgstr "purpurowy"
-
-msgid "violet"
-msgstr "fioletowy"
-
-msgid "magenta"
-msgstr "fuksja"
-
-msgid "indigo"
-msgstr "indygo"
-
-msgid "pink"
-msgstr "różowy"
-
-msgid "maroon"
-msgstr "bordowy"
-
-msgid "brown"
-msgstr "brązowy"
-
-msgid "aqua"
-msgstr "aqua"
-
-msgid "lime"
-msgstr "limetkowy"
-
-msgid "Rainbow Keyboard"
-msgstr "Tęczowa Klawiatura"
-
-msgid "Touch Typing Tutor"
-msgstr "Nauka szybkiego pisania na klawiaturze"
-
-msgid "Translators"
-msgstr "Tłumaczenia"
-
-msgid "English Alphabet"
-msgstr "Angielski alfabet"
-
-msgid "English Alphabet 2"
-msgstr "Polski alfabet"
 
 msgid "Mixing Colours for Painting"
 msgstr "Mieszamy Kolory - Farba"
@@ -689,32 +509,14 @@ msgstr "Dopasuj ilość koloru cyjan, magenta i żółtego"
 msgid "Adjust the intensity of red, green and blue light"
 msgstr "Dopasuj intensywność czerowego, zielonego i niebieskiego światła"
 
-msgid "brush size"
-msgstr "rozmiar pędzla"
-
-msgid "Noughts and Crosses 2"
-msgstr "Kółko i krzyżyk 2"
-
-msgid "Noughts and Crosses 3"
-msgstr "Kółko i krzyżyk 3"
-
-msgid "Get as many lines of 3 as possible to win"
-msgstr "Ułóż jak najwięcej potrójnych linii by wygrać"
-
-msgid "Player"
-msgstr "Gracz"
-
-msgid "Won"
-msgstr "Wygrał"
-
-msgid "Draw"
-msgstr "Remis"
-
-msgid "User Name"
-msgstr "Imię"
-
 msgid "Match Animals"
 msgstr "Dopasuj zwierzaki"
+
+msgid "Find all matching animals"
+msgstr "Znajdź takie same zwierzaki"
+
+msgid "Match animals to their shadows"
+msgstr "Dopasuj zwierzaki do ich cieni"
 
 msgid "Match Animals - Memory Game"
 msgstr "Zapamiętaj położenie zwierzaków"
@@ -743,30 +545,6 @@ msgstr "Owoce"
 msgid "Number Slider"
 msgstr "Numerki"
 
-msgid "Fraction Groups"
-msgstr "Ułamki"
-
-msgid "Percentages"
-msgstr "Procenty"
-
-msgid "Ratios"
-msgstr "Proporcje"
-
-msgid "Match fraction charts on the right to the ones on the left"
-msgstr "Dopasuj graficzne reprezentacje ułamków po prawej do tych po lewej"
-
-msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
-msgstr "Dopasuj ułamki zwykłe i ich graficzne reprezentacje po prawej to tych po lewej"
-
-msgid "Match fraction charts to the fractions on the left"
-msgstr "Dopasuj graficzne reprezentacje ułamków po prawej do ułamków zwykłych po lewej"
-
-msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
-msgstr "Dopasuj graficzne reprezentacje ułamków, ułamki zwykłe i dziesiętne do procentów po lewej"
-
-msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
-msgstr "Dopasuj graficzne reprezentacje stosunku kolorowych części do białych do ich liczbowego zapisu po lewej"
-
 msgid "Maths Matching Game"
 msgstr "Matematyczna dopasowanka"
 
@@ -779,398 +557,23 @@ msgstr "Odejmowanie"
 msgid "Multiplication"
 msgstr "Mnożenie"
 
-msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
-msgstr "Sprawdź najnowszą wersję, zgłaszaj błędy i pomysły, przetłumacz lub oceń ten projekt na:"
+msgid "Fractions"
+msgstr "Ułamki"
 
-msgid "Match numbers to their spelling"
-msgstr "Dopasuj liczby do ich słownego zapisu"
+msgid "Decimal Fractions"
+msgstr "Ułamki dziesiętne"
 
-msgid "Number Spelling"
-msgstr "Zapis słowny liczb"
+msgid "Percentages"
+msgstr "Procenty"
 
-msgid "Find all matching animals"
-msgstr "Znajdź takie same zwierzaki"
+msgid "Ratios"
+msgstr "Proporcje"
 
-msgid "Match animals to their shadows"
-msgstr "Dopasuj zwierzaki do ich cieni"
-
-msgid "Shape Maker"
-msgstr "Tworzenie figur geometrycznych"
-
-#, python-format
-msgid "Shape to draw: %s"
-msgstr "Figura do narysowania: %s"
-
-#, python-format
-msgid "Shape to draw: %s "
-msgstr "Figura do narysowania: %s"
-
-#, python-format
-msgid "such that lengths of its bases are equal to %d and %d and height to %d"
-msgstr "o długości podstaw równej %d i %d, i wysokości równej %d"
-
-#, python-format
-msgid "such that lengths of its sides are equal to %d"
-msgstr "o długości ścian równej %d"
-
-#, python-format
-msgid "such that lengths of its sides are equal to %d and %d"
-msgstr "o długości ścian równej %d i %d"
-
-#, python-format
-msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
-msgstr "o długości jednej z podstaw równej %d i wysokości równej %d"
-
-#, python-format
-msgid "such that length of its base is equal to %d and height to %d"
-msgstr "o długości podstawy równej %d i wysokości równej %d"
-
-#, python-format
-msgid "such that lengths of its catheti are equal to %d and %d"
-msgstr "o długości przyprostokątnych równej %d i %d"
-
-#, python-format
-msgid "such that lengths of both of its catheti are equal to %d"
-msgstr "o długości obu przyprostokątnych równej %d"
-
-#, python-format
-msgid "such that length of its hypotenuse is equal to %d"
-msgstr "o długości przeciwprostokątnej równej %d"
-
-#, python-format
-msgid "such that length of one of its sides is equal to %d and height to %d"
-msgstr "o długości jednej ze ścian równej %d i wysokości spadającej na nią równej %d"
-
-#, python-format
-msgid "such that length of its radius is equal to %d"
-msgstr "o promieniu o długości %d"
-
-msgid "Quadrilateral"
-msgstr "Czworokąt"
-
-msgid "Trapezium"
-msgstr "Trapez"
-
-msgid "Trapezium "
-msgstr "Trapez"
-
-msgid "Triangle"
-msgstr "Trójkąt"
-
-msgid "Ouch... squished quadrilateral"
-msgstr "Nieco przymiażdżony czworokąt"
-
-msgid "Right isosceles triangle"
-msgstr "Trójkąt prostokątny równoramienny"
-
-msgid "Obtuse isosceles triangle"
-msgstr "Trójkąt rozwartokątny równoramienny"
-
-msgid "Acute isosceles triangle"
-msgstr "Trójkąt ostrokątny równoramienny"
-
-msgid "Ouch... squished triangle"
-msgstr "Nieco przymieżdżony trójkąt"
-
-msgid "Triangle? Well, not really..."
-msgstr "Trójkąt? Niezupełnie..."
-
-msgid "Test yourself"
-msgstr "Sprawdź się"
-
-msgid "Clock"
-msgstr "Zegar"
-
-msgid "Learn to read the time"
-msgstr "Odczytaj czas"
-
-msgid "Learn to set the clock"
-msgstr "Ustaw właściwy czas na zegarze"
-
-msgid "Set the clock to:"
-msgstr "Ustaw zegar na godzinę:"
-
-msgid "Drag the clock hands to set the time"
-msgstr "Przeciągnij wskazówki by ustawić czas"
-
-msgid "What time is it?"
-msgstr "Która godzina?"
-
-msgid "Click again to exit"
-msgstr "Przyciśnij jeszcze raz by wyjść z gry"
+msgid "Fraction Groups"
+msgstr "Ułamki"
 
 msgid "Type your answer and hit enter"
 msgstr "Wpisz odpowiedź i wciśnij enter"
-
-msgid "Time"
-msgstr "Czas"
-
-msgid "Turn the clock hands and see what happens."
-msgstr "Pokręć wskazówkami i sprawdź co się stanie."
-
-msgid "Let's see what shapes you can draw"
-msgstr "Zobaczmy jakie kształty umiesz narysować"
-
-msgid "Time in text version only"
-msgstr "Tym razem tylko zapis słowny"
-
-msgid "How clock works?"
-msgstr "Jak działa zegar?"
-
-msgid "Columnar addition"
-msgstr "Dodawanie pisemne"
-
-msgid "Columnar subtraction"
-msgstr "Odejmowanie pisemne"
-
-msgid "Long multiplication"
-msgstr "Mnożenie pisemne"
-
-msgid "Long division"
-msgstr "Dzielenie pisemne"
-
-msgid "borrow 10"
-msgstr "pożyczamy 10"
-
-msgid "carry"
-msgstr "przenosimy"
-
-msgid "Start >>"
-msgstr "Zacznij >>"
-
-msgid "Next example >>"
-msgstr "Następny przykład >>"
-
-msgid "Next step >>"
-msgstr "Następny krok >>"
-
-msgid "write "
-msgstr "wpisujemy "
-
-msgid "Demonstration"
-msgstr "Samouczek"
-
-msgid "Do it yourself"
-msgstr "Zrób to sam"
-
-msgid "Ratio"
-msgstr "Proporcja"
-
-msgid "Working with large numbers"
-msgstr "Działania na dużych liczbach"
-
-msgid "rewrite "
-msgstr "przepisujemy "
-
-msgid "remainder"
-msgstr "reszta"
-
-msgid "result"
-msgstr "wynik"
-
-msgid "Time Matching"
-msgstr "Zegarkowa dopasowanka"
-
-msgid "Add some red"
-msgstr "Dodaj trochę  czerwonego"
-
-msgid "Add some green"
-msgstr "Dodaj trochę zielonego"
-
-msgid "Add some blue"
-msgstr "Dodaj trochę niebieskiego"
-
-msgid "Add some cyan"
-msgstr "Dodaj trochę koloru cyjan"
-
-msgid "Add some magenta"
-msgstr "Dodaj trochę koloru magenta"
-
-msgid "Add some yellow"
-msgstr "Dodaj trochę żółtego"
-
-msgid "Too much red"
-msgstr "Za dużo czerwonego"
-
-msgid "Too much green"
-msgstr "Za dużo zielonego"
-
-msgid "Too much blue"
-msgstr "Za dużo niebieskiego"
-
-msgid "Too much cyan"
-msgstr "Za dużo koloru cyjan"
-
-msgid "Too much magenta"
-msgstr "Za dużo koloru magenta"
-
-msgid "Too much yellow"
-msgstr "Za dużo żółtego"
-
-msgid "red is spot on"
-msgstr "czerwony jest w sam raz"
-
-msgid "green is spot on"
-msgstr "zielony jest w sam raz"
-
-msgid "blue is spot on"
-msgstr "niebieski jest w sam raz"
-
-msgid "cyan is spot on"
-msgstr "cyjan jest w sam raz"
-
-msgid "magenta is spot on"
-msgstr "magenta jest w sam raz"
-
-msgid "yellow is spot on"
-msgstr "żółty jest w sam raz"
-
-msgid "remember me"
-msgstr "zapamiętaj mnie"
-
-msgid ""
-"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
-" Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
-" Please view credits.txt for more info about authors of media files used in this project"
-msgstr ""
-"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
-" Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
-" Please view credits.txt for more info about authors of media files used in this project"
-
-msgid "Licence"
-msgstr "Licencja"
-
-msgid "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
-msgstr "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
-
-msgid "A collection of educational activities for kids"
-msgstr "Zbiór programów edukacyjnych dla dzieci"
-
-msgid "Word Builder - Animals"
-msgstr "Słowna Układanka - Zwierzęta"
-
-msgid "Complete the word"
-msgstr "Uzupełnij słowo"
-
-msgid "Word Builder - Sports"
-msgstr "Słowna Układanka - Sport"
-
-msgid "Word Builder - Body"
-msgstr "Słowna Układanka - Ciało"
-
-msgid "Word Builder - People"
-msgstr "Słowna Układanka - Ludzie"
-
-msgid "Word Builder - Actions"
-msgstr "Słowna Układanka - Czynności"
-
-msgid "Word Builder - Constructions"
-msgstr "Słowna Układanka - Budynki"
-
-msgid "Word Builder - Nature"
-msgstr "Słowna Układanka - Natura"
-
-msgid "Word Builder - Jobs"
-msgstr "Słowna Układanka - Zawody"
-
-msgid "Word Builder - Clothes and Accessories"
-msgstr "Słowna Układanka - Odzież i Akcesoria"
-
-msgid "Word Builder - Fruits and Vegetables"
-msgstr "Słowna Układanka - Owoce i Ważywa"
-
-msgid "Word Builder - Transport"
-msgstr "Słowna Układanka - Środki Transportu"
-
-msgid "Word Builder - Food"
-msgstr "Słowna Układanka - Żywność"
-
-msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
-msgstr "Grafiki pobrane z: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
-
-msgid "Decimals and Fractions"
-msgstr "Ułamki zwykłe i dziesiętne"
-
-msgid "Decimals, fractions and percentages"
-msgstr "Procenty, ułamki zwykłe i dziesiętne"
-
-msgid "Decimals, fractions, ratios and percentages"
-msgstr "Ułamki zwykłe i dziesiętne, proporcje i procenty"
-
-msgid "Shapes and Solids"
-msgstr "Kształty i figury geometryczne"
-
-msgid "Translation Credits"
-msgstr "Translatorzy"
-
-msgid "Level"
-msgstr "Poziom"
-
-msgid "Find solution"
-msgstr "Znajdź rozwiązanie"
-
-msgid "Find missing number"
-msgstr "Znajdź brakującą liczbe"
-
-msgid "Achievements"
-msgstr "Osiągnięcia"
-
-msgid "Select age group:"
-msgstr "Wybierz grupę wiekową:"
-
-msgid "show activities for:"
-msgstr "pokaż zadania dla:"
-
-msgid "preschool"
-msgstr "Przedszkole"
-
-msgid "Year 1"
-msgstr "Klasa 1"
-
-msgid "Year 2"
-msgstr "Klasa 2"
-
-msgid "Year 3"
-msgstr "Klasa 3"
-
-msgid "Year 4"
-msgstr "Klasa 4"
-
-msgid "Year 5"
-msgstr "Klasa 5"
-
-msgid "Year 6"
-msgstr "Klasa 6"
-
-msgid "show all"
-msgstr "Pokaż wszystkie"
-
-msgid "Do you want to exit the game?"
-msgstr "Chcesz wyjść z gry?"
-
-msgid "Do you want to log out of the game?"
-msgstr "Chcesz się wylogować?"
-
-msgid "Ready to go to the next level?"
-msgstr "Gotów na następny poziom?"
-
-msgid "Language arts"
-msgstr "Język polski"
-
-msgid "Other"
-msgstr "Inne"
-
-msgid "Educational Activities for Kids"
-msgstr "Zbiór edukacyjnych zadań"
-
-msgid ""
-"You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
-"http://espeak.sourceforge.net/"
-msgstr ""
-"Prosze zainstalować program espeak by używać funkcji syntezatora mowy, nie jest to jednak konieczne by skutecznie korzystać z programu: \n"
-"http: //espeak.sourceforge.net/"
 
 msgid "Decimals (Category)"
 msgstr "Ułamki dziesiętne"
@@ -1183,6 +586,9 @@ msgstr "Proporcje"
 
 msgid "Percentages (Category)"
 msgstr "Procenty"
+
+msgid "Learn new words"
+msgstr "Poznaj nowe słowa"
 
 msgid "Word Builders"
 msgstr "Słowna układanka"
@@ -1265,6 +671,245 @@ msgstr "Dopasuj kształty do ich nazw"
 msgid "Negative numbers"
 msgstr "Liczby ujemne"
 
+msgid "Complete the alphabet using letters from the middle line."
+msgstr "Uzupełnij alfabet wykorzystując literki ze środkowej linii."
+
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Przeciągnij suwak tak by właściwy znak był w czerwonym kwadracie."
+
+msgid "Take your sheep to the rest of the herd."
+msgstr "Doprowadź owce do reszty stada."
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr "Sprawdź listę zakupów i przeciągnij potrzebne owoce do koszyka."
+
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr ""
+"Przeciągnij jeden z <, > lub = (mniejsze, większe lub równe) do czerwonego kwadratu w "
+"środku."
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr "Przeciągnij większy, mniejszy lub równy do czerwonego kwadratu."
+
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Ułóż liczby we właściwej kolejności."
+
+msgid "Build the following word using the letters below."
+msgstr "Ułóż słowo z liter poniżej."
+
+msgid "Find and separate even numbers from odd numbers."
+msgstr "Znajdź i oddziel liczby parzyste od nieparzystych."
+
+msgid "Rearrange the letters so they are in the alphabetical order."
+msgstr "Ułóż litery w kolejności alfabetycznej."
+
+msgid "Rearrange the numbers so they are in the ascending order."
+msgstr "Ułóż liczby w porządku rosnącym."
+
+msgid "Perfect! Task solved!"
+msgstr "Świetnie! Zadanie rozwiązane!"
+
+msgid "Game Over!"
+msgstr "Koniec Gry!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Gratulacje! Wszystkie zadania wykonane."
+
+msgid "Great job!"
+msgstr "Świetnie!"
+
+msgid "Perfect!!!"
+msgstr "Super!"
+
+msgid "Awesome!"
+msgstr "Idealnie!"
+
+msgid "Fantastic job!"
+msgstr "Wspaniale!"
+
+msgid "Well done!"
+msgstr "Super!"
+
+msgid "Perfect! Level completed!"
+msgstr "Rewelacja! Poziom ukończony!"
+
+msgid "Perfect!"
+msgstr "Perfekcyjnie!"
+
+msgid "divided by"
+msgstr "podzielone przez"
+
+msgid "times"
+msgstr "razy"
+
+msgid "equals"
+msgstr "równa się"
+
+msgid "brush size"
+msgstr "rozmiar pędzla"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr "Dopasuj graficzne reprezentacje ułamków po prawej do tych po lewej"
+
+msgid ""
+"Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Dopasuj ułamki zwykłe i ich graficzne reprezentacje po prawej to tych po lewej"
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr "Dopasuj graficzne reprezentacje ułamków po prawej do ułamków zwykłych po lewej"
+
+msgid ""
+"Match fraction charts, fractions and decimal fractions on the right to their percentage "
+"representations"
+msgstr ""
+"Dopasuj graficzne reprezentacje ułamków, ułamki zwykłe i dziesiętne do procentów po "
+"lewej"
+
+msgid ""
+"Match charts to the ratios on the left. Ratios are expressed as ratio of coloured "
+"pieces to white pieces"
+msgstr ""
+"Dopasuj graficzne reprezentacje stosunku kolorowych części do białych do ich liczbowego "
+"zapisu po lewej"
+
+msgid "Shape Maker"
+msgstr "Tworzenie figur geometrycznych"
+
+msgid "Let's see what shapes you can draw"
+msgstr "Zobaczmy jakie kształty umiesz narysować"
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Figura do narysowania: %s"
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "o długości podstaw równej %d i %d, i wysokości równej %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr "o długości ścian równej %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr "o długości ścian równej %d i %d"
+
+#, python-format
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "o długości jednej z podstaw równej %d i wysokości równej %d"
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr "o długości podstawy równej %d i wysokości równej %d"
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr "o długości przyprostokątnych równej %d i %d"
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr "o długości obu przyprostokątnych równej %d"
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr "o długości przeciwprostokątnej równej %d"
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr "o długości jednej ze ścian równej %d i wysokości spadającej na nią równej %d"
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr "o promieniu o długości %d"
+
+msgid "Test yourself"
+msgstr "Sprawdź się"
+
+msgid "Clock"
+msgstr "Zegar"
+
+msgid "Learn to read the time"
+msgstr "Odczytaj czas"
+
+msgid "Learn to set the clock"
+msgstr "Ustaw właściwy czas na zegarze"
+
+msgid "Set the clock to:"
+msgstr "Ustaw zegar na godzinę:"
+
+msgid "Drag the clock hands to set the time"
+msgstr "Przeciągnij wskazówki by ustawić czas"
+
+msgid "What time is it?"
+msgstr "Która godzina?"
+
+msgid "Time"
+msgstr "Czas"
+
+msgid "Turn the clock hands and see what happens."
+msgstr "Pokręć wskazówkami i sprawdź co się stanie."
+
+msgid "Time in text version only"
+msgstr "Tym razem tylko zapis słowny"
+
+msgid "How clock works?"
+msgstr "Jak działa zegar?"
+
+msgid "Columnar addition"
+msgstr "Dodawanie pisemne"
+
+msgid "Columnar subtraction"
+msgstr "Odejmowanie pisemne"
+
+msgid "Long multiplication"
+msgstr "Mnożenie pisemne"
+
+msgid "Long division"
+msgstr "Dzielenie pisemne"
+
+msgid "Demonstration"
+msgstr "Samouczek"
+
+msgid "Do it yourself"
+msgstr "Zrób to sam"
+
+msgid "borrow 10"
+msgstr "pożyczamy 10"
+
+# in columnar addition, ie. in case of 4 + 8 you write 2 under the column and
+# carry 1
+msgid "carry"
+msgstr "przenosimy"
+
+msgid "Start >>"
+msgstr "Zacznij >>"
+
+msgid "Next example >>"
+msgstr "Następny przykład >>"
+
+msgid "Next step >>"
+msgstr "Następny krok >>"
+
+# used to show which digit of the result should be entered in a box, ie.
+# "enter 5")
+msgid "write "
+msgstr "wpisujemy "
+
+msgid "rewrite "
+msgstr "przepisujemy "
+
+msgid "remainder"
+msgstr "reszta"
+
+msgid "result"
+msgstr "wynik"
+
+msgid "Find solution"
+msgstr "Znajdź rozwiązanie"
+
+msgid "Find missing number"
+msgstr "Znajdź brakującą liczbe"
+
 msgid "numerator"
 msgstr "licznik"
 
@@ -1276,6 +921,9 @@ msgstr "Eksperymentuj z ułamkami"
 
 msgid "Experiment with decimal fractions"
 msgstr "Eksperymentuj z ułamkami dziesiętnymi"
+
+msgid "Ratio"
+msgstr "Proporcja"
 
 msgid "Experiment with ratios"
 msgstr "Eksperymentuj z proporcjami"
@@ -1319,32 +967,63 @@ msgstr "Porownywanie ułamków zwykłych"
 msgid "Reduce fractions"
 msgstr "Skracanie ułamków zwykłych"
 
-msgid "Extend fractions"
+msgid "Expand fractions"
 msgstr "Rozszerzanie ułamków zwykłych"
 
-msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
-msgstr "Aby skrócić ułamek, należy podzielić licznik i mianownik przez tę samą liczbę. Wybierz jedną z liczb między ułamkami by zobaczyć co się stanie. Jeśli jest tam tylko 1 to znaczy, że ułamka nie da się bardziej uprościć. Zmień ułamek na inny."
+msgid ""
+"To reduce a fraction divide the numerator and the denominator by one of their common "
+"factors which are displayed between the two fractions. Select one of them to see what "
+"happens. If 1 is the only common factor then the fraction can't be reduced any more - "
+"try choosing a different one."
+msgstr ""
+"Aby skrócić ułamek, należy podzielić licznik i mianownik przez tę samą liczbę. Wybierz "
+"jedną z liczb między ułamkami by zobaczyć co się stanie. Jeśli jest tam tylko 1 to "
+"znaczy, że ułamka nie da się bardziej uprościć. Zmień ułamek na inny."
 
-msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
-msgstr "Aby rozszerzyć ułamek, należy pomnożyć licznik i mianownik przez tę samą liczbę. Zmień liczbę w środku by zobaczyć co się stanie."
+msgid ""
+"To expand a fraction multiply the numerator and the denominator by the same number. "
+"Change the multiplicand to see what happens."
+msgstr ""
+"Aby rozszerzyć ułamek, należy pomnożyć licznik i mianownik przez tę samą liczbę. Zmień "
+"liczbę w środku by zobaczyć co się stanie."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr "Aby wprowadzić odpowiedź użyj strzałek, albo wpisz Twoją odpowiedź na klawiaturze."
+msgstr ""
+"Aby wprowadzić odpowiedź użyj strzałek, albo wpisz Twoją odpowiedź na klawiaturze."
 
 msgid "Use the arrows to change your answer."
 msgstr "Aby wprowadzić odpowiedź użyj strzałek."
 
-msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
-msgstr "Aby dodać dwa ułamki zwykłe o tym samym mianowniku należy dodać ich liczniki do siebie pozostawiając mianownik bez zmian. Potem należy uprościć ułamek jeśli to możliwe."
+msgid ""
+"To add two fractions with the same denominators add their numerators together and keep "
+"the denominator unchanged. Simplify the result if the numerator is greater than the "
+"denominator and reduce the fraction if possible."
+msgstr ""
+"Aby dodać dwa ułamki zwykłe o tym samym mianowniku należy dodać ich liczniki do siebie "
+"pozostawiając mianownik bez zmian. Potem należy uprościć ułamek jeśli to możliwe."
 
-msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
-msgstr "Aby odjąć jeden ułamek zwykły od drugiego o tym zamym mianowniku należy odjąć licznik drugiego ułamka od pierwszego, pozostawiając mianownik bez zmian. Potem należy uprościć ułamek jeśli to możliwe."
+msgid ""
+"To subtract one fraction from another one with the same denominator subtract numerators "
+"and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgstr ""
+"Aby odjąć jeden ułamek zwykły od drugiego o tym zamym mianowniku należy odjąć licznik "
+"drugiego ułamka od pierwszego, pozostawiając mianownik bez zmian. Potem należy uprościć "
+"ułamek jeśli to możliwe."
 
-msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
-msgstr "Aby pomnożyć dwa ułamki zwykłe przez siebie należy pomnożyć liczniki obu ułamków przez siebie, a także pomnożyć mianowniki obu ułamków przez siebie, a następnie uprościć wynik jeśli to możliwe."
+msgid ""
+"To multiply two fractions multiply the numerators together and then multiply the "
+"denominators together. Reduce the resulting fraction if possible."
+msgstr ""
+"Aby pomnożyć dwa ułamki zwykłe przez siebie należy pomnożyć liczniki obu ułamków przez "
+"siebie, a także pomnożyć mianowniki obu ułamków przez siebie, a następnie uprościć "
+"wynik jeśli to możliwe."
 
-msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
-msgstr "Aby podzielić jeden ułamek zwykły przez drugi należy pierwszy ułamek pomnożyć przez odwrotność drugiego."
+msgid ""
+"To divide a fraction by another fraction multiply the first fraction by the second "
+"fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgstr ""
+"Aby podzielić jeden ułamek zwykły przez drugi należy pierwszy ułamek pomnożyć przez "
+"odwrotność drugiego."
 
 msgid "Group fractions together"
 msgstr "Pogrupuj ułamki"
@@ -1354,12 +1033,6 @@ msgstr "Pogrupuj procenty"
 
 msgid "Group ratios together"
 msgstr "Pogrupuj proporcje"
-
-msgid "eduActiv8 update is available. Current version: %s. New version: %s."
-msgstr "Aktualizacja eduActiv8 jest dostępna. Obecna wersja: %s, Nowa wersja: %s."
-
-msgid "check for updates on start"
-msgstr "sprawdź dostępność aktualizacji programu przy starcie"
 
 msgid "Symmetry"
 msgstr "Symetria"
@@ -1373,8 +1046,12 @@ msgstr "Kształty w odbiciu lustrzanym"
 msgid "Reflect a shape in a mirror line"
 msgstr "Figury symetryczne względem prostej"
 
-msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
-msgstr "Narysuj figurę, która będzie odbiciem lustrzanym figury widocznej na ekranie. Czerwona linja jest osią symetrii."
+msgid ""
+"Draw a shape that is a reflection of the one already displayed. The red line is the "
+"mirror line."
+msgstr ""
+"Narysuj figurę, która będzie odbiciem lustrzanym figury widocznej na ekranie. Czerwona "
+"linja jest osią symetrii."
 
 msgid "Symmetrical shapes - missing half"
 msgstr "Figury symetryczne - brakująca połowa"
@@ -1385,8 +1062,12 @@ msgstr "Narysuj drugą połowę figury"
 msgid "Find lines of symmetry"
 msgstr "Znajdź wszystkie osie symetrii"
 
-msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
-msgstr "Znajdź i zaznacz wszystkie osie symetrii wyświetlonych figur. Kliknij na strzałki znajdujące się wkoło rysunku by je zaznaczyć."
+msgid ""
+"Find and select all lines of symmetry for a displayed shape. Click on the arrows around "
+"the drawing area to select them."
+msgstr ""
+"Znajdź i zaznacz wszystkie osie symetrii wyświetlonych figur. Kliknij na strzałki "
+"znajdujące się wkoło rysunku by je zaznaczyć."
 
 msgid "Match equivalent fractions"
 msgstr "Dopasuj ułamki równoważne"
@@ -1460,9 +1141,6 @@ msgstr "Spraw aby ta gra wyglądała tak jak chcesz"
 msgid "Reset colors back to the default ones?"
 msgstr "Przeywróć domyślne kolory"
 
-msgid "Font Preferences"
-msgstr "Ustawienia czcionki"
-
 msgid "With simplifying"
 msgstr "Ze skracaniem"
 
@@ -1484,8 +1162,314 @@ msgstr "Dodawanie ułamków o różnych mianownikach"
 msgid "Subtract fractions with unlike denominators"
 msgstr "Odejmowanie ułamków o różnych mianownikach"
 
-msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
-msgstr "Aby dodać lub odjąć dwa ułamki o różnch mianownikach należy najpierw znaleźć dwa równoważne ułamki które mają wspólny mianownik i dodać liczebniki do siebie, pozostawiając mianownik bez zmian. Znalezienie najmniejszej wspólnej wielokrotności mianowników ułatwi to zadanie."
+msgid ""
+"To add or subtract fractions when their denominators are not the same you have to find "
+"equivalent fractions which do have a common denominator. Finding the least common "
+"multiple of the two denominators will help you with that."
+msgstr ""
+"Aby dodać lub odjąć dwa ułamki o różnch mianownikach należy najpierw znaleźć dwa "
+"równoważne ułamki które mają wspólny mianownik i dodać liczebniki do siebie, "
+"pozostawiając mianownik bez zmian. Znalezienie najmniejszej wspólnej wielokrotności "
+"mianowników ułatwi to zadanie."
 
-msgid "Learn new words"
-msgstr "Poznaj nowe słowa"
+# used for the 2 ways of telling time in Russian and Serbian translations only
+msgid "long form"
+msgstr "długa forma"
+
+# used for the 2 ways of telling time used in Russian and Serbian translations only
+msgid "short form"
+msgstr "krótka forma"
+
+msgid "white"
+msgstr "biały"
+
+msgid "black"
+msgstr "czarny"
+
+msgid "grey"
+msgstr "szary"
+
+msgid "red"
+msgstr "czerwony"
+
+msgid "orange [color]"
+msgstr "pomarańczowy"
+
+msgid "yellow"
+msgstr "żółty"
+
+msgid "olive"
+msgstr "oliwkowy"
+
+msgid "green"
+msgstr "zielony"
+
+msgid "sea green"
+msgstr "morska zieleń"
+
+msgid "teal"
+msgstr "morski"
+
+msgid "blue"
+msgstr "niebieski"
+
+msgid "navy"
+msgstr "granatowy"
+
+msgid "purple"
+msgstr "purpurowy"
+
+msgid "violet"
+msgstr "fioletowy"
+
+msgid "magenta"
+msgstr "fuksja"
+
+msgid "indigo"
+msgstr "indygo"
+
+msgid "pink"
+msgstr "różowy"
+
+msgid "maroon"
+msgstr "bordowy"
+
+msgid "brown"
+msgstr "brązowy"
+
+msgid "aqua"
+msgstr "aqua"
+
+msgid "lime"
+msgstr "limetkowy"
+
+msgid "Equilateral Triangle"
+msgstr "Trójkąt równoboczny"
+
+msgid "Isosceles Triangle"
+msgstr "Trójkąt równoramienny"
+
+msgid "Obtuse Triangle"
+msgstr "Trójkąt rozwartokątny"
+
+msgid "Right Triangle"
+msgstr "Trójkąt prostokątny"
+
+msgid "Acute Triangle"
+msgstr "Trójkąt ostrokątny"
+
+msgid "Square"
+msgstr "Kwadrat"
+
+msgid "Rectangle"
+msgstr "Prostokąt"
+
+msgid "Right Trapezium"
+msgstr "Trapez prostokątny"
+
+msgid "Isosceles Trapezium"
+msgstr "Trapez równoramienny"
+
+msgid "Rhombus"
+msgstr "Romb"
+
+msgid "Parallelogram"
+msgstr "Równoległobok"
+
+msgid "Pentagon"
+msgstr "Pięciokąt"
+
+msgid "Hexagon"
+msgstr "Sześciokąt"
+
+msgid "Heptagon"
+msgstr "Siedmiokąt"
+
+msgid "Octagon"
+msgstr "Ośmiokąt"
+
+msgid "Circle"
+msgstr "Koło"
+
+msgid "Ellipse"
+msgstr "Elipsa"
+
+msgid "Cube"
+msgstr "Sześcian"
+
+msgid "Square Prism"
+msgstr "Prostopadłościan"
+
+msgid "Triangular Prism"
+msgstr "Graniastosłup prawidłowy trójkątny"
+
+msgid "Square Pyramid"
+msgstr "Ostrosłup prawidłowy czworokątny"
+
+msgid "Triangular Pyramid"
+msgstr "Ostrosłup prawidłowy trójkątny"
+
+msgid "Sphere"
+msgstr "Kula"
+
+msgid "Cylinder"
+msgstr "Walec"
+
+msgid "Cone"
+msgstr "Stożek"
+
+msgid "Torus"
+msgstr "Torus"
+
+msgid "Quadrilateral"
+msgstr "Czworokąt"
+
+msgid "Trapezium"
+msgstr "Trapez"
+
+msgid "Triangle"
+msgstr "Trójkąt"
+
+# used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all
+# points on one line
+msgid "Ouch... squished quadrilateral"
+msgstr "Nieco przymiażdżony czworokąt"
+
+msgid "Right isosceles triangle"
+msgstr "Trójkąt prostokątny równoramienny"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Trójkąt rozwartokątny równoramienny"
+
+msgid "Acute isosceles triangle"
+msgstr "Trójkąt ostrokątny równoramienny"
+
+# used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on
+# one line
+msgid "Ouch... squished triangle"
+msgstr "Nieco przymieżdżony trójkąt"
+
+# used to label a drawn "quadrilateral" with one of its angles equal to 180º -
+# in effect making it look like triangle
+msgid "Triangle? Well, not really..."
+msgstr "Trójkąt? Niezupełnie..."
+
+msgid "area:"
+msgstr "powierzchnia:"
+
+msgid "perimeter:"
+msgstr "obwód:"
+
+msgid "circumference:"
+msgstr "obwód:"
+
+msgid "surface area:"
+msgstr "powierzchnia:"
+
+msgid "volume:"
+msgstr "objętość:"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "zielone jabłko"
+msgstr[1] "zielone jabłka"
+msgstr[2] "zielonych jabłek"
+msgstr[3] "zielonych jabłek"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "czerwone jabłko"
+msgstr[1] "czerwone jabłka"
+msgstr[2] "czerwonych jabłek"
+msgstr[3] "czerwonych jabłek"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "truskawka"
+msgstr[1] "truskawki"
+msgstr[2] "truskawek"
+msgstr[3] "truskawek"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "gruszka"
+msgstr[1] "gruszki"
+msgstr[2] "gruszek"
+msgstr[3] "gruszek"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] "pomarańcza"
+msgstr[1] "pomarańcze"
+msgstr[2] "pomarańczy"
+msgstr[3] "pomarańczy"
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "cebula"
+msgstr[1] "cebule"
+msgstr[2] "cebul"
+msgstr[3] "cebul"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "pomidor"
+msgstr[1] "pomidory"
+msgstr[2] "pomidorów"
+msgstr[3] "pomidorów"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "cytryna"
+msgstr[1] "cytryny"
+msgstr[2] "cytryn"
+msgstr[3] "cytryn"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "wiśnia"
+msgstr[1] "wiśnie"
+msgstr[2] "wiśni"
+msgstr[3] "wiśni"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "papryka"
+msgstr[1] "papryki"
+msgstr[2] "papryk"
+msgstr[3] "papryk"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "marchewka"
+msgstr[1] "marchewki"
+msgstr[2] "marchewek"
+msgstr[3] "marchewek"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "banan"
+msgstr[1] "banany"
+msgstr[2] "bananów"
+msgstr[3] "bananów"
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "arbuz"
+msgstr[1] "arbuzy"
+msgstr[2] "arbuzów"
+msgstr[3] "arbuzów"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "godzina"
+msgstr[1] "godziny"
+msgstr[2] "godzin"
+msgstr[3] "godzin"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minuta"
+msgstr[1] "minuty"
+msgstr[2] "minut"
+msgstr[3] "minut"

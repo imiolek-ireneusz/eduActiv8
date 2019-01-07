@@ -1,192 +1,66 @@
 # eduActiv8 - Educational Activity Pack - translation file.
-# Copyright (C) 2012 - 2018 Ireneusz Imiolek
+# Copyright (C) 2012 - 2019 Ireneusz Imiolek
 # This file is distributed under the same license as the eduactiv8 package.
-#
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2014.
-# Yuri Chornoivan <yurchor@ukr.net>, 2014.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+# 
+# Translators:
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2018-12-12 14:36+0000\n"
-"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
-"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
-"Language: uk\n"
+"PO-Revision-Date: 2019-01-04 22:25+0000\n"
+"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
+"Language-Team: Ukrainian (https://www.transifex.com/eduactiv8/teams/94947/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-msgid "green apple"
-msgid_plural "green apples"
-msgstr[0] "зелені яблука"
-msgstr[1] "зелені яблука"
-msgstr[2] "зелені яблука"
-msgstr[3] "зелене яблуко"
+# Translated by Yuri Chornoivan (Юрій Чорноіван)
 
-msgid "red apple"
-msgid_plural "red apples"
-msgstr[0] "червоні яблука"
-msgstr[1] "червоні яблука"
-msgstr[2] "червоні яблука"
-msgstr[3] "червоне яблуко"
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+msgstr ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Звукові дані надіслано різними авторами, які працювали на freesound.org. \n"
+" Зображення створено різними авторами, які розміщували їх на openclipart.org (громадське використання) та http://www.art4apps.org/ - Art4Apps від Smart4Kids - за умов дотримання Creative Commons License (CC BY-SA). \n"
+" Будь ласка, ознайомтеся із вмістом файла credits.txt, щоб дізнатися більше про авторів мультимедійних файлів, використаних у межах цього проекту."
 
-msgid "strawberry"
-msgid_plural "strawberries"
-msgstr[0] "суниці"
-msgstr[1] "суниці"
-msgstr[2] "суниці"
-msgstr[3] "суниця"
+msgid ""
+"This program is free software: you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation, either version 3 of the License, or (at your option) "
+"any later version. You should have received a copy of the GNU General Public"
+" License along with this program. If not, see "
+"<http://www.gnu.org/licenses/>."
+msgstr ""
+"This program is free software: you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation, either version 3 of the License, or (at your option) "
+"any later version. You should have received a copy of the GNU General Public"
+" License along with this program. If not, see "
+"<http://www.gnu.org/licenses/>."
 
-msgid "pear"
-msgid_plural "pears"
-msgstr[0] "груші"
-msgstr[1] "груші"
-msgstr[2] "груші"
-msgstr[3] "груша"
+msgid "A collection of educational activities for kids"
+msgstr "Невеличкий набір освітніх програм для малят"
 
-msgid "orange"
-msgid_plural "oranges"
-msgstr[0] "апельсини"
-msgstr[1] "апельсини"
-msgstr[2] "апельсини"
-msgstr[3] "апельсин"
-
-msgid "onion"
-msgid_plural "onions"
-msgstr[0] "цибулини"
-msgstr[1] "цибулини"
-msgstr[2] "цибулини"
-msgstr[3] "цибулина"
-
-msgid "tomato"
-msgid_plural "tomatoes"
-msgstr[0] "помідори"
-msgstr[1] "помідори"
-msgstr[2] "помідори"
-msgstr[3] "помідор"
-
-msgid "lemon"
-msgid_plural "lemons"
-msgstr[0] "лимони"
-msgstr[1] "лимони"
-msgstr[2] "лимони"
-msgstr[3] "лимон"
-
-msgid "cherry"
-msgid_plural "cherries"
-msgstr[0] "вишні"
-msgstr[1] "вишні"
-msgstr[2] "вишні"
-msgstr[3] "вишня"
-
-msgid "pepper"
-msgid_plural "peppers"
-msgstr[0] "перці"
-msgstr[1] "перці"
-msgstr[2] "перці"
-msgstr[3] "перець"
-
-msgid "carrot"
-msgid_plural "carrots"
-msgstr[0] "морквини"
-msgstr[1] "морквини"
-msgstr[2] "морквини"
-msgstr[3] "морквина"
-
-msgid "banana"
-msgid_plural "bananas"
-msgstr[0] "банани"
-msgstr[1] "банани"
-msgstr[2] "банани"
-msgstr[3] "банан"
-
-msgid "watermelon"
-msgid_plural "watermelons"
-msgstr[0] "дині"
-msgstr[1] "дині"
-msgstr[2] "дині"
-msgstr[3] "диня"
-
-msgid "Equilateral Triangle"
-msgstr "Рівносторонній трикутник"
-
-msgid "Isosceles Triangle"
-msgstr "Рівнобедрений трикутник"
-
-msgid "Obtuse Triangle"
-msgstr "Тупокутний трикутник"
-
-msgid "Right Triangle"
-msgstr "Прямокутний трикутник"
-
-msgid "Acute Triangle"
-msgstr "Гострокутний трикутник"
-
-msgid "Square"
-msgstr "Квадрат"
-
-msgid "Rectangle"
-msgstr "Прямокутник"
-
-msgid "Right Trapezium"
-msgstr "Прямокутна трапеція"
-
-msgid "Isosceles Trapezium"
-msgstr "Рівнобедрена трапеція"
-
-msgid "Rhombus"
-msgstr "Ромб"
-
-msgid "Parallelogram"
-msgstr "Паралелограм"
-
-msgid "Pentagon"
-msgstr "П’ятикутник"
-
-msgid "Hexagon"
-msgstr "Шестикутник"
-
-msgid "Heptagon"
+msgid "Educational Activities for Kids"
 msgstr ""
 
-msgid "Octagon"
+msgid ""
+"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
+"Commons License (CC BY-SA)"
 msgstr ""
-
-msgid "Circle"
-msgstr "Коло"
-
-msgid "Ellipse"
-msgstr "Еліпс"
-
-msgid "Cube"
-msgstr "Куб"
-
-msgid "Square Prism"
-msgstr "Квадратна призма"
-
-msgid "Triangular Prism"
-msgstr "Трикутна призма"
-
-msgid "Square Pyramid"
-msgstr "Квадратна піраміда"
-
-msgid "Triangular Pyramid"
-msgstr "Трикутна піраміда"
-
-msgid "Sphere"
-msgstr "Куля"
-
-msgid "Cylinder"
-msgstr "Циліндр"
-
-msgid "Cone"
-msgstr "Конус"
-
-msgid "Torus"
-msgstr "Тор"
+"Джерело зображень: http://www.art4apps.org/ - Art4Apps від Smart4Kids - "
+"Creative Commons License (CC BY-SA)"
 
 msgid "Default Language:"
 msgstr "Типова мова:"
@@ -249,8 +123,8 @@ msgstr "перемикатися у повноекранний режим піс
 msgid "allow adding new users on login screen"
 msgstr "дозволити додавання записів користувачів у вікні входу"
 
-msgid "display languages with uncompleted translations"
-msgstr "показувати мови з неповними перекладами"
+msgid "User Name"
+msgstr "Ім’я користувача"
 
 msgid "require password to log in"
 msgstr "вимагати пароль для входу"
@@ -305,7 +179,8 @@ msgid "%s added"
 msgstr "%s додано"
 
 msgid "This user name already exists, please choose a different one"
-msgstr "Запис користувача з таким іменем вже існує. Будь ласка, виберіть інше ім’я."
+msgstr ""
+"Запис користувача з таким іменем вже існує. Будь ласка, виберіть інше ім’я."
 
 msgid "Admin's password has been updated"
 msgstr "Пароль адміністратора було оновлено"
@@ -331,17 +206,54 @@ msgstr "Останній вхід:"
 msgid "Preferences saved..."
 msgstr "Налаштування збережено…"
 
-msgid "Score: "
-msgstr "Рахунок: "
-
 msgid "Logged in as: "
 msgstr "Вхід до системи від імені: "
 
 msgid "(Log out)"
 msgstr "(Вийти)"
 
-msgid "Addition Table"
-msgstr "Таблиця додавання"
+msgid "remember me"
+msgstr "запам’ятати мене"
+
+msgid "Select age group:"
+msgstr "Виберіть вікову групу:"
+
+msgid "show activities for:"
+msgstr "показ завдань для:"
+
+msgid "preschool"
+msgstr "Дошкільнят"
+
+msgid "Year 1"
+msgstr "Перший клас"
+
+msgid "Year 2"
+msgstr "Другий клас"
+
+msgid "Year 3"
+msgstr "Третій клас"
+
+msgid "Year 4"
+msgstr "Четвертий клас"
+
+msgid "Year 5"
+msgstr "П’ятий клас"
+
+msgid "Year 6"
+msgstr "Шостий клас"
+
+msgid "show all"
+msgstr "Показати усі"
+
+msgid "Do you want to log out of the game?"
+msgstr "Хочете вийти з облікового запису у грі?"
+
+msgid "Do you want to exit the game?"
+msgstr "Хочете вийти з гри?"
+
+# alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
+msgid "Ready to go to the next level?"
+msgstr "Готові до наступного рівня?"
 
 msgid "Hello"
 msgstr "Вітаємо"
@@ -349,17 +261,23 @@ msgstr "Вітаємо"
 msgid "Welcome back in the game."
 msgstr "Ласкаво просимо до гри."
 
+msgid "Licence"
+msgstr "Умови ліцензування"
+
+msgid "Copyright & Credits"
+msgstr "Авторські права та подяки"
+
+msgid "Translators"
+msgstr "Перекладачі"
+
 msgid "Language"
 msgstr "Мова"
 
 msgid "Translations"
 msgstr "Переклади"
 
-msgid "Info & Settings"
-msgstr "Інформація і параметри"
-
-msgid "Keyboard & Mouse"
-msgstr "Клавіатура і миша"
+msgid "Addition Table"
+msgstr "Таблиця додавання"
 
 msgid "Discover Letters"
 msgstr "Вивчення літер"
@@ -370,18 +288,6 @@ msgstr "Вивчення нових слів"
 msgid "Mathematics"
 msgstr "Математика"
 
-msgid "Numbers & Basic Operations"
-msgstr "Числа і основні дії з ними"
-
-msgid "Basic Operations - Exercises"
-msgstr "Основні дії: вправи"
-
-msgid "Sorting and Comparing"
-msgstr "Упорядковування і порівняння"
-
-msgid "Geometry and Shape Recognition"
-msgstr "Геометрія і розпізнавання форм"
-
 msgid "Art and Colour"
 msgstr "Малювання і колір"
 
@@ -390,18 +296,6 @@ msgstr "Пам’ять"
 
 msgid "Games & Mazes"
 msgstr "Ігри та головоломки"
-
-msgid "Multiplayer Games"
-msgstr "Ігри для декількох гравців"
-
-msgid "About."
-msgstr "Про програму."
-
-msgid "Game info..."
-msgstr "Дані щодо гри…"
-
-msgid "Copyright & Credits"
-msgstr "Авторські права та подяки"
 
 msgid "Letters"
 msgstr "Літери"
@@ -417,12 +311,6 @@ msgstr "Обведіть літери та цифри"
 
 msgid "Complete the ABC"
 msgstr "Доповніть абетку"
-
-msgid "English"
-msgstr "Англійська"
-
-msgid "Your language"
-msgstr "Українська"
 
 msgid "Sorting Letters"
 msgstr "Упорядковування літер"
@@ -445,8 +333,27 @@ msgstr "Зберіть усі літери у правильному поряд�
 msgid "Word Maze + 4"
 msgstr "Лабіринт зі слів + 4"
 
+msgid "Rainbow Keyboard"
+msgstr "Райдужна клавіатура"
+
+msgid "Touch Typing Tutor"
+msgstr "Навчання комп’ютерного набору"
+
+msgid "English Alphabet"
+msgstr "Англійська абетка"
+
+# Replace "Your" with your language, ie. translation of French Alphabet
+msgid "Your Alphabet"
+msgstr "Українська абетка"
+
 msgid "Numbers"
 msgstr "Числа"
+
+msgid "Number Spelling"
+msgstr "Напишіть цифри словами"
+
+msgid "Match numbers to their spelling"
+msgstr "Встановіть відповідність між числами та їхнім записом"
 
 msgid "Learn Numbers with Flashcards"
 msgstr "Вивчіть числа за картками"
@@ -493,14 +400,17 @@ msgstr "Додавання та віднімання"
 msgid "Comparison"
 msgstr "Порівняння"
 
-msgid "Fractions"
-msgstr "Дроби"
-
-msgid "Decimal Fractions"
-msgstr "Десяткові дроби"
-
 msgid "Even or Odd"
 msgstr "Парне чи непарне"
+
+msgid "Even"
+msgstr "Парні"
+
+msgid "Odd"
+msgstr "Непарні"
+
+msgid "Shapes and Solids"
+msgstr "Форми і тіла"
 
 msgid "Shapes"
 msgstr "Форми"
@@ -513,6 +423,12 @@ msgstr "Геометричні тіла"
 
 msgid "Solid Geometry with Flashcards"
 msgstr "Просторова геометрія за картками"
+
+msgid "Time Matching"
+msgstr "Відповідність часу"
+
+msgid "Complete the word"
+msgstr "Завершіть слово"
 
 msgid "Shape Matching"
 msgstr "Порівняння фігур"
@@ -541,9 +457,6 @@ msgstr "Зорова пам’ять"
 msgid "Training"
 msgstr "Навчання"
 
-msgid "Automatic Levels"
-msgstr "Автоматичні рівні"
-
 msgid "Mouse Maze"
 msgstr "Головоломка з мишею"
 
@@ -567,189 +480,6 @@ msgstr "П’ятнадцять"
 
 msgid "With a Twist"
 msgstr "З завихренням"
-
-msgid "Drag the slider up or down so that the right sign is in the red square."
-msgstr "Перетягніть повзунок вгору або вниз так, щоб у червоному прямокутнику опинився правильний знак."
-
-msgid "Take your sheep to the rest of the herd."
-msgstr "Проведіть вівцю до решти отари."
-
-msgid "Check the shopping list and drag all needed items into the basket."
-msgstr "Ознайомтеся зі списком закупівель і перетягніть усі потрібні записи до кошика."
-
-msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
-msgstr "Перетягніть один зі знаків < («менше»), > («більше») або = («дорівнює») до червоного прямокутника."
-
-msgid "Drag one of the lesser, greater or equal to the red square."
-msgstr "Перетягніть один зі знаків «менше», «більше» або «дорівнює» до червоного прямокутника."
-
-msgid "Rearrange the numbers so they are in the right order."
-msgstr "Упорядкуйте наведені вище числа належним чином."
-
-msgid "Complete the abc using the letters above."
-msgstr "Заповніть абетку за допомогою наведених вище літер."
-
-msgid "Write a word:"
-msgstr "Напишіть слово:"
-
-msgid "Build the following word using the letters below."
-msgstr "Побудуйте вказане слово за допомогою наведених нижче літер."
-
-msgid "Find and separate even numbers from odd numbers."
-msgstr "Знайдіть і відокремте парні числа від непарних у наведеній вище послідовності."
-
-msgid "Rearrange the letters so they are in the alphabetical order."
-msgstr "Упорядкуйте наведені вище літери у порядку за абеткою."
-
-msgid "Rearrange the numbers so they are in the ascending order."
-msgstr "Упорядкуйте наведені вище числа за збільшенням."
-
-msgid "Please try again."
-msgstr "Будь ласка, повторіть спробу."
-
-msgid "Sorry! It is wrong."
-msgstr "Вибачте! Це неправильно."
-
-msgid "Perfect! Task solved!"
-msgstr "Відмінно! Завдання розв’язано!"
-
-msgid "You need to work a little bit harder next time."
-msgstr "Вам потрібно трохи попрацювати, щоб покращити результати."
-
-msgid "Game Over!"
-msgstr "Гру завершено!"
-
-msgid "Congratulations! You have completed all tasks in this game."
-msgstr "Вітаємо! Вами завершено усі завдання цієї гри."
-
-msgid "Great job!"
-msgstr "Чудова робота!"
-
-msgid "Perfect!!!"
-msgstr "Відмінно!"
-
-msgid "Awesome!"
-msgstr "Чудово!"
-
-msgid "Fantastic job!"
-msgstr "Гарна робота!"
-
-msgid "Well done!"
-msgstr "Молодець!"
-
-msgid "Perfect! Level completed!"
-msgstr "Відмінно! Рівень пройдено!"
-
-msgid "area:"
-msgstr "площа:"
-
-msgid "perimeter:"
-msgstr "периметр:"
-
-msgid "circumference:"
-msgstr "довжина кола:"
-
-msgid "surface area:"
-msgstr "площа поверхні:"
-
-msgid "volume:"
-msgstr "об’єм:"
-
-msgid "Perfect!"
-msgstr "Відмінно!"
-
-msgid "divided by"
-msgstr "поділене на"
-
-msgid "times"
-msgstr "помножене на"
-
-msgid "equals"
-msgstr "дорівнює"
-
-msgid "Even"
-msgstr "Парні"
-
-msgid "Odd"
-msgstr "Непарні"
-
-msgid "white"
-msgstr "білий"
-
-msgid "black"
-msgstr "чорний"
-
-msgid "grey"
-msgstr "сірий"
-
-msgid "red"
-msgstr "червоний"
-
-msgid "orange [color]"
-msgstr "помаранчевий"
-
-msgid "yellow"
-msgstr "жовтий"
-
-msgid "olive"
-msgstr "оливковий"
-
-msgid "green"
-msgstr "зелений"
-
-msgid "sea green"
-msgstr "морський зелений"
-
-msgid "teal"
-msgstr "cиньо-зелений"
-
-msgid "blue"
-msgstr "синій"
-
-msgid "navy"
-msgstr "гранатовий"
-
-msgid "purple"
-msgstr "пурпуровий"
-
-msgid "violet"
-msgstr "фіалковий"
-
-msgid "magenta"
-msgstr "бузковий"
-
-msgid "indigo"
-msgstr "індиго"
-
-msgid "pink"
-msgstr "рожевий"
-
-msgid "maroon"
-msgstr "каштановий"
-
-msgid "brown"
-msgstr "брунатний"
-
-msgid "aqua"
-msgstr "аквамариновий"
-
-msgid "lime"
-msgstr "світло-зелений"
-
-msgid "Rainbow Keyboard"
-msgstr "Райдужна клавіатура"
-
-msgid "Touch Typing Tutor"
-msgstr "Навчання комп’ютерного набору"
-
-msgid "Translators"
-msgstr "Перекладачі"
-
-msgid "English Alphabet"
-msgstr "Англійська абетка"
-
-msgid "Your Alphabet"
-msgstr "Українська абетка"
 
 msgid "Mixing Colours for Painting"
 msgstr "Змішування кольорів для малювання"
@@ -778,32 +508,14 @@ msgstr "Виправте об’єм блакитного, бузкового т
 msgid "Adjust the intensity of red, green and blue light"
 msgstr "Виправте інтенсивність червоного, зеленого і синього кольорів"
 
-msgid "brush size"
-msgstr "розмір пензля"
-
-msgid "Noughts and Crosses 2"
-msgstr "Хрестики і нулики 2"
-
-msgid "Noughts and Crosses 3"
-msgstr "Хрестики і нулики 3"
-
-msgid "Get as many lines of 3 as possible to win"
-msgstr "Щоб виграти, створіть якомога більше ліній з трьох значків"
-
-msgid "Player"
-msgstr "Гравець"
-
-msgid "Won"
-msgstr "Перемога"
-
-msgid "Draw"
-msgstr "Нічия"
-
-msgid "User Name"
-msgstr "Ім’я користувача"
-
 msgid "Match Animals"
 msgstr "Відповідність тварин"
+
+msgid "Find all matching animals"
+msgstr "Знайдіть усіх відповідних тварин"
+
+msgid "Match animals to their shadows"
+msgstr "Встановлення відповідності тварин до їхніх тіней"
 
 msgid "Match Animals - Memory Game"
 msgstr "Відповідність тварин"
@@ -832,30 +544,6 @@ msgstr "Фрукти"
 msgid "Number Slider"
 msgstr "Цифри"
 
-msgid "Fraction Groups"
-msgstr "Звичайні дроби"
-
-msgid "Percentages"
-msgstr "Відсотки"
-
-msgid "Ratios"
-msgstr "Відношення"
-
-msgid "Match fraction charts on the right to the ones on the left"
-msgstr "Встановіть відповідність частин кола праворуч та дробів ліворуч"
-
-msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
-msgstr "Встановіть відповідність частин кола та дробів праворуч до частин кола ліворуч"
-
-msgid "Match fraction charts to the fractions on the left"
-msgstr "Встановіть відповідність частин кола до дробів ліворуч"
-
-msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
-msgstr "Встановіть відповідність частин кола, звичайних та десяткових дробів праворуч до відсоткового представлення"
-
-msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
-msgstr "Встановіть відповідність малюнків до відношень ліворуч. Відношення відповідають відношенню зафарбованої частини до білої."
-
 msgid "Maths Matching Game"
 msgstr "Математична гра на встановлення відповідності"
 
@@ -868,360 +556,23 @@ msgstr "Віднімання"
 msgid "Multiplication"
 msgstr "Множення"
 
-msgid "Check for newer version, report bugs, discuss, translate or review this project at:"
-msgstr "Шукайте нові версії, повідомляйте про вади, обговорюйте, перекладайте та надсилайте відгуки щодо цього проекту тут:"
+msgid "Fractions"
+msgstr "Дроби"
 
-msgid "Match numbers to their spelling"
-msgstr "Встановіть відповідність між числами та їхнім записом"
+msgid "Decimal Fractions"
+msgstr "Десяткові дроби"
 
-msgid "Number Spelling"
-msgstr "Напишіть цифри словами"
+msgid "Percentages"
+msgstr "Відсотки"
 
-msgid "Find all matching animals"
-msgstr "Знайдіть усіх відповідних тварин"
+msgid "Ratios"
+msgstr "Відношення"
 
-msgid "Match animals to their shadows"
-msgstr "Встановлення відповідності тварин до їхніх тіней"
-
-msgid "Shape Maker"
-msgstr "Створення фігур"
-
-#, python-format
-msgid "Shape to draw: %s"
-msgstr "Фігура для малювання: %s"
-
-#, python-format
-msgid "such that lengths of its bases are equal to %d and %d and height to %d"
-msgstr "так, щоб довжини основ дорівнювали %d та %d, а висота дорівнювала %d"
-
-#, python-format
-msgid "such that lengths of its sides are equal to %d"
-msgstr "так, щоб довжини сторін дорівнювали %d"
-
-#, python-format
-msgid "such that lengths of its sides are equal to %d and %d"
-msgstr "так, щоб довжини сторін дорівнювали %d та %d"
-
-#, python-format
-msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
-msgstr "так, щоб довжини основ дорівнювали %d, а висота дорівнювала %d"
-
-#, python-format
-msgid "such that length of its base is equal to %d and height to %d"
-msgstr "так, щоб довжина основи дорівнювала %d, а довжина висоти дорівнювала %d"
-
-#, python-format
-msgid "such that lengths of its catheti are equal to %d and %d"
-msgstr "так, що довжини катетів дорівнювали %d та %d"
-
-#, python-format
-msgid "such that lengths of both of its catheti are equal to %d"
-msgstr "так, щоб довжини обох катетів дорівнювали %d"
-
-#, python-format
-msgid "such that length of its hypotenuse is equal to %d"
-msgstr "так, щоб довжина гіпотенузи дорівнювала %d"
-
-#, python-format
-msgid "such that length of one of its sides is equal to %d and height to %d"
-msgstr "так, щоб довжина однієї сторони дорівнювала %d, а довжина висоти дорівнювала %d"
-
-#, python-format
-msgid "such that length of its radius is equal to %d"
-msgstr "так, щоб довжина радіуса дорівнювала %d"
-
-msgid "Quadrilateral"
-msgstr "Чотирикутник"
-
-msgid "Trapezium"
-msgstr "Трапеція"
-
-msgid "Trapezium "
-msgstr "Трапеція "
-
-msgid "Triangle"
-msgstr "Трикутник"
-
-msgid "Ouch... squished quadrilateral"
-msgstr "О… Стиснутий чотирикутник"
-
-msgid "Right isosceles triangle"
-msgstr "Прямокутний рівнобедрений трикутник"
-
-msgid "Obtuse isosceles triangle"
-msgstr "Тупокутний рівнобедрений трикутник"
-
-msgid "Acute isosceles triangle"
-msgstr "Гострокутний рівнобедрений трикутник"
-
-msgid "Ouch... squished triangle"
-msgstr "О… Стиснутий трикутник"
-
-msgid "Triangle? Well, not really..."
-msgstr "Трикутник? Щось не дуже схоже…"
-
-msgid "Test yourself"
-msgstr "Перевірте себе"
-
-msgid "Clock"
-msgstr "Годинник"
-
-msgid "Learn to read the time"
-msgstr "навчіться читати час"
-
-msgid "Learn to set the clock"
-msgstr "Навчіться встановлювати час на годиннику"
-
-msgid "Set the clock to:"
-msgstr "Установіть такий час:"
-
-msgid "Drag the clock hands to set the time"
-msgstr "Перетягніть стрілки годинника, щоб встановити час"
-
-msgid "What time is it?"
-msgstr "Котра година?"
-
-msgid "Click again to exit"
-msgstr "Клацніть ще раз, щоб вийти"
+msgid "Fraction Groups"
+msgstr "Звичайні дроби"
 
 msgid "Type your answer and hit enter"
 msgstr "Введіть вашу відповідь і натисніть клавішу Enter"
-
-msgid "Time"
-msgstr "Час"
-
-msgid "Turn the clock hands and see what happens."
-msgstr "Поверніть стрілки годинника і подивіться на те, що станеться."
-
-msgid "Let's see what shapes you can draw"
-msgstr "Поглянемо, які фігури ви вмієте малювати"
-
-msgid "Time in text version only"
-msgstr "Час лише у текстовому форматі"
-
-msgid "How clock works?"
-msgstr "Як працює годинник?"
-
-msgid "Columnar addition"
-msgstr "Додавання у стовпчик"
-
-msgid "Columnar subtraction"
-msgstr "Віднімання у стовпчик"
-
-msgid "Long multiplication"
-msgstr "Довге множення"
-
-msgid "Long division"
-msgstr "Довге ділення"
-
-msgid "borrow 10"
-msgstr "відняти 10"
-
-msgid "carry"
-msgstr "перенести"
-
-msgid "Start >>"
-msgstr "Почати >>"
-
-msgid "Next example >>"
-msgstr "Наступний приклад >>"
-
-msgid "Next step >>"
-msgstr "Наступний крок >>"
-
-msgid "write "
-msgstr "написати "
-
-msgid "Demonstration"
-msgstr "Демонстрація"
-
-msgid "Do it yourself"
-msgstr "Зробіть самі"
-
-msgid "Ratio"
-msgstr "Відношення"
-
-msgid "Working with large numbers"
-msgstr "Робота з великими числами"
-
-msgid "rewrite "
-msgstr "переписати "
-
-msgid "remainder"
-msgstr "лишок"
-
-msgid "result"
-msgstr "результат"
-
-msgid "Time Matching"
-msgstr "Відповідність часу"
-
-msgid "Add some red"
-msgstr "Додати червоного"
-
-msgid "Add some green"
-msgstr "Додати зеленого"
-
-msgid "Add some blue"
-msgstr "Додати синього"
-
-msgid "Add some cyan"
-msgstr "Додати блакитного"
-
-msgid "Add some magenta"
-msgstr "Додати бузкового"
-
-msgid "Add some yellow"
-msgstr "Додати жовтого"
-
-msgid "Too much red"
-msgstr "Забагато червоного"
-
-msgid "Too much green"
-msgstr "Забагато зеленого"
-
-msgid "Too much blue"
-msgstr "Забагато синього"
-
-msgid "Too much cyan"
-msgstr "Забагато блакитного"
-
-msgid "Too much magenta"
-msgstr "Забагато бузкового"
-
-msgid "Too much yellow"
-msgstr "Забагато жовтого"
-
-msgid "red is spot on"
-msgstr "червоного достатньо"
-
-msgid "green is spot on"
-msgstr "зеленого достатньо"
-
-msgid "blue is spot on"
-msgstr "синього достатньо"
-
-msgid "cyan is spot on"
-msgstr "блакитного достатньо"
-
-msgid "magenta is spot on"
-msgstr "бузкового достатньо"
-
-msgid "yellow is spot on"
-msgstr "жовтого достатньо"
-
-msgid "remember me"
-msgstr "запам’ятати мене"
-
-msgid ""
-"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
-" Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
-" Please view credits.txt for more info about authors of media files used in this project"
-msgstr ""
-"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
-" Звукові дані надіслано різними авторами, які працювали на freesound.org. \n"
-" Зображення створено різними авторами, які розміщували їх на openclipart.org (громадське використання) та http://www.art4apps.org/ - Art4Apps від Smart4Kids - за умов дотримання Creative Commons License (CC BY-SA). \n"
-" Будь ласка, ознайомтеся із вмістом файла credits.txt, щоб дізнатися більше про авторів мультимедійних файлів, використаних у межах цього проекту."
-
-msgid "Licence"
-msgstr "Умови ліцензування"
-
-msgid ""
-"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General "
-"Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General "
-"Public License along with this program. If not, see <http://www.gnu.org/licenses/>."
-
-msgid "A collection of educational activities for kids"
-msgstr "Невеличкий набір освітніх програм для малят"
-
-msgid "Complete the word"
-msgstr "Завершіть слово"
-
-msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
-msgstr "Джерело зображень: http://www.art4apps.org/ - Art4Apps від Smart4Kids - Creative Commons License (CC BY-SA)"
-
-msgid "Decimals and Fractions"
-msgstr "Числа і дроби"
-
-msgid "Decimals, fractions and percentages"
-msgstr "Десяткові числа, дроби і відсотки"
-
-msgid "Decimals, fractions, ratios and percentages"
-msgstr "Десяткові числа, дроби, відношення і відсотки"
-
-msgid "Shapes and Solids"
-msgstr "Форми і тіла"
-
-msgid "Translation Credits"
-msgstr "Подяки перекладачам"
-
-msgid "Level"
-msgstr "Рівень"
-
-msgid "Find solution"
-msgstr "Знайдіть розв’язок"
-
-msgid "Find missing number"
-msgstr "Знайдіть пропущене число"
-
-msgid "Achievements"
-msgstr "Досягнення"
-
-msgid "Select age group:"
-msgstr "Виберіть вікову групу:"
-
-msgid "show activities for:"
-msgstr "показ завдань для:"
-
-msgid "preschool"
-msgstr "Дошкільнят"
-
-msgid "Year 1"
-msgstr "Перший клас"
-
-msgid "Year 2"
-msgstr "Другий клас"
-
-msgid "Year 3"
-msgstr "Третій клас"
-
-msgid "Year 4"
-msgstr "Четвертий клас"
-
-msgid "Year 5"
-msgstr "П’ятий клас"
-
-msgid "Year 6"
-msgstr "Шостий клас"
-
-msgid "show all"
-msgstr "Показати усі"
-
-msgid "Do you want to exit the game?"
-msgstr "Хочете вийти з гри?"
-
-msgid "Do you want to log out of the game?"
-msgstr "Хочете вийти з облікового запису у грі?"
-
-msgid "Ready to go to the next level?"
-msgstr "Готові до наступного рівня?"
-
-msgid "Language arts"
-msgstr "Українська мова"
-
-msgid "Other"
-msgstr "Інше"
-
-msgid "Educational Activities for Kids"
-msgstr ""
-
-msgid ""
-"You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \n"
-"http://espeak.sourceforge.net/"
-msgstr ""
 
 msgid "Decimals (Category)"
 msgstr "Десяткові числа"
@@ -1234,6 +585,9 @@ msgstr "Відношення"
 
 msgid "Percentages (Category)"
 msgstr "Відсотки"
+
+msgid "Learn new words"
+msgstr ""
 
 msgid "Word Builders"
 msgstr "Побудова слів"
@@ -1316,6 +670,262 @@ msgstr ""
 msgid "Negative numbers"
 msgstr ""
 
+msgid "Complete the alphabet using letters from the middle line."
+msgstr ""
+
+msgid ""
+"Drag the slider up or down so that the right sign is in the red square."
+msgstr ""
+"Перетягніть повзунок вгору або вниз так, щоб у червоному прямокутнику "
+"опинився правильний знак."
+
+msgid "Take your sheep to the rest of the herd."
+msgstr "Проведіть вівцю до решти отари."
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr ""
+"Ознайомтеся зі списком закупівель і перетягніть усі потрібні записи до "
+"кошика."
+
+msgid ""
+"Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr ""
+"Перетягніть один зі знаків < («менше»), > («більше») або = («дорівнює») до "
+"червоного прямокутника."
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr ""
+"Перетягніть один зі знаків «менше», «більше» або «дорівнює» до червоного "
+"прямокутника."
+
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Упорядкуйте наведені вище числа належним чином."
+
+msgid "Build the following word using the letters below."
+msgstr "Побудуйте вказане слово за допомогою наведених нижче літер."
+
+msgid "Find and separate even numbers from odd numbers."
+msgstr ""
+"Знайдіть і відокремте парні числа від непарних у наведеній вище "
+"послідовності."
+
+msgid "Rearrange the letters so they are in the alphabetical order."
+msgstr "Упорядкуйте наведені вище літери у порядку за абеткою."
+
+msgid "Rearrange the numbers so they are in the ascending order."
+msgstr "Упорядкуйте наведені вище числа за збільшенням."
+
+msgid "Perfect! Task solved!"
+msgstr "Відмінно! Завдання розв’язано!"
+
+msgid "Game Over!"
+msgstr "Гру завершено!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Вітаємо! Вами завершено усі завдання цієї гри."
+
+msgid "Great job!"
+msgstr "Чудова робота!"
+
+msgid "Perfect!!!"
+msgstr "Відмінно!"
+
+msgid "Awesome!"
+msgstr "Чудово!"
+
+msgid "Fantastic job!"
+msgstr "Гарна робота!"
+
+msgid "Well done!"
+msgstr "Молодець!"
+
+msgid "Perfect! Level completed!"
+msgstr "Відмінно! Рівень пройдено!"
+
+msgid "Perfect!"
+msgstr "Відмінно!"
+
+msgid "divided by"
+msgstr "поділене на"
+
+msgid "times"
+msgstr "помножене на"
+
+msgid "equals"
+msgstr "дорівнює"
+
+msgid "brush size"
+msgstr "розмір пензля"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr "Встановіть відповідність частин кола праворуч та дробів ліворуч"
+
+msgid ""
+"Match fraction charts and fractions on the right to the fraction charts on "
+"the left"
+msgstr ""
+"Встановіть відповідність частин кола та дробів праворуч до частин кола "
+"ліворуч"
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr "Встановіть відповідність частин кола до дробів ліворуч"
+
+msgid ""
+"Match fraction charts, fractions and decimal fractions on the right to their"
+" percentage representations"
+msgstr ""
+"Встановіть відповідність частин кола, звичайних та десяткових дробів "
+"праворуч до відсоткового представлення"
+
+msgid ""
+"Match charts to the ratios on the left. Ratios are expressed as ratio of "
+"coloured pieces to white pieces"
+msgstr ""
+"Встановіть відповідність малюнків до відношень ліворуч. Відношення "
+"відповідають відношенню зафарбованої частини до білої."
+
+msgid "Shape Maker"
+msgstr "Створення фігур"
+
+msgid "Let's see what shapes you can draw"
+msgstr "Поглянемо, які фігури ви вмієте малювати"
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Фігура для малювання: %s"
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "так, щоб довжини основ дорівнювали %d та %d, а висота дорівнювала %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr "так, щоб довжини сторін дорівнювали %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr "так, щоб довжини сторін дорівнювали %d та %d"
+
+#, python-format
+msgid ""
+"such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "так, щоб довжини основ дорівнювали %d, а висота дорівнювала %d"
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr ""
+"так, щоб довжина основи дорівнювала %d, а довжина висоти дорівнювала %d"
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr "так, що довжини катетів дорівнювали %d та %d"
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr "так, щоб довжини обох катетів дорівнювали %d"
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr "так, щоб довжина гіпотенузи дорівнювала %d"
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr ""
+"так, щоб довжина однієї сторони дорівнювала %d, а довжина висоти дорівнювала"
+" %d"
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr "так, щоб довжина радіуса дорівнювала %d"
+
+msgid "Test yourself"
+msgstr "Перевірте себе"
+
+msgid "Clock"
+msgstr "Годинник"
+
+msgid "Learn to read the time"
+msgstr "навчіться читати час"
+
+msgid "Learn to set the clock"
+msgstr "Навчіться встановлювати час на годиннику"
+
+msgid "Set the clock to:"
+msgstr "Установіть такий час:"
+
+msgid "Drag the clock hands to set the time"
+msgstr "Перетягніть стрілки годинника, щоб встановити час"
+
+msgid "What time is it?"
+msgstr "Котра година?"
+
+msgid "Time"
+msgstr "Час"
+
+msgid "Turn the clock hands and see what happens."
+msgstr "Поверніть стрілки годинника і подивіться на те, що станеться."
+
+msgid "Time in text version only"
+msgstr "Час лише у текстовому форматі"
+
+msgid "How clock works?"
+msgstr "Як працює годинник?"
+
+msgid "Columnar addition"
+msgstr "Додавання у стовпчик"
+
+msgid "Columnar subtraction"
+msgstr "Віднімання у стовпчик"
+
+msgid "Long multiplication"
+msgstr "Довге множення"
+
+msgid "Long division"
+msgstr "Довге ділення"
+
+msgid "Demonstration"
+msgstr "Демонстрація"
+
+msgid "Do it yourself"
+msgstr "Зробіть самі"
+
+msgid "borrow 10"
+msgstr "відняти 10"
+
+# in columnar addition, ie. in case of 4 + 8 you write 2 under the column and
+# carry 1
+msgid "carry"
+msgstr "перенести"
+
+msgid "Start >>"
+msgstr "Почати >>"
+
+msgid "Next example >>"
+msgstr "Наступний приклад >>"
+
+msgid "Next step >>"
+msgstr "Наступний крок >>"
+
+# used to show which digit of the result should be entered in a box, ie.
+# "enter 5")
+msgid "write "
+msgstr "написати "
+
+msgid "rewrite "
+msgstr "переписати "
+
+msgid "remainder"
+msgstr "лишок"
+
+msgid "result"
+msgstr "результат"
+
+msgid "Find solution"
+msgstr "Знайдіть розв’язок"
+
+msgid "Find missing number"
+msgstr "Знайдіть пропущене число"
+
 msgid "numerator"
 msgstr ""
 
@@ -1327,6 +937,9 @@ msgstr ""
 
 msgid "Experiment with decimal fractions"
 msgstr ""
+
+msgid "Ratio"
+msgstr "Відношення"
 
 msgid "Experiment with ratios"
 msgstr ""
@@ -1370,13 +983,19 @@ msgstr ""
 msgid "Reduce fractions"
 msgstr ""
 
-msgid "Extend fractions"
+msgid "Expand fractions"
 msgstr ""
 
-msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
+msgid ""
+"To reduce a fraction divide the numerator and the denominator by one of "
+"their common factors which are displayed between the two fractions. Select "
+"one of them to see what happens. If 1 is the only common factor then the "
+"fraction can't be reduced any more - try choosing a different one."
 msgstr ""
 
-msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid ""
+"To expand a fraction multiply the numerator and the denominator by the same "
+"number. Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1385,16 +1004,28 @@ msgstr ""
 msgid "Use the arrows to change your answer."
 msgstr ""
 
-msgid "To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgid ""
+"To add two fractions with the same denominators add their numerators "
+"together and keep the denominator unchanged. Simplify the result if the "
+"numerator is greater than the denominator and reduce the fraction if "
+"possible."
 msgstr ""
 
-msgid "To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction if possible."
+msgid ""
+"To subtract one fraction from another one with the same denominator subtract"
+" numerators and keep the denominator unchanged. Reduce the resulting "
+"fraction if possible."
 msgstr ""
 
-msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgid ""
+"To multiply two fractions multiply the numerators together and then multiply"
+" the denominators together. Reduce the resulting fraction if possible."
 msgstr ""
 
-msgid "To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+msgid ""
+"To divide a fraction by another fraction multiply the first fraction by the "
+"second fraction flipped up side down. Simplify and reduce the resulting "
+"fraction if possible."
 msgstr ""
 
 msgid "Group fractions together"
@@ -1404,12 +1035,6 @@ msgid "Group percentages together"
 msgstr ""
 
 msgid "Group ratios together"
-msgstr ""
-
-msgid "eduActiv8 update is available. Current version: %s. New version: %s."
-msgstr ""
-
-msgid "check for updates on start"
 msgstr ""
 
 msgid "Symmetry"
@@ -1424,7 +1049,9 @@ msgstr ""
 msgid "Reflect a shape in a mirror line"
 msgstr ""
 
-msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgid ""
+"Draw a shape that is a reflection of the one already displayed. The red line"
+" is the mirror line."
 msgstr ""
 
 msgid "Symmetrical shapes - missing half"
@@ -1436,7 +1063,9 @@ msgstr ""
 msgid "Find lines of symmetry"
 msgstr ""
 
-msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
+msgid ""
+"Find and select all lines of symmetry for a displayed shape. Click on the "
+"arrows around the drawing area to select them."
 msgstr ""
 
 msgid "Match equivalent fractions"
@@ -1456,20 +1085,6 @@ msgstr ""
 
 msgid "Percentages in a pie chart"
 msgstr ""
-
-msgid "hour"
-msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-
-msgid "minute"
-msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
 
 msgid "Find equivalent fraction"
 msgstr ""
@@ -1525,9 +1140,6 @@ msgstr ""
 msgid "Reset colors back to the default ones?"
 msgstr ""
 
-msgid "Font Preferences"
-msgstr ""
-
 msgid "With simplifying"
 msgstr ""
 
@@ -1549,8 +1161,312 @@ msgstr ""
 msgid "Subtract fractions with unlike denominators"
 msgstr ""
 
-msgid "To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
+msgid ""
+"To add or subtract fractions when their denominators are not the same you "
+"have to find equivalent fractions which do have a common denominator. "
+"Finding the least common multiple of the two denominators will help you with"
+" that."
 msgstr ""
 
-msgid "Learn new words"
+# used for the 2 ways of telling time in Russian and Serbian translations only
+msgid "long form"
 msgstr ""
+
+# used for the 2 ways of telling time used in Russian and Serbian translations
+# only
+msgid "short form"
+msgstr ""
+
+msgid "white"
+msgstr "білий"
+
+msgid "black"
+msgstr "чорний"
+
+msgid "grey"
+msgstr "сірий"
+
+msgid "red"
+msgstr "червоний"
+
+msgid "orange [color]"
+msgstr "помаранчевий"
+
+msgid "yellow"
+msgstr "жовтий"
+
+msgid "olive"
+msgstr "оливковий"
+
+msgid "green"
+msgstr "зелений"
+
+msgid "sea green"
+msgstr "морський зелений"
+
+msgid "teal"
+msgstr "cиньо-зелений"
+
+msgid "blue"
+msgstr "синій"
+
+msgid "navy"
+msgstr "гранатовий"
+
+msgid "purple"
+msgstr "пурпуровий"
+
+msgid "violet"
+msgstr "фіалковий"
+
+msgid "magenta"
+msgstr "бузковий"
+
+msgid "indigo"
+msgstr "індиго"
+
+msgid "pink"
+msgstr "рожевий"
+
+msgid "maroon"
+msgstr "каштановий"
+
+msgid "brown"
+msgstr "брунатний"
+
+msgid "aqua"
+msgstr "аквамариновий"
+
+msgid "lime"
+msgstr "світло-зелений"
+
+msgid "Equilateral Triangle"
+msgstr "Рівносторонній трикутник"
+
+msgid "Isosceles Triangle"
+msgstr "Рівнобедрений трикутник"
+
+msgid "Obtuse Triangle"
+msgstr "Тупокутний трикутник"
+
+msgid "Right Triangle"
+msgstr "Прямокутний трикутник"
+
+msgid "Acute Triangle"
+msgstr "Гострокутний трикутник"
+
+msgid "Square"
+msgstr "Квадрат"
+
+msgid "Rectangle"
+msgstr "Прямокутник"
+
+msgid "Right Trapezium"
+msgstr "Прямокутна трапеція"
+
+msgid "Isosceles Trapezium"
+msgstr "Рівнобедрена трапеція"
+
+msgid "Rhombus"
+msgstr "Ромб"
+
+msgid "Parallelogram"
+msgstr "Паралелограм"
+
+msgid "Pentagon"
+msgstr "П’ятикутник"
+
+msgid "Hexagon"
+msgstr "Шестикутник"
+
+msgid "Heptagon"
+msgstr ""
+
+msgid "Octagon"
+msgstr ""
+
+msgid "Circle"
+msgstr "Коло"
+
+msgid "Ellipse"
+msgstr "Еліпс"
+
+msgid "Cube"
+msgstr "Куб"
+
+msgid "Square Prism"
+msgstr "Квадратна призма"
+
+msgid "Triangular Prism"
+msgstr "Трикутна призма"
+
+msgid "Square Pyramid"
+msgstr "Квадратна піраміда"
+
+msgid "Triangular Pyramid"
+msgstr "Трикутна піраміда"
+
+msgid "Sphere"
+msgstr "Куля"
+
+msgid "Cylinder"
+msgstr "Циліндр"
+
+msgid "Cone"
+msgstr "Конус"
+
+msgid "Torus"
+msgstr "Тор"
+
+msgid "Quadrilateral"
+msgstr "Чотирикутник"
+
+msgid "Trapezium"
+msgstr "Трапеція"
+
+msgid "Triangle"
+msgstr "Трикутник"
+
+# used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all
+# points on one line
+msgid "Ouch... squished quadrilateral"
+msgstr "О… Стиснутий чотирикутник"
+
+msgid "Right isosceles triangle"
+msgstr "Прямокутний рівнобедрений трикутник"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Тупокутний рівнобедрений трикутник"
+
+msgid "Acute isosceles triangle"
+msgstr "Гострокутний рівнобедрений трикутник"
+
+# used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on
+# one line
+msgid "Ouch... squished triangle"
+msgstr "О… Стиснутий трикутник"
+
+# used to label a drawn "quadrilateral" with one of its angles equal to 180º -
+# in effect making it look like triangle
+msgid "Triangle? Well, not really..."
+msgstr "Трикутник? Щось не дуже схоже…"
+
+msgid "area:"
+msgstr "площа:"
+
+msgid "perimeter:"
+msgstr "периметр:"
+
+msgid "circumference:"
+msgstr "довжина кола:"
+
+msgid "surface area:"
+msgstr "площа поверхні:"
+
+msgid "volume:"
+msgstr "об’єм:"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "зелені яблука"
+msgstr[1] "зелені яблука"
+msgstr[2] "зелені яблука"
+msgstr[3] "зелене яблуко"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "червоні яблука"
+msgstr[1] "червоні яблука"
+msgstr[2] "червоні яблука"
+msgstr[3] "червоне яблуко"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "суниці"
+msgstr[1] "суниці"
+msgstr[2] "суниці"
+msgstr[3] "суниця"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "груші"
+msgstr[1] "груші"
+msgstr[2] "груші"
+msgstr[3] "груша"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "цибулини"
+msgstr[1] "цибулини"
+msgstr[2] "цибулини"
+msgstr[3] "цибулина"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "помідори"
+msgstr[1] "помідори"
+msgstr[2] "помідори"
+msgstr[3] "помідор"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "лимони"
+msgstr[1] "лимони"
+msgstr[2] "лимони"
+msgstr[3] "лимон"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "вишні"
+msgstr[1] "вишні"
+msgstr[2] "вишні"
+msgstr[3] "вишня"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "перці"
+msgstr[1] "перці"
+msgstr[2] "перці"
+msgstr[3] "перець"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "морквини"
+msgstr[1] "морквини"
+msgstr[2] "морквини"
+msgstr[3] "морквина"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "банани"
+msgstr[1] "банани"
+msgstr[2] "банани"
+msgstr[3] "банан"
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "дині"
+msgstr[1] "дині"
+msgstr[2] "дині"
+msgstr[3] "диня"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
