@@ -1016,7 +1016,7 @@ msgstr ""
 msgid "Calculating with Time"
 msgstr ""
 
-msgid "start time""Expand fractions"
+msgid "start time"
 msgstr ""
 
 msgid "end time"
