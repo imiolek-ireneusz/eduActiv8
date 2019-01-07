@@ -1339,7 +1339,7 @@ msgid "What decimal fraction is it?"
 msgstr "Что это за десятичная дробь?"
 
 msgid "Add fractions with the same denominator"
-msgstr "Добавьте дроби с одинаковым знаменателем"
+msgstr "Сложите дроби с одинаковым знаменателем"
 
 msgid "Subtract fractions with the same denominator"
 msgstr "Вычтите дроби с одинаковым знаменателем"
@@ -1602,4 +1602,4 @@ msgid "To expand a fraction multiply the numerator and the denominator by the sa
 msgstr "Чтобы расширить дробь, умножьте числитель и знаменатель на одно и то же число. Измените множитель, чтобы увидеть, что происходит."
 
 msgid "Learn new words"
-msgstr "Учитесь новые слова"
+msgstr "Учите новые слова"

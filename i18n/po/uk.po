@@ -422,7 +422,7 @@ msgid "Complete the ABC"
 msgstr "Доповніть абетку"
 
 msgid "English"
-msgstr "англійська"
+msgstr "Англійська"
 
 msgid "Your language"
 msgstr "Українська"
@@ -1248,40 +1248,40 @@ msgid "Match images to words"
 msgstr ""
 
 msgid "Animals"
-msgstr "тварини"
+msgstr "Тварини"
 
 msgid "Sports"
-msgstr "спорт"
+msgstr "Спорт"
 
 msgid "Body"
-msgstr "тіло"
+msgstr "Тіло"
 
 msgid "People"
-msgstr "люди"
+msgstr "Люди"
 
 msgid "Actions"
-msgstr "дії"
+msgstr "Дії"
 
 msgid "Constructions"
-msgstr "будівництво"
+msgstr "Будівництво"
 
 msgid "Nature"
-msgstr "природа"
+msgstr "Природа"
 
 msgid "Jobs"
-msgstr "назви професій"
+msgstr "Назви професій"
 
 msgid "Clothes and Accessories"
-msgstr "одежа та аксесуари"
+msgstr "Одежа та аксесуари"
 
 msgid "Fruits and Vegetables"
-msgstr "фрукти та овочі"
+msgstr "Фрукти та овочі"
 
 msgid "Transport"
-msgstr "транспорт"
+msgstr "Транспорт"
 
 msgid "Food"
-msgstr "їжа"
+msgstr "Їжа"
 
 msgid "Listening Exercises"
 msgstr ""

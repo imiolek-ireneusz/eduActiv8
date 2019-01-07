@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 OLD_DIR="`pwd`"
 cd "/usr/share/eduactiv8"
