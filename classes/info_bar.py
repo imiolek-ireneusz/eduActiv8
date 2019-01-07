@@ -466,16 +466,6 @@ class InfoBar:
         self.layout_update()
         self.title_space = self.width - 10
 
-    def sure_to_close(self):
-        self.hide_buttons(0, 0, 0, 0, 1, 0, 1, 0, 0)
-        self.mainloop.redraw_needed[1] = True
-        self.hidden = True
-        self.close_dialog = True
-        self.title = ex.unival(self.lang.d["close_confirm"])
-        self.subtitle = ""
-        self.mainloop.sfx.play(2)
-        self.layout_update()
-
     def show_info_dialog(self):
         self.mainloop.game_board.show_info_dialog()
         self.resetbtns()

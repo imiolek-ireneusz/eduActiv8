@@ -19,71 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-msgid "green apple"
-msgid_plural "green apples"
-msgstr[0] "תפוח ירוק"
-msgstr[1] "תפוחים ירוקים"
-
-msgid "red apple"
-msgid_plural "red apples"
-msgstr[0] "תפוח אדום"
-msgstr[1] "תפוחים אדומים"
-
-msgid "strawberry"
-msgid_plural "strawberries"
-msgstr[0] "תות"
-msgstr[1] "תותים"
-
-msgid "pear"
-msgid_plural "pears"
-msgstr[0] "אגס"
-msgstr[1] "אגסים"
-
-msgid "orange [fruit]"
-msgid_plural "oranges"
-msgstr[0] "תפוז"
-msgstr[1] "תפוזים"
-
-msgid "onion"
-msgid_plural "onions"
-msgstr[0] "בצל"
-msgstr[1] "בצלים"
-
-msgid "tomato"
-msgid_plural "tomatoes"
-msgstr[0] "עגבניה"
-msgstr[1] "עגבניות"
-
-msgid "lemon"
-msgid_plural "lemons"
-msgstr[0] "לימון"
-msgstr[1] "לימונים"
-
-msgid "cherry"
-msgid_plural "cherries"
-msgstr[0] "דובדבן"
-msgstr[1] "דובדבנים"
-
-msgid "pepper"
-msgid_plural "peppers"
-msgstr[0] "פלפל"
-msgstr[1] "פלפלים"
-
-msgid "carrot"
-msgid_plural "carrots"
-msgstr[0] "גזר"
-msgstr[1] "גזרים"
-
-msgid "banana"
-msgid_plural "bananas"
-msgstr[0] "בננה"
-msgstr[1] "בננות"
-
-msgid "watermelon"
-msgid_plural "watermelons"
-msgstr[0] "מלון"
-msgstr[1] "מלונים"
-
 msgid "Equilateral Triangle"
 msgstr "משולש שווה צלעות"
 
@@ -377,9 +312,6 @@ msgstr "מידע על המשחק"
 msgid "Copyright & Credits"
 msgstr "זכויות יוצרים וקרדיטים"
 
-msgid "Hit the Mole"
-msgstr "הכו בחפרפרת"
-
 msgid "Letters"
 msgstr "אותיות"
 
@@ -494,7 +426,7 @@ msgstr "גיאומטריה מוצקה עם כרטיסיות"
 msgid "Shape Matching"
 msgstr "צורת התאמה"
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "תעזרו לי למצוא את הצל שלי"
 
 msgid "Paint"
@@ -503,13 +435,13 @@ msgstr "צבע"
 msgid "Colour Matching"
 msgstr "התאמת צבע"
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "סמנו את הצבעים"
 
 msgid "Follow the Arrows"
 msgstr "עקבו אחרי החצים"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "זכרו את הכיוונים"
 
 msgid "Photographic Memory"
@@ -560,7 +492,7 @@ msgstr "גררו את הסימן המתאים לריבוע האדום"
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "גררו את הסימן המתאים לריבוע האדום"
 
-msgid "Rearrange the numbers so they are in the right order"
+msgid "Rearrange the numbers so they are in the right order."
 msgstr "סדרו את המספרים בסדר הנכון"
 
 msgid "Complete the abc using the letters above."
@@ -943,10 +875,10 @@ msgstr "ביחנו את עצמכם"
 msgid "Clock"
 msgstr "שעון "
 
-msgid "learn to read the time"
+msgid "Learn to read the time"
 msgstr "ללמוד לקרוא את השעה"
 
-msgid "learn to set the clock"
+msgid "Learn to set the clock"
 msgstr "ללמוד לכוון את השעון"
 
 msgid "Set the clock to:"
@@ -1349,7 +1281,7 @@ msgstr ""
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1430,16 +1362,6 @@ msgstr ""
 msgid "Percentages in a pie chart"
 msgstr ""
 
-msgid "hour"
-msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "minute"
-msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-
 msgid "Find equivalent fraction"
 msgstr ""
 
@@ -1482,7 +1404,7 @@ msgstr ""
 msgid "With no visualizations"
 msgstr ""
 
-msgid "with mirrored images"
+msgid "With mirrored images"
 msgstr ""
 
 msgid "Theme Editor"
@@ -1497,7 +1419,7 @@ msgstr ""
 msgid "Font Preferences"
 msgstr ""
 
-msgid "with simplifying"
+msgid "With simplifying"
 msgstr ""
 
 msgid "Positive numbers"

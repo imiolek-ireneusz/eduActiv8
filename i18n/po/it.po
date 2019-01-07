@@ -376,9 +376,6 @@ msgstr "Informazioni sul gioco..."
 msgid "Copyright & Credits"
 msgstr "Diritti e riconoscimenti"
 
-msgid "Hit the Mole"
-msgstr "Colpisci la talpa"
-
 msgid "Letters"
 msgstr "Lettere"
 
@@ -493,7 +490,7 @@ msgstr "Geometria solida con le schede"
 msgid "Shape Matching"
 msgstr "Forme che corrispondono"
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "aiutami a trovare la mia ombra"
 
 msgid "Paint"
@@ -502,13 +499,13 @@ msgstr "Colora"
 msgid "Colour Matching"
 msgstr "Colori che corrispondono"
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "etichetta i colori"
 
 msgid "Follow the Arrows"
 msgstr "Segui le frecce"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "ricorda le direzioni"
 
 msgid "Photographic Memory"
@@ -559,8 +556,8 @@ msgstr "Trascina uno tra <, > o = (minore, maggiore o uguale) dentro il riquadro
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Trascina uno dei minore, maggiore o uguale dentro il riquadro rosso."
 
-msgid "Rearrange the numbers so they are in the right order"
-msgstr "Riporta i numeri sovrastanti nell'ordine giusto"
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Riporta i numeri sovrastanti nell'ordine giusto."
 
 msgid "Complete the abc using the letters above."
 msgstr "Completa l'alfabeto usando le lettere sovrastanti"
@@ -942,11 +939,11 @@ msgstr "Provaci tu stesso"
 msgid "Clock"
 msgstr "Orologio"
 
-msgid "learn to read the time"
-msgstr "impare a leggere l'ora"
+msgid "Learn to read the time"
+msgstr "Impare a leggere l'ora"
 
-msgid "learn to set the clock"
-msgstr "impara a regolare l'orologio"
+msgid "Learn to set the clock"
+msgstr "Impara a regolare l'orologio"
 
 msgid "Set the clock to:"
 msgstr "Imposta l'ora a:"
@@ -1352,7 +1349,7 @@ msgstr ""
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1485,7 +1482,7 @@ msgstr ""
 msgid "With no visualizations"
 msgstr ""
 
-msgid "with mirrored images"
+msgid "With mirrored images"
 msgstr ""
 
 msgid "Theme Editor"
@@ -1500,7 +1497,7 @@ msgstr ""
 msgid "Font Preferences"
 msgstr ""
 
-msgid "with simplifying"
+msgid "With simplifying"
 msgstr ""
 
 msgid "Positive numbers"

@@ -141,7 +141,7 @@ class Menu:
         self.elements.append(new_top_category)
 
     def add_all(self):
-        self.add_category(0, 0, self.lang.d["Info Category"], "", "ico_c_00.png", False, None)
+        self.add_category(0, 0, "", "", "ico_c_00.png", False, None)
 
         self.badge_count = self.mainloop.db.get_completion_count(self.mainloop.userid)
         # [0   1   2   3   4   5   6   7]

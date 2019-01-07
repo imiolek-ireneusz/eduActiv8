@@ -32,7 +32,6 @@ class I18n():
         self.b = dict()
         self.b["Default Language:"] = _("Default Language:")
         self.b["Guest"] = _("Guest")
-        self.b["Hi Stranger"] = _("Hi Stranger :) Would you like to log in so we know who you are?") #DEL
         self.b["Log in:"] = _("Log in:")
         self.b["user name:"] = _("user name:")
         self.b["password:"] = _("password:")
@@ -52,7 +51,6 @@ class I18n():
 
         self.b["Preferences"] = _("Preferences")
         self.b["switch to full screen after login"] = _("switch to full screen after login")
-        self.b["display languages with uncompleted translations"] = _("display languages with uncompleted translations")
         self.b["require password to log in"] = _("require password to log in")
         self.b["require password to access admin area"] = _("require password to access admin area")
         self.b["Update admin's password:"] = _("Update admin's password:")
@@ -92,7 +90,6 @@ class I18n():
         self.b["last login:"] = _("Last login:")
 
         self.b["Prefs saved..."] = _("Preferences saved...")
-        self.b["Score: "] = _("Score: ")
 
         self.b["Select age group:"] = _("Select age group:")
         self.b["preschool"] = _("preschool")
@@ -106,9 +103,9 @@ class I18n():
         self.b["all groups"] = _("show all")
         self.b["show activities for:"] = _("show activities for:")
 
-        self.b["Apply"] = _("Apply")
         self.b["Hello"] = _("Hello")
 
+        self.d[""] = ""
         # self.d["Educational Activities for Kids"] = _("Educational Activities for Kids")
         self.d["Credits_long"] = _(
             "Laby, 2010 by Mehdi Cherti (mehdidc) \n Sounds by various authors who contributed their works to freesound.org. \n Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n Please view credits.txt for more info about authors of media files used in this project")
@@ -126,39 +123,23 @@ class I18n():
         self.d["Welcome back."] = _("Welcome back in the game.")
 
         # settings
-        # self.d["Preferences"] = _("Preferences")
         self.d["Language"] = _("Language")
         self.d["Translations"] = _("Translations")
-        # self.d["Reader"] = _("eSpeak")
-        # self.d["Read Instructions"] = _("Read Instructions at the start of games")
 
         # menu categories
-        self.d["Info Category"] = _("Info & Settings")
-        #self.d["Keyboard & Mouse"] = _("Keyboard & Mouse") #DEL
         self.d["Discover Letters"] = _("Discover Letters")
         self.d["Learn Words"] = _("Learn New Words")
-        self.d["Maths"] = _("Mathematics")
-        #self.d["Numbers & Basic Operations"] = _("Numbers & Basic Operations") #DEL
-        #self.d["Basic Operations - exercises"] = _("Basic Operations - Exercises") #DEL
-        #self.d["Sorting and Comparing"] = _("Sorting and Comparing") #DEL
-        #self.d["Geometry"] = _("Geometry and Shape Recognition") #DEL
         self.d["Art"] = _("Art and Colour")
         self.d["Memory"] = _("Memory")
         self.d["Games & Mazes"] = _("Games & Mazes")
-        #self.d["Multiplayer"] = _("Multiplayer Games") #DEL
 
         # games
-        #self.d["About."] = _("About.") #DEL
-        #self.d["Game info..."] = _("Game info...") #DEL
         self.d["Credits"] = _("Copyright & Credits")
-        #self.d["Hit the Mole"] = _("Hit the Mole") #DEL
         self.d["Letters"] = _("Letters")
         self.d["Letter Flashcards"] = _("Learn Letters with Flashcards")
         self.d["Learn to Write"] = _("Learn to Write")
         self.d["Trace Letters"] = _("Trace Letters and Numbers")
         self.d["Complete the ABC"] = _("Complete the ABC")
-        self.d["English"] = _("English")
-        self.d["in your language"] = _("Your language")  # _("English 2") #in your Language
         self.d["Sorting Letters"] = _("Sorting Letters")
         self.d["Lowercase Letters"] = _("Lowercase Letters")
         self.d["Uppercase Letters"] = _("Uppercase Letters")
@@ -188,16 +169,16 @@ class I18n():
         self.d["Solids"] = _("Solids")
         self.d["Solid Flashcards"] = _("Solid Geometry with Flashcards")
         self.d["Shape Matching"] = _("Shape Matching")
-        self.d["help me find my shadow"] = _("help me find my shadow")
+        self.d["Help me find my shadow"] = _("Help me find my shadow")
         self.d["Paint"] = _("Paint")
         self.d["Colour Matching"] = _("Colour Matching")
-        self.d["label the colours"] = _("label the colours")
+        self.d["Label the colours"] = _("Label the colours")
         self.d["Follow the Arrows"] = _("Follow the Arrows")
-        self.d["remember the directions"] = _("remember the directions")
+        self.d["Remember directions"] = _("Remember directions")
         self.d["Photographic Memory"] = _("Photographic Memory")
         self.d["Training"] = _("Training")
         self.d["Photographic Memory"] = _("Photographic Memory")
-        self.d["Automatic Levels"] = _("Automatic Levels")
+
         self.d["Mouse Maze"] = _("Mouse Maze")
         self.d["Let's have some cheese"] = _("Let's have some cheese")
         self.d["Sheep Maze"] = _("Sheep Maze")
@@ -216,10 +197,7 @@ class I18n():
         self.d["Write a word:"] = _("Write a word:")
 
         # game dialogs
-        self.d["Please try again."] = _("Please try again.")
-        self.d["Sorry! It is wrong."] = _("Sorry! It is wrong.")
         self.d["Perfect! Task solved!"] = _("Perfect! Task solved!")
-        self.d["work harder"] = _("You need to work a little bit harder next time.")
 
         # level_controller
         self.d["Game Over!"] = _("Game Over!")
@@ -240,6 +218,7 @@ class I18n():
         self.d["Shopping List"] = _("Shopping List")
         self.d["Even"] = _("Even")
         self.d["Odd"] = _("Odd")
+
         self.d["white"] = _("white")
         self.d["black"] = _("black")
         self.d["grey"] = _("grey")
@@ -272,34 +251,16 @@ class I18n():
         # new in 0.3.0
         self.d["Paint Mixer"] = _("Mixing Colours for Painting")
         self.d["Mixing RYB"] = _("Mix red, yellow, blue, black and white paint")
-
         self.d["Light Mixer"] = _("Additive Colour Mixing - Light")
         self.d["Mixing RGB"] = _("Mix red, green and blue light to get other colours")
-
         self.d["Ink Mixer"] = _("Subtractive Colour Mixing - Paints, Dyes, Inks")
         self.d["Mixing CMY"] = _("Mix cyan, magenta and yellow paint to get other colours")
-
         self.d["Find the colour of the circle in the middle"] = _("Find the colour of the circle in the middle")
         self.d["Adjust CMY"] = _("Adjust the amount of cyan, magenta and yellow paint")
         self.d["Adjust RGB"] = _("Adjust the intensity of red, green and blue light")
 
-        # the following is used by colour matching games in spoken hints
-        # ie. "more red, less green, blue is ok")
-        # self.d["more color"] = "more"
-        # self.d["less color"] = "less"
-        # self.d["color is ok"] = "is ok"
-
         # new in 0.3.1
         self.d["brush size"] = _("brush size")
-
-        # new in 0.3.2
-        #self.d["TicTacToe2"] = _("Noughts and Crosses 2") #DEL
-        #self.d["TicTacToe3"] = _("Noughts and Crosses 3") #DEL
-        #self.d["multiline-tictactoe"] = _("Get as many lines of 3 as possible to win") #DEL
-        #self.d["Player"] = _("Player") #DEL
-        #self.d["Won"] = _("Won") #DEL
-        #self.d["Game Draw"] = _("Draw") #DEL
-
 
         self.d["UserName"] = _("User Name")
         self.d["Match Animals Memory"] = _("Match Animals - Memory Game")
@@ -328,9 +289,7 @@ class I18n():
         self.d["Multiplication"] = _("Multiplication")
         self.d["Division"] = _("Division")
 
-        self.d["Check for newer version..."] = _(
-            "Check for newer version, report bugs, discuss, translate or review this project at:")
-        self.d["Match numbers to their spelling"] = _("Match numbers to their spelling")
+        self.d["Match numbers to their spelling"] = _("Match numbers tGameso their spelling")
         self.d["Number Spelling"] = _("Number Spelling")
         self.d["Match Animals"] = _("Match Animals")
         self.d["Find all matching animals"] = _("Find all matching animals")
@@ -371,11 +330,10 @@ class I18n():
         self.d["parallelogram"] = _("Parallelogram")
         self.d["quadrilateral"] = _("Quadrilateral")
         self.d["trapezium"] = _("Trapezium")
-        self.d["u_trapezium"] = _("Trapezium ")
+        self.d["u_trapezium"] = _("Trapezium")
         self.d["triangle"] = _("Triangle")
-        self.d["squished_quadi"] = _(
-            "Ouch... squished quadrilateral")  # used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all points on one line
-
+        # used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all points on one line
+        self.d["squished_quadi"] = _("Ouch... squished quadrilateral")
         self.d["equi_tria"] = _("Equilateral Triangle")
         self.d["iso_tria"] = _("Isosceles Triangle")
         self.d["obtuse_tria"] = _("Obtuse Triangle")
@@ -384,11 +342,11 @@ class I18n():
         self.d["right_iso_tria"] = _("Right isosceles triangle")
         self.d["obtuse_iso_tria"] = _("Obtuse isosceles triangle")
         self.d["acute_iso_tria"] = _("Acute isosceles triangle")
-        self.d["squished_tria"] = _(
-            "Ouch... squished triangle")  # used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on one line
+        # used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on one line
+        self.d["squished_tria"] = _("Ouch... squished triangle")
         self.d["circle"] = _("Circle")
-        self.d["triangle_not_really"] = _(
-            "Triangle? Well, not really...")  # used to label a drawn "quadrilateral" with one of its angles equal to 180º - in effect making it look like triangle
+        # used to label a drawn "quadrilateral" with one of its angles equal to 180º - in effect making it look like triangle
+        self.d["triangle_not_really"] = _("Triangle? Well, not really...")
         self.d["Heptagon"] = _("Heptagon")
         self.d["Pentagon"] = _("Pentagon")
         self.d["Octagon"] = _("Octagon")
@@ -408,21 +366,15 @@ class I18n():
         self.d["Circle"] = _("Circle")
 
         self.d["Match shapes to their names"] = _("Match shapes to their names")
-
         self.d["test_yourself"] = _("Test yourself")
         self.d["Clock1"] = _("Clock")
-        self.d["Read time"] = _("learn to read the time")
+        self.d["Read time"] = _("Learn to read the time")
         self.d["Clock2"] = _("Clock")
-        self.d["Set time"] = _("learn to set the clock")
+        self.d["Set time"] = _("Learn to set the clock")
         self.d["Set_clock"] = _("Set the clock to:")
         self.d["Set_clock_instr"] = _("Drag the clock hands to set the time")
         self.d["What time"] = _("What time is it?")
-        self.d["close_confirm"] = _("Click again to exit")
         self.d["answer_enter"] = _("Type your answer and hit enter")
-
-        # self.d["enable_untranslated"] = _("FAO: Translators - enable this to show untranslated languages (for testing):")
-        # self.d["Fullscreen:"] = _("Fullscreen:")
-
         self.d["Time"] = _("Time")
         self.d["Play_w_clock"] = _("Turn the clock hands and see what happens.")
 
@@ -434,60 +386,25 @@ class I18n():
         self.d["Long multiplication"] = _("Long multiplication")
         self.d["Long division"] = _("Long division")
         self.d["borrow 10"] = _("borrow 10")
-        self.d["carry"] = _(
-            "carry")  # in columnar addition, ie. in case of 4 + 8 you write 2 under the column and carry 1
+        # in columnar addition, ie. in case of 4 + 8 you write 2 under the column and carry 1
+        self.d["carry"] = _("carry")
         self.d["demo start"] = _("Start >>")
         self.d["demo next eg"] = _("Next example >>")
         self.d["demo next step"] = _("Next step >>")
-        self.d["demo write"] = _(
-            "write ")  # used to show which digit of the result should be entered in a box, ie. "enter 5")
+        # used to show which digit of the result should be entered in a box, ie. "enter 5")
+        self.d["demo write"] = _("write ")
         self.d["Demonstration"] = _("Demonstration")
         self.d["DIY"] = _("Do it yourself")
         self.d["Ratio"] = _("Ratio")
-        self.d["Working with large numbers"] = _("Working with large numbers")
         self.d["demo rewrite"] = _("rewrite ")
         self.d["demo rewrite"] = _("rewrite ")
         self.d["remainder"] = _("remainder")
         self.d["demo_result"] = _("result")
         self.d["TimeMatching"] = _("Time Matching")
 
-        self.d["more red"] = _("Add some red")
-        self.d["more green"] = _("Add some green")
-        self.d["more blue"] = _("Add some blue")
-        self.d["more cyan"] = _("Add some cyan")
-        self.d["more magenta"] = _("Add some magenta")
-        self.d["more yellow"] = _("Add some yellow")
-
-        self.d["less red"] = _("Too much red")
-        self.d["less green"] = _("Too much green")
-        self.d["less blue"] = _("Too much blue")
-        self.d["less cyan"] = _("Too much cyan")
-        self.d["less magenta"] = _("Too much magenta")
-        self.d["less yellow"] = _("Too much yellow")
-
-        self.d["red is ok"] = _("red is spot on")
-        self.d["green is ok"] = _("green is spot on")
-        self.d["blue is ok"] = _("blue is spot on")
-        self.d["cyan is ok"] = _("cyan is spot on")
-        self.d["magenta is ok"] = _("magenta is spot on")
-        self.d["yellow is ok"] = _("yellow is spot on")
-
         self.d["art4apps"] = _(
             "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)")
-        """
-        self.d["Word Builder - Animals"] = _("Word Builder - Animals")
-        self.d["Word Builder - Sports"] = _("Word Builder - Sports")
-        self.d["Word Builder - Body"] = _("Word Builder - Body")
-        self.d["Word Builder - People"] = _("Word Builder - People")
-        self.d["Word Builder - Actions"] = _("Word Builder - Actions")
-        self.d["Word Builder - Constructions"] = _("Word Builder - Constructions")
-        self.d["Word Builder - Nature"] = _("Word Builder - Nature")
-        self.d["Word Builder - Jobs"] = _("Word Builder - Jobs")
-        self.d["Word Builder - Clothes and Accessories"] = _("Word Builder - Clothes and Accessories")
-        self.d["Word Builder - Fruits and Vegetables"] = _("Word Builder - Fruits and Vegetables")
-        self.d["Word Builder - Transport"] = _("Word Builder - Transport")
-        self.d["Word Builder - Food"] = _("Word Builder - Food")
-        """
+
         self.d["Complete the word"] = _("Complete the word")
 
         self.d["Do you want to exit the game?"] = _("Do you want to exit the game?")
@@ -496,36 +413,21 @@ class I18n():
 
         # New as of eduactiv83
         self.d["Clock_cat"] = _("Clock")
-        # self.d["Units of Time"] = _("Units of Time")
-        # self.d["Time Calculations"] = _("Time Calculations")
-
-        self.d["Achievements"] = _("Achievements")
-        self.d["Learn to count"] = _("Learn to count")
         self.d["Addition"] = _("Addition")
         self.d["Subtraction"] = _("Subtraction")
         self.d["Multiplication"] = _("Multiplication")
         self.d["Division"] = _("Division")
 
-
-        #self.d["Decimals and Fractions"] = _("Decimals and Fractions") #DEL
-        #self.d["Decimals, fractions and percentages"] = _("Decimals, fractions and percentages")
-        #self.d["Decimals, fractions, ratios and percentages"] = _("Decimals, fractions, ratios and percentages")
         self.d["Shapes and Solids"] = _("Shapes and Solids")
-        self.d["Nothing here yet..."] = _("Nothing here yet...")
-        self.d["Translation Credits"] = _("Translation Credits")
-        self.d["Level"] = _("Level")
         self.d["Build the following word using the letters below."] = _(
             "Build the following word using the letters below.")
         self.d["Find solution"] = _("Find solution")
         self.d["Find missing number"] = _("Find missing number")
+
         self.d["Language arts"] = _("Language arts")
         self.d["Other"] = _("Other")
-        self.d["please install espeak"] = _(
-            "You may like to install espeak to use its text to speech functionality, however this is not required to successfully use the game: \nhttp://espeak.sourceforge.net/")
-        self.d[""] = ""
 
         #eduActiv8 new words
-        #self.d["Decimals"] = _("Decimals")
         self.d["Decimal Fractions"] = _("Decimal Fractions")
         self.d["Fractions"] = _("Fractions")
         self.d["Ratios"] = _("Ratios")
@@ -534,7 +436,7 @@ class I18n():
         self.d["long form"] = _("long form")  # Serbian and Russian only
         self.d["short form"] = _("short form")  # Serbian and Russian only
 
-        self.d["Catalan clock"] = _("Catalan clock")  # Catalan only
+        self.d["Catalan clock"] = "Rellotge amb horari en català" # Catalan only does not need translating
 
         self.d["Word Builders"] = _("Word Builders")
         self.d["Word Matchers"] = _("Word Matchers")
@@ -591,6 +493,7 @@ class I18n():
         self.d["Compare fractions"] = _("Compare fractions")
         self.d["Reduce fractions"] = _("Reduce fractions")
         self.d["Expand fractions"] = _("Expand fractions")
+
         self.d["To reduce a fraction..."] = _("To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one.")
         self.d["To expand a fraction..."] = _("To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens.")
         self.d["Use plus or minus..."] = _("Use the arrows to change your answer or just type it in.")
@@ -600,62 +503,38 @@ class I18n():
         self.d["To multiply two fractions..."] = _("To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible.")
         self.d["To divide a fraction by a fraction..."] = _("To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting fraction if possible.")
 
-        #self.d["Test Instruction"] = _("Test Instruction")
-
         self.d["Fraction Groups"] = _("Group fractions together")
         self.d["Percentage Groups"] = _("Group percentages together")
         self.d["Ratio Groups"] = _("Group ratios together")
 
-        #Minor changes to the current lines - remove the above from the lines.
-        """
-        self.d["Re-arrange right"] = _("Rearrange the numbers so they are in the right order")
-        self.d["Complete abc"] = _("Complete the abc using the letters above.")
-        self.d["Find and separate"] = _("Find and separate the Even Numbers from the Odd Numbers in the above series.")
-        self.d["Re-arrange alphabetical"] = _("Rearrange the letters so they are in the alphabetical order.")
-        self.d["Re-arrange ascending"] = _("Rearrange the numbers so they are in the ascending order.")
-        """
         self.d["Re-arrange right"] = _("Rearrange the numbers so they are in the right order.")
         self.d["Complete abc"] = _("Complete the alphabet using letters from the middle line.")
         self.d["Find and separate"] = _("Find and separate even numbers from odd numbers.")
-        """
-        msgid "Find and separate the Even Numbers from the Odd Numbers in the above series."
-        msgstr "Find and separate the Even Numbers from the Odd Numbers in the above series."
-        """
+
         self.d["Re-arrange alphabetical"] = _("Rearrange the letters so they are in the alphabetical order.")
         self.d["Re-arrange ascending"] = _("Rearrange the numbers so they are in the ascending order.")
-        self.d["upd8 no update"] = _("v.%s")
-        self.d["upd8 available"] = _("eduActiv8 update is available. Current version: %s. New version: %s.")
-        self.b["check for updates"] = _("check for updates on start")
 
         self.d["Symmetry"] = _("Symmetry")
-
         self.d["Reflections - Drawing"] = _("Reflection Symmetry - draw with shapes")
-
         self.d["Reflecting shapes"] = _("Reflect shapes")
-
         self.d["DRS - subtitle"] = _("Reflect a shape in a mirror line")
         self.d["Draw symmetrical shape - instruction"] = _(
             "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line.")
 
         self.d["Draw Symmetrical Shapes - half"] = _("Symmetrical shapes - missing half")
         self.d["DSS - missing half - subtitle"] = _("Draw the other half of the shape")
-
         self.d["Lines of symmetry"] = _("Find lines of symmetry")
         self.d["Lines of symmetry - instruction"] = _("Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them.")
-
         self.d["Match equivalent fractions"] = _("Match equivalent fractions")
         self.d["Matching fractions"] = _("Match fractions")
         self.d["Matching decimals"] = _("Match decimals")
         self.d["Matching percentages"] = _("Match percentages")
         self.d["Matching ratios"] = _("Match ratios")
-
         self.d["Reading pie charts"] = _("Percentages in a pie chart")
-
         self.d["hours"] = _("hours")
         self.d["minutes"] = _("minutes")
 
         self.d["Calculating with Time"] = _("Calculating with Time")
-
         self.d["start_time"] = _("start time")
         self.d["end_time"] = _("end time")
 
@@ -670,13 +549,12 @@ class I18n():
         self.d["Visualized on a number line"] = _("Visualized on a number line")
         self.d["Visualized on two number lines"] = _("Visualized on two number lines")
         self.d["With no visualizations"] = _("With no visualizations")
-        self.d["with mirrored images"] = _("with mirrored images")
+        self.d["With mirrored images"] = _("With mirrored images")
         self.d["Theme Editor"] = _("Theme Editor")
         self.d["Make the game look your way"] = _("Make the game look your way")
         self.d["Reset colors back to default?"] = _("Reset colors back to the default ones?")
-        self.b["Font Preferences"] = _("Font Preferences")
-        #self.d["Add, subtract, multiply and divide"] = _("Addition, subtraction, multiplication and division of fractions")
-        self.d["with simplifying"] = _("with simplifying")
+
+        self.d["With simplifying"] = _("With simplifying")
         self.d["Positive numbers"] = _("Positive numbers")
         self.d["Basics"] = _("Basics")
         self.d["Equivalent fractions"] = _("Equivalent fractions")

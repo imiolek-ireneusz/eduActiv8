@@ -18,84 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0: n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-msgid "green apple"
-msgid_plural "green apples"
-msgstr[0] "zielone jabłko"
-msgstr[1] "zielone jabłka"
-msgstr[2] "zielonych jabłek"
-
-msgid "red apple"
-msgid_plural "red apples"
-msgstr[0] "czerwone jabłko"
-msgstr[1] "czerwone jabłka"
-msgstr[2] "czerwonych jabłek"
-
-msgid "strawberry"
-msgid_plural "strawberries"
-msgstr[0] "truskawka"
-msgstr[1] "truskawki"
-msgstr[2] "truskawek"
-
-msgid "pear"
-msgid_plural "pears"
-msgstr[0] "gruszka"
-msgstr[1] "gruszki"
-msgstr[2] "gruszek"
-
-msgid "orange [fruit]"
-msgid_plural "oranges"
-msgstr[0] "pomarańcza"
-msgstr[1] "pomarańcze"
-msgstr[2] "pomarańczy"
-
-msgid "onion"
-msgid_plural "onions"
-msgstr[0] "cebula"
-msgstr[1] "cebule"
-msgstr[2] "cebul"
-
-msgid "tomato"
-msgid_plural "tomatoes"
-msgstr[0] "pomidor"
-msgstr[1] "pomidory"
-msgstr[2] "pomidorów"
-
-msgid "lemon"
-msgid_plural "lemons"
-msgstr[0] "cytryna"
-msgstr[1] "cytryny"
-msgstr[2] "cytryn"
-
-msgid "cherry"
-msgid_plural "cherries"
-msgstr[0] "wiśnia"
-msgstr[1] "wiśnie"
-msgstr[2] "wiśni"
-
-msgid "pepper"
-msgid_plural "peppers"
-msgstr[0] "papryka"
-msgstr[1] "papryki"
-msgstr[2] "papryk"
-
-msgid "carrot"
-msgid_plural "carrots"
-msgstr[0] "marchewka"
-msgstr[1] "marchewki"
-msgstr[2] "marchewek"
-
-msgid "banana"
-msgid_plural "bananas"
-msgstr[0] "banan"
-msgstr[1] "banany"
-msgstr[2] "bananów"
-
-msgid "watermelon"
-msgid_plural "watermelons"
-msgstr[0] "arbuz"
-msgstr[1] "arbuzy"
-msgstr[2] "arbuzów"
-
 msgid "Equilateral Triangle"
 msgstr "Trójkąt równoboczny"
 
@@ -395,9 +317,6 @@ msgstr "Informacje o grze..."
 msgid "Copyright & Credits"
 msgstr "Prawa autorskie"
 
-msgid "Hit the Mole"
-msgstr "Złap Krecika"
-
 msgid "Letters"
 msgstr "Litery"
 
@@ -512,7 +431,7 @@ msgstr "Geometria przestrzenna"
 msgid "Shape Matching"
 msgstr "Przeciągnij zwierzaki do ich cieni"
 
-msgid "help me find my shadow"
+msgid "Help me find my shadow"
 msgstr "Przeciągnij zwierzaki do ich cieni"
 
 msgid "Paint"
@@ -521,13 +440,13 @@ msgstr "Artystycznie"
 msgid "Colour Matching"
 msgstr "Kolory"
 
-msgid "label the colours"
+msgid "Label the colours"
 msgstr "Przyporządkuj nazwy do kolorów"
 
 msgid "Follow the Arrows"
 msgstr "Podążaj za strzałkami"
 
-msgid "remember the directions"
+msgid "Remember directions"
 msgstr "zapamiętaj drogę"
 
 msgid "Photographic Memory"
@@ -578,8 +497,8 @@ msgstr "Przeciągnij jeden z <, > lub = (mniejsze, większe lub równe) do czerw
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Przeciągnij większy, mniejszy lub równy do czerwonego kwadratu."
 
-msgid "Rearrange the numbers so they are in the right order"
-msgstr "Ułóż liczby we właściwej kolejności"
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Ułóż liczby we właściwej kolejności."
 
 msgid "Complete the abc using the letters above."
 msgstr "Uzupełnij alfabet."
@@ -962,11 +881,11 @@ msgstr "Sprawdź się"
 msgid "Clock"
 msgstr "Zegar"
 
-msgid "learn to read the time"
-msgstr "odczytaj czas"
+msgid "Learn to read the time"
+msgstr "Odczytaj czas"
 
-msgid "learn to set the clock"
-msgstr "ustaw właściwy czas na zegarze"
+msgid "Learn to set the clock"
+msgstr "Ustaw właściwy czas na zegarze"
 
 msgid "Set the clock to:"
 msgstr "Ustaw zegar na godzinę:"
@@ -1406,7 +1325,7 @@ msgstr "Rozszerzanie ułamków zwykłych"
 msgid "To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr "Aby skrócić ułamek, należy podzielić licznik i mianownik przez tę samą liczbę. Wybierz jedną z liczb między ułamkami by zobaczyć co się stanie. Jeśli jest tam tylko 1 to znaczy, że ułamka nie da się bardziej uprościć. Zmień ułamek na inny."
 
-msgid "To extend a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr "Aby rozszerzyć ułamek, należy pomnożyć licznik i mianownik przez tę samą liczbę. Zmień liczbę w środku by zobaczyć co się stanie."
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1487,18 +1406,6 @@ msgstr "Dopasuj proporcje"
 msgid "Percentages in a pie chart"
 msgstr "Procenty na wykresach kołowych"
 
-msgid "hour"
-msgid_plural "hours"
-msgstr[0] "godzina"
-msgstr[1] "godziny"
-msgstr[2] "godzin"
-
-msgid "minute"
-msgid_plural "minutes"
-msgstr[0] "minuta"
-msgstr[1] "minuty"
-msgstr[2] "minut"
-
 msgid "Find equivalent fraction"
 msgstr "Znajdź ułamki równoważne"
 
@@ -1541,8 +1448,8 @@ msgstr "Pokazane na dwóch osiach liczbowych"
 msgid "With no visualizations"
 msgstr "Bez ułatwień"
 
-msgid "with mirrored images"
-msgstr "z odwróconymi obrazkami"
+msgid "With mirrored images"
+msgstr "Z odwróconymi obrazkami"
 
 msgid "Theme Editor"
 msgstr "Ustawienia kolorów"
@@ -1556,8 +1463,8 @@ msgstr "Przeywróć domyślne kolory"
 msgid "Font Preferences"
 msgstr "Ustawienia czcionki"
 
-msgid "with simplifying"
-msgstr "ze skracaniem"
+msgid "With simplifying"
+msgstr "Ze skracaniem"
 
 msgid "Positive numbers"
 msgstr "Liczby dodatnie"

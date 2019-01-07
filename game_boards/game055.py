@@ -219,40 +219,29 @@ class Board(gd.BoardGame):
 
     def check_result(self):
         if self.picked_steps != self.rgb_g:
-            help = ""
             if self.picked_steps[0] < self.rgb_g[0]:
                 self.guides[0].value = "⇑"
-                help += self.dp['more cyan'] + ", "
             elif self.picked_steps[0] > self.rgb_g[0]:
                 self.guides[0].value = "⇓"
-                help += self.dp['less cyan'] + ", "
             else:
                 self.guides[0].value = " "
-                help += self.dp['cyan is ok'] + ", "
                 self.guides[0].set_display_check(True)
 
             if self.picked_steps[1] < self.rgb_g[1]:
                 self.guides[1].value = "⇑"
-                help += self.dp['more magenta'] + ", "
             elif self.picked_steps[1] > self.rgb_g[1]:
                 self.guides[1].value = "⇓"
-                help += self.dp['less magenta'] + ", "
             else:
                 self.guides[1].value = " "
-                help += self.dp['magenta is ok'] + ", "
                 self.guides[1].set_display_check(True)
 
             if self.picked_steps[2] < self.rgb_g[2]:
                 self.guides[2].value = "⇑"
-                help += self.dp['more yellow'] + ". "
             elif self.picked_steps[2] > self.rgb_g[2]:
                 self.guides[2].value = "⇓"
-                help += self.dp['less yellow'] + ". "
             else:
                 self.guides[2].value = " "
-                help += self.dp['yellow is ok'] + ". "
                 self.guides[2].set_display_check(True)
-            #self.say(help)
 
             self.level.try_again(silent=self.mainloop.speaker.talkative)
 
@@ -264,5 +253,3 @@ class Board(gd.BoardGame):
                 each.value = ""
             self.level.next_board()
         self.mainloop.redraw_needed[0] = True
-
-

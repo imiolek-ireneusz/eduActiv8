@@ -434,10 +434,7 @@ dp[
     "Re-arrange ascending"] = "Переставьте числа, чтобы они были в порядке возрастания."  # Re-arrange the above numbers so they are in the ascending order.
 dp[
     "Build the following word using the letters below."] = "Пост-рой-те следующее слово, используя приведён-ные ни-же буквы."
-# dp["Please try again."] = "Пожалуйста, попробуйте ещё раз."#no longer used
-# dp["Sorry! It is wrong."] = "Извините! Это неправильно." #no longer uses
 dp["Perfect! Task solved!"] = "Великолепно! Задача решена!"
-dp["work harder"] = "В следующий раз постарайтесь ра-бо-тать лучше."
 
 # level_controller
 dp["Game Over!"] = "Игра проиграна!"

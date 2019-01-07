@@ -4,7 +4,7 @@
 <!-- visible 0 - hide, 1 - show, use to temporarily hide activities -->
 <!-- "listening" used to mark which activities are listening activities that require TTS engine to work - if not available the activities will be hidden -->
 <menu>
-    <cat_group mline="0" id="1" title="Language arts" icon="ico_t_00.png">
+    <cat_group mline="0" id="1" title="" icon="ico_t_00.png">
         <cat mline="1" id="1" title="Discover Letters" subtitle=""
              icon="ico_c_01.png" min_age="0" max_age="7" visible="1" lang_incl="" lang_excl="" icosuffix="True"
              listening="False" android="True" has_inner="False">
@@ -570,7 +570,7 @@
             </game>
         </cat>
     </cat_group>
-    <cat_group mline="0" id="2" title="Maths" icon="ico_t_01.png">
+    <cat_group mline="0" id="2" title="" icon="ico_t_01.png">
         <cat mline="1" id="26" title="Positive numbers" subtitle="" icon="ico_c_03.png" min_age="0" max_age="5" visible="1"
              lang_incl="" lang_excl="" icosuffix="False" listening="False" android="True" has_inner="True">
             <cat mline="1" id="6" title="Positive numbers" subtitle="Basics" icon="ico_c_29.png" min_age="0" max_age="5" visible="1"
@@ -1237,14 +1237,14 @@
                 <game mline="0" dbid="276" variant="0" var2="0" min_age="5" max_age="7"
                       constructor_id="116"
                       title="Multiply fractions"
-                      subtitle="with simplifying"
+                      subtitle="With simplifying"
                       icon="ico_g_2416.png" ico_group="1" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
                 <game mline="0" dbid="277" variant="0" var2="0" min_age="5" max_age="7"
                       constructor_id="117"
                       title="Multiply fractions"
-                      subtitle="with simplifying"
+                      subtitle="With simplifying"
                       icon="ico_g_2416.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
@@ -1262,14 +1262,14 @@
                 <game mline="0" dbid="280" variant="0" var2="0" min_age="5" max_age="7"
                       constructor_id="118"
                       title="Divide fractions"
-                      subtitle="with simplifying"
+                      subtitle="With simplifying"
                       icon="ico_g_2417.png" ico_group="1" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
                 <game mline="0" dbid="285" variant="0" var2="0" min_age="5" max_age="7"
                       constructor_id="120"
                       title="Divide fractions"
-                      subtitle="with simplifying"
+                      subtitle="With simplifying"
                       icon="ico_g_2417.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
@@ -1455,7 +1455,7 @@
             <game mline="0" dbid="275" variant="3" var2="0" min_age="0" max_age="7"
                   constructor_id="112"
                   title="Image Patterns"
-                  subtitle="with mirrored images"
+                  subtitle="With mirrored images"
                   icon="ico_g_2206.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
@@ -1782,7 +1782,7 @@
             </cat>
         </cat>
     </cat_group>
-    <cat_group mline="0" id="3" title="Other" icon="ico_t_03.png">
+    <cat_group mline="0" id="3" title="" icon="ico_t_03.png">
         <cat mline="0" id="16" title="Art" subtitle="" icon="ico_c_13.png" min_age="0" max_age="7" visible="1" lang_incl=""
              lang_excl="" icosuffix="False" lang_activity="False" listening="False" android="True" has_inner="False">
             <game mline="1" dbid="71" variant="0" var2="0" min_age="0" max_age="7"
@@ -1795,7 +1795,7 @@
             <game mline="2" dbid="72" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="42"
                   title="Colour Matching"
-                  subtitle="label the colours"
+                  subtitle="Label the colours"
                   icon="ico_g_0601.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
@@ -1847,7 +1847,7 @@
             <game mline="1" dbid="79" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="12"
                   title="Follow the Arrows"
-                  subtitle="remember the directions"
+                  subtitle="Remember directions"
                   icon="ico_g_0700.png" ico_group="T" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
@@ -1861,7 +1861,7 @@
             <game mline="1" dbid="81" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="7"
                   title="Photographic Memory"
-                  subtitle="Automatic Levels"
+                  subtitle=""
                   icon="ico_g_0702.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="0" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
@@ -1928,7 +1928,7 @@
             <game mline="1" dbid="90" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="8"
                   title="Match Animals"
-                  subtitle="help me find my shadow"
+                  subtitle="Help me find my shadow"
                   icon="ico_g_0813.png" ico_group="" icosuffix="False" lang_activity="False"
                   visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
