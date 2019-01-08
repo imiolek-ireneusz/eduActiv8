@@ -8,7 +8,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.31.105\n"
+"Project-Id-Version: 4.19.01\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
 "PO-Revision-Date: 2019-01-04 22:25+0000\n"
@@ -390,6 +390,12 @@ msgstr "Деление"
 
 msgid "Sorting Numbers"
 msgstr "Сортировка чисел"
+
+msgid "Consecutive numbers"
+msgstr ""
+
+msgid "Random numbers"
+msgstr ""
 
 msgid "Number Comparison"
 msgstr "Сравнение чисел"

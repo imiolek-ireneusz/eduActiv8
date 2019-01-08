@@ -174,11 +174,25 @@ class Board(gd.BoardGame):
         if self.mainloop.lang.lang == "ca":
             self.lang.numbers[0] = "un"
         tt = self.time
+        if self.mainloop.m.game_variant in [0, 2]:
+            if self.mainloop.m.game_var2 == 0:
+                self.text_string = self.lang.time2str(tt[0], tt[1])
+                if self.lang.lang == "ru":
+                    spk_txt = self.lang.time2spk(tt[0], tt[1])
+                    self.text_time.speaker_val = spk_txt
+                    self.text_time.speaker_val_update = False
+            else:
+                self.text_string = self.lang.time2str_short(tt[0], tt[1])
+                if self.lang.lang == "ru":
+                    spk_txt = self.lang.time2spk_short(tt[0], tt[1])
+                    self.text_time.speaker_val = spk_txt
+                    self.text_time.speaker_val_update = False
 
-        if self.mainloop.m.game_var2 == 0:
-            self.text_string = self.lang.time2str(tt[0], tt[1])
-        else:
-            self.text_string = self.lang.time2str_short(tt[0], tt[1])
+            if self.lang.lang == "he":
+                spk_txt = self.lang.time2spk(tt[0], tt[1])
+                self.text_time.speaker_val = spk_txt
+                self.text_time.speaker_val_update = False
+
         self.text_time.value = self.text_string
         self.text_time.update_me = True
         self.ans_h.value = "%02d" % self.time[0]
@@ -434,7 +448,8 @@ class Board(gd.BoardGame):
         if event.type == pygame.MOUSEMOTION and self.hand_id > 0:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             r = self.vector_len([pos[0] - self.center[0], pos[1] - self.center[1]])
-            if r == 0: r = 0.1
+            if r == 0:
+                r = 0.1
             if self.hand_id == 1:
                 h = (self.current_angle(pos, r)) / self.angle_step_12
                 if int(h) == 0:

@@ -226,13 +226,6 @@ class Board(gd.BoardGame):
             self.board.add_unit(10, 2, data[0] - 10, 2, classes.board.Letter, self.text_string, white, "", 2)
             self.board.ships[-1].immobilize()
             self.board.ships[-1].font_color = gray
-        if gv == 0 and self.lang.lang in ["ru", "he"]:
-            if self.lang.lang == "ru" and self.mainloop.m.game_var2 == 1:
-                spk_txt = self.lang.time2spk_short(tt[0], tt[1])
-            else:
-                spk_txt = self.lang.time2spk(tt[0], tt[1])
-            self.board.ships[-1].speaker_val = spk_txt
-            self.board.ships[-1].speaker_val_update = False
         if gv == 2:
             img_src = "speaker_icon.png"
             self.board.add_unit(ans_offset+1, 2, 3, 3, classes.board.ImgShip, self.text_string, white, img_src, alpha=True)
@@ -241,6 +234,14 @@ class Board(gd.BoardGame):
             self.board.ships[-1].outline_highlight = False
             self.board.ships[-1].animable = False
             self.board.ships[-1].outline = False
+
+        if self.lang.lang in ["ru", "he"]:
+            if self.lang.lang == "ru" and self.mainloop.m.game_var2 == 1:
+                spk_txt = self.lang.time2spk_short(tt[0], tt[1])
+            else:
+                spk_txt = self.lang.time2spk(tt[0], tt[1])
+            self.board.ships[-1].speaker_val = spk_txt
+            self.board.ships[-1].speaker_val_update = False
 
     def auto_check_reset(self):
         self.ans_h.set_display_check(None)

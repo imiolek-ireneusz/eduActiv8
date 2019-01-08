@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- next cat id = 39, next game id = 286 (271 - 272 - menu, 273 - menu colour chooser) -->
+<!-- next cat id = 39, next game id = 301 (271 - 272 - menu, 273 - menu colour chooser) -->
 <!-- title and subtitle must match already existing string from .po file so these can't just be changed here -->
 <!-- visible 0 - hide, 1 - show, use to temporarily hide activities -->
 <!-- "listening" used to mark which activities are listening activities that require TTS engine to work - if not available the activities will be hidden -->
@@ -606,14 +606,14 @@
                 <game mline="2" dbid="43" variant="0" var2="0" min_age="0" max_age="2"
                       constructor_id="111"
                       title="Sorting Numbers"
-                      subtitle=""
+                      subtitle="Consecutive numbers"
                       icon="ico_g_0400.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
                 <game mline="2" dbid="207" variant="1" var2="0" min_age="0" max_age="5"
                       constructor_id="111"
                       title="Sorting Numbers"
-                      subtitle=""
+                      subtitle="Random numbers"
                       icon="ico_g_0411.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
@@ -917,7 +917,7 @@
                 <game mline="0" dbid="215" variant="1" var2="0" min_age="4" max_age="7"
                       constructor_id="111"
                       title="Sorting Numbers"
-                      subtitle=""
+                      subtitle="Random numbers"
                       icon="ico_g_2300.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
@@ -1610,6 +1610,13 @@
                       icon="ico_g_1005.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
+                <game mline="2" dbid="299" variant="2" var2="1" min_age="0" max_age="7"
+                      constructor_id="64"
+                      title="Clock2"
+                      subtitle="Set time"
+                      icon="ico_g_1009.png" ico_group="" icosuffix="False" lang_activity="False"
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="True" android="True">
+                </game>
                 <game mline="2" dbid="177" variant="0" var2="1" min_age="0" max_age="7"
                       constructor_id="63"
                       title="Clock1"
@@ -1642,7 +1649,7 @@
                       icon="ico_g_1000.png" ico_group="1" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
-                <game mline="1" dbid="167" variant="0" var2="0" min_age="0" max_age="7"
+                <game mline="1" dbid="298" variant="0" var2="0" min_age="0" max_age="7"
                       constructor_id="81"
                       title="Clock0"
                       subtitle="Play_w_clock"
@@ -1669,6 +1676,13 @@
                       subtitle="txt_only"
                       icon="ico_g_1005.png" ico_group="" icosuffix="False" lang_activity="False"
                       visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                </game>
+                <game mline="2" dbid="300" variant="2" var2="0" min_age="0" max_age="7"
+                      constructor_id="64"
+                      title="Clock2"
+                      subtitle="Set time"
+                      icon="ico_g_1009.png" ico_group="" icosuffix="False" lang_activity="False"
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="True" android="True">
                 </game>
                 <game mline="2" dbid="169" variant="0" var2="0" min_age="0" max_age="7"
                       constructor_id="63"
