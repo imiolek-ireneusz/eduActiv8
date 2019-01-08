@@ -414,26 +414,18 @@ dp["fruit"] = ["зе-лё-ное яб-ло-ко", "крас-ное яб-ло-к�
                "ли-мон", "вишня", "пе--рец", "мор-ковь", "ба-нан", "ар-буз"]
 
 # game instructions
-dp[
-    "Drag the slider"] = "Перетащите ползунок вверх или вниз так, чтобы правильный знак оказался в красном квадрате."  # Drag the slider up or down so that the right sign is in the red square.
+dp["Drag the slider"] = "Перетащите ползунок вверх или вниз так, чтобы правильный знак оказался в красном квадрате."  # Drag the slider up or down so that the right sign is in the red square.
 # dp["Take your sheep"] = "Приве-ди-те овцу к ос-таль-но-му стаду." #Take your sheep to the rest of the herd.
 
-dp[
-    "Check the shopping list"] = "Проверьте список покупок и перетащите все необходи-мые предметы в корзину."  # Check the shopping list and drag all needed items into the basket.
-dp[
-    "Drag lt2"] = "Перетащите 1 из меньше, больше или ра-вно в красный квадрат."  # Drag one of the greater, lesser or equal to the red square.
-dp[
-    "Re-arrange right"] = "Переставьте числа, чтобы они были в правильном порядке"  # Re-arrange the above numbers so they are in the right order
+dp["Check the shopping list"] = "Проверьте список покупок и перетащите все необходи-мые предметы в корзину."  # Check the shopping list and drag all needed items into the basket.
+dp["Drag lt2"] = "Перетащите 1 из меньше, больше или ра-вно в красный квадрат."  # Drag one of the greater, lesser or equal to the red square.
+dp["Re-arrange right"] = "Переставьте числа, чтобы они были в правильном порядке"  # Re-arrange the above numbers so they are in the right order
 dp["Complete abc"] = "Заполните алфавит с помощью букв."  # Complete the abc using the letters above.
 dp["Write a word:"] = "Напишите слово:"  # Write a word:
-dp[
-    "Find and separate"] = "Найдите и отделите чётные числа от нечётных чисел в указанной последовательна-сти."  # Find and separate the Even Numbers from the Odd Numbers in the above series.
-dp[
-    "Re-arrange alphabetical"] = "Переставьте буквы, чтобы они были в алфавитном порядке."  # Re-arrange the above letters so they are in the alphabetical order.
-dp[
-    "Re-arrange ascending"] = "Переставьте числа, чтобы они были в порядке возрастания."  # Re-arrange the above numbers so they are in the ascending order.
-dp[
-    "Build the following word using the letters below."] = "Пост-рой-те следующее слово, используя приведён-ные ни-же буквы."
+dp["Find and separate"] = "Найдите и отделите чётные числа от нечётных чисел в указанной последовательна-сти."  # Find and separate the Even Numbers from the Odd Numbers in the above series.
+dp["Re-arrange alphabetical"] = "Переставьте буквы, чтобы они были в алфавитном порядке."  # Re-arrange the above letters so they are in the alphabetical order.
+dp["Re-arrange ascending"] = "Переставьте числа, чтобы они были в порядке возрастания."  # Re-arrange the above numbers so they are in the ascending order.
+dp["Build the following word using the letters below."] = "Пост-рой-те следующее слово, используя приведён-ные ни-же буквы."
 dp["Perfect! Task solved!"] = "Великолепно! Задача решена!"
 
 # level_controller
@@ -471,7 +463,7 @@ dp["teal"] = "Сине-зелёный"  # "teal"
 dp["blue"] = "Синий"  # "blue"
 dp["navy"] = "Тёмно-синий"  # "navy"
 dp["purple"] = "Фиолетовый"  # "purple"
-# dp["violet"] = "Лиловый" #"violet"
+dp["violet"] = "Лиловый" #"violet"
 dp["magenta"] = "Пурпурный"  # "magenta"
 dp["indigo"] = "Индиго"  # "indigo"
 dp["pink"] = "Ро-зо-вый"  # "pink"
@@ -501,13 +493,8 @@ dp["cyan is ok"] = "го-лу-бого нормально"
 dp["magenta is ok"] = "пурпурного нормально"
 dp["yellow is ok"] = "жёлтого нормально"
 
-dp[
-    "Fract instr0"] = "Устано-вите соответствие дро-бей справа и дро-бей слева"  # Match fraction charts on the right to the ones on the left
-dp[
-    "Fract instr1"] = "Устано-вите соответствие дро-бей справа дро-бям слева"  # [Match fraction charts and fractions on the right","to the fraction charts on the left"]
-dp[
-    "Fract instr2"] = "Устано-вите соответствие дро-бей справа дро-бям слева"  # Match fraction charts to the fractions on the left
-dp[
-    "Fract instr3"] = "Устано-вите соответствие дро-бей и десятичных дро-бей справа их процентному представлению слева"  # ["Match fraction charts, fractions and decimal fractions on the right","to their percentage representations"]
-dp[
-    "Fract instr4"] = "Устано-вите соответствие отношений слева отношениям справа. Отношения показаны как отношения цвет-ных час-тей к белым час-тям"  # ["Match charts to the ratios on the left","Ratios are expressed as ratio of coloured pieces to white pieces"]
+dp["Fract instr0"] = "Устано-вите соответствие дро-бей справа и дро-бей слева"  # Match fraction charts on the right to the ones on the left
+dp["Fract instr1"] = "Устано-вите соответствие дро-бей справа дро-бям слева"  # [Match fraction charts and fractions on the right","to the fraction charts on the left"]
+dp["Fract instr2"] = "Устано-вите соответствие дро-бей справа дро-бям слева"  # Match fraction charts to the fractions on the left
+dp["Fract instr3"] = "Устано-вите соответствие дро-бей и десятичных дро-бей справа их процентному представлению слева"  # ["Match fraction charts, fractions and decimal fractions on the right","to their percentage representations"]
+dp["Fract instr4"] = "Устано-вите соответствие отношений слева отношениям справа. Отношения показаны как отношения цвет-ных час-тей к белым час-тям"  # ["Match charts to the ratios on the left","Ratios are expressed as ratio of coloured pieces to white pieces"]
