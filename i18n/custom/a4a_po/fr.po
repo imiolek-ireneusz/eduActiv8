@@ -1,0 +1,1768 @@
+# eduActiv8 - word lists - translation file.
+# Copyright (C) 2019 Ireneusz Imiolek
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.19.01\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+
+msgid "cow"
+msgstr "vache"
+
+msgid "turkey"
+msgstr "dinde"
+
+msgid "shrimp"
+msgstr "crevettes"
+
+msgid "wolf"
+msgstr "loup"
+
+msgid "panther"
+msgstr "panthère"
+
+msgid "panda"
+msgstr "panda"
+
+msgid "magpie"
+msgstr "pie"
+
+msgid "clam"
+msgstr "palourde"
+
+msgid "pony"
+msgstr "poney"
+
+msgid "mouse"
+msgstr "souris"
+
+msgid "pug"
+msgstr "carlin"
+
+msgid "koala"
+msgstr "koala"
+
+msgid "frog"
+msgstr "grenouille"
+
+msgid "ladybug"
+msgstr "coccinelle"
+
+msgid "gorilla"
+msgstr "gorille"
+
+msgid "llama"
+msgstr "lama"
+
+msgid "vulture"
+msgstr "vautour"
+
+msgid "hamster"
+msgstr "hamster"
+
+msgid "bird"
+msgstr "oiseau"
+
+msgid "starfish"
+msgstr "étoile de mer"
+
+msgid "crow"
+msgstr "corbeau"
+
+msgid "parakeet"
+msgstr "perruche"
+
+msgid "caterpillar"
+msgstr "chenille"
+
+msgid "tiger"
+msgstr "tigre"
+
+msgid "hummingbird"
+msgstr "colibri"
+
+msgid "piranha"
+msgstr "piranha"
+
+msgid "pig"
+msgstr "cochon"
+
+msgid "scorpion"
+msgstr "scorpion"
+
+msgid "fox"
+msgstr "renard"
+
+msgid "leopard"
+msgstr "léopard"
+
+msgid "iguana"
+msgstr "iguane"
+
+msgid "dolphin"
+msgstr "dauphin"
+
+msgid "bat"
+msgstr "chauve-souris"
+
+msgid "chick"
+msgstr "poussin"
+
+msgid "crab"
+msgstr "crabe"
+
+msgid "hen"
+msgstr "poule"
+
+msgid "wasp"
+msgstr "guêpe"
+
+msgid "chameleon"
+msgstr "caméléon"
+
+msgid "whale"
+msgstr "baleine"
+
+msgid "hedgehog"
+msgstr "hérisson"
+
+msgid "fawn"
+msgstr "fauve"
+
+msgid "moose"
+msgstr "élan"
+
+msgid "bee"
+msgstr "abeille"
+
+msgid "viper"
+msgstr "vipère"
+
+msgid "shrike"
+msgstr "passereaux"
+
+msgid "donkey"
+msgstr "âne"
+
+msgid "guinea pig"
+msgstr "cochon d'inde"
+
+msgid "sloth"
+msgstr "paresseux"
+
+msgid "horse"
+msgstr "cheval"
+
+msgid "penguin"
+msgstr "pingouin"
+
+msgid "otter"
+msgstr "loutre"
+
+msgid "bear"
+msgstr "ours"
+
+msgid "zebra"
+msgstr "zèbre"
+
+msgid "ostrich"
+msgstr "autruche"
+
+msgid "camel"
+msgstr "chameau"
+
+msgid "antelope"
+msgstr "antilope"
+
+msgid "lemur"
+msgstr "lémurien"
+
+msgid "pigeon"
+msgstr "pigeon"
+
+msgid "lama"
+msgstr "lama"
+
+msgid "mole"
+msgstr "taupe"
+
+msgid "ray"
+msgstr "raie"
+
+msgid "ram"
+msgstr "bélier"
+
+msgid "skunk"
+msgstr "putois"
+
+msgid "jellyfish"
+msgstr "méduse"
+
+msgid "sheep"
+msgstr "mouton"
+
+msgid "shark"
+msgstr "requin"
+
+msgid "kitten"
+msgstr "chaton"
+
+msgid "deer"
+msgstr "cerf"
+
+msgid "snail"
+msgstr "escargot"
+
+msgid "flamingo"
+msgstr "flamant rose"
+
+msgid "rabbit"
+msgstr "lapin"
+
+msgid "oyster"
+msgstr "huître"
+
+msgid "beaver"
+msgstr "castor"
+
+msgid "sparrow"
+msgstr "moineau"
+
+msgid "dove"
+msgstr "colombe"
+
+msgid "eagle"
+msgstr "aigle"
+
+msgid "beetle"
+msgstr "coléoptère"
+
+msgid "hippopotamus"
+msgstr "hippopotame"
+
+msgid "owl"
+msgstr "hibou"
+
+msgid "cobra"
+msgstr "cobra"
+
+msgid "salamander"
+msgstr "salamandre"
+
+msgid "goose"
+msgstr "oie"
+
+msgid "kangaroo"
+msgstr "kangourou"
+
+msgid "dragonfly"
+msgstr "libellule"
+
+msgid "toad"
+msgstr "crapaud"
+
+msgid "pelican"
+msgstr "pélican"
+
+msgid "squid"
+msgstr "calamar"
+
+msgid "lion cub"
+msgstr "lionceau"
+
+msgid "jaguar"
+msgstr "jaguar"
+
+msgid "duck"
+msgstr "canard"
+
+msgid "lizard"
+msgstr "lézard"
+
+msgid "rhinoceros"
+msgstr "rhinocéros"
+
+msgid "hyena"
+msgstr "hyène"
+
+msgid "ox"
+msgstr "boeuf"
+
+msgid "peacock"
+msgstr "paon"
+
+msgid "parrot"
+msgstr "perroquet"
+
+msgid "elk"
+msgstr "wapiti"
+
+msgid "alligator"
+msgstr "alligator"
+
+msgid "ant"
+msgstr "fourmi"
+
+msgid "goat"
+msgstr "chèvre"
+
+msgid "baby rabbit"
+msgstr "petit lapin"
+
+msgid "lion"
+msgstr "lion"
+
+msgid "squirrel"
+msgstr "écureuil"
+
+msgid "opossum"
+msgstr "marsupial"
+
+msgid "chimp"
+msgstr "chimpanzé"
+
+msgid "doe"
+msgstr "daim"
+
+msgid "gopher"
+msgstr "gaufre"
+
+msgid "elephant"
+msgstr "éléphant"
+
+msgid "giraffe"
+msgstr "girafe"
+
+msgid "spider"
+msgstr "araignée"
+
+msgid "puppy"
+msgstr "chiot"
+
+msgid "jay"
+msgstr "geai"
+
+msgid "seal"
+msgstr "phoque"
+
+msgid "rooster"
+msgstr "coq"
+
+msgid "turtle"
+msgstr "tortue"
+
+msgid "bull"
+msgstr "taureau"
+
+msgid "cat"
+msgstr "chat"
+
+msgid "rat"
+msgstr "rat"
+
+msgid "slug"
+msgstr "limace"
+
+msgid "buffalo"
+msgstr "buffle"
+
+msgid "blackbird"
+msgstr "merle"
+
+msgid "swan"
+msgstr "cygne"
+
+msgid "lobster"
+msgstr "homard"
+
+msgid "dog"
+msgstr "chien"
+
+msgid "mosquito"
+msgstr "moustique"
+
+msgid "snake"
+msgstr "serpent"
+
+msgid "chicken"
+msgstr "poulet"
+
+msgid "anteater"
+msgstr "tamanoir"
+
+msgid "judo"
+msgstr "judo"
+
+msgid "pool"
+msgstr "piscine"
+
+msgid "ride"
+msgstr "vélo"
+
+msgid "stretch"
+msgstr "étirements"
+
+msgid "helmet"
+msgstr "casque"
+
+msgid "ice skating"
+msgstr "patinage"
+
+msgid "walk"
+msgstr "marche"
+
+msgid "run"
+msgstr "courrir"
+
+msgid "swim"
+msgstr "nager"
+
+msgid "hop"
+msgstr "sauter"
+
+msgid "hike"
+msgstr "randonnée"
+
+msgid "boxing"
+msgstr "boxe"
+
+msgid "hockey"
+msgstr "hockey"
+
+msgid "race"
+msgstr "course"
+
+msgid "throw"
+msgstr "javelot"
+
+msgid "skate"
+msgstr "skate"
+
+msgid "win"
+msgstr "gagner"
+
+msgid "squat"
+msgstr "squat"
+
+msgid "ski"
+msgstr "ski"
+
+msgid "golf"
+msgstr "golf"
+
+msgid "whistle"
+msgstr "sifflet"
+
+msgid "torch"
+msgstr "torche"
+
+msgid "sailing"
+msgstr "voile"
+
+msgid "stand"
+msgstr "stand"
+
+msgid "tennis"
+msgstr "tennis"
+
+msgid "jump"
+msgstr "saut"
+
+msgid "rowing"
+msgstr "aviron"
+
+msgid "jog"
+msgstr "jogging"
+
+msgid "rope"
+msgstr "corde"
+
+msgid "teeth"
+msgstr "dents"
+
+msgid "cheek"
+msgstr "joues"
+
+msgid "ankle"
+msgstr "cheville"
+
+msgid "knee"
+msgstr "genou"
+
+msgid "toe"
+msgstr "orteil"
+
+msgid "muscle"
+msgstr "muscle"
+
+msgid "mouth"
+msgstr "bouche"
+
+msgid "feet"
+msgstr "pieds"
+
+msgid "hand"
+msgstr "main"
+
+msgid "elbow"
+msgstr "coude"
+
+msgid "hair"
+msgstr "cheveux"
+
+msgid "eyelash"
+msgstr "cils"
+
+msgid "beard"
+msgstr "barbe"
+
+msgid "belly button"
+msgstr "nombril"
+
+msgid "thumb"
+msgstr "pouce"
+
+msgid "breast"
+msgstr "poitrine"
+
+msgid "nostril"
+msgstr "narine"
+
+msgid "nose"
+msgstr "nez"
+
+msgid "hip"
+msgstr "hanche"
+
+msgid "arm"
+msgstr "bras"
+
+msgid "eyebrow"
+msgstr "sourcils"
+
+msgid "fist"
+msgstr "poing"
+
+msgid "neck"
+msgstr "cou"
+
+msgid "wrist"
+msgstr "poignet"
+
+msgid "throat"
+msgstr "gorge"
+
+msgid "eye"
+msgstr "oeil"
+
+msgid "leg"
+msgstr "jambe"
+
+msgid "spine"
+msgstr "colonne vertébrale"
+
+msgid "ear"
+msgstr "oreille"
+
+msgid "finger"
+msgstr "doigt"
+
+msgid "foot"
+msgstr "pied"
+
+msgid "braid"
+msgstr "tresse"
+
+msgid "face"
+msgstr "visage"
+
+msgid "back"
+msgstr "dos"
+
+msgid "chin"
+msgstr "menton"
+
+msgid "bottom"
+msgstr "bas"
+
+msgid "thigh"
+msgstr "cuisse"
+
+msgid "belly"
+msgstr "ventre"
+
+msgid "girl"
+msgstr "fille"
+
+msgid "male"
+msgstr "male"
+
+msgid "son"
+msgstr "fils"
+
+msgid "mates"
+msgstr "écoliers"
+
+msgid "friends"
+msgstr "amis"
+
+msgid "baby"
+msgstr "bébé"
+
+msgid "child"
+msgstr "enfant"
+
+msgid "dad"
+msgstr "papa"
+
+msgid "mom"
+msgstr "maman"
+
+msgid "twin boys"
+msgstr "jumeaux"
+
+msgid "brothers"
+msgstr "frères"
+
+msgid "man"
+msgstr "homme"
+
+msgid "mother"
+msgstr "mère"
+
+msgid "grandfather"
+msgstr "grand-père"
+
+msgid "family"
+msgstr "famille"
+
+msgid "female"
+msgstr "femelle"
+
+msgid "wife"
+msgstr "femme"
+
+msgid "husband"
+msgstr "mari"
+
+msgid "bride"
+msgstr "mariée"
+
+msgid "madam"
+msgstr "madame"
+
+msgid "grandmother"
+msgstr "grand-mère"
+
+msgid "couple"
+msgstr "couple"
+
+msgid "lad"
+msgstr "garçon"
+
+msgid "twin girls"
+msgstr "jumelles"
+
+msgid "tribe"
+msgstr "tribu"
+
+msgid "boy"
+msgstr "garçon"
+
+msgid "sisters"
+msgstr "soeurs"
+
+msgid "woman"
+msgstr "femme"
+
+msgid "lady"
+msgstr "dame"
+
+msgid "candy"
+msgstr "bonbons"
+
+msgid "sausage"
+msgstr "saucisse"
+
+msgid "hamburger"
+msgstr "hamburger"
+
+msgid "steak"
+msgstr "steak"
+
+msgid "fudge"
+msgstr "fondant"
+
+msgid "doughnut"
+msgstr "beignet"
+
+msgid "coconut"
+msgstr "noix de coco"
+
+msgid "rice"
+msgstr "riz"
+
+msgid "ice cream"
+msgstr "crème glacée"
+
+msgid "jelly"
+msgstr "gelée"
+
+msgid "yoghurt"
+msgstr "yaourt"
+
+msgid "dessert"
+msgstr "dessert"
+
+msgid "pretzel"
+msgstr "bretzel"
+
+msgid "peanut"
+msgstr "cacahuète"
+
+msgid "jam"
+msgstr "confiture"
+
+msgid "feast"
+msgstr "fête"
+
+msgid "cookie"
+msgstr "cookie"
+
+msgid "bacon"
+msgstr "bacon"
+
+msgid "spice"
+msgstr "épice"
+
+msgid "coffee"
+msgstr "café"
+
+msgid "pie"
+msgstr "tarte"
+
+msgid "lemonade"
+msgstr "limonade"
+
+msgid "chocolate"
+msgstr "chocolat"
+
+msgid "water bottle"
+msgstr "bouteille d'eau"
+
+msgid "lunch"
+msgstr "déjeuner"
+
+msgid "ice"
+msgstr "glace"
+
+msgid "sugar"
+msgstr "sucre"
+
+msgid "sauce"
+msgstr "sauce"
+
+msgid "soup"
+msgstr "soupe"
+
+msgid "juice"
+msgstr "jus"
+
+msgid "fries"
+msgstr "frites"
+
+msgid "cake"
+msgstr "gâteau"
+
+msgid "mashed potatoes"
+msgstr "purée de pomme de terre"
+
+msgid "tea"
+msgstr "thé"
+
+msgid "bun"
+msgstr "bon"
+
+msgid "cheese"
+msgstr "fromage"
+
+msgid "beef"
+msgstr "boeuf"
+
+msgid "sandwich"
+msgstr "sandwich"
+
+msgid "slice"
+msgstr "tranche"
+
+msgid "sprinkle"
+msgstr "saupoudrer"
+
+msgid "pizza"
+msgstr "pizza"
+
+msgid "flour"
+msgstr "farine"
+
+msgid "gum"
+msgstr "gomme"
+
+msgid "spaghetti"
+msgstr "spaghetti"
+
+msgid "roast"
+msgstr "rôti"
+
+msgid "stew"
+msgstr "ragoût"
+
+msgid "spread"
+msgstr "tartiner"
+
+msgid "meat"
+msgstr "viande"
+
+msgid "milk"
+msgstr "lait"
+
+msgid "meal"
+msgstr "repas"
+
+msgid "corn"
+msgstr "maïs"
+
+msgid "bread"
+msgstr "pain"
+
+msgid "walnut"
+msgstr "noix"
+
+msgid "egg"
+msgstr "oeuf"
+
+msgid "hot dog"
+msgstr "hot dog"
+
+msgid "ham"
+msgstr "jambon"
+
+msgid "jewellery"
+msgstr "bijoux"
+
+msgid "sock"
+msgstr "chaussette"
+
+msgid "jacket"
+msgstr "veste"
+
+msgid "heel"
+msgstr "talon"
+
+msgid "smock"
+msgstr "blouse"
+
+msgid "shorts"
+msgstr "short"
+
+msgid "pocket"
+msgstr "poche"
+
+msgid "necklace"
+msgstr "collier"
+
+msgid "sweatshirt"
+msgstr "sweat"
+
+msgid "uniform"
+msgstr "uniforme"
+
+msgid "raincoat"
+msgstr "imperméable"
+
+msgid "trousers"
+msgstr "pantalon"
+
+msgid "sunglasses"
+msgstr "lunettes de soleil"
+
+msgid "coat"
+msgstr "manteau"
+
+msgid "pullover"
+msgstr "pull"
+
+msgid "shirt"
+msgstr "chemise"
+
+msgid "sandals"
+msgstr "sandales"
+
+msgid "suit"
+msgstr "costume"
+
+msgid "pyjamas"
+msgstr "pyjama"
+
+msgid "skirt"
+msgstr "jupe"
+
+msgid "zip"
+msgstr "braguette"
+
+msgid "shoes"
+msgstr "chaussures"
+
+msgid "jewel"
+msgstr "bijou"
+
+msgid "tie"
+msgstr "cravate"
+
+msgid "slippers"
+msgstr "chaussons"
+
+msgid "gloves"
+msgstr "gants"
+
+msgid "hat"
+msgstr "chapeau"
+
+msgid "sleeve"
+msgstr "manche"
+
+msgid "cap"
+msgstr "cap"
+
+msgid "swimming suit"
+msgstr "maillot de bain"
+
+msgid "trainer"
+msgstr "survêtement"
+
+msgid "vest"
+msgstr "gilet"
+
+msgid "glasses"
+msgstr "lunettes"
+
+msgid "shoelace"
+msgstr "lacet"
+
+msgid "patch"
+msgstr "retouche"
+
+msgid "scarf"
+msgstr "foulard"
+
+msgid "shoe"
+msgstr "chaussure"
+
+msgid "button"
+msgstr "bouton"
+
+msgid "dress"
+msgstr " robe"
+
+msgid "sash"
+msgstr "ceinture"
+
+msgid "shoe sole"
+msgstr "chaussure a semelle"
+
+msgid "robe"
+msgstr "robe"
+
+msgid "pants"
+msgstr "pantalon"
+
+msgid "kimono"
+msgstr "kimono"
+
+msgid "overalls"
+msgstr "salopette"
+
+msgid "lick"
+msgstr "lécher"
+
+msgid "slam"
+msgstr "viser"
+
+msgid "beg"
+msgstr "mendier"
+
+msgid "fell"
+msgstr "tomber"
+
+msgid "scratch"
+msgstr "griffer"
+
+msgid "touch"
+msgstr "toucher"
+
+msgid "sniff"
+msgstr "sentir"
+
+msgid "see"
+msgstr "voir"
+
+msgid "climb"
+msgstr "grimper"
+
+msgid "dig"
+msgstr "creuser"
+
+msgid "howl"
+msgstr "hurler"
+
+msgid "sleep"
+msgstr "dormir"
+
+msgid "explore"
+msgstr "explorer"
+
+msgid "draw"
+msgstr "dessiner"
+
+msgid "hug"
+msgstr "serrer"
+
+msgid "teach"
+msgstr "enseigner"
+
+msgid "nap"
+msgstr "dormir"
+
+msgid "clay"
+msgstr "façonner"
+
+msgid "catch"
+msgstr "capturer"
+
+msgid "clap"
+msgstr "taper"
+
+msgid "cry"
+msgstr "pleurer"
+
+msgid "sing"
+msgstr "chanter"
+
+msgid "meet"
+msgstr "rencontrer"
+
+msgid "sell"
+msgstr "vendre"
+
+msgid "peck"
+msgstr "picorer"
+
+msgid "beat"
+msgstr "heurter"
+
+msgid "kneel"
+msgstr "s'agenouiller"
+
+msgid "find"
+msgstr "trouver"
+
+msgid "dance"
+msgstr "danser"
+
+msgid "cough"
+msgstr "tousser"
+
+msgid "cut"
+msgstr "couper"
+
+msgid "think"
+msgstr "penser"
+
+msgid "bark"
+msgstr "aboyer"
+
+msgid "speak"
+msgstr "parler"
+
+msgid "cheer"
+msgstr "encourager"
+
+msgid "bake"
+msgstr "cuisiner"
+
+msgid "write"
+msgstr "écrire"
+
+msgid "punch"
+msgstr "frapper"
+
+msgid "strum"
+msgstr "jouer"
+
+msgid "study"
+msgstr "étudier"
+
+msgid "plow"
+msgstr "labourer"
+
+msgid "dream"
+msgstr "rêver"
+
+msgid "post"
+msgstr "poster"
+
+msgid "dive"
+msgstr "plonger"
+
+msgid "whisper"
+msgstr "chuchoter"
+
+msgid "sob"
+msgstr "souffrir"
+
+msgid "shake"
+msgstr "secouer"
+
+msgid "feed"
+msgstr "nourrir"
+
+msgid "crawl"
+msgstr "ramper"
+
+msgid "camp"
+msgstr "camper"
+
+msgid "spill"
+msgstr "renverser"
+
+msgid "clean"
+msgstr "nettoyer"
+
+msgid "scream"
+msgstr "crier"
+
+msgid "tear"
+msgstr "déchirer"
+
+msgid "float"
+msgstr "flotter"
+
+msgid "pull"
+msgstr "tirer"
+
+msgid "ate"
+msgstr "manger"
+
+msgid "kiss"
+msgstr "embrasser"
+
+msgid "sit"
+msgstr "s'asseoir"
+
+msgid "hatch"
+msgstr "éclore"
+
+msgid "blink"
+msgstr " clignoter"
+
+msgid "hear"
+msgstr "entendre"
+
+msgid "smooch"
+msgstr "embrasser"
+
+msgid "play"
+msgstr "jouer"
+
+msgid "wash"
+msgstr "laver"
+
+msgid "chat"
+msgstr "discuter"
+
+msgid "drive"
+msgstr "conduire"
+
+msgid "to drink"
+msgstr "boire"
+
+msgid "fly"
+msgstr "voler"
+
+msgid "juggle"
+msgstr "jongler"
+
+msgid "bit"
+msgstr "ronger"
+
+msgid "sweep"
+msgstr "balayer"
+
+msgid "look"
+msgstr "regarder"
+
+msgid "knit"
+msgstr "tricoter"
+
+msgid "lift"
+msgstr "soulever"
+
+msgid "fetch"
+msgstr "rapporter"
+
+msgid "read"
+msgstr "lire"
+
+msgid "croak"
+msgstr "croasser"
+
+msgid "stare"
+msgstr "impressioner"
+
+msgid "eat"
+msgstr "manger"
+
+msgid "lighthouse"
+msgstr "phare"
+
+msgid "door"
+msgstr "porte"
+
+msgid "circus"
+msgstr "cirque"
+
+msgid "church"
+msgstr "église"
+
+msgid "kennel"
+msgstr "chenil"
+
+msgid "temple"
+msgstr "temple"
+
+msgid "smoke"
+msgstr "fumée"
+
+msgid "chimney"
+msgstr "cheminée"
+
+msgid "brick"
+msgstr "brique"
+
+msgid "well"
+msgstr "puits"
+
+msgid "street"
+msgstr "rue"
+
+msgid "castle"
+msgstr "château"
+
+msgid "store"
+msgstr "magasin"
+
+msgid "staircase"
+msgstr "escalier"
+
+msgid "school"
+msgstr "école"
+
+msgid "farm"
+msgstr "ferme"
+
+msgid "bridge"
+msgstr "pont"
+
+msgid "dam"
+msgstr "barrage"
+
+msgid "pyramid"
+msgstr "pyramide"
+
+msgid "barn"
+msgstr "grange"
+
+msgid "mill"
+msgstr "moulin"
+
+msgid "window"
+msgstr "fenêtre"
+
+msgid "cabin"
+msgstr "cabine"
+
+msgid "step"
+msgstr "étape"
+
+msgid "shop"
+msgstr "boutique"
+
+msgid "shed"
+msgstr "hangar"
+
+msgid "roof"
+msgstr "toit"
+
+msgid "steeple"
+msgstr "clocher"
+
+msgid "garage"
+msgstr "garage"
+
+msgid "mosque"
+msgstr "mosquée"
+
+msgid "hospital"
+msgstr "hôpital"
+
+msgid "tent"
+msgstr "tente"
+
+msgid "house"
+msgstr "maison"
+
+msgid "wall"
+msgstr "mur"
+
+msgid "bank"
+msgstr "banque"
+
+msgid "shutter"
+msgstr "volet"
+
+msgid "hut"
+msgstr "cabane"
+
+msgid "land"
+msgstr "terre"
+
+msgid "cliff"
+msgstr "falaise"
+
+msgid "hill"
+msgstr "colline"
+
+msgid "canyon"
+msgstr "canyon"
+
+msgid "rock"
+msgstr "rocher"
+
+msgid "sea"
+msgstr "mer"
+
+msgid "lake"
+msgstr "lac"
+
+msgid "coast"
+msgstr "côte"
+
+msgid "shore"
+msgstr "rivage"
+
+msgid "mountain"
+msgstr "montagne"
+
+msgid "pond"
+msgstr "étang"
+
+msgid "peak"
+msgstr "pic"
+
+msgid "lava"
+msgstr "lave"
+
+msgid "cave"
+msgstr "grotte"
+
+msgid "dune"
+msgstr "dune"
+
+msgid "island"
+msgstr "île"
+
+msgid "forest"
+msgstr "forêt"
+
+msgid "desert"
+msgstr "désert"
+
+msgid "iceberg"
+msgstr "iceberg"
+
+msgid "clown"
+msgstr "clown"
+
+msgid "engineer"
+msgstr "ingénieur"
+
+msgid "priest"
+msgstr "prêtre"
+
+msgid "vet"
+msgstr "vétérinaire"
+
+msgid "judge"
+msgstr "juge"
+
+msgid "chef"
+msgstr "chef"
+
+msgid "athlete"
+msgstr "athlète"
+
+msgid "librarian"
+msgstr "libraire"
+
+msgid "juggler"
+msgstr "jongleur"
+
+msgid "policeman"
+msgstr "police"
+
+msgid "plumber"
+msgstr "plombier"
+
+msgid "badge"
+msgstr "insigne"
+
+msgid "queen"
+msgstr "reine"
+
+msgid "farmer"
+msgstr "agriculteur"
+
+msgid "magician"
+msgstr "magicien"
+
+msgid "knight"
+msgstr "chevalier"
+
+msgid "doctor"
+msgstr "docteur"
+
+msgid "bricklayer"
+msgstr "maçon"
+
+msgid "cleaner"
+msgstr "nettoyeur"
+
+msgid "teacher"
+msgstr "enseignant"
+
+msgid "hunter"
+msgstr "chasseur"
+
+msgid "soldier"
+msgstr "soldat"
+
+msgid "musician"
+msgstr "musicien"
+
+msgid "lawyer"
+msgstr "avocat"
+
+msgid "fisherman"
+msgstr "pêcheur"
+
+msgid "princess"
+msgstr "princesse"
+
+msgid "fireman"
+msgstr "pompier"
+
+msgid "nun"
+msgstr "nounou"
+
+msgid "pirate"
+msgstr "pirate"
+
+msgid "cowboy"
+msgstr "cowboy"
+
+msgid "electrician"
+msgstr "électricien"
+
+msgid "nurse"
+msgstr "infirmière"
+
+msgid "king"
+msgstr "roi"
+
+msgid "president"
+msgstr "président"
+
+msgid "office worker"
+msgstr "bureau"
+
+msgid "carpenter"
+msgstr "charpentier"
+
+msgid "jockey"
+msgstr "jockey"
+
+msgid "worker"
+msgstr "travailleur"
+
+msgid "mechanic"
+msgstr "mécanicien"
+
+msgid "pilot"
+msgstr "pilote"
+
+msgid "actor"
+msgstr "acteur"
+
+msgid "cook"
+msgstr "cuisinier"
+
+msgid "student"
+msgstr "étudiant"
+
+msgid "butcher"
+msgstr "boucher"
+
+msgid "accountant"
+msgstr "comptable"
+
+msgid "prince"
+msgstr "prince"
+
+msgid "pope"
+msgstr "pape"
+
+msgid "sailor"
+msgstr "marin"
+
+msgid "boxer"
+msgstr "boxeur"
+
+msgid "ballet dancer"
+msgstr "ballet"
+
+msgid "coach"
+msgstr "coach"
+
+msgid "astronaut"
+msgstr "astronaute"
+
+msgid "painter"
+msgstr "peintre"
+
+msgid "anaesthesiologist"
+msgstr "anesthésiste"
+
+msgid "scientist"
+msgstr "scientifique"
+
+msgid "carrot"
+msgstr "carotte"
+
+msgid "blackberries"
+msgstr "mûres"
+
+msgid "celery"
+msgstr "céleri"
+
+msgid "turnip"
+msgstr "navet"
+
+msgid "cacao"
+msgstr "cacao"
+
+msgid "peach"
+msgstr "pêche"
+
+msgid "melon"
+msgstr "melon"
+
+msgid "grapefruit"
+msgstr "pamplemousse"
+
+msgid "broccoli"
+msgstr "brocoli"
+
+msgid "grapes"
+msgstr "raisin"
+
+msgid "spinach"
+msgstr "épinards"
+
+msgid "fig"
+msgstr "figue"
+
+msgid "kernel"
+msgstr "noyau"
+
+msgid "radish"
+msgstr "radis"
+
+msgid "tomato"
+msgstr "tomate"
+
+msgid "kiwi"
+msgstr "kiwi"
+
+msgid "asparagus"
+msgstr "asperges"
+
+msgid "olives"
+msgstr "olives"
+
+msgid "cucumbers"
+msgstr "concombres"
+
+msgid "beans"
+msgstr "haricots"
+
+msgid "strawberry"
+msgstr "fraise"
+
+msgid "peppers"
+msgstr "poivrons"
+
+msgid "raspberry"
+msgstr "framboise"
+
+msgid "apricot"
+msgstr "abricot"
+
+msgid "potatoes"
+msgstr "pommes de terre"
+
+msgid "peas"
+msgstr "pois"
+
+msgid "cabbage"
+msgstr "chou"
+
+msgid "cherries"
+msgstr "cerises"
+
+msgid "squash"
+msgstr "courge"
+
+msgid "blueberries"
+msgstr "myrtille"
+
+msgid "pear"
+msgstr "poire"
+
+msgid "orange"
+msgstr "orange"
+
+msgid "pumpkin"
+msgstr "citrouille"
+
+msgid "avocado"
+msgstr "avocat"
+
+msgid "garlic"
+msgstr "ail"
+
+msgid "onion"
+msgstr "oignon"
+
+msgid "apple"
+msgstr "pomme"
+
+msgid "lime"
+msgstr "citon vert"
+
+msgid "cauliflower"
+msgstr "chou-fleur"
+
+msgid "mango"
+msgstr "mangue"
+
+msgid "lettuce"
+msgstr "laitue"
+
+msgid "lemon"
+msgstr "citron"
+
+msgid "aubergine"
+msgstr "aubergine"
+
+msgid "artichokes"
+msgstr "artichauts"
+
+msgid "plums"
+msgstr "prunes"
+
+msgid "leek"
+msgstr "poireau"
+
+msgid "bananas"
+msgstr "bananes"
+
+msgid "papaya"
+msgstr "papaye"
+
+msgid "sail"
+msgstr "voile"
+
+msgid "taxi"
+msgstr "taxi"
+
+msgid "car"
+msgstr "voiture"
+
+msgid "bike"
+msgstr "vélo"
+
+msgid "raft"
+msgstr "radeau"
+
+msgid "pedal"
+msgstr "pédale"
+
+msgid "bus"
+msgstr "bus"
+
+msgid "handlebar"
+msgstr "guidon"
+
+msgid "boat"
+msgstr "bateau"
+
+msgid "truck"
+msgstr "camion"
+
+msgid "sleigh"
+msgstr "traîneau"
+
+msgid "carpet"
+msgstr "tapis"
+
+msgid "motorcycle"
+msgstr "moto"
+
+msgid "train"
+msgstr "train"
+
+msgid "ship"
+msgstr "navire"
+
+msgid "van"
+msgstr "fourgonette"
+
+msgid "canoe"
+msgstr "canot"
+
+msgid "rocket"
+msgstr "fusée"
+
+msgid "mast"
+msgstr "mât"
+
+msgid "sledge"
+msgstr "luge"
+
+msgid "bicycle"
+msgstr "bicyclette"
+

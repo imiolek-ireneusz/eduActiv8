@@ -1,0 +1,1768 @@
+# eduActiv8 - word lists - translation file.
+# Copyright (C) 2019 Ireneusz Imiolek
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.19.01\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+
+msgid "cow"
+msgstr "vaca"
+
+msgid "turkey"
+msgstr "gall dindi"
+
+msgid "shrimp"
+msgstr "gamba"
+
+msgid "wolf"
+msgstr "llop"
+
+msgid "panther"
+msgstr "pantera"
+
+msgid "panda"
+msgstr "ós panda"
+
+msgid "magpie"
+msgstr "garsa"
+
+msgid "clam"
+msgstr "cloïssa"
+
+msgid "pony"
+msgstr "poni"
+
+msgid "mouse"
+msgstr "ratolí"
+
+msgid "pug"
+msgstr "carlí"
+
+msgid "koala"
+msgstr "coala"
+
+msgid "frog"
+msgstr "granota"
+
+msgid "ladybug"
+msgstr "marieta"
+
+msgid "gorilla"
+msgstr "goril·la"
+
+msgid "llama"
+msgstr ""
+
+msgid "vulture"
+msgstr "voltor"
+
+msgid "hamster"
+msgstr ""
+
+msgid "bird"
+msgstr "ocell"
+
+msgid "starfish"
+msgstr "estrella de mar"
+
+msgid "crow"
+msgstr "corb"
+
+msgid "parakeet"
+msgstr "periquito"
+
+msgid "caterpillar"
+msgstr "eruga"
+
+msgid "tiger"
+msgstr "tigre"
+
+msgid "hummingbird"
+msgstr "colibrí"
+
+msgid "piranha"
+msgstr "piranya"
+
+msgid "pig"
+msgstr "porc"
+
+msgid "scorpion"
+msgstr "escorpí"
+
+msgid "fox"
+msgstr "guineu"
+
+msgid "leopard"
+msgstr "lleopard"
+
+msgid "iguana"
+msgstr "iguana"
+
+msgid "dolphin"
+msgstr "dofí"
+
+msgid "bat"
+msgstr "ratpenat"
+
+msgid "chick"
+msgstr "pollet"
+
+msgid "crab"
+msgstr "cranc"
+
+msgid "hen"
+msgstr "gallina"
+
+msgid "wasp"
+msgstr "vespa"
+
+msgid "chameleon"
+msgstr "camaleó"
+
+msgid "whale"
+msgstr "balena"
+
+msgid "hedgehog"
+msgstr "eriçó"
+
+msgid "fawn"
+msgstr "cervatell"
+
+msgid "moose"
+msgstr "ant"
+
+msgid "bee"
+msgstr "abella"
+
+msgid "viper"
+msgstr "escurçó"
+
+msgid "shrike"
+msgstr ""
+
+msgid "donkey"
+msgstr ""
+
+msgid "guinea pig"
+msgstr ""
+
+msgid "sloth"
+msgstr "peresós"
+
+msgid "horse"
+msgstr "cavall"
+
+msgid "penguin"
+msgstr ""
+
+msgid "otter"
+msgstr "llúdriga"
+
+msgid "bear"
+msgstr "ós"
+
+msgid "zebra"
+msgstr "zebra"
+
+msgid "ostrich"
+msgstr "estruç"
+
+msgid "camel"
+msgstr "camell"
+
+msgid "antelope"
+msgstr "antílop"
+
+msgid "lemur"
+msgstr "lèmur"
+
+msgid "pigeon"
+msgstr "tórtora"
+
+msgid "lama"
+msgstr "llama"
+
+msgid "mole"
+msgstr "talp"
+
+msgid "ray"
+msgstr ""
+
+msgid "ram"
+msgstr ""
+
+msgid "skunk"
+msgstr "mofeta"
+
+msgid "jellyfish"
+msgstr "medusa"
+
+msgid "sheep"
+msgstr "ovella"
+
+msgid "shark"
+msgstr "tauró"
+
+msgid "kitten"
+msgstr "gatet"
+
+msgid "deer"
+msgstr "cérvol"
+
+msgid "snail"
+msgstr "cargol"
+
+msgid "flamingo"
+msgstr "flamenc"
+
+msgid "rabbit"
+msgstr "conill"
+
+msgid "oyster"
+msgstr "ostra"
+
+msgid "beaver"
+msgstr "castor"
+
+msgid "sparrow"
+msgstr "pardal"
+
+msgid "dove"
+msgstr "colom"
+
+msgid "eagle"
+msgstr "àguila"
+
+msgid "beetle"
+msgstr "escarabat"
+
+msgid "hippopotamus"
+msgstr "hipopòtam"
+
+msgid "owl"
+msgstr "òliba"
+
+msgid "cobra"
+msgstr "cobra"
+
+msgid "salamander"
+msgstr "salamandra"
+
+msgid "goose"
+msgstr "oca"
+
+msgid "kangaroo"
+msgstr "cangur"
+
+msgid "dragonfly"
+msgstr "libèl·lula"
+
+msgid "toad"
+msgstr "gripau"
+
+msgid "pelican"
+msgstr "pelicà"
+
+msgid "squid"
+msgstr "calamar"
+
+msgid "lion cub"
+msgstr ""
+
+msgid "jaguar"
+msgstr "jaguar"
+
+msgid "duck"
+msgstr "ànec"
+
+msgid "lizard"
+msgstr "llangardaix"
+
+msgid "rhinoceros"
+msgstr "rinoceront"
+
+msgid "hyena"
+msgstr "hiena"
+
+msgid "ox"
+msgstr "bou"
+
+msgid "peacock"
+msgstr "paó"
+
+msgid "parrot"
+msgstr "lloro"
+
+msgid "elk"
+msgstr "uapití"
+
+msgid "alligator"
+msgstr "caiman"
+
+msgid "ant"
+msgstr "formiga"
+
+msgid "goat"
+msgstr "cabra"
+
+msgid "baby rabbit"
+msgstr ""
+
+msgid "lion"
+msgstr "lleó"
+
+msgid "squirrel"
+msgstr "esquirol"
+
+msgid "opossum"
+msgstr "opòssum"
+
+msgid "chimp"
+msgstr "ximpanzé"
+
+msgid "doe"
+msgstr "cérvola"
+
+msgid "gopher"
+msgstr ""
+
+msgid "elephant"
+msgstr ""
+
+msgid "giraffe"
+msgstr "girafa"
+
+msgid "spider"
+msgstr "aranya"
+
+msgid "puppy"
+msgstr "cadell"
+
+msgid "jay"
+msgstr "gaig"
+
+msgid "seal"
+msgstr ""
+
+msgid "rooster"
+msgstr ""
+
+msgid "turtle"
+msgstr "tortuga"
+
+msgid "bull"
+msgstr "toro"
+
+msgid "cat"
+msgstr "gat"
+
+msgid "rat"
+msgstr "rata"
+
+msgid "slug"
+msgstr "llimac"
+
+msgid "buffalo"
+msgstr "búfal"
+
+msgid "blackbird"
+msgstr "merla"
+
+msgid "swan"
+msgstr "cigne"
+
+msgid "lobster"
+msgstr "llagosta"
+
+msgid "dog"
+msgstr "gos"
+
+msgid "mosquito"
+msgstr "mosquit"
+
+msgid "snake"
+msgstr "serp"
+
+msgid "chicken"
+msgstr "pollastre"
+
+msgid "anteater"
+msgstr "ós formiguer"
+
+msgid "judo"
+msgstr "judo"
+
+msgid "pool"
+msgstr "piscina"
+
+msgid "ride"
+msgstr "ciclista"
+
+msgid "stretch"
+msgstr "estirar"
+
+msgid "helmet"
+msgstr "casc"
+
+msgid "ice skating"
+msgstr ""
+
+msgid "walk"
+msgstr "caminar"
+
+msgid "run"
+msgstr "córrer"
+
+msgid "swim"
+msgstr "nedar"
+
+msgid "hop"
+msgstr "saltar"
+
+msgid "hike"
+msgstr "caminar"
+
+msgid "boxing"
+msgstr ""
+
+msgid "hockey"
+msgstr "hoquei"
+
+msgid "race"
+msgstr "cursa"
+
+msgid "throw"
+msgstr "llançar"
+
+msgid "skate"
+msgstr "patinar"
+
+msgid "win"
+msgstr "guanyar"
+
+msgid "squat"
+msgstr "ajupir"
+
+msgid "ski"
+msgstr "esquiar"
+
+msgid "golf"
+msgstr "golf"
+
+msgid "whistle"
+msgstr ""
+
+msgid "torch"
+msgstr "torxa"
+
+msgid "sailing"
+msgstr ""
+
+msgid "stand"
+msgstr "dret"
+
+msgid "tennis"
+msgstr "tennis"
+
+msgid "jump"
+msgstr "saltar"
+
+msgid "rowing"
+msgstr "rem"
+
+msgid "jog"
+msgstr "fúting"
+
+msgid "rope"
+msgstr "corda"
+
+msgid "teeth"
+msgstr "dentadura"
+
+msgid "cheek"
+msgstr "galta"
+
+msgid "ankle"
+msgstr "turmell"
+
+msgid "knee"
+msgstr "genoll"
+
+msgid "toe"
+msgstr "dit del peu"
+
+msgid "muscle"
+msgstr "múscul"
+
+msgid "mouth"
+msgstr "boca"
+
+msgid "feet"
+msgstr ""
+
+msgid "hand"
+msgstr "mà"
+
+msgid "elbow"
+msgstr "colze"
+
+msgid "hair"
+msgstr "cabell"
+
+msgid "eyelash"
+msgstr "pestanya"
+
+msgid "beard"
+msgstr "barba"
+
+msgid "belly button"
+msgstr ""
+
+msgid "thumb"
+msgstr "polze"
+
+msgid "breast"
+msgstr "pit"
+
+msgid "nostril"
+msgstr "nariu"
+
+msgid "nose"
+msgstr "nas"
+
+msgid "hip"
+msgstr "maluc"
+
+msgid "arm"
+msgstr "braç"
+
+msgid "eyebrow"
+msgstr ""
+
+msgid "fist"
+msgstr "puny"
+
+msgid "neck"
+msgstr "coll"
+
+msgid "wrist"
+msgstr "canell"
+
+msgid "throat"
+msgstr "gola"
+
+msgid "eye"
+msgstr ""
+
+msgid "leg"
+msgstr "cama"
+
+msgid "spine"
+msgstr "espina"
+
+msgid "ear"
+msgstr "orella"
+
+msgid "finger"
+msgstr "dit"
+
+msgid "foot"
+msgstr "peu"
+
+msgid "braid"
+msgstr "trena"
+
+msgid "face"
+msgstr "cara"
+
+msgid "back"
+msgstr "esquena"
+
+msgid "chin"
+msgstr "barbeta"
+
+msgid "bottom"
+msgstr "natges"
+
+msgid "thigh"
+msgstr "cuixa"
+
+msgid "belly"
+msgstr "panxa"
+
+msgid "girl"
+msgstr "noia"
+
+msgid "male"
+msgstr ""
+
+msgid "son"
+msgstr "fill"
+
+msgid "mates"
+msgstr ""
+
+msgid "friends"
+msgstr ""
+
+msgid "baby"
+msgstr ""
+
+msgid "child"
+msgstr "nen"
+
+msgid "dad"
+msgstr "pare"
+
+msgid "mom"
+msgstr "mama"
+
+msgid "twin boys"
+msgstr ""
+
+msgid "brothers"
+msgstr ""
+
+msgid "man"
+msgstr "home"
+
+msgid "mother"
+msgstr "mare"
+
+msgid "grandfather"
+msgstr ""
+
+msgid "family"
+msgstr "família"
+
+msgid "female"
+msgstr ""
+
+msgid "wife"
+msgstr "muller"
+
+msgid "husband"
+msgstr "marit"
+
+msgid "bride"
+msgstr "núvia"
+
+msgid "madam"
+msgstr ""
+
+msgid "grandmother"
+msgstr "àvia"
+
+msgid "couple"
+msgstr "parella"
+
+msgid "lad"
+msgstr "mosso"
+
+msgid "twin girls"
+msgstr ""
+
+msgid "tribe"
+msgstr "tribu"
+
+msgid "boy"
+msgstr "noi"
+
+msgid "sisters"
+msgstr ""
+
+msgid "woman"
+msgstr "dona"
+
+msgid "lady"
+msgstr "dama"
+
+msgid "candy"
+msgstr "caramel"
+
+msgid "sausage"
+msgstr "salsitxa"
+
+msgid "hamburger"
+msgstr "hamburguesa"
+
+msgid "steak"
+msgstr ""
+
+msgid "fudge"
+msgstr "dolç de xocolata"
+
+msgid "doughnut"
+msgstr "bunyol"
+
+msgid "coconut"
+msgstr "coco"
+
+msgid "rice"
+msgstr "arròs"
+
+msgid "ice cream"
+msgstr ""
+
+msgid "jelly"
+msgstr "gelatina"
+
+msgid "yoghurt"
+msgstr ""
+
+msgid "dessert"
+msgstr "postre"
+
+msgid "pretzel"
+msgstr ""
+
+msgid "peanut"
+msgstr ""
+
+msgid "jam"
+msgstr "melmelada"
+
+msgid "feast"
+msgstr "banquet"
+
+msgid "cookie"
+msgstr "galeta"
+
+msgid "bacon"
+msgstr ""
+
+msgid "spice"
+msgstr "espècia"
+
+msgid "coffee"
+msgstr "cafè"
+
+msgid "pie"
+msgstr "pastís"
+
+msgid "lemonade"
+msgstr "llimonada"
+
+msgid "chocolate"
+msgstr "xocolata"
+
+msgid "water bottle"
+msgstr ""
+
+msgid "lunch"
+msgstr "dinar"
+
+msgid "ice"
+msgstr "glaçó"
+
+msgid "sugar"
+msgstr "sucre"
+
+msgid "sauce"
+msgstr "salsa"
+
+msgid "soup"
+msgstr "sopa"
+
+msgid "juice"
+msgstr "suc"
+
+msgid "fries"
+msgstr "patata fregida"
+
+msgid "cake"
+msgstr "pastís"
+
+msgid "mashed potatoes"
+msgstr ""
+
+msgid "tea"
+msgstr ""
+
+msgid "bun"
+msgstr "brioix"
+
+msgid "cheese"
+msgstr "formatge"
+
+msgid "beef"
+msgstr ""
+
+msgid "sandwich"
+msgstr "sandvitx"
+
+msgid "slice"
+msgstr ""
+
+msgid "sprinkle"
+msgstr "espurnes"
+
+msgid "pizza"
+msgstr "pizza"
+
+msgid "flour"
+msgstr "farina"
+
+msgid "gum"
+msgstr "xiclet"
+
+msgid "spaghetti"
+msgstr "espagueti"
+
+msgid "roast"
+msgstr "rostit"
+
+msgid "stew"
+msgstr "guisat"
+
+msgid "spread"
+msgstr "untar"
+
+msgid "meat"
+msgstr "carn"
+
+msgid "milk"
+msgstr "llet"
+
+msgid "meal"
+msgstr "àpat"
+
+msgid "corn"
+msgstr "blat de moro"
+
+msgid "bread"
+msgstr "pa"
+
+msgid "walnut"
+msgstr "nou"
+
+msgid "egg"
+msgstr "ou"
+
+msgid "hot dog"
+msgstr ""
+
+msgid "ham"
+msgstr "pernil"
+
+msgid "jewellery"
+msgstr ""
+
+msgid "sock"
+msgstr "mitjó"
+
+msgid "jacket"
+msgstr "jaqueta"
+
+msgid "heel"
+msgstr "taló"
+
+msgid "smock"
+msgstr "bata"
+
+msgid "shorts"
+msgstr ""
+
+msgid "pocket"
+msgstr "butxaca"
+
+msgid "necklace"
+msgstr "collaret"
+
+msgid "sweatshirt"
+msgstr "dessuadora"
+
+msgid "uniform"
+msgstr "uniforme"
+
+msgid "raincoat"
+msgstr "impermeable"
+
+msgid "trousers"
+msgstr ""
+
+msgid "sunglasses"
+msgstr ""
+
+msgid "coat"
+msgstr "abric"
+
+msgid "pullover"
+msgstr "jersei"
+
+msgid "shirt"
+msgstr "camisa"
+
+msgid "sandals"
+msgstr "sandàlia"
+
+msgid "suit"
+msgstr "mudada"
+
+msgid "pyjamas"
+msgstr ""
+
+msgid "skirt"
+msgstr "faldilla"
+
+msgid "zip"
+msgstr ""
+
+msgid "shoes"
+msgstr ""
+
+msgid "jewel"
+msgstr "joia"
+
+msgid "tie"
+msgstr ""
+
+msgid "slippers"
+msgstr "sabatilla"
+
+msgid "gloves"
+msgstr ""
+
+msgid "hat"
+msgstr "barret"
+
+msgid "sleeve"
+msgstr "màniga"
+
+msgid "cap"
+msgstr "gorra"
+
+msgid "swimming suit"
+msgstr ""
+
+msgid "trainer"
+msgstr ""
+
+msgid "vest"
+msgstr "armilla"
+
+msgid "glasses"
+msgstr "ulleres"
+
+msgid "shoelace"
+msgstr "cordó"
+
+msgid "patch"
+msgstr "pedaç"
+
+msgid "scarf"
+msgstr "bufanda"
+
+msgid "shoe"
+msgstr "sabata"
+
+msgid "button"
+msgstr "botó"
+
+msgid "dress"
+msgstr "vestit"
+
+msgid "sash"
+msgstr "faixa"
+
+msgid "shoe sole"
+msgstr ""
+
+msgid "robe"
+msgstr "mantell"
+
+msgid "pants"
+msgstr "pantalons"
+
+msgid "kimono"
+msgstr "quimono"
+
+msgid "overalls"
+msgstr ""
+
+msgid "lick"
+msgstr "llepar"
+
+msgid "slam"
+msgstr "esmaixada"
+
+msgid "beg"
+msgstr "demanar"
+
+msgid "fell"
+msgstr ""
+
+msgid "scratch"
+msgstr "esgarrapar"
+
+msgid "touch"
+msgstr "tocar"
+
+msgid "sniff"
+msgstr "ensumar"
+
+msgid "see"
+msgstr "mirar"
+
+msgid "climb"
+msgstr "escalada"
+
+msgid "dig"
+msgstr "cavar"
+
+msgid "howl"
+msgstr "udolar"
+
+msgid "sleep"
+msgstr "dormir"
+
+msgid "explore"
+msgstr "explorar"
+
+msgid "draw"
+msgstr "dibuixar"
+
+msgid "hug"
+msgstr "abraçar"
+
+msgid "teach"
+msgstr "ensenyar"
+
+msgid "nap"
+msgstr "migdiada"
+
+msgid "clay"
+msgstr "argila"
+
+msgid "catch"
+msgstr "pescar"
+
+msgid "clap"
+msgstr "picar de mans"
+
+msgid "cry"
+msgstr "plorar"
+
+msgid "sing"
+msgstr "cantar"
+
+msgid "meet"
+msgstr "trobar-se"
+
+msgid "sell"
+msgstr ""
+
+msgid "peck"
+msgstr "picotejar"
+
+msgid "beat"
+msgstr "batre"
+
+msgid "kneel"
+msgstr "agenollar"
+
+msgid "find"
+msgstr "trobar"
+
+msgid "dance"
+msgstr "ballar"
+
+msgid "cough"
+msgstr "tossir"
+
+msgid "cut"
+msgstr "tallar"
+
+msgid "think"
+msgstr "pensar"
+
+msgid "bark"
+msgstr "bordar"
+
+msgid "speak"
+msgstr "parlar"
+
+msgid "cheer"
+msgstr "animar"
+
+msgid "bake"
+msgstr ""
+
+msgid "write"
+msgstr "escriure"
+
+msgid "punch"
+msgstr ""
+
+msgid "strum"
+msgstr ""
+
+msgid "study"
+msgstr "estudiar"
+
+msgid "plow"
+msgstr "llaurar"
+
+msgid "dream"
+msgstr "somiar"
+
+msgid "post"
+msgstr "bústia"
+
+msgid "dive"
+msgstr "immersió"
+
+msgid "whisper"
+msgstr "xiuxiuejar"
+
+msgid "sob"
+msgstr "sanglotar"
+
+msgid "shake"
+msgstr "sacsejar"
+
+msgid "feed"
+msgstr "donar de menjar"
+
+msgid "crawl"
+msgstr "gatejar"
+
+msgid "camp"
+msgstr "acampar"
+
+msgid "spill"
+msgstr "vessar"
+
+msgid "clean"
+msgstr "rentar"
+
+msgid "scream"
+msgstr "cridar"
+
+msgid "tear"
+msgstr "esquinçar"
+
+msgid "float"
+msgstr "flotar"
+
+msgid "pull"
+msgstr "estirar"
+
+msgid "ate"
+msgstr ""
+
+msgid "kiss"
+msgstr "petó"
+
+msgid "sit"
+msgstr "seure"
+
+msgid "hatch"
+msgstr "sortir de l'ou"
+
+msgid "blink"
+msgstr "picada d'ullet"
+
+msgid "hear"
+msgstr "sentir"
+
+msgid "smooch"
+msgstr "bessar"
+
+msgid "play"
+msgstr "jugar"
+
+msgid "wash"
+msgstr "banyar"
+
+msgid "chat"
+msgstr "parlar"
+
+msgid "drive"
+msgstr "conduir"
+
+msgid "to drink"
+msgstr "beguda"
+
+msgid "fly"
+msgstr "volar"
+
+msgid "juggle"
+msgstr ""
+
+msgid "bit"
+msgstr "mica"
+
+msgid "sweep"
+msgstr ""
+
+msgid "look"
+msgstr "mirar-se"
+
+msgid "knit"
+msgstr "teixir"
+
+msgid "lift"
+msgstr "aixecar"
+
+msgid "fetch"
+msgstr "informar"
+
+msgid "read"
+msgstr "llegir"
+
+msgid "croak"
+msgstr "raucar"
+
+msgid "stare"
+msgstr "mirar fixament"
+
+msgid "eat"
+msgstr "menjar"
+
+msgid "lighthouse"
+msgstr "far"
+
+msgid "door"
+msgstr "porta"
+
+msgid "circus"
+msgstr "circ"
+
+msgid "church"
+msgstr ""
+
+msgid "kennel"
+msgstr ""
+
+msgid "temple"
+msgstr "temple"
+
+msgid "smoke"
+msgstr "fum"
+
+msgid "chimney"
+msgstr "xemeneia"
+
+msgid "brick"
+msgstr "maó"
+
+msgid "well"
+msgstr ""
+
+msgid "street"
+msgstr "carrer"
+
+msgid "castle"
+msgstr "castell"
+
+msgid "store"
+msgstr "botiga"
+
+msgid "staircase"
+msgstr "escala"
+
+msgid "school"
+msgstr "escola"
+
+msgid "farm"
+msgstr "granja"
+
+msgid "bridge"
+msgstr "pont"
+
+msgid "dam"
+msgstr "presa"
+
+msgid "pyramid"
+msgstr "piràmide"
+
+msgid "barn"
+msgstr "graner"
+
+msgid "mill"
+msgstr "molí"
+
+msgid "window"
+msgstr "finestra"
+
+msgid "cabin"
+msgstr "cabana"
+
+msgid "step"
+msgstr "esglaó"
+
+msgid "shop"
+msgstr "botiga"
+
+msgid "shed"
+msgstr "cobert"
+
+msgid "roof"
+msgstr "teulada"
+
+msgid "steeple"
+msgstr "campanar"
+
+msgid "garage"
+msgstr "garatge"
+
+msgid "mosque"
+msgstr "mesquita"
+
+msgid "hospital"
+msgstr "hospital"
+
+msgid "tent"
+msgstr "tenda"
+
+msgid "house"
+msgstr "casa"
+
+msgid "wall"
+msgstr "mur"
+
+msgid "bank"
+msgstr "banc"
+
+msgid "shutter"
+msgstr "finestró"
+
+msgid "hut"
+msgstr "cabana"
+
+msgid "land"
+msgstr "terreny"
+
+msgid "cliff"
+msgstr "penya-segat"
+
+msgid "hill"
+msgstr "turó"
+
+msgid "canyon"
+msgstr "canó"
+
+msgid "rock"
+msgstr "roca"
+
+msgid "sea"
+msgstr "mar"
+
+msgid "lake"
+msgstr "llac"
+
+msgid "coast"
+msgstr "costa"
+
+msgid "shore"
+msgstr "riba"
+
+msgid "mountain"
+msgstr "muntanya"
+
+msgid "pond"
+msgstr "estany"
+
+msgid "peak"
+msgstr "pic"
+
+msgid "lava"
+msgstr "lava"
+
+msgid "cave"
+msgstr "cova"
+
+msgid "dune"
+msgstr "duna"
+
+msgid "island"
+msgstr "illa"
+
+msgid "forest"
+msgstr "bosc"
+
+msgid "desert"
+msgstr "desert"
+
+msgid "iceberg"
+msgstr "iceberg"
+
+msgid "clown"
+msgstr "pallasso"
+
+msgid "engineer"
+msgstr "enginyer"
+
+msgid "priest"
+msgstr "sacerdot"
+
+msgid "vet"
+msgstr "veterinari"
+
+msgid "judge"
+msgstr "jutge"
+
+msgid "chef"
+msgstr "cuiner"
+
+msgid "athlete"
+msgstr "atleta"
+
+msgid "librarian"
+msgstr "bibliotecària"
+
+msgid "juggler"
+msgstr "malabarista"
+
+msgid "policeman"
+msgstr ""
+
+msgid "plumber"
+msgstr "fontaner"
+
+msgid "badge"
+msgstr "insígnia"
+
+msgid "queen"
+msgstr "reina"
+
+msgid "farmer"
+msgstr "granger"
+
+msgid "magician"
+msgstr ""
+
+msgid "knight"
+msgstr "cavaller"
+
+msgid "doctor"
+msgstr "metge"
+
+msgid "bricklayer"
+msgstr "paleta"
+
+msgid "cleaner"
+msgstr ""
+
+msgid "teacher"
+msgstr "professora"
+
+msgid "hunter"
+msgstr "caçador"
+
+msgid "soldier"
+msgstr "soldat"
+
+msgid "musician"
+msgstr "músic"
+
+msgid "lawyer"
+msgstr "advocat"
+
+msgid "fisherman"
+msgstr "pescador"
+
+msgid "princess"
+msgstr "princesa"
+
+msgid "fireman"
+msgstr "bomber"
+
+msgid "nun"
+msgstr "monja"
+
+msgid "pirate"
+msgstr "pirata"
+
+msgid "cowboy"
+msgstr "vaquer"
+
+msgid "electrician"
+msgstr "electricista"
+
+msgid "nurse"
+msgstr "infermera"
+
+msgid "king"
+msgstr "rei"
+
+msgid "president"
+msgstr "president"
+
+msgid "office worker"
+msgstr ""
+
+msgid "carpenter"
+msgstr "fuster"
+
+msgid "jockey"
+msgstr "joquei"
+
+msgid "worker"
+msgstr "treballador"
+
+msgid "mechanic"
+msgstr "mecànic"
+
+msgid "pilot"
+msgstr "pilot"
+
+msgid "actor"
+msgstr "actor"
+
+msgid "cook"
+msgstr "cuinar"
+
+msgid "student"
+msgstr "estudiant"
+
+msgid "butcher"
+msgstr "carnisser"
+
+msgid "accountant"
+msgstr "comptable"
+
+msgid "prince"
+msgstr "princep"
+
+msgid "pope"
+msgstr "papa"
+
+msgid "sailor"
+msgstr "mariner"
+
+msgid "boxer"
+msgstr "boxejador"
+
+msgid "ballet dancer"
+msgstr ""
+
+msgid "coach"
+msgstr "entrenador"
+
+msgid "astronaut"
+msgstr "astronauta"
+
+msgid "painter"
+msgstr ""
+
+msgid "anaesthesiologist"
+msgstr ""
+
+msgid "scientist"
+msgstr ""
+
+msgid "carrot"
+msgstr "pastanaga"
+
+msgid "blackberries"
+msgstr ""
+
+msgid "celery"
+msgstr "api"
+
+msgid "turnip"
+msgstr "nap"
+
+msgid "cacao"
+msgstr "cacau"
+
+msgid "peach"
+msgstr "préssec"
+
+msgid "melon"
+msgstr "meló"
+
+msgid "grapefruit"
+msgstr "pomelo"
+
+msgid "broccoli"
+msgstr "bròquil"
+
+msgid "grapes"
+msgstr ""
+
+msgid "spinach"
+msgstr "espinac"
+
+msgid "fig"
+msgstr "figa"
+
+msgid "kernel"
+msgstr "nucli"
+
+msgid "radish"
+msgstr "rave"
+
+msgid "tomato"
+msgstr ""
+
+msgid "kiwi"
+msgstr "kiwi"
+
+msgid "asparagus"
+msgstr "espàrrec"
+
+msgid "olives"
+msgstr ""
+
+msgid "cucumbers"
+msgstr ""
+
+msgid "beans"
+msgstr ""
+
+msgid "strawberry"
+msgstr "maduixa"
+
+msgid "peppers"
+msgstr "pebrot"
+
+msgid "raspberry"
+msgstr "gerd"
+
+msgid "apricot"
+msgstr "albercoc"
+
+msgid "potatoes"
+msgstr ""
+
+msgid "peas"
+msgstr ""
+
+msgid "cabbage"
+msgstr "col"
+
+msgid "cherries"
+msgstr ""
+
+msgid "squash"
+msgstr "carbassó"
+
+msgid "blueberries"
+msgstr ""
+
+msgid "pear"
+msgstr "pera"
+
+msgid "orange"
+msgstr "taronja"
+
+msgid "pumpkin"
+msgstr "carbassa"
+
+msgid "avocado"
+msgstr "alvocat"
+
+msgid "garlic"
+msgstr "all"
+
+msgid "onion"
+msgstr "ceba"
+
+msgid "apple"
+msgstr "poma"
+
+msgid "lime"
+msgstr "llima"
+
+msgid "cauliflower"
+msgstr "coliflor"
+
+msgid "mango"
+msgstr "mango"
+
+msgid "lettuce"
+msgstr "enciam"
+
+msgid "lemon"
+msgstr "llimona"
+
+msgid "aubergine"
+msgstr ""
+
+msgid "artichokes"
+msgstr ""
+
+msgid "plums"
+msgstr ""
+
+msgid "leek"
+msgstr "porro"
+
+msgid "bananas"
+msgstr ""
+
+msgid "papaya"
+msgstr "papaia"
+
+msgid "sail"
+msgstr "veler"
+
+msgid "taxi"
+msgstr "taxi"
+
+msgid "car"
+msgstr "cotxe"
+
+msgid "bike"
+msgstr "bicicleta"
+
+msgid "raft"
+msgstr "barca solera"
+
+msgid "pedal"
+msgstr "pedal"
+
+msgid "bus"
+msgstr "autobús"
+
+msgid "handlebar"
+msgstr "manillar"
+
+msgid "boat"
+msgstr "barca"
+
+msgid "truck"
+msgstr "camió"
+
+msgid "sleigh"
+msgstr "trineu"
+
+msgid "carpet"
+msgstr "catifa"
+
+msgid "motorcycle"
+msgstr "moto"
+
+msgid "train"
+msgstr "tren"
+
+msgid "ship"
+msgstr "vaixell"
+
+msgid "van"
+msgstr "furgoneta"
+
+msgid "canoe"
+msgstr "canoa"
+
+msgid "rocket"
+msgstr "coet"
+
+msgid "mast"
+msgstr "màstil"
+
+msgid "sledge"
+msgstr ""
+
+msgid "bicycle"
+msgstr ""
+

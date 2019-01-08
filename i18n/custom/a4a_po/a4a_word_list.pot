@@ -1,0 +1,1768 @@
+# eduActiv8 - word lists - translation file.
+# Copyright (C) 2019 Ireneusz Imiolek
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.19.01\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+
+msgid "cow"
+msgstr ""
+
+msgid "turkey"
+msgstr ""
+
+msgid "shrimp"
+msgstr ""
+
+msgid "wolf"
+msgstr ""
+
+msgid "panther"
+msgstr ""
+
+msgid "panda"
+msgstr ""
+
+msgid "magpie"
+msgstr ""
+
+msgid "clam"
+msgstr ""
+
+msgid "pony"
+msgstr ""
+
+msgid "mouse"
+msgstr ""
+
+msgid "pug"
+msgstr ""
+
+msgid "koala"
+msgstr ""
+
+msgid "frog"
+msgstr ""
+
+msgid "ladybug"
+msgstr ""
+
+msgid "gorilla"
+msgstr ""
+
+msgid "llama"
+msgstr ""
+
+msgid "vulture"
+msgstr ""
+
+msgid "hamster"
+msgstr ""
+
+msgid "bird"
+msgstr ""
+
+msgid "starfish"
+msgstr ""
+
+msgid "crow"
+msgstr ""
+
+msgid "parakeet"
+msgstr ""
+
+msgid "caterpillar"
+msgstr ""
+
+msgid "tiger"
+msgstr ""
+
+msgid "hummingbird"
+msgstr ""
+
+msgid "piranha"
+msgstr ""
+
+msgid "pig"
+msgstr ""
+
+msgid "scorpion"
+msgstr ""
+
+msgid "fox"
+msgstr ""
+
+msgid "leopard"
+msgstr ""
+
+msgid "iguana"
+msgstr ""
+
+msgid "dolphin"
+msgstr ""
+
+msgid "bat"
+msgstr ""
+
+msgid "chick"
+msgstr ""
+
+msgid "crab"
+msgstr ""
+
+msgid "hen"
+msgstr ""
+
+msgid "wasp"
+msgstr ""
+
+msgid "chameleon"
+msgstr ""
+
+msgid "whale"
+msgstr ""
+
+msgid "hedgehog"
+msgstr ""
+
+msgid "fawn"
+msgstr ""
+
+msgid "moose"
+msgstr ""
+
+msgid "bee"
+msgstr ""
+
+msgid "viper"
+msgstr ""
+
+msgid "shrike"
+msgstr ""
+
+msgid "donkey"
+msgstr ""
+
+msgid "guinea pig"
+msgstr ""
+
+msgid "sloth"
+msgstr ""
+
+msgid "horse"
+msgstr ""
+
+msgid "penguin"
+msgstr ""
+
+msgid "otter"
+msgstr ""
+
+msgid "bear"
+msgstr ""
+
+msgid "zebra"
+msgstr ""
+
+msgid "ostrich"
+msgstr ""
+
+msgid "camel"
+msgstr ""
+
+msgid "antelope"
+msgstr ""
+
+msgid "lemur"
+msgstr ""
+
+msgid "pigeon"
+msgstr ""
+
+msgid "lama"
+msgstr ""
+
+msgid "mole"
+msgstr ""
+
+msgid "ray"
+msgstr ""
+
+msgid "ram"
+msgstr ""
+
+msgid "skunk"
+msgstr ""
+
+msgid "jellyfish"
+msgstr ""
+
+msgid "sheep"
+msgstr ""
+
+msgid "shark"
+msgstr ""
+
+msgid "kitten"
+msgstr ""
+
+msgid "deer"
+msgstr ""
+
+msgid "snail"
+msgstr ""
+
+msgid "flamingo"
+msgstr ""
+
+msgid "rabbit"
+msgstr ""
+
+msgid "oyster"
+msgstr ""
+
+msgid "beaver"
+msgstr ""
+
+msgid "sparrow"
+msgstr ""
+
+msgid "dove"
+msgstr ""
+
+msgid "eagle"
+msgstr ""
+
+msgid "beetle"
+msgstr ""
+
+msgid "hippopotamus"
+msgstr ""
+
+msgid "owl"
+msgstr ""
+
+msgid "cobra"
+msgstr ""
+
+msgid "salamander"
+msgstr ""
+
+msgid "goose"
+msgstr ""
+
+msgid "kangaroo"
+msgstr ""
+
+msgid "dragonfly"
+msgstr ""
+
+msgid "toad"
+msgstr ""
+
+msgid "pelican"
+msgstr ""
+
+msgid "squid"
+msgstr ""
+
+msgid "lion cub"
+msgstr ""
+
+msgid "jaguar"
+msgstr ""
+
+msgid "duck"
+msgstr ""
+
+msgid "lizard"
+msgstr ""
+
+msgid "rhinoceros"
+msgstr ""
+
+msgid "hyena"
+msgstr ""
+
+msgid "ox"
+msgstr ""
+
+msgid "peacock"
+msgstr ""
+
+msgid "parrot"
+msgstr ""
+
+msgid "elk"
+msgstr ""
+
+msgid "alligator"
+msgstr ""
+
+msgid "ant"
+msgstr ""
+
+msgid "goat"
+msgstr ""
+
+msgid "baby rabbit"
+msgstr ""
+
+msgid "lion"
+msgstr ""
+
+msgid "squirrel"
+msgstr ""
+
+msgid "opossum"
+msgstr ""
+
+msgid "chimp"
+msgstr ""
+
+msgid "doe"
+msgstr ""
+
+msgid "gopher"
+msgstr ""
+
+msgid "elephant"
+msgstr ""
+
+msgid "giraffe"
+msgstr ""
+
+msgid "spider"
+msgstr ""
+
+msgid "puppy"
+msgstr ""
+
+msgid "jay"
+msgstr ""
+
+msgid "seal"
+msgstr ""
+
+msgid "rooster"
+msgstr ""
+
+msgid "turtle"
+msgstr ""
+
+msgid "bull"
+msgstr ""
+
+msgid "cat"
+msgstr ""
+
+msgid "rat"
+msgstr ""
+
+msgid "slug"
+msgstr ""
+
+msgid "buffalo"
+msgstr ""
+
+msgid "blackbird"
+msgstr ""
+
+msgid "swan"
+msgstr ""
+
+msgid "lobster"
+msgstr ""
+
+msgid "dog"
+msgstr ""
+
+msgid "mosquito"
+msgstr ""
+
+msgid "snake"
+msgstr ""
+
+msgid "chicken"
+msgstr ""
+
+msgid "anteater"
+msgstr ""
+
+msgid "judo"
+msgstr ""
+
+msgid "pool"
+msgstr ""
+
+msgid "ride"
+msgstr ""
+
+msgid "stretch"
+msgstr ""
+
+msgid "helmet"
+msgstr ""
+
+msgid "ice skating"
+msgstr ""
+
+msgid "walk"
+msgstr ""
+
+msgid "run"
+msgstr ""
+
+msgid "swim"
+msgstr ""
+
+msgid "hop"
+msgstr ""
+
+msgid "hike"
+msgstr ""
+
+msgid "boxing"
+msgstr ""
+
+msgid "hockey"
+msgstr ""
+
+msgid "race"
+msgstr ""
+
+msgid "throw"
+msgstr ""
+
+msgid "skate"
+msgstr ""
+
+msgid "win"
+msgstr ""
+
+msgid "squat"
+msgstr ""
+
+msgid "ski"
+msgstr ""
+
+msgid "golf"
+msgstr ""
+
+msgid "whistle"
+msgstr ""
+
+msgid "torch"
+msgstr ""
+
+msgid "sailing"
+msgstr ""
+
+msgid "stand"
+msgstr ""
+
+msgid "tennis"
+msgstr ""
+
+msgid "jump"
+msgstr ""
+
+msgid "rowing"
+msgstr ""
+
+msgid "jog"
+msgstr ""
+
+msgid "rope"
+msgstr ""
+
+msgid "teeth"
+msgstr ""
+
+msgid "cheek"
+msgstr ""
+
+msgid "ankle"
+msgstr ""
+
+msgid "knee"
+msgstr ""
+
+msgid "toe"
+msgstr ""
+
+msgid "muscle"
+msgstr ""
+
+msgid "mouth"
+msgstr ""
+
+msgid "feet"
+msgstr ""
+
+msgid "hand"
+msgstr ""
+
+msgid "elbow"
+msgstr ""
+
+msgid "hair"
+msgstr ""
+
+msgid "eyelash"
+msgstr ""
+
+msgid "beard"
+msgstr ""
+
+msgid "belly button"
+msgstr ""
+
+msgid "thumb"
+msgstr ""
+
+msgid "breast"
+msgstr ""
+
+msgid "nostril"
+msgstr ""
+
+msgid "nose"
+msgstr ""
+
+msgid "hip"
+msgstr ""
+
+msgid "arm"
+msgstr ""
+
+msgid "eyebrow"
+msgstr ""
+
+msgid "fist"
+msgstr ""
+
+msgid "neck"
+msgstr ""
+
+msgid "wrist"
+msgstr ""
+
+msgid "throat"
+msgstr ""
+
+msgid "eye"
+msgstr ""
+
+msgid "leg"
+msgstr ""
+
+msgid "spine"
+msgstr ""
+
+msgid "ear"
+msgstr ""
+
+msgid "finger"
+msgstr ""
+
+msgid "foot"
+msgstr ""
+
+msgid "braid"
+msgstr ""
+
+msgid "face"
+msgstr ""
+
+msgid "back"
+msgstr ""
+
+msgid "chin"
+msgstr ""
+
+msgid "bottom"
+msgstr ""
+
+msgid "thigh"
+msgstr ""
+
+msgid "belly"
+msgstr ""
+
+msgid "girl"
+msgstr ""
+
+msgid "male"
+msgstr ""
+
+msgid "son"
+msgstr ""
+
+msgid "mates"
+msgstr ""
+
+msgid "friends"
+msgstr ""
+
+msgid "baby"
+msgstr ""
+
+msgid "child"
+msgstr ""
+
+msgid "dad"
+msgstr ""
+
+msgid "mom"
+msgstr ""
+
+msgid "twin boys"
+msgstr ""
+
+msgid "brothers"
+msgstr ""
+
+msgid "man"
+msgstr ""
+
+msgid "mother"
+msgstr ""
+
+msgid "grandfather"
+msgstr ""
+
+msgid "family"
+msgstr ""
+
+msgid "female"
+msgstr ""
+
+msgid "wife"
+msgstr ""
+
+msgid "husband"
+msgstr ""
+
+msgid "bride"
+msgstr ""
+
+msgid "madam"
+msgstr ""
+
+msgid "grandmother"
+msgstr ""
+
+msgid "couple"
+msgstr ""
+
+msgid "lad"
+msgstr ""
+
+msgid "twin girls"
+msgstr ""
+
+msgid "tribe"
+msgstr ""
+
+msgid "boy"
+msgstr ""
+
+msgid "sisters"
+msgstr ""
+
+msgid "woman"
+msgstr ""
+
+msgid "lady"
+msgstr ""
+
+msgid "candy"
+msgstr ""
+
+msgid "sausage"
+msgstr ""
+
+msgid "hamburger"
+msgstr ""
+
+msgid "steak"
+msgstr ""
+
+msgid "fudge"
+msgstr ""
+
+msgid "doughnut"
+msgstr ""
+
+msgid "coconut"
+msgstr ""
+
+msgid "rice"
+msgstr ""
+
+msgid "ice cream"
+msgstr ""
+
+msgid "jelly"
+msgstr ""
+
+msgid "yoghurt"
+msgstr ""
+
+msgid "dessert"
+msgstr ""
+
+msgid "pretzel"
+msgstr ""
+
+msgid "peanut"
+msgstr ""
+
+msgid "jam"
+msgstr ""
+
+msgid "feast"
+msgstr ""
+
+msgid "cookie"
+msgstr ""
+
+msgid "bacon"
+msgstr ""
+
+msgid "spice"
+msgstr ""
+
+msgid "coffee"
+msgstr ""
+
+msgid "pie"
+msgstr ""
+
+msgid "lemonade"
+msgstr ""
+
+msgid "chocolate"
+msgstr ""
+
+msgid "water bottle"
+msgstr ""
+
+msgid "lunch"
+msgstr ""
+
+msgid "ice"
+msgstr ""
+
+msgid "sugar"
+msgstr ""
+
+msgid "sauce"
+msgstr ""
+
+msgid "soup"
+msgstr ""
+
+msgid "juice"
+msgstr ""
+
+msgid "fries"
+msgstr ""
+
+msgid "cake"
+msgstr ""
+
+msgid "mashed potatoes"
+msgstr ""
+
+msgid "tea"
+msgstr ""
+
+msgid "bun"
+msgstr ""
+
+msgid "cheese"
+msgstr ""
+
+msgid "beef"
+msgstr ""
+
+msgid "sandwich"
+msgstr ""
+
+msgid "slice"
+msgstr ""
+
+msgid "sprinkle"
+msgstr ""
+
+msgid "pizza"
+msgstr ""
+
+msgid "flour"
+msgstr ""
+
+msgid "gum"
+msgstr ""
+
+msgid "spaghetti"
+msgstr ""
+
+msgid "roast"
+msgstr ""
+
+msgid "stew"
+msgstr ""
+
+msgid "spread"
+msgstr ""
+
+msgid "meat"
+msgstr ""
+
+msgid "milk"
+msgstr ""
+
+msgid "meal"
+msgstr ""
+
+msgid "corn"
+msgstr ""
+
+msgid "bread"
+msgstr ""
+
+msgid "walnut"
+msgstr ""
+
+msgid "egg"
+msgstr ""
+
+msgid "hot dog"
+msgstr ""
+
+msgid "ham"
+msgstr ""
+
+msgid "jewellery"
+msgstr ""
+
+msgid "sock"
+msgstr ""
+
+msgid "jacket"
+msgstr ""
+
+msgid "heel"
+msgstr ""
+
+msgid "smock"
+msgstr ""
+
+msgid "shorts"
+msgstr ""
+
+msgid "pocket"
+msgstr ""
+
+msgid "necklace"
+msgstr ""
+
+msgid "sweatshirt"
+msgstr ""
+
+msgid "uniform"
+msgstr ""
+
+msgid "raincoat"
+msgstr ""
+
+msgid "trousers"
+msgstr ""
+
+msgid "sunglasses"
+msgstr ""
+
+msgid "coat"
+msgstr ""
+
+msgid "pullover"
+msgstr ""
+
+msgid "shirt"
+msgstr ""
+
+msgid "sandals"
+msgstr ""
+
+msgid "suit"
+msgstr ""
+
+msgid "pyjamas"
+msgstr ""
+
+msgid "skirt"
+msgstr ""
+
+msgid "zip"
+msgstr ""
+
+msgid "shoes"
+msgstr ""
+
+msgid "jewel"
+msgstr ""
+
+msgid "tie"
+msgstr ""
+
+msgid "slippers"
+msgstr ""
+
+msgid "gloves"
+msgstr ""
+
+msgid "hat"
+msgstr ""
+
+msgid "sleeve"
+msgstr ""
+
+msgid "cap"
+msgstr ""
+
+msgid "swimming suit"
+msgstr ""
+
+msgid "trainer"
+msgstr ""
+
+msgid "vest"
+msgstr ""
+
+msgid "glasses"
+msgstr ""
+
+msgid "shoelace"
+msgstr ""
+
+msgid "patch"
+msgstr ""
+
+msgid "scarf"
+msgstr ""
+
+msgid "shoe"
+msgstr ""
+
+msgid "button"
+msgstr ""
+
+msgid "dress"
+msgstr ""
+
+msgid "sash"
+msgstr ""
+
+msgid "shoe sole"
+msgstr ""
+
+msgid "robe"
+msgstr ""
+
+msgid "pants"
+msgstr ""
+
+msgid "kimono"
+msgstr ""
+
+msgid "overalls"
+msgstr ""
+
+msgid "lick"
+msgstr ""
+
+msgid "slam"
+msgstr ""
+
+msgid "beg"
+msgstr ""
+
+msgid "fell"
+msgstr ""
+
+msgid "scratch"
+msgstr ""
+
+msgid "touch"
+msgstr ""
+
+msgid "sniff"
+msgstr ""
+
+msgid "see"
+msgstr ""
+
+msgid "climb"
+msgstr ""
+
+msgid "dig"
+msgstr ""
+
+msgid "howl"
+msgstr ""
+
+msgid "sleep"
+msgstr ""
+
+msgid "explore"
+msgstr ""
+
+msgid "draw"
+msgstr ""
+
+msgid "hug"
+msgstr ""
+
+msgid "teach"
+msgstr ""
+
+msgid "nap"
+msgstr ""
+
+msgid "clay"
+msgstr ""
+
+msgid "catch"
+msgstr ""
+
+msgid "clap"
+msgstr ""
+
+msgid "cry"
+msgstr ""
+
+msgid "sing"
+msgstr ""
+
+msgid "meet"
+msgstr ""
+
+msgid "sell"
+msgstr ""
+
+msgid "peck"
+msgstr ""
+
+msgid "beat"
+msgstr ""
+
+msgid "kneel"
+msgstr ""
+
+msgid "find"
+msgstr ""
+
+msgid "dance"
+msgstr ""
+
+msgid "cough"
+msgstr ""
+
+msgid "cut"
+msgstr ""
+
+msgid "think"
+msgstr ""
+
+msgid "bark"
+msgstr ""
+
+msgid "speak"
+msgstr ""
+
+msgid "cheer"
+msgstr ""
+
+msgid "bake"
+msgstr ""
+
+msgid "write"
+msgstr ""
+
+msgid "punch"
+msgstr ""
+
+msgid "strum"
+msgstr ""
+
+msgid "study"
+msgstr ""
+
+msgid "plow"
+msgstr ""
+
+msgid "dream"
+msgstr ""
+
+msgid "post"
+msgstr ""
+
+msgid "dive"
+msgstr ""
+
+msgid "whisper"
+msgstr ""
+
+msgid "sob"
+msgstr ""
+
+msgid "shake"
+msgstr ""
+
+msgid "feed"
+msgstr ""
+
+msgid "crawl"
+msgstr ""
+
+msgid "camp"
+msgstr ""
+
+msgid "spill"
+msgstr ""
+
+msgid "clean"
+msgstr ""
+
+msgid "scream"
+msgstr ""
+
+msgid "tear"
+msgstr ""
+
+msgid "float"
+msgstr ""
+
+msgid "pull"
+msgstr ""
+
+msgid "ate"
+msgstr ""
+
+msgid "kiss"
+msgstr ""
+
+msgid "sit"
+msgstr ""
+
+msgid "hatch"
+msgstr ""
+
+msgid "blink"
+msgstr ""
+
+msgid "hear"
+msgstr ""
+
+msgid "smooch"
+msgstr ""
+
+msgid "play"
+msgstr ""
+
+msgid "wash"
+msgstr ""
+
+msgid "chat"
+msgstr ""
+
+msgid "drive"
+msgstr ""
+
+msgid "to drink"
+msgstr ""
+
+msgid "fly"
+msgstr ""
+
+msgid "juggle"
+msgstr ""
+
+msgid "bit"
+msgstr ""
+
+msgid "sweep"
+msgstr ""
+
+msgid "look"
+msgstr ""
+
+msgid "knit"
+msgstr ""
+
+msgid "lift"
+msgstr ""
+
+msgid "fetch"
+msgstr ""
+
+msgid "read"
+msgstr ""
+
+msgid "croak"
+msgstr ""
+
+msgid "stare"
+msgstr ""
+
+msgid "eat"
+msgstr ""
+
+msgid "lighthouse"
+msgstr ""
+
+msgid "door"
+msgstr ""
+
+msgid "circus"
+msgstr ""
+
+msgid "church"
+msgstr ""
+
+msgid "kennel"
+msgstr ""
+
+msgid "temple"
+msgstr ""
+
+msgid "smoke"
+msgstr ""
+
+msgid "chimney"
+msgstr ""
+
+msgid "brick"
+msgstr ""
+
+msgid "well"
+msgstr ""
+
+msgid "street"
+msgstr ""
+
+msgid "castle"
+msgstr ""
+
+msgid "store"
+msgstr ""
+
+msgid "staircase"
+msgstr ""
+
+msgid "school"
+msgstr ""
+
+msgid "farm"
+msgstr ""
+
+msgid "bridge"
+msgstr ""
+
+msgid "dam"
+msgstr ""
+
+msgid "pyramid"
+msgstr ""
+
+msgid "barn"
+msgstr ""
+
+msgid "mill"
+msgstr ""
+
+msgid "window"
+msgstr ""
+
+msgid "cabin"
+msgstr ""
+
+msgid "step"
+msgstr ""
+
+msgid "shop"
+msgstr ""
+
+msgid "shed"
+msgstr ""
+
+msgid "roof"
+msgstr ""
+
+msgid "steeple"
+msgstr ""
+
+msgid "garage"
+msgstr ""
+
+msgid "mosque"
+msgstr ""
+
+msgid "hospital"
+msgstr ""
+
+msgid "tent"
+msgstr ""
+
+msgid "house"
+msgstr ""
+
+msgid "wall"
+msgstr ""
+
+msgid "bank"
+msgstr ""
+
+msgid "shutter"
+msgstr ""
+
+msgid "hut"
+msgstr ""
+
+msgid "land"
+msgstr ""
+
+msgid "cliff"
+msgstr ""
+
+msgid "hill"
+msgstr ""
+
+msgid "canyon"
+msgstr ""
+
+msgid "rock"
+msgstr ""
+
+msgid "sea"
+msgstr ""
+
+msgid "lake"
+msgstr ""
+
+msgid "coast"
+msgstr ""
+
+msgid "shore"
+msgstr ""
+
+msgid "mountain"
+msgstr ""
+
+msgid "pond"
+msgstr ""
+
+msgid "peak"
+msgstr ""
+
+msgid "lava"
+msgstr ""
+
+msgid "cave"
+msgstr ""
+
+msgid "dune"
+msgstr ""
+
+msgid "island"
+msgstr ""
+
+msgid "forest"
+msgstr ""
+
+msgid "desert"
+msgstr ""
+
+msgid "iceberg"
+msgstr ""
+
+msgid "clown"
+msgstr ""
+
+msgid "engineer"
+msgstr ""
+
+msgid "priest"
+msgstr ""
+
+msgid "vet"
+msgstr ""
+
+msgid "judge"
+msgstr ""
+
+msgid "chef"
+msgstr ""
+
+msgid "athlete"
+msgstr ""
+
+msgid "librarian"
+msgstr ""
+
+msgid "juggler"
+msgstr ""
+
+msgid "policeman"
+msgstr ""
+
+msgid "plumber"
+msgstr ""
+
+msgid "badge"
+msgstr ""
+
+msgid "queen"
+msgstr ""
+
+msgid "farmer"
+msgstr ""
+
+msgid "magician"
+msgstr ""
+
+msgid "knight"
+msgstr ""
+
+msgid "doctor"
+msgstr ""
+
+msgid "bricklayer"
+msgstr ""
+
+msgid "cleaner"
+msgstr ""
+
+msgid "teacher"
+msgstr ""
+
+msgid "hunter"
+msgstr ""
+
+msgid "soldier"
+msgstr ""
+
+msgid "musician"
+msgstr ""
+
+msgid "lawyer"
+msgstr ""
+
+msgid "fisherman"
+msgstr ""
+
+msgid "princess"
+msgstr ""
+
+msgid "fireman"
+msgstr ""
+
+msgid "nun"
+msgstr ""
+
+msgid "pirate"
+msgstr ""
+
+msgid "cowboy"
+msgstr ""
+
+msgid "electrician"
+msgstr ""
+
+msgid "nurse"
+msgstr ""
+
+msgid "king"
+msgstr ""
+
+msgid "president"
+msgstr ""
+
+msgid "office worker"
+msgstr ""
+
+msgid "carpenter"
+msgstr ""
+
+msgid "jockey"
+msgstr ""
+
+msgid "worker"
+msgstr ""
+
+msgid "mechanic"
+msgstr ""
+
+msgid "pilot"
+msgstr ""
+
+msgid "actor"
+msgstr ""
+
+msgid "cook"
+msgstr ""
+
+msgid "student"
+msgstr ""
+
+msgid "butcher"
+msgstr ""
+
+msgid "accountant"
+msgstr ""
+
+msgid "prince"
+msgstr ""
+
+msgid "pope"
+msgstr ""
+
+msgid "sailor"
+msgstr ""
+
+msgid "boxer"
+msgstr ""
+
+msgid "ballet dancer"
+msgstr ""
+
+msgid "coach"
+msgstr ""
+
+msgid "astronaut"
+msgstr ""
+
+msgid "painter"
+msgstr ""
+
+msgid "anaesthesiologist"
+msgstr ""
+
+msgid "scientist"
+msgstr ""
+
+msgid "carrot"
+msgstr ""
+
+msgid "blackberries"
+msgstr ""
+
+msgid "celery"
+msgstr ""
+
+msgid "turnip"
+msgstr ""
+
+msgid "cacao"
+msgstr ""
+
+msgid "peach"
+msgstr ""
+
+msgid "melon"
+msgstr ""
+
+msgid "grapefruit"
+msgstr ""
+
+msgid "broccoli"
+msgstr ""
+
+msgid "grapes"
+msgstr ""
+
+msgid "spinach"
+msgstr ""
+
+msgid "fig"
+msgstr ""
+
+msgid "kernel"
+msgstr ""
+
+msgid "radish"
+msgstr ""
+
+msgid "tomato"
+msgstr ""
+
+msgid "kiwi"
+msgstr ""
+
+msgid "asparagus"
+msgstr ""
+
+msgid "olives"
+msgstr ""
+
+msgid "cucumbers"
+msgstr ""
+
+msgid "beans"
+msgstr ""
+
+msgid "strawberry"
+msgstr ""
+
+msgid "peppers"
+msgstr ""
+
+msgid "raspberry"
+msgstr ""
+
+msgid "apricot"
+msgstr ""
+
+msgid "potatoes"
+msgstr ""
+
+msgid "peas"
+msgstr ""
+
+msgid "cabbage"
+msgstr ""
+
+msgid "cherries"
+msgstr ""
+
+msgid "squash"
+msgstr ""
+
+msgid "blueberries"
+msgstr ""
+
+msgid "pear"
+msgstr ""
+
+msgid "orange"
+msgstr ""
+
+msgid "pumpkin"
+msgstr ""
+
+msgid "avocado"
+msgstr ""
+
+msgid "garlic"
+msgstr ""
+
+msgid "onion"
+msgstr ""
+
+msgid "apple"
+msgstr ""
+
+msgid "lime"
+msgstr ""
+
+msgid "cauliflower"
+msgstr ""
+
+msgid "mango"
+msgstr ""
+
+msgid "lettuce"
+msgstr ""
+
+msgid "lemon"
+msgstr ""
+
+msgid "aubergine"
+msgstr ""
+
+msgid "artichokes"
+msgstr ""
+
+msgid "plums"
+msgstr ""
+
+msgid "leek"
+msgstr ""
+
+msgid "bananas"
+msgstr ""
+
+msgid "papaya"
+msgstr ""
+
+msgid "sail"
+msgstr ""
+
+msgid "taxi"
+msgstr ""
+
+msgid "car"
+msgstr ""
+
+msgid "bike"
+msgstr ""
+
+msgid "raft"
+msgstr ""
+
+msgid "pedal"
+msgstr ""
+
+msgid "bus"
+msgstr ""
+
+msgid "handlebar"
+msgstr ""
+
+msgid "boat"
+msgstr ""
+
+msgid "truck"
+msgstr ""
+
+msgid "sleigh"
+msgstr ""
+
+msgid "carpet"
+msgstr ""
+
+msgid "motorcycle"
+msgstr ""
+
+msgid "train"
+msgstr ""
+
+msgid "ship"
+msgstr ""
+
+msgid "van"
+msgstr ""
+
+msgid "canoe"
+msgstr ""
+
+msgid "rocket"
+msgstr ""
+
+msgid "mast"
+msgstr ""
+
+msgid "sledge"
+msgstr ""
+
+msgid "bicycle"
+msgstr ""
+

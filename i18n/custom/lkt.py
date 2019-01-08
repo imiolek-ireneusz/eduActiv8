@@ -141,7 +141,7 @@ d["a4a_food"] = ["čhaŋmháŋska", "tȟašúptȟaŋka", "tȟaló yukpáŋpi", "
                  "asáŋpi niníyaŋpi", "waskúyeča", "aǧúyapi opémnila", "yaȟúǧapi", "waštágyapi", "waglékšuŋ špaŋyáŋpi", "aǧúyapi ǧiǧíla", "wašíŋ", "pȟáza", "wakȟályapi", "tȟaspáŋ opémnipi",
                  "tȟaspáŋpȟa haŋpí", "čhaŋmháŋska ǧí", "mní", "wíčhokaŋ wótapi", "čháǧa", "čhaŋháŋpi", "iyúltȟuŋ", "waháŋpi", "tȟaspáŋzi haŋpí", "bločhéuŋpap waksáksapi",
                  "aǧúyapi skúyela", "blopátȟaŋpi", "čheyáka", "aǧúyapi pagmúpi", "asáŋpi sutá", "tȟaló špaŋyáŋpi", "čhoǧíŋkhiyapi", "owáslesleče", "akálapila", "aǧúyapi zigzíča",
-                 "aǧúyapiblu", "čhaŋšíŋ", "spakéli", "khukhúše čhosyápi", "waȟpékȟalyapi", "čhéǧa", "apášluta", "khukhúše čhečá", "asáŋpi", "wóyute", "wagmíza",
+                 "aǧúyapiblu", "čhaŋšíŋ", "spakéli", "khukhúše čhosyápi", "čhéǧa", "apášluta", "khukhúše čhečá", "asáŋpi", "wóyute", "wagmíza",
                  "aǧúyapi", "gmá", "wítka", "tȟašúpa", "khukhúše tȟaló"]
 d["a4a_clothes_n_accessories"] = ["íŋyaŋ othéȟika úŋpi", "huŋyákȟuŋ", "ógle šóka", "siyéte háŋska", "wawíyuŋpi ógle", "uŋzóǧe ptéčela", "sičháŋophiye", "wanáp’iŋ",
                                   "ógle wapȟóštaŋ yukȟé", "wówaši hayápi", "maǧážu ógle", "uŋzóǧe", "ištámaza sápa", "ógle hiŋšmá", "ógle zigzíča",

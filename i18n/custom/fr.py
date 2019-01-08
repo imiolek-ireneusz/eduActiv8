@@ -178,7 +178,7 @@ d["a4a_food"] = ["bonbons", "saucisse", "hamburger", "steak", "fondant", "beigne
                  "bacon", "épice", "café", "tarte", "limonade", "chocolat", "bouteille d'eau", "déjeuner", "glace",
                  "sucre", "sauce", "soupe", "jus", "frites", "gâteau", "purée de pomme de terre", "thé", "bon",
                  "fromage", "boeuf", "sandwich", "tranche", "saupoudrer", "pizza", "farine", "gomme", "spaghetti",
-                 "rôti", "boire", "ragoût", "tartiner", "viande", "lait", "repas", "maïs", "pain", "noix", "oeuf",
+                 "rôti", "ragoût", "tartiner", "viande", "lait", "repas", "maïs", "pain", "noix", "oeuf",
                  "hot dog", "jambon"]
 
 # check me for: "trainer:survêtement"

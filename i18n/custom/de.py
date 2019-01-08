@@ -143,7 +143,7 @@ d["a4a_food"] = ["Süßigkeiten", "Wurst", "Hamburger", "Steak", "Fondant", "Dou
                  "Gewürz", "Kaffee", "Torte", "Limonade", "Schokolade", "Wasserflasche", "Mittagessen", "Eis", "Zucker",
                  "Soße", "Suppe", "Saft", "Fritten", "Kuchen", "Stampfkartoffeln", "Tee", "Brötchen", "Käse",
                  "Rindfleisch", "Sandwich", "Brotscheibe", "Spritzgebäck", "Pizza", "Mehl", "Kaugummi", "Spaghetti",
-                 "Braten", "Getränk", "Eintopf", "Aufstrich", "Fleisch", "Milch", "Mahlzeit", "Mais", "Brot", "Walnuss",
+                 "Braten", "Eintopf", "Aufstrich", "Fleisch", "Milch", "Mahlzeit", "Mais", "Brot", "Walnuss",
                  "Ei", "Hot Dog", "Schinken"]
 d["a4a_clothes_n_accessories"] = ["Schmuck", "Socken", "Jacket", "Hacke", "Kittel", "Shorts", "Tasche", "Halskette",
                                   "Sweatshirt", "Uniform", "Regenjacke", "Hose", "Sonnenbrille", "Jacke", "Pullover",

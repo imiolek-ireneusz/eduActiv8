@@ -29,7 +29,7 @@ d["a4a_food"] = ["candy", "sausage", "hamburger", "steak", "fudge", "doughnut", 
                  "yoghurt", "dessert", "pretzel", "peanut", "jam", "feast", "cookie", "bacon", "spice", "coffee", "pie",
                  "lemonade", "chocolate", "water bottle", "lunch", "ice", "sugar", "sauce", "soup", "juice", "fries",
                  "cake", "mashed potatoes", "tea", "bun", "cheese", "beef", "sandwich", "slice", "sprinkle", "pizza",
-                 "flour", "gum", "spaghetti", "roast", "drink", "stew", "spread", "meat", "milk", "meal", "corn",
+                 "flour", "gum", "spaghetti", "roast", "stew", "spread", "meat", "milk", "meal", "corn",
                  "bread", "walnut", "egg", "hot dog", "ham"]
 d["a4a_clothes_n_accessories"] = ["jewellery", "sock", "jacket", "heel", "smock", "shorts", "pocket", "necklace",
                                   "sweatshirt", "uniform", "raincoat", "trousers", "sunglasses", "coat", "pullover",

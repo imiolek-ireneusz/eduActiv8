@@ -1,0 +1,1768 @@
+# eduActiv8 - word lists - translation file.
+# Copyright (C) 2019 Ireneusz Imiolek
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.19.01\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+
+msgid "cow"
+msgstr "αγελάδα"
+
+msgid "turkey"
+msgstr "γαλοπούλα"
+
+msgid "shrimp"
+msgstr "γαρίδα"
+
+msgid "wolf"
+msgstr "λύκος"
+
+msgid "panther"
+msgstr "πάνθηρας"
+
+msgid "panda"
+msgstr "πάντα"
+
+msgid "magpie"
+msgstr "καρακάξα"
+
+msgid "clam"
+msgstr "στρείδι"
+
+msgid "pony"
+msgstr "πόνυ"
+
+msgid "mouse"
+msgstr "ποντίκι"
+
+msgid "pug"
+msgstr "παγκ"
+
+msgid "koala"
+msgstr "κοάλα"
+
+msgid "frog"
+msgstr "βάτραχος"
+
+msgid "ladybug"
+msgstr "πασχαλίτσα"
+
+msgid "gorilla"
+msgstr "γορίλας"
+
+msgid "llama"
+msgstr "λάμα"
+
+msgid "vulture"
+msgstr "όρνιο"
+
+msgid "hamster"
+msgstr "χάμστερ"
+
+msgid "bird"
+msgstr "πουλί"
+
+msgid "starfish"
+msgstr "αστερίας"
+
+msgid "crow"
+msgstr "κοράκι"
+
+msgid "parakeet"
+msgstr "παπαγάλος"
+
+msgid "caterpillar"
+msgstr "κάμπια"
+
+msgid "tiger"
+msgstr "τίγρης"
+
+msgid "hummingbird"
+msgstr "κολίμπρι"
+
+msgid "piranha"
+msgstr "πιράνχα"
+
+msgid "pig"
+msgstr "γουρούνι"
+
+msgid "scorpion"
+msgstr "σκορπιός"
+
+msgid "fox"
+msgstr "αλεπού"
+
+msgid "leopard"
+msgstr "λεοπάρδαλη"
+
+msgid "iguana"
+msgstr "ιγκουάνα"
+
+msgid "dolphin"
+msgstr "δελφίνι"
+
+msgid "bat"
+msgstr "νυχτερίδα"
+
+msgid "chick"
+msgstr "νεοσσός"
+
+msgid "crab"
+msgstr "καβούρι"
+
+msgid "hen"
+msgstr "κότα"
+
+msgid "wasp"
+msgstr "σφήκα"
+
+msgid "chameleon"
+msgstr "χαμαιλέοντας"
+
+msgid "whale"
+msgstr "φάλαινα"
+
+msgid "hedgehog"
+msgstr "σκαντζόχοιρος"
+
+msgid "fawn"
+msgstr "ελαφάκι"
+
+msgid "moose"
+msgstr "τάρανδος"
+
+msgid "bee"
+msgstr "μέλισσα"
+
+msgid "viper"
+msgstr "οχιά"
+
+msgid "shrike"
+msgstr "κεφαλάς"
+
+msgid "donkey"
+msgstr "γάιδαρος"
+
+msgid "guinea pig"
+msgstr "ινδικό χοιρίδιο"
+
+msgid "sloth"
+msgstr "βραδύποδας"
+
+msgid "horse"
+msgstr "άλογο"
+
+msgid "penguin"
+msgstr "πιγκουίνος"
+
+msgid "otter"
+msgstr "βίδρα"
+
+msgid "bear"
+msgstr "αρκούδα"
+
+msgid "zebra"
+msgstr "ζέβρα"
+
+msgid "ostrich"
+msgstr "στρουθοκάμηλος"
+
+msgid "camel"
+msgstr "καμήλα"
+
+msgid "antelope"
+msgstr "αντιλόπη"
+
+msgid "lemur"
+msgstr "λεμούριος"
+
+msgid "pigeon"
+msgstr "περιστέρι"
+
+msgid "lama"
+msgstr "λάμα"
+
+msgid "mole"
+msgstr "τυφλοπόντικας"
+
+msgid "ray"
+msgstr "σαλάχι"
+
+msgid "ram"
+msgstr "κριάρι"
+
+msgid "skunk"
+msgstr "κουνάβι"
+
+msgid "jellyfish"
+msgstr "μέδουσα"
+
+msgid "sheep"
+msgstr "πρόβατο"
+
+msgid "shark"
+msgstr "καρχαρίας"
+
+msgid "kitten"
+msgstr "γατάκι"
+
+msgid "deer"
+msgstr "ελάφι"
+
+msgid "snail"
+msgstr "σαλιγκάρι"
+
+msgid "flamingo"
+msgstr "φλαμίνγκο"
+
+msgid "rabbit"
+msgstr "κουνέλι"
+
+msgid "oyster"
+msgstr "μύδι"
+
+msgid "beaver"
+msgstr "κάστορας"
+
+msgid "sparrow"
+msgstr "σπουργίτι"
+
+msgid "dove"
+msgstr "περιστέρι"
+
+msgid "eagle"
+msgstr "αετός"
+
+msgid "beetle"
+msgstr "σκαθάρι"
+
+msgid "hippopotamus"
+msgstr "ιπποπόταμος"
+
+msgid "owl"
+msgstr "κουκουβάγια"
+
+msgid "cobra"
+msgstr "κόμπρα"
+
+msgid "salamander"
+msgstr "σαλαμάνδρα"
+
+msgid "goose"
+msgstr "χήνα"
+
+msgid "kangaroo"
+msgstr "κανγκουρό"
+
+msgid "dragonfly"
+msgstr "λιβελούλα"
+
+msgid "toad"
+msgstr "φρύνος"
+
+msgid "pelican"
+msgstr "πελεκάνος"
+
+msgid "squid"
+msgstr "καλαμάρι"
+
+msgid "lion cub"
+msgstr "λιονταράκι"
+
+msgid "jaguar"
+msgstr "τζάγκουαρ"
+
+msgid "duck"
+msgstr "πάπια"
+
+msgid "lizard"
+msgstr "σαύρα"
+
+msgid "rhinoceros"
+msgstr "ρινόκερος"
+
+msgid "hyena"
+msgstr "ύαινα"
+
+msgid "ox"
+msgstr "βόδι"
+
+msgid "peacock"
+msgstr "παγώνι"
+
+msgid "parrot"
+msgstr "παπαγάλος"
+
+msgid "elk"
+msgstr "ελάφι"
+
+msgid "alligator"
+msgstr "αλιγάτορας"
+
+msgid "ant"
+msgstr "μυρμήγκι"
+
+msgid "goat"
+msgstr "γίδα"
+
+msgid "baby rabbit"
+msgstr "κουνελάκι"
+
+msgid "lion"
+msgstr "λιοντάρι"
+
+msgid "squirrel"
+msgstr "σκίουρος"
+
+msgid "opossum"
+msgstr "οπόσσουμ"
+
+msgid "chimp"
+msgstr "χιμπατζής"
+
+msgid "doe"
+msgstr "ελαφίνα"
+
+msgid "gopher"
+msgstr "σκίουρος"
+
+msgid "elephant"
+msgstr "ελέφαντας"
+
+msgid "giraffe"
+msgstr "καμηλοπάρδαλη"
+
+msgid "spider"
+msgstr "αράχνη"
+
+msgid "puppy"
+msgstr "σκυλάκι"
+
+msgid "jay"
+msgstr "κίσσα"
+
+msgid "seal"
+msgstr "φώκια"
+
+msgid "rooster"
+msgstr "πετεινός"
+
+msgid "turtle"
+msgstr "χελώνα"
+
+msgid "bull"
+msgstr "ταύρος"
+
+msgid "cat"
+msgstr "γάτα"
+
+msgid "rat"
+msgstr "αρουραίος"
+
+msgid "slug"
+msgstr "γυμνοσάλιαγκας"
+
+msgid "buffalo"
+msgstr "βουβάλι"
+
+msgid "blackbird"
+msgstr "κότσυφας"
+
+msgid "swan"
+msgstr "κύκνος"
+
+msgid "lobster"
+msgstr "αστακός"
+
+msgid "dog"
+msgstr "σκύλος"
+
+msgid "mosquito"
+msgstr "κουνούπι"
+
+msgid "snake"
+msgstr "φίδι"
+
+msgid "chicken"
+msgstr "κοτόπουλο"
+
+msgid "anteater"
+msgstr "μυρμηγκοφάγος"
+
+msgid "judo"
+msgstr "τζούντο"
+
+msgid "pool"
+msgstr "πισίνα"
+
+msgid "ride"
+msgstr "ποδηλατάδα"
+
+msgid "stretch"
+msgstr "εκτάσεις"
+
+msgid "helmet"
+msgstr "κράνος"
+
+msgid "ice skating"
+msgstr "πατινάζ"
+
+msgid "walk"
+msgstr "περπάτημα"
+
+msgid "run"
+msgstr "τρέξιμο"
+
+msgid "swim"
+msgstr "κολύμπι"
+
+msgid "hop"
+msgstr "τραμπολίνο"
+
+msgid "hike"
+msgstr "περίπατος"
+
+msgid "boxing"
+msgstr "μποξ"
+
+msgid "hockey"
+msgstr "χόκεϋ"
+
+msgid "race"
+msgstr "αγώνας"
+
+msgid "throw"
+msgstr "ρίψη"
+
+msgid "skate"
+msgstr "πατίνι"
+
+msgid "win"
+msgstr "νίκη"
+
+msgid "squat"
+msgstr "κάθισμα"
+
+msgid "ski"
+msgstr "σκι"
+
+msgid "golf"
+msgstr "γκολ"
+
+msgid "whistle"
+msgstr "σφυρίχτρα"
+
+msgid "torch"
+msgstr "δάδα"
+
+msgid "sailing"
+msgstr "ιστιοπλοΐα"
+
+msgid "stand"
+msgstr "έκταση"
+
+msgid "tennis"
+msgstr "τένις"
+
+msgid "jump"
+msgstr "αναπήδηση"
+
+msgid "rowing"
+msgstr "κωπηλασία"
+
+msgid "jog"
+msgstr "τρέξιμο"
+
+msgid "rope"
+msgstr "σχοινάκι"
+
+msgid "teeth"
+msgstr "δόντια"
+
+msgid "cheek"
+msgstr "μάγουλα"
+
+msgid "ankle"
+msgstr "αστράγαλος"
+
+msgid "knee"
+msgstr "γόνατο"
+
+msgid "toe"
+msgstr "δάκτυλο"
+
+msgid "muscle"
+msgstr "μυς"
+
+msgid "mouth"
+msgstr "στόμα"
+
+msgid "feet"
+msgstr "πόδια"
+
+msgid "hand"
+msgstr "χέρι"
+
+msgid "elbow"
+msgstr "αγκώνας"
+
+msgid "hair"
+msgstr "μαλλιά"
+
+msgid "eyelash"
+msgstr "βλεφαρίδα"
+
+msgid "beard"
+msgstr "γένια"
+
+msgid "belly button"
+msgstr "αφαλός"
+
+msgid "thumb"
+msgstr "αντίχειρας"
+
+msgid "breast"
+msgstr "στήθος"
+
+msgid "nostril"
+msgstr "ρουθούνι"
+
+msgid "nose"
+msgstr "μύτη"
+
+msgid "hip"
+msgstr "ισχίο"
+
+msgid "arm"
+msgstr "χέρι"
+
+msgid "eyebrow"
+msgstr "φρύδι"
+
+msgid "fist"
+msgstr "γροθιά"
+
+msgid "neck"
+msgstr "λαιμός"
+
+msgid "wrist"
+msgstr "καρπός"
+
+msgid "throat"
+msgstr "λαιμός"
+
+msgid "eye"
+msgstr "μάτι"
+
+msgid "leg"
+msgstr "πόδι"
+
+msgid "spine"
+msgstr "σπονδυλική στήλη"
+
+msgid "ear"
+msgstr "αυτί"
+
+msgid "finger"
+msgstr "δάκτυλο"
+
+msgid "foot"
+msgstr "πόδι"
+
+msgid "braid"
+msgstr "κοτσίδα"
+
+msgid "face"
+msgstr "πρόσωπο"
+
+msgid "back"
+msgstr "πλάτη"
+
+msgid "chin"
+msgstr "πηγούνι"
+
+msgid "bottom"
+msgstr "πισινός"
+
+msgid "thigh"
+msgstr "μηρός"
+
+msgid "belly"
+msgstr "κοιλιά"
+
+msgid "girl"
+msgstr "κορίτσι"
+
+msgid "male"
+msgstr "αρσενικό"
+
+msgid "son"
+msgstr "γιός"
+
+msgid "mates"
+msgstr "κολλητοί"
+
+msgid "friends"
+msgstr "φίλοι"
+
+msgid "baby"
+msgstr "μωρό"
+
+msgid "child"
+msgstr "παιδί"
+
+msgid "dad"
+msgstr "μπαμπάς"
+
+msgid "mom"
+msgstr "μαμά"
+
+msgid "twin boys"
+msgstr "δίδυμα αγόρια"
+
+msgid "brothers"
+msgstr "αδέρφια"
+
+msgid "man"
+msgstr "άντρας"
+
+msgid "mother"
+msgstr "μαμά"
+
+msgid "grandfather"
+msgstr "παππούς"
+
+msgid "family"
+msgstr "οικογένεια"
+
+msgid "female"
+msgstr "θηλυκό"
+
+msgid "wife"
+msgstr "η σύζυγος"
+
+msgid "husband"
+msgstr "ο σύζυγος"
+
+msgid "bride"
+msgstr "νύφη"
+
+msgid "madam"
+msgstr "κυρία"
+
+msgid "grandmother"
+msgstr "γιαγιά"
+
+msgid "couple"
+msgstr "ζευγάρι"
+
+msgid "lad"
+msgstr "τύπος"
+
+msgid "twin girls"
+msgstr "δίδυμα κορίτσια"
+
+msgid "tribe"
+msgstr "φυλή"
+
+msgid "boy"
+msgstr "αγόρι"
+
+msgid "sisters"
+msgstr "αδερφές"
+
+msgid "woman"
+msgstr "γυναίκα"
+
+msgid "lady"
+msgstr "κυρία"
+
+msgid "candy"
+msgstr "καραμέλα"
+
+msgid "sausage"
+msgstr "λουκάνικο"
+
+msgid "hamburger"
+msgstr "χάμπουργκερ"
+
+msgid "steak"
+msgstr "μπριζόλα"
+
+msgid "fudge"
+msgstr "μπισκοτάκι"
+
+msgid "doughnut"
+msgstr "λουκουμάς"
+
+msgid "coconut"
+msgstr "καρύδα"
+
+msgid "rice"
+msgstr "ρύζι"
+
+msgid "ice cream"
+msgstr "παγωτό"
+
+msgid "jelly"
+msgstr "ζελέ"
+
+msgid "yoghurt"
+msgstr "γιαούρτι"
+
+msgid "dessert"
+msgstr "επιδόρπιο"
+
+msgid "pretzel"
+msgstr "πρέτζελ"
+
+msgid "peanut"
+msgstr "φυστίκι"
+
+msgid "jam"
+msgstr "μαρμελάδα"
+
+msgid "feast"
+msgstr "συμπόσιο"
+
+msgid "cookie"
+msgstr "μπισκότο"
+
+msgid "bacon"
+msgstr "μπέηκον"
+
+msgid "spice"
+msgstr "καρύκευμα"
+
+msgid "coffee"
+msgstr "καφές"
+
+msgid "pie"
+msgstr "πίτα"
+
+msgid "lemonade"
+msgstr "λεμονάδα"
+
+msgid "chocolate"
+msgstr "σοκολάτα"
+
+msgid "water bottle"
+msgstr "μπουκάλι νερού"
+
+msgid "lunch"
+msgstr "μεσημεριανό"
+
+msgid "ice"
+msgstr "πάγος"
+
+msgid "sugar"
+msgstr "ζάχαρη"
+
+msgid "sauce"
+msgstr "σάλτσα"
+
+msgid "soup"
+msgstr "σούπα"
+
+msgid "juice"
+msgstr "χυμός"
+
+msgid "fries"
+msgstr "τηγανιτές πατάτες"
+
+msgid "cake"
+msgstr "κέηκ"
+
+msgid "mashed potatoes"
+msgstr "πουρές"
+
+msgid "tea"
+msgstr "τσάι"
+
+msgid "bun"
+msgstr "ψωμάκι"
+
+msgid "cheese"
+msgstr "τυρί"
+
+msgid "beef"
+msgstr "βοδινό"
+
+msgid "sandwich"
+msgstr "σάντουιτς"
+
+msgid "slice"
+msgstr "κομμάτι"
+
+msgid "sprinkle"
+msgstr "πασπάλισμα"
+
+msgid "pizza"
+msgstr "πίτσα"
+
+msgid "flour"
+msgstr "αλεύρι"
+
+msgid "gum"
+msgstr "τσίχλα"
+
+msgid "spaghetti"
+msgstr "σπαγγέτι"
+
+msgid "roast"
+msgstr "ψητό"
+
+msgid "stew"
+msgstr "βραστό"
+
+msgid "spread"
+msgstr "αλοιφή"
+
+msgid "meat"
+msgstr "κρέας"
+
+msgid "milk"
+msgstr "γάλα"
+
+msgid "meal"
+msgstr "γεύμα"
+
+msgid "corn"
+msgstr "καλαμπόκι"
+
+msgid "bread"
+msgstr "ψωμί"
+
+msgid "walnut"
+msgstr "καρύδι"
+
+msgid "egg"
+msgstr "αυγό"
+
+msgid "hot dog"
+msgstr "χοτ ντογκ"
+
+msgid "ham"
+msgstr "ζαμπόν"
+
+msgid "jewellery"
+msgstr "κοσμήματα"
+
+msgid "sock"
+msgstr "κάλτσα"
+
+msgid "jacket"
+msgstr "μπουφάν"
+
+msgid "heel"
+msgstr "τακούνι"
+
+msgid "smock"
+msgstr "φόρμα"
+
+msgid "shorts"
+msgstr "βερμούδα"
+
+msgid "pocket"
+msgstr "τσέπη"
+
+msgid "necklace"
+msgstr "μενταγιόν"
+
+msgid "sweatshirt"
+msgstr "αθλητική φόρμα"
+
+msgid "uniform"
+msgstr "στολή"
+
+msgid "raincoat"
+msgstr "αδιάβροχο"
+
+msgid "trousers"
+msgstr "παντελόνι"
+
+msgid "sunglasses"
+msgstr "γυαλιά ηλίου"
+
+msgid "coat"
+msgstr "παλτό"
+
+msgid "pullover"
+msgstr "πουλόβερ"
+
+msgid "shirt"
+msgstr "πουκάμισο"
+
+msgid "sandals"
+msgstr "σανδάλια"
+
+msgid "suit"
+msgstr "κουστούμι"
+
+msgid "pyjamas"
+msgstr "πυτζάμες"
+
+msgid "skirt"
+msgstr "φούστα"
+
+msgid "zip"
+msgstr "φερμουάρ"
+
+msgid "shoes"
+msgstr "παπούτσια"
+
+msgid "jewel"
+msgstr "κόσμημα"
+
+msgid "tie"
+msgstr "γραβάτα"
+
+msgid "slippers"
+msgstr "παντόφλες"
+
+msgid "gloves"
+msgstr "γάντια"
+
+msgid "hat"
+msgstr "καπέλο"
+
+msgid "sleeve"
+msgstr "μανίκι"
+
+msgid "cap"
+msgstr "καπέλο"
+
+msgid "swimming suit"
+msgstr "μαγιό"
+
+msgid "trainer"
+msgstr "φόρμα"
+
+msgid "vest"
+msgstr "γιλέκο"
+
+msgid "glasses"
+msgstr "γυαλιά"
+
+msgid "shoelace"
+msgstr "κορδόνι"
+
+msgid "patch"
+msgstr "μπάλωμα"
+
+msgid "scarf"
+msgstr "κασκόλ"
+
+msgid "shoe"
+msgstr "παπούτσι"
+
+msgid "button"
+msgstr "κουμπί"
+
+msgid "dress"
+msgstr "φόρεμα"
+
+msgid "sash"
+msgstr "ζώνη"
+
+msgid "shoe sole"
+msgstr "σόλα"
+
+msgid "robe"
+msgstr "ρόμπα"
+
+msgid "pants"
+msgstr "εσώρουχα"
+
+msgid "kimono"
+msgstr "κιμονό"
+
+msgid "overalls"
+msgstr "φόρμα"
+
+msgid "lick"
+msgstr "γλύφω"
+
+msgid "slam"
+msgstr "καρφώνω"
+
+msgid "beg"
+msgstr "παρακαλώ"
+
+msgid "fell"
+msgstr "πέφτω"
+
+msgid "scratch"
+msgstr "γρατζουνώ"
+
+msgid "touch"
+msgstr "αγγίζω"
+
+msgid "sniff"
+msgstr "μυρίζω"
+
+msgid "see"
+msgstr "βλέπω"
+
+msgid "climb"
+msgstr "σκαρφαλώνω"
+
+msgid "dig"
+msgstr "σκάβω"
+
+msgid "howl"
+msgstr "ουρλιάζω"
+
+msgid "sleep"
+msgstr "κοιμάμαι"
+
+msgid "explore"
+msgstr "εξερευνώ"
+
+msgid "draw"
+msgstr "ζωγραφίζω"
+
+msgid "hug"
+msgstr "αγκαλιάζω"
+
+msgid "teach"
+msgstr "διδάσκω"
+
+msgid "nap"
+msgstr "ύπνος"
+
+msgid "clay"
+msgstr "πηλός"
+
+msgid "catch"
+msgstr "πιάνω"
+
+msgid "clap"
+msgstr "χειροκροτώ"
+
+msgid "cry"
+msgstr "κλαίω"
+
+msgid "sing"
+msgstr "τραγουδώ"
+
+msgid "meet"
+msgstr "συναντώ"
+
+msgid "sell"
+msgstr "πουλάω"
+
+msgid "peck"
+msgstr "τσιμπώ"
+
+msgid "beat"
+msgstr "χτυπώ"
+
+msgid "kneel"
+msgstr "γονατίζω"
+
+msgid "find"
+msgstr "βρίσκω"
+
+msgid "dance"
+msgstr "χορεύω"
+
+msgid "cough"
+msgstr "βήχω"
+
+msgid "cut"
+msgstr "κόβω"
+
+msgid "think"
+msgstr "σκέφτομαι"
+
+msgid "bark"
+msgstr "γαβγίζω"
+
+msgid "speak"
+msgstr "μιλώ"
+
+msgid "cheer"
+msgstr "επευφημώ"
+
+msgid "bake"
+msgstr "ψήνω"
+
+msgid "write"
+msgstr "γράφω"
+
+msgid "punch"
+msgstr "γρονθοκοπώ"
+
+msgid "strum"
+msgstr "γρατζουνώ"
+
+msgid "study"
+msgstr "μελετώ"
+
+msgid "plow"
+msgstr "οργώνω"
+
+msgid "dream"
+msgstr "ονειρεύομαι"
+
+msgid "post"
+msgstr "ταχυδρομώ"
+
+msgid "dive"
+msgstr "βουτώ"
+
+msgid "whisper"
+msgstr "ψιθυρίζω"
+
+msgid "sob"
+msgstr "σιγοκλαίω"
+
+msgid "shake"
+msgstr "κουνώ"
+
+msgid "feed"
+msgstr "ταίζω"
+
+msgid "crawl"
+msgstr "σέρνομαι"
+
+msgid "camp"
+msgstr "κατασκηνώνω"
+
+msgid "spill"
+msgstr "ρίχνω"
+
+msgid "clean"
+msgstr "καθαρίζω"
+
+msgid "scream"
+msgstr "φωνάζω"
+
+msgid "tear"
+msgstr "κλαίω"
+
+msgid "float"
+msgstr "επιπλέω"
+
+msgid "pull"
+msgstr "τραβώ"
+
+msgid "ate"
+msgstr "τρώω"
+
+msgid "kiss"
+msgstr "φιλώ"
+
+msgid "sit"
+msgstr "κάθομαι"
+
+msgid "hatch"
+msgstr "εκκολάπτω"
+
+msgid "blink"
+msgstr "βλεφαρίζω"
+
+msgid "hear"
+msgstr "ακούω"
+
+msgid "smooch"
+msgstr "φιλώ"
+
+msgid "play"
+msgstr "παίζω"
+
+msgid "wash"
+msgstr "πλένω"
+
+msgid "chat"
+msgstr "συζητώ"
+
+msgid "drive"
+msgstr "οδηγώ"
+
+msgid "to drink"
+msgstr "πίνω"
+
+msgid "fly"
+msgstr "πετώ"
+
+msgid "juggle"
+msgstr "ταχυδακτυλουργώ"
+
+msgid "bit"
+msgstr "δαγκώνω"
+
+msgid "sweep"
+msgstr "σκουπίζω"
+
+msgid "look"
+msgstr "βλέπω"
+
+msgid "knit"
+msgstr "πλέκω"
+
+msgid "lift"
+msgstr "σηκώνω"
+
+msgid "fetch"
+msgstr "φέρνω"
+
+msgid "read"
+msgstr "διαβάζω"
+
+msgid "croak"
+msgstr "κρώζω"
+
+msgid "stare"
+msgstr "κοιτώ επίμονα"
+
+msgid "eat"
+msgstr "τρώω"
+
+msgid "lighthouse"
+msgstr "φάρος"
+
+msgid "door"
+msgstr "πόρτα"
+
+msgid "circus"
+msgstr "τσίρκο"
+
+msgid "church"
+msgstr "εκκλησία"
+
+msgid "kennel"
+msgstr "κυνοτροφείο"
+
+msgid "temple"
+msgstr "ναός"
+
+msgid "smoke"
+msgstr "καπνός"
+
+msgid "chimney"
+msgstr "καμινάδα"
+
+msgid "brick"
+msgstr "τούβλο"
+
+msgid "well"
+msgstr "πηγάδι"
+
+msgid "street"
+msgstr "δρόμος"
+
+msgid "castle"
+msgstr "κάστρο"
+
+msgid "store"
+msgstr "κατάστημα"
+
+msgid "staircase"
+msgstr "σκάλα"
+
+msgid "school"
+msgstr "σχολείο"
+
+msgid "farm"
+msgstr "φάρμα"
+
+msgid "bridge"
+msgstr "γέφυρα"
+
+msgid "dam"
+msgstr "φράγμα"
+
+msgid "pyramid"
+msgstr "πυραμίδα"
+
+msgid "barn"
+msgstr "αχυρώνας"
+
+msgid "mill"
+msgstr "μύλος"
+
+msgid "window"
+msgstr "παράθυρο"
+
+msgid "cabin"
+msgstr "καλύβα"
+
+msgid "step"
+msgstr "σκαλί"
+
+msgid "shop"
+msgstr "μαγαζί"
+
+msgid "shed"
+msgstr "παράγκα"
+
+msgid "roof"
+msgstr "στέγη"
+
+msgid "steeple"
+msgstr "καμπαναριό"
+
+msgid "garage"
+msgstr "γκαράζ"
+
+msgid "mosque"
+msgstr "τζαμί"
+
+msgid "hospital"
+msgstr "νοσοκομείο"
+
+msgid "tent"
+msgstr "σκηνή"
+
+msgid "house"
+msgstr "σπίτι"
+
+msgid "wall"
+msgstr "τοίχος"
+
+msgid "bank"
+msgstr "τράπεζα"
+
+msgid "shutter"
+msgstr "παντζούρια"
+
+msgid "hut"
+msgstr "καλύβα"
+
+msgid "land"
+msgstr "γη"
+
+msgid "cliff"
+msgstr "γκρεμός"
+
+msgid "hill"
+msgstr "λόφος"
+
+msgid "canyon"
+msgstr "φαράγγι"
+
+msgid "rock"
+msgstr "βράχος"
+
+msgid "sea"
+msgstr "θάλασσα"
+
+msgid "lake"
+msgstr "λίμνη"
+
+msgid "coast"
+msgstr "όχθη"
+
+msgid "shore"
+msgstr "ακτή"
+
+msgid "mountain"
+msgstr "βουνό"
+
+msgid "pond"
+msgstr "λιμνούλα"
+
+msgid "peak"
+msgstr "κορυφή"
+
+msgid "lava"
+msgstr "λάβα"
+
+msgid "cave"
+msgstr "σπηλιά"
+
+msgid "dune"
+msgstr "αμμόλοφος"
+
+msgid "island"
+msgstr "νησί"
+
+msgid "forest"
+msgstr "δάσος"
+
+msgid "desert"
+msgstr "έρημος"
+
+msgid "iceberg"
+msgstr "παγόβουνο"
+
+msgid "clown"
+msgstr "κλόουν"
+
+msgid "engineer"
+msgstr "μηχανικός"
+
+msgid "priest"
+msgstr "ιερέας"
+
+msgid "vet"
+msgstr "κτηνίατρος"
+
+msgid "judge"
+msgstr "δικαστής"
+
+msgid "chef"
+msgstr "μάγειρας"
+
+msgid "athlete"
+msgstr "αθλητής"
+
+msgid "librarian"
+msgstr "βιβλιοθηκάριος"
+
+msgid "juggler"
+msgstr "ζογκλέρ"
+
+msgid "policeman"
+msgstr "αστυνόμος"
+
+msgid "plumber"
+msgstr "υδραυλικός"
+
+msgid "badge"
+msgstr "σήμα"
+
+msgid "queen"
+msgstr "βασίλισσα"
+
+msgid "farmer"
+msgstr "αγρότης"
+
+msgid "magician"
+msgstr "μάγος"
+
+msgid "knight"
+msgstr "ιππότης"
+
+msgid "doctor"
+msgstr "γιατρός"
+
+msgid "bricklayer"
+msgstr "χτίστης"
+
+msgid "cleaner"
+msgstr "καθαριστής"
+
+msgid "teacher"
+msgstr "δασκάλα"
+
+msgid "hunter"
+msgstr "κυνητός"
+
+msgid "soldier"
+msgstr "στρατιώτης"
+
+msgid "musician"
+msgstr "μουσικός"
+
+msgid "lawyer"
+msgstr "δικηγόρος"
+
+msgid "fisherman"
+msgstr "ψαράς"
+
+msgid "princess"
+msgstr "πριγκήπισσα"
+
+msgid "fireman"
+msgstr "πυροσβέστης"
+
+msgid "nun"
+msgstr "καλόγρια"
+
+msgid "pirate"
+msgstr "πειρατής"
+
+msgid "cowboy"
+msgstr "αγελαδάρης"
+
+msgid "electrician"
+msgstr "ηλεκτρολόγος"
+
+msgid "nurse"
+msgstr "νοσοκόμα"
+
+msgid "king"
+msgstr "βασιλιάς"
+
+msgid "president"
+msgstr "πρόεδρος"
+
+msgid "office worker"
+msgstr "γραφείο"
+
+msgid "carpenter"
+msgstr "ξυλουργός"
+
+msgid "jockey"
+msgstr "καβαλάρης"
+
+msgid "worker"
+msgstr "εργάτης"
+
+msgid "mechanic"
+msgstr "μηχανικός"
+
+msgid "pilot"
+msgstr "πιλότος"
+
+msgid "actor"
+msgstr "ηθοποιός"
+
+msgid "cook"
+msgstr "μάγειρας"
+
+msgid "student"
+msgstr "μαθητής"
+
+msgid "butcher"
+msgstr "χασάπης"
+
+msgid "accountant"
+msgstr "λογιστής"
+
+msgid "prince"
+msgstr "πρίγκηπας"
+
+msgid "pope"
+msgstr "ιερέας"
+
+msgid "sailor"
+msgstr "ναύτης"
+
+msgid "boxer"
+msgstr "μποξέρ"
+
+msgid "ballet dancer"
+msgstr "μπαλαρίνα"
+
+msgid "coach"
+msgstr "προπονητής"
+
+msgid "astronaut"
+msgstr "αστροναύτης"
+
+msgid "painter"
+msgstr "ζωγράφος"
+
+msgid "anaesthesiologist"
+msgstr "αναισθησιολόγος"
+
+msgid "scientist"
+msgstr "επιστήμονας"
+
+msgid "carrot"
+msgstr "καρότο"
+
+msgid "blackberries"
+msgstr "μαύρα μούρα"
+
+msgid "celery"
+msgstr "σέλινο"
+
+msgid "turnip"
+msgstr "γογγύλι"
+
+msgid "cacao"
+msgstr "κακάο"
+
+msgid "peach"
+msgstr "ροδάκινο"
+
+msgid "melon"
+msgstr "πεπόνι"
+
+msgid "grapefruit"
+msgstr "γκρέιπφρουτ"
+
+msgid "broccoli"
+msgstr "μπρόκολο"
+
+msgid "grapes"
+msgstr "σταφύλια"
+
+msgid "spinach"
+msgstr "σπανάκι"
+
+msgid "fig"
+msgstr "σύκο"
+
+msgid "kernel"
+msgstr "κουκούτσι"
+
+msgid "radish"
+msgstr "ραπανάκι"
+
+msgid "tomato"
+msgstr "ντομάτα"
+
+msgid "kiwi"
+msgstr "ακτινίδιο"
+
+msgid "asparagus"
+msgstr "σπαράγγι"
+
+msgid "olives"
+msgstr "ελιές"
+
+msgid "cucumbers"
+msgstr "αγγούρια"
+
+msgid "beans"
+msgstr "φασόλια"
+
+msgid "strawberry"
+msgstr "φράουλα"
+
+msgid "peppers"
+msgstr "πιπεριές"
+
+msgid "raspberry"
+msgstr "μούρο"
+
+msgid "apricot"
+msgstr "βερύκοκκο"
+
+msgid "potatoes"
+msgstr "πατάτες"
+
+msgid "peas"
+msgstr "μπιζέλια"
+
+msgid "cabbage"
+msgstr "λάχανο"
+
+msgid "cherries"
+msgstr "κεράσια"
+
+msgid "squash"
+msgstr "κολοκύθα"
+
+msgid "blueberries"
+msgstr "μπλε μούρα"
+
+msgid "pear"
+msgstr "αχλάδι"
+
+msgid "orange"
+msgstr "πορτοκάλι"
+
+msgid "pumpkin"
+msgstr "κολοκύθι"
+
+msgid "avocado"
+msgstr "αβοκάντο"
+
+msgid "garlic"
+msgstr "σκόρδο"
+
+msgid "onion"
+msgstr "κρεμμύδι"
+
+msgid "apple"
+msgstr "μήλο"
+
+msgid "lime"
+msgstr "λάιμ"
+
+msgid "cauliflower"
+msgstr "κουνουπίδι"
+
+msgid "mango"
+msgstr "μάνγκο"
+
+msgid "lettuce"
+msgstr "μαρούλι"
+
+msgid "lemon"
+msgstr "λεμόνι"
+
+msgid "aubergine"
+msgstr "μελιτζάνα"
+
+msgid "artichokes"
+msgstr "αγκινάρα"
+
+msgid "plums"
+msgstr "δαμάσκηνα"
+
+msgid "leek"
+msgstr "πράσο"
+
+msgid "bananas"
+msgstr "μπανάνες"
+
+msgid "papaya"
+msgstr "παπάγια"
+
+msgid "sail"
+msgstr "πανί"
+
+msgid "taxi"
+msgstr "ταξί"
+
+msgid "car"
+msgstr "αυτοκίνητο"
+
+msgid "bike"
+msgstr "ποδήλατο"
+
+msgid "raft"
+msgstr "σχεδία"
+
+msgid "pedal"
+msgstr "πηδάλι"
+
+msgid "bus"
+msgstr "λεωφορείο"
+
+msgid "handlebar"
+msgstr "τιμόνι"
+
+msgid "boat"
+msgstr "βάρκα"
+
+msgid "truck"
+msgstr "φορτηγό"
+
+msgid "sleigh"
+msgstr "έλκυθρο"
+
+msgid "carpet"
+msgstr "χαλί"
+
+msgid "motorcycle"
+msgstr "μοτοσυκλέτα"
+
+msgid "train"
+msgstr "τρένο"
+
+msgid "ship"
+msgstr "πλοίο"
+
+msgid "van"
+msgstr "βαν"
+
+msgid "canoe"
+msgstr "κανό"
+
+msgid "rocket"
+msgstr "πύραυλος"
+
+msgid "mast"
+msgstr "κατάρτι"
+
+msgid "sledge"
+msgstr "έλκυθρο"
+
+msgid "bicycle"
+msgstr "ποδήλατο"
+

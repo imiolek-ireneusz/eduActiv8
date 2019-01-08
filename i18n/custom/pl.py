@@ -152,8 +152,8 @@ d["a4a_people"] = ["dziewczyna", "chłopiec", "syn", "koledzy", "przyjaciele", "
 d["a4a_food"] = ["słodycze", "kiełbasa", "hamburger", "stek", "krówka", "pączek", "kokos", "ryż", "lód", "galaretka",
                  "jogurt", "deser", "precel", "orzeszek ziemny", "dżem", "uczta", "ciasteczko", "boczek", "przyprawy",
                  "kawa", "ciasto", "lemoniada", "czekolada", "butelka wody", "lunch", "lód", "cukier", "sos", "zupa",
-                 "soki", "frytki", "ciasto", "ziemniaki puree", "herbata", "drożdżówka", "ser", "wołowina", "kanapka",
-                 "plasterki", "posypka", "pizza", "mąka", "guma do żucia", "spaghetti", "pieczeń", "napój", "gulasz",
+                 "sok", "frytki", "ciasto", "ziemniaki puree", "herbata", "drożdżówka", "ser", "wołowina", "kanapka",
+                 "plasterki", "posypka", "pizza", "mąka", "guma do żucia", "spaghetti", "pieczeń", "gulasz",
                  "smarować", "mięso ", "mleko", "objad", "kukurydza", "chleb", "orzech włoski", "jajko", "hot dog",
                  "szynka"]
 
