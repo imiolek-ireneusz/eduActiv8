@@ -1,38 +1,46 @@
 # eduActiv8 - Educational Activity Pack - translation file.
 # Copyright (C) 2012 - 2019 Ireneusz Imiolek
 # This file is distributed under the same license as the eduactiv8 package.
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
-# 
+#
 # Translators:
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
-# 
+#
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+# Yuri Chornoivan <yurchor@ukr.net>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2019-01-04 22:25+0000\n"
-"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
-"Language-Team: Ukrainian (https://www.transifex.com/eduactiv8/teams/94947/uk/)\n"
+"PO-Revision-Date: 2019-01-08 08:46+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11"
+" ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 >"
+" 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n %"
+" 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Generator: Lokalize 2.0\n"
 
 # Translated by Yuri Chornoivan (Юрій Чорноіван)
-
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
-" Please view credits.txt for more info about authors of media files used in this project"
+" Images by various authors who contributed their works to openclipart.org"
+" (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids -"
+" under a Creative Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in"
+" this project"
 msgstr ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Звукові дані надіслано різними авторами, які працювали на freesound.org. \n"
-" Зображення створено різними авторами, які розміщували їх на openclipart.org (громадське використання) та http://www.art4apps.org/ - Art4Apps від Smart4Kids - за умов дотримання Creative Commons License (CC BY-SA). \n"
-" Будь ласка, ознайомтеся із вмістом файла credits.txt, щоб дізнатися більше про авторів мультимедійних файлів, використаних у межах цього проекту."
+" Зображення створено різними авторами, які розміщували їх на openclipart.org"
+" (громадське використання) та http://www.art4apps.org/ - Art4Apps від"
+" Smart4Kids - за умов дотримання Creative Commons License (CC BY-SA). \n"
+" Будь ласка, ознайомтеся із вмістом файла credits.txt, щоб дізнатися більше"
+" про авторів мультимедійних файлів, використаних у межах цього проекту."
 
 msgid ""
 "This program is free software: you can redistribute it and/or modify it "
@@ -53,7 +61,7 @@ msgid "A collection of educational activities for kids"
 msgstr "Невеличкий набір освітніх програм для малят"
 
 msgid "Educational Activities for Kids"
-msgstr ""
+msgstr "Освітні вправи для дітей"
 
 msgid ""
 "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
@@ -587,16 +595,16 @@ msgid "Percentages (Category)"
 msgstr "Відсотки"
 
 msgid "Learn new words"
-msgstr ""
+msgstr "Вивчення нових слів"
 
 msgid "Word Builders"
 msgstr "Побудова слів"
 
 msgid "Word Matchers"
-msgstr ""
+msgstr "Відповідність слів"
 
 msgid "Match images to words"
-msgstr ""
+msgstr "Відповідність зображень словам"
 
 msgid "Animals"
 msgstr "Тварини"
@@ -635,46 +643,45 @@ msgid "Food"
 msgstr "Їжа"
 
 msgid "Listening Exercises"
-msgstr ""
+msgstr "Аудіовправи"
 
 msgid "Match sounds to words"
-msgstr ""
+msgstr "Відповідність звуків словам"
 
 msgid "Patterns"
-msgstr ""
+msgstr "Шаблони"
 
 msgid "Number Patterns"
-msgstr ""
+msgstr "Шаблони чисел"
 
 msgid "Letter Patterns"
-msgstr ""
+msgstr "Шаблони літер"
 
 msgid "Color Patterns"
-msgstr ""
+msgstr "Шаблони кольорів"
 
 msgid "Image Patterns"
-msgstr ""
+msgstr "Шаблони зображень"
 
 msgid "Fraction Patterns"
-msgstr ""
+msgstr "Шаблони дробів"
 
 msgid "Shape Patterns"
-msgstr ""
+msgstr "Шаблони форм"
 
 msgid "Complete the pattern on the top line."
-msgstr ""
+msgstr "Заповніть шаблон на верхньому рядку."
 
 msgid "Match shapes to their names"
-msgstr ""
+msgstr "Встановіть відповідність форм назвам"
 
 msgid "Negative numbers"
-msgstr ""
+msgstr "Від'ємні числа"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr ""
+msgstr "Заповніть абетку літерами з середнього рядка."
 
-msgid ""
-"Drag the slider up or down so that the right sign is in the red square."
+msgid "Drag the slider up or down so that the right sign is in the red square."
 msgstr ""
 "Перетягніть повзунок вгору або вниз так, щоб у червоному прямокутнику "
 "опинився правильний знак."
@@ -687,8 +694,7 @@ msgstr ""
 "Ознайомтеся зі списком закупівель і перетягніть усі потрібні записи до "
 "кошика."
 
-msgid ""
-"Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
 msgstr ""
 "Перетягніть один зі знаків < («менше»), > («більше») або = («дорівнює») до "
 "червоного прямокутника."
@@ -927,64 +933,64 @@ msgid "Find missing number"
 msgstr "Знайдіть пропущене число"
 
 msgid "numerator"
-msgstr ""
+msgstr "чисельник"
 
 msgid "denominator"
-msgstr ""
+msgstr "знаменник"
 
 msgid "Experiment with fractions"
-msgstr ""
+msgstr "Експеримент із дробами"
 
 msgid "Experiment with decimal fractions"
-msgstr ""
+msgstr "Експеримент із десятковими дробами"
 
 msgid "Ratio"
 msgstr "Відношення"
 
 msgid "Experiment with ratios"
-msgstr ""
+msgstr "Експеримент із відношеннями"
 
 msgid "Experiment with percentages"
-msgstr ""
+msgstr "Експеримент із відсотками"
 
 msgid "What fraction is it?"
-msgstr ""
+msgstr "Що це за дріб?"
 
 msgid "What decimal fraction is it?"
-msgstr ""
+msgstr "Що це за десятковий дріб?"
 
 msgid "Add fractions with the same denominator"
-msgstr ""
+msgstr "Додайте дроби із однаковим знаменником"
 
 msgid "Subtract fractions with the same denominator"
-msgstr ""
+msgstr "Відніміть дроби із однаковим знаменником"
 
 msgid "Multiply fractions"
-msgstr ""
+msgstr "Перемножте дроби"
 
 msgid "Divide fractions"
-msgstr ""
+msgstr "Поділіть дроби"
 
 msgid "Exercise 1"
-msgstr ""
+msgstr "Вправа 1"
 
 msgid "Exercise 2"
-msgstr ""
+msgstr "Вправа 2"
 
 msgid "Exercise 3"
-msgstr ""
+msgstr "Вправа 3"
 
 msgid "Compare decimals and fractions"
-msgstr ""
+msgstr "Порівняйте десяткові числа і дроби"
 
 msgid "Compare fractions"
-msgstr ""
+msgstr "Порівняйте дроби"
 
 msgid "Reduce fractions"
-msgstr ""
+msgstr "Скорочення дробів"
 
 msgid "Expand fractions"
-msgstr ""
+msgstr "Розгортання дробів"
 
 msgid ""
 "To reduce a fraction divide the numerator and the denominator by one of "
@@ -992,17 +998,25 @@ msgid ""
 "one of them to see what happens. If 1 is the only common factor then the "
 "fraction can't be reduced any more - try choosing a different one."
 msgstr ""
+"Щоб скоротити дріб, поділіть його чисельник і знаменник на один зі спільних"
+" дільників, які показано між двома дробами. Виберіть один з варіантів, щоб"
+" ознайомитися із наслідками такої дії. Якщо єдиним спільним дільником є 1,"
+" дріб вже не можна скоротити — спробуйте вибрати інший."
 
 msgid ""
 "To expand a fraction multiply the numerator and the denominator by the same "
 "number. Change the multiplicand to see what happens."
 msgstr ""
+"Щоб розгорнути дріб, помножте його чисельник і знаменник на якесь число."
+" Спробуйте змінити множник, щоб ознайомитися із наслідками виконання такої"
+" дії."
 
 msgid "Use the arrows to change your answer or just type it in."
 msgstr ""
+"Скористайтеся стрілками для внесення змін до відповіді або просто введіть її."
 
 msgid "Use the arrows to change your answer."
-msgstr ""
+msgstr "Скористайтеся стрілками для внесення змін до відповіді."
 
 msgid ""
 "To add two fractions with the same denominators add their numerators "
@@ -1010,156 +1024,170 @@ msgid ""
 "numerator is greater than the denominator and reduce the fraction if "
 "possible."
 msgstr ""
+"Щоб додати два дробити із однаковими знаменниками, слід додати їхні"
+" чисельники, а знаменник лишити незмінним. Спростіть результат, якщо"
+" чисельник є більшим за знаменник і скоротіть дріб, якщо це можливо."
 
 msgid ""
 "To subtract one fraction from another one with the same denominator subtract"
 " numerators and keep the denominator unchanged. Reduce the resulting "
 "fraction if possible."
 msgstr ""
+"Щоб відняти один дріб від іншого із тим самим знаменником, відніміть"
+" чисельники, а знаменник лишіть незмінним. Скоротіть отриманий дріб, якщо це"
+" можливо."
 
 msgid ""
 "To multiply two fractions multiply the numerators together and then multiply"
 " the denominators together. Reduce the resulting fraction if possible."
 msgstr ""
+"Щоб перемножити два дроби, перемножте чисельники цих дробів і поділіть"
+" результат на добуток знаменників. Скоротіть результат, якщо це можливо."
 
 msgid ""
 "To divide a fraction by another fraction multiply the first fraction by the "
 "second fraction flipped up side down. Simplify and reduce the resulting "
 "fraction if possible."
 msgstr ""
+"Щоб поділити один дріб на інший, помножте перший дріб на перевернутий другий"
+" дріб. Спростіть і скоротіть дріб-результат, якщо це можливо."
 
 msgid "Group fractions together"
-msgstr ""
+msgstr "Групування дробів"
 
 msgid "Group percentages together"
-msgstr ""
+msgstr "Групування відсотків"
 
 msgid "Group ratios together"
-msgstr ""
+msgstr "Групування відношень"
 
 msgid "Symmetry"
-msgstr ""
+msgstr "Симетрія"
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr ""
+msgstr "Дзеркальна симетрія — малювання форм"
 
 msgid "Reflect shapes"
-msgstr ""
+msgstr "Віддзеркалення форм"
 
 msgid "Reflect a shape in a mirror line"
-msgstr ""
+msgstr "Віддзеркалення форми за лінією віддзеркалення"
 
 msgid ""
 "Draw a shape that is a reflection of the one already displayed. The red line"
 " is the mirror line."
 msgstr ""
+"Намалюйте форму, яка є віддзеркаленням показаної форми. Червона лінія"
+" позначає лінію віддзеркалення."
 
 msgid "Symmetrical shapes - missing half"
-msgstr ""
+msgstr "Симетричні форми — інша половина"
 
 msgid "Draw the other half of the shape"
-msgstr ""
+msgstr "Намалюйте іншу половину форми"
 
 msgid "Find lines of symmetry"
-msgstr ""
+msgstr "Пошук ліній симетрії"
 
 msgid ""
 "Find and select all lines of symmetry for a displayed shape. Click on the "
 "arrows around the drawing area to select them."
 msgstr ""
+"Знайдіть і позначте усі лінії симетрії показаної форми. Щоб вибрати потрібну"
+" лінію, натискайте стрілки навколо області малювання."
 
 msgid "Match equivalent fractions"
-msgstr ""
+msgstr "Пошук рівних дробів"
 
 msgid "Match fractions"
-msgstr ""
+msgstr "Відповідність дробів"
 
 msgid "Match decimals"
-msgstr ""
+msgstr "Відповідність десяткових чисел"
 
 msgid "Match percentages"
-msgstr ""
+msgstr "Відповідність відсотків"
 
 msgid "Match ratios"
-msgstr ""
+msgstr "Відповідність відношень"
 
 msgid "Percentages in a pie chart"
-msgstr ""
+msgstr "Відсотки на круговій діаграмі"
 
 msgid "Find equivalent fraction"
-msgstr ""
+msgstr "Знайдіть рівний дріб"
 
 msgid "Calculating with Time"
-msgstr ""
+msgstr "Обчислення часу"
 
 msgid "start time"
-msgstr ""
+msgstr "час початку"
 
 msgid "end time"
-msgstr ""
+msgstr "час завершення"
 
 msgid "elapsed time"
-msgstr ""
+msgstr "час, що минув"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr ""
+msgstr "Температура — вступ до поняття від'ємних чисел"
 
 msgid "Experiment with elapsed time"
-msgstr ""
+msgstr "Експеримент із витраченим часом"
 
 msgid "Experiment with elapsed time 2"
-msgstr ""
+msgstr "Експеримент із витраченим часом 2"
 
 msgid "Calculate elapsed time"
-msgstr ""
+msgstr "Обчислення витраченого часу"
 
 msgid "Find the start or the end time"
-msgstr ""
+msgstr "Обчислення час початку або завершення"
 
 msgid "Visualized on a clock dial"
-msgstr ""
+msgstr "Візуалізація на циферблаті"
 
 msgid "Visualized on a number line"
-msgstr ""
+msgstr "Візуалізація на одному рядку чисел"
 
 msgid "Visualized on two number lines"
-msgstr ""
+msgstr "Візуалізація на двох рядках чисел"
 
 msgid "With no visualizations"
-msgstr ""
+msgstr "Без візуалізації"
 
 msgid "With mirrored images"
-msgstr ""
+msgstr "Із віддзеркаленням зображень"
 
 msgid "Theme Editor"
-msgstr ""
+msgstr "Редактор тем"
 
 msgid "Make the game look your way"
-msgstr ""
+msgstr "Створіть власний вигляд для гри"
 
 msgid "Reset colors back to the default ones?"
-msgstr ""
+msgstr "Відновити типові кольори?"
 
 msgid "With simplifying"
-msgstr ""
+msgstr "Зі спрощенням"
 
 msgid "Positive numbers"
-msgstr ""
+msgstr "Додатні числа"
 
 msgid "Basics"
-msgstr ""
+msgstr "Основи"
 
 msgid "Equivalent fractions"
-msgstr ""
+msgstr "Рівні дроби"
 
 msgid "Expanding and reducing fractions"
-msgstr ""
+msgstr "Розгортання і скорочення дробів"
 
 msgid "Add fractions with unlike denominators"
-msgstr ""
+msgstr "Додайте дроби із різними знаменниками"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr ""
+msgstr "Відніміть дроби із різними знаменниками"
 
 msgid ""
 "To add or subtract fractions when their denominators are not the same you "
@@ -1167,15 +1195,18 @@ msgid ""
 "Finding the least common multiple of the two denominators will help you with"
 " that."
 msgstr ""
+"Щоб додати або відняти два дроби із різними знаменниками, вам доведеться"
+" знайти рівні їм дроби, які матимуть однаковий або спільний знаменник. У"
+" цьому вам допоможе пошук найменшого спільного кратного двох знаменників."
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
-msgstr ""
+msgstr "довга форма"
 
 # used for the 2 ways of telling time used in Russian and Serbian translations
 # only
 msgid "short form"
-msgstr ""
+msgstr "скорочена форма"
 
 msgid "white"
 msgstr "білий"
@@ -1280,10 +1311,10 @@ msgid "Hexagon"
 msgstr "Шестикутник"
 
 msgid "Heptagon"
-msgstr ""
+msgstr "Семикутник"
 
 msgid "Octagon"
-msgstr ""
+msgstr "Восьмикутник"
 
 msgid "Circle"
 msgstr "Коло"
@@ -1396,10 +1427,10 @@ msgstr[3] "груша"
 
 msgid "orange [fruit]"
 msgid_plural "oranges"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "апельсин"
+msgstr[1] "апельсини"
+msgstr[2] "апельсинів"
+msgstr[3] "апельсин"
 
 msgid "onion"
 msgid_plural "onions"
@@ -1459,14 +1490,14 @@ msgstr[3] "диня"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "година"
+msgstr[1] "години"
+msgstr[2] "годин"
+msgstr[3] "година"
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "хвилина"
+msgstr[1] "хвилини"
+msgstr[2] "хвилин"
+msgstr[3] "хвилина"
