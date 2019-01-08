@@ -9,11 +9,8 @@ from classes.extras import reverse
 from classes.extras import unival
 
 
-# game003.py holds the GUI for language switching for game screen and loginscreen for the login/admin screen
-
 class Language:
     def __init__(self, configo, path):
-        #lib_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
         self.locale_dir = unival(os.path.join(path, 'locale/'))
         if 'LC_MESSAGES' in vars(locale):
             # linux
@@ -21,7 +18,6 @@ class Language:
         else:
             # windows
             locale.setlocale(locale.LC_ALL, '')
-        # locale.setlocale(locale.LC_MESSAGES, '') # use user's preferred locale
 
         self.config = configo
         self.alphabet_26 = ["en_GB", "en_US", "pt_PT"]
@@ -50,10 +46,8 @@ class Language:
 
     def get_lang_attr(self):
         filename = os.path.join(self.locale_dir, self.lang, "LC_MESSAGES", "eduactiv8.mo")
-        # filename = "locale/%s/LC_MESSAGES/eduactiv8.mo" % self.lang
         self.trans[self.lang] = gettext.GNUTranslations(open(filename, "rb"))
         try:
-            # print("Opening message file %s for locale %s" % (filename, self.lang) )
             self.trans[self.lang] = gettext.GNUTranslations(open(filename, "rb"))
         except IOError:
             print("Locale not found. Using default messages")
@@ -318,7 +312,7 @@ class Language:
             self.config.font_line_height_adjustment = 1
             self.config.font_start_at_adjustment = 0
 
-        if self.kbrd is None:  # self.lang not in ["en_gb","en_us","pl","ru","el","uk","fr"]:
+        if self.kbrd is None:
             import i18n.custom.kbrd.en_gb
             import i18n.custom.kbrd.en_course
             self.kbrd = i18n.custom.kbrd.en_gb
@@ -335,8 +329,7 @@ class Language:
         self.numbers2090 = self.lang_file.numbers2090
         self.n2txt = self.lang_file.n2txt
         self.time2str = self.lang_file.time2str
-        if self.lang in ["en_GB", "en_US", "pl"]:
-            self.fract2str = self.lang_file.fract2str
+        self.fract2str = self.lang_file.fract2str
 
         self.solid_names = self.oi18n.solid_names
         self.shape_names = self.oi18n.shape_names
@@ -365,7 +358,6 @@ class Language:
                             each[index] = reverse(each[index], self.alpha, self.lang)
 
         self.dp.update(self.d)
-        # if self.lang == 'ru' or self.lang == 'he':
         self.dp.update(self.lang_file.dp)
         if self.lang == "he":
             s = unival(self.d['abc_flashcards_word_sequence'][0])

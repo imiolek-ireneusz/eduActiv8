@@ -2,7 +2,6 @@
 
 import pygame
 import random
-import os
 
 import classes.board
 import classes.extras as ex
@@ -201,14 +200,8 @@ class Board(gd.BoardGame):
                                         white, "", self.font_size)
 
                     fraction_canvas = self.board.ships[-1]
-                    """
-                    fraction = classes.drw.fraction_hq.Fraction(1, self.board.scale * xw, color1, color2,
-                                                                bd_color1,
-                                                                bd_color2, self.fractions[i], 2)
-                    """
                     fraction = classes.drw.ratio_hq.Ratio(1, self.board.scale * xw, color1, color2, color3,
                                                self.bd_color1, self.bd_color2, self.bd_color3, self.ratios[i])
-                    #fraction.set_offset(20, 30)
                     fraction_canvas.painting = fraction.get_canvas().copy()
                 else:
                     position_list = wide_slots
@@ -224,7 +217,6 @@ class Board(gd.BoardGame):
                                             classes.board.MultiColorLetters,
                                             "<1>" + str(self.ratios[i - switch][0]) + "<4> : <2>" + str(
                                                 self.ratios[i - switch][1]), white, "", 2)
-                    # self.board.ships[-1].font_color = self.bd_color1
                     self.board.ships[-1].set_font_colors(self.bd_color1, self.bd_color2, self.bd_color3,
                                                          self.colon_color)
 
@@ -238,73 +230,6 @@ class Board(gd.BoardGame):
             self.board.ships[i].checkable = True
             self.board.ships[i].init_check_images()
         self.outline_all(self.bd_color_2, 1)
-
-    """
-    def add_ratios(self, rlen=3):
-        #recreate colours
-        if self.mainloop.scheme is not None:
-            h1 = 170
-            h2 = 40
-            h3 = 0
-            color1 = ex.hsv_to_rgb(h1, 255, 255)
-            color2 = ex.hsv_to_rgb(h2, 157, 255)
-            color3 = ex.hsv_to_rgb(h2, 57, 255)
-            self.bd_color1 = ex.hsv_to_rgb(h1, 127, 155)
-            self.bd_color2 = ex.hsv_to_rgb(h2, 127, 155)
-            self.bd_color3 = ex.hsv_to_rgb(h3, 57, 155)
-
-            self.colon_color = self.mainloop.scheme.u_font_color
-        else:
-            step = 255 // 3
-            h1 = random.randrange(0, 255)
-            h2 = (h1 + step) % 255
-            h3 = (h1 + step * 2) % 255
-
-            color1 = ex.hsv_to_rgb(h1, 197, 255)
-            color2 = ex.hsv_to_rgb(h2, 197, 255)
-            color3 = ex.hsv_to_rgb(h3, 197, 255)
-            self.bd_color1 = ex.hsv_to_rgb(h1, 187, 200)
-            self.bd_color2 = ex.hsv_to_rgb(h2, 187, 200)
-            self.bd_color3 = ex.hsv_to_rgb(h3, 187, 200)
-            self.colon_color = (0, 0, 0)
-        self.ratios = []
-        count = 0
-        while True:
-            n1 = random.randint(1, 5)
-            n2 = random.randint(1, 5)
-
-            if rlen == 2:
-                rt = [n1, n2]
-            else:
-                n3 = random.randint(1, 5)
-                rt = [n1, n2, n3]
-                
-            if rt not in self.ratios:
-                self.ratios.append(rt)
-                count += 1
-                if count == 4:
-                    break
-
-        switch = self.square_count // 2
-        for i in range(self.square_count):
-            if i < switch:
-                #position_list = small_slots
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.Letter, "", self.white, "",
-                                    0)
-                ratio_canvas = self.board.ships[-1]
-                #ratio = classes.drw.ratio_hq.Ratio(1, self.board.scale, self.color1, self.color2, self.bd_color1, self.bd_color2, self.perc[i])
-                ratio = classes.drw.ratio_hq.Ratio(1, self.board.scale, color1, color2, color3,
-                                                           self.bd_color1, self.bd_color2, self.bd_color3, self.ratios[i])
-                #fraction.set_offset(20, 30)
-                ratio_canvas.painting = ratio.get_canvas().copy()
-
-            else:
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.MultiColorLetters,
-                                    "<1>" + str(self.ratios[i - switch][0]) + "<4> : <2>" + str(self.ratios[i - switch][1]) + "<4> : <3>" + str(self.ratios[i - switch][2]),
-                                    self.white, "", 8)
-                #self.board.ships[-1].font_color = self.bd_color1
-                self.board.ships[-1].set_font_colors(self.bd_color1, self.bd_color2, self.bd_color3, self.colon_color)
-    """
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)
