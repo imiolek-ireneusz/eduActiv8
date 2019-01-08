@@ -77,6 +77,7 @@ class Language:
             import i18n.custom.word_lists.en_us_di
             import i18n.custom.kbrd.en_us
             import i18n.custom.kbrd.en_course
+            import i18n.custom.a4a_py.en_US as a4a_word_lst
             # self.voice = ["-s 170","-a 100","-p 80","-ven-us+m1"]
             self.voice = ["-ven-us+m1"]
             self.di = i18n.custom.word_lists.en_us_di.di
@@ -89,6 +90,7 @@ class Language:
             import i18n.custom.word_lists.pl_di
             import i18n.custom.kbrd.pl
             import i18n.custom.kbrd.pl_course
+            import i18n.custom.a4a_py.pl as a4a_word_lst
             # self.voice = ["-s 160","-a 100","-p 80","-vpl+m1"] #"-g 5",
             self.voice = ["-vpl+m1"]
             self.di = i18n.custom.word_lists.pl_di.di
@@ -99,6 +101,7 @@ class Language:
         elif self.lang == 'sr':
             import i18n.custom.sr
             import i18n.custom.word_lists.sr_di
+            import i18n.custom.a4a_py.en_GB as a4a_word_lst
             # self.voice = ["-s 160","-a 100","-p 80","-vpl+m1"] #"-g 5",
             self.voice = ["-vsr+m1"]
             self.di = i18n.custom.word_lists.sr_di.di
@@ -110,6 +113,7 @@ class Language:
         elif self.lang == 'ca':
             import i18n.custom.ca
             import i18n.custom.word_lists.ca_di
+            import i18n.custom.a4a_py.ca as a4a_word_lst
             self.voice = ["-vca+m1"]
             self.di = i18n.custom.word_lists.ca_di.di
             self.lang_file = i18n.custom.ca
@@ -117,6 +121,7 @@ class Language:
         elif self.lang == 'es_ES':
             import i18n.custom.es
             import i18n.custom.word_lists.es_di
+            import i18n.custom.a4a_py.es as a4a_word_lst
             self.voice = ["-ves+m1"]
             self.di = i18n.custom.word_lists.es_di.di
             self.lang_file = i18n.custom.es
@@ -124,6 +129,7 @@ class Language:
         elif self.lang == 'pt_PT':
             import i18n.custom.pt
             import i18n.custom.word_lists.pt_di
+            import i18n.custom.a4a_py.pt as a4a_word_lst
             self.voice = ["-vpt-pt+m1"]
             self.di = i18n.custom.word_lists.pt_di.di
             self.lang_file = i18n.custom.pt
@@ -133,6 +139,7 @@ class Language:
             import i18n.custom.word_lists.fr_di
             import i18n.custom.kbrd.fr
             import i18n.custom.kbrd.fr_course
+            import i18n.custom.a4a_py.fr as a4a_word_lst
             self.voice = ["-vfr+m1"]
             self.di = i18n.custom.word_lists.fr_di.di
             self.lang_file = i18n.custom.fr
@@ -142,6 +149,7 @@ class Language:
         elif self.lang == 'it':
             import i18n.custom.it
             import i18n.custom.word_lists.it_di
+            import i18n.custom.a4a_py.it as a4a_word_lst
             self.voice = ["-vit+m1"]
             self.di = i18n.custom.word_lists.it_di.di
             self.lang_file = i18n.custom.it
@@ -151,6 +159,7 @@ class Language:
             import i18n.custom.word_lists.de_di
             import i18n.custom.kbrd.de
             import i18n.custom.kbrd.de_course
+            import i18n.custom.a4a_py.de as a4a_word_lst
             self.voice = ["-vde+m1"]
             self.di = i18n.custom.word_lists.de_di.di
             self.lang_file = i18n.custom.de
@@ -162,6 +171,7 @@ class Language:
             import i18n.custom.word_lists.ru_di
             import i18n.custom.kbrd.ru
             import i18n.custom.kbrd.ru_course
+            import i18n.custom.a4a_py.ru as a4a_word_lst
             # self.voice = ["-s 130","-a 100","-p 80","-vru+m1"]
             # self.voice = ["-vru+m1"] s 150 -vru
             self.voice = ["-s 150", "-vru"]
@@ -179,6 +189,7 @@ class Language:
             import i18n.custom.word_lists.uk_di
             import i18n.custom.kbrd.uk
             import i18n.custom.kbrd.uk_course
+            import i18n.custom.a4a_py.uk as a4a_word_lst
             self.voice = None
             self.di = i18n.custom.word_lists.uk_di.di
             self.lang_file = i18n.custom.uk
@@ -189,6 +200,7 @@ class Language:
         elif self.lang == 'fi':
             import i18n.custom.fi
             import i18n.custom.word_lists.fi_di
+            import i18n.custom.a4a_py.en_GB as a4a_word_lst
             self.voice = ["-vfi+m1"]
             self.di = i18n.custom.word_lists.fi_di.di
             self.lang_file = i18n.custom.fi
@@ -198,6 +210,7 @@ class Language:
             import i18n.custom.word_lists.el_di
             import i18n.custom.kbrd.el
             import i18n.custom.kbrd.el_course
+            import i18n.custom.a4a_py.el as a4a_word_lst
             self.voice = ["-vel+m1"]
             self.di = i18n.custom.word_lists.el_di.di
             self.lang_file = i18n.custom.el
@@ -208,6 +221,7 @@ class Language:
         elif self.lang == 'he':  # Hebrew
             import i18n.custom.he
             import i18n.custom.word_lists.he_di
+            import i18n.custom.a4a_py.en_GB as a4a_word_lst
             self.voice = ["-ven+m1"]  # None
             self.di = i18n.custom.word_lists.he_di.di
             self.lang_file = i18n.custom.he
@@ -223,6 +237,7 @@ class Language:
         elif self.lang == 'lkt':
             import i18n.custom.lkt
             import i18n.custom.word_lists.lkt_di
+            import i18n.custom.a4a_py.lkt as a4a_word_lst
             self.voice = None
             self.has_cursive = False
             self.di = i18n.custom.word_lists.lkt_di.di
@@ -236,6 +251,7 @@ class Language:
             import i18n.custom.word_lists.en_gb_di
             import i18n.custom.kbrd.en_gb
             import i18n.custom.kbrd.en_course
+            import i18n.custom.a4a_py.en_GB as a4a_word_lst
             self.voice = ["-ven+m1"]
             self.di = i18n.custom.word_lists.en_gb_di.di
             self.lang_file = i18n.custom.en_gb
@@ -361,3 +377,16 @@ class Language:
         self.alphabet_uc = self.lang_file.alphabet_uc
         self.accents_lc = self.lang_file.accents_lc
         self.accents_uc = self.lang_file.accents_uc
+
+        self.d["a4a_animals"] = a4a_word_lst.d["a4a_animals"]
+        self.d["a4a_sport"] = a4a_word_lst.d["a4a_sport"]
+        self.d["a4a_body"] = a4a_word_lst.d["a4a_body"]
+        self.d["a4a_people"] = a4a_word_lst.d["a4a_people"]
+        self.d["a4a_food"] = a4a_word_lst.d["a4a_food"]
+        self.d["a4a_clothes_n_accessories"] = a4a_word_lst.d["a4a_clothes_n_accessories"]
+        self.d["a4a_actions"] = a4a_word_lst.d["a4a_actions"]
+        self.d["a4a_construction"] = a4a_word_lst.d["a4a_construction"]
+        self.d["a4a_nature"] = a4a_word_lst.d["a4a_nature"]
+        self.d["a4a_jobs"] = a4a_word_lst.d["a4a_jobs"]
+        self.d["a4a_fruit_n_veg"] = a4a_word_lst.d["a4a_fruit_n_veg"]
+        self.d["a4a_transport"] = a4a_word_lst.d["a4a_transport"]
