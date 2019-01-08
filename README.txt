@@ -1,4 +1,4 @@
-eduActiv8 - Educational Activities for Kids
+eduActiv8
 www.eduactiv8.org
 
 Please note - this application is playable but still unfinished - or rather is being continuously improved (not so much recently - not enough hours in a day).
@@ -7,7 +7,7 @@ Please let me know if you find any errors or bugs in the application or in trans
 
 eduActiv8 is built with Linux users in mind - written in python and tested on Ubuntu, however it does work on Windows just not tested as thoroughly as on Linux.
 
-The application is intended to be compatible with python 2.7.3+ including python 3.x.
+The application is intended to be compatible with python 2.7.3+ including python 3.
 
 ----------------------------------------------
 Installation:
@@ -101,14 +101,10 @@ To display it in fullscreen press Ctrl+F after logging in or go to Preferences (
 
 ----------------------------------------------
 Translating:
-    If you would like to help translating this application please use one of the included files within the i18n/po directory.
-    If your language is not there yet copy the default.pot file rename it temporarily to te_ST.po and start working with the new file using ie. the Poedit.
-    To test your translation save the file - Poedit will create the .mo file for you - move the .mo file to the locale/te_ST/ directory and rename the file to eduactiv8.mo and start the app select the Test Language.
-    Alternatively you can run the cleanup.py program to get the file renamed and moved where it should be (this program will also remove .pyc and some other temp files under eduactiv8 - this is used to automate the process of stripping eduactiv8 before compressing/packaging).
+    Translation process has been moved online to www.transifex.com/eduactiv8/eduactiv8/
+    If you would like to update current translations or need a new language added please get in touch and we will get you added to the team. If it is a new language then it may take some time since code changes are required for you to be able to test your work.
 
     There are some things translated using custom translation files in custom directory - these are usually done by me - but I might need some help to do them - I will get in touch with you if I'll be struggling.
-
-    When everything is working ok please email me your .po file.
 
     The es_di.py, fr_di.py, etc. are lists of words used by word building activities.
     These are partial (google) translations from English. The English version is just a list of words most commonly used in English - you may like to check these as well for any words not necessarily suitable for children.
@@ -118,7 +114,6 @@ Interface:
 Top Panel:
     sound               - toggle sound effects
     voice               - toggle espeak voice synthesiser (if espeak is not installed this icon will not be available)
-    colour modes        - switch between colour modes (full colour, black on white, white on black, yellow on black
     user name           - displays name of currently logged in user
     logout link         - takes you back to the initial screen where you can login as a different user
 
@@ -150,7 +145,6 @@ Controls - top:
 Activity Panel - centre - the largest part of screen:
     Piece of screen where all activity objects are placed for you to drag around :)
     This is also used to display the menu in the latest version - starting from home screen - where top categories are displayed users can navigate through the series of categories to start individual activities.
-
 
 Sorry for all the mess in the code, but this is my first and only pygame project after reading some books/tutorials, so do not expect professional product - this was my programming sandbox.
 It was intended as a tool for my son to learn. He liked it so hopefully your kid(s) will like it too.

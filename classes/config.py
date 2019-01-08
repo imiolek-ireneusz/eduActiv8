@@ -125,17 +125,17 @@ class Config:
         if self.fribidi_loaded:
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano", "Lakȟótiyapi",
                                 "Polski", "Português", "Suomalainen", "Ελληνικά", "Русский", "Српски", "Українська",
-                                "תירבע", self.arabic, "Test Language"]
+                                "תירבע", self.arabic]
             self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
-                            "uk", "he", "ar", "te_ST"]
+                            "uk", "he", "ar"]
             self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
                            "uk", "he"]
         else:
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano", "Lakȟótiyapi",
                                 "Polski", "Português", "Suomalainen", "Ελληνικά", "Русский", "Српски", "Українська",
-                                "תירבע", "Test Language"]
+                                "תירבע"]
             self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
-                            "uk", "he", "te_ST"]
+                            "uk", "he"]
             self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
                            "uk", "he"]
 

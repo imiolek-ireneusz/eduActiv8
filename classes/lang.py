@@ -231,13 +231,6 @@ class Language:
             # self.n2spk = self.lang_file.n2spk
             self.ico_suffix = ""
             self.lang_id = 20
-        elif self.lang == 'te_ST':
-            import i18n.custom.te_st
-            import i18n.custom.word_lists.te_st_di
-            self.voice = ["-ven+m1"]
-            self.di = i18n.custom.word_lists.te_st_di.di
-            self.lang_file = i18n.custom.te_st
-            self.lang_id = 1
         else:  # self.lang == 'en_GB':
             import i18n.custom.en_gb
             import i18n.custom.word_lists.en_gb_di
