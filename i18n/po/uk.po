@@ -1,14 +1,12 @@
-# eduActiv8 - Educational Activity Pack - translation file.
+# eduActiv8 - translation file.
 # Copyright (C) 2012 - 2019 Ireneusz Imiolek
-# This file is distributed under the same license as the eduactiv8 package.
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
-#
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
 # Yuri Chornoivan <yurchor@ukr.net>, 2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.31.105\n"
+"Project-Id-Version: 4.19.01\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
 "PO-Revision-Date: 2019-01-08 08:46+0200\n"
@@ -24,7 +22,6 @@ msgstr ""
 " 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Generator: Lokalize 2.0\n"
 
-# Translated by Yuri Chornoivan (Юрій Чорноіван)
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
@@ -400,10 +397,10 @@ msgid "Sorting Numbers"
 msgstr "Упорядковування чисел"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Послідовні числа"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Випадкові числа"
 
 msgid "Number Comparison"
 msgstr "Порівняння чисел"

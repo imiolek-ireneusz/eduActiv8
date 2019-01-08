@@ -1,10 +1,10 @@
-# eduActiv8 - Educational Activity Pack - translation file.
+# eduActiv8 - translation file.
 # Copyright (C) 2012 - 2019 Ireneusz Imiolek
-# This file is distributed under the same license as the eduactiv8 package.
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
-# 
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+#
 # Translators:
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
+# Miriam Ruiz
+# Mario Izquierdo
 # 
 msgid ""
 msgstr ""

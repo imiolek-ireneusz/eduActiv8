@@ -8,7 +8,7 @@ os.chdir(os.path.abspath(os.path.dirname(sys.argv[0])))
 
 # list of language files
 langs = ["ca.po", "de.po", "el.po", "es_ES.po", "fi.po", "fr.po", "he.po", "it.po", "lkt.po", "pl.po", "pt_PT.po", "ru.po", "sk.po", "sr.po", "uk.po", "zh.po"]
-langs2 = ["en_GB.po", "en_US.po", "te_ST.po"]
+langs2 = ["en_GB.po", "en_US.po"]
 
 #lines = ["lines to", " add"]
 lines = []
