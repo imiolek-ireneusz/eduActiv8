@@ -392,10 +392,10 @@ msgid "Sorting Numbers"
 msgstr "Сортировка чисел"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Последовательные числа"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Случайные числа"
 
 msgid "Number Comparison"
 msgstr "Сравнение чисел"

@@ -1158,7 +1158,7 @@ msgid "ate"
 msgstr "поесть"
 
 msgid "kiss"
-msgstr "целовать"
+msgstr "целоваться"
 
 msgid "sit"
 msgstr "сидеть"
@@ -1173,7 +1173,7 @@ msgid "hear"
 msgstr "вслушиваться"
 
 msgid "smooch"
-msgstr "целоваться"
+msgstr "целовать"
 
 msgid "play"
 msgstr "играть"
