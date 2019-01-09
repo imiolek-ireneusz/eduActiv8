@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf8 -*-
 
 # This will create a dist directory containing the executable file, all the data

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # This is a helper program used to automatise some tasks related to distribution of this package.
 # Removes all files with certain extensions in this directory and all subdirectories (5 levels deep)
