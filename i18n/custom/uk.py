@@ -150,9 +150,9 @@ def time2officialstr(h, m):
         return "%s %s %s хвилин" % (numbers[h - 1], sf, n2txt(m))
 
 #write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+numerators = ['одна', 'дві', 'три', 'чотири', 'пʼять', 'шість', 'сім', 'вісім', 'девʼять', 'десять', 'одинадцять', 'дванадцять']
+d_singular = ['', 'друга', 'третя', 'четверта', 'пʼята', 'шоста', 'сьома', 'восьма', 'девʼята', 'десята', 'одинадцята', 'дванадцята']
+d_plural = ['', 'других', 'третіх', 'четвертих', 'пʼятих', 'шостих', 'сьомих', 'восьмих', 'девʼятих', 'десятих', 'одинадцятих', 'дванадцятих']
 
 def fract2str(n, d):
     if n == 1:
