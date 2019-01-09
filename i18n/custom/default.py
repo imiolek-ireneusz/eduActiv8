@@ -291,7 +291,7 @@ class I18n():
         self.d["Multiplication"] = _("Multiplication")
         self.d["Division"] = _("Division")
 
-        self.d["Match numbers to their spelling"] = _("Match numbers tGameso their spelling")
+        self.d["Match numbers to their spelling"] = _("Match numbers to their spelling")
         self.d["Number Spelling"] = _("Number Spelling")
         self.d["Match Animals"] = _("Match Animals")
         self.d["Find all matching animals"] = _("Find all matching animals")
