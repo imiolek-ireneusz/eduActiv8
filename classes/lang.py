@@ -12,6 +12,8 @@ from classes.extras import unival
 class Language:
     def __init__(self, configo, path):
         self.locale_dir = unival(os.path.join(path, 'locale/'))
+        if not os.path.isdir(self.locale_dir):
+            self.locale_dir = "/usr/share/locale/"
         if 'LC_MESSAGES' in vars(locale):
             # linux
             locale.setlocale(locale.LC_MESSAGES, '')
