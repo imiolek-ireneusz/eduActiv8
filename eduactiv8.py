@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # eduActiv8 - Educational Activities for Kids
-# Copyright (C) 2012-2018  Ireneusz Imiolek
+# Copyright (C) 2012-2019  Ireneusz Imiolek
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
