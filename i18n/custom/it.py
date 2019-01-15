@@ -9,7 +9,7 @@
 # (if it doesn't I'll try to either make the font smaller or make the area wider - where possible).
 # The colour names in other languages than English are already in smaller font.
 
-# word list adapted from GCompris:
+# word list partially adapted from GCompris and completed by Giuliano.
 # https://github.com/gcompris/GCompris-qt/blob/master/src/activities/lang/resource/content-it.json
 
 d = dict()
