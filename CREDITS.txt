@@ -30,7 +30,7 @@ Translations:
             - Alexey Loginov (Алексей Логинов)
     Serbian - Miroslav Nikolic (Мирослав Николић)
     Spanish - Miriam Ruiz - http://www.miriamruiz.es
-            - updated by: Mario Izquierdo
+            - updated by: Mario Izquierdo - https://marioizquierdo.es
     Ukrainian - Yuri Chornoivan (Юрій Чорноіван)
 
 Thanks to creators of python and pygame - without their work this program would never exist.
