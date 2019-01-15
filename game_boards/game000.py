@@ -141,6 +141,12 @@ class Board(gd.BoardGame):
                             os.path.join("home_icons", img), alpha=True)
         self.board.ships[-1].immobilize()
 
+        # check if espeak icon needs disabling on display of home screen
+        if self.lang.lang in ['lkt', 'uk']:
+            self.mainloop.sb.espeak_avail(False)
+        else:
+            self.mainloop.sb.espeak_avail(True)
+
     def handle(self, event):
         gd.BoardGame.handle(self, event)
 

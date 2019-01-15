@@ -34,9 +34,10 @@ class PScoreItem(pygame.sprite.Sprite):
         return img
 
 class PToggleBtn(PScoreItem):
-    def __init__(self, score_bar, pos_rect, img_on, img_off, fsubmit, fargs):
+    def __init__(self, score_bar, pos_rect, img_on, img_off, img_dis, fsubmit, fargs):
         PScoreItem.__init__(self, score_bar, pos_rect)
         self.enabled = True
+        self.not_available = False
         self.img_loaded = False
         self.fsubmit = fsubmit
         self.fargs = fargs
@@ -44,6 +45,8 @@ class PToggleBtn(PScoreItem):
         try:
             self.img_on = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_on)).convert(), h, h)
             self.img_off = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_off)).convert(), h, h)
+            if img_dis is not None:
+                self.img_dis = self.scale_img(pygame.image.load(os.path.join('res', 'images', "score_bar", img_dis)).convert(), h, h)
             self.img_pos = (0, 0)
             self.img_loaded = True
         except:
@@ -51,25 +54,29 @@ class PToggleBtn(PScoreItem):
 
     def handle(self, event):
         if event.type == pygame.MOUSEBUTTONUP:
-            if self.enabled:
-                self.enabled = False
-                self.fsubmit(False)
-            else:
-                self.enabled = True
-                self.fsubmit(True)
-            self.score_bar.update_me = True
-            self.update()
+            if self.not_available is not True:
+                if self.enabled:
+                    self.enabled = False
+                    self.fsubmit(False)
+                else:
+                    self.enabled = True
+                    self.fsubmit(True)
+                self.score_bar.update_me = True
+                self.update()
 
     def update(self):
         PScoreItem.update(self)
         if self.img_loaded:
-            if self.enabled:
-                self.image.blit(self.img_on, self.img_pos)
+            if self.not_available:
+                self.image.blit(self.img_dis, self.img_pos)
             else:
-                self.image.blit(self.img_off, self.img_pos)
+                if self.enabled:
+                    self.image.blit(self.img_on, self.img_pos)
+                else:
+                    self.image.blit(self.img_off, self.img_pos)
 
 
-class PSelectBtn(PScoreItem):
+class PSelectBtnxyz(PScoreItem):
     def __init__(self, score_bar, pos_rect, img_src1, img_src2, fsubmit, fargs):
         PScoreItem.__init__(self, score_bar, pos_rect)
         self.enabled = True
@@ -179,12 +186,14 @@ class ScoreBar:
         # toggle sounds
         l = self.btn_spacing
         self.elements.append(
-            PToggleBtn(self, (l, 2, self.btn_h, self.btn_h), "score_sound_on" + self.img_ext, "score_sound_off" + self.img_ext, self.toggle_sound, None))
+            PToggleBtn(self, (l, 2, self.btn_h, self.btn_h), "score_sound_on" + self.img_ext,
+                       "score_sound_off" + self.img_ext, None, self.toggle_sound, None))
         l += self.btn_h + self.btn_spacing
         # toggle espeak
         if self.mainloop.speaker.enabled:  # and self.mainloop.lang.voice is not None:
             self.elements.append(
-                PToggleBtn(self, (l, 2, self.btn_h, self.btn_h), "score_espeak_on" + self.img_ext, "score_espeak_off" + self.img_ext, self.toggle_espeak,
+                PToggleBtn(self, (l, 2, self.btn_h, self.btn_h), "score_espeak_on" + self.img_ext,
+                           "score_espeak_off" + self.img_ext, "score_espeak_dis" + self.img_ext, self.toggle_espeak,
                            None))
             l += self.btn_h + 15 + self.btn_spacing
         else:
@@ -325,6 +334,10 @@ class ScoreBar:
                 self.mainloop.config.settings["espeak"] = False
                 self.mainloop.speaker.talkative = False
             self.mainloop.config.settings_changed = True
+
+    def espeak_avail(self, avail=True):
+        if self.mainloop.speaker.enabled:
+            self.elements[1].not_available = not avail
 
     def switch_scheme(self, scheme):
         self.mainloop.switch_scheme(scheme)
