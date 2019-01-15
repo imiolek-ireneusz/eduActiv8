@@ -55,7 +55,6 @@ import classes.info_bar
 import classes.speaker
 import classes.colors
 import classes.lang
-import classes.logoimg
 import classes.score_bar
 import classes.dialogwnd
 import classes.updater
