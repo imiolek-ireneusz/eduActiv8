@@ -87,10 +87,14 @@ def time2str(h, m):
     else:
         return "%s e %s" % (hrs[h - 1], n2txt(m))
 
-#write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+# scrivi una frazione in parole
+numerators = ['un', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci', 'undici', 'dodici']
+
+# denominatori singolari, eg. 1/3 - un terzo, 1/8 - un ottavo
+d_singular = ['', 'mezzo', 'terzo', 'quarto', 'quinto', 'sesto', 'settimo', 'ottavo', 'nono', 'decimo', 'undicesimo', 'dodicesimo']
+
+# denominatori plurali, eg. 2/5 - due quinti, 5/9 - cinque noni
+d_plural = ['', 'mezzi', 'terzi', 'quarti', 'quinti', 'sesti', 'settimi', 'ottavi', 'noni', 'decimi', 'undicesimi', 'dodicesimi']
 
 def fract2str(n, d):
     if n == 1:

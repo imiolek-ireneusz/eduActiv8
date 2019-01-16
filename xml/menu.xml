@@ -1060,7 +1060,7 @@
                       title="Matching fractions"
                       subtitle=""
                       icon="ico_g_2412.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="['en', 'pl', 'ru', 'uk']" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="['en', 'pl', 'ru', 'uk', 'it']" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
                 <!--
                 <game mline="0" dbid="229" variant="0" var2="0" min_age="1" max_age="7"
