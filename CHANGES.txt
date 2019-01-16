@@ -1,8 +1,11 @@
 Changelog:
 eduActiv8 - 4.19.01:
     - a number of bug fixes
-    - translations updated and moved to transifex.com
-    - new set of 12 word discovery activities added, also useful for debugging of word list translations.
+    - a number of translations updated and added to transifex.com
+    - word building activities added across multiple languages (Italian, Spanish, Catalan and Portuguese) - some with limited word list, but work nevertheless.
+    - fraction matching game (102/242) enabled in Russian, Ukrainian and Italian
+    - new set of 12 word discovery activities added, also useful for confirming correctness of word list translations
+    - disabled state added to the eSpeak toggle button to indicate when a language is not available in a selected language
 eduActiv8 - 4.18.12:
     - the menu has been replaced with a full screen activity selection screen
         - this allows to display all activity icons without scrolling
