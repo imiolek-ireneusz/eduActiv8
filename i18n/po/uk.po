@@ -4,6 +4,7 @@
 #
 # Translators:
 # Yuri Chornoivan <yurchor@ukr.net>, 2019.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.19.01\n"

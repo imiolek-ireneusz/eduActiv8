@@ -2,6 +2,10 @@
 # Copyright (C) 2019 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
+# Translators:
+# Peter Hill, 2018
+# Derek Lackaff, 2018
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.19.01\n"

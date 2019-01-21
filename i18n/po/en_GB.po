@@ -1,6 +1,8 @@
 # eduActiv8 - translation file.
 # Copyright (C) 2012 - 2019 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+#
+# Translators:
 # Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
 # 
 msgid ""

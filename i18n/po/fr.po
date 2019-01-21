@@ -3,8 +3,8 @@
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
-# Gino Ingras
-# Johnny Jazeix
+# Gino Ingras, 2015
+# Johnny Jazeix, 2016
 # 
 msgid ""
 msgstr ""
@@ -20,9 +20,6 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
-
-# Translated by Gino Ingras
-# Updated by Johnny Jazeix
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
