@@ -388,10 +388,10 @@ msgid "Sorting Numbers"
 msgstr "Sorting Numbers"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Consecutive numbers"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Random numbers"
 
 msgid "Number Comparison"
 msgstr "Number Comparison"

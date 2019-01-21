@@ -3,7 +3,7 @@
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
 # 
 msgid ""
 msgstr ""
@@ -388,10 +388,10 @@ msgid "Sorting Numbers"
 msgstr "Sorting Numbers"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Consecutive numbers"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Random numbers"
 
 msgid "Number Comparison"
 msgstr "Number Comparison"
@@ -1209,7 +1209,7 @@ msgid "red"
 msgstr "red"
 
 msgid "orange [color]"
-msgstr "orange [color]"
+msgstr "orange"
 
 msgid "yellow"
 msgstr "yellow"
@@ -1407,7 +1407,7 @@ msgstr[1] "pears"
 
 msgid "orange [fruit]"
 msgid_plural "oranges"
-msgstr[0] "orange [fruit]"
+msgstr[0] "orange"
 msgstr[1] "oranges"
 
 msgid "onion"
