@@ -48,7 +48,6 @@ class Language:
 
     def get_lang_attr(self):
         filename = os.path.join(self.locale_dir, self.lang, "LC_MESSAGES", "eduactiv8.mo")
-        self.trans[self.lang] = gettext.GNUTranslations(open(filename, "rb"))
         try:
             self.trans[self.lang] = gettext.GNUTranslations(open(filename, "rb"))
         except IOError:
