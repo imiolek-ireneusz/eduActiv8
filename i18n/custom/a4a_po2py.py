@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Script used to convert translated po files with lists of words to the ordered python lists used by activities here
-# adapted from the Gcompris 2 eduActiv8 converter
+# adapted from the gCompris 2 eduActiv8 converter
 
 # run with python3 - to keep the utf-8 formatting
 
@@ -9,9 +9,10 @@ import re
 import a4a_words
 import copy
 import os
-lang_list = ['ca', 'de', 'el', 'en_GB', 'en_US', 'es', 'fr', 'it', 'lkt', 'pl', 'pt', 'ru', 'uk']
+# lang_list = ['ca', 'de', 'el', 'en_GB', 'en_US', 'es', 'fr', 'it', 'lkt', 'pl', 'pt', 'ru', 'uk']
 
-#lang_files = ["content-es.json", "content-ca.json", "content-it.json", "content-pt.json"]
+# use this if only one language has changed
+lang_list = ['pl']
 
 ea8_lists_str = ["a4a_animals", "a4a_sport", "a4a_body", "a4a_people", "a4a_food", "a4a_clothes_n_accessories",
                  "a4a_actions", "a4a_construction", "a4a_nature", "a4a_jobs", "a4a_fruit_n_veg", "a4a_transport"]
@@ -68,13 +69,10 @@ for lang_id in range(len(lang_list)):
                 missing_words.append(lst[i])
                 lst[i] = "<%s>" % lst[i]
 
-
     # create a new string with converted word lists
     s = "# -*- coding: utf-8 -*-\n\nd = dict()"
     for i in range(len(ea8_lists)):
         s += '\nd["%s"] = %s' % (ea8_lists_str[i], repr(ea8_lists[i]))
-
-    # s += '\n\n"""\nmissing words %d\n%s\n"""' % (len(missing_words), repr(missing_words))
 
     # save to file
     file_name = os.path.join('a4a_py', "%s.py" % (lang_list[lang_id]))

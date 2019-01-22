@@ -84,7 +84,7 @@ msgid "caterpillar"
 msgstr "gąsienica"
 
 msgid "tiger"
-msgstr "tygrysek"
+msgstr "tygrys"
 
 msgid "hummingbird"
 msgstr "koliber"
@@ -333,7 +333,7 @@ msgid "doe"
 msgstr "sarenka"
 
 msgid "gopher"
-msgstr "gopher"
+msgstr "goffer"
 
 msgid "elephant"
 msgstr "słoń"
@@ -789,7 +789,7 @@ msgid "tea"
 msgstr "herbata"
 
 msgid "bun"
-msgstr "drożdżówka"
+msgstr "bułka"
 
 msgid "cheese"
 msgstr "ser"
@@ -870,7 +870,7 @@ msgid "smock"
 msgstr "kitel"
 
 msgid "shorts"
-msgstr "spodenki"
+msgstr "shorty"
 
 msgid "pocket"
 msgstr "kieszeń"
@@ -942,7 +942,7 @@ msgid "cap"
 msgstr "czapka"
 
 msgid "swimming suit"
-msgstr "kostium pływacki"
+msgstr "strój kąpielowy"
 
 msgid "trainer"
 msgstr "but sportowy"
@@ -954,7 +954,7 @@ msgid "glasses"
 msgstr "okulary"
 
 msgid "shoelace"
-msgstr "sznurówki"
+msgstr "sznurówka"
 
 msgid "patch"
 msgstr "łata"
@@ -963,7 +963,7 @@ msgid "scarf"
 msgstr "szalik"
 
 msgid "shoe"
-msgstr "buty"
+msgstr "but"
 
 msgid "button"
 msgstr "guzik"
@@ -981,13 +981,13 @@ msgid "robe"
 msgstr "szata"
 
 msgid "pants"
-msgstr "spodnie"
+msgstr "spodenki"
 
 msgid "kimono"
 msgstr "kimono"
 
 msgid "overalls"
-msgstr "kombinezon"
+msgstr "spodnie na szelkach"
 
 msgid "lick"
 msgstr "lizać"
@@ -1044,7 +1044,7 @@ msgid "clay"
 msgstr "lepić z gliny"
 
 msgid "catch"
-msgstr "złowić"
+msgstr "łowić"
 
 msgid "clap"
 msgstr "klepnąć"
@@ -1059,7 +1059,7 @@ msgid "meet"
 msgstr "spotkać"
 
 msgid "sell"
-msgstr "sprzedać"
+msgstr "sprzedawać"
 
 msgid "peck"
 msgstr "dziobać"
@@ -1419,7 +1419,7 @@ msgid "athlete"
 msgstr "sportowiec"
 
 msgid "librarian"
-msgstr "bibliotekarz"
+msgstr "bibliotekarka"
 
 msgid "juggler"
 msgstr "żongler"
@@ -1698,7 +1698,7 @@ msgid "plums"
 msgstr "śliwki"
 
 msgid "leek"
-msgstr "pora"
+msgstr "por"
 
 msgid "bananas"
 msgstr "banany"
@@ -1731,7 +1731,7 @@ msgid "handlebar"
 msgstr "kierownica"
 
 msgid "boat"
-msgstr "łódź"
+msgstr "łódka"
 
 msgid "truck"
 msgstr "ciężarówka"
