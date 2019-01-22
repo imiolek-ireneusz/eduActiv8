@@ -58,7 +58,10 @@ class Board(gd.BoardGame):
                 my_sum = str(first_num + second_num)
                 if my_sum not in texts1:
                     texts1.append(str(my_sum))
-                    texts2.append("%d  +  %d" % (first_num, second_num))
+                    if second_num < 0:
+                        texts2.append("%d + (%d)" % (first_num, second_num))
+                    else:
+                        texts2.append("%d + %d" % (first_num, second_num))
 
         elif self.mainloop.m.game_variant == 1:
             while len(texts1) < self.square_count // 2:
@@ -73,7 +76,10 @@ class Board(gd.BoardGame):
                     my_sum = str(first_num - second_num)
                     if my_sum not in texts1:
                         texts1.append(str(my_sum))
-                        texts2.append("%d  - %d" % (first_num, second_num))
+                        if second_num < 0:
+                            texts2.append("%d - (%d)" % (first_num, second_num))
+                        else:
+                            texts2.append("%d - %d" % (first_num, second_num))
 
         elif self.mainloop.m.game_variant == 2:
             if data[3] == 0:
@@ -96,7 +102,10 @@ class Board(gd.BoardGame):
                 my_sum = str(first_num * second_num)
                 if my_sum not in texts1:
                     texts1.append(str(my_sum))
-                    texts2.append("%d  %s  %d" % (first_num, chr(215), second_num))
+                    if second_num < 0:
+                        texts2.append("%d %s %d" % (first_num, chr(215), second_num))
+                    else:
+                        texts2.append("%d %s (%d)" % (first_num, chr(215), second_num))
 
         elif self.mainloop.m.game_variant == 3:
             if data[3] == 0:
@@ -120,7 +129,10 @@ class Board(gd.BoardGame):
                 my_sum = str(first)
                 if my_sum not in texts1:
                     texts1.append(my_sum)
-                    texts2.append("%d  %s  %d" % (first_num, chr(247), second_num))
+                    if second_num < 0:
+                        texts2.append("%d %s (%d)" % (first_num, chr(247), second_num))
+                    else:
+                        texts2.append("%d %s %d" % (first_num, chr(247), second_num))
 
         elif self.mainloop.m.game_variant == 4:
             #data = [4, 2]
