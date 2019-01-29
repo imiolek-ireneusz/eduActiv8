@@ -4,9 +4,7 @@ import ast
 import classes.extras as ex
 
 """
-#games currently not used
-#game030, game040, game048, game057, game058, game083 - to keep 30, 48, 57, 58
-# 40, 83, 86, 91,
+#games currently not used 30, 40, 48, 57, 58, 83, 86
 """
 
 
