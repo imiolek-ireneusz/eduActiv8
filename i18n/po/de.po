@@ -720,9 +720,6 @@ msgstr "Herzlichen Glückwunsch! Du hast alle Aufgaben im Spiel gelöst!"
 msgid "Great job!"
 msgstr "Toll gemacht!"
 
-msgid "Perfect!!!"
-msgstr "Perfekt!!!"
-
 msgid "Awesome!"
 msgstr "Unglaublich!"
 

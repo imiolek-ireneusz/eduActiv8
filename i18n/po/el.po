@@ -732,9 +732,6 @@ msgstr "Συγχαρητήρια! Ολοκλήρωσες με επιτυχία �
 msgid "Great job!"
 msgstr "Πολύ καλα!"
 
-msgid "Perfect!!!"
-msgstr "Τέλεια!"
-
 msgid "Awesome!"
 msgstr "Σούπερ!"
 

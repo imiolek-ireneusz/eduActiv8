@@ -737,9 +737,6 @@ msgstr "Вітаємо! Вами завершено усі завдання ці
 msgid "Great job!"
 msgstr "Чудова робота!"
 
-msgid "Perfect!!!"
-msgstr "Відмінно!"
-
 msgid "Awesome!"
 msgstr "Чудово!"
 

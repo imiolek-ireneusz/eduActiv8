@@ -204,7 +204,7 @@ class I18n():
         # level_controller
         self.d["Game Over!"] = _("Game Over!")
         self.d["Congratulations! Game Completed."] = _("Congratulations! You have completed all tasks in this game.")
-        self.d["Great job!"] = [_("Great job!"), _("Perfect!!!"), _("Awesome!"), _("Fantastic job!"), _("Well done!")]
+        self.d["Great job!"] = [_("Great job!"), _("Perfect!"), _("Awesome!"), _("Fantastic job!"), _("Well done!")]
         self.d["Perfect! Level completed!"] = _("Perfect! Level completed!")
 
         # game specific labels:

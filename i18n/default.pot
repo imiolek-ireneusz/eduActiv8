@@ -697,9 +697,6 @@ msgstr ""
 msgid "Great job!"
 msgstr ""
 
-msgid "Perfect!!!"
-msgstr ""
-
 msgid "Awesome!"
 msgstr ""
 

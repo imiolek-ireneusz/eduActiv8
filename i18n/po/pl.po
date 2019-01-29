@@ -721,9 +721,6 @@ msgstr "Gratulacje! Wszystkie zadania wykonane."
 msgid "Great job!"
 msgstr "Świetnie!"
 
-msgid "Perfect!!!"
-msgstr "Super!"
-
 msgid "Awesome!"
 msgstr "Idealnie!"
 

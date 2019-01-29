@@ -713,9 +713,6 @@ msgstr "Enhorabona! Has completat totes les tasques d'aquest joc."
 msgid "Great job!"
 msgstr "Bona feina!"
 
-msgid "Perfect!!!"
-msgstr "Perfecte!"
-
 msgid "Awesome!"
 msgstr "Meravellós!"
 

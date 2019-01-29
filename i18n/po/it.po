@@ -723,9 +723,6 @@ msgstr "Congratulazioni! Hai completato tutte le prove di questo gioco."
 msgid "Great job!"
 msgstr "Grandioso!"
 
-msgid "Perfect!!!"
-msgstr "Perfetto!"
-
 msgid "Awesome!"
 msgstr "Imponente!"
 

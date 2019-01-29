@@ -721,9 +721,6 @@ msgstr "Честитам! Сви задаци у овој игри су завр
 msgid "Great job!"
 msgstr "Одличан посао!"
 
-msgid "Perfect!!!"
-msgstr "Савршено!!!"
-
 msgid "Awesome!"
 msgstr "Задивљујуће!"
 

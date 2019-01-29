@@ -721,9 +721,6 @@ msgstr "Congratulations! You have completed all tasks in this game."
 msgid "Great job!"
 msgstr "Great job!"
 
-msgid "Perfect!!!"
-msgstr "Perfect!"
-
 msgid "Awesome!"
 msgstr "Awesome!"
 

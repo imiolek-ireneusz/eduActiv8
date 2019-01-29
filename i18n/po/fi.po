@@ -719,9 +719,6 @@ msgstr "Onnittelut! Olet suorittanut kaikki tämän pelin tehtävät."
 msgid "Great job!"
 msgstr "Hyvää työtä!"
 
-msgid "Perfect!!!"
-msgstr "Täydellistä!"
-
 msgid "Awesome!"
 msgstr "Mahtavaa!"
 

@@ -712,9 +712,6 @@ msgstr "מזל טוב! השלמת את כל המשימות במשחק הזה"
 msgid "Great job!"
 msgstr "עבודה נהדרת"
 
-msgid "Perfect!!!"
-msgstr "מושלם"
-
 msgid "Awesome!"
 msgstr "אדיר"
 

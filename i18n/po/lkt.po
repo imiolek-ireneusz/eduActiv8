@@ -732,9 +732,6 @@ msgstr "Yuphíya walúštaŋ...Wašté!"
 msgid "Great job!"
 msgstr "Taŋyáŋ ečhánuŋ!"
 
-msgid "Perfect!!!"
-msgstr "Yuphíyeȟčiŋ!!!"
-
 msgid "Awesome!"
 msgstr "Áta nikhíli!"
 
