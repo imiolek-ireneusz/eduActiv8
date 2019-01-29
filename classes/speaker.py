@@ -18,7 +18,6 @@ class Speaker(threading.Thread):
             self.lang = lang
             self.enabled = True
             self.started = False
-
             self.process = None
             self.talkative = False
             if sys.version_info < (3, 0):
@@ -35,7 +34,6 @@ class Speaker(threading.Thread):
     def start_server(self):
         if self.android is None:
             if self.enabled and self.lang.voice is not None:
-                # voices = ["-s 190 -a 100 -p 75 -ven+m1 ", "-s 170 -a 100 -p 80 -ven+m2 ","-s 175 -a 100 -p 80 -ven+m3 ","-s 190 -a 100 -p 60 -ven+f1 ","-s 170 -a 100 -p 75 -ven+f2 ","-s 170 -a 100 -p 80 -ven+m2 "]
                 cmd = ['espeak']
                 cmd.extend(self.lang.voice)
                 try:
@@ -47,22 +45,19 @@ class Speaker(threading.Thread):
                         startupinfo.wShowWindow = subprocess.SW_HIDE
                         kwargs = {}
                         kwargs['startupinfo'] = startupinfo
-                        # self.process = subprocess.Popen(cmd, shell=True, bufsize=0, close_fds=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs)
-                        self.process = subprocess.Popen(cmd, shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                                        stderr=subprocess.PIPE, startupinfo=startupinfo)
+                        self.process = subprocess.Popen(cmd, shell=False, bufsize=0, stdin=subprocess.PIPE,
+                                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                                        startupinfo=startupinfo)
                     else:
-                        self.process = subprocess.Popen(cmd, shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                                        stderr=subprocess.PIPE)
+                        self.process = subprocess.Popen(cmd, shell=True, bufsize=0, stdin=subprocess.PIPE,
+                                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-                    # self.process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                     self.started = True
-
                 except:
                     self.enabled = False
                     self.started = False
-                    print(
-                        "eduActiv8: You may like to install espeak to get some extra functionality, however this is not required to successfully use the game.")
-                    # stdout and stderr only used to hide the messages from terminal
+                    print("eduActiv8: You may like to install eSpeak to get some extra functionality, " +
+                          "however this is not required to successfully use the game.")
             else:
                 self.process = None
 
@@ -94,7 +89,6 @@ class Speaker(threading.Thread):
                     text = text.encode("utf-8")
                 except:
                     pass
-
                 try:
                     self.process.stdin.write(text)
                     self.process.stdin.flush()
