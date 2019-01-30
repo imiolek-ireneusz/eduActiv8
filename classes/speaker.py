@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import os
+# import os
 import platform
-import signal
+# import signal
 import subprocess
 import sys
 import threading
@@ -20,6 +20,7 @@ class Speaker(threading.Thread):
             self.started = False
             self.process = None
             self.talkative = False
+            self.debug = True
             if sys.version_info < (3, 0):
                 self.needs_encode = False
             else:
@@ -49,9 +50,11 @@ class Speaker(threading.Thread):
                                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                                         startupinfo=startupinfo)
                     else:
-                        self.process = subprocess.Popen(cmd, shell=True, bufsize=0, stdin=subprocess.PIPE,
-                                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
+                        if self.debug:
+                            self.process = subprocess.Popen(cmd, shell=False, bufsize=0, stdin=subprocess.PIPE)
+                        else:
+                            self.process = subprocess.Popen(cmd, shell=False, bufsize=0, stdin=subprocess.PIPE,
+                                                            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                     self.started = True
                 except:
                     self.enabled = False
@@ -72,11 +75,13 @@ class Speaker(threading.Thread):
     def stop_server(self):
         if self.android is None:
             if self.enabled and self.started and self.process is not None:
-                self.process.stdin.close()
-                self.process.stdout.close()
-                self.process.stderr.close()
                 try:
-                    os.kill(self.process.pid, signal.SIGTERM)
+                    self.process.stdin.close()
+                    if not self.debug:
+                        self.process.stdout.close()
+                        self.process.stderr.close()
+                    self.process.terminate()
+                    #os.kill(self.process.pid, signal.SIGTERM)
                 except OSError:
                     print("Error killing the espeak process")
 
