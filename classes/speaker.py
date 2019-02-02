@@ -20,7 +20,7 @@ class Speaker(threading.Thread):
             self.started = False
             self.process = None
             self.talkative = False
-            self.debug = True
+            self.debug = False
             if sys.version_info < (3, 0):
                 self.needs_encode = False
             else:

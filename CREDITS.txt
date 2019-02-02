@@ -20,6 +20,7 @@ Translations:
     German - Oliver van der Bürie
     Greek - Στέλιος, versys650gr, sdim, lucinos and other members of the Official Greek Community of Linux Mint - http://linuxmint.gr
           - recently updated by Alexandros Moskofidis (Αλέξανδρος Μοσκοφίδης)
+          - translation completed and reviewed by Giannis Kaskamanidis (Γιάννης Κασκαμανίδης)
     Hebrew - Ori Hoch
     Italian - Giuliano
     Lakota - Peter Hill, Derek Lackaff and Matthew Rama

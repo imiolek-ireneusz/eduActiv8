@@ -1,18 +1,21 @@
-# eduActiv8 - translation file.
+# eduActiv8 - Educational Activity Pack - translation file.
 # Copyright (C) 2012 - 2019 Ireneusz Imiolek
-# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
-#
+# This file is distributed under the same license as the eduactiv8 package.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+# 
 # Translators:
 # Στέλιος, versys650gr, sdim, lucinos and other members of The Official Greek Community of Linux Mint, 2013
 # Alexandros Moskofidis, 2016
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
+# Γιάννης Κασκαμανίδης <kiolalis@gmail.com>, 2019
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.01\n"
+"Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
 "PO-Revision-Date: 2019-01-04 22:25+0000\n"
-"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
+"Last-Translator: Γιάννης Κασκαμανίδης <kiolalis@gmail.com>, 2019\n"
 "Language-Team: Greek (https://www.transifex.com/eduactiv8/teams/94947/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,42 +27,34 @@ msgstr ""
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a "
+"Creative Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Laby, 2010 από Mehdi Cherti (mehdidc) \n"
-" Ήχοι από διάφορους καλλιτέχνες που συνεισέφεραν τη δουλειά τους στο freesound.org. \n"
-" Εικόνες από διάφορους δημιουργούς που συνεισέφεραν τη δουλειά τους στο openclipart.org (Public Domain) και στο http://www.art4apps.org/ - Art4Apps από Smart4Kids -διανομή με άδεια Creative Commons (CC BY-SA). \n"
+"Ήχοι από διάφορους καλλιτέχνες που συνεισέφεραν τη δουλειά τους στο freesound.org. \n"
+"Εικόνες από διάφορους δημιουργούς που συνεισέφεραν τη δουλειά τους στο openclipart.org (Public Domain) και στο http://www.art4apps.org/ - Art4Apps από "
+"Smart4Kids -διανομή με άδεια Creative Commons (CC BY-SA). \n"
 "Παρακαλώ διαβάστε το αρχείο credits.txt για περισσότερες πληροφορίες σχετικά με τους δημιουργούς των αρχείων πολυμέσων που χρησιμοποιήθηκαν σε αυτό το έργο."
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
-"<http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software "
+"Foundation, either version 3 of the License, or (at your option) any later version. You should have received a copy of the GNU General Public License along "
+"with this program. If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
-"Το παρόν έργο είναι Ελεύθερο Λογισμικό: επιτρέπεται η διανομή του καθώς και "
-"η τροποποίηση του με βάση τους όρους του διέπουν τις άδειες τύπου GNU "
-"General Public License οι οποίες έχουν δημοσιευτεί από το Free Software "
-"Foundation (είτε η έκδοση 3 της άδειας είτε κάποια μεταγενέστερη έκδοση). Θα"
-" πρέπει να έχετε λάβει και ένα αντίγραφο άδειας GNU General Public License "
-"μαζί με αυτή την εφαρμογή. Αν δεν την έχετε λάβει επισκεφθείτε το "
-"<http://www.gnu.org/licenses/>."
+"Το παρόν έργο είναι Ελεύθερο Λογισμικό: επιτρέπεται η διανομή του καθώς και η τροποποίηση του με βάση τους όρους που διέπουν τις άδειες τύπου GNU General "
+"Public License οι οποίες έχουν δημοσιευτεί από το Free Software Foundation (είτε η έκδοση 3 της άδειας είτε κάποια μεταγενέστερη έκδοση). Θα πρέπει να "
+"έχετε λάβει και ένα αντίγραφο άδειας GNU General Public License μαζί με αυτή την εφαρμογή. Αν δεν την έχετε λάβει επισκεφθείτε το <http://www.gnu.org/"
+"licenses/>."
 
 msgid "A collection of educational activities for kids"
-msgstr "Ένα μικρό σετ εκπαιδευτικών εφαρμογών για παιδιά"
+msgstr "Συλλογή εκπαιδευτικών δραστηριοτήτων για παιδιά"
 
 msgid "Educational Activities for Kids"
-msgstr "Εκπαιδευτικό πακέτο δραστηριοτήτων για παιδιά"
+msgstr "Εκπαιδευτικές δραστηριότητες για παιδιά"
 
-msgid ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
-msgstr ""
-"Εικόνες από: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr "Εικόνες από το: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 
 msgid "Default Language:"
 msgstr "Προκαθορισμένη γλώσσα:"
@@ -86,7 +81,7 @@ msgid "confirm password:"
 msgstr "Επιβεβαίωση συνθηματικού:"
 
 msgid "Register new user"
-msgstr "Εγγραφή"
+msgstr "Εγγραφή νέου χρήστη"
 
 msgid "Administrator Login:"
 msgstr "Σύνδεση διαχειριστή:"
@@ -95,7 +90,7 @@ msgid "User Management"
 msgstr "Διαχείριση χρηστών"
 
 msgid "Please select a user from the list."
-msgstr "Παρακαλώ επιλέξτε ένα χρήστη από την λίστα."
+msgstr "Παρακαλώ επιλέξτε έναν χρήστη από την λίστα."
 
 msgid "Delete user"
 msgstr "Διαγραφή χρήστη"
@@ -129,8 +124,7 @@ msgid "require password to log in"
 msgstr "να απαιτείται συνθηματικό για τη σύνδεση"
 
 msgid "require password to access admin area"
-msgstr ""
-"να απαιτείται συνθηματικό για την πρόσβαση στις λειτουργίες διαχείρισης"
+msgstr "να απαιτείται συνθηματικό για την πρόσβαση στις λειτουργίες διαχείρισης"
 
 msgid "Update admin's password:"
 msgstr "Ενημέρωση συνθηματικού διαχειριστή:"
@@ -148,7 +142,7 @@ msgid "Create admin's account:"
 msgstr "Δημιουργία λογαριασμού διαχειριστή:"
 
 msgid "admin's user name:"
-msgstr "όνομα διαχειριστή:"
+msgstr "όνομα χρήστη διαχειριστή:"
 
 msgid "admin's password:"
 msgstr "συνθηματικό διαχειριστή:"
@@ -179,7 +173,7 @@ msgid "%s added"
 msgstr "προστέθηκε ο/η %s "
 
 msgid "This user name already exists, please choose a different one"
-msgstr "Το όνομα χρήστη υπάρχει ήδη, παρακαλώ επιλέξτε άλλο"
+msgstr "Αυτό το όνομα χρήστη υπάρχει ήδη, παρακαλώ επιλέξτε ένα άλλο"
 
 msgid "Admin's password has been updated"
 msgstr "Το συνθηματικό τού διαχειριστή ενημερώθηκε"
@@ -188,8 +182,7 @@ msgid "ERROR: This operation is not allowed at this point"
 msgstr "ΣΦΑΛΜΑ: Αυτή η λειτουργία δεν επιτρέπεται σε αυτό το σημείο"
 
 msgid "Please enter previous password (at least 4 characters long)"
-msgstr ""
-"Παρακαλώ εισάγετε το παλιό συνθηματικό (ελάχιστο μέγεθος 4 χαρακτήρες)"
+msgstr "Παρακαλώ εισάγετε το παλιό συνθηματικό (ελάχιστο μέγεθος 4 χαρακτήρες)"
 
 msgid "Please enter new password (at least 4 characters long)"
 msgstr "Παρακαλώ εισάγετε το νέο συνθηματικό (ελάχιστο μέγεθος 4 χαρακτήρες)"
@@ -204,7 +197,7 @@ msgid "Last login:"
 msgstr "Τελευταία σύνδεση:"
 
 msgid "Preferences saved..."
-msgstr "Αποθηκεύτηκαν οι νέες προτιμήσεις..."
+msgstr "Οι προτιμήσεις αποθηκεύτηκαν..."
 
 msgid "Logged in as: "
 msgstr "Συνδεδεμένος/η ως: "
@@ -213,7 +206,7 @@ msgid "(Log out)"
 msgstr "(Αποσύνδεση)"
 
 msgid "remember me"
-msgstr "θυμήσου με"
+msgstr "να με θυμάσαι"
 
 msgid "Select age group:"
 msgstr "Διάλεξε ηλικιακή ομάδα"
@@ -222,7 +215,7 @@ msgid "show activities for:"
 msgstr "δείξε δραστηριότητες για:"
 
 msgid "preschool"
-msgstr "προσχολικό"
+msgstr "προσχολική ηλικία"
 
 msgid "Year 1"
 msgstr "Πρώτη τάξη"
@@ -243,29 +236,29 @@ msgid "Year 6"
 msgstr "Έκτη τάξη"
 
 msgid "show all"
-msgstr "δείξε τα όλα"
+msgstr "δείξε όλες τις δραστηριότητες"
 
 msgid "Do you want to log out of the game?"
-msgstr "Θέλεις να αποσυνδεθείς από το παιχνίδι;"
+msgstr "Θέλεις να αποσυνδεθείς από την εφαρμογή;"
 
 msgid "Do you want to exit the game?"
-msgstr "Θέλεις να κλείσεις το παιχνίδι;"
+msgstr "Θέλεις να κλείσεις την εφαρμογή;"
 
 # alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
 msgid "Ready to go to the next level?"
 msgstr "Έτοιμος για το επόμενο επίπεδο;"
 
 msgid "Hello"
-msgstr "Χαίρετε"
+msgstr "Γεια σου"
 
 msgid "Welcome back in the game."
-msgstr "Καλωσήλθατε πάλι στο παιχνίδι."
+msgstr "Καλωσήλθες πάλι στην εφαρμογή."
 
 msgid "Licence"
 msgstr "Άδεια"
 
 msgid "Copyright & Credits"
-msgstr "Πνευματικά δικαιώματα & Συντελεστές"
+msgstr "Πνευματικά δικαιώματα & Εύσημα συντελεστών"
 
 msgid "Translators"
 msgstr "Μεταφραστές"
@@ -280,22 +273,22 @@ msgid "Addition Table"
 msgstr "Πρόσθεση"
 
 msgid "Discover Letters"
-msgstr "Ανακαλύψτε τα Γράμματα"
+msgstr "Ανακάλυψε τα Γράμματα"
 
 msgid "Learn New Words"
-msgstr "Μάθετε νέες λέξεις"
+msgstr "Μάθε νέες λέξεις"
 
 msgid "Mathematics"
 msgstr "Μαθηματικά"
 
 msgid "Art and Colour"
-msgstr "Καλλιτεχνία και χρώμα"
+msgstr "Τέχνη & Χρώμα"
 
 msgid "Memory"
 msgstr "Μνήμη"
 
 msgid "Games & Mazes"
-msgstr "Παιχνίδια και Λαβύρινθοι"
+msgstr "Παιχνίδια & Λαβύρινθοι"
 
 msgid "Letters"
 msgstr "Γράμματα"
@@ -322,13 +315,13 @@ msgid "Uppercase Letters"
 msgstr "Κεφαλαία γράμματα"
 
 msgid "Word Builder"
-msgstr "Χτίσιμο λέξεων"
+msgstr "Σχηματισμός λέξεων"
 
 msgid "Word Maze"
 msgstr "Λαβύρινθος με γράμματα"
 
 msgid "Collect all letters in the right order"
-msgstr "Βάλε τα γράμματα στη σωστή σειρά"
+msgstr "Μάζεψε τα γράμματα με τη σωστή σειρά"
 
 msgid "Word Maze + 4"
 msgstr "Λαβύρινθος με γράμματα + 4"
@@ -337,7 +330,7 @@ msgid "Rainbow Keyboard"
 msgstr "Πλκτρολόγιο Ουράνιο Τόξο"
 
 msgid "Touch Typing Tutor"
-msgstr "Εκμάθηση δακτυλογράφησης με τυφλό σύστημα"
+msgstr "Μάθε να γράφεις με τυφλό σύστημα"
 
 msgid "English Alphabet"
 msgstr "Αγγλικό αλφάβητο"
@@ -356,10 +349,10 @@ msgid "Match numbers to their spelling"
 msgstr "Ταίριαξε τους αριθμούς με την γραφή τους σαν λέξεις"
 
 msgid "Learn Numbers with Flashcards"
-msgstr "Μάθε να μετράς με καρτέλες"
+msgstr "Μάθε τους αριθμούς με καρτέλες"
 
 msgid "Learn to Count"
-msgstr "Μάθε να μετράς"
+msgstr "Μάθε να υπολογίζεις"
 
 msgid "Basic Addition"
 msgstr "Πρόσθεση"
@@ -371,7 +364,7 @@ msgid "Shopping List"
 msgstr "Λίστα για ψώνια"
 
 msgid "Plus or Minus"
-msgstr "Συν ή Μείον"
+msgstr "Πρόσθεση ή αφαίρεση;"
 
 msgid "Basic Operations"
 msgstr "Βασικές πράξεις"
@@ -380,7 +373,7 @@ msgid "Multiplication Table"
 msgstr "Προπαίδεια"
 
 msgid "Find the product"
-msgstr "Βρες το αποτέλεσμα"
+msgstr "Βρες το γινόμενο"
 
 msgid "Find the multiplier"
 msgstr "Βρες τον πολλαπλασιαστή"
@@ -392,16 +385,16 @@ msgid "Sorting Numbers"
 msgstr "Ταξινόμησε τους αριθμούς"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Διαδοχικοί αριθμοί"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Τυχαίοι αριθμοί"
 
 msgid "Number Comparison"
-msgstr "Σύγκρινε τους αριθμούς"
+msgstr "Σύγκριση αριθμών"
 
 msgid "Addition & Subtraction"
-msgstr "Πρόσθεση και αφαίρεση"
+msgstr "Πρόσθεση & Αφαίρεση"
 
 msgid "Comparison"
 msgstr "Σύγκριση"
@@ -425,10 +418,10 @@ msgid "Learn Shapes with Flashcards"
 msgstr "Μάθε σχήματα με καρτέλες"
 
 msgid "Solids"
-msgstr "Σχήματα"
+msgstr "Στερεά"
 
 msgid "Solid Geometry with Flashcards"
-msgstr "Γεωμετρικά σχήματα με κάρτες"
+msgstr "Γεωμετρικά στερεά με κάρτες"
 
 msgid "Time Matching"
 msgstr "Ταίριαξε τα ωρολόγια"
@@ -443,7 +436,7 @@ msgid "Help me find my shadow"
 msgstr "Βοήθησε με να βρω την σκιά μου"
 
 msgid "Paint"
-msgstr "Χρωμάτισε"
+msgstr "Ζωγράφισε"
 
 msgid "Colour Matching"
 msgstr "Ταίριαξε τα χρώματα"
@@ -455,13 +448,13 @@ msgid "Follow the Arrows"
 msgstr "Ακολούθησε τα βέλη"
 
 msgid "Remember directions"
-msgstr "Να θυμάσαι τις οδηγίες"
+msgstr "Να θυμάσαι τις κατευθύνσεις"
 
 msgid "Photographic Memory"
 msgstr "Φωτογραφική μνήμη"
 
 msgid "Training"
-msgstr "Προπόνηση"
+msgstr "Εξάσκηση"
 
 msgid "Mouse Maze"
 msgstr "Λαβύρινθος με ποντίκι"
@@ -491,27 +484,25 @@ msgid "Mixing Colours for Painting"
 msgstr "Μίξη χρωμάτων για ζωγραφική"
 
 msgid "Mix red, yellow, blue, black and white paint"
-msgstr "Μίξη κόκκινης, κίτρινης, μπλε, μαύρης και άσπρης μπογιάς"
+msgstr "Μίξη κόκκινου, κίτρινου, μπλε, μαύρου και άσπρου χρώματος"
 
 msgid "Additive Colour Mixing - Light"
 msgstr "Μίξη με ρύθμιση της έντασης των βασικών χρωμάτων"
 
 msgid "Mix red, green and blue light to get other colours"
-msgstr ""
-"Ρύθμιση έντασης  κόκκινου, πράσινου και μπλε για δημιουργία άλλων χρωμάτων"
+msgstr "Ρύθμιση έντασης κόκκινου, πράσινου και μπλε για δημιουργία άλλων χρωμάτων"
 
 msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
-msgstr "Μίξη με αφαίρεση χρωμάτων - Μπογιές, βαφές και μελάνια"
+msgstr "Μίξη με αφαίρεση χρωμάτων - Χρώματα, βαφές και μελάνια"
 
 msgid "Mix cyan, magenta and yellow paint to get other colours"
-msgstr ""
-"Μίξη κυανής, ματζέντα και κίτρινης μπογιάς για δημιουργία άλλων χρωμάτων"
+msgstr "Μίξη κυανού, ματζέντα και κίτρινου χρώματος για δημιουργία άλλων χρωμάτων"
 
 msgid "Find the colour of the circle in the middle"
 msgstr "Βρες το χρώμα του κύκλου"
 
 msgid "Adjust the amount of cyan, magenta and yellow paint"
-msgstr "Προσαρμογή της ποσότητας της κυανής, ματζέντα και κίτρινης μπογιάς"
+msgstr "Προσαρμογή της ποσότητας του κυανού, ματζέντα και κίτρινου χρώματος"
 
 msgid "Adjust the intensity of red, green and blue light"
 msgstr "Προσαρμογή της έντασης του κόκκινου, πράσινου και μπλε φωτός"
@@ -538,19 +529,19 @@ msgid "Match Numbers - Memory Game"
 msgstr "Ταίριαξε τους αριθμούς"
 
 msgid "Find matching pairs of the same image"
-msgstr "Βρες τα ζευγάρια της ίδιας φωτογραφίας"
+msgstr "Βρες τα ζευγάρια της ίδιας εικόνας"
 
 msgid "Image Slider"
-msgstr "Κομμένες Εικόνες"
+msgstr "Παζλ με αριθμούς"
 
 msgid "Animal Slider"
-msgstr "Ζώα"
+msgstr "Παζλ με ζώα"
 
 msgid "Fruit Slider"
-msgstr "Φρούτα"
+msgstr "Παζλ με φρούτα"
 
 msgid "Number Slider"
-msgstr "Αριθμοί"
+msgstr "Παζλ με αριθμούς"
 
 msgid "Maths Matching Game"
 msgstr "Παιχνίδι με μαθηματικές πράξεις"
@@ -574,7 +565,7 @@ msgid "Percentages"
 msgstr "Ποσοστά"
 
 msgid "Ratios"
-msgstr "Λόγος"
+msgstr "Αναλογίες"
 
 msgid "Fraction Groups"
 msgstr "Ομάδες κλασμάτων"
@@ -583,19 +574,19 @@ msgid "Type your answer and hit enter"
 msgstr "Πληκτρολόγισε την απάντηση σου και πάτα enter"
 
 msgid "Decimals (Category)"
-msgstr "Δεκαδικοί"
+msgstr "Δεκαδικοί (κατηγορία)"
 
 msgid "Fractions (Category)"
-msgstr "Κλάσματα"
+msgstr "Κλάσματα (κατηγορία)"
 
 msgid "Ratios (Category)"
-msgstr "Λόγοι"
+msgstr "Λόγοι (κατηγορία)"
 
 msgid "Percentages (Category)"
-msgstr "Ποσοστά"
+msgstr "Ποσοστά (κατηγορία)"
 
 msgid "Learn new words"
-msgstr ""
+msgstr "Μάθε καινούριες λέξεις"
 
 msgid "Word Builders"
 msgstr "Σχηματισμός λέξεων"
@@ -604,7 +595,7 @@ msgid "Word Matchers"
 msgstr "Συνδέστε τις λέξεις"
 
 msgid "Match images to words"
-msgstr "Ταιριάξτε τις εικόνες σε λέξεις"
+msgstr "Ταιριάξτε εικόνες με λέξεις"
 
 msgid "Animals"
 msgstr "Ζώα"
@@ -628,7 +619,7 @@ msgid "Nature"
 msgstr "Φύση"
 
 msgid "Jobs"
-msgstr "Δουλειές"
+msgstr "Επαγγέλματα"
 
 msgid "Clothes and Accessories"
 msgstr "Ρούχα και αξεσουάρ"
@@ -637,70 +628,64 @@ msgid "Fruits and Vegetables"
 msgstr "Φρούτα και λαχανικά"
 
 msgid "Transport"
-msgstr "Μεταφορικά μέσα"
+msgstr "Μεταφορές"
 
 msgid "Food"
 msgstr "Φαγητό"
 
 msgid "Listening Exercises"
-msgstr ""
+msgstr "Ασκήσεις ακρόασης"
 
 msgid "Match sounds to words"
-msgstr ""
+msgstr "Αντιστοίχισε ήχους σε λέξεις"
 
 msgid "Patterns"
-msgstr ""
+msgstr "Μοτίβα"
 
 msgid "Number Patterns"
-msgstr ""
+msgstr "Μοτίβα αριθμών"
 
 msgid "Letter Patterns"
-msgstr ""
+msgstr "Μοτίβα γραμμάτων"
 
 msgid "Color Patterns"
-msgstr ""
+msgstr "Μοτίβα χρωμάτων"
 
 msgid "Image Patterns"
-msgstr ""
+msgstr "Μοτίβα εικόνων"
 
 msgid "Fraction Patterns"
-msgstr ""
+msgstr "Μοτίβα κλασμάτων"
 
 msgid "Shape Patterns"
-msgstr ""
+msgstr "Μοτίβα σχημάτων"
 
 msgid "Complete the pattern on the top line."
-msgstr ""
+msgstr "Συμπλήρωσε το μοτίβο στην επάνω γραμμή."
 
 msgid "Match shapes to their names"
-msgstr ""
+msgstr "Αντιστοίχσε τα σχήματα με τα ονόματά τους"
 
 msgid "Negative numbers"
-msgstr ""
+msgstr "Αρνητικοί αριθμοί"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr ""
+msgstr "Συμπλήρωσε το αλφάβητο παίρνοντας γράμματα από τη μεσαία γραμμή."
 
-msgid ""
-"Drag the slider up or down so that the right sign is in the red square."
-msgstr ""
-"Σύρτε την στήλη πάνω ή κάτω μέχρι το σωστό σύμβολο να βρεθεί στο κόκκινο "
-"τετράγωνο"
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Σύρτε την στήλη πάνω ή κάτω μέχρι το σωστό σύμβολο να βρεθεί στο κόκκινο τετράγωνο"
 
 msgid "Take your sheep to the rest of the herd."
 msgstr "Οδήγησε το πρόβατό σου πίσω στο κοπάδι."
 
 msgid "Check the shopping list and drag all needed items into the basket."
-msgstr "Συμπλήρωσε την λίστα με τα ψώνια και τοποθέτησέ τα μέσα στο καλάθι."
+msgstr "Έλεγξε τη λίστα με τα ψώνια και σύρε στο καλάθι όλα τα απαραίτητα."
 
-msgid ""
-"Drag one of the <, > or = (lesser, greater or equal) to the red square."
-msgstr ""
-"Σύρε ένα από τα <, > ή = (μικρότερο, μεγαλύτερο ή ίσο) στο κόκκινο "
-"τετράγωνο."
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Σύρε ένα από τα <, > ή = (μικρότερο, μεγαλύτερο ή ίσο) στο κόκκινο τετράγωνο."
 
 msgid "Drag one of the lesser, greater or equal to the red square."
-msgstr "Σύρε ένα από τα μικρότερο, μεγαλύτερο ή ίσο στο κόκκινο τετράγωνο."
+msgstr "Σύρε ένα από τα μικρότερα, μεγαλύτερα ή ίσα στο κόκκινο τετράγωνο."
 
 msgid "Rearrange the numbers so they are in the right order."
 msgstr "Βάλε τους παραπάνω αριθμούς στη σωστή σειρά."
@@ -709,16 +694,13 @@ msgid "Build the following word using the letters below."
 msgstr "Σχημάτισε την επόμενη λέξη χρησιμοποιώντας τα παρακάτω γράμματα"
 
 msgid "Find and separate even numbers from odd numbers."
-msgstr ""
-"Βρες και χώρισε τους ζυγούς από τους περιττούς αριθμούς στην παραπάνω σειρά."
+msgstr "Βρες και ξεχώρισε τους ζυγούς από τους περιττούς αριθμούς στην παραπάνω σειρά."
 
 msgid "Rearrange the letters so they are in the alphabetical order."
 msgstr "Βάλε με αλφαβητική σειρά τα παραπάνω γράμματα."
 
 msgid "Rearrange the numbers so they are in the ascending order."
-msgstr ""
-"Βάλε τους παραπάνω αριθμούς στην σειρά, από τον μικρότερο προς τον "
-"μεγαλύτερο."
+msgstr "Βάλε τους παραπάνω αριθμούς στην σειρά, από τον μικρότερο προς τον μεγαλύτερο."
 
 msgid "Perfect! Task solved!"
 msgstr "Τέλεια! Το έλυσες!"
@@ -730,7 +712,10 @@ msgid "Congratulations! You have completed all tasks in this game."
 msgstr "Συγχαρητήρια! Ολοκλήρωσες με επιτυχία το παιχνίδι."
 
 msgid "Great job!"
-msgstr "Πολύ καλα!"
+msgstr "Πολύ καλά!"
+
+msgid "Perfect!!!"
+msgstr "Τέλεια!"
 
 msgid "Awesome!"
 msgstr "Σούπερ!"
@@ -757,34 +742,22 @@ msgid "equals"
 msgstr "ισούται"
 
 msgid "brush size"
-msgstr "Μέγεθος πινέλου"
+msgstr "μέγεθος πινέλου"
 
 msgid "Match fraction charts on the right to the ones on the left"
 msgstr "Ταίριαξε τους πίνακες κλασμάτων στα δεξιά με εκείνους στα αριστερά"
 
-msgid ""
-"Match fraction charts and fractions on the right to the fraction charts on "
-"the left"
-msgstr ""
-"Ταίριαξε τους πίνακες κλασμάτων και τα κλάσματα στα δεξιά με τους πίνακες "
-"κλασμάτων στα αριστερά"
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Ταίριαξε τους πίνακες κλασμάτων και τα κλάσματα στα δεξιά με τους πίνακες κλασμάτων στα αριστερά"
 
 msgid "Match fraction charts to the fractions on the left"
 msgstr "Ταίριαξε τους πίνακες κλασμάτων με τα κλάσματα στα αριστερά"
 
-msgid ""
-"Match fraction charts, fractions and decimal fractions on the right to their"
-" percentage representations"
-msgstr ""
-"Ταίριαξε τους πίνακες κλασμάτων, κλάσματα και δεκαδικά κλάσματα στα δεξιά με"
-" την παράστασή τους ως ποσοστά"
+msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+msgstr "Ταίριαξε τους πίνακες κλασμάτων, τα κλάσματα και τα δεκαδικά κλάσματα στα δεξιά με την αναπαράστασή τους ως ποσοστά"
 
-msgid ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of "
-"coloured pieces to white pieces"
-msgstr ""
-"Ταίριαξε τους χάρτες με τις αναλογίες στα αριστερά Οι αναλογίες "
-"παρουσιάζονται ως τα χρωματιστά κομμάτια σε σχέση με τα λευκά"
+msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
+msgstr "Ταίριαξε τα σχεδιαγράμματα δεξιά με τις αναλογίες στα αριστερά. Οι αναλογίες παρουσιάζονται ως τα χρωματιστά κομμάτια σε σχέση με τα λευκά."
 
 msgid "Shape Maker"
 msgstr "Δημιουργία Σχημάτων"
@@ -798,50 +771,49 @@ msgstr "Σχεδίασε το σχήμα: %s"
 
 #, python-format
 msgid "such that lengths of its bases are equal to %d and %d and height to %d"
-msgstr "των βάσεων του να είναι ίσο με %d και %d, και το ύψος του %d"
+msgstr "το μήκος των βάσεών του να είναι ίσο με %d και %d, και το ύψος του με %d"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d"
-msgstr "των πλευρών του να είναι ίσο με %d"
+msgstr "το μήκος των πλευρών του να είναι ίσο με %d"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d and %d"
-msgstr "των πλευρών του να είναι ίσο με %d και %d"
+msgstr "το μήκος των πλευρών του να είναι ίσο με %d και με %d"
 
 #, python-format
-msgid ""
-"such that lengths of its 2 parallel bases are equal to %d and height to %d"
-msgstr "των 2 παράλληλων πλευρών του να είναι ίσο με %d και το ύψος του με %d"
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "το μήκος των 2 παράλληλων πλευρών του να είναι ίσο με %d και το ύψος του με %d"
 
 #, python-format
 msgid "such that length of its base is equal to %d and height to %d"
-msgstr "της βάσης του να είναι ίσο με %d και το ύψος του με %d"
+msgstr "το μήκος της βάσης του να είναι ίσο με %d και το ύψος του με %d"
 
 #, python-format
 msgid "such that lengths of its catheti are equal to %d and %d"
-msgstr "των καθέτων πλευρών να είναι ίσο με %d και %d"
+msgstr "το μήκος των καθέτων πλευρών να είναι ίσο με %d και με %d"
 
 #, python-format
 msgid "such that lengths of both of its catheti are equal to %d"
-msgstr "και των δύο καθέτων πλευρών να είναι ίσο με %d"
+msgstr "το μήκος και των δύο καθέτων πλευρών να είναι ίσο με %d"
 
 #, python-format
 msgid "such that length of its hypotenuse is equal to %d"
-msgstr "της υποτοίνουσας να είναι ίσο με %d"
+msgstr "το μήκος της υποτείνουσας να είναι ίσο με %d"
 
 #, python-format
 msgid "such that length of one of its sides is equal to %d and height to %d"
-msgstr "μιας από τις πλευρές του να είναι ισο με %d και το ύψος του με %d"
+msgstr "το μήκος μιας από τις πλευρές του να είναι ίσο με %d και το ύψος του με %d"
 
 #, python-format
 msgid "such that length of its radius is equal to %d"
-msgstr "της ακτίνας να είναι ίσο με %d"
+msgstr "το μήκος της ακτίνας να είναι ίσο με %d"
 
 msgid "Test yourself"
 msgstr "Δοκίμασε τον εαυτό σου"
 
 msgid "Clock"
-msgstr "Ωρολόι"
+msgstr "Ρολόι"
 
 msgid "Learn to read the time"
 msgstr "Μάθε να διαβάζεις την ώρα"
@@ -853,7 +825,7 @@ msgid "Set the clock to:"
 msgstr "Ρύθμισε την ώρα σε:"
 
 msgid "Drag the clock hands to set the time"
-msgstr "Μετακίνησε τους δείκτες του ωρολογιού για να βάλεις την ώρα"
+msgstr "Μετακίνησε τους δείκτες του ρολογιού για να βάλεις την ώρα"
 
 msgid "What time is it?"
 msgstr "Τι ώρα είναι;"
@@ -862,13 +834,13 @@ msgid "Time"
 msgstr "Ώρα"
 
 msgid "Turn the clock hands and see what happens."
-msgstr "Γύρνα τους δείκτες του ωρολογιού και δες τι θα γίνει."
+msgstr "Γύρνα τους δείκτες του ρολογιού και δες τι θα γίνει."
 
 msgid "Time in text version only"
 msgstr "Ώρα σε μορφή κειμένου μόνο"
 
 msgid "How clock works?"
-msgstr "Πως δουλεύει η ώρα;"
+msgstr "Πως δουλεύει το ρολόι;"
 
 msgid "Columnar addition"
 msgstr "Κάθετη πρόσθεση"
@@ -889,7 +861,7 @@ msgid "Do it yourself"
 msgstr "Κάνε το μόνος σου"
 
 msgid "borrow 10"
-msgstr "πάρε δανεικό 10 (δανείσου μια δεκάδα)"
+msgstr "δανείσου 10"
 
 # in columnar addition, ie. in case of 4 + 8 you write 2 under the column and
 # carry 1
@@ -926,255 +898,253 @@ msgid "Find missing number"
 msgstr "Βρες τον αριθμό που λείπει"
 
 msgid "numerator"
-msgstr ""
+msgstr "αριθμητής"
 
 msgid "denominator"
-msgstr ""
+msgstr "παρανομαστής"
 
 msgid "Experiment with fractions"
-msgstr ""
+msgstr "Πειραματισμοί με κλάσματα"
 
 msgid "Experiment with decimal fractions"
-msgstr ""
+msgstr "Πειραματισμοί με δεκαδικά κλάσματα"
 
 msgid "Ratio"
-msgstr "Λόγος"
+msgstr "Αναλογία"
 
 msgid "Experiment with ratios"
-msgstr ""
+msgstr "Πειραματισμοί με αναλογίες"
 
 msgid "Experiment with percentages"
-msgstr ""
+msgstr "Πειραματισμοί με ποσοστά"
 
 msgid "What fraction is it?"
-msgstr ""
+msgstr "Ποιο είναι το κλάσμα;"
 
 msgid "What decimal fraction is it?"
-msgstr ""
+msgstr "Ποιο δεκαδικό κλάσμα είναι;"
 
 msgid "Add fractions with the same denominator"
-msgstr ""
+msgstr "Πρόσθεση κλασμάτων με ίδιο παρανομαστή"
 
 msgid "Subtract fractions with the same denominator"
-msgstr ""
+msgstr "Αφαίρεση κλασμάτων με ίδιο παρανομαστή"
 
 msgid "Multiply fractions"
-msgstr ""
+msgstr "Πολλαπλασιασμός κλασμάτων"
 
 msgid "Divide fractions"
-msgstr ""
+msgstr "Διαίρεση κλασμάτων"
 
 msgid "Exercise 1"
-msgstr ""
+msgstr "Άσκηση 1"
 
 msgid "Exercise 2"
-msgstr ""
+msgstr "Άσκηση 2"
 
 msgid "Exercise 3"
-msgstr ""
+msgstr "Άσκηση 3"
 
 msgid "Compare decimals and fractions"
-msgstr ""
+msgstr "Σύγκριση δεκαδικών με κλάσματα"
 
 msgid "Compare fractions"
-msgstr ""
+msgstr "Σύγκριση κλασμάτων"
 
 msgid "Reduce fractions"
-msgstr ""
+msgstr "Απλοποίηση κλασμάτων"
 
 msgid "Expand fractions"
-msgstr ""
+msgstr "Πολλαπλασιασμός κλάσματος με ακέραιο"
 
 msgid ""
-"To reduce a fraction divide the numerator and the denominator by one of "
-"their common factors which are displayed between the two fractions. Select "
-"one of them to see what happens. If 1 is the only common factor then the "
-"fraction can't be reduced any more - try choosing a different one."
+"To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed between the two fractions. Select one of "
+"them to see what happens. If 1 is the only common factor then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
+"Για να απλοποιήσουμε ένα κλάσμα διαιρούμε τον αριθμητή και τον παρανομαστή με έναν από τους κοινούς διαιρέτες που εμφανίζονται μεταξύ των δύο κλασμάτων. "
+"Επίλεξε έναν από αυτούς για να δεις τι συμβαίνει. Εάν η μονάδα είναι ο μόνος κοινός διαιρέτης, τότε το κλάσμα δεν μπορεί να απλοποιηθεί περισσότερο. "
+"Προσπάθησε επιλέγοντας άλλον κοινό διαιρέτη."
 
-msgid ""
-"To expand a fraction multiply the numerator and the denominator by the same "
-"number. Change the multiplicand to see what happens."
+msgid "To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see what happens."
 msgstr ""
+"Για να πολλαπλασιάσουμε ένα κλάσμα με έναν ακέραιο, πολλαπλασιάζουμε τον αριθμητή και τον παρανομαστή με τον ακέραιο. Δοκίμασε με διαφορετικό ακέραιο για "
+"να δεις τι συμβαίνει."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr ""
+msgstr "Χρησιμοποίησε τα βέλη για να αλλάξεις την απάντησή σου ή απλά πληκτρολόγησέ την."
 
 msgid "Use the arrows to change your answer."
-msgstr ""
+msgstr "Χρησιμοποίησε τα βέλη για να αλλάξεις την απάντησή σου."
 
 msgid ""
-"To add two fractions with the same denominators add their numerators "
-"together and keep the denominator unchanged. Simplify the result if the "
-"numerator is greater than the denominator and reduce the fraction if "
-"possible."
+"To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. Simplify the result if the numerator is "
+"greater than the denominator and reduce the fraction if possible."
 msgstr ""
+"Για να προσθέσεις δύο ομώνυμα κλάσματα, πρόσθεσε τους αριθμητές τους και γράψε τον παρανομαστή όπως είναι. Εάν είναι δυνατό, απλοποίησε το αποτέλεσμα εάν ο "
+"αριθμητής είναι μεγαλύτερος από τον παρανομαστή."
 
 msgid ""
-"To subtract one fraction from another one with the same denominator subtract"
-" numerators and keep the denominator unchanged. Reduce the resulting "
+"To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator unchanged. Reduce the resulting fraction "
+"if possible."
+msgstr ""
+"Για να προσθέσεις δύο ομώνυμα κλάσματα, αφαίρεσε τους αριθμητές τους και γράψε τον παρανομαστή όπως είναι. Εάν είναι δυνατό, απλοποίησε το αποτέλεσμα."
+
+msgid "To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the resulting fraction if possible."
+msgstr ""
+"Για να πολλαπλασιάσεις δύο κλάσματα, πολλαπλασίασε τους αριθμητές και γράψε το γινόμενο ως αριθμητή και μετά πολλαπλασίασε τους παρανομαστές και γράψε το "
+"γινόμενο ως παρανομαστή. Εάν είναι δυνατό, απλοποίησε το αποτέλεσμα."
+
+msgid ""
+"To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. Simplify and reduce the resulting "
 "fraction if possible."
 msgstr ""
-
-msgid ""
-"To multiply two fractions multiply the numerators together and then multiply"
-" the denominators together. Reduce the resulting fraction if possible."
-msgstr ""
-
-msgid ""
-"To divide a fraction by another fraction multiply the first fraction by the "
-"second fraction flipped up side down. Simplify and reduce the resulting "
-"fraction if possible."
-msgstr ""
+"Για να διαιρέσεις δύο κλάσματα, αντίστρεψε τους όρους του δεύτερου κλάσματα και αντί για διαίρεση κάνε πολλαπλασιασμό. Εάν είναι δυνατό, απλοποίησε το "
+"αποτέλεσμα."
 
 msgid "Group fractions together"
-msgstr ""
+msgstr "Ομαδοποίηση κλασμάτων"
 
 msgid "Group percentages together"
-msgstr ""
+msgstr "Ομαδοποίηση ποσοστών"
 
 msgid "Group ratios together"
-msgstr ""
+msgstr "Ομαδοποίηση αναλογιών"
 
 msgid "Symmetry"
-msgstr ""
+msgstr "Συμμετρία"
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr ""
+msgstr "Συμμετρία με αντικατοπτρισμό - σχεδίασε με σχήματα"
 
 msgid "Reflect shapes"
-msgstr ""
+msgstr "Σχήματα με αντικατοπτρισμό"
 
 msgid "Reflect a shape in a mirror line"
-msgstr ""
+msgstr "Σχεδίασε το σχήμα με αντικατοπτρισμό στην άλλη μεριά της γραμμής"
 
-msgid ""
-"Draw a shape that is a reflection of the one already displayed. The red line"
-" is the mirror line."
-msgstr ""
+msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgstr "Σχεδίασε ένα σχήμα που αντικατοπτρίζει αυτό που εμφανίζεται. Η κόκκινη γραμμή είναι η γραμμή αντικατοπτρισμού."
 
 msgid "Symmetrical shapes - missing half"
-msgstr ""
+msgstr "Συμμετρικά σχήματα - το μισό που λείπει"
 
 msgid "Draw the other half of the shape"
-msgstr ""
+msgstr "Σχημάτισε το άλλο μισό του σχήματος"
 
 msgid "Find lines of symmetry"
-msgstr ""
+msgstr "Βρες τις γραμμές της συμμετρίας"
 
-msgid ""
-"Find and select all lines of symmetry for a displayed shape. Click on the "
-"arrows around the drawing area to select them."
-msgstr ""
+msgid "Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select them."
+msgstr "Βρες και επίλεξε όλες τις γραμμές συμμετρίας για κάθε σχήμα που εμφανίζεται. Κάνε κλικ στα βελάκια ολόγυρα από τον καμβά για να τις επιλέξεις."
 
 msgid "Match equivalent fractions"
-msgstr ""
+msgstr "Ταίριαξε τα ισοδύναμα κλάσματα"
 
 msgid "Match fractions"
-msgstr ""
+msgstr "Ταίριαξε τα κλάσματα"
 
 msgid "Match decimals"
-msgstr ""
+msgstr "Ταίριαξε τους δεκαδικούς"
 
 msgid "Match percentages"
-msgstr ""
+msgstr "Ταίριαξε τα ποσοστά"
 
 msgid "Match ratios"
-msgstr ""
+msgstr "Ταίριαξε τις αναλογίες"
 
 msgid "Percentages in a pie chart"
-msgstr ""
+msgstr "Ποσοστά σε γράφημα πίτας"
 
 msgid "Find equivalent fraction"
-msgstr ""
+msgstr "Βρες ισοδύναμο κλάσμα"
 
 msgid "Calculating with Time"
-msgstr ""
+msgstr "Υπολογισμοί με τον χρόνο"
 
 msgid "start time"
-msgstr ""
+msgstr "χρόνος έναρξης"
 
 msgid "end time"
-msgstr ""
+msgstr "χρόνος λήξης"
 
 msgid "elapsed time"
-msgstr ""
+msgstr "χρόνος που πέρασε"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr ""
+msgstr "Θερμοκρασία - Εισαγωγή στους αρνητικούς αριθμούς"
 
 msgid "Experiment with elapsed time"
-msgstr ""
+msgstr "Πειραματισμός με τον χρόνο που πέρασε 1"
 
 msgid "Experiment with elapsed time 2"
-msgstr ""
+msgstr "Πειραματισμός με τον χρόνο που πέρασε 2"
 
 msgid "Calculate elapsed time"
-msgstr ""
+msgstr "Υπολόγισε τον χρόνο που πέρασε"
 
 msgid "Find the start or the end time"
-msgstr ""
+msgstr "Βρες τον χρόνο έναρξης και λήξης"
 
 msgid "Visualized on a clock dial"
-msgstr ""
+msgstr "Απεικόνιση σε ρολόι"
 
 msgid "Visualized on a number line"
-msgstr ""
+msgstr "Απεικόνιση σε αριθμογραμμή"
 
 msgid "Visualized on two number lines"
-msgstr ""
+msgstr "Απεικόνιση σε δύο αριθμογραμμές"
 
 msgid "With no visualizations"
-msgstr ""
+msgstr "Χωρίς απεικόνιση"
 
 msgid "With mirrored images"
-msgstr ""
+msgstr "Με αντικατοπτρισμένες εικόνες"
 
 msgid "Theme Editor"
-msgstr ""
+msgstr "Επεξεργαστής θεμάτων"
 
 msgid "Make the game look your way"
-msgstr ""
+msgstr "Κάνε την εφαρμογή να ταιριάζει με τις δικές σου προτιμήσεις"
 
 msgid "Reset colors back to the default ones?"
-msgstr ""
+msgstr "Επαναφορά χρωμάτων στις προκαθορισμένες ρυθμίσεις;"
 
 msgid "With simplifying"
-msgstr ""
+msgstr "Με απλοποίηση"
 
 msgid "Positive numbers"
-msgstr ""
+msgstr "Θετικοί αριθμοί"
 
 msgid "Basics"
-msgstr ""
+msgstr "Βασικά"
 
 msgid "Equivalent fractions"
-msgstr ""
+msgstr "Ισοδύναμα κλάσματα"
 
 msgid "Expanding and reducing fractions"
-msgstr ""
+msgstr "Μεγέθυνση και σμίκρυνση κλασμάτων"
 
 msgid "Add fractions with unlike denominators"
-msgstr ""
+msgstr "Πρόσθεση ετερώνυμων κλασμάτων"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr ""
+msgstr "Αφαίρεση ετερώνυμων κλασμάτων"
 
 msgid ""
-"To add or subtract fractions when their denominators are not the same you "
-"have to find equivalent fractions which do have a common denominator. "
-"Finding the least common multiple of the two denominators will help you with"
-" that."
+"To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which do have a common denominator. Finding the "
+"least common multiple of the two denominators will help you with that."
 msgstr ""
+"Για να προσθέσεις ή να αφαιρέσεις ετερώνυμα κλάσματα θα πρέπει να σχηματίσεις ισοδύναμα κλάσματα που είναι ομώνυμα. Για να το κάνεις αυτό θα πρέπει να "
+"βρεις το Ελάχιστο Κοινό Πολλαπλάσιο των παρανομαστών."
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
-msgstr ""
+msgstr "ανεπτυγμένη μορφή"
 
 # used for the 2 ways of telling time used in Russian and Serbian translations
 # only
 msgid "short form"
-msgstr ""
+msgstr "σύντομη μορφή"
 
 msgid "white"
 msgstr "λευκό"
@@ -1219,13 +1189,13 @@ msgid "violet"
 msgstr "βιολετί"
 
 msgid "magenta"
-msgstr "πορφυρό"
+msgstr "ματζέντα"
 
 msgid "indigo"
 msgstr "λουλάκι"
 
 msgid "pink"
-msgstr "ρόζ"
+msgstr "ροζ"
 
 msgid "maroon"
 msgstr "καστανό"
@@ -1240,31 +1210,31 @@ msgid "lime"
 msgstr "πρασινολέμονο"
 
 msgid "Equilateral Triangle"
-msgstr "Ισόπλευρο Τρίγωνο"
+msgstr "Ισόπλευρο τρίγωνο"
 
 msgid "Isosceles Triangle"
-msgstr "Ισοσκελές Τρίγωνο"
+msgstr "Ισοσκελές τρίγωνο"
 
 msgid "Obtuse Triangle"
-msgstr "Αμβλυγώνιο Τρίγωνο"
+msgstr "Αμβλυγώνιο τρίγωνο"
 
 msgid "Right Triangle"
-msgstr "Ορθογώνιο Τρίγωνο"
+msgstr "Ορθογώνιο τρίγωνο"
 
 msgid "Acute Triangle"
-msgstr "Οξυγώνιο Τρίγωνο"
+msgstr "Οξυγώνιο τρίγωνο"
 
 msgid "Square"
 msgstr "Τετράγωνο"
 
 msgid "Rectangle"
-msgstr "Ορθογώνιο Παραλληλόγραμμο"
+msgstr "Ορθογώνιο παραλληλόγραμμο"
 
 msgid "Right Trapezium"
-msgstr "Ορθογώνιο Τραπέζιο"
+msgstr "Ορθογώνιο τραπέζιο"
 
 msgid "Isosceles Trapezium"
-msgstr "Ισοσκελές Τραπέζιο"
+msgstr "Ισοσκελές τραπέζιο"
 
 msgid "Rhombus"
 msgstr "Ρόμβος"
@@ -1279,10 +1249,10 @@ msgid "Hexagon"
 msgstr "Εξάγωνο"
 
 msgid "Heptagon"
-msgstr ""
+msgstr "Επτάγωνο"
 
 msgid "Octagon"
-msgstr ""
+msgstr "Οκτάγωνο"
 
 msgid "Circle"
 msgstr "Κύκλος"
@@ -1297,13 +1267,13 @@ msgid "Square Prism"
 msgstr "Παραλληλεπίπεδο"
 
 msgid "Triangular Prism"
-msgstr "Tριγωνικό Πρίσμα"
+msgstr "Tριγωνικό πρίσμα"
 
 msgid "Square Pyramid"
-msgstr "Τετραγωνική Πυραμίδα"
+msgstr "Τετραγωνική πυραμίδα"
 
 msgid "Triangular Pyramid"
-msgstr "Τριγωνική Πυραμίδα"
+msgstr "Τριγωνική πυραμίδα"
 
 msgid "Sphere"
 msgstr "Σφαίρα"
@@ -1329,7 +1299,7 @@ msgstr "Τρίγωνο"
 # used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all
 # points on one line
 msgid "Ouch... squished quadrilateral"
-msgstr "Ωχ... ένα στραπατσαρισμένο τετράπλευρο"
+msgstr "Οπς! Ένα στραπατσαρισμένο τετράπλευρο."
 
 msgid "Right isosceles triangle"
 msgstr "Ορθογώνιο ισοσκελές τρίγωνο"
@@ -1343,7 +1313,7 @@ msgstr "Οξυγώνιο ισοσκελές τρίγωνο"
 # used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on
 # one line
 msgid "Ouch... squished triangle"
-msgstr "Ωχ... ένα στραπατσαρισμένο τρίγωνο"
+msgstr "Οπς! Ένα στραπατσαρισμένο τρίγωνο"
 
 # used to label a drawn "quadrilateral" with one of its angles equal to 180º -
 # in effect making it look like triangle
@@ -1351,7 +1321,7 @@ msgid "Triangle? Well, not really..."
 msgstr "Τρίγωνο; Λοιπόν, δεν είναι..."
 
 msgid "area:"
-msgstr "περιοχή:"
+msgstr "εμβαδό:"
 
 msgid "perimeter:"
 msgstr "περίμετρος:"
@@ -1432,10 +1402,10 @@ msgstr[1] "καρπούζια"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ώρα"
+msgstr[1] "ώρες"
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "λεπτό"
+msgstr[1] "λεπτά"

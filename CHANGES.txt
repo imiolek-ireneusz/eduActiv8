@@ -5,7 +5,7 @@ eduActiv8 - 4.19.01:
     - word building activities added across multiple languages (Italian, Spanish, Catalan and Portuguese) - some with limited word list, but work nevertheless.
     - fraction matching game (102/242) enabled in Russian, Ukrainian and Italian
     - new set of 12 word discovery activities added, also useful for confirming correctness of word list translations
-    - disabled state added to the eSpeak toggle button to indicate when a language is not available in a selected language
+    - disabled state added to the eSpeak toggle button to indicate when text-to-speech is not available in a selected language
 eduActiv8 - 4.18.12:
     - the menu has been replaced with a full screen activity selection screen
         - this allows to display all activity icons without scrolling

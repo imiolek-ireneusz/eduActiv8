@@ -145,7 +145,7 @@ class Board(gd.BoardGame):
                             6)
         self.board.add_unit(left + lang_width, top, data[0] - lang_width, 1, classes.board.Label, [
             "Στέλιος, versys650gr, sdim, lucinos and other members of The Official Greek Community of Linux Mint,",
-            "updated by Alexandros Moskofidis (Αλέξανδρος Μοσκοφίδης)"], colors[top % 2], "", 6)
+            "updated by Alexandros Moskofidis (Αλέξανδρος Μοσκοφίδης) and Giannis Kaskamanidis (Γιάννης Κασκαμανίδης)"], colors[top % 2], "", 6)
 
         for each in self.board.units:
             each.font_color = font_color
