@@ -96,10 +96,11 @@ def time2str(h, m):
         return "%s παρά %s" % (hrs[h - 1], n2txt(60 - m))
     return ""
 
-#write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
+# write a fraction in words
+numerators = ['ένα', 'δύο', 'τρία', 'τέσσερα', 'πέντε', 'έξι', 'επτά', 'οκτώ', 'εννέα', 'δέκα', 'έντεκα', 'δώδεκα']
+d_singular = ['', 'δεύτερο', 'τρίτο', 'τέταρτο', 'πέμπτο', 'έκτο', 'έβδομο', 'όγδοο', 'ένατο', 'δέκατο', 'ενδέκατο', 'δωδέκατο']
+d_plural = ['', 'δεύτερα', 'τρίτα', 'τέταρτα', 'πέμπτα', 'έκτα', 'έβδομα', 'όγδοα', 'ένατα', 'δέκατα', 'ενδέκατα', 'δωδέκατα']
 
 def fract2str(n, d):
     if n == 1:
