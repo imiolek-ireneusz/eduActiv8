@@ -1,5 +1,5 @@
 Changelog:
-eduActiv8 - 4.19.01:
+eduActiv8 - 4.19.02:
     - a number of bug fixes
     - a number of translations updated and added to transifex.com
     - word building activities added across multiple languages (Italian, Spanish, Catalan and Portuguese) - some with limited word list, but work nevertheless.

@@ -70,7 +70,7 @@ for lang_id in range(len(lang_files)):
         lang_count += count
         ind += 1
 
-    print("%s - %d out of 587 words translated\n" % (lang_files[lang_id][8:10], lang_count))
+    print("%s - %d out of 585 words translated\n" % (lang_files[lang_id][8:10], lang_count))
 
     # create a new string with converted word lists
     s = ""

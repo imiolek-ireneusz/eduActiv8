@@ -8,7 +8,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.01\n"
+"Project-Id-Version: 4.19.02\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
 "Language-Team: Italian (https://www.transifex.com/eduactiv8/teams/94947/it/)\n"

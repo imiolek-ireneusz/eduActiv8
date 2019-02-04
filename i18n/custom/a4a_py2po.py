@@ -27,7 +27,7 @@ header = """# eduActiv8 - word lists - translation file.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.01\\n"
+"Project-Id-Version: 4.19.02\\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\\n"
 "MIME-Version: 1.0\\n"
 "Content-Type: text/plain; charset=UTF-8\\n"
