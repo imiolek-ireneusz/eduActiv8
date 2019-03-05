@@ -82,8 +82,7 @@ class BuildExe:
         self.extra_datas = ["classes", "game_boards", "i18n", "locale", "res", "xml"]
 
         # Extra/excludes python modules
-        # TODO change this number to include all new games
-        self.extra_modules = [["game_boards.game%03i" % i for i in range(111)]]
+        self.extra_modules = []
 
         # showed missing in result compilation
         self.exclude_modules = []
