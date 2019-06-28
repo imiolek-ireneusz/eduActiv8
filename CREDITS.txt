@@ -62,7 +62,7 @@ Sounds Licence - Public Domain:
                 http://www.freesound.org/people/fins/sounds/146731/
 
 Large amount of images used from http://www.art4apps.org/
-    "Art4Apps is a database of images and audio files of words created by Smart4Kids under a Creative Common License (CC BY-SA)"
+    "Art4Apps is a database of images and audio files of words created by Smart4Kids under a Creative Commons License (CC BY-SA)"
 
 Some icons used from Tango Project:
     http://tango.freedesktop.org/Tango_Icon_Library

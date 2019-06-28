@@ -1,4 +1,6 @@
 Changelog:
+eduActiv8 - 4.19.07:
+    - Bulgarian translation started by Vanyo Georgiev
 eduActiv8 - 4.19.02:
     - a number of bug fixes
     - a number of translations updated and added to transifex.com

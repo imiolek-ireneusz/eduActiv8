@@ -124,25 +124,25 @@ class Config:
 
         if self.fribidi_loaded:
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano", "Lakȟótiyapi",
-                                "Polski", "Português", "Suomalainen", "Ελληνικά", "Русский", "Српски", "Українська",
+                                "Polski", "Português", "Suomalainen", "Ελληνικά", "Български", "Русский", "Српски", "Українська",
                                 "תירבע", self.arabic]
-            self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
+            self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "bg", "ru", "sr",
                             "uk", "he", "ar"]
-            self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
+            self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "bg", "ru", "sr",
                            "uk", "he"]
         else:
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano", "Lakȟótiyapi",
-                                "Polski", "Português", "Suomalainen", "Ελληνικά", "Русский", "Српски", "Українська",
+                                "Polski", "Português", "Suomalainen", "Ελληνικά", "Български", "Русский", "Српски", "Українська",
                                 "תירבע"]
-            self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
+            self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "bg", "ru", "sr",
                             "uk", "he"]
-            self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "ru", "sr",
+            self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "pl", "pt_PT", "fi", "el", "bg", "ru", "sr",
                            "uk", "he"]
 
         self.id2lng = {1: "English", 5: "Català", 19: "Српски", 12: "Deutsch", 8: "Español", 16: "Ελληνικά",
-                       17: "תירבע", 11: "Italiano", 20:  "Lakȟótiyapi", 3: "Polski", 9: "Português", 13: "Русский", 15: "Suomalainen",
+                       17: "תירבע", 11: "Italiano", 20:  "Lakȟótiyapi", 3: "Polski", 9: "Português", 21: "Български", 13: "Русский", 15: "Suomalainen",
                        14: "Українська", 2: self.arabic, 10: "Français"}
-        self.id2imgsuffix = {1: "", 5: "", 18: "ru", 12: "", 8: "", 16: "el", 17: "he", 11: "", 20: "", 3: "", 9: "", 13: "ru",
+        self.id2imgsuffix = {1: "", 5: "", 18: "ru", 12: "", 8: "", 16: "el", 17: "he", 11: "", 20: "", 3: "", 9: "", 21: "ru", 13: "ru",
                              15: "", 14: "ru", 2: "ar", 10: ""}
 
         """

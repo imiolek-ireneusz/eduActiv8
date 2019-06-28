@@ -124,7 +124,7 @@
         </cat>
         <cat mline="2" id="39" title="Learn new words" subtitle=""
              icon="ico_c_39.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['bg', 'en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="286" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="121"
@@ -213,7 +213,7 @@
         </cat>
         <cat mline="2" id="2" title="Word Builders" subtitle=""
              icon="ico_c_02.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['bg', 'en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="107" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="82"
@@ -391,7 +391,7 @@
         </cat>
         <cat mline="2" id="4" title="Word Matchers" subtitle=""
              icon="ico_c_16.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['bg', 'en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
              has_inner="False">
             <!-- matching games using arts4apps -->
             <game mline="1" dbid="154" variant="0" var2="0" min_age="0" max_age="7"
@@ -1060,7 +1060,7 @@
                       title="Matching fractions"
                       subtitle=""
                       icon="ico_g_2412.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="['en', 'pl', 'ru', 'uk', 'it', 'el']" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="['bg', 'en', 'pl', 'ru', 'uk', 'it', 'el']" lang_excl="" require_uc="False" listening="False" android="True">
                 </game>
                 <!--
                 <game mline="0" dbid="229" variant="0" var2="0" min_age="1" max_age="7"
@@ -1394,7 +1394,7 @@
                   title="Match shapes to their names"
                   subtitle=""
                   icon="ico_g_0504.png" ico_group="" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="['en', 'pl', 'es']" lang_excl="" require_uc="False" listening="False" android="True">
+                  visible="1" lang_incl="['bg', 'en', 'pl', 'es']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game mline="2" dbid="64" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="59"
@@ -1548,7 +1548,7 @@
                       title="Clock2"
                       subtitle="Set time"
                       icon="ico_g_1009.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="['en', 'pl', 'ru', 'fr', 'de', 'el']" lang_excl="" require_uc="False" listening="True" android="True">
+                      visible="1" lang_incl="['bg', 'en', 'pl', 'ru', 'fr', 'de', 'el']" lang_excl="" require_uc="False" listening="True" android="True">
                 </game>
                 <game mline="2" dbid="67" variant="0" var2="0" min_age="0" max_age="7"
                       constructor_id="63"

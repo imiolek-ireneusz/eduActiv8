@@ -241,6 +241,16 @@ class Language:
             # self.n2spk = self.lang_file.n2spk
             self.ico_suffix = ""
             self.lang_id = 20
+        elif self.lang == 'bg':
+            import i18n.custom.bg
+            import i18n.custom.word_lists.bg_di
+            import i18n.custom.a4a_py.bg as a4a_word_lst
+            self.voice = None
+            self.has_cursive = True
+            self.di = i18n.custom.word_lists.bg_di.di
+            self.lang_file = i18n.custom.bg
+            self.ico_suffix = "ru"
+            self.lang_id = 21
         else:  # self.lang == 'en_GB':
             import i18n.custom.en_gb
             import i18n.custom.word_lists.en_gb_di
