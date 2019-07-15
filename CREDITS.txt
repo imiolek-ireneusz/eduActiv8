@@ -12,6 +12,7 @@ Windows Setup Script (eduactiv82exe):
 Translations:
     Catalan - Guillem Jover - http://www.hadrons.org/~guillem/
             - updated by Jordi Mallach
+    Bulgarian - Vanyo Georgiev
     English UK - Ireneusz Imiolek (some corrections needed)
     English US - Ireneusz Imiolek (some corrections needed)
     Finnish - Aapo Rantalainen
@@ -66,6 +67,8 @@ Large amount of images used from http://www.art4apps.org/
 
 Some icons used from Tango Project:
     http://tango.freedesktop.org/Tango_Icon_Library
+
+Images fc102.jpg, fc103.jpg, fc104.jpg in eduactiv8/res/images/fc/ by Vanyo Georgiev.
 
 Images from openclipart.org by various authors:
     http://openclipart.org/detail/166862/go-next-orange-by-rygle

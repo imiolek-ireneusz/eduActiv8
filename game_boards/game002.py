@@ -23,7 +23,7 @@ class Board(gd.BoardGame):
         color2 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 30, 255)
 
         font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 50)
-        data = [18, 12]
+        data = [18, 13]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=True)
         if x_count > data[0]:
@@ -60,6 +60,12 @@ class Board(gd.BoardGame):
 
         # column 1
         top = 0
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Bulgarian", "Български"], colors[top % 2],
+                            "", 6)
+        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
+                            ["Vanyo Georgiev"], colors[top % 2], "", 6)
+
+        top += 1
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Catalan", "Català"], colors[top % 2], "",
                             6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
@@ -137,9 +143,13 @@ class Board(gd.BoardGame):
                             "Yuri Chornoivan (Юрій Чорноіван)", colors[top % 2], "",
                             6)
 
+        top += 1
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["", ""], colors[top % 2], "", 6)
+        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, "", colors[top % 2], "", 6)
+
         # due to the number of people working on this one - it stays at the bottom and spreads across 2 columns
         # update top - to the height of the tallest column
-        top = 7
+        top = 8
         left = 0
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Greek", "Ελληνικά"], colors[top % 2], "",
                             6)
