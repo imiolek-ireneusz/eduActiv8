@@ -109,7 +109,7 @@ class Board(gd.BoardGame):
         self.reselect(lang_id)
         self.mainloop.sb.resize()
         self.mainloop.sb.update_me = True
-        if lng in ['lkt', 'uk']:
+        if lng in ['lkt', 'uk', 'bg']:
             self.mainloop.sb.espeak_avail(False)
         else:
             self.mainloop.sb.espeak_avail(True)

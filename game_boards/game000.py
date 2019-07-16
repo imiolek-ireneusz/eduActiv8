@@ -142,7 +142,7 @@ class Board(gd.BoardGame):
         self.board.ships[-1].immobilize()
 
         # check if espeak icon needs disabling on display of home screen
-        if self.lang.lang in ['lkt', 'uk']:
+        if self.lang.lang in ['lkt', 'uk', 'bg']:
             self.mainloop.sb.espeak_avail(False)
         else:
             self.mainloop.sb.espeak_avail(True)
