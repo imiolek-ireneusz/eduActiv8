@@ -5,9 +5,9 @@
 # These words are mainly most commonly used words in Russian
 # In each sub-list in the list di first number is a number of words in the sublist
 # to avoid counting it every time list is selected
-# The sublists are consisting of words with len() of 3 - 10
+# The sub-lists are consisting of words with len() of 3 - 10
 # They are appropriate for under 10 years old children
-# For find dublicates: sed -e "s/'/\n/g" ./ru_di.py|sort |uniq -d
+# For find duplicates: sed -e "s/'/\n/g" ./ru_di.py|sort |uniq -d
 # All words were adapted with according pronunciation by espeak.
 # List was made by Alexey Loginov
 

@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
-# this is a list of words used by the word builder and word maze games and possibly
-# other games built in the future
-# these words are mainly most commonly used words in English + some other words
-# in each sub-list in the list di first number is a number of words in the sublist
-# to aviod counting it every time list is selected
-# the sublists are consisting of words with len() of 3 - 10
-# I think the way of going about internationalization here would be to create a new list
-# with words most commonly used in your language rather than translating this
-# I am not sure if they are appriopriate for children, but if anyone is interested we can try to built something more suitable.
+# This is a list of words used by the word builder and word maze games and possibly other games built in the future
+# these words are a naive translation of a part of most commonly used words in English in each sub-list in the list di
+# first number is a number of words in the sub-list to avoid counting it every time the list is selected the sub-lists
+# are consisting of words with len() of 3 - 10. I think the way of going about internationalization here would be to
+# create a new list with words most commonly used in your language rather than translating the English version.
+# I am not sure if they are appropriate for children, but if anyone is interested we can try to built something more
+# suitable or if you like you can try to edit this list - remove the words that you think are either not in German or
+# are not suitable for under 10 years old children and send it back to the email address shown at the start of the game.
+# If you have a better list please send it to me and I will format it and add it to the game. This is a very naive
+# translation from google translate - only resorted and counted.
 
 di = [
     [79, 'ala', 'alt', 'alè', 'amb', 'ara', 'aus', 'bel', 'bip', 'cap', 'cec', 'cel', 'com', 'cop', 'cor', 'cua', 'dia',

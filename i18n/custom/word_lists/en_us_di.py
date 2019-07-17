@@ -4,11 +4,13 @@
 # other games built in the future
 # these words are mainly most commonly used words in English + some other words
 # in each sub-list in the list di first number is a number of words in the sublist
-# to aviod counting it every time list is selected
-# the sublists are consisting of words with len() of 3 - 10
+# to avoid counting it every time list is selected
+# the sub-lists are consisting of words with len() of 3 - 10
 # I think the way of going about internationalization here would be to create a new list
 # with words most commonly used in your language rather than translating this
-# I am not sure if they are appriopriate for children, but if anyone is interested we can try to built something more suitable.
+# I am not sure if they are appropriate for children,
+# but if anyone is interested we can try to built something more suitable.
+
 di = [[114, 'act', 'add', 'age', 'ago', 'air', 'all', 'and', 'any', 'are', 'art', 'bad', 'bed', 'big', 'bit', 'box',
        'boy', 'but', 'buy', 'can', 'car', 'cat', 'cry', 'cut', 'day', 'did', 'dog', 'dry', 'eat', 'end', 'far', 'few',
        'fig', 'fit', 'flu', 'fly', 'for', 'fun', 'gas', 'get', 'got', 'had', 'has', 'hat', 'her', 'him', 'his', 'hit',
