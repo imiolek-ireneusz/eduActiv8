@@ -423,67 +423,67 @@ msgid "run"
 msgstr "run"
 
 msgid "swim"
-msgstr "run"
-
-msgid "hop"
 msgstr "swim"
 
-msgid "hike"
+msgid "hop"
 msgstr "hop"
 
-msgid "boxing"
+msgid "hike"
 msgstr "hike"
 
-msgid "hockey"
+msgid "boxing"
 msgstr "boxing"
 
-msgid "race"
+msgid "hockey"
 msgstr "hockey"
 
-msgid "throw"
+msgid "race"
 msgstr "race"
 
-msgid "skate"
+msgid "throw"
 msgstr "throw"
 
-msgid "win"
+msgid "skate"
 msgstr "skate"
 
-msgid "squat"
+msgid "win"
 msgstr "win"
 
-msgid "ski"
+msgid "squat"
 msgstr "squat"
 
-msgid "golf"
+msgid "ski"
 msgstr "ski"
 
-msgid "whistle"
+msgid "golf"
 msgstr "golf"
 
-msgid "torch"
+msgid "whistle"
 msgstr "whistle"
 
-msgid "sailing"
+msgid "torch"
 msgstr "torch"
 
-msgid "stand"
+msgid "sailing"
 msgstr "sailing"
 
-msgid "tennis"
+msgid "stand"
 msgstr "stand"
 
-msgid "jump"
+msgid "tennis"
 msgstr "tennis"
 
-msgid "rowing"
+msgid "jump"
 msgstr "jump"
 
-msgid "jog"
+msgid "rowing"
 msgstr "rowing"
 
-msgid "rope"
+msgid "jog"
 msgstr "jog"
+
+msgid "rope"
+msgstr "rope"
 
 msgid "teeth"
 msgstr "teeth"
