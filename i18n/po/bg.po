@@ -1,23 +1,24 @@
-# eduActiv8 - translation file.
+# eduActiv8 - Educational Activity Pack - translation file.
 # Copyright (C) 2012 - 2019 Ireneusz Imiolek
-# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
-#
+# This file is distributed under the same license as the eduactiv8 package.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+# 
 # Translators:
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
+# Vanyo Georgiev <info@vanyog.com>, 2019
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2016-11-18 23:14+0000\n"
-"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
-"Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"PO-Revision-Date: 2019-01-04 22:25+0000\n"
+"Last-Translator: Vanyo Georgiev <info@vanyog.com>, 2019\n"
+"Language-Team: Bulgarian (https://www.transifex.com/eduactiv8/teams/94947/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
 msgid ""
@@ -27,9 +28,9 @@ msgid ""
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
-" Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
-" Please view credits.txt for more info about authors of media files used in this project"
+" Звуци от различни автори предоставили ги в freesound.org. \n"
+" Изображения от различни автори предоставилиги в openclipart.org (Публична зона) и http://www.art4apps.org/ - Art4Apps от Smart4Kids - под лиценз Creative Commons License (CC BY-SA). \n"
+" Моля прегледайте файл credits.txt за повече информация за авторите на мултимедийни файлове за този проект"
 
 msgid ""
 "This program is free software: you can redistribute it and/or modify it "
@@ -39,295 +40,292 @@ msgid ""
 " License along with this program. If not, see "
 "<http://www.gnu.org/licenses/>."
 msgstr ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
-"<http://www.gnu.org/licenses/>."
+"Програмата е свободен софтуер: можете да я разпространявата и/или променяте "
+"според изискванията на General Public License, публикуван от Free Software "
+"Foundation, във версия 3, или (по Ваш избор) всяка по-следваща версия."
 
 msgid "A collection of educational activities for kids"
-msgstr "A collection of educational activities for kids"
+msgstr "Колекция от образователни дейности за деца"
 
 msgid "Educational Activities for Kids"
-msgstr "Educational Activities for Kids"
+msgstr "Образователни дайности за деца"
 
 msgid ""
 "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
 "Commons License (CC BY-SA)"
 msgstr ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
+"Изображения от: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative"
+" Commons License (CC BY-SA)"
 
 msgid "Default Language:"
-msgstr "Default Language:"
+msgstr "Език по подразбиране:"
 
 msgid "Guest"
-msgstr "Guest"
+msgstr "Гост"
 
 msgid "Log in:"
-msgstr "Log in:"
+msgstr "Влизане:"
 
 msgid "user name:"
-msgstr "user name:"
+msgstr "потребителско име:"
 
 msgid "password:"
-msgstr "password:"
+msgstr "парола:"
 
 msgid "Login"
-msgstr "Login"
+msgstr "Вход"
 
 msgid "Add new user:"
-msgstr "Add new user:"
+msgstr "Добавяне на нов потребител:"
 
 msgid "confirm password:"
-msgstr "confirm password:"
+msgstr "повторение на паролата:"
 
 msgid "Register new user"
-msgstr "Register new user"
+msgstr "Регистриране на нов потребител"
 
 msgid "Administrator Login:"
-msgstr "Administrator Login:"
+msgstr "Влизане на администратор:"
 
 msgid "User Management"
-msgstr "User Management"
+msgstr "Аправляване на потребители"
 
 msgid "Please select a user from the list."
-msgstr "Please select a user from the list."
+msgstr "Моля, изберета потребител от списъка."
 
 msgid "Delete user"
-msgstr "Delete user"
+msgstr "Изтриване на потребителя"
 
 msgid "Delete"
-msgstr "Delete"
+msgstr "Изтриване"
 
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Отказване"
 
 #, python-format
 msgid "%s deleted from database."
-msgstr "%s deleted from database."
+msgstr "%s изтрит от базата данни."
 
 msgid "Failed to delete the user."
-msgstr "Failed to delete the user."
+msgstr "Неуспешно изтриване на потребител."
 
 msgid "Preferences"
-msgstr "Preferences"
+msgstr "Предпочитания"
 
 msgid "switch to full screen after login"
-msgstr "switch to full screen after login"
+msgstr "отваряне на цял екран след влизане"
 
 msgid "allow adding new users on login screen"
-msgstr "allow adding new users on login screen"
+msgstr "разрешено добавяне на потребители на екрана за влизане"
 
 msgid "User Name"
-msgstr "User Name"
+msgstr "Потребителско име"
 
 msgid "require password to log in"
-msgstr "require password to log in"
+msgstr "изисква се парола при влизане"
 
 msgid "require password to access admin area"
-msgstr "require password to access admin area"
+msgstr "изисква се парола за административната зона"
 
 msgid "Update admin's password:"
-msgstr "Update admin's password:"
+msgstr "Промяна паролата на администратора:"
 
 msgid "previous password:"
-msgstr "previous password:"
+msgstr "предишна парола:"
 
 msgid "new password:"
-msgstr "new password:"
+msgstr "нова парола:"
 
 msgid "confirm new password:"
-msgstr "confirm new password:"
+msgstr "повторение нова парола:"
 
 msgid "Create admin's account:"
-msgstr "Create admin's account:"
+msgstr "Създаване проофил на администратор:"
 
 msgid "admin's user name:"
-msgstr "admin's user name:"
+msgstr "потребителско име на администратор:"
 
 msgid "admin's password:"
-msgstr "admin's password:"
+msgstr "парола на администратор:"
 
 msgid "confirm admin's password:"
-msgstr "confirm admin's password:"
+msgstr "повторение парола на администратор:"
 
 msgid "Save"
-msgstr "Save"
+msgstr "Запазване"
 
 msgid "Please enter user name (at least 3 characters long)"
-msgstr "Please enter user name (at least 3 characters long)"
+msgstr "Въведете потребителско име (поне 3 букви)"
 
 msgid "Please enter password (at least 4 characters long)"
-msgstr "Please enter password (at least 4 characters long)"
+msgstr "Въведете парола (дълга поне 4 символа)"
 
 msgid "This username and password combination doesn't exist."
-msgstr "This username and password combination doesn't exist."
+msgstr "Тази комбинация от потребителско име и парола не съществуват."
 
 msgid "This username doesn't exist."
-msgstr "This username doesn't exist."
+msgstr "Потребителското име не съществува."
 
 msgid "Passwords don't match"
-msgstr "Passwords don't match"
+msgstr "Паролата не съвпада"
 
 #, python-format
 msgid "%s added"
-msgstr "%s added"
+msgstr "%s добавено"
 
 msgid "This user name already exists, please choose a different one"
-msgstr "This user name already exists, please choose a different one"
+msgstr "Това потребителско име съществува, въведете друго"
 
 msgid "Admin's password has been updated"
-msgstr "Admin's password has been updated"
+msgstr "Паролата на администратора беше променена"
 
 msgid "ERROR: This operation is not allowed at this point"
-msgstr "ERROR: This operation is not allowed at this point"
+msgstr "ГРЕШКА: Това действие не е разрешено на това място"
 
 msgid "Please enter previous password (at least 4 characters long)"
-msgstr "Please enter previous password (at least 4 characters long)"
+msgstr "Моля въведете предишната парола (дълга поне 4 символа)"
 
 msgid "Please enter new password (at least 4 characters long)"
-msgstr "Please enter new password (at least 4 characters long)"
+msgstr "Моля, въведете нова парола (дълга поне 4 символа)"
 
 msgid "Previous password doesn't seem to be in the database"
-msgstr "Previous password doesn't seem to be in the database"
+msgstr "Педишната парола изглежда липсва в базата данни"
 
 msgid "Registered:"
-msgstr "Registered:"
+msgstr "Регистриран:"
 
 msgid "Last login:"
-msgstr "Last login:"
+msgstr "Последно влизане:"
 
 msgid "Preferences saved..."
-msgstr "Preferences saved..."
+msgstr "Предпочитанията са запазени…"
 
 msgid "Logged in as: "
-msgstr "Logged in as: "
+msgstr "Влязъл потребител: "
 
 msgid "(Log out)"
-msgstr "(Log out)"
+msgstr "(Излизане)"
 
 msgid "remember me"
-msgstr "remember me"
+msgstr "запомни ме"
 
 msgid "Select age group:"
-msgstr "Select age group:"
+msgstr "Избор на възрастова група:"
 
 msgid "show activities for:"
-msgstr "show activities for:"
+msgstr "показване на дейности за:"
 
 msgid "preschool"
-msgstr "preschool"
+msgstr "преди училище"
 
 msgid "Year 1"
-msgstr "Year 1"
+msgstr "1 клас"
 
 msgid "Year 2"
-msgstr "Year 2"
+msgstr "2 клас"
 
 msgid "Year 3"
-msgstr "Year 3"
+msgstr "3 клас"
 
 msgid "Year 4"
-msgstr "Year 4"
+msgstr "4 клас"
 
 msgid "Year 5"
-msgstr "Year 5"
+msgstr "5 клас"
 
 msgid "Year 6"
-msgstr "Year 6"
+msgstr "6 клас"
 
 msgid "show all"
-msgstr "show all"
+msgstr "показване на всички"
 
 msgid "Do you want to log out of the game?"
-msgstr "Do you want to log out of the game?"
+msgstr "Искаш ли да излезеш от играта?"
 
 msgid "Do you want to exit the game?"
-msgstr "Do you want to exit the game?"
+msgstr "Искаш ли да напуснеш играта?"
 
 # alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
 msgid "Ready to go to the next level?"
-msgstr "Ready to go to the next level?"
+msgstr "Готови за следващо ниво?"
 
 msgid "Hello"
-msgstr "Hello"
+msgstr "Здравей"
 
 msgid "Welcome back in the game."
-msgstr "Welcome back in the game."
+msgstr "Щастливо връщане в играта."
 
 msgid "Licence"
-msgstr "Licence"
+msgstr "Лиценз"
 
 msgid "Copyright & Credits"
-msgstr "Copyright & Credits"
+msgstr "Авторски права и заслуги"
 
 msgid "Translators"
-msgstr "Translators"
+msgstr "Преводачи"
 
 msgid "Language"
-msgstr "Language"
+msgstr "Език"
 
 msgid "Translations"
-msgstr "Translations"
+msgstr "Преводи"
 
 msgid "Addition Table"
-msgstr "Addition Table"
+msgstr "Таблица за събиране"
 
 msgid "Discover Letters"
-msgstr "Discover Letters"
+msgstr "Учене на буквите"
 
 msgid "Learn New Words"
-msgstr "Learn New Words"
+msgstr "Учене на нови думи"
 
 msgid "Mathematics"
-msgstr "Mathematics"
+msgstr "Математика"
 
 msgid "Art and Colour"
-msgstr "Art and Colour"
+msgstr "Изкуство и цветове"
 
 msgid "Memory"
-msgstr "Memory"
+msgstr "Памет"
 
 msgid "Games & Mazes"
-msgstr "Games & Mazes"
+msgstr "Игри и лабиринти"
 
 msgid "Letters"
-msgstr "Letters"
+msgstr "Букви"
 
 msgid "Learn Letters with Flashcards"
-msgstr "Learn Letters with Flashcards"
+msgstr "Научи буквите по картинки"
 
 msgid "Learn to Write"
-msgstr "Learn to Write"
+msgstr "Научи се да пишеш"
 
 msgid "Trace Letters and Numbers"
 msgstr "Trace Letters and Numbers"
 
 msgid "Complete the ABC"
-msgstr "Complete the ABC"
+msgstr "Попълване на азбуката"
 
 msgid "Sorting Letters"
-msgstr "Sorting Letters"
+msgstr "Нареждане на букви"
 
 msgid "Lowercase Letters"
-msgstr "Lowercase Letters"
+msgstr "Малки букви"
 
 msgid "Uppercase Letters"
-msgstr "Uppercase Letters"
+msgstr "Главни букви"
 
 msgid "Word Builder"
-msgstr "Word Builder"
+msgstr "Писане на думи"
 
 msgid "Word Maze"
-msgstr "Word Maze"
+msgstr "Дума в лабиринт"
 
 msgid "Collect all letters in the right order"
-msgstr "Collect all letters in the right order"
+msgstr "Събери буквите в правилния ред"
 
 msgid "Word Maze + 4"
-msgstr "Word Maze + 4"
+msgstr "Дума в лабиринт + 4"
 
 msgid "Rainbow Keyboard"
 msgstr "Rainbow Keyboard"
@@ -340,97 +338,97 @@ msgstr "English Alphabet"
 
 # Replace "Your" with your language, ie. translation of French Alphabet
 msgid "Your Alphabet"
-msgstr "Your Alphabet"
+msgstr "Твоята азбука"
 
 msgid "Numbers"
-msgstr "Numbers"
+msgstr "Числа"
 
 msgid "Number Spelling"
-msgstr "Number Spelling"
+msgstr "Числа с думи"
 
 msgid "Match numbers to their spelling"
-msgstr "Match numbers to their spelling"
+msgstr "Свържи числата с техните имена"
 
 msgid "Learn Numbers with Flashcards"
-msgstr "Learn Numbers with Flashcards"
+msgstr "Учене на числата с картинки"
 
 msgid "Learn to Count"
-msgstr "Learn to Count"
+msgstr "Броене"
 
 msgid "Basic Addition"
-msgstr "Basic Addition"
+msgstr "Основи на събирането"
 
 msgid "Basic Subtraction"
-msgstr "Basic Subtraction"
+msgstr "Основи на изваждането"
 
 msgid "Shopping List"
-msgstr "Shopping List"
+msgstr "Списък за пазаруване"
 
 msgid "Plus or Minus"
-msgstr "Plus or Minus"
+msgstr "Плюс или минус"
 
 msgid "Basic Operations"
 msgstr "Basic Operations"
 
 msgid "Multiplication Table"
-msgstr "Multiplication Table"
+msgstr "Таблица за умножение"
 
 msgid "Find the product"
-msgstr "Find the product"
+msgstr "Намери произведението"
 
 msgid "Find the multiplier"
-msgstr "Find the multiplier"
+msgstr "Намери множителя"
 
 msgid "Division"
-msgstr "Division"
+msgstr "Деление"
 
 msgid "Sorting Numbers"
-msgstr "Sorting Numbers"
+msgstr "Подреждане на числа"
 
 msgid "Consecutive numbers"
-msgstr "Consecutive numbers"
+msgstr "Последователни числа"
 
 msgid "Random numbers"
-msgstr "Random numbers"
+msgstr "Случайни числа"
 
 msgid "Number Comparison"
-msgstr "Number Comparison"
+msgstr "Сравняване на числа"
 
 msgid "Addition & Subtraction"
-msgstr "Addition & Subtraction"
+msgstr "Събиране и изваждане"
 
 msgid "Comparison"
-msgstr "Comparison"
+msgstr "Сравняване"
 
 msgid "Even or Odd"
-msgstr "Even or Odd"
+msgstr "Четно или нечетно"
 
 msgid "Even"
-msgstr "Even"
+msgstr "Четно"
 
 msgid "Odd"
-msgstr "Odd"
+msgstr "Нечетно"
 
 msgid "Shapes and Solids"
-msgstr "Shapes and Solids"
+msgstr "Фигури и тела"
 
 msgid "Shapes"
-msgstr "Shapes"
+msgstr "Фигури"
 
 msgid "Learn Shapes with Flashcards"
-msgstr "Learn Shapes with Flashcards"
+msgstr "Учене на форми по картинки"
 
 msgid "Solids"
-msgstr "Solids"
+msgstr "Тела"
 
 msgid "Solid Geometry with Flashcards"
-msgstr "Solid Geometry with Flashcards"
+msgstr "Тела по картинки"
 
 msgid "Time Matching"
 msgstr "Time Matching"
 
 msgid "Complete the word"
-msgstr "Complete the word"
+msgstr "Допълни думата"
 
 msgid "Shape Matching"
 msgstr "Shape Matching"
@@ -547,34 +545,34 @@ msgid "Number Slider"
 msgstr "Number Slider"
 
 msgid "Maths Matching Game"
-msgstr "Maths Matching Game"
+msgstr "Математическа игра за съпоставяне"
 
 msgid "Addition"
-msgstr "Addition"
+msgstr "Събиране"
 
 msgid "Subtraction"
-msgstr "Subtraction"
+msgstr "Изваждане"
 
 msgid "Multiplication"
-msgstr "Multiplication"
+msgstr "Умножение"
 
 msgid "Fractions"
-msgstr "Fractions"
+msgstr "Дроби"
 
 msgid "Decimal Fractions"
-msgstr "Decimal Fractions"
+msgstr "Десетични дроби"
 
 msgid "Percentages"
-msgstr "Percentages"
+msgstr "Проценти"
 
 msgid "Ratios"
-msgstr "Ratios"
+msgstr "Пропорции"
 
 msgid "Fraction Groups"
-msgstr "Fraction Groups"
+msgstr "Групиране на дроби"
 
 msgid "Type your answer and hit enter"
-msgstr "Type your answer and hit enter"
+msgstr "Напиши отговор и натисни Ентър"
 
 msgid "Decimals (Category)"
 msgstr "Decimals (Category)"
@@ -589,91 +587,91 @@ msgid "Percentages (Category)"
 msgstr "Percentages (Category)"
 
 msgid "Learn new words"
-msgstr "Learn new words"
+msgstr "Учене на нови думи"
 
 msgid "Word Builders"
-msgstr "Word Builders"
+msgstr "Строители на думи"
 
 msgid "Word Matchers"
-msgstr "Word Matchers"
+msgstr "Съответствие с думи"
 
 msgid "Match images to words"
-msgstr "Match images to words"
+msgstr "Свържи картинка с дума"
 
 msgid "Animals"
-msgstr "Animals"
+msgstr "Животни"
 
 msgid "Sports"
-msgstr "Sports"
+msgstr "Спортове"
 
 msgid "Body"
-msgstr "Body"
+msgstr "Тяло"
 
 msgid "People"
-msgstr "People"
+msgstr "Хора"
 
 msgid "Actions"
-msgstr "Actions"
+msgstr "Действия"
 
 msgid "Constructions"
-msgstr "Constructions"
+msgstr "Строежи"
 
 msgid "Nature"
-msgstr "Nature"
+msgstr "Природа"
 
 msgid "Jobs"
-msgstr "Jobs"
+msgstr "Професии"
 
 msgid "Clothes and Accessories"
-msgstr "Clothes and Accessories"
+msgstr "Облекло и предмети"
 
 msgid "Fruits and Vegetables"
-msgstr "Fruits and Vegetables"
+msgstr "Плодове и зеленчуци"
 
 msgid "Transport"
-msgstr "Transport"
+msgstr "Транспорт"
 
 msgid "Food"
-msgstr "Food"
+msgstr "Храна"
 
 msgid "Listening Exercises"
-msgstr "Listening Exercises"
+msgstr "Упражнения за слушане"
 
 msgid "Match sounds to words"
-msgstr "Match sounds to words"
+msgstr "Свързване на звуци и думи"
 
 msgid "Patterns"
-msgstr "Patterns"
+msgstr "Силуети"
 
 msgid "Number Patterns"
-msgstr "Number Patterns"
+msgstr "Поредици цифри"
 
 msgid "Letter Patterns"
-msgstr "Letter Patterns"
+msgstr "Поредици букви"
 
 msgid "Color Patterns"
-msgstr "Color Patterns"
+msgstr "Поредици цветове"
 
 msgid "Image Patterns"
-msgstr "Image Patterns"
+msgstr "Поредици картинки"
 
 msgid "Fraction Patterns"
-msgstr "Fraction Patterns"
+msgstr "Поредици дроби"
 
 msgid "Shape Patterns"
-msgstr "Shape Patterns"
+msgstr "Поредици фигури"
 
 msgid "Complete the pattern on the top line."
-msgstr "Complete the pattern on the top line."
+msgstr "Допълни поредицата от горния ред."
 
 msgid "Match shapes to their names"
-msgstr "Match shapes to their names"
+msgstr "Свържи фигурите с техните имена"
 
 msgid "Negative numbers"
-msgstr "Negative numbers"
+msgstr "Отрицателни числа"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr "Complete the alphabet using letters from the middle line."
+msgstr "Допълни азбуката с буквите от средния ред."
 
 msgid ""
 "Drag the slider up or down so that the right sign is in the red square."
@@ -681,24 +679,25 @@ msgstr ""
 "Drag the slider up or down so that the right sign is in the red square."
 
 msgid "Take your sheep to the rest of the herd."
-msgstr "Take your sheep to the rest of the herd."
+msgstr "Заведи своята овца при останалото стадо."
 
 msgid "Check the shopping list and drag all needed items into the basket."
-msgstr "Check the shopping list and drag all needed items into the basket."
+msgstr "Гледай списъка за пазаруване и дърпай необходимите неща в кошницата."
 
 msgid ""
 "Drag one of the <, > or = (lesser, greater or equal) to the red square."
 msgstr ""
-"Drag one of the <, > or = (lesser, greater or equal) to the red square."
+"Издърпай един от знаците <, > или (по-малко, по-голямо, равно) в червения "
+"квадрат."
 
 msgid "Drag one of the lesser, greater or equal to the red square."
-msgstr "Drag one of the lesser, greater or equal to the red square."
+msgstr "Издърпай “по-малко”, “по-голямо” или “равно” в червения квадрат."
 
 msgid "Rearrange the numbers so they are in the right order."
-msgstr "Rearrange the numbers so they are in the right order."
+msgstr "Пренареди числата в правилен ред."
 
 msgid "Build the following word using the letters below."
-msgstr "Build the following word using the letters below."
+msgstr "Напиши следната дума, като изполваш буквите отдолу."
 
 msgid "Find and separate even numbers from odd numbers."
 msgstr "Find and separate even numbers from odd numbers."
@@ -720,6 +719,9 @@ msgstr "Congratulations! You have completed all tasks in this game."
 
 msgid "Great job!"
 msgstr "Great job!"
+
+msgid "Perfect!!!"
+msgstr "Отлично!!!"
 
 msgid "Awesome!"
 msgstr "Awesome!"
@@ -749,31 +751,29 @@ msgid "brush size"
 msgstr "brush size"
 
 msgid "Match fraction charts on the right to the ones on the left"
-msgstr "Match fraction charts on the right to the ones on the left"
+msgstr "Премести картинките от дясно срещу тези отляво"
 
 msgid ""
 "Match fraction charts and fractions on the right to the fraction charts on "
 "the left"
-msgstr ""
-"Match fraction charts and fractions on the right to the fraction charts on "
-"the left"
+msgstr "Премести картинките и дробите от дясно срещу картинките отляво"
 
 msgid "Match fraction charts to the fractions on the left"
-msgstr "Match fraction charts to the fractions on the left"
+msgstr "Премести картинките от дясно срещу дробите отляво"
 
 msgid ""
 "Match fraction charts, fractions and decimal fractions on the right to their"
 " percentage representations"
 msgstr ""
-"Match fraction charts, fractions and decimal fractions on the right to their"
-" percentage representations"
+"Премести картинките, обикновените и десетични дроби от ляво срещу процентите"
+" отляво"
 
 msgid ""
 "Match charts to the ratios on the left. Ratios are expressed as ratio of "
 "coloured pieces to white pieces"
 msgstr ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of "
-"coloured pieces to white pieces"
+"Премести картинките срещу дробите отляво. Дробите са отношението на броя на "
+"цветните части към броя на белите части"
 
 msgid "Shape Maker"
 msgstr "Shape Maker"
@@ -850,7 +850,7 @@ msgid "What time is it?"
 msgstr "What time is it?"
 
 msgid "Time"
-msgstr "Time"
+msgstr "Време"
 
 msgid "Turn the clock hands and see what happens."
 msgstr "Turn the clock hands and see what happens."
@@ -862,22 +862,22 @@ msgid "How clock works?"
 msgstr "How clock works?"
 
 msgid "Columnar addition"
-msgstr "Columnar addition"
+msgstr "Събиране по стълбове"
 
 msgid "Columnar subtraction"
-msgstr "Columnar subtraction"
+msgstr "Изваждане по стълбове"
 
 msgid "Long multiplication"
-msgstr "Long multiplication"
+msgstr "Умножение на многоцифрени числа"
 
 msgid "Long division"
-msgstr "Long division"
+msgstr "Деление на многоцифрени числа"
 
 msgid "Demonstration"
-msgstr "Demonstration"
+msgstr "Дамонстрация"
 
 msgid "Do it yourself"
-msgstr "Do it yourself"
+msgstr "Направи го сам"
 
 msgid "borrow 10"
 msgstr "borrow 10"
@@ -885,21 +885,21 @@ msgstr "borrow 10"
 # in columnar addition, ie. in case of 4 + 8 you write 2 under the column and
 # carry 1
 msgid "carry"
-msgstr "carry"
+msgstr "пренасяме"
 
 msgid "Start >>"
-msgstr "Start >>"
+msgstr "Започване >>"
 
 msgid "Next example >>"
-msgstr "Next example >>"
+msgstr "Следващ пример >>"
 
 msgid "Next step >>"
-msgstr "Next step >>"
+msgstr "Следваща стъпка >>"
 
 # used to show which digit of the result should be entered in a box, ie.
 # "enter 5")
 msgid "write "
-msgstr "write "
+msgstr "пишем "
 
 msgid "rewrite "
 msgstr "rewrite "
@@ -911,22 +911,22 @@ msgid "result"
 msgstr "result"
 
 msgid "Find solution"
-msgstr "Find solution"
+msgstr "Намери решението"
 
 msgid "Find missing number"
-msgstr "Find missing number"
+msgstr "Намери липсващото число"
 
 msgid "numerator"
-msgstr "numerator"
+msgstr "числител"
 
 msgid "denominator"
-msgstr "denominator"
+msgstr "знаменател"
 
 msgid "Experiment with fractions"
-msgstr "Experiment with fractions"
+msgstr "Експериментиране с дроби"
 
 msgid "Experiment with decimal fractions"
-msgstr "Experiment with decimal fractions"
+msgstr "Експериментиране с десетични дроби"
 
 msgid "Ratio"
 msgstr "Ratio"
@@ -935,46 +935,46 @@ msgid "Experiment with ratios"
 msgstr "Experiment with ratios"
 
 msgid "Experiment with percentages"
-msgstr "Experiment with percentages"
+msgstr "Експеримантиране с проценти"
 
 msgid "What fraction is it?"
-msgstr "What fraction is it?"
+msgstr "Коя е тази дроб?"
 
 msgid "What decimal fraction is it?"
-msgstr "What decimal fraction is it?"
+msgstr "Коя е тази десетична дроб?"
 
 msgid "Add fractions with the same denominator"
-msgstr "Add fractions with the same denominator"
+msgstr "Събиране на дроби с еднакви знаменатели"
 
 msgid "Subtract fractions with the same denominator"
-msgstr "Subtract fractions with the same denominator"
+msgstr "Изваждане на дроби с еднакви знаменатели"
 
 msgid "Multiply fractions"
-msgstr "Multiply fractions"
+msgstr "Умножаване на дроби"
 
 msgid "Divide fractions"
-msgstr "Divide fractions"
+msgstr "Деление на дроби"
 
 msgid "Exercise 1"
-msgstr "Exercise 1"
+msgstr "Упражнение 1"
 
 msgid "Exercise 2"
-msgstr "Exercise 2"
+msgstr "Упражнение 2"
 
 msgid "Exercise 3"
-msgstr "Exercise 3"
+msgstr "Упражнение 3"
 
 msgid "Compare decimals and fractions"
-msgstr "Compare decimals and fractions"
+msgstr "Сравняване на десетични и обикновени дроби"
 
 msgid "Compare fractions"
-msgstr "Compare fractions"
+msgstr "Сравняване на дроби"
 
 msgid "Reduce fractions"
-msgstr "Reduce fractions"
+msgstr "Съкращаване на дроби"
 
 msgid "Expand fractions"
-msgstr "Expand fractions"
+msgstr "Разширяване на дроби"
 
 msgid ""
 "To reduce a fraction divide the numerator and the denominator by one of "
@@ -982,23 +982,23 @@ msgid ""
 "one of them to see what happens. If 1 is the only common factor then the "
 "fraction can't be reduced any more - try choosing a different one."
 msgstr ""
-"To reduce a fraction divide the numerator and the denominator by one of "
-"their common factors which are displayed between the two fractions. Select "
-"one of them to see what happens. If 1 is the only common factor then the "
-"fraction can't be reduced any more - try choosing a different one."
+"За да съкратиш една дроб раздели числителя и знаменателя на един от техните "
+"общи делител, които се показват посредата. Избери един от тях, за да видиш "
+"какво се случва. Ако единствен общ делител е 1, дробта не може да се съкрати"
+" повече - избери друга дроб."
 
 msgid ""
 "To expand a fraction multiply the numerator and the denominator by the same "
 "number. Change the multiplicand to see what happens."
 msgstr ""
-"To expand a fraction multiply the numerator and the denominator by the same "
-"number. Change the multiplicand to see what happens."
+"За да разшириш една дроб, умножи нейния числител и нейния знаменател с адни "
+"и също число. Промени множителя, за да видиш какво става."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr "Use the arrows to change your answer or just type it in."
+msgstr "Използвай стрелките за да промениш отговора си или го напиши."
 
 msgid "Use the arrows to change your answer."
-msgstr "Use the arrows to change your answer."
+msgstr "Използвай стрелките за да промениш отговора си."
 
 msgid ""
 "To add two fractions with the same denominators add their numerators "
@@ -1006,47 +1006,47 @@ msgid ""
 "numerator is greater than the denominator and reduce the fraction if "
 "possible."
 msgstr ""
-"To add two fractions with the same denominators add their numerators "
-"together and keep the denominator unchanged. Simplify the result if the "
-"numerator is greater than the denominator and reduce the fraction if "
-"possible."
+"За да събереш две дроби с еднакви знаменатели събери техните числители и "
+"остави същия знаменател. Опрости резултата, ако числителяг е по-голям от "
+"знаменателя и го съкрати, ако е възможно."
 
 msgid ""
 "To subtract one fraction from another one with the same denominator subtract"
 " numerators and keep the denominator unchanged. Reduce the resulting "
 "fraction if possible."
 msgstr ""
-"To subtract one fraction from another one with the same denominator subtract"
-" numerators and keep the denominator unchanged. Reduce the resulting "
-"fraction if possible."
+"За да извадиш дроби с еднакви зназенатели извади от числителя на първата "
+"дроб числителя на втората и запази същия знаменател. Съкрати получената "
+"дроб, ако е възможно."
 
 msgid ""
 "To multiply two fractions multiply the numerators together and then multiply"
 " the denominators together. Reduce the resulting fraction if possible."
 msgstr ""
-"To multiply two fractions multiply the numerators together and then multiply"
-" the denominators together. Reduce the resulting fraction if possible."
+"За да умножиш две дроби, умножи числителите, а после умножи и знаменателите."
+" Съкрати получената дроб, ако е възможно."
 
 msgid ""
 "To divide a fraction by another fraction multiply the first fraction by the "
 "second fraction flipped up side down. Simplify and reduce the resulting "
 "fraction if possible."
 msgstr ""
-"To divide a fraction by another fraction multiply the first fraction by the "
-"second fraction flipped up side down. Simplify and reduce the resulting "
-"fraction if possible."
+"За да разделиш две дроби, умножи числителя на първата със знаменателя на "
+"втората и резултата го напиши за в числител, после умножи знаменателя на "
+"първата с числителя на втората и резултата го напиши за знаменател. Съкрати "
+"получанета дроб, ако е възможно."
 
 msgid "Group fractions together"
-msgstr "Group fractions together"
+msgstr "Групиране заедно на дроби"
 
 msgid "Group percentages together"
-msgstr "Group percentages together"
+msgstr "Групиране заедно на проценти"
 
 msgid "Group ratios together"
-msgstr "Group ratios together"
+msgstr "Групиране заедно на пропорции"
 
 msgid "Symmetry"
-msgstr "Symmetry"
+msgstr "Симетрия"
 
 msgid "Reflection Symmetry - draw with shapes"
 msgstr "Reflection Symmetry - draw with shapes"
@@ -1081,25 +1081,25 @@ msgstr ""
 "arrows around the drawing area to select them."
 
 msgid "Match equivalent fractions"
-msgstr "Match equivalent fractions"
+msgstr "Свързване на еднакви дроби"
 
 msgid "Match fractions"
-msgstr "Match fractions"
+msgstr "Свързване на дроби с картинки"
 
 msgid "Match decimals"
-msgstr "Match decimals"
+msgstr "Свързване на десетични дроби и картинки"
 
 msgid "Match percentages"
-msgstr "Match percentages"
+msgstr "Свързване на проценти"
 
 msgid "Match ratios"
-msgstr "Match ratios"
+msgstr "Свързване на дроби"
 
 msgid "Percentages in a pie chart"
-msgstr "Percentages in a pie chart"
+msgstr "Проценти в диаграма"
 
 msgid "Find equivalent fraction"
-msgstr "Find equivalent fraction"
+msgstr "Намиране на равна дроб"
 
 msgid "Calculating with Time"
 msgstr "Calculating with Time"
@@ -1153,25 +1153,25 @@ msgid "Reset colors back to the default ones?"
 msgstr "Reset colors back to the default ones?"
 
 msgid "With simplifying"
-msgstr "With simplifying"
+msgstr "С опростяване"
 
 msgid "Positive numbers"
-msgstr "Positive numbers"
+msgstr "Положителни числа"
 
 msgid "Basics"
-msgstr "Basics"
+msgstr "Основи"
 
 msgid "Equivalent fractions"
-msgstr "Equivalent fractions"
+msgstr "Еквивалентни дроби"
 
 msgid "Expanding and reducing fractions"
-msgstr "Expanding and reducing fractions"
+msgstr "Разширяване и съкращаване на дроби"
 
 msgid "Add fractions with unlike denominators"
-msgstr "Add fractions with unlike denominators"
+msgstr "Събиране на дроби с различни знаменатели"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr "Subtract fractions with unlike denominators"
+msgstr "Изваждане на дроби с различни знаменатели"
 
 msgid ""
 "To add or subtract fractions when their denominators are not the same you "
@@ -1179,10 +1179,9 @@ msgid ""
 "Finding the least common multiple of the two denominators will help you with"
 " that."
 msgstr ""
-"To add or subtract fractions when their denominators are not the same you "
-"have to find equivalent fractions which do have a common denominator. "
-"Finding the least common multiple of the two denominators will help you with"
-" that."
+"За да събереш или извадиш дроби с различни знаменатели трябва да ги "
+"превърнеш в еквивалентни дроби с еднакви знаменатели. Намирането на най-"
+"малкото общо кратно на двата знаменателя ще ти помогне."
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
@@ -1194,46 +1193,46 @@ msgid "short form"
 msgstr "short form"
 
 msgid "white"
-msgstr "white"
+msgstr "бяло"
 
 msgid "black"
-msgstr "black"
+msgstr "черно"
 
 msgid "grey"
-msgstr "grey"
+msgstr "сиво"
 
 msgid "red"
-msgstr "red"
+msgstr "червено"
 
 msgid "orange [color]"
-msgstr "orange"
+msgstr "оранжево"
 
 msgid "yellow"
-msgstr "yellow"
+msgstr "жълто"
 
 msgid "olive"
-msgstr "olive"
+msgstr "маслинено залано"
 
 msgid "green"
-msgstr "green"
+msgstr "зелено"
 
 msgid "sea green"
-msgstr "sea green"
+msgstr "морско зелено "
 
 msgid "teal"
 msgstr "teal"
 
 msgid "blue"
-msgstr "blue"
+msgstr "синьо"
 
 msgid "navy"
-msgstr "navy"
+msgstr "морско синьо"
 
 msgid "purple"
-msgstr "purple"
+msgstr "лилаво"
 
 msgid "violet"
-msgstr "violet"
+msgstr "виолетово"
 
 msgid "magenta"
 msgstr "magenta"
@@ -1242,13 +1241,13 @@ msgid "indigo"
 msgstr "indigo"
 
 msgid "pink"
-msgstr "pink"
+msgstr "розово"
 
 msgid "maroon"
 msgstr "maroon"
 
 msgid "brown"
-msgstr "brown"
+msgstr "кафяво"
 
 msgid "aqua"
 msgstr "aqua"
@@ -1257,19 +1256,19 @@ msgid "lime"
 msgstr "lime"
 
 msgid "Equilateral Triangle"
-msgstr "Equilateral Triangle"
+msgstr "Равнобедрен триъгълник"
 
 msgid "Isosceles Triangle"
-msgstr "Isosceles Triangle"
+msgstr "Равностранен триъгълник"
 
 msgid "Obtuse Triangle"
 msgstr "Obtuse Triangle"
 
 msgid "Right Triangle"
-msgstr "Right Triangle"
+msgstr "Правоъгълен триъгълник"
 
 msgid "Acute Triangle"
-msgstr "Acute Triangle"
+msgstr "Равнобедрен триъгълник"
 
 msgid "Square"
 msgstr "Square"
@@ -1355,7 +1354,7 @@ msgid "Obtuse isosceles triangle"
 msgstr "Obtuse isosceles triangle"
 
 msgid "Acute isosceles triangle"
-msgstr "Acute isosceles triangle"
+msgstr "Равнобедрен триъгълник с остър ъгъл"
 
 # used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on
 # one line
