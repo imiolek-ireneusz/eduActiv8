@@ -2,6 +2,7 @@
 
 import random
 import pygame
+import os
 
 import classes.board
 import classes.extras as ex
@@ -19,7 +20,7 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-        s = 70
+        s = 128
         v = 230
         h = random.randrange(0, 255, 5)
         color0 = ex.hsv_to_rgb(h, 40, 230)
@@ -87,15 +88,36 @@ class Board(gd.BoardGame):
 
         # add objects to the board
         for i in range(data[2]):
-            self.board.add_door(x + i, 0, 1, 1, classes.board.Door, "", color, "")
-            self.board.units[i].door_outline = True
-            y = random.randrange(1, data[1])
             number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
+            #self.board.add_door(x + i, 0, 1, 1, classes.board.Door, "", color, "")
+            # add new door
+            self.board.add_universal_unit(grid_x=x+i, grid_y=0, grid_w=1, grid_h=1, txt=None,
+                                          fg_img_src=None,
+                                          bg_img_src=os.path.join('unit_bg', "universal_sq_door.png"),
+                                          dc_img_src=None,
+                                          bg_color=(0, 0, 0, 0),
+                                          border_color=None, font_color=None,
+                                          bg_tint_color=number_color,
+                                          fg_tint_color=None,
+                                          txt_align=(0, 0), font_type=10, multi_color=False, alpha=True,
+                                          immobilized=True, mode=2)
+            #self.board.units[i].door_outline = True
+            y = random.randrange(1, data[1])
             caption = self.alphabet[shuffled[i]]
-            self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[4])
-            self.board.ships[-1].font_color = font_color
+            #self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[4])
+            self.board.add_universal_unit(grid_x=x+i, grid_y=y, grid_w=1, grid_h=1, txt=caption,
+                                          fg_img_src=None,
+                                          bg_img_src=os.path.join('unit_bg', "universal_sq_bg.png"),
+                                          dc_img_src=os.path.join('unit_bg', "universal_sq_dc.png"),
+                                          bg_color=(0, 0, 0, 0),
+                                          border_color=None, font_color=[font_color, ],
+                                          bg_tint_color=number_color,
+                                          fg_tint_color=None,
+                                          txt_align=(0, 0), font_type=data[4], multi_color=False, alpha=True,
+                                          immobilized=False)
+            #self.board.ships[-1].font_color = font_color
             # self.board.ships[i].highlight = False
-            self.board.ships[i].outline_highlight = True
+            #self.board.ships[i].outline_highlight = True
             self.board.ships[i].checkable = True
             self.board.ships[i].init_check_images()
             self.board.ships[i].home_location = [x + self.positionsd[shuffled[i]], 0]
@@ -158,7 +180,7 @@ class Board(gd.BoardGame):
             correct = True
             for i in range(self.data[2]):
                 if i < self.data[2] - 1:
-                    if ships_sorted[i][1] != self.alphabet[self.indexes[i]]:
+                    if ships_sorted[i][1] != ex.unival(self.alphabet[self.indexes[i]]):
                         correct = False
             if correct == True:
                 self.auto_check()

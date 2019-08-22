@@ -2,6 +2,7 @@
 
 import random
 import pygame
+import os
 
 import classes.board
 import classes.extras as ex
@@ -100,7 +101,7 @@ class Board(gd.BoardGame):
         y2 = 2
         j = 0
         h_step = 255 // self.alphabet_len
-        s = 100
+        s = 128
 
         self.positions = []
         for i in range(self.alphabet_len):
@@ -123,8 +124,13 @@ class Board(gd.BoardGame):
             if i in lowered:
                 picked = True
             if data[3] == 1:
-                s = 100
+                s = 128
+                door_color = ex.hsv_to_rgb(h, s, v)
             else:
+                if self.lang.ltr_text:
+                    door_color = ex.hsv_to_rgb(h_step * i, s, v)
+                else:
+                    door_color = ex.hsv_to_rgb(h_step * (self.alphabet_len - i), s, v)
                 if self.lang.ltr_text:
                     if picked:
                         h = round(h_step * lowered[j])
@@ -146,11 +152,31 @@ class Board(gd.BoardGame):
                     xj = x3 + j - data[0]
                     y2 = 3
                 caption = self.word[lowered[j]]
-                self.board.add_unit(xj, y2, 1, 1, classes.board.Letter, caption, number_color, "", self.font_size)
-                self.board.add_door(x, y, 1, 1, classes.board.Door, "", color, "")
-                self.board.units[j].door_outline = True
+                self.board.add_universal_unit(grid_x=xj, grid_y=y2, grid_w=1, grid_h=1, txt=caption,
+                                              fg_img_src=None,
+                                              bg_img_src=os.path.join('unit_bg', "universal_sq_bg.png"),
+                                              dc_img_src=os.path.join('unit_bg', "universal_sq_dc.png"),
+                                              bg_color=(0, 0, 0, 0),
+                                              border_color=None, font_color=[ex.hsv_to_rgb(h, 255, 140), ],
+                                              bg_tint_color=number_color,
+                                              fg_tint_color=None,
+                                              txt_align=(0, 0), font_type=self.font_size, multi_color=False, alpha=True,
+                                              immobilized=False)
+
+                #self.board.add_door(x, y, 1, 1, classes.board.Door, "", color, "")
+                # add new door
+                self.board.add_universal_unit(grid_x=x, grid_y=y, grid_w=1, grid_h=1, txt=None,
+                                              fg_img_src=None,
+                                              bg_img_src=os.path.join('unit_bg', "universal_sq_door.png"),
+                                              dc_img_src=None,
+                                              bg_color=(0, 0, 0, 0),
+                                              border_color=None, font_color=None,
+                                              bg_tint_color=door_color,
+                                              fg_tint_color=None,
+                                              txt_align=(0, 0), font_type=10, multi_color=False, alpha=True,
+                                              immobilized=True, mode=2)
+                #self.board.units[j].door_outline = True
                 self.board.ships[i].outline_highlight = True
-                self.board.ships[i].font_color = ex.hsv_to_rgb(h, 255, 140)
                 self.board.ships[i].idx = i
                 self.board.ships[i].checkable = True
                 self.board.ships[i].init_check_images()
@@ -158,10 +184,19 @@ class Board(gd.BoardGame):
                 j += 1
             else:
                 caption = self.word[i]
-                self.board.add_unit(x, y, 1, 1, classes.board.Letter, caption, number_color, "", self.font_size)
-                self.board.ships[i].font_color = ex.hsv_to_rgb(h, 255, 140)
+                self.board.add_universal_unit(grid_x=x, grid_y=y, grid_w=1, grid_h=1, txt=caption,
+                                              fg_img_src=None,
+                                              bg_img_src=os.path.join('unit_bg', "universal_sq_bg.png"),
+                                              dc_img_src=os.path.join('unit_bg', "universal_sq_dc.png"),
+                                              bg_color=(0, 0, 0, 0),
+                                              border_color=None, font_color=[ex.hsv_to_rgb(h, 255, 140), ],
+                                              bg_tint_color=number_color,
+                                              fg_tint_color=None,
+                                              txt_align=(0, 0), font_type=self.font_size, multi_color=False, alpha=True,
+                                              immobilized=True)
+
+                self.board.ships[i].show_value = True
                 self.board.ships[i].idx = i
-                self.board.ships[i].immobilize()
 
             x += 1
             if x >= data[0]:
@@ -231,9 +266,7 @@ class Board(gd.BoardGame):
                         result[self.data[0] + self.board.ships[i].grid_x - 1] = self.board.ships[i].value
                     else:
                         result[self.data[0] + self.board.ships[i].grid_x] = self.board.ships[i].value
-
-            if ((self.lang.ltr_text and self.word == result) or (
-                not self.lang.ltr_text and ex.unival(self.word) == ex.unival("".join(result)))):
+            if ex.unival("".join(self.word)) == ex.unival("".join(result)):
                 self.auto_check()
                 self.level.next_board()
             else:
