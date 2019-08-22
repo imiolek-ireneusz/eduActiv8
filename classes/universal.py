@@ -113,6 +113,7 @@ class Universal(pygame.sprite.Sprite):
 
         self.bg_tint_color = bg_tint_color
         self.fg_tint_color = fg_tint_color
+        self.color = bg_color  # alias
 
         self.bg_img_src = bg_img_src
         self.fg_img_src = fg_img_src
@@ -129,11 +130,12 @@ class Universal(pygame.sprite.Sprite):
         self.allow_brightening = True
 
         self.decolorable = False
-        self.value = txt
         if txt is not None:
             self.speaker_val = txt
+            self.value = ex.unival(txt)
         else:
             self.speaker_val = ""
+            self.value = txt
 
         self.draggable = True
         self.animable = True
@@ -152,6 +154,8 @@ class Universal(pygame.sprite.Sprite):
         self.text_wrap = True
 
         self.img_src2 = None
+        self.init_pow = 2
+        self.highlight = False
 
         self.unit_id = len(self.board.ships)
 
@@ -365,7 +369,6 @@ class Universal(pygame.sprite.Sprite):
         elif self.update_me and self.hidden:
             self.update_me = False
             self.image.fill(self.bg_color)
-
 
     def display_text(self):
         if self.value is not None and self.show_value:

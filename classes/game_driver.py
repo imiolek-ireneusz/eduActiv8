@@ -354,7 +354,7 @@ class BoardGame(GameBase):
                         self.board.anim_land(ship.grid_last_x, ship.grid_last_y)
 
                 self.drag = False
-                self.board.ships[self.board.active_ship].disable_circle()
+                #self.board.ships[self.board.active_ship].disable_circle()
                 self.mainloop.redraw_needed[0] = True
 
         elif event.type == pygame.KEYDOWN and self.len_ships > self.ship_id >= 0 \
