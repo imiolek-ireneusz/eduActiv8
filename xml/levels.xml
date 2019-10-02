@@ -373,7 +373,7 @@
     <!-- addition - find solution (game039), find missing number (game019) and matching game (game060)-->
     <!-- data = [bottom_range1, top_range1, bottom_range2, top_range2, operator, font_size, font_size for matching game, matching game horizontal count, vertical count] -->
     <!-- make sure there's more than 5 different results-->
-    <game dbids="31, 35, 39" min_age="0" max_age="1" show_all="1">
+    <game dbids="31, 35, 39, 301, 302" min_age="0" max_age="1" show_all="1">
         <chapters data="[1, 4, 8]" />
         <levels count="8" games_per_level="5">
             <level n="1" data="[1, 4, 1, 5, '+', 2, 7, 4, 2]" />
@@ -387,7 +387,7 @@
         </levels>
     </game>
 
-    <game dbids="31, 35, 39" min_age="2" max_age="2" show_all="0">
+    <game dbids="31, 35, 39, 301, 302" min_age="2" max_age="2" show_all="0">
         <chapters data="[1, 3, 6, 9, 12, 14]" />
         <levels count="14" games_per_level="5">
             <level n="1" data="[11, 19, 2, 9, '+', 2, 8, 4, 2]" />
@@ -407,7 +407,7 @@
         </levels>
     </game>
 
-    <game dbids="31, 35, 39" min_age="3" max_age="3" show_all="0">
+    <game dbids="31, 35, 39, 301, 302" min_age="3" max_age="3" show_all="0">
         <chapters data="[1, 3, 6, 9, 12, 14]" />
         <levels count="14" games_per_level="5">
             <level n="1" data="[111, 149, 5, 19, '+', 3, 10, 4, 3]" />
@@ -427,7 +427,7 @@
         </levels>
     </game>
 
-    <game dbids="31, 35, 39" min_age="4" max_age="4" show_all="0">
+    <game dbids="31, 35, 39, 301, 302" min_age="4" max_age="4" show_all="0">
         <chapters data="[1, 3, 6, 9, 12, 14]" />
         <levels count="14" games_per_level="5">
             <level n="1" data="[1111, 1949, 11, 29, '+', 4, 28, 4, 3]" />
@@ -447,7 +447,7 @@
         </levels>
     </game>
 
-    <game dbids="31, 35, 39" min_age="5" max_age="5" show_all="0">
+    <game dbids="31, 35, 39, 301, 302" min_age="5" max_age="5" show_all="0">
         <chapters data="[1, 3, 6]" />
         <levels count="6" games_per_level="5">
             <level n="1" data="[10001, 39999, 111, 999, '+', 7, 29, 4, 3]" />
@@ -459,7 +459,7 @@
         </levels>
     </game>
 
-    <game dbids="31, 35, 39" min_age="6" max_age="6" show_all="0">
+    <game dbids="31, 35, 39, 301, 302" min_age="6" max_age="6" show_all="0">
         <chapters data="[1, 3, 6]" />
         <levels count="6" games_per_level="5">
             <level n="1" data="[100001, 399999, 1001, 9999, '+', 8, 30, 4, 3]" />
@@ -472,7 +472,7 @@
     </game>
 
     <!-- negative numbers -->
-    <game dbids="218, 219, 220" min_age="4" max_age="4" show_all="1">
+    <game dbids="218, 219, 220, 309, 310" min_age="4" max_age="4" show_all="1">
         <chapters data="[1, 3, 6, 9, 12]" />
         <levels count="12" games_per_level="5">
             <level n="1" data="[-50, -10, 11, 29, '+', 4, 28, 4, 3]" />
@@ -490,7 +490,7 @@
         </levels>
     </game>
 
-    <game dbids="218, 219, 220" min_age="5" max_age="6" show_all="0">
+    <game dbids="218, 219, 220, 309, 310" min_age="5" max_age="6" show_all="0">
         <chapters data="[1, 3, 6, 9, 12]" />
         <levels count="12" games_per_level="5">
             <level n="1" data="[-500, -100, 110, 290, '+', 6, 29, 4, 3]" />
@@ -511,7 +511,7 @@
     <!-- subtraction - find solution (game039) and find missing number (game019) -->
     <!-- data = [bottom_range1, top_range1, bottom_range2, 0, operator, font_size, font_size for matching game, matching game horizontal count, vertical count] -->
     <!-- subtraction - bottom_range2 must be less than bottom_range1-->
-    <game dbids="32, 36, 40" min_age="0" max_age="1" show_all="1">
+    <game dbids="32, 36, 40, 303, 304" min_age="0" max_age="1" show_all="1">
         <chapters data="[1, 3, 5]" />
         <levels count="5" games_per_level="5">
             <level n="1" data="[3, 10, 1, 0, '-', 2, 7, 4, 2]" />
@@ -522,7 +522,7 @@
         </levels>
     </game>
 
-    <game dbids="32, 36, 40" min_age="2" max_age="2" show_all="0">
+    <game dbids="32, 36, 40, 303, 304" min_age="2" max_age="2" show_all="0">
         <chapters data="[1, 3, 6, 9]" />
         <levels count="9" games_per_level="5">
             <level n="1" data="[12, 25, 6, 0, '-', 2, 8, 4, 2]" />
@@ -537,7 +537,7 @@
         </levels>
     </game>
 
-    <game dbids="32, 36, 40" min_age="3" max_age="3" show_all="0">
+    <game dbids="32, 36, 40, 303, 304" min_age="3" max_age="3" show_all="0">
         <chapters data="[1, 3, 6]" />
         <levels count="6" games_per_level="5">
             <level n="1" data="[12, 99, 11, 0, '-', 3, 10, 5, 4]" />
@@ -549,7 +549,7 @@
         </levels>
     </game>
 
-    <game dbids="32, 36, 40" min_age="4" max_age="4" show_all="0">
+    <game dbids="32, 36, 40, 303, 304" min_age="4" max_age="4" show_all="0">
         <chapters data="[1, 3, 5]" />
         <levels count="5" games_per_level="5">
             <level n="1" data="[1001, 2500, 11, 0, '-', 3, 28, 5, 4]" />
@@ -560,7 +560,7 @@
         </levels>
     </game>
 
-    <game dbids="32, 36, 40" min_age="5" max_age="5" show_all="0">
+    <game dbids="32, 36, 40, 303, 304" min_age="5" max_age="5" show_all="0">
         <chapters data="[1, 3, 5]" />
         <levels count="5" games_per_level="5">
             <level n="1" data="[10001, 25000, 11, 0, '-', 6, 29, 5, 4]" />
@@ -571,7 +571,7 @@
         </levels>
     </game>
 
-    <game dbids="32, 36, 40" min_age="6" max_age="6" show_all="0">
+    <game dbids="32, 36, 40, 303, 304" min_age="6" max_age="6" show_all="0">
         <chapters data="[1, 3, 5]" />
         <levels count="5" games_per_level="5">
             <level n="1" data="[100001, 250000, 11, 0, '-', 8, 11, 5, 4]" />
@@ -584,7 +584,7 @@
     
     <!-- subtraction with negative numbers -->
     
-    <game dbids="221, 222, 223" min_age="4" max_age="4" show_all="1">
+    <game dbids="221, 222, 223, 311, 312" min_age="4" max_age="4" show_all="1">
         <chapters data="[1, 3, 5, 7, 9, 11]" />
         <levels count="11" games_per_level="5">
             <level n="1" data="[11, 49, 50, 100, '-', 4, 28, 4, 3]" />
@@ -601,7 +601,7 @@
         </levels>
     </game>
 
-    <game dbids="221, 222, 223" min_age="5" max_age="6" show_all="0">
+    <game dbids="221, 222, 223, 311, 312" min_age="5" max_age="6" show_all="0">
         <chapters data="[1, 3, 5, 7, 9, 11]" />
         <levels count="11" games_per_level="5">
             <level n="1" data="[119, 499, 509, 1009, '-', 6, 29, 4, 3]" />
@@ -642,7 +642,7 @@
     <!-- data = ['coma separated list of numbers', 0, 'coma separated list of numbers for the second number', 0, '*', font_size, font_size for matching game, matching game horizontal count, vertical count] -->
     <!-- or mix of both -->
     <!-- make sure the horizontal count * vertical count is an even number -->
-    <game dbids="33, 37, 38, 41, 42" min_age="2" max_age="2" show_all="0">
+    <game dbids="33, 37, 38, 41, 42, 305, 306, 307, 308" min_age="2" max_age="2" show_all="0">
         <chapters data="[1, 3, 6, 10]" />
         <levels count="10" games_per_level="10">
             <level n="1" data="[1, 2, 1, 6, '*', 2, 8, 5, 2]" />
@@ -658,7 +658,7 @@
         </levels>
     </game>
 
-    <game dbids="33, 37, 38, 41, 42" min_age="3" max_age="3" show_all="0">
+    <game dbids="33, 37, 38, 41, 42, 305, 306, 307, 308" min_age="3" max_age="3" show_all="0">
         <chapters data="[1, 4, 8, 12]" />
         <levels count="12" games_per_level="10">
             <level n="1" data="['3, 4', 0, 1, 6, '*', 2, 8, 5, 4]" />
@@ -677,7 +677,7 @@
         </levels>
     </game>
 
-    <game dbids="33, 37, 38, 41, 42" min_age="4" max_age="7" show_all="1">
+    <game dbids="33, 37, 38, 41, 42, 305, 306, 307, 308" min_age="4" max_age="7" show_all="1">
         <chapters data="[1, 4, 8, 12]" />
         <levels count="12" games_per_level="10">
             <level n="1" data="['6, 7, 9', 0, 1, 6, '*', 2, 9, 5, 4]" />
@@ -696,7 +696,7 @@
     </game>
 
     <!-- negative numbers -->
-    <game dbids="262, 263, 264" min_age="4" max_age="7" show_all="1">
+    <game dbids="262, 263, 264, 313, 314" min_age="4" max_age="7" show_all="1">
         <chapters data="[1, 4, 8, 10]" />
         <levels count="10" games_per_level="10">
             <level n="1" data="[-6, -2, 1, 6, '*', 2, 9, 5, 2]" />
@@ -763,7 +763,7 @@
     </game>
 
     <!-- negative numbers -->
-    <game dbids="265, 266, 267" min_age="4" max_age="7" show_all="1">
+    <game dbids="265, 266, 267, 315, 316" min_age="4" max_age="7" show_all="1">
         <chapters data="[1, 4, 8, 10]" />
         <levels count="10" games_per_level="10">
             <level n="1" data="[-6, -2, 1, 6, '/', 2, 9, 5, 2]" />
