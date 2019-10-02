@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import pygame
+import time
 
 import classes.board
 import classes.dialog
@@ -76,6 +77,8 @@ class BoardGame(GameBase):
         # if one game has more than one category of tasks on different levels - the beginning of a category
         # can be marked on chapter list and jumped between with right click on the next level button
         self.chapters = [1]
+        self.unit_mouse_over = None
+        self.units = []
 
         # create game board
         self.data = [0, 0]
@@ -395,6 +398,24 @@ class BoardGame(GameBase):
                     self.level.next_board_load()
                 self.changed_since_check = False
 
+    def default_hover(self, event):
+        if not self.drag:
+            pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
+            found = False
+            for each in self.units:
+                if each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom:
+                    if each != self.unit_mouse_over:
+                        if self.unit_mouse_over is not None:
+                            self.unit_mouse_over.mouse_out()
+                        self.unit_mouse_over = each
+                    found = True
+                    each.handle(event)
+                    break
+            if not found:
+                if self.unit_mouse_over is not None:
+                    self.unit_mouse_over.mouse_out()
+                self.unit_mouse_over = None
+
     def on_mouse_over(self):
         if not self.mouse_over:
             self.on_mouse_enter()
@@ -464,20 +485,14 @@ class BoardGame(GameBase):
             self.board.board_bg.color = self.mainloop.scheme.u_color
         else:
             self.mainloop.game_bg.fill((255, 255, 255))
-        if self.show_msg == False:
 
-            # update the grid with new locations and colours
-            self.board.update_ships(self.circle_lock_pos)
+        self.board.update_ships(self.circle_lock_pos)
+        self.board.all_sprites_list.draw(game)
 
-            # Draw all the spites
-            self.board.all_sprites_list.draw(game)
-            # self.board.sprites_to_draw.draw(game)
-        else:
-            self.board.update_ships(self.circle_lock_pos)
-
-            # Draw all the spites
-            self.board.all_sprites_list.draw(game)
-            self.dialog.update(self.mainloop.dialogbg)
+        if self.show_msg:
+            if self.level is not None:
+                if time.time() - self.level.completed_time > 0.5:
+                    self.dialog.update(self.mainloop.dialogbg)
 
         if self.board.draw_grid:
             self.screen_wx = self.board.x_count * self.board.scale

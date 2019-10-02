@@ -1235,20 +1235,24 @@ class Board:
 
     def add_universal_unit(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, txt=None, fg_img_src=None, bg_img_src=None,
                            dc_img_src=None, bg_color=None, border_color=None, font_color=None,
-                           bg_tint_color=None, fg_tint_color=None,
-                           txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False, mode=0):
+                           bg_tint_color=None, fg_tint_color=None, dc_tint_color=None,
+                           txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False,
+                           fg_as_hover=False, dc_as_hover=False, mode=0):
         """ adds a new unit to the board
             mode determines type of object, 0 - ship, 1 - obstacle, 2 - door
         """
-        if self._isfree(grid_x, grid_y, grid_w, grid_h):
+        if self._isfree(grid_x, grid_y, grid_w, grid_h) or mode == 2:
             unit = classes.universal.Universal(self, grid_x, grid_y, grid_w, grid_h, txt, fg_img_src, bg_img_src,
                                                dc_img_src, bg_color, border_color, font_color, bg_tint_color,
-                                               fg_tint_color, txt_align, font_type, multi_color, alpha, immobilized)
+                                               fg_tint_color, dc_tint_color, txt_align, font_type, multi_color, alpha, immobilized,
+                                               fg_as_hover, dc_as_hover, mode)
             if mode == 0:
+                unit.is_door = False
                 self.ships.append(unit)
                 self.ship_list.add(unit)
                 self._set(grid_x, grid_y, grid_w, grid_h)
             elif mode == 1:
+                unit.is_door = False
                 self.units.append(unit)
                 self.unit_list.add(unit)
                 self._set(grid_x, grid_y, grid_w, grid_h)

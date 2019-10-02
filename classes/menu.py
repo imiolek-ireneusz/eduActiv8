@@ -163,7 +163,7 @@ class Menu:
         #home_cat_icons = {0: "ico_g_0000.png", 141: "ico_g_0001.png", 3: "ico_g_0001.png", 1: "0",
         #                  2: "ico_g_0001.png"}
 
-        #game111 - holds new full screen menu
+        #game113 - holds new full screen menu
         self.add_game(271, c_id, 0, 7, "game004.Board", "", "", "ico_g_0001.png", "0")
         self.games[-1].hidden = True
 

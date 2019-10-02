@@ -40,8 +40,6 @@ class ImageLayer:
                     self.img_org = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
                 else:
                     self.img_org = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert()
-                #self.img_rect = self.img_org.get_rect()
-                #self.img = self.scalled_img(self.img_org, self.rect.w, self.rect.h)
                 self.img = self.img_org
                 self.img_rect = self.img.get_rect()
 
@@ -87,11 +85,15 @@ class Universal(pygame.sprite.Sprite):
                  font_colors=None,
                  bg_tint_color=None,
                  fg_tint_color=None,
+                 dc_tint_color=None,
                  txt_align=(0, 0),
                  font_type=0,
                  multi_color=False,
                  alpha=True,
-                 immobilized=False):
+                 immobilized=False,
+                 fg_as_hover=False,
+                 dc_as_hover=False,
+                 mode=0):
 
         pygame.sprite.Sprite.__init__(self)
 
@@ -105,7 +107,8 @@ class Universal(pygame.sprite.Sprite):
         self.board = board
         self.immobilized = immobilized
 
-        self.fg_as_hover = False
+        self.fg_as_hover = fg_as_hover
+        self.dc_as_hover = dc_as_hover
 
         self.bg_color = bg_color
         self.border_color = border_color
@@ -113,11 +116,14 @@ class Universal(pygame.sprite.Sprite):
 
         self.bg_tint_color = bg_tint_color
         self.fg_tint_color = fg_tint_color
+        self.dc_tint_color = dc_tint_color
         self.color = bg_color  # alias
 
         self.bg_img_src = bg_img_src
         self.fg_img_src = fg_img_src
         self.dc_img_src = dc_img_src
+
+        self.use_blit_mask = False
 
         self.txt = txt
         self.txt_align = txt_align[0]  # align: 0 - centered, 1 - left, 2 - right
@@ -130,6 +136,9 @@ class Universal(pygame.sprite.Sprite):
         self.allow_brightening = True
 
         self.decolorable = False
+        self.mirror = False
+        self.mode = mode
+        self.speaker_val_update = False
         if txt is not None:
             self.speaker_val = txt
             self.value = ex.unival(txt)
@@ -156,16 +165,38 @@ class Universal(pygame.sprite.Sprite):
         self.img_src2 = None
         self.init_pow = 2
         self.highlight = False
+        self.keyable = True
+        self.id = 0
+
+        self.manual_painting = None
+        self.manual_painting_layer = 0
 
         self.unit_id = len(self.board.ships)
 
         self.init_images()
 
+    def blit_mask(self, source_surf, dest_surf, mask):
+        mask_rect = mask.get_rect()
+        tmp = source_surf.copy()
+        tmp.blit(mask, mask_rect.topleft, mask_rect, special_flags=pygame.BLEND_RGBA_MULT)
+        dest_surf.blit(tmp, (0, 0), dest_surf.get_rect().clip(mask.get_rect()))
+
+    def set_blit_mask(self, mask_img_src):
+        self.use_blit_mask = True
+        self.mask_img_src =  mask_img_src
+        self.mask_surf = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1],
+                                        flags=pygame.SRCALPHA)
+        self.layer_mask = ImageLayer(self, self.mask_surf, self.mask_img_src, self.alpha)
+        self.mask_surf.blit(self.layer_mask.img, self.layer_mask.img_pos)
+        self.update_me = True
+
+    def init_m_painting(self):
+        self.manual_painting = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
+
     def use_fg_as_hover(self):
         self.fg_as_hover = True
 
     def init_images(self):
-
         # Set height, width, the -1 is to give it some space around for the margin
         if self.alpha:
             self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
@@ -291,6 +322,11 @@ class Universal(pygame.sprite.Sprite):
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
 
+    def set_pos(self, pos):
+        self.grid_x = pos[0]
+        self.grid_y = pos[1]
+        self.rect.topleft = [pos[0] * self.board.scale + 1, pos[1] * self.board.scale + 1]
+
     @property
     def grid_pos(self):
         return [self.grid_x, self.grid_y]
@@ -320,9 +356,36 @@ class Universal(pygame.sprite.Sprite):
                 if (not self.fg_as_hover) or (not self.hover and self.fg_as_hover):
                     # apply background tint
                     if self.bg_tint_color is not None:
-                        self.image.blit(self.layer_bg.get_tinted_img(self.bg_tint_color), self.layer_bg.img_pos)
+                        if not self.mirror:
+                            if not self.use_blit_mask:
+                                self.image.blit(self.layer_bg.get_tinted_img(self.bg_tint_color), self.layer_bg.img_pos)
+                            else:
+                                self.blit_mask(self.layer_bg.get_tinted_img(self.bg_tint_color), self.image,
+                                               self.mask_surf)
+                        else:
+                            if not self.use_blit_mask:
+                                self.image.blit(pygame.transform.flip(self.layer_bg.get_tinted_img(self.bg_tint_color),
+                                                                      True, False), self.layer_bg.img_pos)
+                            else:
+                                self.blit_mask(pygame.transform.flip(self.layer_bg.get_tinted_img(self.bg_tint_color),
+                                                                     True, False), self.image, self.mask_surf)
                     else:
-                        self.image.blit(self.layer_bg.img, self.layer_bg.img_pos)
+                        if not self.mirror:
+                            if not self.use_blit_mask:
+                                self.image.blit(self.layer_bg.img, self.layer_bg.img_pos)
+                            else:
+                                self.blit_mask(self.layer_bg.img, self.image, self.mask_surf)
+                        else:
+                            if not self.use_blit_mask:
+                                self.image.blit(pygame.transform.flip(self.layer_bg.img, True, False),
+                                                self.layer_bg.img_pos)
+                            else:
+                                self.blit_mask(pygame.transform.flip(self.layer_bg.img, True, False),
+                                               self.image, self.mask_surf)
+        # draw custom drawn image
+        if self.manual_painting is not None:
+            if self.manual_painting_layer == 0:
+                self.image.blit(self.manual_painting, self.layer_bg.img_pos)
 
         # draw background border
         if self.border_color is not None:
@@ -334,20 +397,51 @@ class Universal(pygame.sprite.Sprite):
             if self.layer_fg.img is not None:
                 if (not self.fg_as_hover) or (self.hover and self.fg_as_hover):
                     # apply foreground tint
+
+
                     if self.fg_tint_color is not None:
-                        self.image.blit(self.layer_fg.get_tinted_img(self.fg_tint_color), self.layer_fg.img_pos)
+                        if not self.mirror:
+                            if not self.use_blit_mask:
+                                self.image.blit(self.layer_fg.get_tinted_img(self.fg_tint_color), self.layer_fg.img_pos)
+                            else:
+                                self.blit_mask(self.layer_fg.get_tinted_img(self.fg_tint_color), self.image,
+                                               self.mask_surf)
+                        else:
+                            if not self.use_blit_mask:
+                                self.image.blit(pygame.transform.flip(self.layer_fg.get_tinted_img(self.fg_tint_color),
+                                                                      True, False), self.layer_fg.img_pos)
+                            else:
+                                self.blit_mask(pygame.transform.flip(self.layer_fg.get_tinted_img(self.fg_tint_color),
+                                                                     True, False), self.image, self.mask_surf)
                     else:
-                        self.image.blit(self.layer_fg.img, self.layer_fg.img_pos)
+                        if not self.mirror:
+                            if not self.use_blit_mask:
+                                self.image.blit(self.layer_fg.img, self.layer_fg.img_pos)
+                            else:
+                                self.blit_mask(self.layer_fg.img, self.image, self.mask_surf)
+                        else:
+                            if not self.use_blit_mask:
+                                self.image.blit(pygame.transform.flip(self.layer_fg.img, True, False),
+                                                self.layer_fg.img_pos)
+                            else:
+                                self.blit_mask(pygame.transform.flip(self.layer_fg.img, True, False),
+                                               self.image, self.mask_surf)
 
         # draw custom drawn image
-
+        if self.manual_painting is not None:
+            if self.manual_painting_layer == 1:
+                self.image.blit(self.manual_painting, self.layer_fg.img_pos)
         # draw foreground text
         self.display_text()
 
         # draw highlight or other decor layer
         if self.dc_img_src is not None:
             if self.layer_dc.img is not None:
-                self.image.blit(self.layer_dc.img, self.layer_dc.img_pos)
+                if (not self.dc_as_hover) or (self.hover and self.dc_as_hover):
+                    if self.dc_tint_color is not None:
+                        self.image.blit(self.layer_dc.get_tinted_img(self.dc_tint_color), self.layer_dc.img_pos)
+                    else:
+                        self.image.blit(self.layer_dc.img, self.layer_dc.img_pos)
 
     def hide(self):
         self.hidden = True
@@ -522,7 +616,6 @@ class Universal(pygame.sprite.Sprite):
                         text = self.font.render("%s" % (self.coltxt[1][i]), 1, self.font_colors[self.coltxt[0][i]])
                         self.image.blit(text, (font_x + self.coltxt[2][i], font_y))
 
-
     def draw_check_marks(self):
         if self.check_display is not None:
             if self.check_display:
@@ -536,13 +629,7 @@ class Universal(pygame.sprite.Sprite):
 
     @property
     def brighter(self):
-        if self.highlight:
-            color = [each / 255.0 for each in self.initcolor]
-            hsv = colorsys.rgb_to_hsv(color[0], color[1], color[2])
-            rgb = colorsys.hsv_to_rgb(hsv[0], 0.2, 1)
-            return [int(each * 255) for each in rgb]
-        else:
-            return self.initcolor
+        pass
 
     def turn(self, d):
         pass
@@ -558,55 +645,19 @@ class Universal(pygame.sprite.Sprite):
 
     def draw_outline(self):
         """draws an 'outline' around the unit"""
-        color = self.perm_outline_color
-        width = self.perm_outline_width
-        if width > 1:
-            x = width // 2 - 1
-            y = width // 2 - 1
-            if width % 2 == 0:
-                w2 = width // 2 + 2
-            else:
-                w2 = width // 2 + 1
-        elif width == 1:
-            x = 0
-            y = 0
-            w2 = 2
-        pygame.draw.lines(self.image, color, True, [[x - width, y], [self.board.scale * self.grid_w - w2 + width, y],
-                                                    [self.board.scale * self.grid_w - w2, y - width],
-                                                    [self.board.scale * self.grid_w - w2,
-                                                     self.board.scale * self.grid_h - w2 + width],
-                                                    [self.board.scale * self.grid_w - w2 + width,
-                                                     self.board.scale * self.grid_h - w2],
-                                                    [x - width, self.board.scale * self.grid_h - w2],
-                                                    [x, self.board.scale * self.grid_h - w2 + width], [x, y - width]],
-                          width)
+        pass
 
     def set_outline(self, color=[255, 0, 0], width=2):
         'enables the draw_outline and sets line color and width'
-        self.perm_outline = True
-        if color == 0 and hasattr(self, "door_outline") is False:  # if color is 0 calculate colour from base colour
-            # convert to hsv
-            c = self.color
-            h, s, v = ex.rgb_to_hsv(c[0], c[1], c[2])
-            outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
-            self.perm_outline_color = outline_color
-        elif color == 1:
-            c = self.color
-            h, s, v = ex.rgb_to_hsv(c[0], c[1], c[2])
-            outline_color = ex.hsv_to_rgb(h, s + 20, v - 20)
-            self.perm_outline_color = outline_color
-        elif hasattr(self, "door_outline") is False:
-            self.perm_outline_color = color
-        else:
-            pass
-        self.perm_outline_width = width
-        self.init_pow = width
+        pass
 
     def move(self, board, x, y):
         board.move(self.unit_id, x, y)
 
+    def mirror_image(self):
+        self.mirror = True
+
     def set_grid_pos(self, grid_x, grid_y):
-        #self.board.move_unit(self.unit_id, grid_x, grid_y)
         self.grid_x = grid_x
         self.grid_y = grid_y
         self.pos_update()

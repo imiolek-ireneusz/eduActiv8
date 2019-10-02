@@ -269,6 +269,8 @@ class GamePlay:
             s_id = 2
         elif scheme == "BY":
             s_id = 3
+
+        self.cl.reset_default_colors_sv(self.scheme)
         self.config.settings["scheme"] = s_id
         self.config.settings_changed = True
         self.config.save_settings(self.db)
@@ -476,11 +478,13 @@ class GamePlay:
                             gc.collect()
 
                         if not self.show_dialogwnd:
-                            if self.game_board.show_msg == True:
-                                # if dialog after completing the game is shown then hide it and load next game
-                                if time.time() - self.game_board.level.completed_time > 1.25:
+                            if self.game_board.show_msg:
+                                self.sb.draw(self.score_bar)
+                                self.redraw_needed = [True, True, True]
+                                if time.time() - self.game_board.level.completed_time > 1.5:
                                     self.game_board.show_msg = False
                                     self.game_board.level.next_board_load()
+                                    self.redraw_needed = [True, True, True]
 
                         # Process or delegate events
                         for event in pygame.event.get():
@@ -586,10 +590,16 @@ class GamePlay:
                         if self.flip_needed:
                             # update the screen with what we've drawn.
                             if self.show_dialogwnd:
-                                self.sb.draw(self.score_bar)
-                                self.dialog.update()
+                                if self.dialog.dialog_type != 2 or (self.dialog.dialog_type == 2 and time.time() - self.game_board.level.completed_time > 0.5):
+                                    self.sb.draw(self.score_bar)
+                                    self.dialog.update()
+
                             pygame.display.flip()
                             self.flip_needed = False
+
+                        if self.show_dialogwnd:
+                            if self.dialog.dialog_type == 2:
+                                self.flip_needed = True
 
                         # Limit to 30 frames per second but most redraws are made when needed - less often
                         # 30 frames per second used mainly for event handling

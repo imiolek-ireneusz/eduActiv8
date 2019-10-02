@@ -18,12 +18,42 @@ class Color:
         self.menu_r = (33, 121, 149)
         self.info = (70, 70, 70)
 
+        # saturation and vibrance presets - used to create colors to tint unit background images
+        self.font_color_s = 255
+        self.font_color_v = 150
+        self.bg_color_s = 128
+        self.bg_color_v = 255
+        self.fg_hover_s = 200
+        self.fg_hover_v = 255
+        self.door_bg_tint_s = 255
+        self.door_bg_tint_v = 200
+
         # color steps
         self.default_color_sliders = [[1, 16, 15], [1, 2, 16], [1, 16, 15], [1, 2, 16], [9, 16, 12], [1, 16, 15], [0, 0, 0]]
         self.reset_colors()
         self.menu_shapes = ["cat_bg_circle", "cat_bg_square", "cat_bg_hex", "cat_bg_star"]
 
         self.create_colors()
+
+    def reset_default_colors_sv(self, scheme):
+        if scheme is None:
+            self.font_color_s = 255
+            self.font_color_v = 150
+            self.bg_color_s = 128
+            self.bg_color_v = 255
+            self.fg_hover_s = 200
+            self.fg_hover_v = 255
+            self.door_bg_tint_s = 255
+            self.door_bg_tint_v = 200
+        else:
+            self.font_color_s = scheme.font_color_s
+            self.font_color_v = scheme.font_color_v
+            self.bg_color_s = scheme.bg_color_s
+            self.bg_color_v = scheme.bg_color_v
+            self.fg_hover_s = scheme.fg_hover_s
+            self.fg_hover_v = scheme.fg_hover_v
+            self.door_bg_tint_s = scheme.door_bg_tint_s
+            self.door_bg_tint_v = scheme.door_bg_tint_v
 
     def load_colors(self, json_data_string):
         self.color_sliders = json_data_string
@@ -118,6 +148,15 @@ class WBScheme:
         self.info_font_color2 = (70, 70, 70, 0)
         self.info_font_color3 = (0, 0, 0, 0)
 
+        self.font_color_s = 255
+        self.font_color_v = 127
+        self.bg_color_s = 128
+        self.bg_color_v = 255
+        self.fg_hover_s = 200
+        self.fg_hover_v = 255
+        self.door_bg_tint_s = 255
+        self.door_bg_tint_v = 200
+
 
 class BWScheme:
     def __init__(self):
@@ -145,6 +184,15 @@ class BWScheme:
         self.info_font_color2 = (255, 75, 0, 0)
         self.info_font_color3 = (255, 200, 50, 0)
 
+        self.font_color_s = 75
+        self.font_color_v = 250
+        self.bg_color_s = 200
+        self.bg_color_v = 150
+        self.fg_hover_s = 200
+        self.fg_hover_v = 100
+        self.door_bg_tint_s = 100
+        self.door_bg_tint_v = 200
+
 
 class BYScheme:
     def __init__(self):
@@ -171,3 +219,12 @@ class BYScheme:
         self.info_font_color1 = (255, 255, 100, 0)
         self.info_font_color2 = (255, 75, 0, 0)
         self.info_font_color3 = (255, 200, 50, 0)
+
+        self.font_color_s = 75
+        self.font_color_v = 250
+        self.bg_color_s = 200
+        self.bg_color_v = 150
+        self.fg_hover_s = 200
+        self.fg_hover_v = 100
+        self.door_bg_tint_s = 100
+        self.door_bg_tint_v = 200
