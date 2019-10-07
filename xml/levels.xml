@@ -1733,6 +1733,7 @@
     <game dbids="15" min_age="0" max_age="7" show_all="1">
         <levels count="16" games_per_level="2"/>
     </game>
+
     <game dbids="21, 27" min_age="0" max_age="3" show_all="1">
         <levels count="6" games_per_level="0"/>
     </game>
@@ -1757,7 +1758,7 @@
         <levels count="16" games_per_level="0"/>
     </game>
 
-    <game dbids="14, 146" min_age="0" max_age="7" show_all="1">
+    <game dbids="14, 146, 317" min_age="0" max_age="7" show_all="1">
         <levels count="28" games_per_level="0"/>
     </game>
 

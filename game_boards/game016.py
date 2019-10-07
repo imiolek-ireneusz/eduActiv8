@@ -3,6 +3,7 @@
 import os
 import pygame
 import sys
+import copy
 
 import classes.board
 import classes.extras as ex
@@ -31,6 +32,7 @@ class Key(pygame.sprite.Sprite):
         self.highlight_color = highlight_color
         self.font_color = font_color
         self.font_highlight_color = font_highlight_color
+        self.font_col = copy.deepcopy(self.font_color)
         hsv = ex.rgb_to_hsv(highlight_color[0], highlight_color[1], highlight_color[2])
         self.outline_color = ex.hsv_to_rgb(hsv[0], hsv[1], hsv[2] - 50)
         self.font_1 = self.kbrd.kbrd_font[0]
@@ -72,11 +74,11 @@ class Key(pygame.sprite.Sprite):
             if len(val[i]) > 0:
                 if self.id < 64:
                     if i == 3:
-                        text = self.font_1.render("%s" % (val[i]), 1, self.font_color)
+                        text = self.font_1.render("%s" % (val[i]), 1, self.font_col)
                         font_x = 4
                         font_y = 0
                     elif i < 3:
-                        text = self.font_2.render("%s" % (val[i]), 1, self.font_color)
+                        text = self.font_2.render("%s" % (val[i]), 1, self.font_col)
                         if i == 0:
                             font_x = 4
                             font_y = 0
@@ -96,7 +98,7 @@ class Key(pygame.sprite.Sprite):
                             font_x = self.w - self.font_2.size(val[i])[0] - 4
                             font_y = self.h - self.font_2.size(val[i])[1] - 2
                 else:
-                    text = self.font_2.render("%s" % (val[i]), 1, self.font_color)
+                    text = self.font_2.render("%s" % (val[i]), 1, self.font_col)
                     font_x = ((self.w - self.font_2.size(val[i])[0]) // 2)
                     font_y = ((self.h - self.font_2.size(val[i])[1]) // 2)
 
@@ -139,6 +141,9 @@ class KeyBoard:
         self.kbrd_w = kbrd_w
         self.kbrd_h = kbrd_h
         self.points = self.game_board.board.points
+        if self.game_board.lang.lang == "el" or self.game_board.lang.lang == "fr":
+            self.a_map = game_board.lang.kbrd.accent_map
+            self.a_map2 = game_board.lang.kbrd.accent_map2
         self.highlighted = [-1, -1, -1, -1, -1, -1]
         self.keys = []
         self.keys_list = pygame.sprite.RenderPlain()
@@ -158,11 +163,67 @@ class KeyBoard:
         if text != " ":
             hl = [-1, -1, -1, -1, -1, -1]
             # check if letter is lowercase or what position it is on whether shift is needed
-            text = text.upper()
-            if uc == text and uc not in [",", ".", "?", "!"]:
-                shift = True
-            else:
+            if self.game_board.lang.lang == "el":
+                if sys.version_info < (3, 0):
+                    text = text.encode("utf-8")
+                    if text in self.a_map:
+                        hl[4] = 39
+                        if text in self.a_map2:
+                            hl[1] = 55
+                            hl[3] = 71
+                        text = unicode(self.a_map[text], "utf-8")
+                        text = text[1]
+                        uc = text
+                else:
+                    if text in self.a_map:
+                        hl[4] = 39
+                        if text in self.a_map2:
+                            hl[1] = 55
+                            hl[3] = 71
+                        text = self.a_map[text][1]
+                        uc = text
+
                 shift = False
+            elif self.game_board.lang.lang == "fr":
+                if sys.version_info < (3, 0):
+                    text = text.encode("utf-8")
+                    if text in self.a_map:
+                        hl[4] = 26
+                        text = unicode(self.a_map[text], "utf-8")
+                        text = text[1]
+                        uc = text
+
+                    elif text in self.a_map2:
+                        hl[4] = 26
+                        hl[1] = 55
+                        hl[3] = 71
+                        text = unicode(self.a_map2[text], "utf-8")
+                        text = text[1]
+                        uc = text
+                else:
+                    if text in self.a_map:
+                        hl[4] = 26
+                        text = self.a_map[text][1]
+                        uc = text
+                    elif text in self.a_map2:
+                        hl[4] = 26
+                        hl[1] = 55
+                        hl[3] = 71
+                        text = self.a_map[text][1]
+                        uc = text
+
+                shift = False
+            else:
+                text = text.upper()
+                if uc == text and uc not in [",", ".", "?", "!"]:
+                    shift = True
+                else:
+                    shift = False
+
+            capslock = pygame.key.get_mods() & pygame.KMOD_CAPS
+            if capslock:
+                shift = not shift
+
             for i in range(0, 55):
                 if sys.version_info < (3, 0):
                     labels = []
@@ -174,9 +235,15 @@ class KeyBoard:
                                 uni = each
                         else:
                             uni = ""
-                        labels.append(uni.upper())
+                        if self.game_board.lang.lang == "el":
+                            labels.append(uni)
+                        else:
+                            labels.append(uni.upper())
                 else:
-                    labels = [each.upper() for each in self.keys[i].labels]
+                    if self.game_board.lang.lang == "el":
+                        labels = [each for each in self.keys[i].labels]
+                    else:
+                        labels = [each.upper() for each in self.keys[i].labels]
 
                 uc = uc.upper()
 
@@ -220,6 +287,7 @@ class KeyBoard:
         for each in self.highlighted:
             if each > -1:
                 self.keys[each].color = self.keys[each].init_color
+                self.keys[each].font_col = self.keys[each].font_color
         if self.highlighted[2] > -1:
             self.keys[self.highlighted[2]].labels[3] = ""
         if self.highlighted[3] > -1:
@@ -230,6 +298,7 @@ class KeyBoard:
         for i in range(6):
             if hl_ids[i] > -1:
                 self.keys[hl_ids[i]].color = self.keys[hl_ids[i]].highlight_color
+                self.keys[hl_ids[i]].font_col = self.keys[hl_ids[i]].font_highlight_color
                 if i == 2:
                     self.keys[hl_ids[i]].labels[3] = txt
                 if i == 3:
@@ -245,34 +314,26 @@ class KeyBoard:
         self.keys_list.add(new_key)
 
     def add_keys(self):
-        """
-        colors = [[255, 150, 150], [255, 229, 150], [202, 255, 150], [150, 255, 185], [150, 255, 255], [150, 165, 255],
-                  [214, 150, 255], [255, 150, 187], [249, 219, 180], [186, 186, 186]]
-        highlight_colors = [[255, 0, 0], [255, 192, 0], [127, 255, 0], [0, 255, 67], [0, 255, 255], [0, 37, 255],
-                            [156, 0, 255], [255, 0, 85], [255, 157, 29], [206, 206, 206]]
+        if self.game_board.mainloop.scheme is not None and self.game_board.mainloop.scheme.dark:
+            s = [170, 50, 50, 200]
+            v = [150, 255, 255, 140]
+            g = [150, 106, 16, 0]  # greys
+        else:
+            s = [50, 200, 150, 25]
+            v = [255, 205, 200, 255]
+            g = [186, 106, 32, 20]
 
-        font_colors = [[255, 150, 150], [255, 229, 150], [202, 255, 150], [150, 255, 185], [150, 255, 255], [150, 165, 255],
-                  [214, 150, 255], [255, 150, 187], [249, 219, 180], [186, 186, 186]]
-        font_highlight_colors = [[255, 0, 0], [255, 192, 0], [127, 255, 0], [0, 255, 67], [0, 255, 255], [0, 37, 255],
-                            [156, 0, 255], [255, 0, 85], [255, 157, 29], [206, 206, 206]]
-        """
-        colors = [ex.hsv_to_rgb(0, 100, 255), ex.hsv_to_rgb(35, 100, 255), ex.hsv_to_rgb(35 * 2, 100, 255),
-                  ex.hsv_to_rgb(35 * 3, 100, 255), ex.hsv_to_rgb(35 * 4, 100, 255), ex.hsv_to_rgb(35 * 5, 100, 255),
-                  ex.hsv_to_rgb(35 * 6, 100, 255), ex.hsv_to_rgb(35 * 7, 100, 255), ex.hsv_to_rgb(25, 100, 255),
-                  [186, 186, 186]]
-        highlight_colors = [ex.hsv_to_rgb(0, 170, 255), ex.hsv_to_rgb(35, 170, 255), ex.hsv_to_rgb(35 * 2, 170, 255),
-                            ex.hsv_to_rgb(35 * 3, 170, 255), ex.hsv_to_rgb(35 * 4, 170, 255),
-                            ex.hsv_to_rgb(35 * 5, 170, 255), ex.hsv_to_rgb(35 * 6, 170, 255),
-                            ex.hsv_to_rgb(35 * 7, 170, 255), ex.hsv_to_rgb(25, 170, 255), [106, 106, 106]]
-        font_colors = [ex.hsv_to_rgb(0, 255, 140), ex.hsv_to_rgb(35, 255, 140), ex.hsv_to_rgb(35 * 2, 255, 140),
-                       ex.hsv_to_rgb(35 * 3, 255, 140), ex.hsv_to_rgb(35 * 4, 255, 140),
-                       ex.hsv_to_rgb(35 * 5, 255, 140), ex.hsv_to_rgb(35 * 6, 255, 140),
-                       ex.hsv_to_rgb(35 * 7, 255, 140), ex.hsv_to_rgb(25, 255, 140), [16, 16, 16]]
-        font_highlight_colors = [ex.hsv_to_rgb(0, 255, 140), ex.hsv_to_rgb(35, 255, 140),
-                                 ex.hsv_to_rgb(35 * 2, 255, 140), ex.hsv_to_rgb(35 * 3, 255, 140),
-                                 ex.hsv_to_rgb(35 * 4, 255, 140), ex.hsv_to_rgb(35 * 5, 255, 140),
-                                 ex.hsv_to_rgb(35 * 6, 255, 140), ex.hsv_to_rgb(35 * 7, 255, 140),
-                                 ex.hsv_to_rgb(25, 255, 140), [0, 0, 0]]
+        colors = [ex.hsv_to_rgb(35 * i, s[0], v[0]) for i in range(8)]
+        colors.extend([ex.hsv_to_rgb(25, s[0], v[0]),  [g[0], g[0], g[0]]])
+
+        highlight_colors = [ex.hsv_to_rgb(35 * i, s[1], v[1]) for i in range(8)]
+        highlight_colors.extend([ex.hsv_to_rgb(25, s[1], v[1]), [g[1], g[1], g[1]]])
+
+        font_colors = [ex.hsv_to_rgb(35 * i, s[2], v[2]) for i in range(8)]
+        font_colors.extend([ex.hsv_to_rgb(25, s[2], v[2]), [g[2], g[2], g[2]]])
+
+        font_highlight_colors = [ex.hsv_to_rgb(35 * i, s[3], v[3]) for i in range(8)]
+        font_highlight_colors.extend([ex.hsv_to_rgb(25, s[3], v[3]), [g[3], g[3], g[3]]])
 
         keys = self.game_board.lang.kbrd.kbrd_keys
         for each in keys:
@@ -314,7 +375,12 @@ class KeyBoard:
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 3, 28)
+        if mainloop.lang.lang == "el":
+            self.level = lc.Level(self, mainloop, 2, 16)
+        elif mainloop.lang.lang == "fr":
+            self.level = lc.Level(self, mainloop, 2, 28)
+        else:
+            self.level = lc.Level(self, mainloop, 3, 28)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 11, 9)
 
     def create_game_objects(self, level=1):
@@ -361,6 +427,10 @@ class Board(gd.BoardGame):
             self.chapters = [1, 3, 5, 7, 10, 13, 15, 18, 20, 22, 24, 26, 28]
         elif self.lang.lang == "de":
             self.chapters = [1, 3, 5, 7, 10, 13, 15, 18, 20, 22, 24, 26, 29]
+        elif self.lang.lang == "fr":
+            self.chapters = [1, 3, 5, 7, 10, 13, 15, 18, 20, 22, 24, 26, 28]
+        elif self.lang.lang == "el":
+            self.chapters = [1, 3, 5, 7, 10, 13, 16]
 
         if self.level.lvl > len(self.course):
             self.level.lvl = len(self.course) - 1
@@ -372,6 +442,9 @@ class Board(gd.BoardGame):
             self.current_line = unicode((self.t_string[0] * self.t_multi[0]).strip(), "utf-8")
         else:
             self.current_line = (self.t_string[0] * self.t_multi[0]).strip()
+
+        if self.mainloop.m.game_variant == 1:
+            self.current_line = self.current_line.upper()
 
         self.level.games_per_lvl = len(self.t_string)
         self.level.game_step = 1
@@ -445,6 +518,9 @@ class Board(gd.BoardGame):
                 self.current_line = unicode((self.t_string[self.line] * self.t_multi[self.line]).strip(), "utf-8")
             else:
                 self.current_line = (self.t_string[self.line] * self.t_multi[self.line]).strip()
+
+            if self.mainloop.m.game_variant == 1:
+                self.current_line = self.current_line.upper()
 
             self.level.game_step = self.line + 1
             self.left.value = ""
