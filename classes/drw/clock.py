@@ -64,6 +64,21 @@ class Clock:
 
         self.clock_wrapper.hidden_value = [2, 3]
         self.clock_wrapper.font_color = color2
+
+        shrink = 0.72
+        self.whs = int(self.size * shrink)
+        tint_h = self.colors3[0]
+        tint_m = self.colors3[1]
+        self.hand_h = self.scalled_img(
+            pygame.image.load(os.path.join('res', 'images', "clock_h.png")).convert_alpha(), self.whs, self.whs)
+        self.hand_h.fill(tint_h, special_flags=pygame.BLEND_ADD)
+
+        self.hand_m = self.scalled_img(
+            pygame.image.load(os.path.join('res', 'images', "clock_m.png")).convert_alpha(), self.whs, self.whs)
+        self.hand_m.fill(tint_m, special_flags=pygame.BLEND_ADD)
+        self.pivot = [self.whs // 2, self.whs // 2]
+        self.hands = [self.hand_h, self.hand_m]
+
         self.draw_all(self.time)
 
     def draw_all(self, time=None):
@@ -71,12 +86,7 @@ class Clock:
             self.time = time
 
         self.canvas = pygame.Surface([self.size, self.size - 1], flags=pygame.SRCALPHA)
-
-        if self.game_board.mainloop.scheme is not None:
-            #self.canvas.fill(self.game_board.mainloop.scheme.u_color)
-            self.canvas.fill((0, 0, 0, 0))
-        else:
-            self.canvas.fill((0, 0, 0, 0))
+        self.canvas.fill((0, 0, 0, 0))
 
         self.hands_vars()
         self.draw_hands()
@@ -234,39 +244,13 @@ class Clock:
             y3 = hand_width[i] * sin(angle + pi / 2) + self.center[1]
 
             points = [[x0, y0], [x2, y2], [x1, y1], [x3, y3]]
-            shadow = [[x0, y0], [x2, y2], [x1, y1]]
             self.hand_coords[i] = points
-            #pygame.draw.polygon(self.canvas, self.colors[i], points, 0)
-            #pygame.draw.polygon(self.canvas, self.colors3[i], shadow, 0)
-            # Draw the line from the center to the calculated end point
-            line_through = [[x0, y0], [x1, y1]]
-
-            #pygame.draw.aalines(self.canvas, self.colors2[i], True, points)
-            #pygame.draw.aalines(self.canvas, self.colors2[i], True, line_through)
-        #pygame.draw.circle(self.canvas, self.colors[0], self.center, self.size // 50, 0)
-        #pygame.draw.circle(self.canvas, self.colors2[0], self.center, self.size // 50, 1)
-        #pygame.draw.circle(self.canvas, self.colors2[0], self.center, self.size // 70, 1)
         self.clock_wrapper.update_me = True
-        shrink = 0.72
-        #wo = [400, 50]
-        wo = [656, 656]
-        whs = int(self.size * shrink)
-        tint_h = self.colors3[0]
-        tint_m = self.colors3[1]
-        self.hand_h = self.scalled_img(
-            pygame.image.load(os.path.join('res', 'images', "clock_h.png")).convert_alpha(), whs, whs)
-        self.hand_h.fill(tint_h, special_flags=pygame.BLEND_ADD)
 
-        self.hand_m = self.scalled_img(
-            pygame.image.load(os.path.join('res', 'images', "clock_m.png")).convert_alpha(), whs, whs)
-        self.hand_m.fill(tint_m, special_flags=pygame.BLEND_ADD)
-        pivot = [whs//2, whs//2]
-        hands = [self.hand_h, self.hand_m]
         for i in range(0, 2):
             angle = 360 - ((self.angles[i] + pi / 2) * 180 / pi)
-            img = self.rotatePivoted(hands[i], angle, pivot)
-            self.canvas.blit(img[0], ((self.size - whs) // 2 + img[1][0], (self.size - whs) // 2 + img[1][1]))
-        #print(im[1])
+            img = self.rotatePivoted(self.hands[i], angle, self.pivot)
+            self.canvas.blit(img[0], ((self.size - self.whs) // 2 + img[1][0], (self.size - self.whs) // 2 + img[1][1]))
 
     def scalled_img(self, image, new_w, new_h):
         'scales image depending on pygame version and bit depth using either smoothscale or scale'
