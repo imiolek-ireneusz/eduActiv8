@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import pygame
 import random
 from math import pi, cos, acos, sin, sqrt
@@ -161,6 +162,22 @@ class Board(gd.BoardGame):
             self.canvas.fill(self.mainloop.scheme.u_color)
         else:
             self.canvas.fill((255, 255, 255))
+
+        tint_h = self.colors3[0]
+        tint_m = self.colors3[1]
+
+        shrink = 0.72
+        self.whs = int(self.size * shrink)
+        self.hand_h = self.scalled_img(
+            pygame.image.load(os.path.join('res', 'images', "clock_h.png")).convert_alpha(), self.whs, self.whs)
+        self.hand_h.fill(tint_h, special_flags=pygame.BLEND_ADD)
+
+        self.hand_m = self.scalled_img(
+            pygame.image.load(os.path.join('res', 'images', "clock_m.png")).convert_alpha(), self.whs, self.whs)
+        self.hand_m.fill(tint_m, special_flags=pygame.BLEND_ADD)
+        self.pivot = [self.whs // 2, self.whs // 2]
+        self.hands = [self.hand_h, self.hand_m]
+
         self.hands_vars()
         self.draw_hands()
 
@@ -204,9 +221,10 @@ class Board(gd.BoardGame):
         self.rs = [self.r * 0.6, self.r * 0.85, self.r * 0.6]
 
     def draw_hands(self):
+        self.clock_wrapper = self.clock_canvas
         if self.show_hour_offset:
-            a1 = self.angle_start + (2 * pi / 12) * self.time[0] + (self.angle_step_12 * (2 * pi / 60) * self.time[
-                1]) / (2 * pi)
+            a1 = self.angle_start + (2 * pi / 12) * self.time[0] + \
+                 (self.angle_step_12 * (2 * pi / 60) * self.time[1]) / (2 * pi)
         else:
             a1 = self.angle_start + (2 * pi / 12) * self.time[0]
         a2 = self.angle_start + (2 * pi / 60) * self.time[1]
@@ -216,11 +234,11 @@ class Board(gd.BoardGame):
         time = self.time
 
         if self.show_outer_ring:
-            pygame.draw.circle(self.canvas, self.colors4[1], self.center, int(rs[1] + 10 * self.layout.scale / 62), 0)
-            pygame.draw.circle(self.canvas, self.colors2[1], self.center, int(rs[1] + 10 * self.layout.scale / 62), 1)
+            pygame.draw.circle(self.canvas, self.colors4[1], self.center, int(rs[1] + 10), 0)
+            pygame.draw.circle(self.canvas, self.colors2[1], self.center, int(rs[1] + 10), 1)
 
-        pygame.draw.circle(self.canvas, self.colors4[0], self.center, int(rs[2] + 10 * self.layout.scale / 62), 0)
-        pygame.draw.circle(self.canvas, self.colors2[0], self.center, int(rs[2] + 10 * self.layout.scale / 62), 1)
+        pygame.draw.circle(self.canvas, self.colors4[0], self.center, int(rs[2] + 10), 0)
+        pygame.draw.circle(self.canvas, self.colors2[0], self.center, int(rs[2] + 10), 1)
 
         if self.show_outer_ring:
             for i in range(60):
@@ -235,36 +253,35 @@ class Board(gd.BoardGame):
                     val = "0"
                 a = self.angle_start + self.angle_step_60 * (i + 1)
                 if self.show_minutes:
-                    font_size = self.clock_canvas.font3.size(val)
+                    font_size = self.clock_wrapper.font3.size(val)
                     if not self.show_highlight or (i + 1 == time[1] or (time[1] == 0 and i == 59)):
-                        text = self.clock_canvas.font3.render("%s" % (val), 1, self.colors2[1])
+                        text = self.clock_wrapper.font3.render("%s" % (val), 1, self.colors2[1])
                     else:
-                        text = self.clock_canvas.font3.render("%s" % (val), 1, self.colors[1])
-                    x3 = (rs[1] + 30 * self.layout.scale / 62 + font_size[1] // 2) * cos(a) + self.center[0] - \
-                         font_size[0] / 2
-                    y3 = (rs[1] + 30 * self.layout.scale / 62 + font_size[1] // 2) * sin(a) + self.center[1] - \
-                         font_size[1] / 2
+                        text = self.clock_wrapper.font3.render("%s" % (val), 1, self.colors[1])
+                    offset3 = rs[1] + 10 + 15 * self.size / 500.0 + font_size[1] // 2
+                    x3 = offset3 * cos(a) + self.center[0] - int(font_size[0] / 2.0)
+                    y3 = offset3 * sin(a) + self.center[1] - int(font_size[1] / 2.0)
 
                     self.canvas.blit(text, (x3, y3))
                     if self.show_only_quarters_m or self.show_only_fives_m:
                         if (i + 1) % 15 == 0:
-                            marklen = 30 * self.layout.scale / 62
+                            marklen = 10 + 15 * self.size / 500.0
                         elif (i + 1) % 5 == 0:
-                            marklen = 25 * self.layout.scale / 62
+                            marklen = 10 + 10 * self.size / 500.0
                         else:
-                            marklen = 15 * self.layout.scale / 62
+                            marklen = 10 + 5 * self.size / 500.0
                     else:
-                        marklen = 25 * self.layout.scale / 62
+                        marklen = 10 + 10 * self.size / 500.0
                 else:
                     if (i + 1) % 15 == 0:
-                        marklen = 30 * self.layout.scale / 62
+                        marklen = 10 + 15 * self.size / 500.0
                     elif (i + 1) % 5 == 0:
-                        marklen = 25 * self.layout.scale / 62
+                        marklen = 10 + 10 * self.size / 500.0
                     else:
-                        marklen = 15 * self.layout.scale / 62
+                        marklen = 10 + 5 * self.size / 500.0
                 if self.show_outer_ring:
-                    x1 = (rs[1] + 10 * self.layout.scale / 62) * cos(a) + self.center[0]
-                    y1 = (rs[1] + 10 * self.layout.scale / 62) * sin(a) + self.center[1]
+                    x1 = (rs[1] + 10) * cos(a) + self.center[0]
+                    y1 = (rs[1] + 10) * sin(a) + self.center[1]
 
                     x2 = (rs[1] + marklen) * cos(a) + self.center[0]
                     y2 = (rs[1] + marklen) * sin(a) + self.center[1]
@@ -278,35 +295,34 @@ class Board(gd.BoardGame):
                     val = ""
 
             a = self.angle_start + self.angle_step_12 * (i + 1)
-            x1 = (rs[2] + 10 * self.layout.scale / 62) * cos(a) + self.center[0]
-            y1 = (rs[2] + 10 * self.layout.scale / 62) * sin(a) + self.center[1]
+            x1 = (rs[2] + 10) * cos(a) + self.center[0]
+            y1 = (rs[2] + 10) * sin(a) + self.center[1]
 
-            x2 = (rs[2] + 20 * self.layout.scale / 62) * cos(a) + self.center[0]
-            y2 = (rs[2] + 20 * self.layout.scale / 62) * sin(a) + self.center[1]
+            x2 = (rs[2] + 10 + 10 * self.size / 500.0) * cos(a) + self.center[0]
+            y2 = (rs[2] + 10 + 10 * self.size / 500.0) * sin(a) + self.center[1]
 
             pygame.draw.aaline(self.canvas, self.colors2[0], [x1, y1], [x2, y2])
 
-            font_size = self.clock_canvas.font.size(val)
+            font_size = self.clock_wrapper.font.size(val)
             if self.show_roman:
                 val = self.hour_to_roman(val)
             if not self.show_highlight or i + 1 == time[0]:
-                text = self.clock_canvas.font.render("%s" % (val), 1, self.colors2[0])
+                text = self.clock_wrapper.font.render("%s" % (val), 1, self.colors2[0])
             else:
-                text = self.clock_canvas.font.render("%s" % (val), 1, self.colors[0])
+                text = self.clock_wrapper.font.render("%s" % (val), 1, self.colors[0])
             if self.show_roman:
                 text_angle = -(360 / 12.0) * (i + 1)
                 text = pygame.transform.rotate(text, text_angle)
                 rect = text.get_rect()
-                x3 = (rs[2] + 20 * self.layout.scale / 62 + font_size[1] // 2) * cos(a) + self.center[
-                    0] - rect.width / 2
-                y3 = (rs[2] + 20 * self.layout.scale / 62 + font_size[1] // 2) * sin(a) + self.center[
-                    1] - rect.height / 2
+                x3 = (rs[2] + 10 + 7 * self.size / 500.0 + font_size[1] // 2) * cos(a) + self.center[0] - rect.width / 2
+                y3 = (rs[2] + 10 + 7 * self.size / 500.0 + font_size[1] // 2) * sin(a) + \
+                     self.center[1] - rect.height / 2
 
             else:
-                x3 = (rs[2] + 20 * self.layout.scale / 62 + font_size[1] // 2) * cos(a) + self.center[0] - font_size[
-                                                                                                               0] / 2
-                y3 = (rs[2] + 20 * self.layout.scale / 62 + font_size[1] // 2) * sin(a) + self.center[1] - font_size[
-                                                                                                               1] / 2
+                x3 = (rs[2] + 10 + 7 * self.size / 500.0 +
+                      font_size[1] / 2) * cos(a) + self.center[0] - font_size[0] / 2
+                y3 = (rs[2] + 10 + 7 * self.size / 500.0 +
+                      font_size[1] / 2) * sin(a) + self.center[1] - font_size[1] / 2
             self.canvas.blit(text, (x3, y3))
 
             if self.show_24h:
@@ -316,14 +332,14 @@ class Board(gd.BoardGame):
                 else:
                     val = str(i + 13)
                     v = i + 13
-                font_size = self.clock_canvas.font2.size(val)
+                font_size = self.clock_wrapper.font2.size(val)
                 if not self.show_highlight or v == time[0]:
-                    text = self.clock_canvas.font2.render("%s" % (val), 1, self.colors2[0])
+                    text = self.clock_wrapper.font2.render("%s" % (val), 1, self.colors2[0])
                 else:
-                    text = self.clock_canvas.font2.render("%s" % (val), 1, self.colors[0])
+                    text = self.clock_wrapper.font2.render("%s" % (val), 1, self.colors[0])
 
-                x3 = (rs[0] + font_size[1] // 2) * cos(a) + self.center[0] - font_size[0] / 2
-                y3 = (rs[0] + font_size[1] // 2) * sin(a) + self.center[1] - font_size[1] / 2
+                x3 = (rs[0] + font_size[1] // 4) * cos(a) + self.center[0] - font_size[0] / 2
+                y3 = (rs[0] + font_size[1] // 4) * sin(a) + self.center[1] - font_size[1] / 2
                 self.canvas.blit(text, (x3, y3))
         hand_width = [self.r // 14, self.r // 18]
         start_offset = [self.size // 10, self.size // 12]
@@ -338,7 +354,6 @@ class Board(gd.BoardGame):
             # Calculate the x,y for the end point
             x1 = rs[i] * cos(angle) + self.center[0]
             y1 = rs[i] * sin(angle) + self.center[1]
-
             x2 = hand_width[i] * cos(angle - pi / 2) + self.center[0]
             y2 = hand_width[i] * sin(angle - pi / 2) + self.center[1]
 
@@ -346,22 +361,31 @@ class Board(gd.BoardGame):
             y3 = hand_width[i] * sin(angle + pi / 2) + self.center[1]
 
             points = [[x0, y0], [x2, y2], [x1, y1], [x3, y3]]
-            shadow = [[x0, y0], [x2, y2], [x1, y1]]
             self.hand_coords[i] = points
-            pygame.draw.polygon(self.canvas, self.colors[i], points, 0)
-            pygame.draw.polygon(self.canvas, self.colors3[i], shadow, 0)
-            # Draw the line from the center to the calculated end point
-            line_through = [[x0, y0], [x1, y1]]
+        self.clock_wrapper.update_me = True
 
-            pygame.draw.aalines(self.canvas, self.colors2[i], True, points)
-            pygame.draw.aalines(self.canvas, self.colors2[i], True, line_through)
-        pygame.draw.circle(self.canvas, self.colors[0], self.center, self.size // 50, 0)
-        pygame.draw.circle(self.canvas, self.colors2[0], self.center, self.size // 50, 1)
-        pygame.draw.circle(self.canvas, self.colors2[0], self.center, self.size // 70, 1)
+        for i in range(0, 2):
+            angle = 360 - ((self.angles[i] + pi / 2) * 180 / pi)
+            img = self.rotatePivoted(self.hands[i], angle, self.pivot)
+            self.canvas.blit(img[0], ((self.size - self.whs) // 2 + img[1][0], (self.size - self.whs) // 2 + img[1][1]))
 
         self.update_text_time()
         self.clock_canvas.update_me = True
         self.mainloop.redraw_needed[0] = True
+
+    def scalled_img(self, image, new_w, new_h):
+        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
+            img = pygame.transform.smoothscale(image, (new_w, new_h))
+        else:
+            img = pygame.transform.scale(image, (new_w, new_h))
+        return img
+
+    def rotatePivoted(self, img, angle, pivot):
+        image = pygame.transform.rotate(img, angle)
+        rect = image.get_rect()
+        rect.center = pivot
+        return image, rect
 
     def hour_to_roman(self, val):
         val = int(val)

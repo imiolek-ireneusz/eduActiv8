@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import pygame
 import random
 from math import pi, cos, acos, sin, sqrt
@@ -163,6 +164,22 @@ class Board(gd.BoardGame):
             self.canvas.fill(self.mainloop.scheme.u_color)
         else:
             self.canvas.fill((255, 255, 255))
+
+        tint_h = self.colors3[0]
+        tint_m = self.colors3[1]
+
+        shrink = 0.72
+        self.whs = int(self.size * shrink)
+        self.hand_h = self.scalled_img(
+            pygame.image.load(os.path.join('res', 'images', "clock_h.png")).convert_alpha(), self.whs, self.whs)
+        self.hand_h.fill(tint_h, special_flags=pygame.BLEND_ADD)
+
+        self.hand_m = self.scalled_img(
+            pygame.image.load(os.path.join('res', 'images', "clock_m.png")).convert_alpha(), self.whs, self.whs)
+        self.hand_m.fill(tint_m, special_flags=pygame.BLEND_ADD)
+        self.pivot = [self.whs // 2, self.whs // 2]
+        self.hands = [self.hand_h, self.hand_m]
+
         self.hands_vars()
         self.draw_hands()
 
@@ -375,21 +392,31 @@ class Board(gd.BoardGame):
             y3 = hand_width[i] * sin(angle + pi / 2) + self.center[1]
 
             points = [[x0, y0], [x2, y2], [x1, y1], [x3, y3]]
-            shadow = [[x0, y0], [x2, y2], [x1, y1]]
             self.hand_coords[i] = points
-            pygame.draw.polygon(self.canvas, self.colors[i], points, 0)
-            pygame.draw.polygon(self.canvas, self.colors3[i], shadow, 0)
-            # Draw the line from the center to the calculated end point
-            line_through = [[x0, y0], [x1, y1]]
+        self.clock_canvas.update_me = True
 
-            pygame.draw.aalines(self.canvas, self.colors2[i], True, points)
-            pygame.draw.aalines(self.canvas, self.colors2[i], True, line_through)
-        pygame.draw.circle(self.canvas, self.colors[0], self.center, self.size // 50, 0)
-        pygame.draw.circle(self.canvas, self.colors2[0], self.center, self.size // 50, 1)
-        pygame.draw.circle(self.canvas, self.colors2[0], self.center, self.size // 70, 1)
+        for i in range(0, 2):
+            angle = 360 - ((self.angles[i] + pi / 2) * 180 / pi)
+            img = self.rotatePivoted(self.hands[i], angle, self.pivot)
+            self.canvas.blit(img[0], ((self.size - self.whs) // 2 + img[1][0], (self.size - self.whs) // 2 + img[1][1]))
+
         self.update_text_time()
         self.clock_canvas.update_me = True
         self.mainloop.redraw_needed[0] = True
+
+    def scalled_img(self, image, new_w, new_h):
+        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
+            img = pygame.transform.smoothscale(image, (new_w, new_h))
+        else:
+            img = pygame.transform.scale(image, (new_w, new_h))
+        return img
+
+    def rotatePivoted(self, img, angle, pivot):
+        image = pygame.transform.rotate(img, angle)
+        rect = image.get_rect()
+        rect.center = pivot
+        return image, rect
 
     def hour_to_roman(self, val):
         val = int(val)

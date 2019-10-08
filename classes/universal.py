@@ -224,6 +224,10 @@ class Universal(pygame.sprite.Sprite):
             self.set_outline(self.border_color, 2)
         self.compose_image()
 
+    def set_dc_img(self, dc_img_src):
+        self.dc_img_src = dc_img_src
+        self.layer_dc = ImageLayer(self, self.image, self.dc_img_src, self.alpha)
+
     def change_colors(self, bg_color, border_color, bg_tint_color, fg_tint_color):
         self.bg_color = bg_color
         self.border_color = border_color
