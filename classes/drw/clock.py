@@ -249,10 +249,15 @@ class Clock:
 
         for i in range(0, 2):
             angle = 360 - ((self.angles[i] + pi / 2) * 180 / pi)
-            img = self.rotatePivoted(self.hands[i], angle, self.pivot)
+            img = self.rotate_pivoted(self.hands[i], angle, self.pivot)
             self.canvas.blit(img[0], ((self.size - self.whs) // 2 + img[1][0], (self.size - self.whs) // 2 + img[1][1]))
 
-    def scalled_img(self, image, new_w, new_h):
+    def hour_to_roman(self, val):
+        val = int(val)
+        return self.roman[val - 1]
+
+    @staticmethod
+    def scalled_img(image, new_w, new_h):
         'scales image depending on pygame version and bit depth using either smoothscale or scale'
         if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             img = pygame.transform.smoothscale(image, (new_w, new_h))
@@ -260,20 +265,19 @@ class Clock:
             img = pygame.transform.scale(image, (new_w, new_h))
         return img
 
-    def rotatePivoted(self, img, angle, pivot):
+    @staticmethod
+    def rotate_pivoted(img, angle, pivot):
         image = pygame.transform.rotate(img, angle)
         rect = image.get_rect()
         rect.center = pivot
         return image, rect
 
-    def hour_to_roman(self, val):
-        val = int(val)
-        return self.roman[val - 1]
-
-    def vector_len(self, v):
+    @staticmethod
+    def vector_len(v):
         return sqrt(v[0] ** 2 + v[1] ** 2)
 
-    def scalar_product(self, v1, v2):
+    @staticmethod
+    def scalar_product(v1, v2):
         return sum([v1[i] * v2[i] for i in range(len(v1))])
 
     def angle(self, v1, v2):
@@ -303,7 +307,6 @@ class Clock:
         return False
 
     def current_angle(self, pos, r):
-
         cosa = (pos[0] - self.center[0]) / r
         sina = (pos[1] - self.center[1]) / r
 
