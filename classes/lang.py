@@ -234,7 +234,7 @@ class Language:
             import i18n.custom.word_lists.lkt_di
             import i18n.custom.a4a_py.lkt as a4a_word_lst
             self.voice = None
-            self.has_cursive = False
+            self.has_cursive = True
             self.di = i18n.custom.word_lists.lkt_di.di
             self.lang_file = i18n.custom.lkt
             # self.alpha = i18n.custom.cn.alpha
