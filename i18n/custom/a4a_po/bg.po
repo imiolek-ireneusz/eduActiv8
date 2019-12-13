@@ -318,7 +318,7 @@ msgid "baby rabbit"
 msgstr "зайче"
 
 msgid "lion"
-msgstr " лъв"
+msgstr "лъв"
 
 msgid "squirrel"
 msgstr "катерица"
