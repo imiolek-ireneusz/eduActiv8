@@ -24,10 +24,8 @@ class Board(gd.BoardGame):
         white = (255, 255, 255)
         card_color = ex.hsv_to_rgb(h + 10, s - 25, v)
         font_color = ex.hsv_to_rgb(h, 255, 140)
-        scheme = "white"
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                scheme = "black"
                 card_color = (0, 0, 0)
 
         data = [15, 10]
@@ -35,8 +33,6 @@ class Board(gd.BoardGame):
         if self.mainloop.m.game_variant == 0:
             shape_count = 15
             spacing = 5
-
-            t_area = "½ah"
 
             self.shape_names = self.lang.shape_names
             if self.lang.lang in ["ru", "he"]:
@@ -55,17 +51,17 @@ class Board(gd.BoardGame):
             c2p = self.dp["perimeter:"]
             fc_image = "flashcard_shapes.png"
             fc_images_thumb = "flashcard_shapes_72.png"
-        else:  # self.mainloop.m.game_variant == 1:
+        else:
             shape_count = 9
             spacing = 2
 
-            t_area = "½ah"
             self.shape_names = self.lang.solid_names
 
             if self.lang.lang in ["ru", "he"]:
                 self.shape_namesp = self.lang.dp["solid_names"]
             else:
                 self.shape_namesp = self.shape_names
+
             # self.shape_names = ["Cube", "Square Prism","Triangular Prism", "Square Pyramid", "Triangular Pyramid",  "Sphere",    "Cylinder",    "Cone",      "Torus"]
             self.shape_areas = ["6a²", "2a² + 4aH", "ah + 3aH", "a² + 2as", "½ah + 3/2 × as", "4πr²", "2πr² + 2πrH",
                                 "πr² + πrs", "4π² × R × r"]
@@ -76,7 +72,6 @@ class Board(gd.BoardGame):
             c2p = self.dp["volume:"]
             fc_image = "flashcard_solids.png"
             fc_images_thumb = "flashcard_solids_72.png"
-
 
         # stretch width to fit the screen size
         data[0] = self.get_x_count(data[1], even=False)
@@ -143,6 +138,16 @@ class Board(gd.BoardGame):
         self.slide.perm_outline = True
         self.slide.perm_outline_color = font_color
 
+        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+            bg_door_img_src = os.path.join('unit_bg', "alpha_screen_b50.png")
+        else:
+            bg_door_img_src = os.path.join('unit_bg', "alpha_screen_w50.png")
+
+        self.board.add_universal_unit(grid_x=x - spacing, grid_y=0, grid_w=1, grid_h=1, txt=None, fg_img_src=None,
+                                      bg_img_src=bg_door_img_src, dc_img_src=None, bg_color=(0, 0, 0, 0), alpha=True,
+                                      border_color=None, font_color=None, bg_tint_color=None, immobilized=True,
+                                      fg_tint_color=None, txt_align=(0, 0), font_type=10, multi_color=False, mode=2)
+        self.selection_door = self.board.units[-1]
         for each in self.board.ships:
             each.immobilize()
             each.font_color = font_color
@@ -158,6 +163,8 @@ class Board(gd.BoardGame):
             self.active_item = self.board.ships[self.board.active_ship]
             if self.active_item.unit_id < self.shape_count:
                 self.create_card(self.active_item)
+                self.selection_door.set_pos([self.active_item.grid_x, self.active_item.grid_y])
+                self.board.all_sprites_list.move_to_front(self.selection_door)
 
     def create_card(self, active):
         self.board.ships[self.shape_count].value = self.shape_names[active.unit_id]

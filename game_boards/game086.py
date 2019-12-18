@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# import pygame
-# import random
-
-# import classes.board
-# import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 

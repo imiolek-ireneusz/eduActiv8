@@ -14,7 +14,6 @@ class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
         self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
-        #self.level = lc.Level(self, mainloop, 5, 10)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 20, 10)
 
     def create_game_objects(self, level=1):
@@ -23,7 +22,6 @@ class Board(gd.BoardGame):
         # create non-movable objects
         self.board.draw_grid = False
         h = random.randrange(0, 255, 5)
-        color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
         font_color = ex.hsv_to_rgb(h, 255, 140)
         white = (255, 255, 255)
 
@@ -47,6 +45,9 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
 
+        self.unit_mouse_over = None
+        self.units = []
+
         shelf_len = 7
         # basket
         basket_w = data[0] - shelf_len - 1
@@ -54,10 +55,8 @@ class Board(gd.BoardGame):
         self.board.units[0].door_outline = True
         # basket image - 260 x 220
         img_bg_col = white
-        scheme = "white"
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                scheme = "black"
                 img_bg_col = (0, 0, 0)
         img_src = "basket.png"
         self.board.add_door(data[0] - 6, data[1] - 5, 6, 5, classes.board.Door, "", img_bg_col, img_src, door_alpha=True)
@@ -72,12 +71,14 @@ class Board(gd.BoardGame):
         self.img_captions = []
         self.singular_items = ["green apple", "red apple", "strawberry", "pear", "orange [fruit]", "onion", "tomato",
                                "lemon", "cherry", "pepper", "carrot", "banana", "watermelon"]
+
+        #h_list = [15, 61, 5, 44, 17, 23, 9, 42, 253, 2, 17, 35, 60]
+
         self.count_units = []
         for each in self.singular_items:
             caption = self.lang._n(each, 1)
             if not self.lang.ltr_text:
                 caption = ex.reverse(self.lang._n(each, 1), self.lang.alpha, self.lang.lang)
-                # caption = self.lang._n(each, 1)
             if caption is None:
                 caption = ""
             self.img_captions.append(caption)
@@ -137,27 +138,31 @@ class Board(gd.BoardGame):
         for i in range(2):
             self.board.all_sprites_list.move_to_front(self.board.units[i])
 
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "dc_hover_wb.png")
+        else:
+            if self.mainloop.scheme.dark:
+                dc_img_src = os.path.join('unit_bg', "dc_hover_bw.png")
+            else:
+                dc_img_src = os.path.join('unit_bg', "dc_hover_wb.png")
+
+        dc_tint_color = ex.hsv_to_rgb(253, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
         # put stuff on shelves:
         for i in range(len(items)):
             image = os.path.join("fr", items[i] + f_end)
 
             for j in range(0, shelf_len):
-                self.board.add_unit(j, i, 1, 1, classes.board.ImgShip, self.img_captions[i], (0, 0, 0, 0), image,
-                                    data[4], alpha=True)
+                self.board.add_universal_unit(grid_x=j, grid_y=i, grid_w=1, grid_h=1, txt=self.img_captions[i],
+                                              fg_img_src=None, bg_img_src=image, dc_img_src=dc_img_src,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=None,
+                                              bg_tint_color=None, fg_tint_color=None, dc_tint_color=dc_tint_color,
+                                              txt_align=(0, 0), font_type=0, multi_color=False, alpha=True,
+                                              immobilized=False, dc_as_hover=True, mode=0)
                 self.board.ships[-1].audible = False
                 self.board.ships[-1].speaker_val = self.img_pcaptions[i]
                 self.board.ships[-1].speaker_val_update = False
-                self.board.ships[-1].outline = False
+                self.units.append(self.board.ships[-1])
         self.board.all_sprites_list.move_to_front(self.board.units[0])
-        """
-        instruction = self.d["Check the shopping list"]
-        self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, color0, "", 3)
-        self.board.ships[-1].set_outline(0, 1)
-        self.board.ships[-1].immobilize()
-        self.board.ships[-1].font_color = font_color
-        self.board.ships[-1].speaker_val = self.dp["Check the shopping list"]
-        self.board.ships[-1].speaker_val_update = False
-        """
 
     def show_info_dialog(self):
         self.mainloop.dialog.show_dialog(3, self.d["Check the shopping list"])
@@ -168,10 +173,12 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
-            #if event.pos[1] > self.layout.info_bar_h + self.layout.score_bar_h:
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
             self.auto_check_reset()
+
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def auto_check_reset(self):
         for i in range(self.data[2]):
@@ -179,7 +186,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         # checking what sprites collide with the basket sprite

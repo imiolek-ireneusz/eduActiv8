@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import pygame
 import random
 from math import sqrt
@@ -26,11 +27,8 @@ class Board(gd.BoardGame):
         self.active_letter = "А"
         self.active_word = ""
         self.var_brush = 1
-        s = 100
         v = 255
         h = random.randrange(0, 255)
-        letter_color = ex.hsv_to_rgb(h, s, v)
-        font_color = ex.hsv_to_rgb(h, 255, 140)
         self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
         if self.mainloop.scheme is not None:
             self.bg_color = self.mainloop.scheme.u_color
@@ -58,12 +56,33 @@ class Board(gd.BoardGame):
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
 
+        self.unit_mouse_over = None
+        self.units = []
+
         # canvas
         self.board.add_unit(12, 0, data[0] - 18, data[1], classes.board.Letter, "", color, "", font_size)
         self.canvas_block = self.board.ships[0]
         self.canvas_block.set_outline([0, 54, 229], 1)
 
         self.canvas_block.font3 = self.board.font_sizes[font_size2]
+
+        label_color = ex.hsv_to_rgb(h, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+        font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+        fg_tint_color = ex.hsv_to_rgb(h, self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+
+        self.bg_color_active = ex.hsv_to_rgb(h, 200, 255)
+        self.bg_color_done = ex.hsv_to_rgb(h, 50, 255)
+
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "universal_sq_dc.png")
+        else:
+            dc_img_src = None
+            if self.mainloop.scheme.dark:
+                self.bg_color_active = ex.hsv_to_rgb(h, 255, 200)
+                self.bg_color_done = ex.hsv_to_rgb(h, 255, 55)
+
+        bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        bg_door_img_src = os.path.join('unit_bg', "universal_sq_door.png")
 
         x = 0
         y = 0
@@ -73,15 +92,23 @@ class Board(gd.BoardGame):
 
         for i in range(0, 66):
             caption = alphabet[i]
-            self.board.add_unit(x, y, 2, 2, classes.board.Letter, caption, letter_color, "", 0)
+            self.board.add_universal_unit(grid_x=x, grid_y=y, grid_w=2, grid_h=2, txt=caption, alpha=True,
+                                          fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                          bg_tint_color=label_color, fg_tint_color=fg_tint_color, txt_align=(0, 0),
+                                          font_type=25, multi_color=False, immobilized=True, fg_as_hover=True)
+            self.units.append(self.board.ships[-1])
             y += 2
             i_chr += 1
             if y > 20:
                 y = 0
                 x += 2
-        self.board.add_door(0, 0, 2, 2, classes.board.Door, "", color, "")
+        self.board.add_universal_unit(grid_x=0, grid_y=0, grid_w=2, grid_h=2, txt=None, fg_img_src=None,
+                                      bg_img_src=bg_door_img_src, dc_img_src=None, bg_color=(0, 0, 0, 0), alpha=True,
+                                      border_color=None, font_color=None, bg_tint_color=font_color[0], immobilized=True,
+                                      fg_tint_color=None, txt_align=(0, 0), font_type=10, multi_color=False, mode=2)
+
         self.board.add_door(data[0] - 1, 15, 1, 1, classes.board.Door, "", color, "")
-        tool_len = len(self.board.ships)
 
         self.word_list = ['Арбуз', 'Банки', 'Вода', 'Горы', 'Дом', 'Еда', 'Ёлка', 'Жук', 'Зебра', 'Игра', 'Йога',
                           'Коза', 'Лист', 'Муха', 'Нить', 'Орех', 'Пять', 'Рука', 'Собака', 'Танк', 'Утка', 'Флаг',
@@ -122,8 +149,8 @@ class Board(gd.BoardGame):
                     else:
                         v += grey_v_num
 
-        self.board.ships[1].color = self.letter_color2
-        self.board.ships[1].initcolor = self.letter_color2
+        self.board.ships[1].bg_tint_color = self.bg_color_active
+        self.board.ships[1].update_me = True
         self.prev_item = self.board.ships[1]
 
         self.active_letter = self.board.ships[1].value
@@ -164,7 +191,7 @@ class Board(gd.BoardGame):
             active = self.board.active_ship
             if event.button == 1:
                 if self.prev_item is not None:
-                    self.prev_item.color = self.letter_color2
+                    self.prev_item.bg_tint_color = self.bg_color_done
                     self.prev_item.update_me = True
                 if active == 0:
                     self.btn_down = True
@@ -184,7 +211,7 @@ class Board(gd.BoardGame):
                 elif 0 < active < 67:
                     self.active_letter = self.board.ships[self.board.active_ship].value
                     self.active_word = self.word_list[self.board.active_ship - 1]
-                    self.board.ships[self.board.active_ship].color = self.letter_color2
+                    self.board.ships[self.board.active_ship].bg_tint_color = self.bg_color_active
                     self.prev_item = self.board.ships[self.board.active_ship]
                     self.tool_door.set_pos(self.board.active_ship_pos)
                     self.paint_bg_letter()
@@ -218,6 +245,9 @@ class Board(gd.BoardGame):
                     self.screen_restore()
                     self.copy_to_screen()
             self.btn_down = False
+
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def paint_bg_letter(self):
         txt = self.active_letter

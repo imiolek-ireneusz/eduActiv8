@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import random
 import pygame
 
@@ -22,52 +23,43 @@ class Board(gd.BoardGame):
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.board.draw_grid = False
-        s = 100
-        v = 255
-        h = random.randrange(0, 255, 5)
         white = (255, 255, 255)
         if self.mainloop.scheme is None:
-            color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
-            instr_font_col = ex.hsv_to_rgb(h, 255, 140)
             font_col = (0, 0, 0)
         else:
             font_col = self.mainloop.scheme.u_font_color
             if self.mainloop.scheme.dark:
                 white = (0, 0, 0)
-                color0 = (0, 0, 10)
-            else:
-                color0 = (254, 254, 255)
-            instr_font_col = font_col
         # setting level variable
         # data = [x_count, y_count, number_count, top_limit, ordered]
         if self.level.lvl == 1:
-            data = [13, 8, 5, 3, 2]
+            data = [5, 4, 5, 3, 2]
         elif self.level.lvl == 2:
-            data = [13, 8, 8, 3, 3]
+            data = [5, 5, 8, 3, 3]
         elif self.level.lvl == 3:
-            data = [12, 8, 7, 4, 2]
+            data = [6, 4, 7, 4, 2]
         elif self.level.lvl == 4:
-            data = [12, 8, 11, 4, 3]
+            data = [6, 5, 11, 4, 3]
         elif self.level.lvl == 5:
-            data = [12, 8, 15, 4, 4]
+            data = [6, 6, 15, 4, 4]
         elif self.level.lvl == 6:
-            data = [13, 8, 9, 5, 2]
+            data = [7, 4, 9, 5, 2]
         elif self.level.lvl == 7:
-            data = [13, 8, 14, 5, 3]
+            data = [7, 5, 14, 5, 3]
         elif self.level.lvl == 8:
-            data = [13, 8, 19, 5, 4]
+            data = [7, 6, 19, 5, 4]
         elif self.level.lvl == 9:
-            data = [13, 8, 24, 5, 5]
+            data = [7, 7, 24, 5, 5]
         elif self.level.lvl == 10:
-            data = [12, 8, 11, 6, 2]
+            data = [8, 4, 11, 6, 2]
         elif self.level.lvl == 11:
-            data = [12, 8, 17, 6, 3]
+            data = [8, 5, 17, 6, 3]
         elif self.level.lvl == 12:
-            data = [12, 8, 23, 6, 4]
+            data = [8, 6, 23, 6, 4]
         elif self.level.lvl == 13:
-            data = [12, 8, 29, 6, 5]
+            data = [8, 7, 29, 6, 5]
         elif self.level.lvl == 14:
-            data = [12, 8, 35, 6, 6]
+            data = [8, 8, 35, 6, 6]
 
         self.chapters = [1, 3, 6, 10, 14]
         # rescale the number of squares horizontally to better match the screen width
@@ -80,6 +72,9 @@ class Board(gd.BoardGame):
         self.data = data
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
+
+        self.unit_mouse_over = None
+        self.units = []
 
         self.choice_list = [x for x in range(1, data[2] + 1)]
         self.shuffled = self.choice_list[:]
@@ -101,32 +96,41 @@ class Board(gd.BoardGame):
         w2 = (data[0] - data[3]) // 2  # side margin width
         self.check = [h1, h2, w2]
 
-        self.board.add_door(w2, h1, data[3], data[4], classes.board.Door, "", white, "")
         # create table to store 'binary' solution
         # find position of first door square
         x = w2
         y = h1
         self.mini_grid = []
+
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "universal_sq_dc.png")
+        else:
+            dc_img_src = None
+
+        bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+
         # add objects to the board
         line = []
         h_start = random.randrange(0, 155, 5)
         h_step = 100 // (data[2])
         for i in range(data[2]):
-            if self.mainloop.scheme is None:
-                h = (h_start + (self.shuffled[i] - 1) * h_step)
-                number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
-            else:
-                number_color = color0
+            h = (h_start + (self.shuffled[i] - 1) * h_step)
+            number_color = ex.hsv_to_rgb(h, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+            fg_number_color = ex.hsv_to_rgb(h, self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+            font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
             caption = str(self.shuffled[i])
-            self.board.add_unit(x, y, 1, 1, classes.board.Letter, caption, number_color, "", 2)
+            self.board.add_universal_unit(grid_x=x, grid_y=y, grid_w=1, grid_h=1, txt=caption,
+                                          fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                          bg_tint_color=number_color, fg_tint_color=fg_number_color,
+                                          txt_align=(0, 0), font_type=2, multi_color=False, alpha=True,
+                                          immobilized=False, fg_as_hover=True)
+            self.units.append(self.board.ships[-1])
 
             self.board.ships[-1].readable = False
             self.board.ships[i].checkable = True
             self.board.ships[i].init_check_images()
-            if self.mainloop.scheme is None:
-                self.board.ships[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
-            else:
-                self.board.ships[-1].font_color = font_col
 
             line.append(i)
             x += 1
@@ -137,15 +141,7 @@ class Board(gd.BoardGame):
                 line = []
         if self.mainloop.scheme is not None:
             self.outline_all(font_col, 1)
-        """
-        instruction = self.d["Re-arrange right"]
-        self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, color0, "", 5)  # bottom 2
-        self.board.ships[-1].font_color = instr_font_col
-        self.board.ships[-1].immobilize()
 
-        self.board.ships[-1].speaker_val = self.dp["Re-arrange right"]
-        self.board.ships[-1].speaker_val_update = False
-        """
         if self.mainloop.scheme is None:
             self.outline_all(0, 1)
         # horizontal
@@ -169,6 +165,8 @@ class Board(gd.BoardGame):
         gd.BoardGame.handle(self, event)  # send event handling up
         if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
             self.auto_check_reset()
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def update(self, game):
         game.fill((255, 255, 255))

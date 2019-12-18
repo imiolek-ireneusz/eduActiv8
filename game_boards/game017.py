@@ -20,15 +20,11 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.allow_unit_animations = False
         self.board.draw_grid = False
-        s = 100
-        v = 255
-        h = random.randrange(0, 225)
-        self.letter_color = ex.hsv_to_rgb(h, s, v)
-        self.letter_color2 = ex.hsv_to_rgb(h, 50, v)
-        font_color = ex.hsv_to_rgb(h, 255, 140)
-        arrow_color = ex.hsv_to_rgb(h, 200, 200)
-        font_color2 = ex.hsv_to_rgb(h, 255, 50)
-        outline_color = ex.hsv_to_rgb(h, s + 50, v - 50)
+        hue = random.randrange(0, 225)
+
+        card_font_color = ex.hsv_to_rgb(hue, 255, 140)
+        arrow_color = ex.hsv_to_rgb(hue, 200, 200)
+        font_color2 = ex.hsv_to_rgb(hue, 255, 50)
         outline_color2 = (255, 102, 0)
 
         if self.mainloop.scheme is not None:
@@ -71,6 +67,9 @@ class Board(gd.BoardGame):
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
 
+        self.unit_mouse_over = None
+        self.units = []
+
         self.board.board_bg.update_me = True
         self.board.board_bg.line_color = (20, 20, 20)
 
@@ -87,15 +86,40 @@ class Board(gd.BoardGame):
         else:
             x = data[0] - 2
         y = 0
+        label_color = ex.hsv_to_rgb(hue, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+        font_color = [ex.hsv_to_rgb(hue, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+        fg_tint_color = ex.hsv_to_rgb(hue, self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+
+        self.bg_color_active = ex.hsv_to_rgb(hue, 200, 255)
+        self.bg_color_done = ex.hsv_to_rgb(hue, 50, 255)
+
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "universal_r2x1_dc.png")
+        else:
+            dc_img_src = None
+            if self.mainloop.scheme.dark:
+                self.bg_color_active = ex.hsv_to_rgb(hue, 255, 200)
+                self.bg_color_done = ex.hsv_to_rgb(hue, 255, 55)
+
+        bg_img_src = os.path.join('unit_bg', "universal_r2x1_bg_s150.png")
 
         for i in range(self.abc_len):
             if self.lang.has_uc:
                 caption = uc[i] + alc[i]
             else:
                 caption = alc[i]
-            self.board.add_unit(x, y, 2, 1, classes.board.Letter, caption, self.letter_color, "", 3)
-            self.board.ships[i].readable = False
-            self.board.ships[i].set_outline(outline_color, 1)
+            self.board.add_universal_unit(grid_x=x, grid_y=y, grid_w=2, grid_h=1, txt=caption,
+                                          fg_img_src=bg_img_src,
+                                          bg_img_src=bg_img_src,
+                                          dc_img_src=dc_img_src,
+                                          bg_color=(0, 0, 0, 0),
+                                          border_color=None, font_color=font_color,
+                                          bg_tint_color=label_color,
+                                          fg_tint_color=fg_tint_color,
+                                          txt_align=(0, 0), font_type=1, multi_color=False, alpha=True,
+                                          immobilized=True,
+                                          fg_as_hover=True)
+            self.units.append(self.board.ships[-1])
             y += 1
             if y >= data[1]:
                 if i > 2 * data[1] - 2:
@@ -110,6 +134,7 @@ class Board(gd.BoardGame):
                     else:
                         x = data[0] - 4
                     y = 0
+
         if self.lang.ltr_text:
             x = (data[0] - 4 + 3 + 3) // 2
         else:
@@ -195,23 +220,23 @@ class Board(gd.BoardGame):
         self.rt = self.board.ships[-1]
 
         self.slide = self.board.ships[self.abc_len]
-        #self.slide.perm_outline = True
         self.slide.set_outline(color=outline_color2, width=2)
         for each in self.board.ships:
             each.immobilize()
-            each.font_color = font_color
+            each.font_color = card_font_color
         for each in self.board.units:
-            each.font_color = font_color
+            each.font_color = card_font_color
         self.active_item = self.board.ships[0]
-        self.active_item.color = (255, 255, 255)
+        self.active_item.bg_tint_color = self.bg_color_active
+        self.active_item.update_me = True
         self.prev_item = self.active_item
         self.current_letter_index = 0
 
     def activate_letter(self):
         if self.prev_item is not None:
-            self.prev_item.color = self.letter_color2
+            self.prev_item.bg_tint_color = self.bg_color_done
             self.prev_item.update_me = True
-        self.active_item.color = (255, 255, 255)
+        self.active_item.bg_tint_color = self.bg_color_active
         self.create_card(self.active_item)
         self.prev_item = self.active_item
         self.mainloop.redraw_needed[0] = True
@@ -234,7 +259,6 @@ class Board(gd.BoardGame):
 
         self.active_item.update_me = True
         self.activate_letter()
-
         self.mainloop.redraw_needed[0] = True
 
     def handle(self, event):
@@ -254,6 +278,8 @@ class Board(gd.BoardGame):
                                         self.rt.rect.topleft[1] < pos[1] < self.rt.rect.topleft[
                             1] + self.rt.rect.height:
                     self.next_slide(1)
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def create_card(self, active):
         val = ex.unival(active.value)

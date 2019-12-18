@@ -57,10 +57,10 @@ class Board(gd.BoardGame):
 
     def next_number(self):
         if self.mainloop.scheme is None:
-            s = random.randrange(150, 225, 5)
-            v = random.randrange(190, 225, 5)
+            s = 130
+            v = 255
             h = random.randrange(0, 255, 5)
-            color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
+            color0 = ex.hsv_to_rgb(h, 30, 255)  # highlight 1
             color1 = ex.hsv_to_rgb(h, 70, v)  # highlight 2
             color2 = ex.hsv_to_rgb(h, s, v)  # normal color
             color3 = ex.hsv_to_rgb(h, 230, 100)

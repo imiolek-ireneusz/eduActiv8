@@ -22,7 +22,6 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.show_info_btn = False
         h = random.randrange(0, 255, 5)
-        color0 = ex.hsv_to_rgb(h, 40, 230)
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 self.scheme_dir = "black"
@@ -55,11 +54,10 @@ class Board(gd.BoardGame):
         self.task = self.generate_task(self.term, self.term_len, self.term_count, term_completed_count,
                                        term_semi_completed_count, shuffled=lvl_data[6])
 
-        alpha = False
         if self.mainloop.m.game_variant < 2:
             # make the backgrounds different for each letter or number
-
             unit_clrs = []
+            unit_clrs_fg = []
             font_clrs = []
             for i in range(self.term_len):
                 if self.level.lvl < 3:
@@ -67,8 +65,9 @@ class Board(gd.BoardGame):
                     gap = i * (155//self.term_len)
                 else:
                     gap = 0
-                unit_clrs.append(ex.hsv_to_rgb(h + gap, 40, 230))
-                font_clrs.append(ex.hsv_to_rgb(h + gap, 255, 140))
+                unit_clrs.append(ex.hsv_to_rgb(h + gap, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v))
+                unit_clrs_fg.append(ex.hsv_to_rgb(h + gap, self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v))
+                font_clrs.append(ex.hsv_to_rgb(h + gap, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v))
             if self.mainloop.m.game_variant == 0:
                 if random.randint(0, 1) == 0:
                     self.choices = self.lang.alphabet_uc[:]
@@ -78,18 +77,13 @@ class Board(gd.BoardGame):
                 self.choices = [str(x) for x in range(0, 9)]
         elif self.mainloop.m.game_variant == 2:
             self.choices = [x for x in range(2, 20)]
-
-            alpha = True
-            color0 = (0, 0, 0, 0)
         elif self.mainloop.m.game_variant == 3:
             self.initiate_images()
             self.choices = [x for x in range(len(self.imgs))]
         elif self.mainloop.m.game_variant == 5:
             self.initiate_shapes()
             self.choices = [x for x in range(len(self.imgs))]
-            alpha = True
-            color0 = (0, 0, 0, 0)
-            random.shuffle(self.shape_colors)
+            random.shuffle(self.color_ind)
             if self.level.lvl < 3:
                 self.mixed_colours = True
             else:
@@ -108,11 +102,9 @@ class Board(gd.BoardGame):
                     self.fractions.append(l)
                 if len(self.fractions) >= self.term_len:
                     full = True
-
-            alpha = True
-            color0 = (0, 0, 0, 0)
             clrs1 = []
             clrs2 = []
+            hues = []
             for i in range(self.term_len):
                 if self.level.lvl < 3:
                     h = random.randrange(0, 100, 5)
@@ -121,6 +113,7 @@ class Board(gd.BoardGame):
                     gap = 0
                 clrs1.append(ex.hsv_to_rgb(h + gap, 150, 230))
                 clrs2.append(ex.hsv_to_rgb(h + gap, 255, 140))
+                hues.append(h + gap)
             self.choices = [x for x in range(2, 20)]
 
         random.shuffle(self.choices)
@@ -135,10 +128,13 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
+
+        self.unit_mouse_over = None
+        self.units = []
+
         self.board.board_bg.initcolor = color
         self.board.board_bg.color = color
         self.board.board_bg.update_me = True
-
 
         self.left_offset = (self.data[0] - len(self.task)) // 2
 
@@ -147,12 +143,48 @@ class Board(gd.BoardGame):
 
         random.shuffle(self.positions)
         p_ind = 0
+
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "universal_sq_dc.png")
+        else:
+            dc_img_src = None
+
+        bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        bg_door_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+
+        if self.mainloop.m.game_variant == 5:
+            fg_tint_color = (30, 30, 30)
+
+        dc_tint_color = ex.hsv_to_rgb(160, self.mainloop.cl.door_bg_tint_s, self.mainloop.cl.door_bg_tint_v)
+        if self.mainloop.m.game_variant == 3:
+            fg_tint_color = (30, 30, 30)
+            if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+                bg_door_img_src = os.path.join('unit_bg', "img_decor_bb.png")
+                dc_tint_color = None
+            else:
+                bg_door_img_src = os.path.join('unit_bg', "img_decor_w.png")
+        if self.mainloop.m.game_variant == 4:
+            bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        if self.mainloop.m.game_variant == 2:
+            bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+            fg_img_src = "splash_mask.png"
+            hue_choice = [[255, 255, 255], [2, 2, 2], [140, 140, 140], [255, 0, 0], [255, 138, 0], [255, 255, 0],
+                          [181, 219, 3], [0, 160, 0], [41, 131, 82], [0, 130, 133], [0, 0, 255], [0, 0, 132],
+                          [132, 0, 132], [255, 0, 255], [74, 0, 132], [255, 20, 138], [132, 0, 0], [140, 69, 16],
+                          [0, 255, 255], [0, 255, 0]]
+
+        font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
         for i in range(len(self.task)):
             self.solution_grid[self.left_offset + i] = 1
             if self.task[i] == "?":
                 #add placeholder and the items to add
-                self.board.add_door(self.left_offset + i, 0, 1, 1, classes.board.Door, "", color, "")
-                self.board.units[-1].door_outline = True
+                self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt=None,
+                                              fg_img_src=None, bg_img_src=None, dc_img_src=bg_door_img_src,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=None,
+                                              bg_tint_color=None, fg_tint_color=None, txt_align=(0, 0),
+                                              font_type=10, multi_color=False, alpha=True, immobilized=True, mode=2,
+                                              dc_tint_color=dc_tint_color)
                 if self.mainloop.m.game_variant < 2:
                     v = self.term_values[int(self.term[i % self.term_len])]
                 else:
@@ -160,34 +192,77 @@ class Board(gd.BoardGame):
                 if self.mainloop.m.game_variant == 3:
                     img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                     img_src = os.path.join('art4apps', self.category, img)
-                    self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.ImgShip, "", color0, img_src)
-
+                    self.board.add_universal_unit(grid_x=self.positions[p_ind], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                                  fg_img_src=img_src, bg_img_src=img_src, dc_img_src=None,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                                  bg_tint_color=None, dc_tint_color=None,
+                                                  fg_tint_color=(50, 50, 50), txt_align=(0, 0), font_type=0,
+                                                  multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
+                    self.board.ships[-1].set_blit_mask(os.path.join('unit_bg', 'img_mask.png'))
                 elif self.mainloop.m.game_variant == 5:
                     img = "%s.png" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
+                    img_src = os.path.join('shapes', img)
+
                     if self.mixed_colours:
-                        img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                        bg_tint_color = self.shape_colors[self.color_ind[int(self.term[i % self.term_len])]]
+                        fg_tint_color = self.shape_colors_fg[self.color_ind[int(self.term[i % self.term_len])]]
                     else:
-                        img_src = os.path.join('shapes', self.shape_colors[0], img)
-                    self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.ImgShip, "", color0, img_src, alpha=alpha)
+                        bg_tint_color = self.shape_colors[self.color_ind[0]]
+                        fg_tint_color = self.shape_colors_fg[self.color_ind[0]]
+                    self.board.add_universal_unit(grid_x=self.positions[p_ind], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                                  fg_img_src=img_src, bg_img_src=img_src, dc_img_src=None,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                                  bg_tint_color=bg_tint_color, dc_tint_color=None,
+                                                  fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                                  multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
                 elif self.mainloop.m.game_variant == 2:
-                    self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.Letter, v, color0, "", 0,
-                                        alpha=alpha)
-                    splash = classes.drw.splash.Splash(1, self.board.scale, self.term_values[int(self.term[i % self.term_len])])
-                    self.board.ships[-1].painting = splash.get_canvas().copy()
+                    color_index = self.term_values[int(self.term[i % self.term_len])]
+                    dc_tint_colorx = hue_choice[color_index]
+                    if color_index < 3:
+                        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+                            bg_tint_color = (90, 90, 90)
+                            fg_tint_color = (60, 60, 60)
+                        else:
+                            bg_tint_color = (200, 200, 200)
+                            fg_tint_color = (160, 160, 160)
+                    else:
+                        bg_tint_color = ex.hsv_to_rgb(
+                            ex.rgb_to_hsv(dc_tint_colorx[0], dc_tint_colorx[1], dc_tint_colorx[2])[0],
+                            self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+
+                        fg_tint_color = ex.hsv_to_rgb(
+                            ex.rgb_to_hsv(dc_tint_colorx[0], dc_tint_colorx[1], dc_tint_colorx[2])[0],
+                            self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+                    self.board.add_universal_unit(grid_x=self.positions[p_ind], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                                  fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=fg_img_src,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                                  bg_tint_color=bg_tint_color, dc_tint_color=dc_tint_colorx,
+                                                  fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                                  multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
                 elif self.mainloop.m.game_variant == 4:
-                    self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.Letter, v, color0, "", 0,
-                                        alpha=alpha)
+                    bg_color = ex.hsv_to_rgb(hues[int(self.term[i % self.term_len])], self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+                    fg_color = ex.hsv_to_rgb(hues[int(self.term[i % self.term_len])], self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+                    self.board.add_universal_unit(grid_x=self.positions[p_ind], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                                  fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=None,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                                  bg_tint_color=bg_color, dc_tint_color=None,
+                                                  fg_tint_color=fg_color, txt_align=(0, 0), font_type=0,
+                                                  multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
                     fraction = classes.drw.fraction.Fraction(1, self.board.scale, clrs1[int(self.term[i % self.term_len])], clrs2[int(self.term[i % self.term_len])], self.fractions[int(self.term[i % self.term_len])], self.func_number)
-                    self.board.ships[-1].painting = fraction.get_canvas().copy()
+                    self.board.ships[-1].manual_painting_layer = 1
+                    self.board.ships[-1].init_m_painting()
+                    self.board.ships[-1].manual_painting = fraction.get_canvas().copy()
+                    self.board.ships[-1].update_me = True
+
                 elif self.mainloop.m.game_variant < 2:
-                    self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.Letter, v, color0, "", 0,
-                                        alpha=alpha)
-                    self.board.ships[-1].outline_highlight = True
-                    self.board.ships[-1].set_outline(color=font_clrs[int(self.term[i % self.term_len])], width=1)
-                    self.board.ships[-1].font_color = font_clrs[int(self.term[i % self.term_len])]
-                    self.board.ships[-1].set_color(unit_clrs[int(self.term[i % self.term_len])])
-                if self.mainloop.m.game_variant == 2 or self.mainloop.m.game_variant == 5:
-                    self.board.ships[-1].outline = False
+                    self.board.add_universal_unit(grid_x=self.positions[p_ind], grid_y=2, grid_w=1, grid_h=1, txt=v,
+                                                  fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=[font_clrs[int(self.term[i % self.term_len])],],
+                                                  bg_tint_color=unit_clrs[int(self.term[i % self.term_len])], fg_tint_color=unit_clrs_fg[int(self.term[i % self.term_len])],
+                                                  txt_align=(0, 0), font_type=0, multi_color=False,
+                                                  alpha=True, immobilized=False, fg_as_hover=True)
+
+                self.units.append(self.board.ships[-1])
 
                 self.board.ships[-1].pattern_value = self.term[i % self.term_len]
                 self.board.ships[-1].highlight = False
@@ -204,31 +279,75 @@ class Board(gd.BoardGame):
                 if self.mainloop.m.game_variant == 3:
                     img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                     img_src = os.path.join('art4apps', self.category, img)
-                    self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.ImgShip, "", color0, img_src)
+                    self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt="",
+                                                  fg_img_src=None, bg_img_src=img_src, dc_img_src=bg_door_img_src,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                                  bg_tint_color=None, dc_tint_color=dc_tint_color,
+                                                  fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                                  multi_color=False, alpha=True, immobilized=True, fg_as_hover=False)
                 elif self.mainloop.m.game_variant == 5:
                     img = "%s.png" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
+                    img_src = os.path.join('shapes', img)
                     if self.mixed_colours:
-                        img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                        bg_tint_color = self.shape_colors[self.color_ind[int(self.term[i % self.term_len])]]
                     else:
-                        img_src = os.path.join('shapes', self.shape_colors[0], img)
-                    self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.ImgShip, "", color0, img_src, alpha=alpha)
+                        bg_tint_color = self.shape_colors[self.color_ind[0]]
+                    self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt="",
+                                                  fg_img_src=None, bg_img_src=img_src, dc_img_src=bg_door_img_src,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                                  bg_tint_color=bg_tint_color, dc_tint_color=dc_tint_color,
+                                                  fg_tint_color=None, txt_align=(0, 0), font_type=0,
+                                                  multi_color=False, alpha=True, immobilized=True, fg_as_hover=False)
+
                 elif self.mainloop.m.game_variant == 2:
-                    self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.Letter, v, color0, "", 0,
-                                        alpha=alpha)
-                    splash = classes.drw.splash.Splash(1, self.board.scale, self.term_values[int(self.term[i % self.term_len])])
-                    self.board.ships[-1].painting = splash.get_canvas().copy()
+                    color_index = self.term_values[int(self.term[i % self.term_len])]
+                    dc_tint_colorx = hue_choice[color_index]
+                    if color_index < 3:
+                        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+                            bg_tint_color = (90, 90, 90)
+                            fg_tint_color = (60, 60, 60)
+                        else:
+                            bg_tint_color = (200, 200, 200)
+                            fg_tint_color = (160, 160, 160)
+                    else:
+                        bg_tint_color = ex.hsv_to_rgb(
+                            ex.rgb_to_hsv(dc_tint_colorx[0], dc_tint_colorx[1], dc_tint_colorx[2])[0],
+                            self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+
+                        fg_tint_color = ex.hsv_to_rgb(
+                            ex.rgb_to_hsv(dc_tint_colorx[0], dc_tint_colorx[1], dc_tint_colorx[2])[0],
+                            self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+                    self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt="",
+                                                  fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=fg_img_src,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                                  bg_tint_color=bg_tint_color, dc_tint_color=dc_tint_colorx,
+                                                  fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                                  multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
                 elif self.mainloop.m.game_variant == 4:
-                    self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.Letter, v, color0, "", 0,
-                                        alpha=alpha)
+                    bg_color = ex.hsv_to_rgb(hues[int(self.term[i % self.term_len])], self.mainloop.cl.bg_color_s,
+                                             self.mainloop.cl.bg_color_v)
+                    self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt="",
+                                                  fg_img_src=None, bg_img_src=bg_img_src, dc_img_src=None,
+                                                  bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                                  bg_tint_color=bg_color, dc_tint_color=None,
+                                                  fg_tint_color=None, txt_align=(0, 0), font_type=0,
+                                                  multi_color=False, alpha=True, immobilized=True, fg_as_hover=False)
+
                     fraction = classes.drw.fraction.Fraction(1, self.board.scale, clrs1[int(self.term[i % self.term_len])], clrs2[int(self.term[i % self.term_len])], self.fractions[int(self.term[i % self.term_len])], self.func_number)
-                    self.board.ships[-1].painting = fraction.get_canvas().copy()
+                    self.board.ships[-1].manual_painting_layer = 0
+                    self.board.ships[-1].init_m_painting()
+                    self.board.ships[-1].manual_painting = fraction.get_canvas().copy()
+                    self.board.ships[-1].update_me = True
                 elif self.mainloop.m.game_variant < 2:
-                    self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.Letter, v, color0, "", 0,
-                                        alpha=alpha)
-                    self.board.ships[-1].outline_highlight = True
-                    self.board.ships[-1].set_outline(color=font_clrs[int(self.term[i % self.term_len])], width=1)
-                    self.board.ships[-1].font_color = font_clrs[int(self.term[i % self.term_len])]
-                    self.board.ships[-1].set_color(unit_clrs[int(self.term[i % self.term_len])])
+                    self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt=v,
+                                                  fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                                  bg_color=(0, 0, 0, 0), border_color=None,
+                                                  font_color=[font_clrs[int(self.term[i % self.term_len])], ],
+                                                  bg_tint_color=unit_clrs[int(self.term[i % self.term_len])],
+                                                  fg_tint_color=unit_clrs_fg[int(self.term[i % self.term_len])],
+                                                  txt_align=(0, 0), font_type=0, multi_color=False,
+                                                  alpha=True, immobilized=False, fg_as_hover=True)
+
                 if self.mainloop.m.game_variant == 2 or self.mainloop.m.game_variant == 5:
                     self.board.ships[-1].outline = False
 
@@ -248,33 +367,84 @@ class Board(gd.BoardGame):
             if self.mainloop.m.game_variant == 3:
                 img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                 img_src = os.path.join('art4apps', self.category, img)
-                self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.ImgShip, "", color0, img_src)
+                self.board.add_universal_unit(grid_x=self.positions[i], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                              fg_img_src=img_src, bg_img_src=img_src, dc_img_src=None,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                              bg_tint_color=None, dc_tint_color=None,
+                                              fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                              multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
+                self.board.ships[-1].set_blit_mask(os.path.join('unit_bg', 'img_mask.png'))
             elif self.mainloop.m.game_variant == 5:
                 img = "%s.png" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
+                img_src = os.path.join('shapes', img)
                 if self.mixed_colours:
-                    img_src = os.path.join('shapes', self.shape_colors[int(self.term[i % self.term_len])], img)
+                    bg_tint_color = self.shape_colors[self.color_ind[int(self.term[i % self.term_len])]]
+                    fg_tint_color = self.shape_colors_fg[self.color_ind[int(self.term[i % self.term_len])]]
                 else:
-                    img_src = os.path.join('shapes', self.shape_colors[0], img)
-                self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.ImgShip, "", color0, img_src, alpha=alpha)
-
+                    bg_tint_color = self.shape_colors[self.color_ind[0]]
+                    fg_tint_color = self.shape_colors_fg[self.color_ind[0]]
+                self.board.add_universal_unit(grid_x=self.positions[i], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                              fg_img_src=img_src, bg_img_src=img_src, dc_img_src=None,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                              bg_tint_color=bg_tint_color, dc_tint_color=None,
+                                              fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                              multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
             elif self.mainloop.m.game_variant == 2:
-                self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.Letter, v, color0, "", 0, alpha=alpha)
-                splash = classes.drw.splash.Splash(1, self.board.scale, self.term_values[int(self.term[i % self.term_len])])
-                self.board.ships[-1].painting = splash.get_canvas().copy()
+                color_index = self.term_values[int(self.term[i % self.term_len])]
+                dc_tint_colorx = hue_choice[color_index]
+                if color_index < 3:
+                    if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+                        bg_tint_color = (90, 90, 90)
+                        fg_tint_color = (60, 60, 60)
+                    else:
+                        bg_tint_color = (200, 200, 200)
+                        fg_tint_color = (160, 160, 160)
+                else:
+                    bg_tint_color = ex.hsv_to_rgb(
+                        ex.rgb_to_hsv(dc_tint_colorx[0], dc_tint_colorx[1], dc_tint_colorx[2])[0],
+                        self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+                    fg_tint_color = ex.hsv_to_rgb(
+                        ex.rgb_to_hsv(dc_tint_colorx[0], dc_tint_colorx[1], dc_tint_colorx[2])[0],
+                        self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+                self.board.add_universal_unit(grid_x=self.positions[i], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                              fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=fg_img_src,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                              bg_tint_color=bg_tint_color, dc_tint_color=dc_tint_colorx,
+                                              fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                              multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
             elif self.mainloop.m.game_variant == 4:
-                self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.Letter, v, color0, "", 0,
-                                    alpha=alpha)
-                fraction = classes.drw.fraction.Fraction(1, self.board.scale, clrs1[int(self.term[i % self.term_len])], clrs2[int(self.term[i % self.term_len])], self.fractions[int(self.term[i % self.term_len])], self.func_number)
-                self.board.ships[-1].painting = fraction.get_canvas().copy()
+                bg_color = ex.hsv_to_rgb(hues[int(self.term[i % self.term_len])], self.mainloop.cl.bg_color_s,
+                                         self.mainloop.cl.bg_color_v)
+                fg_color = ex.hsv_to_rgb(hues[int(self.term[i % self.term_len])], self.mainloop.cl.fg_hover_s,
+                                         self.mainloop.cl.fg_hover_v)
+                self.board.add_universal_unit(grid_x=self.positions[i], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                              fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=None,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                              bg_tint_color=bg_color, dc_tint_color=None,
+                                              fg_tint_color=fg_color, txt_align=(0, 0), font_type=0,
+                                              multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
+                fraction = classes.drw.fraction.Fraction(1, self.board.scale, clrs1[int(self.term[i % self.term_len])],
+                                                         clrs2[int(self.term[i % self.term_len])],
+                                                         self.fractions[int(self.term[i % self.term_len])],
+                                                         self.func_number)
+                self.board.ships[-1].manual_painting_layer = 1
+                self.board.ships[-1].init_m_painting()
+                self.board.ships[-1].manual_painting = fraction.get_canvas().copy()
+                self.board.ships[-1].update_me = True
             elif self.mainloop.m.game_variant < 2:
-                self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.Letter, v, color0, "", 0, alpha=alpha)
-                self.board.ships[-1].outline_highlight = True
-                self.board.ships[-1].set_outline(color=font_clrs[int(self.term[i % self.term_len])], width=1)
-                self.board.ships[-1].font_color = font_clrs[int(self.term[i % self.term_len])]
-                self.board.ships[-1].set_color(unit_clrs[int(self.term[i % self.term_len])])
+                self.board.add_universal_unit(grid_x=self.positions[i], grid_y=2, grid_w=1, grid_h=1, txt=v,
+                                              fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                              bg_color=(0, 0, 0, 0), border_color=None,
+                                              font_color=[font_clrs[int(self.term[i % self.term_len])], ],
+                                              bg_tint_color=unit_clrs[int(self.term[i % self.term_len])],
+                                              fg_tint_color=unit_clrs_fg[int(self.term[i % self.term_len])],
+                                              txt_align=(0, 0), font_type=0, multi_color=False,
+                                              alpha=True, immobilized=False, fg_as_hover=True)
 
             if self.mainloop.m.game_variant == 2 or self.mainloop.m.game_variant == 5:
                 self.board.ships[-1].outline = False
+
+            self.units.append(self.board.ships[-1])
 
             self.board.ships[-1].pattern_value = self.term[i % self.term_len]
             self.board.ships[-1].highlight = False
@@ -295,6 +465,8 @@ class Board(gd.BoardGame):
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
             self.check_result()
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def start_game(self, gameid):
         self.mainloop.m.start_hidden_game(gameid)
@@ -413,7 +585,14 @@ class Board(gd.BoardGame):
         return has_pattern
 
     def initiate_shapes(self):
-        self.shape_colors = ['blue', 'green', 'olive', 'orange', 'pink', 'purple', 'yellow']
+        self.shape_colors = []
+        self.shape_colors_fg = []
+        for h in range(0, 255, 15):
+            s = random.randint(200, 235)
+            v = random.randint(150, 235)
+            self.shape_colors.append(ex.hsv_to_rgb(h, s, v))
+            self.shape_colors_fg.append(ex.hsv_to_rgb(h, s - 40, v + 20))
+        self.color_ind = [x for x in range(len(self.shape_colors))]
         self.imgs = ["s%d" % x for x in range(1, 18)]
 
     def initiate_images(self):
@@ -447,7 +626,7 @@ class Board(gd.BoardGame):
             self.imgs = ['frog', 'turtle', 'iguana', 'snake', 'chameleon', 'viper', 'cobra', 'salamander', 'toad', 'lizard', 'alligator']
         elif gv == 5:
             self.category = "sport"
-            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'walk', 'ran', 'run', 'swim', 'hop', 'hike', 'boxing', 'hockey', 'throw', 'skate', 'win', 'squat', 'ski', 'golf', 'stand', 'tennis', 'jump', 'rowing', 'jog', 'rope']
+            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'walk', 'run', 'swim', 'hop', 'hike', 'boxing', 'hockey', 'throw', 'skate', 'win', 'squat', 'ski', 'golf', 'stand', 'tennis', 'jump', 'rowing', 'jog', 'rope']
         elif gv == 6:
             self.category = "construction"
             self.imgs = ['lighthouse', 'circus', 'temple', 'well', 'street', 'castle', 'store', 'school', 'farm', 'bridge', 'dam', 'pyramid', 'barn', 'mill', 'cabin', 'shed', 'garage', 'mosque', 'hospital', 'tent', 'house',  'bank', 'hut']

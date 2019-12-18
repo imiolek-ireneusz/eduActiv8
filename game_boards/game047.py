@@ -4,7 +4,6 @@ import random
 import pygame
 import os
 
-import classes.board
 import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
@@ -20,11 +19,7 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-        s = 128
-        v = 230
         h = random.randrange(0, 255, 5)
-        color0 = ex.hsv_to_rgb(h, 40, 230)
-        font_color = ex.hsv_to_rgb(h, 255, 140)
 
         data = [11, 3]
         data.extend(self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group, self.level.lvl))
@@ -34,6 +29,10 @@ class Board(gd.BoardGame):
         self.board.set_animation_constraints(0, data[0], 0, data[1])
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
+
+        self.unit_mouse_over = None
+        self.units = []
+
         if self.mainloop.m.game_variant == 0:
             if self.lang.ltr_text:
                 self.alphabet = self.lang.alphabet_lc
@@ -51,8 +50,6 @@ class Board(gd.BoardGame):
         self.choice_indexes = [x for x in range(self.alph_len)]
 
         self.positionsd = {}
-        #for i in range(self.alph_len - data[2]):
-        #    self.positions.append((i, 0))
 
         if data[3] == True:
             choice_list = [x for x in range(self.alph_len - data[2])]
@@ -73,7 +70,6 @@ class Board(gd.BoardGame):
 
         shuffled = self.num_list[:]
         random.shuffle(shuffled)
-        color = (255, 255, 255)
 
         # create table to store 'binary' solution
         self.solution_grid = [0 for x in range(data[0])]
@@ -86,14 +82,28 @@ class Board(gd.BoardGame):
             self.positionsd[self.indexes[i]] = i
             self.positions.append([x + i, 0])
 
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "universal_sq_dc.png")
+        else:
+            dc_img_src = None
+
+        bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+
+        number_color = ex.hsv_to_rgb(h, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+        font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+        fg_number_color = ex.hsv_to_rgb(h, self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+
+        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+            bg_door_img_src = os.path.join('unit_bg', "universal_sq_door_no_trans.png")
+        else:
+            bg_door_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+
         # add objects to the board
         for i in range(data[2]):
-            number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
-            #self.board.add_door(x + i, 0, 1, 1, classes.board.Door, "", color, "")
             # add new door
             self.board.add_universal_unit(grid_x=x+i, grid_y=0, grid_w=1, grid_h=1, txt=None,
                                           fg_img_src=None,
-                                          bg_img_src=os.path.join('unit_bg', "universal_sq_door.png"),
+                                          bg_img_src=bg_door_img_src,
                                           dc_img_src=None,
                                           bg_color=(0, 0, 0, 0),
                                           border_color=None, font_color=None,
@@ -101,23 +111,19 @@ class Board(gd.BoardGame):
                                           fg_tint_color=None,
                                           txt_align=(0, 0), font_type=10, multi_color=False, alpha=True,
                                           immobilized=True, mode=2)
-            #self.board.units[i].door_outline = True
             y = random.randrange(1, data[1])
             caption = self.alphabet[shuffled[i]]
-            #self.board.add_unit(x + i, y, 1, 1, classes.board.Letter, caption, number_color, "", data[4])
             self.board.add_universal_unit(grid_x=x+i, grid_y=y, grid_w=1, grid_h=1, txt=caption,
-                                          fg_img_src=None,
-                                          bg_img_src=os.path.join('unit_bg', "universal_sq_bg.png"),
-                                          dc_img_src=os.path.join('unit_bg', "universal_sq_dc.png"),
+                                          fg_img_src=bg_img_src,
+                                          bg_img_src=bg_img_src,
+                                          dc_img_src=dc_img_src,
                                           bg_color=(0, 0, 0, 0),
-                                          border_color=None, font_color=[font_color, ],
+                                          border_color=None, font_color=font_color,
                                           bg_tint_color=number_color,
-                                          fg_tint_color=None,
+                                          fg_tint_color=fg_number_color,
                                           txt_align=(0, 0), font_type=data[4], multi_color=False, alpha=True,
-                                          immobilized=False)
-            #self.board.ships[-1].font_color = font_color
-            # self.board.ships[i].highlight = False
-            #self.board.ships[i].outline_highlight = True
+                                          immobilized=False, fg_as_hover=True)
+            self.units.append(self.board.ships[-1])
             self.board.ships[i].checkable = True
             self.board.ships[i].init_check_images()
             self.board.ships[i].home_location = [x + self.positionsd[shuffled[i]], 0]
@@ -126,28 +132,22 @@ class Board(gd.BoardGame):
         for each in self.board.units:
             self.board.all_sprites_list.move_to_front(each)
 
-        """
-        instruction = self.d["Re-arrange alphabetical"]
-        self.board.add_unit(0, 5, 11, 1, classes.board.Letter, instruction, color0, "", 7)
-        self.board.ships[-1].immobilize()
-        self.board.ships[-1].font_color = font_color
-        self.board.ships[-1].speaker_val = self.dp["Re-arrange alphabetical"]
-        self.board.ships[-1].speaker_val_update = False
-        """
         self.outline_all(0, 1)
 
     def show_info_dialog(self):
         self.mainloop.dialog.show_dialog(3, self.d["Re-arrange alphabetical"])
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONUP:
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
-            if True:  # self.data[5] == 1:
                 self.auto_check()
             self.check_result()
+
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def auto_check(self):
         for each in self.board.ships:
@@ -167,7 +167,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((0, 0, 0))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         if self.board.grid[0] == self.solution_grid:
@@ -182,7 +182,7 @@ class Board(gd.BoardGame):
                 if i < self.data[2] - 1:
                     if ships_sorted[i][1] != ex.unival(self.alphabet[self.indexes[i]]):
                         correct = False
-            if correct == True:
+            if correct:
                 self.auto_check()
                 self.level.next_board()
             else:

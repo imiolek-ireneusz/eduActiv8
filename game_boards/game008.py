@@ -17,7 +17,6 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.board.decolorable = False
         self.board.draw_grid = False
-        #color = (252, 252, 252)
         color = (255, 255, 255, 0)
         mask_color = color
         data = [7, 3]
@@ -26,7 +25,6 @@ class Board(gd.BoardGame):
         max_x_count = self.get_x_count(data[1], even=False)
         if max_x_count > 7:
             data[0] = max_x_count
-
 
         self.data = data
         self.center = self.data[0] // 2
@@ -37,13 +35,15 @@ class Board(gd.BoardGame):
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
 
+        self.unit_mouse_over = None
+        self.units = []
+
         if self.level.lvl == 1:
             self.item_count = 3
         elif self.level.lvl == 2:
             self.item_count = 5
         elif self.level.lvl == 3:
             self.item_count = 7
-
 
         images = [os.path.join('match_animals', "m_img%da.png" % (i)) for i in range(1, 20)]
         if self.mainloop.scheme is None or not self.mainloop.scheme.dark:
@@ -57,7 +57,7 @@ class Board(gd.BoardGame):
         self.points = 3
         self.shuffled2 = self.chosen[:]
         random.shuffle(self.shuffled2)
-        x = (self.data[0] - self.item_count) // 2 #self.center - (7 - self.item_count)
+        x = (self.data[0] - self.item_count) // 2
 
         self.solution = []
         for i in range(data[0]):
@@ -65,11 +65,18 @@ class Board(gd.BoardGame):
                 self.solution.append(1)
             else:
                 self.solution.append(0)
+        fg_tint_color = (30, 30, 30)
         for i in range(self.item_count):
             self.board.add_door(x + i, 0, 1, 1, classes.board.Door, str(self.chosen[i]), mask_color,
                                 masks[self.chosen[i]])
-            self.board.add_unit(x + i, 2, 1, 1, classes.board.ImgShip, str(self.shuffled2[i]), (0, 0, 0, 0),
-                                images[self.shuffled2[i]], alpha=True)
+            self.board.add_universal_unit(grid_x=x + i, grid_y=2, grid_w=1, grid_h=1, txt=str(self.shuffled2[i]),
+                                          fg_img_src=images[self.shuffled2[i]], bg_img_src=images[self.shuffled2[i]],
+                                          dc_img_src=None, bg_color=(0, 0, 0, 0), border_color=None, font_color=None,
+                                          bg_tint_color=None, fg_tint_color=fg_tint_color,
+                                          txt_align=(0, 0), font_type=3, multi_color=False, alpha=True,
+                                          immobilized=False, fg_as_hover=True)
+            self.units.append(self.board.ships[-1])
+
             self.board.ships[-1].checkable = True
             self.board.ships[-1].init_check_images()
 
@@ -82,7 +89,7 @@ class Board(gd.BoardGame):
             each.outline = False
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
             self.auto_check_reset()
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -94,6 +101,8 @@ class Board(gd.BoardGame):
                 active = self.board.ships[self.board.active_ship]
                 active.image.set_alpha(255)
             self.check_result()
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def auto_check_reset(self):
         for each in self.board.ships:
@@ -102,12 +111,10 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         if self.changed_since_check:
-            # checking copied from number sorting game and re-done
-            #if self.board.grid[0][self.center - 2:self.center + 3] == [1, 1, 1, 1, 1]:  # self.solution_grid:
             if self.board.grid[0] == self.solution:
                 ships = []
                 units = []
@@ -124,7 +131,7 @@ class Board(gd.BoardGame):
                         correct = False
                     else:
                         ships[i][2].set_display_check(True)
-                if correct == True:
+                if correct:
                     self.level.next_board()
         self.mainloop.redraw_needed[0] = True
 

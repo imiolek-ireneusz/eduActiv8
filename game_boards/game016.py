@@ -482,6 +482,8 @@ class Board(gd.BoardGame):
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
         if self.show_msg == False:
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_CAPSLOCK:
+                self.kbrd.get_btns_to_hl(self.middle.value)
             if event.type == pygame.KEYDOWN and event.key != pygame.K_RETURN:
                 char = event.unicode
                 if len(char) > 0:

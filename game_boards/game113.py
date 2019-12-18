@@ -84,10 +84,10 @@ class Board(gd.BoardGame):
                                       border_color=None, font_color=None,
                                       bg_tint_color=self.mainloop.cl.info_buttons_col,
                                       fg_tint_color=self.mainloop.cl.info_buttons_col,
-                                      txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False)
+                                      txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False,
+                                      fg_as_hover=True)
 
         self.info_ind = self.board.ships[-1]
-        self.info_ind.use_fg_as_hover()
         if self.data[0] > 30:
             l_shift = 1
         else:

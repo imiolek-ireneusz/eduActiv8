@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import pygame
 import random
 
@@ -59,9 +60,25 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
 
+        self.unit_mouse_over = None
+        self.units = []
+
         s = 20
         v = 255
         h = random.randrange(0, 255)
+
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "universal_sq_dc.png")
+            door_bg_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+        else:
+            dc_img_src = None
+            door_bg_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+            if self.mainloop.scheme.dark:
+                door_bg_img_src = os.path.join('unit_bg', "universal_sq_door_no_trans.png")
+
+        bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        door_color = ex.hsv_to_rgb(5, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+
         self.line_col = (0, 0, 0)
         if self.mainloop.scheme is None:
             color = ex.hsv_to_rgb(h, s, v)
@@ -81,15 +98,25 @@ class Board(gd.BoardGame):
             s = 100
             v = 255
             hx = h + (i - start_from) * data[5]
-            color = ex.hsv_to_rgb(hx, s, v)
             color2 = ex.hsv_to_rgb(hx, 255, 200)
+
+            number_color = ex.hsv_to_rgb(hx, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+            font_color = [ex.hsv_to_rgb(hx, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+            fg_number_color = ex.hsv_to_rgb(hx, self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+
             self.colors.append(color2)
-            self.board.add_unit(0, i, 1, 1, classes.board.Label, str(j), color, "", 3)
-            self.board.units[-1].font_color = ex.hsv_to_rgb(hx, 255, 140)
-            self.board.add_unit(data[0] - 1, i, 1, 1, classes.board.Letter, str(j), color, "", 3)
-            self.board.ships[-1].font_color = ex.hsv_to_rgb(hx, 255, 140)
-            self.board.ships[-1].highlight = False
-            self.board.ships[-1].outline_highlight = True
+            self.board.add_universal_unit(grid_x=0, grid_y=i, grid_w=1, grid_h=1, txt=str(j),
+                                          fg_img_src=None, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                          bg_tint_color=number_color, fg_tint_color=None, txt_align=(0, 0), mode=1,
+                                          font_type=3, multi_color=False, alpha=True, immobilized=True)
+            self.board.add_universal_unit(grid_x=data[0] - 1, grid_y=i, grid_w=1, grid_h=1, txt=str(j),
+                                          fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                          bg_tint_color=number_color, fg_tint_color=fg_number_color,
+                                          txt_align=(0, 0), font_type=3, multi_color=False, alpha=True,
+                                          immobilized=False, fg_as_hover=True)
+            self.units.append(self.board.ships[-1])
             self.board.ships[-1].checkable = True
             self.board.ships[-1].init_check_images()
 
@@ -101,8 +128,11 @@ class Board(gd.BoardGame):
 
         for i in range(data[1]):
             if self.solution_positions[i] == 1:
-                self.board.add_door(data[0] - 3, i, 1, 1, classes.board.Door, "", color, "")
-                self.board.units[-1].door_outline = True
+                self.board.add_universal_unit(grid_x=data[0] - 3, grid_y=i, grid_w=1, grid_h=1, txt=None,
+                                              fg_img_src=None, bg_img_src=door_bg_img_src, dc_img_src=None,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=None,
+                                              bg_tint_color=door_color, fg_tint_color=None, txt_align=(0, 0),
+                                              font_type=10, multi_color=False, alpha=True, immobilized=True, mode=2)
 
     def draw_the_mess(self, data, start_from, end_at):
         # set up the beginning and ending positions
@@ -214,7 +244,7 @@ class Board(gd.BoardGame):
         self.ready_lines.append(bezier_points)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
             self.auto_check_reset()
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
@@ -222,10 +252,13 @@ class Board(gd.BoardGame):
             self.mainloop.redraw_needed[0] = True
             self.check_result()
 
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
+
     def update(self, game):
         game.fill((255, 255, 255))
 
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def auto_check_reset(self):
         for each in self.board.ships:
@@ -237,7 +270,7 @@ class Board(gd.BoardGame):
         for i in range(self.data[1]):
             self.result.append(self.board.grid[i][self.data[0] - 3])
         correct = True
-        if self.solution_positions == self.result:  # self.board.grid[7]:
+        if self.solution_positions == self.result:
             for each_item in self.board.ships:
                 if each_item.grid_y == self.solution[each_item.unit_id]:
                     each_item.set_display_check(True)

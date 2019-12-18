@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import os
 import random
 import pygame
 
-import classes.board
 import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
@@ -21,11 +21,6 @@ class Board(gd.BoardGame):
         self.allow_teleport = False
         self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-        s = 100
-        v = 255
-        h = random.randrange(0, 255, 5)
-        color0 = ex.hsv_to_rgb(h, 40, 230)
-        font_color = ex.hsv_to_rgb(h, 255, 140)
 
         data = [11, 5]
         data.extend(
@@ -36,6 +31,10 @@ class Board(gd.BoardGame):
         self.data = data
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
+
+        self.unit_mouse_over = None
+        self.units = []
+
         signs = ["+", " ", "-"]
         self.ship_id = -1
         self.total = 0
@@ -68,8 +67,6 @@ class Board(gd.BoardGame):
         self.eval_string = self.eval_string.strip()
         self.total = eval(self.eval_string )
 
-        color = ((255, 255, 255))
-
         # create table to store 'binary' solution
         self.solution_grid = [0 for x in range(data[0])]
         self.expression = [" " for x in range(data[0])]
@@ -79,55 +76,91 @@ class Board(gd.BoardGame):
 
         # add objects to the board
         h = random.randrange(0, 255, 5)
-        number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
+
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "universal_sq_dc.png")
+            dc_tall_img_src = os.path.join('unit_bg', "universal_r1x3_dc.png")
+        else:
+            dc_img_src = None
+            dc_tall_img_src = None
+
+        number_color = ex.hsv_to_rgb(h, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+        font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
+        bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        bg_tall_img_src = os.path.join('unit_bg', "universal_r1x3_bg.png")
+
+        if self.mainloop.scheme is None:
+            door_bg_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+        else:
+            door_bg_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+            if self.mainloop.scheme.dark:
+                door_bg_img_src = os.path.join('unit_bg', "universal_sq_door_no_trans.png")
 
         for i in range(0, data[4]):
             x2 = xd + i * 2 - 1
             caption = str(self.num_list[i])
-            self.board.add_unit(x2, 2, 1, 1, classes.board.Label, caption, number_color, "", data[6])
-            self.board.units[i].font_color = ex.hsv_to_rgb(h, 255, 140)
+            self.board.add_universal_unit(grid_x=x2, grid_y=2, grid_w=1, grid_h=1, txt=caption,
+                                          fg_img_src=None, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                          bg_tint_color=number_color, fg_tint_color=None,
+                                          txt_align=(0, 0), font_type=data[6], multi_color=False, alpha=True,
+                                          immobilized=True, fg_as_hover=False, mode=1)
             self.solution_grid[x2] = 1
             self.expression[x2] = str(self.num_list[i])
             if i < data[4] - 1:
                 self.solution_grid[x2 + 1] = 1
                 self.expression[x2 + 1] = self.sign_list[i]
 
-        self.board.add_unit(x2 + 1, 2, 1, 1, classes.board.Label, "=", number_color, "", data[6])
-        self.board.units[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
-        self.board.add_unit(x2 + 2, 2, 1, 1, classes.board.Label, str(self.total), number_color, "", data[6])
-        self.board.units[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
-        # signs = ["<","=",">"]*(data[4]-1)
+        self.board.add_universal_unit(grid_x=x2 + 1, grid_y=2, grid_w=1, grid_h=1, txt="=",
+                                      fg_img_src=None, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                      bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                      bg_tint_color=number_color, fg_tint_color=None,
+                                      txt_align=(0, 0), font_type=data[6], multi_color=False, alpha=True,
+                                      immobilized=True, fg_as_hover=False, mode=1)
+
+        self.board.add_universal_unit(grid_x=x2 + 2, grid_y=2, grid_w=1, grid_h=1, txt=str(self.total),
+                                      fg_img_src=None, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                      bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                      bg_tint_color=number_color, fg_tint_color=None,
+                                      txt_align=(0, 0), font_type=data[6], multi_color=False, alpha=True,
+                                      immobilized=True, fg_as_hover=False, mode=1)
 
         if h > 125:
             h = random.randrange(0, h - 25, 5)
         else:
             h = random.randrange(h + 25, 255, 5)
-        number_color = ex.hsv_to_rgb(h, s, v)  # highlight 1
+
+        number_color = ex.hsv_to_rgb(h, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+        font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+        fg_number_color = ex.hsv_to_rgb(h, self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
 
         indu = len(self.board.units)
         inds = len(self.board.ships)
         self.door_indexes = []
         for i in range(0, data[4] - 1):
-            self.board.add_unit(xd + i * 2 + 1 - 1, 1, 1, 3, classes.board.Letter, signs, number_color, "", data[6])
-            self.board.ships[i].font_color = ex.hsv_to_rgb(h, 255, 140)
-            self.board.add_door(xd + i * 2 + 1 - 1, 2, 1, 1, classes.board.Door, "", color, "")
-            self.board.units[indu + i].door_outline = True
+            self.board.add_universal_unit(grid_x=xd + i * 2, grid_y=1, grid_w=1, grid_h=3, txt=signs,
+                                          fg_img_src=bg_tall_img_src, bg_img_src=bg_tall_img_src,
+                                          dc_img_src=dc_tall_img_src, bg_color=(0, 0, 0, 0), border_color=None,
+                                          font_color=font_color, bg_tint_color=number_color,
+                                          fg_tint_color=fg_number_color, txt_align=(0, 0), font_type=data[6],
+                                          multi_color=False, alpha=True, immobilized=False, fg_as_hover=True, mode=0)
+
+            self.units.append(self.board.ships[-1])
+            self.board.add_universal_unit(grid_x=xd + i * 2, grid_y=2, grid_w=1, grid_h=1, txt="",
+                                          fg_img_src=None, bg_img_src=door_bg_img_src, dc_img_src=None,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=None,
+                                          bg_tint_color=(255, 0, 0), fg_tint_color=None,
+                                          txt_align=(0, 0), font_type=data[6], multi_color=False, alpha=True,
+                                          immobilized=True, fg_as_hover=False, mode=2)
 
             self.board.units[indu + i].checkable = True
             self.board.units[indu + i].init_check_images()
             self.door_indexes.append(indu + i)
             self.board.ships[inds + i].readable = False
             self.board.all_sprites_list.move_to_front(self.board.units[indu + i])
-        """
-        instruction = self.d["Drag the slider"]
-        self.board.add_unit(0, 5, 11, 1, classes.board.Letter, instruction, color0, "", 7)
-        self.board.ships[-1].immobilize()
-        self.board.ships[-1].font_color = font_color
 
-        self.board.ships[-1].speaker_val = self.dp["Drag the slider"]
-        self.board.ships[-1].speaker_val_update = False
-        """
-        self.changed_since_check = True  # to make it possible to confirm if numbers are equal
+        self.changed_since_check = True
         self.outline_all(0, 1)
 
     def show_info_dialog(self):
@@ -140,14 +173,16 @@ class Board(gd.BoardGame):
                 each.set_display_check(None)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             self.auto_check_reset()
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         all_true = True
@@ -168,9 +203,10 @@ class Board(gd.BoardGame):
             eval_string = ''.join(self.expression)
             eval_string.strip()
             if eval(eval_string) == self.total:
-                #in case there's more than one solution
-                for i in range(len(self.board.ships) - 1):
+                # in case there's more than one solution
+                for i in range(len(self.board.ships)):
                     self.board.units[self.door_indexes[i]].set_display_check(True)
+                self.mainloop.redraw_needed[0] = True
                 self.level.next_board()
 
         self.mainloop.redraw_needed[0] = True

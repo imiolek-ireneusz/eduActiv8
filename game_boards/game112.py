@@ -4,12 +4,9 @@ import os
 import pygame
 import random
 
-import classes.board
 import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
-import classes.drw.splash
-import classes.drw.fraction
 
 
 class Board(gd.BoardGame):
@@ -22,7 +19,6 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.show_info_btn = False
         h = random.randrange(0, 255, 5)
-        color0 = ex.hsv_to_rgb(h, 40, 230)
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 color = (0, 0, 0)
@@ -52,8 +48,6 @@ class Board(gd.BoardGame):
         self.task = self.generate_task(self.term, self.term_len, self.term_count, term_completed_count,
                                        term_semi_completed_count, shuffled=lvl_data[6])
 
-        alpha = False
-
         if self.mainloop.m.game_variant == 3:
             self.initiate_images()
             self.choices = [x for x in range(len(self.imgs))]
@@ -70,10 +64,13 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
+
+        self.unit_mouse_over = None
+        self.units = []
+
         self.board.board_bg.initcolor = color
         self.board.board_bg.color = color
         self.board.board_bg.update_me = True
-
 
         self.left_offset = (self.data[0] - len(self.task)) // 2
 
@@ -111,17 +108,39 @@ class Board(gd.BoardGame):
 
         self.term = ''.join(self.temp_term)
 
+        fg_tint_color = (30, 30, 30)
+        dc_tint_color = ex.hsv_to_rgb(160, self.mainloop.cl.door_bg_tint_s, self.mainloop.cl.door_bg_tint_v)
+        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+            dc_img_src = os.path.join('unit_bg', "img_decor_bb.png")
+            dc_tint_color = None
+        else:
+            dc_img_src = os.path.join('unit_bg', "img_decor_w.png")
+
+        font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
 
         for i in range(len(self.task)):
             self.solution_grid[self.left_offset + i] = 1
             if self.task[i] == "?":
                 #add placeholder and the items to add
-                self.board.add_door(self.left_offset + i, 0, 1, 1, classes.board.Door, "", color, "")
-                self.board.units[-1].door_outline = True
+                self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt=None,
+                                              fg_img_src=None, bg_img_src=None, dc_img_src=dc_img_src,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=None,
+                                              bg_tint_color=None, fg_tint_color=None, txt_align=(0, 0),
+                                              font_type=10, multi_color=False, alpha=True, immobilized=True, mode=2,
+                                              dc_tint_color=dc_tint_color)
                 img_src = self.term_images[i % self.term_len]
-                self.board.add_unit(self.positions[p_ind], 2, 1, 1, classes.board.ImgShip, "", color0, img_src)
+                self.board.add_universal_unit(grid_x=self.positions[p_ind], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                              fg_img_src=img_src, bg_img_src=img_src, dc_img_src=None,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                              bg_tint_color=None, dc_tint_color=None,
+                                              fg_tint_color=(50, 50, 50), txt_align=(0, 0), font_type=0,
+                                              multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
+                self.board.ships[-1].set_blit_mask(os.path.join('unit_bg', 'img_mask.png'))
+                self.units.append(self.board.ships[-1])
                 if same_images and (i % self.term_len) in repeats:
                     self.board.ships[-1].mirror_image()
+                    self.board.ships[-1].update(self.board)
+                    self.board.ships[-1].update_me = True
 
                 self.board.ships[-1].pattern_value = self.term[i % self.term_len]
                 self.board.ships[-1].highlight = False
@@ -132,9 +151,16 @@ class Board(gd.BoardGame):
             else:
                 #add pre-entered part of a pattern
                 img_src = self.term_images[i % self.term_len]
-                self.board.add_unit(self.left_offset + i, 0, 1, 1, classes.board.ImgShip, "", color0, img_src)
+                self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt="",
+                                              fg_img_src=None, bg_img_src=img_src, dc_img_src=dc_img_src,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                              bg_tint_color=None, dc_tint_color=dc_tint_color,
+                                              fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                              multi_color=False, alpha=True, immobilized=True, fg_as_hover=False)
                 if same_images and (i % self.term_len) in repeats:
                     self.board.ships[-1].mirror_image()
+                    self.board.ships[-1].update(self.board)
+                    self.board.ships[-1].update_me = True
 
                 self.board.ships[-1].pattern_value = self.term[i % self.term_len]
                 self.board.ships[-1].immobilize()
@@ -146,12 +172,23 @@ class Board(gd.BoardGame):
         #add noise
         for i in range(p_ind, len(self.positions)):
             img_src = self.term_images[i % self.term_len]
-            self.board.add_unit(self.positions[i], 2, 1, 1, classes.board.ImgShip, "", color0, img_src)
+            self.board.add_universal_unit(grid_x=self.positions[i], grid_y=2, grid_w=1, grid_h=1, txt="",
+                                          fg_img_src=img_src, bg_img_src=img_src, dc_img_src=None,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                          bg_tint_color=None, dc_tint_color=None,
+                                          fg_tint_color=fg_tint_color, txt_align=(0, 0), font_type=0,
+                                          multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
+            self.board.ships[-1].set_blit_mask(os.path.join('unit_bg', 'img_mask.png'))
+            self.units.append(self.board.ships[-1])
             if same_images and (i % self.term_len) in repeats:
                 self.board.ships[-1].mirror_image()
+                self.board.ships[-1].update(self.board)
+                self.board.ships[-1].update_me = True
 
             if random.randint(0, 1) == 1 and (not same_images or not repeats):
                 self.board.ships[-1].mirror_image()
+                self.board.ships[-1].update(self.board)
+                self.board.ships[-1].update_me = True
                 self.board.ships[-1].pattern_value = -1 * self.term[i % self.term_len]
             else:
                 self.board.ships[-1].pattern_value = self.term[i % self.term_len]
@@ -163,6 +200,7 @@ class Board(gd.BoardGame):
 
         for each in self.board.units:
             self.board.all_sprites_list.move_to_front(each)
+        self.board.mainloop.redraw_needed[0] = True
 
     def show_info_dialog(self):
         self.mainloop.dialog.show_dialog(3, self.lang.d["Complete the pattern"])
@@ -174,6 +212,8 @@ class Board(gd.BoardGame):
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
             self.check_result()
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def start_game(self, gameid):
         self.mainloop.m.start_hidden_game(gameid)
@@ -322,7 +362,7 @@ class Board(gd.BoardGame):
             self.imgs = ['frog', 'turtle', 'iguana', 'snake', 'chameleon', 'viper', 'cobra', 'salamander', 'toad', 'lizard', 'alligator']
         elif gv == 5:
             self.category = "sport"
-            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'walk', 'ran', 'run', 'swim', 'hop', 'hike', 'boxing', 'hockey', 'throw', 'skate', 'win', 'squat', 'ski', 'golf', 'stand', 'tennis', 'jump', 'rowing', 'jog', 'rope']
+            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'walk', 'run', 'swim', 'hop', 'hike', 'boxing', 'hockey', 'throw', 'skate', 'win', 'squat', 'ski', 'golf', 'stand', 'tennis', 'jump', 'rowing', 'jog', 'rope']
         elif gv == 6:
             self.category = "nature"
             self.imgs = ['land', 'canyon', 'sea', 'shore', 'mountain', 'pond', 'cave', 'island', 'forest', 'desert']
