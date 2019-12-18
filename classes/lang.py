@@ -103,7 +103,7 @@ class Language:
             self.lang_file = i18n.custom.sr
             self.lang_id = 19
             self.ico_suffix = "ru"
-            self.has_cursive = False
+            self.has_cursive = True
             self.time2str_short = self.lang_file.time2str_short
         elif self.lang == 'ca':
             import i18n.custom.ca
