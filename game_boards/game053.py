@@ -24,7 +24,6 @@ class Board(gd.BoardGame):
         self.col_b = (0, 0, 255)
         self.col_k = (0, 0, 0)
         self.col_e = (255, 255, 255)
-        colorkey = (2, 2, 2)
         self.col_bg = (255, 255, 255)  # self.col_k #(255,246,219)
         data = [32, 23]
         # stretch width to fit the screen size
@@ -59,7 +58,6 @@ class Board(gd.BoardGame):
         for each in self.board.ships:
             each.outline = False
             each.audible = False
-            #each.image.set_colorkey(each.initcolor)
 
         # add colour circles - canvas
         self.board.add_unit(10, 0, data[0] - 10, data[1], classes.board.Label, "", self.col_e, "", 0)
@@ -89,16 +87,11 @@ class Board(gd.BoardGame):
 
         # black background
         self.board.add_door(1, 0, 2, data[1], classes.board.Door, "", self.col_k, "", 0, door_alpha=False)
-        self.board.units[-1].image.set_colorkey(None)
         self.board.add_door(4, 0, 2, data[1], classes.board.Door, "", self.col_k, "", 0, door_alpha=False)
-        self.board.units[-1].image.set_colorkey(None)
         self.board.add_door(7, 0, 2, data[1], classes.board.Door, "", self.col_k, "", 0, door_alpha=False)
-        self.board.units[-1].image.set_colorkey(None)
 
-        # self.color_info = self.board.units[-1]
         for i in [5, 6, 7, 8, 9, 10, 11, 12, 13]:
             if i > 7:
-                self.board.units[i].image.set_colorkey(colorkey)
                 self.board.all_sprites_list.move_to_back(self.board.units[i])
             else:
                 self.board.all_sprites_list.move_to_front(self.board.units[i])
@@ -112,6 +105,43 @@ class Board(gd.BoardGame):
         self.mix()
 
     def mix(self):
+        if self.mainloop.android is not None:
+            self.mix_quads()
+        else:
+            self.mix_circles()
+
+    def mix_quads(self):
+        for i in range(3):
+            self.rgb_g[i] = self.board.ships[i].grid_y
+        self.update_sliders()
+        self.canv[3].fill(self.col_k)
+        ct = self.canvas_center[:]
+        bottom = ct[1] + 8 * self.board.scale
+        unit = 2.9 * self.board.scale
+        ct[1] = ct[1] - 0.2 * unit
+        q1 = [[ct[0], bottom],
+              [ct[0] + 3 * unit, bottom - 5.2 * unit],
+              [ct[0] + 2 * unit, bottom - 6 * unit],
+              [ct[0] - 2 * unit, bottom - 6 * unit],
+              [ct[0] - 3 * unit, bottom - 5.2 * unit]]
+
+        # draw the three colour diamonds
+        pygame.draw.polygon(self.canv[3], self.rgbx3[0], q1)
+        pygame.draw.polygon(self.canv[3], self.rgbx3[1], ex.rotate_points(q1, ct, 120))
+        pygame.draw.polygon(self.canv[3], self.rgbx3[2], ex.rotate_points(q1, ct, 240))
+
+        # draw the intersection triangle
+        scl = 0.854
+        tria = [[ct[0], bottom],
+                [ct[0] + 3 * unit * scl, bottom - 5.2 * unit * scl],
+                [ct[0] - 3 * unit * scl, bottom - 5.2 * unit * scl]]
+        cl = [self.rgbx3[i][i] for i in range(3)]
+        pygame.draw.polygon(self.canv[3], cl, tria)
+
+        self.canvas.painting = self.canv[3].copy()
+        self.canvas.update_me = True
+
+    def mix_circles(self):
         for i in range(3):
             self.rgb_g[i] = self.board.ships[i].grid_y
         self.update_sliders()
