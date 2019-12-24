@@ -4,6 +4,7 @@ import pygame
 import colorsys
 import random
 import sys
+import math
 
 fribidi_loaded = False
 try:
@@ -33,10 +34,12 @@ def hsv_to_rgb(h, s, v):
     rgb = colorsys.hsv_to_rgb(*hsv_clean)
     return [int(each * 255) for each in rgb]
 
+
 def hsva_to_rgba(h, s, v, a):
     rgb = hsv_to_rgb(h, s, v)
     rgb.append(a)
     return rgb
+
 
 def rgb_to_hsv(r, g, b, a=255):
     hsv = colorsys.rgb_to_hsv(r / 255.0, g / 255.0, b / 255.0)
@@ -331,3 +334,44 @@ def fill_gradient(surface, color, gradient, rect=None, vertical=True, forward=Tr
                 int(min(max(a[3] + (rate[3] * (col - x1)), 0), 255))
             )
             pygame.draw.line(surface, color, (col, y1), (col, y2))
+
+
+def _rotate_point(point, centre, angle):
+    """ Rotates a point around another point by a number of degrees (anticlockwise)
+    :param point: point coordinates - 2 element list
+    :param centre: centre of rotation coordinates - 2 element list
+    :param angle: rotate by the given angle
+    :return: a rotated point - 2 element list
+    """
+    # convert angle to radians
+    angle = math.radians(angle)
+
+    pt = [0, 0]
+
+    # translate the rotation point to the origin
+    pt[0] = point[0] - centre[0]
+    pt[1] = point[1] - centre[1]
+
+    # calculate the new coordinates after rotation
+    res = [int(round(pt[0] * math.cos(angle) - pt[1] * math.sin(angle))),
+           int(round(pt[1] * math.cos(angle) + pt[0] * math.sin(angle)))]
+
+    # cancel translation
+    res[0] += centre[0]
+    res[1] += centre[1]
+
+    return res
+
+
+def rotate_points(points, centre, angle):
+    """ Rotates a list of points around another point by a number of degrees (anticlockwise)
+    :param points: a list of 2 element lists containing initial coordinates of individual points
+    :param centre: a list of 2 elements containing a coordinates of the centre of rotation
+    :param angle: the angle by which the points are to be rotated in degrees
+    :return: a list of rotated points about a centre point
+    """
+    rotated_points = []
+    for point in points:
+        rotated_points.append(_rotate_point(point, centre, angle))
+
+    return rotated_points
