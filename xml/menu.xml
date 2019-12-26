@@ -671,7 +671,7 @@
                       title="Find solution"
                       subtitle="answer_enter"
                       icon="ico_g_5309.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
 
                 <game mline="1" dbid="39" variant="0" var2="0" min_age="0" max_age="6"
@@ -687,7 +687,7 @@
                       title="Find missing number"
                       subtitle="answer_enter"
                       icon="ico_g_5313.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
 
                 <game mline="2" dbid="31" variant="0" var2="0" min_age="0" max_age="6"
@@ -755,7 +755,7 @@
                       title="Find solution"
                       subtitle="answer_enter"
                       icon="ico_g_5310.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="1" dbid="40" variant="1" var2="0" min_age="0" max_age="7"
                       constructor_id="19"
@@ -769,7 +769,7 @@
                       title="Find missing number"
                       subtitle="answer_enter"
                       icon="ico_g_5314.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="2" dbid="32" variant="1" var2="0" min_age="0" max_age="7"
                       constructor_id="60"
@@ -857,7 +857,7 @@
                       title="Find solution"
                       subtitle="answer_enter"
                       icon="ico_g_5311.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="2" dbid="41" variant="2" var2="0" min_age="2" max_age="7"
                       constructor_id="19"
@@ -871,7 +871,7 @@
                       title="Find missing number"
                       subtitle="answer_enter"
                       icon="ico_g_5315.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="2" dbid="33" variant="2" var2="0" min_age="2" max_age="7"
                       constructor_id="60"
@@ -924,7 +924,7 @@
                       title="Find solution"
                       subtitle="answer_enter"
                       icon="ico_g_5312.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="2" dbid="42" variant="3" var2="0" min_age="2" max_age="7"
                       constructor_id="19"
@@ -938,7 +938,7 @@
                       title="Find missing number"
                       subtitle="answer_enter"
                       icon="ico_g_5316.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="2" dbid="34" variant="3" var2="0" min_age="2" max_age="7"
                       constructor_id="60"
@@ -1013,7 +1013,7 @@
                       title="Find solution"
                       subtitle="answer_enter"
                       icon="ico_g_6303.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="0" dbid="219" variant="0" var2="0" min_age="4" max_age="7"
                       constructor_id="19"
@@ -1027,7 +1027,7 @@
                       title="Find missing number"
                       subtitle="answer_enter"
                       icon="ico_g_6304.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="0" dbid="220" variant="0" var2="0" min_age="4" max_age="7"
                       constructor_id="60"
@@ -1052,7 +1052,7 @@
                       title="Find solution"
                       subtitle="answer_enter"
                       icon="ico_g_6306.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="0" dbid="222" variant="1" var2="1" min_age="4" max_age="7"
                       constructor_id="19"
@@ -1066,7 +1066,7 @@
                       title="Find missing number"
                       subtitle="answer_enter"
                       icon="ico_g_6307.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="0" dbid="223" variant="1" var2="1" min_age="4" max_age="7"
                       constructor_id="60"
@@ -1091,7 +1091,7 @@
                       title="Find solution"
                       subtitle="answer_enter"
                       icon="ico_g_6309.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="0" dbid="263" variant="2" var2="0" min_age="4" max_age="7"
                       constructor_id="19"
@@ -1105,7 +1105,7 @@
                       title="Find missing number"
                       subtitle="answer_enter"
                       icon="ico_g_6310.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="0" dbid="264" variant="2" var2="0" min_age="4" max_age="7"
                       constructor_id="60"
@@ -1130,7 +1130,7 @@
                       title="Find solution"
                       subtitle="answer_enter"
                       icon="ico_g_6312.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="0" dbid="266" variant="3" var2="0" min_age="4" max_age="7"
                       constructor_id="19"
@@ -1144,7 +1144,7 @@
                       title="Find missing number"
                       subtitle="answer_enter"
                       icon="ico_g_6313.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
                 </game>
                 <game mline="0" dbid="267" variant="3" var2="0" min_age="4" max_age="7"
                       constructor_id="60"
@@ -1929,7 +1929,7 @@
                   title="Paint"
                   subtitle=""
                   icon="ico_g_0600.png" ico_group="1" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="True">
+                  visible="1" lang_incl="" lang_excl="" require_uc="False" listening="False" android="False">
             </game>
             <game mline="2" dbid="72" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="42"
