@@ -22,15 +22,15 @@ class Board(gd.BoardGame):
 
         self.unit_mouse_over = None
 
-        self.bg_color = [255, 255, 255]
-        color = [255, 255, 255]
+        self.bg_color = [255, 255, 255, 0]
+        color = [255, 255, 255, 0]
         self.transp = (0, 0, 0, 0)
 
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                self.bg_color = (0, 0, 0)
-                color = (0, 0, 0)
-                self.guides_color = (30, 30, 30)
+                self.bg_color = (0, 0, 0, 0)
+                color = (0, 0, 0, 0)
+                self.guides_color = (30, 30, 30, 0)
 
         data = [28, 18]
 
