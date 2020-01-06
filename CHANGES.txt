@@ -1,4 +1,8 @@
 Changelog:
+eduActiv8 - 4.20.01:
+    - Bug fix update.
+    - Fixed the game crashing issue when launching any of the clock games when a non-default colour scheme is selected.
+    - Minor fixes.
 eduActiv8 - 4.19.12:
     - Bulgarian translation added by Vanyo Georgiev
     - Multiple activities redesigned - background colours changed and hover states added.
