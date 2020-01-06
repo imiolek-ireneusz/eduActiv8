@@ -450,7 +450,11 @@ class Board(gd.BoardGame):
         self.level.game_step = 1
         label_w = self.data[0] // 2
 
-        self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
+        if self.mainloop.lang.lang[0:2] == "en" and self.mainloop.m.game_variant == 1:
+            self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 1]
+        else:
+            self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 1, 0]
+
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
 
         self.layout.update_layout(data[0], data[1])
@@ -478,6 +482,11 @@ class Board(gd.BoardGame):
 
         self.kbrd = KeyBoard(self, self.board.units[3], self.board.units[3].rect.w, self.board.units[3].rect.h)
         self.kbrd.get_btns_to_hl(self.current_line[0])
+
+    def show_info_dialog(self):
+        self.mainloop.dialog.show_dialog(3, "Press a key corresponding to the highlighted letter. "
+                                            "To enter upper case letters activate Caps Lock key to avoid having to "
+                                            "press the Shift key continuously.")
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
