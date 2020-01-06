@@ -24,6 +24,10 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         h = random.randrange(150, 240, 5)
         color0 = ex.hsv_to_rgb(h, 1, 255)  # highlight 1
+        if self.mainloop.scheme is not None:
+            if self.mainloop.scheme.dark:
+                color0 = (0, 0, 0)
+
         self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
         self.font_color = self.color2
 
