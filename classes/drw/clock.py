@@ -27,12 +27,12 @@ class Clock:
             color1 = self.game_board.mainloop.scheme.color1  # bright side of short hand
             color3 = self.game_board.mainloop.scheme.color3  # inner font color
             color5 = self.game_board.mainloop.scheme.color5  # dark side of short hand
-            color7 = self.game_board.mainloop.scheme.color7  # inner circle filling
+            color7 = list(self.game_board.mainloop.scheme.color7)  # inner circle filling
 
             color2 = self.game_board.mainloop.scheme.color2  # bright side of long hand
             color4 = self.game_board.mainloop.scheme.color4  # ex.hsv_to_rgb(170,255,255)#outer font color
             color6 = self.game_board.mainloop.scheme.color6  # dark side of long hand
-            color8 = self.game_board.mainloop.scheme.color8  # outer circle filling
+            color8 = list(self.game_board.mainloop.scheme.color8)  # outer circle filling
 
         else:
             color1 = ex.hsv_to_rgb(225, 70, 230)
