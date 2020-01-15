@@ -23,7 +23,7 @@
     </game>
 
     <!-- Letter Sorting Activities (game047) -->
-    <!-- data = [number of letters, consecutive leters, font size] -->
+    <!-- data = [number of letters, consecutive letters, font size] -->
     <game dbids="12" min_age="0" max_age="1" show_all="1">
         <chapters data="[1, 3, 5]" />
         <levels count="5" games_per_level="5">

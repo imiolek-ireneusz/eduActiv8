@@ -30,6 +30,7 @@ class Board(gd.BoardGame):
             self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
             self.font_color = ex.hsv_to_rgb(h, 255, 100)
         else:
+            h = 170
             self.font_color = self.mainloop.scheme.u_font_color  # ex.hsv_to_rgb(h,255,100)
             if self.mainloop.scheme.dark:
                 self.bg_col = (0, 0, 1)
@@ -167,7 +168,7 @@ class Board(gd.BoardGame):
     def draw_fractions(self, canvas, size, center, color):
         lh = max(int(size * 0.05), 2)
         la = self.mainloop.config.font_start_at_adjustment
-        pygame.draw.line(canvas, self.font_color, [center[0] - size // 7, center[1] - lh // 2 + la],
+        pygame.draw.line(canvas, color, [center[0] - size // 7, center[1] - lh // 2 + la],
                          [center[0] + size // 7, center[1] - lh // 2 + la], lh)
 
     def handle(self, event):

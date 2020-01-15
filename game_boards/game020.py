@@ -30,6 +30,7 @@ class Board(gd.BoardGame):
             self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
             self.font_color = ex.hsv_to_rgb(h, 255, 100)
         else:
+            h = 170
             self.font_color = self.mainloop.scheme.u_font_color  # ex.hsv_to_rgb(h,255,100)
             if self.mainloop.scheme.dark:
                 self.bg_col = (0, 0, 1)
