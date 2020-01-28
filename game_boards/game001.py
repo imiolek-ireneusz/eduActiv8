@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import pygame
-
 import classes.board
 import classes.extras as ex
 import classes.game_driver as gd
@@ -19,9 +17,7 @@ class Board(gd.BoardGame):
 
         self.color = (255, 255, 255)
 
-        font_color = ex.hsv_to_rgb(227, 255, 50)
         font_color2 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 150)
-        #font_color2 = (20, 75, 92)
         data = [23, 16]
 
         self.data = data
@@ -37,7 +33,7 @@ class Board(gd.BoardGame):
         self.board.board_bg.update_me = True
         self.board.board_bg.line_color = (20, 20, 20)
 
-        self.board.add_unit(0, 0, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2019  Ireneusz Imiolek",
+        self.board.add_unit(0, 0, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2020  Ireneusz Imiolek",
                             self.color, "", 1)
         self.board.add_unit(0, 1, data[0], 1, classes.board.Label, "", self.color, "", 2)
         self.board.add_unit(0, 2, data[0], 5, classes.board.Label, self.lang.d["Credits_long"], self.color, "", 2)
