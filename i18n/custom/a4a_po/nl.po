@@ -1,0 +1,1773 @@
+# eduActiv8 - word lists - translation file.
+# Copyright (C) 2019 Ireneusz Imiolek
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+# 
+# Translators:
+# Steven Es <transifex@stevelot.be>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.19.01\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"Last-Translator: Steven Es <transifex@stevelot.be>, 2020\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/eduactiv8/teams/94947/nl_NL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "cow"
+msgstr "koe"
+
+msgid "turkey"
+msgstr "kalkoen"
+
+msgid "shrimp"
+msgstr "garnaal"
+
+msgid "wolf"
+msgstr "wolf"
+
+msgid "panther"
+msgstr "panter"
+
+msgid "panda"
+msgstr "panda"
+
+msgid "magpie"
+msgstr "ekster"
+
+msgid "clam"
+msgstr "mossel"
+
+msgid "pony"
+msgstr "pony"
+
+msgid "mouse"
+msgstr "muis"
+
+msgid "pug"
+msgstr "mopshond"
+
+msgid "koala"
+msgstr "koala"
+
+msgid "frog"
+msgstr "kikker"
+
+msgid "ladybug"
+msgstr "lieveheersbeestje"
+
+msgid "gorilla"
+msgstr "gorilla"
+
+msgid "llama"
+msgstr "lama"
+
+msgid "vulture"
+msgstr "gier"
+
+msgid "hamster"
+msgstr "hamster"
+
+msgid "bird"
+msgstr "vogel"
+
+msgid "starfish"
+msgstr "zeesterren"
+
+msgid "crow"
+msgstr "kraai"
+
+msgid "parakeet"
+msgstr "parkiet"
+
+msgid "caterpillar"
+msgstr "rups"
+
+msgid "tiger"
+msgstr "tijger"
+
+msgid "hummingbird"
+msgstr "kolibrie"
+
+msgid "piranha"
+msgstr "piranha"
+
+msgid "pig"
+msgstr "varken"
+
+msgid "scorpion"
+msgstr "schorpioen"
+
+msgid "fox"
+msgstr "vos"
+
+msgid "leopard"
+msgstr "luipaard"
+
+msgid "iguana"
+msgstr "leguaan"
+
+msgid "dolphin"
+msgstr "dolfijn"
+
+msgid "bat"
+msgstr "knuppel"
+
+msgid "chick"
+msgstr "kuiken"
+
+msgid "crab"
+msgstr "krab"
+
+msgid "hen"
+msgstr "kip"
+
+msgid "wasp"
+msgstr "wesp"
+
+msgid "chameleon"
+msgstr "kameleon"
+
+msgid "whale"
+msgstr "walvis"
+
+msgid "hedgehog"
+msgstr "egel"
+
+msgid "fawn"
+msgstr "hertenkalf"
+
+msgid "moose"
+msgstr "eland"
+
+msgid "bee"
+msgstr "bij"
+
+msgid "viper"
+msgstr "adder"
+
+msgid "shrike"
+msgstr "?vogeltje?"
+
+msgid "donkey"
+msgstr "ezel"
+
+msgid "guinea pig"
+msgstr "proefkonijn"
+
+msgid "sloth"
+msgstr "luiaard"
+
+msgid "horse"
+msgstr "paard"
+
+msgid "penguin"
+msgstr "pinguïn"
+
+msgid "otter"
+msgstr "otter"
+
+msgid "bear"
+msgstr "beer"
+
+msgid "zebra"
+msgstr "zebra"
+
+msgid "ostrich"
+msgstr "struisvogel"
+
+msgid "camel"
+msgstr "kameel"
+
+msgid "antelope"
+msgstr "antilope"
+
+msgid "lemur"
+msgstr "maki"
+
+msgid "pigeon"
+msgstr "duif"
+
+msgid "lama"
+msgstr "lama"
+
+msgid "mole"
+msgstr "mol"
+
+msgid "ray"
+msgstr "rog"
+
+msgid "ram"
+msgstr "ram"
+
+msgid "skunk"
+msgstr "stinkdier"
+
+msgid "jellyfish"
+msgstr "kwal"
+
+msgid "sheep"
+msgstr "schaap"
+
+msgid "shark"
+msgstr "haai"
+
+msgid "kitten"
+msgstr "baby katje"
+
+msgid "deer"
+msgstr "hert"
+
+msgid "snail"
+msgstr "slak"
+
+msgid "flamingo"
+msgstr "flamingo"
+
+msgid "rabbit"
+msgstr "konijn"
+
+msgid "oyster"
+msgstr "oester"
+
+msgid "beaver"
+msgstr "bever"
+
+msgid "sparrow"
+msgstr "mus"
+
+msgid "dove"
+msgstr "duif"
+
+msgid "eagle"
+msgstr "adelaar"
+
+msgid "beetle"
+msgstr "kever"
+
+msgid "hippopotamus"
+msgstr "nijlpaard"
+
+msgid "owl"
+msgstr "uil"
+
+msgid "cobra"
+msgstr "cobra"
+
+msgid "salamander"
+msgstr "salamander"
+
+msgid "goose"
+msgstr "gans"
+
+msgid "kangaroo"
+msgstr "kangoeroe"
+
+msgid "dragonfly"
+msgstr "libel"
+
+msgid "toad"
+msgstr "pad"
+
+msgid "pelican"
+msgstr "pelikaan"
+
+msgid "squid"
+msgstr "inktvis"
+
+msgid "lion cub"
+msgstr "leeuwenwelp"
+
+msgid "jaguar"
+msgstr "jaguar"
+
+msgid "duck"
+msgstr "eend"
+
+msgid "lizard"
+msgstr "hagedis"
+
+msgid "rhinoceros"
+msgstr "neushoorn"
+
+msgid "hyena"
+msgstr "hyena"
+
+msgid "ox"
+msgstr "os"
+
+msgid "peacock"
+msgstr "pauw"
+
+msgid "parrot"
+msgstr "papegaai"
+
+msgid "elk"
+msgstr "eland"
+
+msgid "alligator"
+msgstr "alligator"
+
+msgid "ant"
+msgstr "mier"
+
+msgid "goat"
+msgstr "geit"
+
+msgid "baby rabbit"
+msgstr "babykonijn"
+
+msgid "lion"
+msgstr "leeuw"
+
+msgid "squirrel"
+msgstr "eekhoorn"
+
+msgid "opossum"
+msgstr "opossum"
+
+msgid "chimp"
+msgstr "chimpansee"
+
+msgid "doe"
+msgstr "hinde"
+
+msgid "gopher"
+msgstr "?marmot?"
+
+msgid "elephant"
+msgstr "olifant"
+
+msgid "giraffe"
+msgstr "giraffe"
+
+msgid "spider"
+msgstr "spin"
+
+msgid "puppy"
+msgstr "puppy"
+
+msgid "jay"
+msgstr "gaai"
+
+msgid "seal"
+msgstr "zegel"
+
+msgid "rooster"
+msgstr "haan"
+
+msgid "turtle"
+msgstr "schildpad"
+
+msgid "bull"
+msgstr "stier"
+
+msgid "cat"
+msgstr "kat"
+
+msgid "rat"
+msgstr "ratten"
+
+msgid "slug"
+msgstr "naaktslak"
+
+msgid "buffalo"
+msgstr "buffel"
+
+msgid "blackbird"
+msgstr "merel"
+
+msgid "swan"
+msgstr "zwaan"
+
+msgid "lobster"
+msgstr "kreeft"
+
+msgid "dog"
+msgstr "hond"
+
+msgid "mosquito"
+msgstr "mug"
+
+msgid "snake"
+msgstr "slang"
+
+msgid "chicken"
+msgstr "kip"
+
+msgid "anteater"
+msgstr "miereneter"
+
+msgid "judo"
+msgstr "judo"
+
+msgid "pool"
+msgstr "zwembad"
+
+msgid "ride"
+msgstr "ritje"
+
+msgid "stretch"
+msgstr "rekken"
+
+msgid "helmet"
+msgstr "helm"
+
+msgid "ice skating"
+msgstr "schaatsen"
+
+msgid "walk"
+msgstr "wandel"
+
+msgid "run"
+msgstr "ren"
+
+msgid "swim"
+msgstr "zwem"
+
+msgid "hop"
+msgstr "huppel"
+
+msgid "hike"
+msgstr "wandeltocht"
+
+msgid "boxing"
+msgstr "boksen"
+
+msgid "hockey"
+msgstr "hockey"
+
+msgid "race"
+msgstr "race"
+
+msgid "throw"
+msgstr "gooi"
+
+msgid "skate"
+msgstr "schaats"
+
+msgid "win"
+msgstr "winnen"
+
+msgid "squat"
+msgstr "hurkzit"
+
+msgid "ski"
+msgstr "ski"
+
+msgid "golf"
+msgstr "golf"
+
+msgid "whistle"
+msgstr "fluiten"
+
+msgid "torch"
+msgstr "fakkel"
+
+msgid "sailing"
+msgstr "zeilen"
+
+msgid "stand"
+msgstr "staan"
+
+msgid "tennis"
+msgstr "tennis"
+
+msgid "jump"
+msgstr "spring"
+
+msgid "rowing"
+msgstr "roeien"
+
+msgid "jog"
+msgstr "joggen"
+
+msgid "rope"
+msgstr "touw"
+
+msgid "teeth"
+msgstr "tanden"
+
+msgid "cheek"
+msgstr "wang"
+
+msgid "ankle"
+msgstr "enkel"
+
+msgid "knee"
+msgstr "knie"
+
+msgid "toe"
+msgstr "teen"
+
+msgid "muscle"
+msgstr "spier"
+
+msgid "mouth"
+msgstr "monding"
+
+msgid "feet"
+msgstr "voeten"
+
+msgid "hand"
+msgstr "hand"
+
+msgid "elbow"
+msgstr "elleboog"
+
+msgid "hair"
+msgstr "haar"
+
+msgid "eyelash"
+msgstr "wimper"
+
+msgid "beard"
+msgstr "baard"
+
+msgid "belly button"
+msgstr "navel"
+
+msgid "thumb"
+msgstr "duim"
+
+msgid "breast"
+msgstr "borstkas"
+
+msgid "nostril"
+msgstr "neusgat"
+
+msgid "nose"
+msgstr "neus"
+
+msgid "hip"
+msgstr "heup"
+
+msgid "arm"
+msgstr "arm"
+
+msgid "eyebrow"
+msgstr "wenkbrauw"
+
+msgid "fist"
+msgstr "vuist"
+
+msgid "neck"
+msgstr "nek"
+
+msgid "wrist"
+msgstr "pols"
+
+msgid "throat"
+msgstr "keel"
+
+msgid "eye"
+msgstr "oog"
+
+msgid "leg"
+msgstr "been"
+
+msgid "spine"
+msgstr "ruggengraat"
+
+msgid "ear"
+msgstr "oor"
+
+msgid "finger"
+msgstr "vinger"
+
+msgid "foot"
+msgstr "voet"
+
+msgid "braid"
+msgstr "vlecht"
+
+msgid "face"
+msgstr "gezicht"
+
+msgid "back"
+msgstr "rug"
+
+msgid "chin"
+msgstr "kin"
+
+msgid "bottom"
+msgstr "achterste"
+
+msgid "thigh"
+msgstr "dij"
+
+msgid "belly"
+msgstr "buik"
+
+msgid "girl"
+msgstr "meisje"
+
+msgid "male"
+msgstr "mannetje"
+
+msgid "son"
+msgstr "zoon"
+
+msgid "mates"
+msgstr "vrienden"
+
+msgid "friends"
+msgstr "vrienden"
+
+msgid "baby"
+msgstr "baby"
+
+msgid "child"
+msgstr "kind"
+
+msgid "dad"
+msgstr "papa"
+
+msgid "mom"
+msgstr "mama"
+
+msgid "twin boys"
+msgstr "tweelingjongens"
+
+msgid "brothers"
+msgstr "broers"
+
+msgid "man"
+msgstr "man"
+
+msgid "mother"
+msgstr "moeder"
+
+msgid "grandfather"
+msgstr "grootvader"
+
+msgid "family"
+msgstr "familie"
+
+msgid "female"
+msgstr "vrouwelijk"
+
+msgid "wife"
+msgstr "vrouw"
+
+msgid "husband"
+msgstr "echtgenoot"
+
+msgid "bride"
+msgstr "bruid"
+
+msgid "madam"
+msgstr "mevrouw"
+
+msgid "grandmother"
+msgstr "grootmoeder"
+
+msgid "couple"
+msgstr "koppel"
+
+msgid "lad"
+msgstr "knaap"
+
+msgid "twin girls"
+msgstr "tweelingmeisjes"
+
+msgid "tribe"
+msgstr "stam"
+
+msgid "boy"
+msgstr "jongen"
+
+msgid "sisters"
+msgstr "zusters"
+
+msgid "woman"
+msgstr "vrouw"
+
+msgid "lady"
+msgstr "dame"
+
+msgid "candy"
+msgstr "snoep"
+
+msgid "sausage"
+msgstr "worst"
+
+msgid "hamburger"
+msgstr "hamburger"
+
+msgid "steak"
+msgstr "biefstuk"
+
+msgid "fudge"
+msgstr "fudge"
+
+msgid "doughnut"
+msgstr "donut"
+
+msgid "coconut"
+msgstr "kokosnoot"
+
+msgid "rice"
+msgstr "rijst"
+
+msgid "ice cream"
+msgstr "ijs"
+
+msgid "jelly"
+msgstr "gelei"
+
+msgid "yoghurt"
+msgstr "yoghurt"
+
+msgid "dessert"
+msgstr "dessert"
+
+msgid "pretzel"
+msgstr "pretzel"
+
+msgid "peanut"
+msgstr "pinda"
+
+msgid "jam"
+msgstr "konfituur"
+
+msgid "feast"
+msgstr "feestmaal"
+
+msgid "cookie"
+msgstr "koekje"
+
+msgid "bacon"
+msgstr "spek"
+
+msgid "spice"
+msgstr "kruiden"
+
+msgid "coffee"
+msgstr "koffie"
+
+msgid "pie"
+msgstr "taart"
+
+msgid "lemonade"
+msgstr "limonade"
+
+msgid "chocolate"
+msgstr "chocolade"
+
+msgid "water bottle"
+msgstr "waterfles"
+
+msgid "lunch"
+msgstr "lunch"
+
+msgid "ice"
+msgstr "ijs"
+
+msgid "sugar"
+msgstr "suiker"
+
+msgid "sauce"
+msgstr "saus"
+
+msgid "soup"
+msgstr "soep"
+
+msgid "juice"
+msgstr "sap"
+
+msgid "fries"
+msgstr "frieten"
+
+msgid "cake"
+msgstr "taart"
+
+msgid "mashed potatoes"
+msgstr "aardappel puree"
+
+msgid "tea"
+msgstr "thee"
+
+msgid "bun"
+msgstr "broodje"
+
+msgid "cheese"
+msgstr "kaas"
+
+msgid "beef"
+msgstr "rundvlees"
+
+msgid "sandwich"
+msgstr "sandwich"
+
+msgid "slice"
+msgstr "plak"
+
+msgid "sprinkle"
+msgstr "bestrooi"
+
+msgid "pizza"
+msgstr "pizza"
+
+msgid "flour"
+msgstr "meel"
+
+msgid "gum"
+msgstr "kauwgom"
+
+msgid "spaghetti"
+msgstr "spaghetti"
+
+msgid "roast"
+msgstr "geroosterd"
+
+msgid "stew"
+msgstr "stoofpot"
+
+msgid "spread"
+msgstr "verspreiden"
+
+msgid "meat"
+msgstr "vlees"
+
+msgid "milk"
+msgstr "melk"
+
+msgid "meal"
+msgstr "maaltijd"
+
+msgid "corn"
+msgstr "maïs"
+
+msgid "bread"
+msgstr "brood"
+
+msgid "walnut"
+msgstr "walnoot"
+
+msgid "egg"
+msgstr "ei"
+
+msgid "hot dog"
+msgstr "hotdog"
+
+msgid "ham"
+msgstr "ham"
+
+msgid "jewellery"
+msgstr "juwelen"
+
+msgid "sock"
+msgstr "sok"
+
+msgid "jacket"
+msgstr "jas"
+
+msgid "heel"
+msgstr "hiel"
+
+msgid "smock"
+msgstr "kiel"
+
+msgid "shorts"
+msgstr "short"
+
+msgid "pocket"
+msgstr "zak"
+
+msgid "necklace"
+msgstr "halsketting"
+
+msgid "sweatshirt"
+msgstr "sweatshirt"
+
+msgid "uniform"
+msgstr "uniform"
+
+msgid "raincoat"
+msgstr "regenjas"
+
+msgid "trousers"
+msgstr "broek"
+
+msgid "sunglasses"
+msgstr "zonnebril"
+
+msgid "coat"
+msgstr "jas"
+
+msgid "pullover"
+msgstr "trui"
+
+msgid "shirt"
+msgstr "shirt"
+
+msgid "sandals"
+msgstr "sandalen"
+
+msgid "suit"
+msgstr "pak"
+
+msgid "pyjamas"
+msgstr "pyjama's"
+
+msgid "skirt"
+msgstr "rok"
+
+msgid "zip"
+msgstr "rits"
+
+msgid "shoes"
+msgstr "schoenen"
+
+msgid "jewel"
+msgstr "juweel"
+
+msgid "tie"
+msgstr "das"
+
+msgid "slippers"
+msgstr "pantoffels"
+
+msgid "gloves"
+msgstr "handschoenen"
+
+msgid "hat"
+msgstr "hoed"
+
+msgid "sleeve"
+msgstr "mouw"
+
+msgid "cap"
+msgstr "kap"
+
+msgid "swimming suit"
+msgstr "badpak"
+
+msgid "trainer"
+msgstr "trainer"
+
+msgid "vest"
+msgstr "vesta's"
+
+msgid "glasses"
+msgstr "glazen"
+
+msgid "shoelace"
+msgstr "schoenveter"
+
+msgid "patch"
+msgstr "pleister"
+
+msgid "scarf"
+msgstr "sjaal"
+
+msgid "shoe"
+msgstr "schoen"
+
+msgid "button"
+msgstr "knop"
+
+msgid "dress"
+msgstr "kleedje"
+
+msgid "sash"
+msgstr "sjerp"
+
+msgid "shoe sole"
+msgstr "schoenzool"
+
+msgid "robe"
+msgstr "badjas"
+
+msgid "pants"
+msgstr "broek"
+
+msgid "kimono"
+msgstr "kimono"
+
+msgid "overalls"
+msgstr "bovenkleding"
+
+msgid "lick"
+msgstr "likken"
+
+msgid "slam"
+msgstr "dichtslaan"
+
+msgid "beg"
+msgstr "bedelen"
+
+msgid "fell"
+msgstr "viel"
+
+msgid "scratch"
+msgstr "kras"
+
+msgid "touch"
+msgstr "aanraken"
+
+msgid "sniff"
+msgstr "snuffelen"
+
+msgid "see"
+msgstr "zie"
+
+msgid "climb"
+msgstr "klimmen"
+
+msgid "dig"
+msgstr "graven"
+
+msgid "howl"
+msgstr "jammeren"
+
+msgid "sleep"
+msgstr "slapen"
+
+msgid "explore"
+msgstr "verkennen"
+
+msgid "draw"
+msgstr "tekenen"
+
+msgid "hug"
+msgstr "knuffel"
+
+msgid "teach"
+msgstr "lesgeven"
+
+msgid "nap"
+msgstr "tukje"
+
+msgid "clay"
+msgstr "klei"
+
+msgid "catch"
+msgstr "vangen"
+
+msgid "clap"
+msgstr "klap"
+
+msgid "cry"
+msgstr "huilen"
+
+msgid "sing"
+msgstr "zing"
+
+msgid "meet"
+msgstr "kennismaken"
+
+msgid "sell"
+msgstr "verkopen"
+
+msgid "peck"
+msgstr "pikken"
+
+msgid "beat"
+msgstr "slaan"
+
+msgid "kneel"
+msgstr "kniel"
+
+msgid "find"
+msgstr "vinden"
+
+msgid "dance"
+msgstr "dans"
+
+msgid "cough"
+msgstr "hoesten"
+
+msgid "cut"
+msgstr "geknipt"
+
+msgid "think"
+msgstr "denk"
+
+msgid "bark"
+msgstr "schors"
+
+msgid "speak"
+msgstr "spreken"
+
+msgid "cheer"
+msgstr "juichen"
+
+msgid "bake"
+msgstr "bakken"
+
+msgid "write"
+msgstr "schrijf"
+
+msgid "punch"
+msgstr "slaan"
+
+msgid "strum"
+msgstr "tokkelen"
+
+msgid "study"
+msgstr "studeren"
+
+msgid "plow"
+msgstr "ploeteren"
+
+msgid "dream"
+msgstr "droom"
+
+msgid "post"
+msgstr "post"
+
+msgid "dive"
+msgstr "duik"
+
+msgid "whisper"
+msgstr "fluister"
+
+msgid "sob"
+msgstr "snikken"
+
+msgid "shake"
+msgstr "schudden"
+
+msgid "feed"
+msgstr "voederen"
+
+msgid "crawl"
+msgstr "kruipen"
+
+msgid "camp"
+msgstr "kamperen"
+
+msgid "spill"
+msgstr "morsen"
+
+msgid "clean"
+msgstr "schoonmaken"
+
+msgid "scream"
+msgstr "schreeuwen"
+
+msgid "tear"
+msgstr "scheur"
+
+msgid "float"
+msgstr "drijven"
+
+msgid "pull"
+msgstr "trek"
+
+msgid "ate"
+msgstr "heeft  gegeten"
+
+msgid "kiss"
+msgstr "kus"
+
+msgid "sit"
+msgstr "zitten"
+
+msgid "hatch"
+msgstr "luik"
+
+msgid "blink"
+msgstr "knipperen"
+
+msgid "hear"
+msgstr "hoor"
+
+msgid "smooch"
+msgstr "kus"
+
+msgid "play"
+msgstr "spelen"
+
+msgid "wash"
+msgstr "was"
+
+msgid "chat"
+msgstr "chat"
+
+msgid "drive"
+msgstr "rijden"
+
+msgid "to drink"
+msgstr "om te drinken"
+
+msgid "fly"
+msgstr "vlieg"
+
+msgid "juggle"
+msgstr "goochelen op"
+
+msgid "bit"
+msgstr "bit"
+
+msgid "sweep"
+msgstr "sweep"
+
+msgid "look"
+msgstr "kijk op"
+
+msgid "knit"
+msgstr "brei"
+
+msgid "lift"
+msgstr "lift"
+
+msgid "fetch"
+msgstr "haal"
+
+msgid "read"
+msgstr "lees"
+
+msgid "croak"
+msgstr "kwaken"
+
+msgid "stare"
+msgstr "staren"
+
+msgid "eat"
+msgstr "eten"
+
+msgid "lighthouse"
+msgstr "vuurtoren"
+
+msgid "door"
+msgstr "deur"
+
+msgid "circus"
+msgstr "circus"
+
+msgid "church"
+msgstr "kerk"
+
+msgid "kennel"
+msgstr "kennel"
+
+msgid "temple"
+msgstr "tempel"
+
+msgid "smoke"
+msgstr "rook"
+
+msgid "chimney"
+msgstr "schoorsteen"
+
+msgid "brick"
+msgstr "baksteen"
+
+msgid "well"
+msgstr "bron"
+
+msgid "street"
+msgstr "straat"
+
+msgid "castle"
+msgstr "kasteel"
+
+msgid "store"
+msgstr "winkel"
+
+msgid "staircase"
+msgstr "trappenhuis"
+
+msgid "school"
+msgstr "school"
+
+msgid "farm"
+msgstr "boerderij"
+
+msgid "bridge"
+msgstr "brug"
+
+msgid "dam"
+msgstr "dam"
+
+msgid "pyramid"
+msgstr "piramide"
+
+msgid "barn"
+msgstr "schuur"
+
+msgid "mill"
+msgstr "molen"
+
+msgid "window"
+msgstr "venster"
+
+msgid "cabin"
+msgstr "cabine"
+
+msgid "step"
+msgstr "stap"
+
+msgid "shop"
+msgstr "winkel"
+
+msgid "shed"
+msgstr "loods"
+
+msgid "roof"
+msgstr "dak"
+
+msgid "steeple"
+msgstr "kerktoren"
+
+msgid "garage"
+msgstr "garage"
+
+msgid "mosque"
+msgstr "moskee"
+
+msgid "hospital"
+msgstr "ziekenhuis"
+
+msgid "tent"
+msgstr "tent"
+
+msgid "house"
+msgstr "huis"
+
+msgid "wall"
+msgstr "muur"
+
+msgid "bank"
+msgstr "bank"
+
+msgid "shutter"
+msgstr "sluiter"
+
+msgid "hut"
+msgstr "hut"
+
+msgid "land"
+msgstr "land"
+
+msgid "cliff"
+msgstr "rotswand"
+
+msgid "hill"
+msgstr "heuvel"
+
+msgid "canyon"
+msgstr "canyon"
+
+msgid "rock"
+msgstr "rots"
+
+msgid "sea"
+msgstr "zee"
+
+msgid "lake"
+msgstr "het meer"
+
+msgid "coast"
+msgstr "kust"
+
+msgid "shore"
+msgstr "wal"
+
+msgid "mountain"
+msgstr "berg"
+
+msgid "pond"
+msgstr "vijver"
+
+msgid "peak"
+msgstr "topje"
+
+msgid "lava"
+msgstr "lava"
+
+msgid "cave"
+msgstr "grot"
+
+msgid "dune"
+msgstr "duin"
+
+msgid "island"
+msgstr "eiland"
+
+msgid "forest"
+msgstr "bos"
+
+msgid "desert"
+msgstr "woestijn"
+
+msgid "iceberg"
+msgstr "ijsberg"
+
+msgid "clown"
+msgstr "clown"
+
+msgid "engineer"
+msgstr "ingenieur"
+
+msgid "priest"
+msgstr "priester"
+
+msgid "vet"
+msgstr "dierenarts"
+
+msgid "judge"
+msgstr "rechter"
+
+msgid "chef"
+msgstr "chef-kok"
+
+msgid "athlete"
+msgstr "atleet"
+
+msgid "librarian"
+msgstr "bibliothecaris"
+
+msgid "juggler"
+msgstr "jongleur"
+
+msgid "policeman"
+msgstr "politieagent"
+
+msgid "plumber"
+msgstr "loodgieter"
+
+msgid "badge"
+msgstr "badge"
+
+msgid "queen"
+msgstr "koningin"
+
+msgid "farmer"
+msgstr "boer"
+
+msgid "magician"
+msgstr "goochelaar"
+
+msgid "knight"
+msgstr "ridder"
+
+msgid "doctor"
+msgstr "arts"
+
+msgid "bricklayer"
+msgstr "metselaar"
+
+msgid "cleaner"
+msgstr "reiniger"
+
+msgid "teacher"
+msgstr "leraar"
+
+msgid "hunter"
+msgstr "jager"
+
+msgid "soldier"
+msgstr "soldaat"
+
+msgid "musician"
+msgstr "muzikant"
+
+msgid "lawyer"
+msgstr "advocaat"
+
+msgid "fisherman"
+msgstr "visser"
+
+msgid "princess"
+msgstr "prinses"
+
+msgid "fireman"
+msgstr "brandweerman"
+
+msgid "nun"
+msgstr "zuster"
+
+msgid "pirate"
+msgstr "piraat"
+
+msgid "cowboy"
+msgstr "cowboy"
+
+msgid "electrician"
+msgstr "elektricien"
+
+msgid "nurse"
+msgstr "verpleger"
+
+msgid "king"
+msgstr "koning"
+
+msgid "president"
+msgstr "president"
+
+msgid "office worker"
+msgstr "kantoormedewerker"
+
+msgid "carpenter"
+msgstr "timmerman"
+
+msgid "jockey"
+msgstr "jockey"
+
+msgid "worker"
+msgstr "werknemer"
+
+msgid "mechanic"
+msgstr "monteur"
+
+msgid "pilot"
+msgstr "piloot"
+
+msgid "actor"
+msgstr "acteur"
+
+msgid "cook"
+msgstr "kok"
+
+msgid "student"
+msgstr "student"
+
+msgid "butcher"
+msgstr "slager"
+
+msgid "accountant"
+msgstr "boekhouder"
+
+msgid "prince"
+msgstr "prins"
+
+msgid "pope"
+msgstr "paus"
+
+msgid "sailor"
+msgstr "matroos"
+
+msgid "boxer"
+msgstr "bokser"
+
+msgid "ballet dancer"
+msgstr "balletdanser"
+
+msgid "coach"
+msgstr "coach"
+
+msgid "astronaut"
+msgstr "astronaut"
+
+msgid "painter"
+msgstr "schilder"
+
+msgid "anaesthesiologist"
+msgstr "anesthesist"
+
+msgid "scientist"
+msgstr "wetenschapper"
+
+msgid "carrot"
+msgstr "wortel"
+
+msgid "blackberries"
+msgstr "braambessen"
+
+msgid "celery"
+msgstr "selderij"
+
+msgid "turnip"
+msgstr "raap"
+
+msgid "cacao"
+msgstr "cacao"
+
+msgid "peach"
+msgstr "perzik"
+
+msgid "melon"
+msgstr "meloen"
+
+msgid "grapefruit"
+msgstr "grapefruit"
+
+msgid "broccoli"
+msgstr "broccoli"
+
+msgid "grapes"
+msgstr "druiven"
+
+msgid "spinach"
+msgstr "spinazie"
+
+msgid "fig"
+msgstr "vijg"
+
+msgid "kernel"
+msgstr "binnenste"
+
+msgid "radish"
+msgstr "radijs"
+
+msgid "tomato"
+msgstr "tomaat"
+
+msgid "kiwi"
+msgstr "kiwi"
+
+msgid "asparagus"
+msgstr "asperges"
+
+msgid "olives"
+msgstr "olijven"
+
+msgid "cucumbers"
+msgstr "komkommers"
+
+msgid "beans"
+msgstr "bonen"
+
+msgid "strawberry"
+msgstr "aardbei"
+
+msgid "peppers"
+msgstr "paprika's"
+
+msgid "raspberry"
+msgstr "framboos"
+
+msgid "apricot"
+msgstr "abrikoos"
+
+msgid "potatoes"
+msgstr "aardappelen"
+
+msgid "peas"
+msgstr "erwten"
+
+msgid "cabbage"
+msgstr "kool"
+
+msgid "cherries"
+msgstr "kersen"
+
+msgid "squash"
+msgstr "squash"
+
+msgid "blueberries"
+msgstr "bosbessen"
+
+msgid "pear"
+msgstr "peer"
+
+msgid "orange"
+msgstr "sinaasappel"
+
+msgid "pumpkin"
+msgstr "pompoen"
+
+msgid "avocado"
+msgstr "avocado"
+
+msgid "garlic"
+msgstr "knoflook"
+
+msgid "onion"
+msgstr "ui"
+
+msgid "apple"
+msgstr "appel"
+
+msgid "lime"
+msgstr "limoen"
+
+msgid "cauliflower"
+msgstr "bloemkool"
+
+msgid "mango"
+msgstr "mango"
+
+msgid "lettuce"
+msgstr "sla"
+
+msgid "lemon"
+msgstr "citroen"
+
+msgid "aubergine"
+msgstr "aubergine"
+
+msgid "artichokes"
+msgstr "artisjokken"
+
+msgid "plums"
+msgstr "pruimen"
+
+msgid "leek"
+msgstr "prei"
+
+msgid "bananas"
+msgstr "bananen"
+
+msgid "papaya"
+msgstr "papaja"
+
+msgid "sail"
+msgstr "varen"
+
+msgid "taxi"
+msgstr "taxi"
+
+msgid "car"
+msgstr "auto"
+
+msgid "bike"
+msgstr "fiets"
+
+msgid "raft"
+msgstr "vlot"
+
+msgid "pedal"
+msgstr "pedaal"
+
+msgid "bus"
+msgstr "bus"
+
+msgid "handlebar"
+msgstr "handvat"
+
+msgid "boat"
+msgstr "boot"
+
+msgid "truck"
+msgstr "vrachtwagen"
+
+msgid "sleigh"
+msgstr "slee"
+
+msgid "carpet"
+msgstr "tapijt"
+
+msgid "motorcycle"
+msgstr "motor"
+
+msgid "train"
+msgstr "trein"
+
+msgid "ship"
+msgstr "schip"
+
+msgid "van"
+msgstr "bestelwagen"
+
+msgid "canoe"
+msgstr "kano"
+
+msgid "rocket"
+msgstr "raket"
+
+msgid "mast"
+msgstr "mast"
+
+msgid "sledge"
+msgstr "slede"
+
+msgid "bicycle"
+msgstr "fiets"

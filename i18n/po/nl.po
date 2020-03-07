@@ -1,0 +1,1422 @@
+# eduActiv8 - Educational Activity Pack - translation file.
+# Copyright (C) 2012 - 2020 Ireneusz Imiolek
+# This file is distributed under the same license as the eduactiv8 package.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+#
+# Translators:
+# Steven Es <transifex@stevelot.be>, 2020
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.31.105\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"POT-Creation-Date: 2013-11-01 15:33+0000\n"
+"PO-Revision-Date: 2020-03-07 10:06+0000\n"
+"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/eduactiv8/teams/94947/nl_NL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps."
+"org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+msgstr ""
+"Laby, 2010 door Mehdi Cherti (mehdidc) \n"
+" Geluiden/muziek van verschillende auteurs die hun werk hebben overgedragen aan freesound.org. \n"
+" Afbeeldingen van verschillende auteurs die hun werk hebben overgedragen aan openclipart.org (Public Domain) en "
+"http://www.art4apps.org/ - Art4Apps door Smart4Kids - onder de Creative Commons Licentie (CC BY-SA). \n"
+" Voor meer informatie over de auteurs van de in dit project gebruikte mediabestanden kan u credits.txt consulteren."
+
+msgid ""
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public "
+"License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any "
+"later version. You should have received a copy of the GNU General Public License along with this program. If not, "
+"see <http://www.gnu.org/licenses/>."
+msgstr ""
+"Dit programma is vrije software: u kunt het herdistribueren en/of wijzigen onder de voorwaarden van de GNU General "
+"Public License zoals gepubliceerd door de Free Software Foundation, ofwel versie 3 van de Licentie, ofwel (naar uw "
+"keuze) elke latere versie. U zou een meegeleverde kopie van de GNU General Public License moeten ontvangen hebben "
+"samen met dit programma. Indien niet, zie <http://www.gnu.org/licenses/>."
+
+msgid "A collection of educational activities for kids"
+msgstr "Een verzameling van educatieve activiteiten voor kinderen"
+
+msgid "Educational Activities for Kids"
+msgstr "Educatieve activiteiten voor kinderen"
+
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr "Afbeeldingen van: http://www.art4apps.org/ - Art4Apps door Smart4Kids - Creative Commons Licentie (CC BY-SA)"
+
+msgid "Default Language:"
+msgstr "Standaardtaal:"
+
+msgid "Guest"
+msgstr "Gast"
+
+msgid "Log in:"
+msgstr "Aanmelden:"
+
+msgid "user name:"
+msgstr "gebruikersnaam:"
+
+msgid "password:"
+msgstr "wachtwoord:"
+
+msgid "Login"
+msgstr "Aanmelden"
+
+msgid "Add new user:"
+msgstr "Nieuwe gebruiker toevoegen:"
+
+msgid "confirm password:"
+msgstr "bevestig het wachtwoord:"
+
+msgid "Register new user"
+msgstr "Registreer nieuwe gebruiker"
+
+msgid "Administrator Login:"
+msgstr "Beheerder aanmelden:"
+
+msgid "User Management"
+msgstr "Gebruikersbeheer"
+
+msgid "Please select a user from the list."
+msgstr "Selecteer een gebruiker uit de lijst."
+
+msgid "Delete user"
+msgstr "Gebruiker verwijderen"
+
+msgid "Delete"
+msgstr "Verwijder"
+
+msgid "Cancel"
+msgstr "Annuleer"
+
+#, python-format
+msgid "%s deleted from database."
+msgstr "%s verwijderd uit de databank."
+
+msgid "Failed to delete the user."
+msgstr "De gebruiker is niet gewist."
+
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+msgid "switch to full screen after login"
+msgstr "overschakelen naar volledig scherm na het aanmelden"
+
+msgid "allow adding new users on login screen"
+msgstr "het toevoegen van nieuwe gebruikers op het aanmeldscherm mogelijk maken"
+
+msgid "User Name"
+msgstr "Gebruikersnaam"
+
+msgid "require password to log in"
+msgstr "wachtwoord nodig om aan te melden"
+
+msgid "require password to access admin area"
+msgstr "wachtwoord nodig om toegang te krijgen tot het beheerder-gedeelte"
+
+msgid "Update admin's password:"
+msgstr "Update beheerder's wachtwoord:"
+
+msgid "previous password:"
+msgstr "vorig wachtwoord:"
+
+msgid "new password:"
+msgstr "nieuw wachtwoord:"
+
+msgid "confirm new password:"
+msgstr "bevestig het nieuwe wachtwoord:"
+
+msgid "Create admin's account:"
+msgstr "Maak beheerder's account aan:"
+
+msgid "admin's user name:"
+msgstr "gebruikersnaam van de beheerder:"
+
+msgid "admin's password:"
+msgstr "beheerders wachtwoord:"
+
+msgid "confirm admin's password:"
+msgstr "bevestig beheerders wachtwoord:"
+
+msgid "Save"
+msgstr "Bewaar"
+
+msgid "Please enter user name (at least 3 characters long)"
+msgstr "Voer de gebruikersnaam in (minstens 3 karakters lang)"
+
+msgid "Please enter password (at least 4 characters long)"
+msgstr "Voer het wachtwoord in (minstens 4 karakters lang)"
+
+msgid "This username and password combination doesn't exist."
+msgstr "Deze gebruikersnaam en wachtwoord combinatie bestaat niet."
+
+msgid "This username doesn't exist."
+msgstr "Deze gebruikersnaam bestaat niet."
+
+msgid "Passwords don't match"
+msgstr "Wachtwoorden komen niet overeen"
+
+#, python-format
+msgid "%s added"
+msgstr "%s toegevoegd"
+
+msgid "This user name already exists, please choose a different one"
+msgstr "Deze gebruikersnaam bestaat al, kies een andere."
+
+msgid "Admin's password has been updated"
+msgstr "Beheerders wachtwoord is bijgewerkt"
+
+msgid "ERROR: This operation is not allowed at this point"
+msgstr "FOUT: Deze handeling is op dit moment niet toegestaan."
+
+msgid "Please enter previous password (at least 4 characters long)"
+msgstr "Voer het vorige wachtwoord in (minstens 4 karakters lang)"
+
+msgid "Please enter new password (at least 4 characters long)"
+msgstr "Voer een nieuw wachtwoord in (minstens 4 karakters lang)"
+
+msgid "Previous password doesn't seem to be in the database"
+msgstr "Vorig wachtwoord lijkt niet in de databank te staan"
+
+msgid "Registered:"
+msgstr "Geregistreerd:"
+
+msgid "Last login:"
+msgstr "Laatste aanmelding:"
+
+msgid "Preferences saved..."
+msgstr "Voorkeuren opgeslagen..."
+
+msgid "Logged in as: "
+msgstr "Aangemeld als: "
+
+msgid "(Log out)"
+msgstr "(Afmelden)"
+
+msgid "remember me"
+msgstr "onthou mij"
+
+msgid "Select age group:"
+msgstr "Selecteer leeftijdsgroep:"
+
+msgid "show activities for:"
+msgstr "toon activiteit voor:"
+
+msgid "preschool"
+msgstr "kleuterklas"
+
+msgid "Year 1"
+msgstr "1e Leerjaar"
+
+msgid "Year 2"
+msgstr "2de Leerjaar"
+
+msgid "Year 3"
+msgstr "3de Leerjaar"
+
+msgid "Year 4"
+msgstr "4de Leerjaar"
+
+msgid "Year 5"
+msgstr "5de Leerjaar"
+
+msgid "Year 6"
+msgstr "6de Leerjaar"
+
+msgid "show all"
+msgstr "toon alles"
+
+msgid "Do you want to log out of the game?"
+msgstr "Wil je je afmelden uit het spel?"
+
+msgid "Do you want to exit the game?"
+msgstr "Wilt u het spel verlaten?"
+
+# alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
+msgid "Ready to go to the next level?"
+msgstr "Klaar om naar het volgende niveau te gaan?"
+
+msgid "Hello"
+msgstr "Hallo"
+
+msgid "Welcome back in the game."
+msgstr "Welkom terug in het spel."
+
+msgid "Licence"
+msgstr "Licentie"
+
+msgid "Copyright & Credits"
+msgstr "Auteursrecht & Credits"
+
+msgid "Translators"
+msgstr "Vertalers"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "Translations"
+msgstr "Vertalingen"
+
+msgid "Addition Table"
+msgstr "Optellingen tabel"
+
+msgid "Discover Letters"
+msgstr "Ontdek de brieven"
+
+msgid "Learn New Words"
+msgstr "Nieuwe woorden leren"
+
+msgid "Mathematics"
+msgstr "Wiskunde"
+
+msgid "Art and Colour"
+msgstr "Kunst en kleuren"
+
+msgid "Memory"
+msgstr "Geheugen"
+
+msgid "Games & Mazes"
+msgstr "Spelletjes & doolhoven"
+
+msgid "Letters"
+msgstr "Brieven"
+
+msgid "Learn Letters with Flashcards"
+msgstr "Brieven leren met Flash cards"
+
+msgid "Learn to Write"
+msgstr "Leren schrijven"
+
+msgid "Trace Letters and Numbers"
+msgstr "Letters en nummers opsporen"
+
+msgid "Complete the ABC"
+msgstr "Voltooi het ABC"
+
+msgid "Sorting Letters"
+msgstr "Brieven sorteren"
+
+msgid "Lowercase Letters"
+msgstr "Kleine letters"
+
+msgid "Uppercase Letters"
+msgstr "Hoofdletters"
+
+msgid "Word Builder"
+msgstr "Woordbouwer"
+
+msgid "Word Maze"
+msgstr "Woord doolhof"
+
+msgid "Collect all letters in the right order"
+msgstr "Verzamel alle letters in de juiste volgorde"
+
+msgid "Word Maze + 4"
+msgstr "Woord doolhof + 4"
+
+msgid "Rainbow Keyboard"
+msgstr "Regenboog toetsenbord"
+
+msgid "Touch Typing Tutor"
+msgstr "Tikkend typen leraar"
+
+msgid "English Alphabet"
+msgstr "Nederlands alfabet"
+
+# Replace "Your" with your language, ie. translation of French Alphabet
+msgid "Your Alphabet"
+msgstr "Uw alfabet"
+
+msgid "Numbers"
+msgstr "Nummers"
+
+msgid "Number Spelling"
+msgstr "Nummer spelling"
+
+msgid "Match numbers to their spelling"
+msgstr "Koppelen van nummers met hun spelling"
+
+msgid "Learn Numbers with Flashcards"
+msgstr "Leer nummers met Flash cards"
+
+msgid "Learn to Count"
+msgstr "Leren tellen"
+
+msgid "Basic Addition"
+msgstr "Basis sommen"
+
+msgid "Basic Subtraction"
+msgstr "Basis aftrekken"
+
+msgid "Shopping List"
+msgstr "Boodschappenlijstje"
+
+msgid "Plus or Minus"
+msgstr "Plus of min."
+
+msgid "Basic Operations"
+msgstr "Basisverrichtingen"
+
+msgid "Multiplication Table"
+msgstr "Vermenigvuldigingstabel"
+
+msgid "Find the product"
+msgstr "Vind het product"
+
+msgid "Find the multiplier"
+msgstr "Zoek de vermenigvuldigingsfactor"
+
+msgid "Division"
+msgstr "Delen"
+
+msgid "Sorting Numbers"
+msgstr "Sorteer nummers"
+
+msgid "Consecutive numbers"
+msgstr "Opeenvolgende getallen"
+
+msgid "Random numbers"
+msgstr "Willekeurige getallen"
+
+msgid "Number Comparison"
+msgstr "Nummers vergelijken"
+
+msgid "Addition & Subtraction"
+msgstr "Optellen & aftrekken"
+
+msgid "Comparison"
+msgstr "Vergelijking"
+
+msgid "Even or Odd"
+msgstr "Even of oneven"
+
+msgid "Even"
+msgstr "Even"
+
+msgid "Odd"
+msgstr "Oneven"
+
+msgid "Shapes and Solids"
+msgstr "Vormen en solids"
+
+msgid "Shapes"
+msgstr "Vormen"
+
+msgid "Learn Shapes with Flashcards"
+msgstr "Leer Vormen met Flashcards"
+
+msgid "Solids"
+msgstr "Solids"
+
+msgid "Solid Geometry with Flashcards"
+msgstr "Vaste Geometry met Flashcards"
+
+msgid "Time Matching"
+msgstr "Tijdcorrectie"
+
+msgid "Complete the word"
+msgstr "Maak het woord af"
+
+msgid "Shape Matching"
+msgstr "Vorm koppeling"
+
+msgid "Help me find my shadow"
+msgstr "Help me mijn schaduw te vinden"
+
+msgid "Paint"
+msgstr "Kleur"
+
+msgid "Colour Matching"
+msgstr "Kleurencombinaties"
+
+msgid "Label the colours"
+msgstr "Label de kleuren"
+
+msgid "Follow the Arrows"
+msgstr "Volg de pijlen"
+
+msgid "Remember directions"
+msgstr "Onthoud de routebeschrijving"
+
+msgid "Photographic Memory"
+msgstr "Fotografisch geheugen"
+
+msgid "Training"
+msgstr "Opleiding"
+
+msgid "Mouse Maze"
+msgstr "Muizendoolhof"
+
+msgid "Let's have some cheese"
+msgstr "Laten we wat kaas nemen"
+
+msgid "Sheep Maze"
+msgstr "Schapendoolhof"
+
+msgid "Find the rest of the herd"
+msgstr "Vind de rest van de kudde"
+
+msgid "Connect"
+msgstr "Verbind"
+
+msgid "Balloons with threads"
+msgstr "Ballonnen met koordjes"
+
+msgid "Fifteen"
+msgstr "Vijftien"
+
+msgid "With a Twist"
+msgstr "Met een twist"
+
+msgid "Mixing Colours for Painting"
+msgstr "Mengen van kleuren om te schilderen"
+
+msgid "Mix red, yellow, blue, black and white paint"
+msgstr "Meng rode, gele, blauwe, zwarte en witte verf"
+
+msgid "Additive Colour Mixing - Light"
+msgstr "Additieve kleurmenging - Licht"
+
+msgid "Mix red, green and blue light to get other colours"
+msgstr "Meng rood, groen en blauw licht om andere kleuren te krijgen"
+
+msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
+msgstr "Subtractieve kleurmenging - Verven, kleurstoffen, inkten"
+
+msgid "Mix cyan, magenta and yellow paint to get other colours"
+msgstr "Meng cyaan, magenta en gele verf om andere kleuren te krijgen"
+
+msgid "Find the colour of the circle in the middle"
+msgstr "Zoek de kleur van de cirkel in het midden"
+
+msgid "Adjust the amount of cyan, magenta and yellow paint"
+msgstr "Pas de hoeveelheid cyaan, magenta en gele verf aan"
+
+msgid "Adjust the intensity of red, green and blue light"
+msgstr "Pas de intensiteit van het rode, groene en blauwe licht aan"
+
+msgid "Match Animals"
+msgstr "Wedstrijddieren"
+
+msgid "Find all matching animals"
+msgstr "Vind alle passende dieren"
+
+msgid "Match animals to their shadows"
+msgstr "Dieren aan te passen aan hun schaduwen"
+
+msgid "Match Animals - Memory Game"
+msgstr "Wedstrijd Dieren - Geheugenspel"
+
+msgid "Match Fruits - Memory Game"
+msgstr "Wedstrijd Fruit - Geheugenspel"
+
+msgid "Match Vegetables - Memory Game"
+msgstr "Wedstrijd Groenten - Geheugenspel"
+
+msgid "Match Numbers - Memory Game"
+msgstr "Wedstrijdnummers - Geheugenspel"
+
+msgid "Find matching pairs of the same image"
+msgstr "Zoek overeenkomende paren van dezelfde afbeelding"
+
+msgid "Image Slider"
+msgstr "Beeldschuif"
+
+msgid "Animal Slider"
+msgstr "Dierenschuif"
+
+msgid "Fruit Slider"
+msgstr "Fruitschuif"
+
+msgid "Number Slider"
+msgstr "Nummer Schuifregelaar"
+
+msgid "Maths Matching Game"
+msgstr "Maths Matching Game"
+
+msgid "Addition"
+msgstr "Optelling"
+
+msgid "Subtraction"
+msgstr "Aftrekken"
+
+msgid "Multiplication"
+msgstr "Vermenigvuldiging"
+
+msgid "Fractions"
+msgstr "Delingen"
+
+msgid "Decimal Fractions"
+msgstr "Decimale Fracties"
+
+msgid "Percentages"
+msgstr "Percentages"
+
+msgid "Ratios"
+msgstr "Verhoudingen"
+
+msgid "Fraction Groups"
+msgstr "Fractionele groepen"
+
+msgid "Type your answer and hit enter"
+msgstr "Typ uw antwoord en druk op enter"
+
+msgid "Decimals (Category)"
+msgstr "Decimalen (Categorie)"
+
+msgid "Fractions (Category)"
+msgstr "Fracties (Categorie)"
+
+msgid "Ratios (Category)"
+msgstr "Verhoudingen (Categorie)"
+
+msgid "Percentages (Category)"
+msgstr "Percentages (Categorie)"
+
+msgid "Learn new words"
+msgstr "Leer nieuwe woorden"
+
+msgid "Word Builders"
+msgstr "Woordbouwers"
+
+msgid "Word Matchers"
+msgstr "Woorden koppelen"
+
+msgid "Match images to words"
+msgstr "Afbeeldingen en woorden koppelen"
+
+msgid "Animals"
+msgstr "Dieren"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Body"
+msgstr "Lichaam"
+
+msgid "People"
+msgstr "Mensen"
+
+msgid "Actions"
+msgstr "Acties"
+
+msgid "Constructions"
+msgstr "Bouwwerken"
+
+msgid "Nature"
+msgstr "Natuur"
+
+msgid "Jobs"
+msgstr "Werk"
+
+msgid "Clothes and Accessories"
+msgstr "Kleding en accessoires"
+
+msgid "Fruits and Vegetables"
+msgstr "Groenten en fruit"
+
+msgid "Transport"
+msgstr "Transport"
+
+msgid "Food"
+msgstr "Voeding"
+
+msgid "Listening Exercises"
+msgstr "Luisteroefeningen"
+
+msgid "Match sounds to words"
+msgstr "Geluiden en woorden koppelen"
+
+msgid "Patterns"
+msgstr "Patronen"
+
+msgid "Number Patterns"
+msgstr "Aantal Patronen"
+
+msgid "Letter Patterns"
+msgstr "Brief patronen"
+
+msgid "Color Patterns"
+msgstr "Kleurpatronen"
+
+msgid "Image Patterns"
+msgstr "Beeldpatronen"
+
+msgid "Fraction Patterns"
+msgstr "Fractiepatronen"
+
+msgid "Shape Patterns"
+msgstr "Vormpatronen"
+
+msgid "Complete the pattern on the top line."
+msgstr "Maak het patroon op de bovenste lijn af."
+
+msgid "Match shapes to their names"
+msgstr "Pas de vormen aan hun naam aan"
+
+msgid "Negative numbers"
+msgstr "Negatieve cijfers"
+
+msgid "Complete the alphabet using letters from the middle line."
+msgstr "Vul het alfabet in met de letters van de middelste regel."
+
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Sleep de schuifregelaar omhoog of omlaag zodat het juiste teken in het rode vierkant staat."
+
+msgid "Take your sheep to the rest of the herd."
+msgstr "Breng je schapen naar de rest van de kudde."
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr "Controleer het boodschappenlijstje en sleep alle benodigde artikelen in het mandje."
+
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Sleep een van de <, > of = (kleiner, groter of gelijk) naar het rode vierkant."
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr "Sleep een van de minder, groter of gelijk aan het rode vierkant."
+
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Schik de nummers in de juiste volgorde."
+
+msgid "Build the following word using the letters below."
+msgstr "Bouw het volgende woord op met behulp van de onderstaande letters."
+
+msgid "Find and separate even numbers from odd numbers."
+msgstr "Zoek en scheid de even nummers van oneven nummers."
+
+msgid "Rearrange the letters so they are in the alphabetical order."
+msgstr "Rangschik de letters in de alfabetische volgorde."
+
+msgid "Rearrange the numbers so they are in the ascending order."
+msgstr "Rangschik de getallen in oplopende volgorde."
+
+msgid "Perfect! Task solved!"
+msgstr "Perfect! Opdracht opgelost!"
+
+msgid "Game Over!"
+msgstr "Game Over!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Gefeliciteerd! Je hebt alle taken in dit spel voltooid."
+
+msgid "Great job!"
+msgstr "Geweldig gedaan!"
+
+msgid "Perfect!!!"
+msgstr "Perfect!!!"
+
+msgid "Awesome!"
+msgstr "Geweldig!"
+
+msgid "Fantastic job!"
+msgstr "Fantastisch werk!"
+
+msgid "Well done!"
+msgstr "Goed gedaan!"
+
+msgid "Perfect! Level completed!"
+msgstr "Perfect! Level voltooid!"
+
+msgid "Perfect!"
+msgstr "Perfect!"
+
+msgid "divided by"
+msgstr "gedeeld door"
+
+msgid "times"
+msgstr "keer"
+
+msgid "equals"
+msgstr "is gelijk aan"
+
+msgid "brush size"
+msgstr "borstelgrootte"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr "De rechter- en linkerfractiegrafieken zijn gelijk aan de linkerfractiegrafieken."
+
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Vergelijk de breukgrafieken en breuken rechts met de breukgrafieken links."
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr "Vergelijk de breukgrafieken met de breuken aan de linkerkant."
+
+msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+msgstr "Vergelijking van breukgrafieken, breuken en decimale breueken rechts van hun procentuele weergaven"
+
+msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
+msgstr ""
+"Vergelijk de grafieken met de verhoudingen aan de linkerkant. De verhoudingen worden uitgedrukt als de verhouding "
+"tussen de gekleurde stukken en de witte stukken."
+
+msgid "Shape Maker"
+msgstr "Vorm maker"
+
+msgid "Let's see what shapes you can draw"
+msgstr "Laten we eens kijken welke vormen je kunt tekenen"
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Te tekenen vorm: %s"
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "zodanig dat de lengte van de basis gelijk is aan %d en %d en de hoogte aan %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr "zodanig dat de lengte van de zijden gelijk is aan %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr "zodanig dat de lengte van de zijden gelijk is aan %d en %d"
+
+#, python-format
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "zodanig dat de lengte van de 2 parallelle bodems gelijk is aan %d en de hoogte aan %d"
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr "zodanig dat de lengte van de basis gelijk is aan %d en de hoogte aan %d"
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr "zodanig dat de lengte van de katheti gelijk is aan %d en %d"
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr "zodanig dat de lengte van beide katheti gelijk is aan %d"
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr "zodanig dat de lengte van de hypotensie gelijk is aan %d"
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr "zodanig dat de lengte van een van de zijden gelijk is aan %d en de hoogte aan %d"
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr "zodanig dat de lengte van de straal gelijk is aan %d"
+
+msgid "Test yourself"
+msgstr "Test jezelf"
+
+msgid "Clock"
+msgstr "Klok"
+
+msgid "Learn to read the time"
+msgstr "Leer de tijd te lezen"
+
+msgid "Learn to set the clock"
+msgstr "Leer de klok in te stellen"
+
+msgid "Set the clock to:"
+msgstr "Zet de klok op:"
+
+msgid "Drag the clock hands to set the time"
+msgstr "Sleep de wijzers van de klok om de tijd in te stellen"
+
+msgid "What time is it?"
+msgstr "Hoe laat is het?"
+
+msgid "Time"
+msgstr "Tijd"
+
+msgid "Turn the clock hands and see what happens."
+msgstr "Draai de wijzers van de klok en zie wat er gebeurt."
+
+msgid "Time in text version only"
+msgstr "Tijd in tekstversie alleen"
+
+msgid "How clock works?"
+msgstr "Hoe werkt de klok?"
+
+msgid "Columnar addition"
+msgstr "Kolomvormige toevoeging"
+
+msgid "Columnar subtraction"
+msgstr "Kolomvormige aftrekking"
+
+msgid "Long multiplication"
+msgstr "Lange vermenigvuldiging"
+
+msgid "Long division"
+msgstr "Lange divisie"
+
+msgid "Demonstration"
+msgstr "Demonstratie"
+
+msgid "Do it yourself"
+msgstr "Doe het zelf"
+
+msgid "borrow 10"
+msgstr "Leen 10"
+
+# in columnar addition, ie. in case of 4 + 8 you write 2 under the column and
+# carry 1
+msgid "carry"
+msgstr "dragen"
+
+msgid "Start >>"
+msgstr "Start >>"
+
+msgid "Next example >>"
+msgstr "Volgende voorbeeld >>"
+
+msgid "Next step >>"
+msgstr "Volgende stap >>"
+
+# used to show which digit of the result should be entered in a box, ie.
+# "enter 5")
+msgid "write "
+msgstr "schrijf "
+
+msgid "rewrite "
+msgstr "herschrijven "
+
+msgid "remainder"
+msgstr "restant"
+
+msgid "result"
+msgstr "resultaat"
+
+msgid "Find solution"
+msgstr "Oplossing vinden"
+
+msgid "Find missing number"
+msgstr "Zoek ontbrekend nummer"
+
+msgid "numerator"
+msgstr "teller"
+
+msgid "denominator"
+msgstr "noemer"
+
+msgid "Experiment with fractions"
+msgstr "Experimenteren met breuken"
+
+msgid "Experiment with decimal fractions"
+msgstr "Experimenteer met decimale breuken"
+
+msgid "Ratio"
+msgstr "Verhouding"
+
+msgid "Experiment with ratios"
+msgstr "Experimenteren met verhoudingen"
+
+msgid "Experiment with percentages"
+msgstr "Experimenteren met percentages"
+
+msgid "What fraction is it?"
+msgstr "Welke bruk is het?"
+
+msgid "What decimal fraction is it?"
+msgstr "Welke decimale breuk is het?"
+
+msgid "Add fractions with the same denominator"
+msgstr "Breuken met dezelfde noemer optellen"
+
+msgid "Subtract fractions with the same denominator"
+msgstr "Breuken met dezelfde noemer aftrekken"
+
+msgid "Multiply fractions"
+msgstr "Vermenigvuldig breuken"
+
+msgid "Divide fractions"
+msgstr "Breuken verdelen"
+
+msgid "Exercise 1"
+msgstr "Oefening 1"
+
+msgid "Exercise 2"
+msgstr "Oefening 2"
+
+msgid "Exercise 3"
+msgstr "Oefening 3"
+
+msgid "Compare decimals and fractions"
+msgstr "Vergelijk decimalen en breuken"
+
+msgid "Compare fractions"
+msgstr "Breuken vergelijken"
+
+msgid "Reduce fractions"
+msgstr "Breuken verminderen"
+
+msgid "Expand fractions"
+msgstr "Breid breuken uit"
+
+msgid ""
+"To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed "
+"between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the "
+"fraction can't be reduced any more - try choosing a different one."
+msgstr ""
+"Om een breuk te verkleinen moet de teller en de noemer worden gedeeld door een van de gemeenschappelijke factoren "
+"die tussen de twee breuken worden weergegeven. Selecteer één van hen om te zien wat er gebeurt. Als 1 de enige "
+"gemeenschappelijke factor is, kan de breuk niet meer worden verkleint - probeer een andere te kiezen."
+
+msgid ""
+"To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see "
+"what happens."
+msgstr ""
+"Om een breuk uit te breiden vermenigvuldig je de teller en de noemer met hetzelfde getal. Verander de "
+"vermenigvuldiging om te zien wat er gebeurt."
+
+msgid "Use the arrows to change your answer or just type it in."
+msgstr "Gebruik de pijlen om je antwoord te veranderen of typ het gewoon in."
+
+msgid "Use the arrows to change your answer."
+msgstr "Gebruik de pijlen om je antwoord te veranderen."
+
+msgid ""
+"To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. "
+"Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
+msgstr ""
+"Om twee breuken met dezelfde noemers op te tellen tel je de tellers bij elkaar op en hou je de noemer ongewijzigd. "
+"Vereenvoudig het resultaat als de teller groter is dan de noemer en verklein de breuk indien mogelijk."
+
+msgid ""
+"To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator "
+"unchanged. Reduce the resulting fraction if possible."
+msgstr ""
+"Om een breuk van een andere breuk met dezelfde noemer af te trekken trek je de teller af en hou je de noemer "
+"onveranderd. Verklein de resulterende breuk indien mogelijk."
+
+msgid ""
+"To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the "
+"resulting fraction if possible."
+msgstr ""
+"Om twee breuken te vermenigvuldigen, vermenigvuldig je de tellers met elkaar en vermenigvuldig je vervolgens de "
+"noemers met elkaar. Verklein de resulterende breuk indien mogelijk."
+
+msgid ""
+"To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. "
+"Simplify and reduce the resulting fraction if possible."
+msgstr ""
+"Om een breuk te delen door een andere breuk vermenigvuldig je de eerste breuk met de tweede breuk naar beneden. "
+"Vereenvoudig en verklein de resulterende breuk indien mogelijk."
+
+msgid "Group fractions together"
+msgstr "Groeperen van breuken"
+
+msgid "Group percentages together"
+msgstr "Groepspercentages samen"
+
+msgid "Group ratios together"
+msgstr "Groepsverhoudingen samen"
+
+msgid "Symmetry"
+msgstr "Symmetrie"
+
+msgid "Reflection Symmetry - draw with shapes"
+msgstr "Reflectiesymmetrie - tekenen met vormen"
+
+msgid "Reflect shapes"
+msgstr "Reflecterende vormen"
+
+msgid "Reflect a shape in a mirror line"
+msgstr "Reflecteer een vorm in een spiegellijn"
+
+msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgstr "Teken een vorm die een weerspiegeling is van de reeds getoonde vorm. De rode lijn is de spiegellijn."
+
+msgid "Symmetrical shapes - missing half"
+msgstr "Symmetrische vormen - ontbrekende helft"
+
+msgid "Draw the other half of the shape"
+msgstr "Teken de andere helft van de vorm"
+
+msgid "Find lines of symmetry"
+msgstr "Zoek lijnen van symmetrie"
+
+msgid ""
+"Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select "
+"them."
+msgstr ""
+"Zoek en selecteer alle lijnen van symmetrie voor een weergegeven vorm. Klik op de pijlen rond het tekengebied om "
+"ze te selecteren."
+
+msgid "Match equivalent fractions"
+msgstr "Overeenkomen met equivalente breuken"
+
+msgid "Match fractions"
+msgstr "Koppel breuken"
+
+msgid "Match decimals"
+msgstr "Koppel decimalen"
+
+msgid "Match percentages"
+msgstr "Koppel percentages"
+
+msgid "Match ratios"
+msgstr "Koppel verhoudingen"
+
+msgid "Percentages in a pie chart"
+msgstr "Percentages in een taartdiagram"
+
+msgid "Find equivalent fraction"
+msgstr "Zoek een gelijkwaardige breuk"
+
+msgid "Calculating with Time"
+msgstr "Berekenen met de tijd"
+
+msgid "start time"
+msgstr "starttijd"
+
+msgid "end time"
+msgstr "eindtijd"
+
+msgid "elapsed time"
+msgstr "verlopen tijd"
+
+msgid "Temperature - introduction to negative numbers"
+msgstr "Temperatuur - inleiding tot negatieve getallen"
+
+msgid "Experiment with elapsed time"
+msgstr "Experimenteren met verstreken tijd"
+
+msgid "Experiment with elapsed time 2"
+msgstr "Experimenteren met verstreken tijd 2"
+
+msgid "Calculate elapsed time"
+msgstr "Bereken de verstreken tijd"
+
+msgid "Find the start or the end time"
+msgstr "Zoek de begin- of eindtijd"
+
+msgid "Visualized on a clock dial"
+msgstr "Gevisualiseerd op een wijzerplaat voor de klok"
+
+msgid "Visualized on a number line"
+msgstr "Gevisualiseerd op een nummerlijn"
+
+msgid "Visualized on two number lines"
+msgstr "Gevisualiseerd op twee cijferregels"
+
+msgid "With no visualizations"
+msgstr "Zonder visualisaties"
+
+msgid "With mirrored images"
+msgstr "Met gespiegelde beelden"
+
+msgid "Theme Editor"
+msgstr "Thema-editor"
+
+msgid "Make the game look your way"
+msgstr "Laat het spel er op jouw manier uitzien"
+
+msgid "Reset colors back to the default ones?"
+msgstr "De kleuren terugzetten naar de standaard kleuren?"
+
+msgid "With simplifying"
+msgstr "Met het vereenvoudigen van"
+
+msgid "Positive numbers"
+msgstr "Positieve cijfers"
+
+msgid "Basics"
+msgstr "Basis"
+
+msgid "Equivalent fractions"
+msgstr "Gelijkwaardige breuken"
+
+msgid "Expanding and reducing fractions"
+msgstr "Uitbreiding en vermindering van breuken"
+
+msgid "Add fractions with unlike denominators"
+msgstr "Breuken toevoegen met andere dan de noemers"
+
+msgid "Subtract fractions with unlike denominators"
+msgstr "Aftrekken van breuken met andere dan de noemers"
+
+msgid ""
+"To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which "
+"do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
+msgstr ""
+"Om breuken toe te voegen of af te trekken wanneer hun noemers niet dezelfde zijn, moet je equivalente fracties "
+"vinden die wel een gemeenschappelijke noemer hebben. Het vinden van het kleinste gemene veelvoud van de twee "
+"noemers zal je daarbij helpen."
+
+# used for the 2 ways of telling time in Russian and Serbian translations only
+msgid "long form"
+msgstr "lange vorm"
+
+# used for the 2 ways of telling time used in Russian and Serbian translations
+# only
+msgid "short form"
+msgstr "korte vorm"
+
+msgid "white"
+msgstr "wit"
+
+msgid "black"
+msgstr "zwart"
+
+msgid "grey"
+msgstr "grijs"
+
+msgid "red"
+msgstr "rood"
+
+msgid "orange [color]"
+msgstr "oranje [kleur]"
+
+msgid "yellow"
+msgstr "geel"
+
+msgid "olive"
+msgstr "olijf"
+
+msgid "green"
+msgstr "groene"
+
+msgid "sea green"
+msgstr "zeegroen"
+
+msgid "teal"
+msgstr "teal"
+
+msgid "blue"
+msgstr "blauw"
+
+msgid "navy"
+msgstr "marine blauw"
+
+msgid "purple"
+msgstr "paars"
+
+msgid "violet"
+msgstr "violet"
+
+msgid "magenta"
+msgstr "magenta"
+
+msgid "indigo"
+msgstr "indigo"
+
+msgid "pink"
+msgstr "roze"
+
+msgid "maroon"
+msgstr "kastanjebruin"
+
+msgid "brown"
+msgstr "bruine"
+
+msgid "aqua"
+msgstr "aqua"
+
+msgid "lime"
+msgstr "limoen groen"
+
+msgid "Equilateral Triangle"
+msgstr "Equilaterale Driehoek"
+
+msgid "Isosceles Triangle"
+msgstr "Gelijkbenige driehoek"
+
+msgid "Obtuse Triangle"
+msgstr "Stomp driehoek"
+
+msgid "Right Triangle"
+msgstr "Rechtse driehoek"
+
+msgid "Acute Triangle"
+msgstr "Acute Driehoek"
+
+msgid "Square"
+msgstr "Vierkant"
+
+msgid "Rectangle"
+msgstr "Rechthoek"
+
+msgid "Right Trapezium"
+msgstr "Rechts Trapezium"
+
+msgid "Isosceles Trapezium"
+msgstr "Isosceles Trapezium"
+
+msgid "Rhombus"
+msgstr "Rhombus"
+
+msgid "Parallelogram"
+msgstr "Parallelogram"
+
+msgid "Pentagon"
+msgstr "Vijfhoek"
+
+msgid "Hexagon"
+msgstr "Zeshoek"
+
+msgid "Heptagon"
+msgstr "Zevenhoek"
+
+msgid "Octagon"
+msgstr "Achthoek"
+
+msgid "Circle"
+msgstr "Cirkel"
+
+msgid "Ellipse"
+msgstr "Ellipse"
+
+msgid "Cube"
+msgstr "Kubus"
+
+msgid "Square Prism"
+msgstr "Vierkant Prisma"
+
+msgid "Triangular Prism"
+msgstr "Driehoekig prisma"
+
+msgid "Square Pyramid"
+msgstr "Vierkante Piramide"
+
+msgid "Triangular Pyramid"
+msgstr "Driehoekige piramide"
+
+msgid "Sphere"
+msgstr "Bol"
+
+msgid "Cylinder"
+msgstr "Cilinder"
+
+msgid "Cone"
+msgstr "Kegel"
+
+msgid "Torus"
+msgstr "Torus"
+
+msgid "Quadrilateral"
+msgstr "Quadrilateraal"
+
+msgid "Trapezium"
+msgstr "Trapezium"
+
+msgid "Triangle"
+msgstr "Driehoek"
+
+# used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all
+# points on one line
+msgid "Ouch... squished quadrilateral"
+msgstr "Auw... geplet vierzijdig..."
+
+msgid "Right isosceles triangle"
+msgstr "Rechter gelijkbenige driehoek"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Stomp gelijkbenige driehoek"
+
+msgid "Acute isosceles triangle"
+msgstr "Acute gelijkbenige driehoek"
+
+# used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on
+# one line
+msgid "Ouch... squished triangle"
+msgstr "Auw... geplette driehoek"
+
+# used to label a drawn "quadrilateral" with one of its angles equal to 180º -
+# in effect making it look like triangle
+msgid "Triangle? Well, not really..."
+msgstr "Driehoek? Nou, niet echt..."
+
+msgid "area:"
+msgstr "gebied:"
+
+msgid "perimeter:"
+msgstr "perimeter:"
+
+msgid "circumference:"
+msgstr "omtrek:"
+
+msgid "surface area:"
+msgstr "oppervlakte:"
+
+msgid "volume:"
+msgstr "volume:"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "groene appel"
+msgstr[1] "groene appels"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "rode appel"
+msgstr[1] "rode appels"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "aardbei"
+msgstr[1] "aardbeien"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "peer"
+msgstr[1] "peren"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] "sinaasappel [fruit]"
+msgstr[1] "sinaasappels"
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "ui"
+msgstr[1] "uien"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "tomaat"
+msgstr[1] "tomaten"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "citroen"
+msgstr[1] "citroenen"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "kers"
+msgstr[1] "kersen"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "paprika"
+msgstr[1] "paprika's"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "wortel"
+msgstr[1] "wortelen"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "banaan"
+msgstr[1] "bananen"
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "watermeloen"
+msgstr[1] "watermeloenen"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "uur"
+msgstr[1] "uren"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minuut"
+msgstr[1] "minuten"

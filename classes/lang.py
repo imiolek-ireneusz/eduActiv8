@@ -93,6 +93,14 @@ class Language:
             self.kbrd = i18n.custom.kbrd.pl
             self.kbrd_course_mod = i18n.custom.kbrd.pl_course
             self.lang_id = 3
+        elif self.lang == 'nl':
+            import i18n.custom.nl
+            import i18n.custom.word_lists.nl_di
+            import i18n.custom.a4a_py.nl as a4a_word_lst
+            self.voice = ["-vnl+m1"]
+            self.di = i18n.custom.word_lists.nl_di.di
+            self.lang_file = i18n.custom.nl
+            self.lang_id = 7
         elif self.lang == 'sr':
             import i18n.custom.sr
             import i18n.custom.word_lists.sr_di
@@ -280,15 +288,7 @@ class Language:
             self.voice = ["-vda+m1"]
             self.di = i18n.custom.word_lists.da_di.di
             self.lang_file = i18n.custom.da
-            self.lang_id = 6
-        elif self.lang == 'nl':
-            import i18n.custom.nl
-            import i18n.custom.word_lists.nl_di
-            self.voice = ["-vnl+m1"]
-            self.di = i18n.custom.word_lists.nl_di.di
-            self.lang_file = i18n.custom.nl
-            self.lang_id = 7
-            
+            self.lang_id = 6            
         elif self.lang == 'ar':  # Arabic
             import i18n.custom.ar
             import i18n.custom.word_lists.ar_di

@@ -27,14 +27,14 @@
                   title="Learn to Write"
                   subtitle="Trace Letters"
                   icon="ico_g_0109.png" ico_group="1" icosuffix="False" lang_activity="True"
-                  visible="1" lang_incl="['en', 'it', 'pt', 'de']" lang_excl="" require_uc="False" listening="False" android="True">
+                  visible="1" lang_incl="['en', 'it', 'pt', 'de', 'nl']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game mline="1" dbid="7" variant="1" var2="0" min_age="0" max_age="2"
                   constructor_id="10"
                   title="Learn to Write"
                   subtitle="Trace Letters"
                   icon="ico_g_0110.png" ico_group="1" icosuffix="False" lang_activity="True"
-                  visible="1" lang_incl="['en', 'it', 'pt', 'de']" lang_excl="" require_uc="False" listening="False" android="True">
+                  visible="1" lang_incl="['en', 'it', 'pt', 'de', 'nl']" lang_excl="" require_uc="False" listening="False" android="True">
             </game>
             <game mline="1" dbid="9" variant="2" var2="0" min_age="0" max_age="2"
                   constructor_id="10"
@@ -133,7 +133,7 @@
         </cat>
         <cat mline="2" id="39" title="Learn new words" subtitle=""
              icon="ico_c_39.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="['bg', 'en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="" lang_excl="['fi', 'sr', 'he']" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="286" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="121"
@@ -222,7 +222,7 @@
         </cat>
         <cat mline="2" id="2" title="Word Builders" subtitle=""
              icon="ico_c_02.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="['bg', 'en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="" lang_excl="['fi', 'sr', 'he']" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="107" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="82"
@@ -311,7 +311,7 @@
         </cat>
         <cat mline="2" id="3" title="Word Builders" subtitle="Listening Exercises"
              icon="ico_c_20.png" min_age="0" max_age="7" listening="True" android="True"
-             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'ru', 'fr', 'de', 'el', 'pt', 'it']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'ru', 'fr', 'de', 'el', 'pt', 'it', 'nl']" lang_excl="" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="182" variant="0" var2="1" min_age="0" max_age="7"
                   constructor_id="82"
@@ -400,7 +400,7 @@
         </cat>
         <cat mline="2" id="4" title="Word Matchers" subtitle=""
              icon="ico_c_16.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="['bg', 'en', 'es', 'ca', 'pl', 'uk', 'ru', 'fr', 'de', 'el', 'lk', 'pt', 'it']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="" lang_excl="['fi', 'sr', 'he']" icosuffix="False"
              has_inner="False">
             <!-- matching games using arts4apps -->
             <game mline="1" dbid="154" variant="0" var2="0" min_age="0" max_age="7"
@@ -490,7 +490,7 @@
         </cat>
         <cat mline="2" id="5" title="Word Matchers" subtitle="Listening Exercises"
              icon="ico_c_21.png" min_age="0" max_age="7" listening="True" android="True"
-             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'ru', 'fr', 'de', 'el', 'pt', 'it']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'ru', 'fr', 'de', 'el', 'pt', 'it', 'nl']" lang_excl="" icosuffix="False"
              has_inner="False">
             <!-- matching games using arts4apps -->
             <game mline="1" dbid="194" variant="0" var2="0" min_age="0" max_age="7"

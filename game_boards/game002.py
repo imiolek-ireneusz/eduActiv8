@@ -111,6 +111,11 @@ class Board(gd.BoardGame):
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
                             ["Peter Hill, Derek Lackaff and Matthew Rama"], colors[top % 2], "", 6)
         top += 1
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Dutch", "Nederlands"], colors[top % 2],
+                            "", 6)
+        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
+                            ["Steven Es"], colors[top % 2], "", 6)
+        top += 1
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Polish", "Polski"], colors[top % 2], "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
                             ["Kamila Roszak-Imiolek", "Ireneusz Imiolek"], colors[top % 2], "", 6)
@@ -142,11 +147,11 @@ class Board(gd.BoardGame):
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
                             "Yuri Chornoivan (Юрій Чорноіван)", colors[top % 2], "",
                             6)
-
+        """
         top += 1
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["", ""], colors[top % 2], "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, "", colors[top % 2], "", 6)
-
+        """
         # due to the number of people working on this one - it stays at the bottom and spreads across 2 columns
         # update top - to the height of the tallest column
         top = 8

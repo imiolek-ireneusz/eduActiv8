@@ -60,6 +60,8 @@ import classes.dialogwnd
 import classes.updater
 import classes.sizer
 
+import stresstest
+
 # setting the working directory to the directory of this file
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 os.chdir(path)
@@ -438,6 +440,8 @@ class GamePlay:
                 # -------- Main Program Loop ----------- #
                 wait = False
                 while self.done is False:
+                    # uncomment the following line to test all activities across multiple languages as specified in the stresstest.py
+                    # stresstest.step(self)
                     if android is not None:
                         if android.check_pause():
                             wait = True
