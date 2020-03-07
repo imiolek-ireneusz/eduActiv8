@@ -54,46 +54,45 @@ def n2txt(n, twoliner=False):
                 return [ones + n_and + "-", tens]
             else:
                 return ones + n_and + tens
-
     elif n == 0:
         return "nul"
     elif n == 100:
         return "honderd"
     return ""
 
-# still needs translating
+
 def time2str(h, m):
     """takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55"""
-    if m > 30:
+    if m > 15:
         if h == 12:
             h = 1
         else:
             h += 1
     if m == 0:
-        return "%s o'clock" % n2txt(h)
-    elif m == 1:
-        return "one minute past %s" % n2txt(h)
+        return "%s uur" % n2txt(h)
     elif m == 15:
-        return "quarter past %s" % n2txt(h)
+        return "kwart over %s" % n2txt(h)
     elif m == 30:
-        return "half past %s" % n2txt(h)
+        return "half %s" % n2txt(h)
     elif m == 45:
-        return "quarter to %s" % n2txt(h)
-    elif m == 59:
-        return "one minute to %s" % n2txt(h)
+        return "kwart voor %s" % n2txt(h)
+    elif m < 15:
+        return "%s over %s" % (n2txt(m), n2txt(h))
     elif m < 30:
-        return "%s past %s" % (n2txt(m), n2txt(h))
-    elif m > 30:
-        return "%s to %s" % (n2txt(60 - m), n2txt(h))
+        return "%s voor half %s" % (n2txt(30 - m), n2txt(h))
+    elif m < 45:
+        return "%s over half %s" % (n2txt(m - 30), n2txt(h))
+    elif m < 60:
+        return "%s voor %s" % (n2txt(60 - m), n2txt(h))
     return ""
 
 # write a fraction in words - needs translating
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+numerators = ['een', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf', 'twaalf',]
+denominators = ['', 'tweede', 'derde', 'vierde', 'vijfde', 'zesde', 'zevende', 'achtste', 'negende', 'tiende', 'elfde', 'twaalfde']
+
 
 def fract2str(n, d):
     if n == 1:
-        return numerators[0] + " " + d_singular[d-1]
+        return numerators[0] + " " + denominators[d-1]
     else:
-        return numerators[n-1] + " " + d_plural[d-1]
+        return numerators[n-1] + " " + denominators[d-1]
