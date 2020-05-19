@@ -280,5 +280,5 @@ class Board(gd.BoardGame):
         else:
             correct = False
 
-        if correct == True:
+        if correct:
             self.level.next_board()

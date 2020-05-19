@@ -21,8 +21,6 @@ class Board(gd.BoardGame):
 
         self.ai_enabled = False
         self.board.draw_grid = False
-        s = random.randrange(100, 150, 5)
-        v = random.randrange(230, 255, 5)
         h = random.randrange(0, 255, 5)
         bg_col = (255, 255, 255)
         color0 = ex.hsv_to_rgb(h, 40, 230)
@@ -30,15 +28,11 @@ class Board(gd.BoardGame):
             if self.mainloop.scheme.dark:
                 bg_col = (0, 0, 0)
             color0 = bg_col
-          # highlight 1
         self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
         self.font_color = self.color2
 
-        white = (255, 255, 255)
-
         self.disp_counter = 0
         self.disp_len = 1
-        lvl = 0
 
         if self.mainloop.m.game_variant == 0:
             self.level.lvl_count = 6
@@ -215,11 +209,10 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if event.type == pygame.MOUSEBUTTONDOWN and self.history[
-            1] == None and self.ai_enabled == False:  # and self.start_sequence==False:
+        if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and not self.ai_enabled:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
-                if active.uncovered == False:
+                if not active.uncovered:
                     if self.history[0] is None:
                         active.perm_outline_width = 6
                         active.perm_outline_color = [150, 150, 255]

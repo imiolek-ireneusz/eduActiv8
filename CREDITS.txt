@@ -13,6 +13,7 @@ Translations:
     Catalan - Guillem Jover - http://www.hadrons.org/~guillem/
             - updated by Jordi Mallach
     Bulgarian - Vanyo Georgiev
+    Dutch - Steven Es
     English UK - Ireneusz Imiolek (some corrections needed)
     English US - Ireneusz Imiolek (some corrections needed)
     Finnish - Aapo Rantalainen

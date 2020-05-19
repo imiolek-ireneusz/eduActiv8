@@ -13,7 +13,7 @@ class Percentage:
         self.numbers = numbers
         self.type = type
 
-        self.canvas = pygame.Surface([self.size, self.size - 1], flags=pygame.SRCALPHA)
+        self.canvas = pygame.Surface((self.size, self.size - 1), flags=pygame.SRCALPHA)
         self.set_colors(colors, b_colors)
         self.redraw()
 

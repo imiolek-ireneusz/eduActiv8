@@ -183,9 +183,9 @@ class Board(gd.BoardGame):
             self.board.add_unit(xy[0] + xo, xy[1], 1 + ew, 1, obj_classes[f_index], disp, self.bg_col, "",
                                 self.font_size, alpha=True)
             if ew == 1:
-                canvas = pygame.Surface([size * 2, size - 1])
+                canvas = pygame.Surface((size * 2, size - 1))
             else:
-                canvas = pygame.Surface([size, size - 1], flags=pygame.SRCALPHA)
+                canvas = pygame.Surface((size, size - 1), flags=pygame.SRCALPHA)
             canvas.fill(self.bg_col)
             drawing_f[f_index](numbers[i - f_index * self.row_count], canvas, size, center, color1)  # data[7](data, canvas, i)
 

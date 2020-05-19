@@ -27,10 +27,6 @@ class Board(gd.BoardGame):
         self.color = color0
         self.highlight_color = ex.hsv_to_rgb(h, 230, 150)
         white = (255, 255, 255)
-        bg_col = (255, 255, 255)
-        if self.mainloop.scheme is not None:
-            if self.mainloop.scheme.dark:
-                bg_col = (0, 0, 0)
         self.disp_counter = 0
         self.disp_len = 1
         # data = [x_count, y_count, number_count, top_limit, ordered]
@@ -130,11 +126,10 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if event.type == pygame.MOUSEBUTTONDOWN and self.history[
-            1] == None and self.ai_enabled == False:  # and self.start_sequence==False:
+        if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and not self.ai_enabled:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
-                if active.uncovered == False:
+                if not active.uncovered:
                     if self.history[0] is None:
                         active.img = self.card_fronts[active.unit_id].img.copy()
                         self.history[0] = active

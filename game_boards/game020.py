@@ -215,7 +215,7 @@ class Board(gd.BoardGame):
                     self.expression[self.board.ships[i].grid_x] = value
             eval_string = ''.join(self.expression)
             eval_string.strip()
-            if eval(eval_string) == True:
+            if eval(eval_string):
                 self.level.next_board()
                 if found is not None:
                     found.set_display_check(True)

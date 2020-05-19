@@ -28,13 +28,10 @@ class Board(gd.BoardGame):
         self.font_color = self.color2
         black = (2, 2, 2)
         white = (255, 255, 255)
-
-        bg_col = (255, 255, 255)
         if self.mainloop.scheme is not None:
             if self.level.lvl > 1:
                 self.font_color = self.mainloop.scheme.u_font_color
             if self.mainloop.scheme.dark:
-                bg_col = (0, 0, 0)
                 color0 = (0, 0, 0)
                 black = (30, 30, 30)
             else:
@@ -198,7 +195,7 @@ class Board(gd.BoardGame):
         for i in range(self.squares):
             color1 = self.hue_choice[self.chosen[i]]  # ex.hsv_to_rgb(h,s,v)
             color2 = self.hue_choice2[self.chosen[i]]  # ex.hsv_to_rgb(h,255,255)
-            canvas = pygame.Surface([size, size - 1])
+            canvas = pygame.Surface((size, size - 1))
             canvas.fill(self.board.ships[i].initcolor)
             self.draw_splash(canvas, size, color1, color2)  # data[7](data, canvas, i)
             self.board.ships[i].painting = canvas.copy()
@@ -210,11 +207,10 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if event.type == pygame.MOUSEBUTTONDOWN and self.history[
-            1] == None and self.ai_enabled == False:  # and self.start_sequence==False:
+        if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and not self.ai_enabled:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
-                if active.uncovered == False:
+                if not active.uncovered:
                     if self.history[0] is None:
                         active.perm_outline_width = 6
                         active.perm_outline_color = [150, 150, 255]

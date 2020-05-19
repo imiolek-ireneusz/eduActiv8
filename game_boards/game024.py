@@ -441,7 +441,7 @@ class Board(gd.BoardGame):
                     self.change_tool(3)
                 elif active == self.circle_btn.unit_id:
                     self.change_tool(2)
-                elif active == self.next_btn.unit_id and self.next_btn.keyable == True:
+                elif active == self.next_btn.unit_id and self.next_btn.keyable:
                     self.next_shape()
 
             if event.button == 1 and column >= 0 and 2 <= row < self.data[1]:

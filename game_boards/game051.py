@@ -170,7 +170,7 @@ class Board(gd.BoardGame):
                 self.board.all_sprites_list.move_to_front(self.board.units[i])
 
         self.canvas.set_outline([255, 229, 127], 1)
-        self.canv = pygame.Surface([self.canvas.grid_w * self.board.scale, self.canvas.grid_h * self.board.scale - 1])
+        self.canv = pygame.Surface((self.canvas.grid_w * self.board.scale, self.canvas.grid_h * self.board.scale - 1))
         self.board.all_sprites_list.move_to_back(self.board.board_bg)
         self.mix()
 

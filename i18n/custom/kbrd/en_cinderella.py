@@ -25,7 +25,6 @@ cinderella = [  # 1
          "And it grew, however, and became a handsome tree. Thrice a day Cinderella went and sat beneath it, and wept and prayed, and a little white bird always came on the tree, and if Cinderella expressed a wish, the bird threw down to her what she had wished for. ",
          "It happened, however, that the King appointed a festival which was to last three days, and to which all the beautiful young girls in the country were invited, in order that his son might choose himself a bride. ",
          'When the two step-sisters heard that they too were to appear among the number, they were delighted, called Cinderella and said, "Comb our hair for us, brush our shoes and fasten our buckles, for we are going to the festival at the King\'s palace." ',
-         # "
          'Cinderella obeyed, but wept, because she too would have liked to go with them to the dance, and begged her step-mother to allow her to do so. "Thou go, Cinderella!" said she; "Thou art dusty and dirty and wouldst go to the festival? Thou hast no clothes and shoes, and yet wouldst dance!"'
          ]],  # 4
     [[1, 1, 1, 1, 1],
@@ -47,7 +46,6 @@ cinderella = [  # 1
     [[1, 1, 1, 1, 1],
      ['On this she turned her back on Cinderella, and hurried away with her two proud daughters. ',
       'As no one was now at home, Cinderella went to her mother\'s grave beneath the hazel-tree, and cried, "Shiver and quiver, little tree, Silver and gold throw down over me." ',
-      # '
       'Then the bird threw a gold and silver dress down to her, and slippers embroidered with silk and silver. She put on the dress with all speed, and went to the festival. ',
       'Her step-sisters and the step-mother however did not know her, and thought she must be a foreign princess, for she looked so beautiful in the golden dress. They never once thought of Cinderella, and believed that she was sitting at home in the dirt, picking lentils out of the ashes. ',
       'The prince went to meet her, took her by the hand and danced with her. He would dance with no other maiden, and never left loose of her hand, and if any one else came to invite her, he said, "This is my partner."'
@@ -55,7 +53,6 @@ cinderella = [  # 1
     [[1, 1, 1, 1, 1],
      [
          'She danced till it was evening, and then she wanted to go home. But the King\'s son said, "I will go with thee and bear thee company," for he wished to see to whom the beautiful maiden belonged. ',
-         # '
          "She escaped from him, however, and sprang into the pigeon-house. The King's son waited until her father came, and then he told him that the stranger maiden had leapt into the pigeon-house. ",
          'The old man thought, "Can it be Cinderella?" and they had to bring him an axe and a pickaxe that he might hew the pigeon-house to pieces, but no one was inside it. ',
          'And when they got home Cinderella lay in her dirty clothes among the ashes, and a dim little oil lamp was burning on the mantle-piece, ',
@@ -67,12 +64,11 @@ cinderella = [  # 1
          "Then the bird threw down a much more beautiful dress than on the preceding day. And when Cinderella appeared at the festival in this dress, every one was astonished at her beauty. The King's son had waited until she came, and instantly took her by the hand and danced with no one but her. ",
          'When others came and invited her, he said, "She is my partner." When evening came she wished to leave, and the King\'s son followed her and wanted to see into which house she went. But she sprang away from him, and into the garden behind the house. Therein stood a beautiful tall tree on which hung the most magnificent pears. ',
          'She clambered so nimbly between the branches like a squirrel that the King\'s son did not know where she was gone. He waited until her father came, and said to him, "The stranger-maiden has escaped from me, and I believe she has climbed up the pear-tree." The father thought, "Can it be Cinderella?" and had an axe brought and cut the tree down, but no one was on it. ',
-         # '
          'And when they got into the kitchen, Cinderella lay there amongst the ashes, as usual, for she had jumped down on the other side of the tree, had taken the beautiful dress to the bird on the little hazel-tree, and put on her grey gown.'
          ]],  # 9
     [[1, 1, 1, 1, 1],
      [
-         'On the third day, when the parents and sisters had gone away, Cinderella went once more to her mother\'s grave and said to the little tree- "Shiver and quiver, my little tree, Silver and gold throw down over me." '  # '
+         'On the third day, when the parents and sisters had gone away, Cinderella went once more to her mother\'s grave and said to the little tree- "Shiver and quiver, my little tree, Silver and gold throw down over me." ',
          "And now the bird threw down to her a dress which was more splendid and magnificent than any she had yet had, and the slippers were golden. And when she went to the festival in the dress, no one knew how to speak for astonishment. The King's son danced with her only, and if any one invited her to dance, he said, \"She is my partner.\" ",
          "When evening came, Cinderella wished to leave, and the King's son was anxious to go with her, but she escaped from him so quickly that he could not follow her. The King's son had, however, used a strategem, and had caused the whole staircase to be smeared with pitch, and there, when she ran down, had the maiden's left slipper remained sticking. ",
          "The King's son picked it up, and it was small and dainty, and all golden. Next morning, he went with it to the father, and said to him, \"No one shall be my wife but she whose foot this golden slipper fits.\" Then were the two sisters glad, for they had pretty feet. The eldest went with the shoe into her room and wanted to try it on, and her mother stood by. ",
@@ -81,10 +77,8 @@ cinderella = [  # 1
     [[1, 1, 1, 1, 1],
      [
          "They were, however, obliged to pass the grave, and there, on the hazel-tree, sat the two pigeons and cried, \"Turn and peep, turn and peep, There's blood within the shoe, The shoe it is too small for her, The true bride waits for you.\" ",
-         # '
          'Then he looked at her foot and saw how the blood was streaming from it. He turned his horse round and took the false bride home again, and said she was not the true one, and that the other sister was to put the shoe on. Then this one went into her chamber and got her toes safely into the shoe, but her heel was too large. So her mother gave her a knife and said, "Cut a bit off thy heel; when thou art Queen thou wilt have no more need to go on foot." ',
          "The maiden cut a bit off her heel, forced her foot into the shoe, swallowed the pain, and went out to the King's son. He took her on his horse as his bride, and rode away with her, but when they passed by the hazel-tree, two little pigeons sat on it and cried, \"Turn and peep, turn and peep, There's blood within the shoe, The shoe it is too small for her, The true bride waits for you.\" ",
-         # '
          'He looked down at her foot and saw how the blood was running out of her shoe, and how it had stained her white stocking. Then he turned his horse and took the false bride home again. "This also is not the right one," said he, "have you no other daughter?" "No," said the man, "There is still a little stunted kitchen-wench which my late wife left behind her, but she cannot possibly be the bride." ',
          "The King's son said he was to send her up to him; but the mother answered, \"Oh, no, she is much too dirty, she cannot show herself!\" He absolutely insisted on it, and Cinderella had to be called. She first washed her hands and face clean, and then went and bowed down before the King's son, who gave her the golden shoe. Then she seated herself on a stool, drew her foot out of the heavy wooden shoe, and put it into the slipper, which fitted like a glove."
          ]],  # 11
@@ -92,7 +86,6 @@ cinderella = [  # 1
      [
          "And when she rose up and the King's son looked at her face he recognized the beautiful maiden who had danced with him and cried, \"That is the true bride!\" The stepmother and the two sisters were terrified and became pale with rage; he, however, took Cinderella on his horse and rode away with her. As they passed by the hazel-tree, the two white doves cried- ",
          '"Turn and peep, turn and peep, No blood is in the shoe, The shoe is not too small for her, The true bride rides with you," and when they had cried that, the two came flying down and placed themselves on Cinderella\'s shoulders, one on the right, the other on the left, and remained sitting there. ',
-         # '
          "When the wedding with the King's son had to be celebrated, the two false sisters came and wanted to get into favour with Cinderella and share her good fortune. When the betrothed couple went to church, the elder was at the right side and the younger at the left, and the pigeons pecked out one eye of each of them. Afterwards as they came back, the elder was at the left, and the younger at the right, and then the pigeons pecked out the other eye of each. ",
          "And thus, for their wickedness and falsehood, they were punished with blindness as long as they lived. ",
          "The End. Congratulations you have retyped the entire Cinderella by Brothers Grim."

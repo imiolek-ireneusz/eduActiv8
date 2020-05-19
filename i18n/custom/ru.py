@@ -251,7 +251,6 @@ def time2spk(h, m):
         return "%s %s %d минуты" % (spknumbers[h - 1], sf, m)
     else:
         return "%s %s %d минут" % (spknumbers[h - 1], sf, m)
-    return ""
 
 
 dp["a4a_animals"] = ["корова", "индейка", "креветка", "volc", "пантэра", "панда", "сорока", "моллюск", "пони", "мышь",

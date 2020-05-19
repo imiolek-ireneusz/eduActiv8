@@ -19,7 +19,7 @@ class DialogBtn(pygame.sprite.Sprite):
         self.caption = ex.unival(caption)
         self.hover = False
         self.color = (255, 255, 255, 0)
-        self.image = pygame.Surface([self.w, self.h], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((self.w, self.h), flags=pygame.SRCALPHA)
 
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.l, self.t]

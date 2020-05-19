@@ -21,18 +21,10 @@ class Board(gd.BoardGame):
 
         self.ai_enabled = False
         self.board.draw_grid = False
-        s = random.randrange(100, 150, 5)
-        v = random.randrange(230, 255, 5)
         h = random.randrange(0, 255, 5)
-        bg_col = (255, 255, 255)
-        if self.mainloop.scheme is not None:
-            if self.mainloop.scheme.dark:
-                bg_col = (0, 0, 0)
         color0 = ex.hsv_to_rgb(h, 1, 255)  # highlight 1
         self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
         self.font_color = self.color2
-
-        white = (255, 255, 255)
 
         self.disp_counter = 0
         self.disp_len = 1
@@ -167,8 +159,6 @@ class Board(gd.BoardGame):
 
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
-        texts1 = []
-        texts2 = []
 
         l = len(self.imgs)
         drawn_numbers = []
@@ -190,8 +180,6 @@ class Board(gd.BoardGame):
         h2 = data[1] - h1 - data[4]  # -1 #height of the bottom margin minus 1 (game label)
         w2 = (data[0] - data[3] * 4) // 2 - 1  # side margin width
 
-        x = w2
-        y = h1
         small_slots = []
         for j in range(h1, data[1] - h2):
             for i in range(w2, w2 + data[3]):
@@ -236,12 +224,11 @@ class Board(gd.BoardGame):
         self.outline_all(self.color2, 1)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
-        if event.type == pygame.MOUSEBUTTONDOWN and self.history[
-            1] == None and self.ai_enabled == False:  # and self.start_sequence==False:
+        gd.BoardGame.handle(self, event)
+        if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and not self.ai_enabled:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
-                if active.uncovered == False:
+                if not active.uncovered:
                     if self.history[0] is None:
                         active.perm_outline_width = 6
                         active.perm_outline_color = [150, 150, 255]
@@ -259,7 +246,7 @@ class Board(gd.BoardGame):
                         else:
                             self.history[0].uncovered = True
                             self.history[1].uncovered = True
-                            self.history[0].perm_outline_color = self.color2  # [50,255,50]
+                            self.history[0].perm_outline_color = self.color2
                             self.history[1].perm_outline_color = self.color2
                             self.history[0].update_me = True
                             self.history[1].update_me = True

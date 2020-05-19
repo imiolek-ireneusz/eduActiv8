@@ -161,7 +161,7 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if event.type == pygame.MOUSEBUTTONDOWN and self.show_msg == False and self.start_sequence == False:
+        if event.type == pygame.MOUSEBUTTONDOWN and not self.show_msg and not self.start_sequence:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
                 if active.unit_id in self.chosen:

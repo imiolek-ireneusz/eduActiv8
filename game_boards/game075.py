@@ -200,14 +200,13 @@ class Board(gd.BoardGame):
         if self.current_pos + 1 > self.all_a_count:
             self.next_step_btn.value = self.lang.d["demo next eg"]
 
-        self.next_step_btn.update_me == True
+        self.next_step_btn.update_me = True
 
     def draw_hori_line(self, unit):
         w = unit.grid_w * self.board.scale
         h = unit.grid_h * self.board.scale
-        center = [w // 2, h // 2]
 
-        canv = pygame.Surface([w, h - 1])
+        canv = pygame.Surface((w, h - 1))
         canv.fill(self.bg_col)
 
         pygame.draw.line(canv, self.grey, (0, self.top_line), (w, self.top_line), 3)
@@ -216,21 +215,21 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if self.show_msg == False:
+        if not self.show_msg:
             if event.type == pygame.KEYDOWN and (event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT):
                 self.next_step()
             elif event.type == pygame.MOUSEBUTTONUP:
                 if self.board.active_ship == self.next_step_btn.unit_id:
-                    if self.current_pos + 1 > self.all_a_count:  # if self.cursor_pos == self.sumn1n2sl+1:
+                    if self.current_pos + 1 > self.all_a_count:
                         self.level.next_board_load()
                     else:
                         self.next_step()
 
     def home_sqare_switch(self, activate):
-        if activate < 0 or activate > self.all_a_count:  # self.sumn1n2sl * 2 - 1:
+        if activate < 0 or activate > self.all_a_count:
             activate = self.all_a_count
 
-        if activate >= 0 and activate < self.all_a_count:  # self.sumn1n2sl * 2 - 1:
+        if 0 <= activate < self.all_a_count:
             self.board.active_ship = activate
             self.home_square.update_me = True
             if self.board.active_ship >= 0:
@@ -283,7 +282,7 @@ class Board(gd.BoardGame):
             if self.home_square.pos_id > 1:
                 self.carrysuml[self.home_square.pos_id - 2].font_color = self.font_hl
                 self.carrysuml[self.home_square.pos_id - 2].set_outline(self.grey2, 2)
-            if self.home_square.pos_id > 0 and self.home_square.pos_id < self.sumn1n2sl - 1:
+            if 0 < self.home_square.pos_id < self.sumn1n2sl - 1:
                 self.carrysuml[self.home_square.pos_id - 1].font_color = self.grey2
                 self.carrysuml[self.home_square.pos_id - 1].set_outline(self.font_hl2, 2)
             self.plus_label.font_color = self.grey
@@ -308,7 +307,6 @@ class Board(gd.BoardGame):
     def auto_fill(self):
         self.plus_label.font_color = self.font_hl
         self.board.units[0].font_color = self.task_str_color
-        s = "0"
         self.hint1.value = ""
         self.hint2.value = ""
         self.hint3.value = ""
@@ -378,7 +376,7 @@ class Board(gd.BoardGame):
             if self.hint1.value != "":
                 self.hint1.value += " = %s" % val
             self.home_square.value = str(val % 10)
-            if self.home_square.pos_id > 0 and self.home_square.pos_id < self.sumn1n2sl - 1:
+            if 0 < self.home_square.pos_id < self.sumn1n2sl - 1:
                 self.carrysuml[self.home_square.pos_id - 1].font_color = self.grey2
                 self.carrysuml[self.home_square.pos_id - 1].set_outline(self.font_hl2, 2)
                 if val / 10 > 0:
@@ -405,7 +403,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill(self.color)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

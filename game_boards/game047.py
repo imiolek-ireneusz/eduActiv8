@@ -51,7 +51,7 @@ class Board(gd.BoardGame):
 
         self.positionsd = {}
 
-        if data[3] == True:
+        if data[3]:
             choice_list = [x for x in range(self.alph_len - data[2])]
             index = random.randrange(0, len(choice_list))
             for i in range(data[2]):

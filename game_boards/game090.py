@@ -236,11 +236,10 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)
-        if event.type == pygame.MOUSEBUTTONDOWN and self.history[
-            1] == None and self.ai_enabled == False:
+        if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and not self.ai_enabled:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
-                if active.uncovered == False:
+                if not active.uncovered:
                     if self.history[0] is None:
                         active.perm_outline_width = 6
                         active.perm_outline_color = [150, 150, 255]

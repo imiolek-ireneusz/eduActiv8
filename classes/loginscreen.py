@@ -59,7 +59,7 @@ class Colors:
         self.font_color = self.color_mono_font #(81, 35, 4)
         self.edit_font_color = self.color_mono_font
 
-        #Check boxes
+        # Check boxes
         self.cb_bg_col = (255, 255, 255, 0)
         self.cb_color = (255, 255, 255, 50)
         self.cb_hover_color = (255, 255, 255, 125)
@@ -67,7 +67,7 @@ class Colors:
         self.cb_border_color = (0, 0, 0)
         self.cb_border_focused = (255, 0, 0)
 
-        #PButon
+        # PButon
         self.btn_bg_color = (255, 255, 255, 50)  # all butons and non selected age buttons
         self.btn_hover_color = (255, 255, 255, 75)
         self.btn_bg_focus = (255, 255, 255, 100)  # selected state age and focus on buttons
@@ -83,21 +83,21 @@ class Colors:
         self.c2a_btn_hover_color = (25, 255, 25, 175)
         self.c2a_btn_bg_focus = (55, 255, 55, 150)  # selected state age and focus on buttons
 
-        #PScrollBar
+        # PScrollBar
         self.slb_bg_color = (255, 255, 255, 50)
         self.slb_bg_focus = (255, 255, 255, 100)
         self.slb_border_color = self.color_mono
         self.slb_border_focused = self.color_mono_focused
         self.slb_mid_lines = self.color_mono
 
-        #LoginScreen
+        # LoginScreen
         self.ls_font_color = self.color_mono_font #(81, 35, 4)
         self.ls_header_font_color = self.color_mono_font #(255, 179, 111)
         self.ls_bg_col = (255, 255, 255, 70)  # main panel
         self.bg_col = self.ls_bg_col
         self.ls_bg_sidecol = (0, 0, 0, 50)  # menu panel
 
-        #Keyboard Key
+        # Keyboard Key
         self.key_bg_color_normal = (255, 255, 255, 70)
         self.key_bg_color_activated = (255, 255, 255, 130)
         self.key_bg_color_disabled = self.inner_color
@@ -201,7 +201,7 @@ class PEdit(pygame.sprite.Sprite):
 
         self.lines = [[0, 0], [self.w - 1, 0], [self.w - 1, self.h - 1], [0, self.h - 1]]
         self.lines_focused = [[0, 0], [self.w - 2, 0], [self.w - 2, self.h - 2], [0, self.h - 2]]
-        self.image = pygame.Surface([w, h], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((w, h), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [l, t]
         self.update()
@@ -250,7 +250,7 @@ class PEdit(pygame.sprite.Sprite):
                         val = self.value
                 else:
                     val = self.value
-            text = self.ls.font_2.render("%s" % (val), 1, self.ls.colors.edit_font_color)
+            text = self.ls.font_2.render("%s" % val, 1, self.ls.colors.edit_font_color)
 
             if self.select_item:
                 self.font_x = (self.w - self.ls.font_2.size(val)[0]) // 2
@@ -425,7 +425,7 @@ class PCheckbox(pygame.sprite.Sprite):
         self.border_focused = self.ls.colors.cb_border_focused
 
         self.font_color = self.ls.font_color
-        self.image = pygame.Surface([w, h], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((w, h), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [l, t]
 
@@ -539,7 +539,7 @@ class PLabel(pygame.sprite.Sprite):
         self.select_item = False
         self.update_me = True
         self.hover = False
-        self.image = pygame.Surface([w, h], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((w, h), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [l, t]
         self.font_v = self.ls.font_2
@@ -731,7 +731,7 @@ class PScrollBar(pygame.sprite.Sprite):
         self.rect_init()
 
     def rect_init(self):
-        self.image = pygame.Surface([self.w, self.h], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((self.w, self.h), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.left, self.top]
 
@@ -831,7 +831,7 @@ class PIMGButton(pygame.sprite.Sprite):
 
         #self.lines = [[0, 0], [self.w - 1, 0], [self.w - 1, self.h - 1], [0, self.h - 1]]
         #self.lines_focused = [[0, 0], [self.w - 2, 0], [self.w - 2, self.h - 2], [0, self.h - 2]]
-        self.image = pygame.Surface([w, h], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((w, h), flags=pygame.SRCALPHA)
         self.img_loaded = False
         try:
             self.img = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
@@ -892,11 +892,11 @@ class PIMGButton(pygame.sprite.Sprite):
             pos = event.pos
             if self.rect.topleft[0] + self.rect.width >= pos[0] >= self.rect.topleft[0] and self.rect.topleft[
                 1] + self.rect.height >= pos[1] >= self.rect.topleft[1]:
-                if self.hover == False:
+                if not self.hover:
                     self.update_trigger()
                 self.hover = True
             else:
-                if self.hover == True:
+                if self.hover:
                     self.update_trigger()
                 self.hover = False
 
@@ -955,7 +955,7 @@ class KbrdKey(pygame.sprite.Sprite):
 
         self.lines = [[0, 0], [self.w - 1, 0], [self.w - 1, self.h - 1], [0, self.h - 1]]
         self.lines_focused = [[0, 0], [self.w - 2, 0], [self.w - 2, self.h - 2], [0, self.h - 2]]
-        self.image = pygame.Surface([self.w, self.h], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((self.w, self.h), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.x, self.y]
 
@@ -981,7 +981,7 @@ class KbrdKey(pygame.sprite.Sprite):
             self.bg_color = self.bg_color_disabled
         self.update()
 
-    def activate_color(self): #use on shift only
+    def activate_color(self):  # use on shift only
         if self.case == 1:
             self.bg_color = self.bg_color_normal
         else:
@@ -1041,7 +1041,7 @@ class KbrdKey(pygame.sprite.Sprite):
     def handle(self, event):
         if self.enabled:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                if self.fcode == 2: # shift
+                if self.fcode == 2:  # shift
                     self.ls.keyboard.shift_it()
                     self.activate_color()
                 elif self.ls.in_focus is not None:
@@ -1054,7 +1054,7 @@ class KbrdKey(pygame.sprite.Sprite):
                                     self.ls.in_focus.value = ex.unival(self.ls.in_focus.value) + char
                                 else:
                                     self.ls.in_focus.value = char + ex.unival(self.ls.in_focus.value)
-                        if self.fcode == 1: # backspace
+                        if self.fcode == 1:  # backspace
                             if lhv > 0:
                                 if self.ls.lang.ltr_text:
                                     self.ls.in_focus.value = self.ls.in_focus.value[0:lhv - 1]
@@ -1354,7 +1354,7 @@ class LoginScreen:
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1),
             (int(self.points * 1.8)))
 
-        #keyboard Keys
+        # keyboard Keys
         self.font_3 = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1),
             (int(self.points * 3.5)))
@@ -1477,7 +1477,7 @@ class LoginScreen:
             self.edit_list.add(tmp_btn)
             self.age_groups.append(tmp_btn)
 
-        #preselect first user
+        # preselect first user
         if self.username_count < 6:
             self.select[0].onMouseButtonDown()
             self.select[0].onBlur()
@@ -2028,7 +2028,6 @@ class LoginScreen:
             self.scroll_bar.update()
 
     def update_scrollbar_top(self, top):
-        #if len(self.usernames) > 5:
         if self.usr_count > self.scroll_item_count:
             if top > self.scroll_max_top + self.scroll_bar.dist2top:
                 t = self.scroll_max_top
@@ -2044,7 +2043,6 @@ class LoginScreen:
             self.set_scrollbar_top(t)
         else:
             self.set_scrollbar_top(self.scroll_min_top)
-            #self.scroll_h = self.scroll_max_h
 
     def update_fonts_scrollbar_top(self, top):
         if self.usr_count > self.scroll_item_count:
@@ -2067,7 +2065,7 @@ class LoginScreen:
             if len(self.usernames) > self.scroll_item_count:
                 if (self.state == "USERS" or self.state == "FONTS") and self.scroll_bar.top != t:
                     if self.in_focus is not None:
-                        if self.scroll_down == False:
+                        if not self.scroll_down:
                             self.in_focus.onBlur()
                         if self.state == "USERS":
                             self.fdetails(None)
@@ -2114,7 +2112,7 @@ class LoginScreen:
         if event.type == pygame.MOUSEMOTION:
             pos = event.pos
             if pos[1] < self.keyboard.y:
-                if self.scroll_down == False:
+                if not self.scroll_down:
                     hover_found = False
                     for each in self.btn_list:
                         if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
@@ -2484,7 +2482,7 @@ class LoginScreen:
                 self.in_focus = self.password
                 self.password.onFocus()
             else:
-                if self.admin_exists == False:
+                if not self.admin_exists:
                     if len(self.username.value) < 3:
                         self.db_status = self.lang.b["Please enter user name (at least 3 characters long)"]
                         self.in_focus.onBlur()

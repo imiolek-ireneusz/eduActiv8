@@ -83,7 +83,7 @@ class Clock:
     def draw_all(self, times):
         self.times = times
         self.diff_solution = self.get_diff()
-        self.canvas = pygame.Surface([self.size[0], self.size[1] - 1])
+        self.canvas = pygame.Surface((self.size[0], self.size[1] - 1))
         if self.game_board.mainloop.scheme is not None:
             self.canvas.fill(self.game_board.mainloop.scheme.u_color)
         else:

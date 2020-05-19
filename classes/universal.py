@@ -184,14 +184,14 @@ class Universal(pygame.sprite.Sprite):
     def set_blit_mask(self, mask_img_src):
         self.use_blit_mask = True
         self.mask_img_src =  mask_img_src
-        self.mask_surf = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1],
+        self.mask_surf = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1),
                                         flags=pygame.SRCALPHA)
         self.layer_mask = ImageLayer(self, self.mask_surf, self.mask_img_src, self.alpha)
         self.mask_surf.blit(self.layer_mask.img, self.layer_mask.img_pos)
         self.update_me = True
 
     def init_m_painting(self):
-        self.manual_painting = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
+        self.manual_painting = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1), flags=pygame.SRCALPHA)
 
     def use_fg_as_hover(self):
         self.fg_as_hover = True
@@ -199,9 +199,9 @@ class Universal(pygame.sprite.Sprite):
     def init_images(self):
         # Set height, width, the -1 is to give it some space around for the margin
         if self.alpha:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1), flags=pygame.SRCALPHA)
         else:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
 
         # Make our top-left corner the passed-in location. The +1 is the margin
         self.rect = self.image.get_rect()
@@ -240,9 +240,9 @@ class Universal(pygame.sprite.Sprite):
         self.grid_w = new_grid_w
         self.grid_h = new_grid_h
         if self.alpha:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1), flags=pygame.SRCALPHA)
         else:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
         self.image.fill(self.bg_color)
 
     def set_display_check(self, value):
@@ -316,12 +316,12 @@ class Universal(pygame.sprite.Sprite):
 
     def pos_update(self):
         if self.grid_w > 0 and self.grid_h > 0:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
             self.painting = self.image
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
         else:
-            self.image = pygame.Surface([1, 1])
+            self.image = pygame.Surface((1, 1))
             # self.painting = self.image
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]

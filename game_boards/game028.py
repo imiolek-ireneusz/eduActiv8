@@ -78,7 +78,7 @@ class Board(gd.BoardGame):
     def update(self, game):
         game.fill((255, 255, 255))
         gd.BoardGame.update(self, game)  # rest of painting done by parent
-        if self.show_msg == False:
+        if not self.show_msg:
             self.mylaby.show(game)
 
     def after_keydown_move(self):

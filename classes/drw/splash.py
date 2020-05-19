@@ -41,7 +41,7 @@ class Splash:
         size = unit_size * scale
         self.scaled_lines = [[int(size * each[0] / 200.0), int(size * each[1] / 200.0)] for each in Splash.lines]
 
-        self.canvas = pygame.Surface([size, size - 1], flags=pygame.SRCALPHA)
+        self.canvas = pygame.Surface((size, size - 1), flags=pygame.SRCALPHA)
         self.canvas.fill((0, 0, 0, 0))
         if custom_color[0] > -1:
             col = ex.hsva_to_rgba(custom_color[0], custom_color[1], custom_color[2], custom_color[3])

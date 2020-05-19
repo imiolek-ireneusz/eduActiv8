@@ -32,7 +32,6 @@ class Board(gd.BoardGame):
         self.color_s = random.randrange(50, 90, 5)
         self.color_v = random.randrange(230, 255, 5)
 
-        h = random.randrange(0, 255, 1)
         self.bg_color = [255, 255, 255]
         color = [255, 255, 255]
         white = (255, 255, 255)
@@ -41,10 +40,9 @@ class Board(gd.BoardGame):
         self.lbl_font_color = ex.hsv_to_rgb(17, 255, 175)
         self.guides_color = [200, 200, 200]
         self.axis_color = [255, 0, 0]
-        scheme = "white"
+
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
-                scheme = "black"
                 white = (0, 0, 0)
                 self.bg_color = (0, 0, 0)
                 color = (0, 0, 0)
@@ -76,7 +74,7 @@ class Board(gd.BoardGame):
         else:
             self.grid_density_div = 1
 
-        self.guide_scale = self.board.scale# // self.grid_density_div
+        self.guide_scale = self.board.scale
         self.left_padding = 3
         self.px_padding = self.left_padding * scale + self.layout.game_left
         # canvas
@@ -107,20 +105,18 @@ class Board(gd.BoardGame):
         self.board.add_unit(0, 12, 2, 2, classes.board.ImgShip, "", self.transp, os.path.join("symmetry", "ax_hvdd.png"), 0, alpha=True)
         self.ax_hvdd_btn = self.board.ships[-1]
 
-        #up]
+        # up
 
         self.board.add_unit(0, 15, 2, 1, classes.board.ImgCenteredShip, "", self.transp, img_src='nav_u.png', alpha=True)
-        #self.board.add_unit(0, 8, 2, 1, classes.board.ImgShip, "", white, os.path.join("schemes", scheme, "c_circle.png"), 0)
         self.up_btn = self.board.ships[-1]
 
-        #max points label
+        # max points label
         self.board.add_unit(0, 16, 2, 2, classes.board.Label, str(self.max_points), white, "", 31)
         self.mpl = self.board.units[-1]
         self.mpl.font_color = self.lbl_font_color
 
-        #down
+        # down
         self.board.add_unit(0, 18, 2, 1, classes.board.ImgCenteredShip, "", self.transp, img_src='nav_dd.png', alpha=True)
-        #self.board.add_unit(0, 11, 2, 1, classes.board.ImgShip, "", white, os.path.join("schemes", scheme, "c_circle.png"), 0)
         self.dn_btn = self.board.ships[-1]
 
         self.btn_down = False
@@ -164,9 +160,9 @@ class Board(gd.BoardGame):
             each.readable = False
 
         self.canvas = pygame.Surface(
-            [self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1])
+            (self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1))
         self.layer = pygame.Surface(
-            [self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1],
+            (self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1),
             pygame.SRCALPHA)
 
         self.new_screen()
@@ -225,7 +221,7 @@ class Board(gd.BoardGame):
             self.border_color = ex.hsv_to_rgb(self.custom_color_hsv[0], self.custom_color_hsv[1], self.custom_color_hsv[2] - 50)
         else:
             self.border_color = ex.hsv_to_rgb(self.custom_color_hsv[0], self.custom_color_hsv[1], self.custom_color_hsv[2] + 50)
-        #self.border_color.append(127)
+
         self.current_col_ind.update_me = True
 
     def new_screen(self):
@@ -239,7 +235,6 @@ class Board(gd.BoardGame):
     def reset(self):
         self.points = []
         self.points_count = 0
-        #self.active_color = self.current_col_ind.color
         self.p_current = [0, 0]
 
     def layer_blit(self):
@@ -249,13 +244,13 @@ class Board(gd.BoardGame):
     def fill_poli(self):
         p2 = self.get_simetrical_shape(self.direction, self.points)
 
-        #draw shape
+        # draw shape
         self.points.append(self.points[0])
         pygame.draw.polygon(self.layer, self.active_color, self.points, 0)
         pygame.draw.polygon(self.layer, self.border_color, self.points, 3)
         self.layer_blit()
 
-        #draw symetrical shape
+        # draw symetrical shape
         p2.append(p2[0])
         pygame.draw.polygon(self.layer, self.active_color, p2, 0)
         pygame.draw.polygon(self.layer, self.border_color, p2, 3)
@@ -286,7 +281,6 @@ class Board(gd.BoardGame):
 
         self.reset()
         self.copy_to_screen()
-        #self.backup_canvas()
 
     def fill_polix4(self):
         p2 = self.get_simetrical_shape(0, self.points)
@@ -334,26 +328,20 @@ class Board(gd.BoardGame):
 
     def draw_axis(self, direction):
         hs = (self.canvas_side // 2) * self.scale
-        if direction == 0: #horizontal
+        if direction == 0:  # horizontal
             points = ((0, hs), (self.canvas_side * self.scale, hs))
-        elif direction == 1: #vertical
+        elif direction == 1:  # vertical
             points = ((hs, 0), (hs, self.canvas_side * self.scale))
-        elif direction == 2: #diagonal top-left to bottom-right
+        elif direction == 2:  # diagonal top-left to bottom-right
             points = ((0, 0), (self.canvas_side * self.scale, self.canvas_side * self.scale))
-        elif direction == 3: #diagonal bottom-left to top-right
+        elif direction == 3:  #diagonal bottom-left to top-right
             points = ((0, self.canvas_side * self.scale), (self.canvas_side * self.scale, 0))
-        elif direction == 4: #horz & vert
+        elif direction == 4:  # horz & vert
             self.draw_axis(0)
             self.draw_axis(1)
-            #points = ((0, hs), (self.canvas_side * self.scale, hs))
-            #points2 = ((hs, 0), (hs, self.canvas_side * self.scale))
-            #pygame.draw.line(self.canvas, self.axis_color, points2[0], points2[1], 3)
         elif direction == 5:  # both diagonal
             self.draw_axis(2)
             self.draw_axis(3)
-            #points = ((0, 0), (self.canvas_side * self.scale, self.canvas_side * self.scale))
-            #points2 = ((0, self.canvas_side * self.scale), (self.canvas_side * self.scale, 0))
-            #pygame.draw.line(self.canvas, self.axis_color, points2[0], points2[1], 3)
         elif direction == 6:
             for i in range(4):
                 self.draw_axis(i)
@@ -372,15 +360,12 @@ class Board(gd.BoardGame):
         return r
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = event.pos
             active = self.board.active_ship
             column = (pos[0] - self.px_padding) // (self.layout.width)
             row = (pos[1] - self.layout.top_margin) // (self.layout.height)
-            if event.button == 1 and column >= 0 and 0 <= row < self.data[1]:
-                if self.points_count == 0:
-                    pass  # self.new_screen()
 
         elif event.type == pygame.MOUSEBUTTONUP:
             pos = event.pos
@@ -437,10 +422,9 @@ class Board(gd.BoardGame):
                             self.check_drawing()
 
         elif event.type == pygame.MOUSEMOTION and 0 < self.points_count < self.max_points:
-            active = self.board.active_ship
             pos = event.pos
-            column = (pos[0] - self.px_padding) // (self.layout.width)
-            row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+            column = (pos[0] - self.px_padding) // self.layout.width
+            row = (pos[1] - self.layout.top_margin) // self.layout.height
 
             if 0 <= column < self.data[1] and 0 <= row < self.data[1]:
                 canvas_pos = self.snap_to_guide([pos[0] - self.px_padding, pos[1] - self.layout.top_margin])
@@ -475,7 +459,6 @@ class Board(gd.BoardGame):
         if n == 1 and self.max_points < 10 or n == -1 and self.max_points > 3:
             if self.points_count >= self.max_points - 1 and n == -1:
                 n = 0
-
             self.max_points = self.max_points + n
 
             self.mpl.set_value(str(self.max_points))
@@ -571,7 +554,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def v2_to_int(self, vector):
         integers = [int(each) for each in vector]

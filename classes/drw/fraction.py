@@ -13,7 +13,7 @@ class Fraction:
         self.color2 = color2
         self.numbers = numbers
 
-        self.canvas = pygame.Surface([self.size, self.size - 1], flags=pygame.SRCALPHA)
+        self.canvas = pygame.Surface((self.size, self.size - 1), flags=pygame.SRCALPHA)
         self.canvas.fill((0, 0, 0, 0))
 
         self.drawing_f = [self.draw_circles, self.draw_minicircles, self.draw_polygons, self.draw_petals]

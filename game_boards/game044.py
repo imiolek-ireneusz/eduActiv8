@@ -158,7 +158,7 @@ class Board(gd.BoardGame):
         gd.BoardGame.update(self, game)  # rest of painting done by parent
 
     def check_result(self):
-        if self.changed_since_check and self.finished == False:
+        if self.changed_since_check and not self.finished:
             ships = []
             current = [x for x in range(self.data[2] + 1)]  # self.choice_list[:]
             # collect value and x position on the grid from ships list

@@ -151,9 +151,8 @@ class Board(gd.BoardGame):
     def draw_hori_line(self, unit):
         w = unit.grid_w * self.board.scale
         h = unit.grid_h * self.board.scale
-        center = [w // 2, h // 2]
 
-        canv = pygame.Surface([w, h - 1])
+        canv = pygame.Surface((w, h - 1))
         canv.fill(self.bg_col)
 
         pygame.draw.line(canv, self.grey, (0, self.top_line), (w, self.top_line), 3)
@@ -166,7 +165,7 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if self.show_msg == False:
+        if not self.show_msg:
             if event.type == pygame.KEYDOWN:
                 self.auto_check_reset()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:

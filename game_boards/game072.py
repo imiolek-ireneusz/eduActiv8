@@ -229,7 +229,7 @@ class Board(gd.BoardGame):
         h = unit.grid_h * self.board.scale
         center = [w // 2, h // 2]
 
-        canv = pygame.Surface([w, h - 1])
+        canv = pygame.Surface((w, h - 1))
         canv.fill(self.bg_col)
         pygame.draw.line(canv, self.grey, (center[0], self.top_line), (center[0], h - self.top_line), 3)
         pygame.draw.line(canv, self.grey, (center[0] - 1, self.top_line), (w, self.top_line), 3)
@@ -239,9 +239,8 @@ class Board(gd.BoardGame):
     def draw_hori_line(self, unit):
         w = unit.grid_w * self.board.scale
         h = unit.grid_h * self.board.scale
-        center = [w // 2, h // 2]
 
-        canv = pygame.Surface([w, h - 1])
+        canv = pygame.Surface((w, h - 1))
         canv.fill(self.bg_col)
 
         pygame.draw.line(canv, self.grey, (0, self.top_line), (w, self.top_line), 3)
@@ -250,7 +249,7 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if self.show_msg == False:
+        if not self.show_msg:
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 self.auto_check_reset()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
@@ -269,7 +268,7 @@ class Board(gd.BoardGame):
                         self.home_square.value = self.home_square.value[0:lhv - 1]
                 else:
                     char = event.unicode
-                    if (len(char) > 0 and lhv < 2 and char in self.digits):
+                    if len(char) > 0 and lhv < 2 and char in self.digits:
                         self.home_square.value = char
                         if self.auto_select:
                             self.home_sqare_switch(self.board.active_ship + 1)
@@ -283,7 +282,7 @@ class Board(gd.BoardGame):
                 self.home_sqare_switch(self.board.active_ship)
 
     def home_sqare_switch(self, activate):
-        if activate >= 0 and activate < self.activables:
+        if 0 <= activate < self.activables:
             self.board.active_ship = activate
             self.home_square.update_me = True
             if self.board.active_ship >= 0:

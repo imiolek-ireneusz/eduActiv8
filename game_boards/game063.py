@@ -212,7 +212,7 @@ class Board(gd.BoardGame):
         self.clock_canvas.font2 = self.clock_canvas.board.font_sizes[7]
         self.clock_canvas.font3 = self.clock_canvas.board.font_sizes[26]
         self.clock_canvas.immobilize()
-        self.canvas = pygame.Surface([size, size - 1])
+        self.canvas = pygame.Surface((size, size - 1))
         if self.mainloop.scheme is not None:
             self.canvas.fill(self.mainloop.scheme.u_color)
         else:
@@ -428,7 +428,7 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)  # send event handling up
-        if self.show_msg == False:
+        if not self.show_msg:
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 self.auto_check_reset()
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:

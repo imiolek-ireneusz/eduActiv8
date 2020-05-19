@@ -193,7 +193,7 @@ class Board(gd.BoardGame):
         for i in range(5):
             color1 = self.hue_choice[self.chosen[i]]
             color2 = self.hue_choice2[self.chosen[i]]
-            canvas = pygame.Surface([size, size - 1], flags=pygame.SRCALPHA)
+            canvas = pygame.Surface((size, size - 1), flags=pygame.SRCALPHA)
             canvas.fill(self.board.units[i].initcolor)
             self.draw_splash(canvas, size, color1, color2)
             self.board.units[i].painting = canvas.copy()
@@ -263,9 +263,8 @@ class Board(gd.BoardGame):
                 else:
                     ships[i][2].set_display_check(True)
 
-            if correct == True:
+            if correct:
                 match_found = True
-                #break
         if match_found:
             self.level.next_board()
 

@@ -7,16 +7,21 @@
 import os
 import a4a_words
 
-import a4a_py.ca, a4a_py.de, a4a_py.el, a4a_py.en_GB, a4a_py.en_US, a4a_py.es, a4a_py.fr, a4a_py.it, a4a_py.lkt, a4a_py.pl, a4a_py.pt, a4a_py.ru, a4a_py.uk
+import a4a_py.ca, a4a_py.de, a4a_py.el, a4a_py.en_GB, a4a_py.en_US, a4a_py.es, a4a_py.fr, a4a_py.it, a4a_py.lkt, a4a_py.pl, a4a_py.pt, a4a_py.ru, a4a_py.uk, a4a_py.bg
 
 #lang_list = ['ca', 'de', 'el', 'en_GB', 'en_US', 'es', 'fi', 'fr', 'it', 'lkt', 'pl', 'pt', 'ru', 'sr', 'uk']
 #mod_list = [ca, de, el, en_gb, en_us, es, fi, fr, it, lkt, pl, pt, ru, sr, uk]
 
-lang_list = ['ca', 'de', 'el', 'en_GB', 'en_US', 'es', 'fr', 'it', 'lkt', 'pl', 'pt', 'ru', 'uk']
-mod_list = [a4a_py.ca, a4a_py.de, a4a_py.el, a4a_py.en_GB, a4a_py.en_US, a4a_py.es, a4a_py.fr, a4a_py.it, a4a_py.lkt, a4a_py.pl, a4a_py.pt, a4a_py.ru, a4a_py.uk]
+#lang_list = ['ca', 'de', 'el', 'en_GB', 'en_US', 'es', 'fr', 'it', 'lkt', 'pl', 'pt', 'ru', 'uk']
+#mod_list = [a4a_py.ca, a4a_py.de, a4a_py.el, a4a_py.en_GB, a4a_py.en_US, a4a_py.es, a4a_py.fr, a4a_py.it, a4a_py.lkt, a4a_py.pl, a4a_py.pt, a4a_py.ru, a4a_py.uk]
 
-lists_str = ["a4a_animals", "a4a_sport", "a4a_body", "a4a_people", "a4a_food", "a4a_clothes_n_accessories",
-                 "a4a_actions", "a4a_construction", "a4a_nature", "a4a_jobs", "a4a_fruit_n_veg", "a4a_transport"]
+#lang_list = ['bg']
+#mod_list = [a4a_py.bg]
+
+lang_list = ['bg']
+mod_list = [a4a_py.bg]
+
+lists_str = ["a4a_animals", "a4a_sport", "a4a_body", "a4a_people", "a4a_food", "a4a_clothes_n_accessories", "a4a_actions", "a4a_construction", "a4a_nature", "a4a_jobs", "a4a_fruit_n_veg", "a4a_transport"]
 
 lists_len = len(lists_str)
 langs_len = len(lang_list)
@@ -39,6 +44,15 @@ for lang in range(0, langs_len):
     s = header + '"Language: %s\\n"\n\n' % lang_list[lang]
     for i in range(0, lists_len):
         for j in range(0, len(a4a_words.d[lists_str[i]])):
+            a = mod_list[lang]
+            a = mod_list[lang].d[lists_str[i]]
+            try:
+                a = mod_list[lang].d[lists_str[i]][j]
+            except:
+                print(mod_list[lang].d[lists_str[i]])
+                print(len(a))
+
+            a = mod_list[lang].d[lists_str[i]][j][0]
             if mod_list[lang].d[lists_str[i]][j][0] != "<":
                 s += 'msgid "%s"\nmsgstr "%s"\n\n' % (a4a_words.d[lists_str[i]][j], mod_list[lang].d[lists_str[i]][j])
             else:

@@ -119,7 +119,7 @@ class Board(gd.BoardGame):
                                         [str(self.fractions[i][0]), str(self.fractions[i][1])],
                                         white, "", 8)
                     self.board.ships[-1].font_color = bd_color1
-                    canvas = pygame.Surface([self.size, self.size - 1], flags=pygame.SRCALPHA)
+                    canvas = pygame.Surface((self.size, self.size - 1), flags=pygame.SRCALPHA)
                     self.draw_fraction_line(canvas, self.size, self.center)
                     self.board.ships[-1].painting = canvas.copy()
             else:
@@ -135,7 +135,7 @@ class Board(gd.BoardGame):
                                         [str(self.fractions2[i - switch][0]), str(self.fractions2[i - switch][1])],
                                         white, "", 8)
                     self.board.ships[-1].font_color = bd_color1
-                    canvas = pygame.Surface([self.size, self.size - 1], flags=pygame.SRCALPHA)
+                    canvas = pygame.Surface((self.size, self.size - 1), flags=pygame.SRCALPHA)
                     self.draw_fraction_line(canvas, self.size, self.center)
                     self.board.ships[-1].painting = canvas.copy()
             self.immo(self.board.ships[-1])
@@ -162,7 +162,7 @@ class Board(gd.BoardGame):
         if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and self.ai_enabled is False:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
-                if active.uncovered == False:
+                if not active.uncovered:
                     if self.history[0] is None:
                         active.perm_outline_width = 6
                         active.perm_outline_color = [150, 150, 255]

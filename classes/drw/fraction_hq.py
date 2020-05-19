@@ -18,7 +18,7 @@ class Fraction:
         self.numbers = numbers
         self.border_width = border_width
 
-        self.canvas = pygame.Surface([self.size, self.size - 1], flags=pygame.SRCALPHA)
+        self.canvas = pygame.Surface((self.size, self.size - 1), flags=pygame.SRCALPHA)
 
         self.offset_selected = self.size // 30
         self.offset_unselected = self.size // 60

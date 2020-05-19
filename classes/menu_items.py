@@ -27,7 +27,7 @@ class TopCategory(pygame.sprite.Sprite):
         self.update_me = True
         self.hover = False
 
-        self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
+        self.image = pygame.Surface((grid_w * board.scale - 1, grid_h * board.scale - 1))
         self.rect = self.image.get_rect()
         self.rect.topleft = [grid_x * board.scale + 1, grid_y * board.scale + 1]
 
@@ -93,16 +93,16 @@ class TopCategory(pygame.sprite.Sprite):
     def resize_unit(self, new_grid_w, new_grid_h):
         self.grid_w = new_grid_w
         self.grid_h = new_grid_h
-        self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+        self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
         self.image.fill(self.color)
 
     def pos_update(self):
         if self.grid_w > 0 and self.grid_h > 0:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
         else:
-            self.image = pygame.Surface([1, 1])
+            self.image = pygame.Surface((1, 1))
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
 
@@ -189,7 +189,7 @@ class Category(pygame.sprite.Sprite):
         self.decor_style = decor
         self.double_icon = False
 
-        self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
+        self.image = pygame.Surface((grid_w * board.scale - 1, grid_h * board.scale - 1))
         self.rect = self.image.get_rect()
         self.rect.topleft = [grid_x * board.scale + 1, grid_y * board.scale + 1]
 
@@ -257,16 +257,16 @@ class Category(pygame.sprite.Sprite):
     def resize_unit(self, new_grid_w, new_grid_h):
         self.grid_w = new_grid_w
         self.grid_h = new_grid_h
-        self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+        self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
         self.image.fill(self.color)
 
     def pos_update(self):
         if self.grid_w > 0 and self.grid_h > 0:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
         else:
-            self.image = pygame.Surface([1, 1])
+            self.image = pygame.Surface((1, 1))
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
 
@@ -414,12 +414,12 @@ class GameIcon(pygame.sprite.Sprite):
         self.decor_style = decor
         self.double_icon = False
 
-        self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
+        self.image = pygame.Surface((grid_w * board.scale - 1, grid_h * board.scale - 1))
         self.rect = self.image.get_rect()
         self.rect.topleft = [grid_x * board.scale + 1, grid_y * board.scale + 1]
 
         if self.challenge and not self.challenge_completed:
-            self.canvas = pygame.Surface([self.size, self.size])
+            self.canvas = pygame.Surface((self.size, self.size))
             self.canvas.fill(self.canvas_color)
             self.draw_levels()
             self.canvas2 = self.scaled_img(self.canvas, self.rect.w, self.rect.h)
@@ -436,12 +436,12 @@ class GameIcon(pygame.sprite.Sprite):
                 self.lvl_not_compl_col = self.board.mainloop.cl.lvl_not_compl_col_dark
         self.lvl_completed_col = self.board.mainloop.cl.lvl_completed_col
 
-        self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+        self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
 
         if self.challenge and not self.challenge_completed:  # not completed
-            self.canvas = pygame.Surface([self.size, self.size])
+            self.canvas = pygame.Surface((self.size, self.size))
             self.canvas.fill(self.canvas_color)
             self.draw_levels()
             self.canvas2 = self.scaled_img(self.canvas, self.rect.w, self.rect.h)
@@ -553,16 +553,16 @@ class GameIcon(pygame.sprite.Sprite):
     def resize_unit(self, new_grid_w, new_grid_h):
         self.grid_w = new_grid_w
         self.grid_h = new_grid_h
-        self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1), flags=pygame.SRCALPHA)
         self.image.fill(self.color)
 
     def pos_update(self):
         if self.grid_w > 0 and self.grid_h > 0:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
         else:
-            self.image = pygame.Surface([1, 1])
+            self.image = pygame.Surface((1, 1))
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
 

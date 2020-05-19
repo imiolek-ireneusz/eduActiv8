@@ -166,7 +166,7 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)
-        if self.show_msg == False:
+        if not self.show_msg:
             if event.type == pygame.KEYDOWN and (event.key != pygame.K_RETURN and event.key != pygame.K_KP_ENTER):
                 lhv = len(self.home_square.value)
                 self.changed_since_check = True

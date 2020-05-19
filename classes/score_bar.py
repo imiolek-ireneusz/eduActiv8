@@ -10,7 +10,7 @@ class PScoreItem(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.score_bar = score_bar
         self.pos_rect = pos_rect
-        self.image = pygame.Surface([pos_rect[2], pos_rect[3]])
+        self.image = pygame.Surface((pos_rect[2], pos_rect[3]))
         self.rect = self.image.get_rect()
         self.rect.topleft = [pos_rect[0], pos_rect[1]]
         self.bg_color = self.score_bar.fbg_color
@@ -125,7 +125,7 @@ class PLabel(PScoreItem):
                     val = self.value
             else:
                 val = self.value
-            if self.bold == True:
+            if self.bold:
                 fnt = self.score_bar.font_bold
             else:
                 fnt = self.score_bar.font

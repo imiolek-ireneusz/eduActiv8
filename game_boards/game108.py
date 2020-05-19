@@ -232,7 +232,6 @@ class Board(gd.BoardGame):
                 self.clock3 = classes.drw.clock_linear_diff2.Clock(self, self.clock_wrapper3,
                                                                    self.size * 10,
                                                                    self.size * 3, self.times, self.data2[2:12])
-
         for each in self.board.ships:
             each.readable = False
             each.immobilize()
@@ -264,7 +263,7 @@ class Board(gd.BoardGame):
         else:
             mod = 12
 
-        #calculate minutes
+        # calculate minutes
         if self.addition:
             m = t[0][1] + diff[1]
             if m < 60:
@@ -287,24 +286,23 @@ class Board(gd.BoardGame):
         return [h, m]
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
-        if self.show_msg == False:
+        gd.BoardGame.handle(self, event)
+        if not self.show_msg:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 active = self.board.active_ship
-                if True:
-                    found = False
-                    for i in range(4):
-                        if self.buttons[i].unit_id == active:
-                            self.on_btn_click(i)
-                            found = True
-                            break
-                        elif self.board.ships[i].unit_id == active:
-                            self.on_btn2_click(i)
-                            found = True
-                    if not found:
-                        for i in range(4, 8):
-                            if self.board.ships[i].unit_id == active:
-                                self.on_btn2_click(i-4)
+                found = False
+                for i in range(4):
+                    if self.buttons[i].unit_id == active:
+                        self.on_btn_click(i)
+                        found = True
+                        break
+                    elif self.board.ships[i].unit_id == active:
+                        self.on_btn2_click(i)
+                        found = True
+                if not found:
+                    for i in range(4, 8):
+                        if self.board.ships[i].unit_id == active:
+                            self.on_btn2_click(i-4)
             elif event.type == pygame.MOUSEBUTTONUP:
                 self.home_square.update_me = True
                 if self.board.active_ship == self.ans_h.unit_id:
@@ -397,7 +395,7 @@ class Board(gd.BoardGame):
             else:
                 self.ans_m.value = str(int(self.ans_m.value) - 1)
 
-        #update second clock
+        # update second clock
         self.times[1] = self.time_with_diff([int(self.ans_h.value), int(self.ans_m.value)])
 
         # update captions

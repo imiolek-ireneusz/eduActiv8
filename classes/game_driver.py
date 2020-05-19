@@ -47,12 +47,11 @@ class BoardGame(GameBase):
         self.mouse_over = False
         self.direction = [0, 0]
         self.ship_id = -1
-        self.drag = False  # used to control draging objects around
+        self.drag = False  # used to control dragging objects around
         self.gridpos_now_top = (-1, -1)
         self.gridpos_prev_top = (-1, -1)
         self.x_diff = 0
         self.y_diff = 0
-        self.circle_lock_pos = (0, 0)
         self.game_type = "Board"
         self.layout = classes.layout.Layout(mainloop, screen_w, screen_h, x_count, y_count)
         self.sizer = mainloop.sizer
@@ -69,7 +68,6 @@ class BoardGame(GameBase):
         self.allow_unit_animations = True
 
         self.active_game = self.mainloop.m.games[self.mainloop.m.active_game_id]
-        # self.level.lvl = self.mainloop.m.saved_levels[self.active_game.game_constructor][str(self.active_game.variant)]
         self.level.lvl = self.mainloop.m.saved_levels[self.active_game.dbgameid]
         if self.level.lvl > self.level.lvl_count:
             self.level.lvl = self.level.lvl_count
@@ -82,7 +80,6 @@ class BoardGame(GameBase):
 
         # create game board
         self.data = [0, 0]
-        #self.board = classes.board.Board(self.mainloop, self.layout.x_count, self.layout.y_count, self.layout.scale)
         self.board = classes.board.Board(self.mainloop, 3, 3, 50)
         self.create_game_objects()
         if not self.board.animation_c_set:
@@ -100,7 +97,7 @@ class BoardGame(GameBase):
         self.staticsprites = pygame.sprite.RenderPlain((self.board.unit_list))
         self.cl_grid_line = (240, 240, 240)
         try:
-            if self.mainloop.info.hidden == True:
+            if self.mainloop.info.hidden:
                 self.mainloop.info.title_only()
         except:
             pass
@@ -138,7 +135,7 @@ class BoardGame(GameBase):
             return x_count + 1
         else:
             m = x_count % 2
-            if even == True and m == 0 or even == False and m == 1:
+            if even and m == 0 or not even and m == 1:
                 # if the number we have is the number we need -> return it
                 return x_count
             else:
@@ -157,7 +154,7 @@ class BoardGame(GameBase):
             return y_count + 1
         else:
             m = y_count % 2
-            if even == True and m == 0 or even == False and m == 1:
+            if even and m == 0 or not even and m == 1:
                 # if the number we have is the number we need -> return it
                 return y_count
             else:
@@ -166,10 +163,10 @@ class BoardGame(GameBase):
 
     def outline_all(self, color, width, units=True, ships=True):
         # mark to draw outline around all units/ships on the board
-        if units == True:
+        if units:
             for each in self.board.units:
                 each.set_outline(color, width)
-        if ships == True:
+        if ships:
             for each in self.board.ships:
                 each.set_outline(color, width)
 
@@ -178,8 +175,8 @@ class BoardGame(GameBase):
             self.mainloop.mbtndno = None
             # Change the x/y screen coordinates to grid coordinates
             pos = event.pos
-            column = (pos[0] - self.layout.game_left) // (self.layout.width)
-            row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+            column = (pos[0] - self.layout.game_left) // self.layout.width
+            row = (pos[1] - self.layout.top_margin) // self.layout.height
 
             if self.ships_count == 1:
                 # if only one movable unit found - activate it
@@ -191,7 +188,7 @@ class BoardGame(GameBase):
             self.mainloop.redraw_needed[0] = True
             if self.ship_id >= 0:
                 self.changed_since_check = True
-                if self.board.ships[self.ship_id].draggable == True:
+                if self.board.ships[self.ship_id].draggable:
                     self.drag = True
                 self.x_diff = column - self.board.active_ship_pos[0]
                 self.y_diff = row - self.board.active_ship_pos[1]
@@ -201,11 +198,10 @@ class BoardGame(GameBase):
                 if self.allow_unit_animations and self.board.ships[self.ship_id].animable:
                     self.board.all_sprites_list.move_to_front(self.board.ships[self.ship_id])
 
-                self.gridpos_prev_top = (
-                column - self.x_diff, row - self.y_diff)  # used to store the mouse coords on previous position in grid
-                self.gridpos_now_top = (
-                column - self.x_diff, row - self.y_diff)  # used to store current position on grid
-                self.circle_lock_pos = (self.x_diff * self.layout.scale, self.y_diff * self.layout.scale)
+                # used to store the mouse coords on previous position in grid
+                self.gridpos_prev_top = (column - self.x_diff, row - self.y_diff)
+                # used to store current position on grid
+                self.gridpos_now_top = (column - self.x_diff, row - self.y_diff)
                 if self.board.active_sval_len > 0 and self.board.ships[self.board.active_ship].readable:
                     if isinstance(self.board.ships[self.board.active_ship].speaker_val, list):
                         value = ', '.join(self.board.ships[self.board.active_ship].speaker_val)
@@ -216,7 +212,7 @@ class BoardGame(GameBase):
         elif event.type == pygame.MOUSEMOTION:
             self.on_mouse_over()
             # make sure the current game title is displayed
-            if self.mainloop.info.hidden == True:
+            if self.mainloop.info.hidden:
                 self.mainloop.info.buttons_restore()
             if self.drag:
                 pos = event.pos
@@ -224,8 +220,8 @@ class BoardGame(GameBase):
                     self.board.follow_cursor(self.ship_id, pos[0] - self.offset_x, pos[1] - self.offset_y)
                     self.mainloop.redraw_needed[0] = True
 
-                    column = (pos[0] - self.layout.game_left) // (self.layout.width)
-                    row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+                    column = (pos[0] - self.layout.game_left) // self.layout.width
+                    row = (pos[1] - self.layout.top_margin) // self.layout.height
 
                     column = column - self.x_diff
                     row = row - self.y_diff
@@ -237,8 +233,8 @@ class BoardGame(GameBase):
                     if not self.allow_unit_animations:
                         self.mouse_entered_new = False
                         # Change the x/y screen coordinates to grid coordinates
-                        column = (pos[0] - self.layout.game_left) // (self.layout.width)
-                        row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+                        column = (pos[0] - self.layout.game_left) // self.layout.width
+                        row = (pos[1] - self.layout.top_margin) // self.layout.height
 
                         mdir = [0, 0]  # mouse drag direction
                         i = 0
@@ -247,7 +243,7 @@ class BoardGame(GameBase):
                             column - self.x_diff, row - self.y_diff):  # on_mouse_enter on a grid square simulation
                             while self.gridpos_now_top != (column - self.x_diff, row - self.y_diff) and i < 5:
                                 if self.board.ships[self.ship_id].grid_w > 1 or self.board.ships[
-                                    self.ship_id].grid_h > 1:
+                                        self.ship_id].grid_h > 1:
                                     i = 4
                                 i += 1
                                 # mouse entered a new square
@@ -268,12 +264,12 @@ class BoardGame(GameBase):
                                         mdir[0] = x_change
                                         mdir[1] = y_change
                                     else:
-                                        if (self.gridpos_now_top[0] != column):
+                                        if self.gridpos_now_top[0] != column:
                                             if x_change >= 1:
                                                 mdir[0] = 1
                                             elif x_change <= -1:
                                                 mdir[0] = -1
-                                        if (self.gridpos_now_top[1] != row):
+                                        if self.gridpos_now_top[1] != row:
                                             if y_change >= 1:
                                                 mdir[1] = 1
                                             elif y_change <= -1:
@@ -282,8 +278,6 @@ class BoardGame(GameBase):
                                     self.board.move(self.ship_id, *mdir)
                                     self.board.ships[self.ship_id].turn(mdir)
                                     self.gridpos_now_top = self.board.active_ship_pos
-                                    self.circle_lock_pos = (self.x_diff * self.layout.scale,
-                                                            self.y_diff * self.layout.scale)
 
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
 
@@ -294,8 +288,8 @@ class BoardGame(GameBase):
                     1] < self.layout.game_h + self.layout.top_margin:  # if still on game board
                     if self.allow_unit_animations:
 
-                        column = (pos[0] - self.layout.game_left) // (self.layout.width)
-                        row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+                        column = (pos[0] - self.layout.game_left) // self.layout.width
+                        row = (pos[1] - self.layout.top_margin) // self.layout.height
 
                         column = column - self.x_diff
                         row = row - self.y_diff
@@ -305,8 +299,8 @@ class BoardGame(GameBase):
                     else:
                         self.mouse_entered_new = False
                         # Change the x/y screen coordinates to grid coordinates
-                        column = (pos[0] - self.layout.game_left) // (self.layout.width)
-                        row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+                        column = (pos[0] - self.layout.game_left) // self.layout.width
+                        row = (pos[1] - self.layout.top_margin) // self.layout.height
 
                         mdir = [0, 0]  # mouse drag direction
                         i = 0
@@ -349,15 +343,12 @@ class BoardGame(GameBase):
                                     self.board.move(self.ship_id, *mdir)
                                     self.board.ships[self.ship_id].turn(mdir)
                                     self.gridpos_now_top = self.board.active_ship_pos
-                                    self.circle_lock_pos = (self.x_diff * self.layout.scale,
-                                                            self.y_diff * self.layout.scale)
                 else:
                     if self.allow_unit_animations:
                         ship = self.board.ships[self.board.active_ship]
                         self.board.anim_land(ship.grid_last_x, ship.grid_last_y)
 
                 self.drag = False
-                #self.board.ships[self.board.active_ship].disable_circle()
                 self.mainloop.redraw_needed[0] = True
 
         elif event.type == pygame.KEYDOWN and self.len_ships > self.ship_id >= 0 \
@@ -386,10 +377,10 @@ class BoardGame(GameBase):
             self.check_direction_kup()
 
         if event.type == pygame.KEYDOWN and (event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER):
-            if self.changed_since_check or self.show_msg == True:
+            if self.changed_since_check or self.show_msg:
                 self.mainloop.redraw_needed[0] = True
                 self.mainloop.redraw_needed[1] = True
-                if self.show_msg == False:
+                if not self.show_msg:
                     self.mainloop.info.btns[0].img = self.mainloop.info.btns[0].img_2
                     self.mainloop.redraw_needed[1] = True
                     self.check_result()
@@ -469,9 +460,9 @@ class BoardGame(GameBase):
 
     def process_ai(self):
         # process ai and move unit if arrow button is pressed
-        if self.show_msg == False:
+        if not self.show_msg:
             self.process_keydown()
-            if self.ai_enabled == True:
+            if self.ai_enabled:
                 self.ai_tick += 1  # if key pressed execute this every move_speed frames
                 if self.ai_tick > self.ai_speed:
                     self.ai_walk()
@@ -479,14 +470,14 @@ class BoardGame(GameBase):
                     self.ai_tick = 0
 
     def update(self, game):
-        if self.board.mainloop.scheme is not None:  # and self.decolorable and self.board.mainloop.game_board is not None and (isinstance(self, Letter) or isinstance(self, Label)):
+        if self.board.mainloop.scheme is not None:
             self.mainloop.game_bg.fill(self.mainloop.scheme.u_color)
             self.board.board_bg.initcolor = self.mainloop.scheme.u_color
             self.board.board_bg.color = self.mainloop.scheme.u_color
         else:
             self.mainloop.game_bg.fill((255, 255, 255))
 
-        self.board.update_ships(self.circle_lock_pos)
+        self.board.update_ships()
         self.board.all_sprites_list.draw(game)
 
         if self.show_msg:

@@ -159,7 +159,7 @@ class Board(gd.BoardGame):
         self.clock_canvas.font3 = self.clock_canvas.board.font_sizes[26]
         self.clock_canvas.immobilize()
 
-        self.canvas = pygame.Surface([self.size, self.size - 1])
+        self.canvas = pygame.Surface((self.size, self.size - 1))
         if self.mainloop.scheme is not None:
             self.canvas.fill(self.mainloop.scheme.u_color)
         else:

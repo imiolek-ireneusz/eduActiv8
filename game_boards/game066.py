@@ -157,7 +157,7 @@ class Board(gd.BoardGame):
 
         self.update_text_time()
 
-        self.canvas = pygame.Surface([self.size, self.size - 1])
+        self.canvas = pygame.Surface((self.size, self.size - 1))
         if self.mainloop.scheme is not None:
             self.canvas.fill(self.mainloop.scheme.u_color)
         else:

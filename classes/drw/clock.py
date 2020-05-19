@@ -85,7 +85,7 @@ class Clock:
         if time is not None:
             self.time = time
 
-        self.canvas = pygame.Surface([self.size, self.size - 1], flags=pygame.SRCALPHA)
+        self.canvas = pygame.Surface((self.size, self.size - 1), flags=pygame.SRCALPHA)
         self.canvas.fill((0, 0, 0, 0))
 
         self.hands_vars()

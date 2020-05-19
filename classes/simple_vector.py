@@ -79,10 +79,11 @@ class Vector2(object):
 
     def __neg__(self):
         return Vector2(-self._v[0], -self._v[1])
-        """
+
+    """
     def __mul__(self, scalar):
         return Vector2(self._v[0] * scalar, self._v[1] * scalar)
-        """
+    """
 
     def __mul__(self, rhs):
         """Return the result of multiplying this vector with a scalar or a vector-list object."""

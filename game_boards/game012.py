@@ -100,7 +100,7 @@ class Board(gd.BoardGame):
             # make it impossible to deselect the main character
             self.board.active_ship = 0
             self.ship_id = 0
-            if self.moveable == True:
+            if self.moveable:
                 pos = event.pos
                 column = pos[0] // (self.layout.width)
                 row = (pos[1] - self.layout.top_margin) // (self.layout.height)
@@ -121,7 +121,7 @@ class Board(gd.BoardGame):
 
                 if arrow_clicked:
                     self.check_direction_kdown()
-        if (event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN) and self.moveable == False:
+        if (event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN) and not self.moveable:
             self.move = False
         elif event.type == pygame.KEYUP or event.type == pygame.MOUSEBUTTONUP:
             self.highlight_color(-1)

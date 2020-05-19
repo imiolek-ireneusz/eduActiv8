@@ -18,7 +18,7 @@ class Percentage:
         self.number = number
         self.type = type
 
-        self.canvas = pygame.Surface([self.size, self.size - 1], flags=pygame.SRCALPHA)
+        self.canvas = pygame.Surface((self.size, self.size - 1), flags=pygame.SRCALPHA)
         self.canvas.fill((0, 0, 0, 0))
 
         self.draw_circles()

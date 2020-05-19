@@ -27,8 +27,6 @@ class Unit(pygame.sprite.Sprite):
         self.initcolor = color
         self.color = color
         self.decolorable = True
-        self.locked = False
-        self.lockable = False
         self.value = value
         self.speaker_val = value
         self.speaker_val_update = True
@@ -62,13 +60,13 @@ class Unit(pygame.sprite.Sprite):
         self.checkable = False
         # Set height, width, the -1 is to give it some space around for the margin
         if self.alpha:
-            self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1], flags=pygame.SRCALPHA)
+            self.image = pygame.Surface((grid_w * board.scale - 1, grid_h * board.scale - 1), flags=pygame.SRCALPHA)
         else:
-            self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
+            self.image = pygame.Surface((grid_w * board.scale - 1, grid_h * board.scale - 1))
         self.image.fill(self.color)
 
         # http://www.pygame.org/docs/ref/surface.html - surface.fill() comment
-        # self.image = pygame.Surface([grid_w*board.scale-1, grid_h*board.scale-1],flags=pygame.SRCALPHA)
+        # self.image = pygame.Surface((grid_w*board.scale-1, grid_h*board.scale-1),flags=pygame.SRCALPHA)
         # self.image.fill(self.color,special_flags=pygame.BLEND_RGBA_MIN)
         self.painting = self.image
 
@@ -85,9 +83,9 @@ class Unit(pygame.sprite.Sprite):
         self.grid_w = new_grid_w
         self.grid_h = new_grid_h
         if self.alpha:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1], flags=pygame.SRCALPHA)
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1), flags=pygame.SRCALPHA)
         else:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
         self.image.fill(self.color)
 
     def set_display_check(self, value):
@@ -143,49 +141,37 @@ class Unit(pygame.sprite.Sprite):
                     w2 = width // 2 + 2
                 else:
                     w2 = width // 2 + 1
-            elif width == 1:
+            else:
                 x = 0
                 y = 0
                 w2 = 2
-        if self.fraction_line_top:
-            pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, y], [self.board.scale * self.grid_w - w2 + width - margin, y], width)
+            if self.fraction_line_top:
+                pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, y], [self.board.scale * self.grid_w - w2 + width - margin, y], width)
 
-        if self.fraction_line_bottom:
-            pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, self.board.scale * self.grid_h - w2], [self.board.scale * self.grid_w - w2 + width - margin, self.board.scale * self.grid_h - w2], width)
-
-            """
-            pygame.draw.lines(self.image, color, True, [[x - width, y], [self.board.scale * self.grid_w - w2 + width, y],
-                                                    [self.board.scale * self.grid_w - w2, y - width],
-                                                    [self.board.scale * self.grid_w - w2,
-                                                     self.board.scale * self.grid_h - w2 + width],
-                                                    [self.board.scale * self.grid_w - w2 + width,
-                                                     self.board.scale * self.grid_h - w2],
-                                                    [x - width, self.board.scale * self.grid_h - w2],
-                                                    [x, self.board.scale * self.grid_h - w2 + width], [x, y - width]],
-            """
-
+            if self.fraction_line_bottom:
+                pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, self.board.scale * self.grid_h - w2], [self.board.scale * self.grid_w - w2 + width - margin, self.board.scale * self.grid_h - w2], width)
 
     def pos_update(self):
         if self.grid_w > 0 and self.grid_h > 0:
-            self.image = pygame.Surface([self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1])
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
             self.painting = self.image
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
         else:
-            self.image = pygame.Surface([1, 1])
+            self.image = pygame.Surface((1, 1))
             # self.painting = self.image
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
 
     def scale_img(self, new_w, new_h):
-        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        """scales image depending on pygame version and bit depth using either smoothscale or scale"""
         if self.img.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             self.img = self.img_org = pygame.transform.smoothscale(self.img, (new_w, new_h))
         else:
             self.img = self.img_org = pygame.transform.scale(self.img, (new_w, new_h))
 
     def scalled_img(self, image, new_w, new_h):
-        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        """scales image depending on pygame version and bit depth using either smoothscale or scale"""
         if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             img = pygame.transform.smoothscale(image, (new_w, new_h))
         else:
@@ -217,14 +203,14 @@ class Unit(pygame.sprite.Sprite):
         self.update_me = True
 
     # Update color, image or text
-    def update(self, board, **kwargs):
+    def update(self, board):
         if self.update_me:
             self.update_me = False
             if self.board.mainloop.scheme is not None and self.board.decolorable and self.decolorable and self.board.mainloop.game_board is not None and (
-                isinstance(self, Letter) or isinstance(self, Label)):
-                self.initcolor = self.board.mainloop.scheme.u_initcolor  # (255,255,255)
-                self.color = self.board.mainloop.scheme.u_color  # (255,255,255)
-                self.font_color = self.board.mainloop.scheme.u_font_color  # (0,0,0)
+                    isinstance(self, Letter) or isinstance(self, Label)):
+                self.initcolor = self.board.mainloop.scheme.u_initcolor
+                self.color = self.board.mainloop.scheme.u_color
+                self.font_color = self.board.mainloop.scheme.u_font_color
 
             self.image.fill(self.color)
             if not self.hidden:
@@ -244,7 +230,6 @@ class Unit(pygame.sprite.Sprite):
                                             test_line = ""
                                             word = ""
                                             value = []
-                                            valx = ""
                                             try:
                                                 valx = unicode(self.value, "utf-8")
                                             except UnicodeDecodeError:
@@ -436,7 +421,7 @@ class Unit(pygame.sprite.Sprite):
                                                     [x, self.board.scale * self.grid_h - w2 + width], [x, y - width]],
                           width)
 
-    def set_outline(self, color=[255, 0, 0], width=2):
+    def set_outline(self, color=(255, 0, 0), width=2):
         'enables the draw_outline and sets line color and width'
         self.perm_outline = True
         if color == 0 and hasattr(self, "door_outline") is False:  # if color is 0 calculate colour from base colour
@@ -478,7 +463,7 @@ class Label(Obstacle):
         Obstacle.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha, **kwargs)
         self.font = board.font_sizes[font_size]
 
-    def update(self, board, **kwargs):
+    def update(self, board):
         Unit.update(self, board)
 
 
@@ -493,33 +478,9 @@ class Ship(Unit):
     def move(self, board, x, y):
         board.move(self.unit_id, x, y)
 
-    def update(self, board, point, **kwargs):
+    def update(self, board):
         if self.update_me:
             Unit.update(self, board)
-            if self.lockable and self.locked:
-                self.draw_circle(board, point)
-
-    def enable_circle(self):
-        self.locked = True
-
-    def disable_circle(self):
-        self.locked = False
-
-    def draw_circle(self, board, point):
-        max_radius = board.scale // 2
-        step = max_radius // 4
-        color = self.reversed_color
-        for i in range(1, 4):
-            try:
-                pygame.draw.ellipse(self.image, color, (
-                (point[0] + step, point[1] + step), (board.scale - step * 2, board.scale - step * 2)), 1)
-                step += step
-            except ValueError:
-                pass
-        pygame.draw.line(self.image, color, [point[0] + board.scale // 2, point[1]],
-                         [point[0] + board.scale // 2, point[1] + board.scale], 1)
-        pygame.draw.line(self.image, color, [point[0], point[1] + board.scale // 2],
-                         [point[0] + board.scale, point[1] + board.scale // 2], 1)
 
 
 class Letter(Ship):
@@ -528,12 +489,13 @@ class Letter(Ship):
         Ship.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha, **kwargs)
         self.font = board.font_sizes[font_size]
 
-    def update(self, board, **kwargs):
+    def update(self, board):
         Unit.update(self, board)
 
 
 class MultiColorLetters(Letter):
-    """accepts string formatted in a way to allow multiple colours in one line, e.g. "<1>this is in colour one<2>this is in colour two". to initialize colours use the set_font_colours method """
+    """accepts string formatted in a way to allow multiple colours in one line, e.g.
+    "<1>this is in colour one<2>this is in colour two". to initialize colours use the set_font_colours method """
 
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(0, 0, 0), alpha=False,
                  **kwargs):
@@ -581,12 +543,11 @@ class MultiColorLetters(Letter):
         txt.append(tmp)
         return [col, txt, txtln]
 
-    # Update color, image or text
-    def update(self, board, **kwargs):
+    def update(self, board):
         if self.update_me:
             self.update_me = False
             if self.board.mainloop.scheme is not None and self.board.decolorable and self.decolorable and self.board.mainloop.game_board is not None and (
-                isinstance(self, Letter) or isinstance(self, Label)):
+                    isinstance(self, Letter) or isinstance(self, Label)):
                 self.initcolor = self.board.mainloop.scheme.u_initcolor  # (255,255,255)
                 self.color = self.board.mainloop.scheme.u_color  # (255,255,255)
                 self.font_color = self.board.mainloop.scheme.u_font_color  # (0,0,0)
@@ -625,7 +586,7 @@ class ImgSurf(pygame.sprite.Sprite):
         self.board = board
         self.color = color
         self.alpha = alpha
-        self.image = pygame.Surface([grid_w * board.scale - 1, grid_h * board.scale - 1])
+        self.image = pygame.Surface((grid_w * board.scale - 1, grid_h * board.scale - 1))
         self.image.fill(self.color)
         self.rect = self.image.get_rect()
 
@@ -652,7 +613,7 @@ class ImgSurf(pygame.sprite.Sprite):
                 pass
 
     def scale_img(self, new_w, new_h):
-        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        """scales image depending on pygame version and bit depth using either smoothscale or scale"""
         if self.img.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             self.img = self.img_org = pygame.transform.smoothscale(self.img, (new_w, new_h))
         else:
@@ -693,7 +654,7 @@ class ImgShip(Ship):
     def mirror_image(self):
         self.mirror = True
 
-    def update(self, board, **kwargs):
+    def update(self, board):
         if self.update_me and not self.hidden:
             Unit.update(self, board)
             if len(self.img_src) > 0:
@@ -753,7 +714,7 @@ class TwoImgsShip(Ship):
             except:
                 pass
 
-    def update(self, board, **kwargs):
+    def update(self, board):
         if self.update_me:
             Unit.update(self, board)
             if len(self.img_src) > 0:
@@ -833,7 +794,7 @@ class ImgCenteredShip(Ship):
             except:
                 pass
 
-    def update(self, board, **kwargs):
+    def update(self, board):
         if self.update_me:
             Unit.update(self, board)
             if len(self.img_src) > 0:
@@ -994,7 +955,6 @@ class AIUnit(ImgShipRota):
 
 
 class BoardBg(Unit):
-    # def update(self,screen,color,screen_w,screen_h,grid_line_w):
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(255, 255, 255), alpha=False,
                  **kwargs):
         Unit.__init__(self, board, grid_x, grid_y, grid_w, grid_h, "", initcolor, alpha, **kwargs)
@@ -1007,7 +967,7 @@ class BoardBg(Unit):
         self.screen_h = self.board.y_count * self.board.scale
         self.grid_line_w = 1
 
-    def update(self, board, **kwargs):
+    def update(self, board):
         Unit.update(self, board)
         self.painting.fill(self.color)
         if self.board.draw_grid:
@@ -1018,7 +978,6 @@ class BoardBg(Unit):
                 pygame.draw.line(self.painting, self.line_color, [0, column * self.board.scale],
                                  [self.screen_w, column * self.board.scale], self.grid_line_w)
 
-
 class PuzzleTable:
     def __init__(self):
         pass
@@ -1026,10 +985,8 @@ class PuzzleTable:
     def clean(self):
         pass
 
-
 class Board:
-    'Initializes and creates an empty board with the sizes given, ie. a=Board(mainloop,10,10,50)'
-
+    """Initializes and creates an empty board with the sizes given, ie. a=Board(mainloop,10,10,50)"""
     def __init__(self, mainloop, x_count=10, y_count=10, scale=8):
         self.mainloop = mainloop
         self.decolorable = True
@@ -1063,9 +1020,9 @@ class Board:
         self.load_fonts()
 
     def load_fonts(self):
-        pass
-        #system_font_list = pygame.font.get_fonts()
+        """Load system fonts - temporarily disabled method"""
         """
+        system_font_list = pygame.font.get_fonts()
         if len(system_font_list) > 0:
             #print(system_font_list[0:10])
             self.font_path_hand = pygame.font.match_font(system_font_list[random.randint(0, len(system_font_list)-1)], bold=False, italic=False)
@@ -1074,6 +1031,7 @@ class Board:
             self.font_path_default = pygame.font.match_font(system_font_list[random.randint(0, len(system_font_list)-1)], bold=False, italic=False)
             self.font_path_default2 = pygame.font.match_font(system_font_list[random.randint(0, len(system_font_list)-1)], bold=False, italic=False)
         """
+        pass
 
     def level_start(self, x_count, y_count, scale):
         self.grid = []  # square availability list
@@ -1095,7 +1053,6 @@ class Board:
         # This is a list of every sprite. All blocks and the player block as well.
         self.all_sprites_list = pygame.sprite.LayeredUpdates()  # pygame.sprite.RenderPlain()
         # self.sprites_to_draw = pygame.sprite.RenderPlain()
-
 
         # scaling and creating font sizes:
         self.points = int(round((self.scale * 72 / 96) * 1.2, 0))
@@ -1171,23 +1128,23 @@ class Board:
         self.unit_list.empty()
         self.ship_list.empty()
         self.all_sprites_list.empty()
-        del (self.ships)
-        del (self.units)
-        del (self.aiunits)
-        del (self.unit_list)
-        del (self.ship_list)
-        del (self.all_sprites_list)
+        del self.ships
+        del self.units
+        del self.aiunits
+        del self.unit_list
+        del self.ship_list
+        del self.all_sprites_list
 
     def _create_board(self, sx, sy):
-        'Creates an empty board for the initialisation method'
+        """Creates an empty board for the initialisation method"""
         self.grid = [[0 for x in range(0, sx)] for y in range(0, sy)]
 
     def _reset_board(self):
-        'Sets all fields on Board to False'
+        """Sets all fields on Board to False"""
         self.grid = [[0 for x in range(0, self.x_count)] for y in range(0, self.y_count)]
 
     def _set(self, x, y, grid_w=1, grid_h=1, value=1):
-        'Take/Reserve the position on board if True, or free position if False'
+        """Take/Reserve the position on board if True, or free position if False"""
         'Before using this method use the _isfree() method first check if all squares in question are available and than go back to each field and set as True'
         x2 = x + grid_w
         y2 = y + grid_h
@@ -1196,7 +1153,7 @@ class Board:
                 self.grid[j][i] = value
 
     def _isfree(self, x, y, grid_w=1, grid_h=1):
-        'check if the position is free and within board'
+        """check if the position is free and within board"""
         x2 = x + grid_w
         y2 = y + grid_h
 
@@ -1204,14 +1161,14 @@ class Board:
         if (0 <= x < x2 <= self.x_count) and (0 <= y < y2 <= self.y_count):
             for i in range(x, x2):
                 for j in range(y, y2):
-                    if self.grid[j][i] == True:
+                    if self.grid[j][i]:
                         return False
             return True
         return False
 
     def add_unit(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, unit_class=Ship, value="A", color=(0, 0, 0), img_src='',
                  font_size=0, frame_flow=[0], frame_count=1, row_data=[1, 1], img2_src=None, alpha=False):
-        'adds a new unit to the board'
+        """adds a new unit to the board"""
         if self._isfree(grid_x, grid_y, grid_w, grid_h):
             unit = unit_class(self, grid_x, grid_y, grid_w, grid_h, value, initcolor=color, img_src=img_src,
                               font_size=font_size, frame_flow=frame_flow, frame_count=frame_count, row_data=row_data,
@@ -1269,8 +1226,8 @@ class Board:
 
     def add_door(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, unit_class=Door, value="", color=(0, 0, 0), img_src='',
                  font_size=0, door_alpha=True, alpha=False, frame_flow=[0], frame_count=1, row_data=[1, 1]):
-        # add a unit that will be drawn to the board but will not hold a square in the grid
-        # this is usually a red square indicating where other squares should be dragged to complete the task
+        """add a unit that will be drawn to the board but will not hold a square in the grid
+        this is usually a red square indicating where other squares should be dragged to complete the task"""
         unit = unit_class(self, grid_x, grid_y, grid_w, grid_h, value, initcolor=color, img_src=img_src,
                           font_size=font_size, door_alpha=door_alpha, alpha=alpha, frame_flow=frame_flow, frame_count=frame_count,
                           row_data=row_data)
@@ -1279,8 +1236,8 @@ class Board:
         self.all_sprites_list.add(unit)
 
     def move(self, ship_id, x, y, ai=False):
-        'move the ship, diagonal move possible only if two-step non diagonal move is possible'
-        if ai == True:
+        """move the ship, diagonal move possible only if two-step non diagonal move is possible"""
+        if ai:
             s = self.aiunits[ship_id]
         else:
             s = self.ships[self.active_ship]
@@ -1343,30 +1300,29 @@ class Board:
             if self._isfree(*new_rect):
                 self._move_unit(ship_id, ai, x, y)
             else:
-                if ai == False and s.audible:
+                if not ai and s.audible:
                     self.mainloop.sfx.play(11)
         elif x != 0 and y != 0:
-            if True:  # s.grid_w == 1 and s.grid_h == 1:
-                self.labi_dir = -1
-                # diagonal move simple path finder: check both alternatives in turn and move if possible
-                # decreased number of checks to get the direction
-                if self._isfree(*alt1a):  # if move up or down possible change y in first alternative
-                    mdir[1] = y
-                    if self._isfree(*alt1b):  # if move left or right possible change x in first alt.
-                        mdir[0] = x
-                    else:
-                        mdir[0] = 0
-                elif self._isfree(*alt2a):  # else if horizontal move possible change x first
+            self.labi_dir = -1
+            # diagonal move simple path finder: check both alternatives in turn and move if possible
+            # decreased number of checks to get the direction
+            if self._isfree(*alt1a):  # if move up or down possible change y in first alternative
+                mdir[1] = y
+                if self._isfree(*alt1b):  # if move left or right possible change x in first alt.
                     mdir[0] = x
-                    if self._isfree(*alt2b):  # and if second move possible change y second
-                        mdir[1] = y
-                    else:
-                        mdir[1] = 0
                 else:
-                    if ai == False and s.audible:
-                        self.mainloop.sfx.play(11)
-                if mdir != [0, 0]:
-                    self._move_unit(ship_id, ai, mdir[0], mdir[1])
+                    mdir[0] = 0
+            elif self._isfree(*alt2a):  # else if horizontal move possible change x first
+                mdir[0] = x
+                if self._isfree(*alt2b):  # and if second move possible change y second
+                    mdir[1] = y
+                else:
+                    mdir[1] = 0
+            else:
+                if not ai and s.audible:
+                    self.mainloop.sfx.play(11)
+            if mdir != [0, 0]:
+                self._move_unit(ship_id, ai, mdir[0], mdir[1])
 
     def moved(self):
         pass
@@ -1399,11 +1355,11 @@ class Board:
             self.moved()
 
     def _move_unit(self, ship_id, ai, x, y):
-        if ai == True:
+        if ai:
             ship = self.aiunits[ship_id]
         else:
             ship = self.ships[ship_id]
-        if self.check_laby == False or (self.check_laby == True and self.laby_dir > -1 and not
+        if not self.check_laby or (self.check_laby and self.laby_dir > -1 and not
         self.mainloop.game_board.mylaby.get_cell(ship.grid_x, ship.grid_y).laby_doors[self.laby_dir]):
             self.laby_dir = -1
             # remove ship from board grid - take off
@@ -1419,7 +1375,7 @@ class Board:
             # update the sprite's position
             ship.rect.topleft = [ship.grid_x * self.scale + 1, ship.grid_y * self.scale + 1]
             self.board_changed = True
-            if ai == False:
+            if not ai:
                 self.moved()
                 if ship.audible:
                     self.mainloop.sfx.play(10)
@@ -1555,8 +1511,8 @@ class Board:
                 return each_unit.unit_id
 
     def activate_ship(self, x, y):
-        'this only works on binary table'
-        # unhighlight and repaint deactivated unit:
+        """this only works on binary table"""
+        # unhighlight and repaint deactivated unit
         if self.active_ship != -1:
             active = self.ships[self.active_ship]
             active.color = active.initcolor
@@ -1603,9 +1559,9 @@ class Board:
         else:
             return 0
 
-    def update_ships(self, circle_lock_pos, **kwargs):
+    def update_ships(self):
         for each_ship in self.ships:
-            each_ship.update(self, point=circle_lock_pos)
+            each_ship.update(self)
 
         for each_unit in self.units:
             each_unit.update(self)

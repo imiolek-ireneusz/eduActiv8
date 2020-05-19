@@ -38,7 +38,7 @@ class Board(gd.BoardGame):
 
         self.num_list = []
 
-        if data[5] == True:
+        if data[5]:
             index = random.randrange(data[3], data[4]-data[2]+2)
             n = 0
             for i in range(data[2]):

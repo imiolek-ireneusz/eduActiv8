@@ -150,13 +150,10 @@ class Board(gd.BoardGame):
         v = 70
         # number of available color spaces minus 2 for black and white
         number_of_col_per_hue = 6  # number_of_colors // number_of_hues
-        v_num = (255 - v) // (number_of_col_per_hue)
+        v_num = (255 - v) // number_of_col_per_hue
         # greyscale
-        grey_num = 6
-        if grey_num > 1:
-            grey_v_num = (255 // (grey_num - 1))
-        else:
-            grey_v_num = 0
+        grey_v_num = 255 // 5
+
         grey_count = 0
         for j in range(0, data[1]):
             for i in range(data[0] - 6, data[0]):
@@ -208,7 +205,7 @@ class Board(gd.BoardGame):
             each.immobilize()
 
         self.canvas = pygame.Surface(
-            [self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1])
+            (self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1))
         self.canvas.fill(self.canvas_block.initcolor)
         self.paint_bg_letter()
         self.canvas_org = self.canvas.copy()
@@ -244,11 +241,11 @@ class Board(gd.BoardGame):
                     self.active_color = self.board.ships[active].initcolor
                     self.color_door.set_pos(self.board.active_ship_pos)
 
-        elif event.type == pygame.MOUSEMOTION and self.btn_down == True:
+        elif event.type == pygame.MOUSEMOTION and self.btn_down:
             active = self.board.active_ship
             pos = event.pos
-            column = (pos[0] - self.layout.game_left) // (self.layout.width)
-            row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+            column = (pos[0] - self.layout.game_left) // self.layout.width
+            row = (pos[1] - self.layout.top_margin) // self.layout.height
             if active == 0 and self.data[0] - 6 > column > 9 and row < self.data[1]:
                 canvas_pos = [pos[0] - self.layout.game_left - 10 * self.layout.scale, pos[1] - self.layout.top_margin]
                 self.p_prev = self.p_current
@@ -258,8 +255,8 @@ class Board(gd.BoardGame):
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             active = self.board.active_ship
             pos = event.pos
-            column = (pos[0] - self.layout.game_left) // (self.layout.width)
-            row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+            column = (pos[0] - self.layout.game_left) // self.layout.width
+            row = (pos[1] - self.layout.top_margin) // self.layout.height
             if active == 0 and self.data[0] - 6 > column > 9 and row < self.data[1]:
                 # drop the new object onto the painting
                 canvas_pos = [pos[0] - self.layout.game_left - 10 * self.layout.scale, pos[1] - self.layout.top_margin]
@@ -287,7 +284,7 @@ class Board(gd.BoardGame):
                 font_y = ((self.board.scale * self.canvas_block.grid_h - self.canvas_block.font.size(txt)[
                     1]) // 2) - 3 * self.board.scale
             else:
-                font_y = ((self.board.scale * self.canvas_block.grid_h - self.canvas_block.font.size(txt)[1]) // 2)
+                font_y = (self.board.scale * self.canvas_block.grid_h - self.canvas_block.font.size(txt)[1]) // 2
 
             self.canvas.fill(self.bg_color)
 
@@ -321,8 +318,8 @@ class Board(gd.BoardGame):
                 self.copy_to_screen()
 
     def draw_line(self, p1, p2, bs1, bs2):
-        # find points for the corners of the polygon using Tales Theorem
-        # and draw the polygon - rotated rectangle or trapezium and 2 circles at the ends of the 'line'
+        """Find points for the corners of the polygon using Tales Theorem
+        and draw the polygon - rotated rectangle or trapezium and 2 circles at the ends of the 'line' """
         v = sv.Vector2.from_points(p1, p2)
         if v[0] != 0 or v[1] != 0:
             bs1 = bs1 // 2

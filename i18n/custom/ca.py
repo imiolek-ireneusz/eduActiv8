@@ -50,7 +50,7 @@ accents_uc = ['À', 'É', 'È', 'Í', 'Ò', 'Ó', 'Ú']
 
 
 def n2txt(n, twoliner=False):
-    "takes a number from 0 - 100 and returns it back in a word form, ie: 63 returns 'sixty three'."
+    """takes a number from 0 - 100 and returns it back in a word form, ie: 63 returns 'sixty three'."""
     if 0 < n < 30:
         return numbers[n - 1]
     elif 30 <= n < 100:
@@ -76,7 +76,7 @@ hores = ['una', 'dues', 'tres', 'quatre', 'cinc', 'sis', 'set', 'vuit', 'nou', '
 
 
 def time2str(h, m):
-    'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
+    """takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55"""
     if m > 7:
         if h == 12:
             h = 1
@@ -146,6 +146,7 @@ def time2str(h, m):
 numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
 d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
 d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
 
 def fract2str(n, d):
     if n == 1:

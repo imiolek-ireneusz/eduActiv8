@@ -19,16 +19,10 @@ class Board(gd.BoardGame):
         self.show_info_btn = False
 
         white = (255, 255, 255)
-        color = white
 
         self.lang_titles = self.mainloop.lang.lang_titles
         self.all_lng = self.mainloop.lang.all_lng
         self.ok_lng = self.mainloop.lang.ok_lng
-        """
-        if self.mainloop.config.google_trans_languages == True:
-            self.languages = self.all_lng
-        else:
-        """
         self.languages = self.ok_lng
 
         self.lang_count = len(self.languages)
@@ -79,14 +73,10 @@ class Board(gd.BoardGame):
         if event.type == pygame.MOUSEBUTTONDOWN:
             active = self.board.active_ship
             if event.button == 1:
-                toggle = False
                 if active >= 0:
                     # change language
                     if self.lang.lang != self.languages[active]:
                         self.change_language(self.languages[active], self.lang_titles[active], active)
-                    if toggle:
-                        self.mainloop.fullscreen_toggle(self.mainloop.info)
-                    else:
                         self.level.load_level()
 
     def change_language(self, lng, lng_title, lang_id):

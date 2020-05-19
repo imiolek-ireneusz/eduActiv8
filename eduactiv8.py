@@ -385,7 +385,7 @@ class GamePlay:
 
                 self.fs_size = [self.config.fs_width, self.config.fs_height]
 
-                if self.config.fullscreen == True:
+                if self.config.fullscreen:
                     self.size = self.fs_size[:]
                     flag = pygame.FULLSCREEN
                 else:
@@ -496,7 +496,7 @@ class GamePlay:
                                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                                 self.dialog.show_dialog(0, self.lang.d["Do you want to exit the game?"])
                             elif event.type == pygame.VIDEORESIZE:
-                                if self.config.fullscreen == False:
+                                if not self.config.fullscreen:
                                     self.on_resize(list(event.size), info)
                             elif event.type == pygame.KEYDOWN and event.key == pygame.K_f and (
                                         event.mod & pygame.KMOD_LCTRL):

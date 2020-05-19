@@ -23,7 +23,7 @@ class Thermometer:
         self.v_gauge_margin_t = int(120 * self.size[0] / 500.0)
         self.v_gauge_margin_b = int(120 * self.size[0] / 500.0) + self.bottom_r
 
-        self.canvas = pygame.Surface([self.size[0], self.size[1] - 1], flags=pygame.SRCALPHA)
+        self.canvas = pygame.Surface((self.size[0], self.size[1] - 1), flags=pygame.SRCALPHA)
         self.canvas.fill((0, 0, 0, 0))
         self.draw_thermometer()
 

@@ -29,7 +29,7 @@ class Dialog:
                 self.color = (0, 0, 0, 150)
         self.width = self.sizer.screen_w
         self.height = self.sizer.screen_h
-        self.image = pygame.Surface([self.width, self.height], flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((self.width, self.height), flags=pygame.SRCALPHA)
         self.image.fill(self.color)
         self.rect = self.image.get_rect()
         self.rect.topleft = [0, 0]

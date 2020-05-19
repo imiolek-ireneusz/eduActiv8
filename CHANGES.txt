@@ -1,4 +1,7 @@
 Changelog:
+eduActiv8 - 4.20.05:
+    - Dutch translation by Steven Es
+    - code cleanup - addressing lgtm alerts
 eduActiv8 - 4.20.01:
     - Bug fix update.
     - Fixed the game crashing issue when launching any of the clock games when a non-default colour scheme is selected.

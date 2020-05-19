@@ -12,7 +12,8 @@ import os
 # lang_list = ['ca', 'de', 'el', 'en_GB', 'en_US', 'es', 'fr', 'it', 'lkt', 'pl', 'pt', 'ru', 'uk']
 
 # use this if only one language has changed
-lang_list = ['pl']
+lang_list = ['nl']
+#lang_list = ['en_GB', 'en_US']
 
 ea8_lists_str = ["a4a_animals", "a4a_sport", "a4a_body", "a4a_people", "a4a_food", "a4a_clothes_n_accessories",
                  "a4a_actions", "a4a_construction", "a4a_nature", "a4a_jobs", "a4a_fruit_n_veg", "a4a_transport"]

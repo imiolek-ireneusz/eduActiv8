@@ -85,7 +85,7 @@ class Board(gd.BoardGame):
         self.drag = False
 
     def handle(self, event):
-        if self.show_msg == False:
+        if not self.show_msg:
             if self.board.ships[0].grid_pos == self.solution:
                 self.check_result()
 
