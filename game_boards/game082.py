@@ -9,6 +9,7 @@ import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 
+
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.level = lc.Level(self, mainloop, 5, 5)
@@ -18,6 +19,7 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         color = (234, 218, 225)
         self.color = color
+        self.auto = False
 
         white = (255, 255, 255)
 
@@ -324,7 +326,8 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
-            self.check_result(auto=True)
+            self.auto = True
+            self.check_result()
 
         if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
             self.default_hover(event)
@@ -342,12 +345,13 @@ class Board(gd.BoardGame):
         for each in self.board.ships:
             each.update_me = True
             each.set_display_check(None)
+        self.auto = False
 
     def update(self, game):
         game.fill(self.color)
         gd.BoardGame.update(self, game)
 
-    def check_result(self, auto=False):
+    def check_result(self):
 
         result = [" " for i in range(self.data[0])]
         if self.board.grid[self.sol_grid_y] == self.solution_grid:
@@ -360,12 +364,12 @@ class Board(gd.BoardGame):
                 self.auto_check()
                 self.level.next_board()
             else:
-                if auto:
+                if self.auto:
                     self.auto_check()
                 else:
                     self.level.try_again()
         else:
-            if auto:
+            if self.auto:
                 self.auto_check_reset()
             else:
                 self.level.try_again()

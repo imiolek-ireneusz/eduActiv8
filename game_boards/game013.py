@@ -23,6 +23,7 @@ class Board(gd.BoardGame):
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         h = random.randrange(0, 225)
         h_init = h
+        self.auto = False
 
         caption_font_color = ex.hsv_to_rgb(h, 255, 140)
 
@@ -175,7 +176,8 @@ class Board(gd.BoardGame):
             for each in self.board.units:
                 if each.is_door is True:
                     self.board.all_sprites_list.move_to_front(each)
-            self.check_result(auto=True)
+            self.auto = True
+            self.check_result()
 
         if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
             self.default_hover(event)
@@ -198,8 +200,9 @@ class Board(gd.BoardGame):
         for each in self.board.ships:
             each.update_me = True
             each.set_display_check(None)
+        self.auto = False
 
-    def check_result(self, auto=False):
+    def check_result(self):
         result = [" " for i in range(self.data[0])]
         if self.board.grid[2] == self.solution_grid:
             for i in range(len(self.board.ships)):
@@ -210,12 +213,12 @@ class Board(gd.BoardGame):
                 self.auto_check()
                 self.level.next_board()
             else:
-                if auto:
+                if self.auto:
                     self.auto_check()
                 else:
                     self.level.try_again()
         else:
-            if auto:
+            if self.auto:
                 self.auto_check_reset()
             else:
                 self.level.try_again()

@@ -273,5 +273,5 @@ class Board(gd.BoardGame):
         game.fill(self.color)
         gd.BoardGame.update(self, game)
 
-    def check_result(self, auto=False):
+    def check_result(self):
         pass

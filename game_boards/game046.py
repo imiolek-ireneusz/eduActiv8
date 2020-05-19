@@ -140,7 +140,7 @@ class Board(gd.BoardGame):
         for each in self.board.units:
             each.set_display_check(None)
 
-    def check_result(self, auto=False):
+    def check_result(self):
         self.result = []
         j = 0
         for each_list in self.board.grid:
