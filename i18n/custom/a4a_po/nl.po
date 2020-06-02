@@ -150,7 +150,7 @@ msgid "viper"
 msgstr "adder"
 
 msgid "shrike"
-msgstr "?vogeltje?"
+msgstr "vogeltje"
 
 msgid "donkey"
 msgstr "ezel"
@@ -336,7 +336,7 @@ msgid "doe"
 msgstr "hinde"
 
 msgid "gopher"
-msgstr "?marmot?"
+msgstr "marmot"
 
 msgid "elephant"
 msgstr "olifant"

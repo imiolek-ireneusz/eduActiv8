@@ -68,7 +68,7 @@ accents_uc = []
 
 
 def n2txt(n, twoliner=False):
-    "takes a number from 1 - 99 and returns it back in a word form, ie: 63 returns 'sixty three'."
+    """takes a number from 1 - 99 and returns it back in a word form, ie: 63 returns 'sixty three'."""
     if 0 < n < 30:
         return r(numbers[n - 1])
     elif 30 <= n < 100:
@@ -104,7 +104,7 @@ numbers2090p = ["[[esrim]]", "[[CloCim]]", "[[arbaim]]", "[[khamiCim]]", "[[CiCi
 
 
 def n2spk(n, twoliner=False):
-    "takes a number from 1 - 99 and returns it back in a word form, ie: 63 returns 'sixty three'."
+    """takes a number from 1 - 99 and returns it back in a word form, ie: 63 returns 'sixty three'."""
     if 0 < n < 30:
         return numbersp[n - 1]
     elif 30 <= n < 100:
@@ -125,7 +125,7 @@ def n2spk(n, twoliner=False):
 
 
 def time2str(h, m):
-    'takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55'
+    """takes 2 variables: h - hour, m - minute, returns time as a string, ie. five to seven - for 6:55"""
     if m > 30:
         if h == 12:
             h = 1
@@ -200,6 +200,7 @@ def time2spk(h, m):
 numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
 d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
 d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
 
 def fract2str(n, d):
     if n == 1:
