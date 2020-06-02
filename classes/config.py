@@ -129,7 +129,7 @@ class Config:
             self.all_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "nl", "pl", "pt_PT", "fi", "el",
                             "bg", "ru", "sr", "uk", "he", "ar"]
             self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "nl", "pl", "pt_PT", "fi", "el",
-                           "bg", "ru", "sr", "uk", "he"]
+                           "bg", "ru", "sr", "uk", "he", "ar"]
         else:
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano",
                                 "Lakȟótiyapi", "Nederlands", "Polski", "Português", "Suomalainen", "Ελληνικά",

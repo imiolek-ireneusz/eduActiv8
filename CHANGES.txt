@@ -1,4 +1,6 @@
 Changelog:
+eduActiv8 - 4.20.06:
+    - Arabic language added provisionally - requires python-pyfribidi library to work
 eduActiv8 - 4.20.05:
     - Dutch translation by Steven Es
     - code cleanup - addressing lgtm alerts

@@ -96,7 +96,8 @@ def reverse(s, alpha, lng):
     if sys.version_info < (3, 0):
         if not isinstance(s, unicode):
             s = s.decode('utf-8')
-        alpha = alpha.decode("utf-8")
+        if alpha is not None:
+            alpha = alpha.decode("utf-8")
     if lng == "ar":
         if fribidi_loaded:
             st = unival(s)

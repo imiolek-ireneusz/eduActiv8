@@ -259,6 +259,21 @@ class Language:
             self.lang_file = i18n.custom.bg
             self.ico_suffix = "ru"
             self.lang_id = 21
+
+        elif self.lang == 'ar':  # Arabic
+            import i18n.custom.ar
+            import i18n.custom.word_lists.ar_di
+            import i18n.custom.a4a_py.ar as a4a_word_lst
+            self.voice = None
+            self.di = i18n.custom.word_lists.ar_di.di
+            self.lang_file = i18n.custom.ar
+            self.ltr_text = False
+            self.has_uc = False
+            self.has_cursive = False
+            self.alpha = None
+            self.n2spk = self.lang_file.n2spk
+            self.ico_suffix = "ar"
+            self.lang_id = 2
         else:  # self.lang == 'en_GB':
             import i18n.custom.en_gb
             import i18n.custom.word_lists.en_gb_di
@@ -288,20 +303,7 @@ class Language:
             self.voice = ["-vda+m1"]
             self.di = i18n.custom.word_lists.da_di.di
             self.lang_file = i18n.custom.da
-            self.lang_id = 6            
-        elif self.lang == 'ar':  # Arabic
-            import i18n.custom.ar
-            import i18n.custom.word_lists.ar_di
-            self.voice = None
-            self.di = i18n.custom.word_lists.ar_di.di
-            self.lang_file = i18n.custom.ar
-            self.ltr_text = False
-            self.has_uc = False
-            self.has_cursive = False
-            self.alpha = i18n.custom.ar.alpha
-            self.n2spk = self.lang_file.n2spk
-            self.ico_suffix = "ar"
-            self.lang_id = 2
+            self.lang_id = 6
         elif self.lang == 'cn':
             import i18n.custom.cn
             import i18n.custom.word_lists.cn_di
