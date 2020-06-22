@@ -18,7 +18,7 @@ dp = dict()  # messages with pronunciation exceptions - this dictionary will ove
 
 
 def r(s):
-    return reverse(s, alpha, "he")
+    return reverse(s, alpha, "ar")
 
 numbers = ['واحد', 'اثنان', 'ثلاثة', 'أربعة', 'خمسة', 'ستة', 'سبعة', 'ثمانية', 'تسعة', 'عشرة', 'أحد عشر', 'اثنا عشر',
            'ثلاثة عشر', 'أربعة عشر', 'خمسة عشر', 'ستة عشر', 'سبعة عشر', 'ثمانية عشر', 'تسعة عشر', 'عشرون', 'وَاحِد و عِشْرُونَ',

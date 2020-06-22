@@ -1,1771 +1,1773 @@
 # eduActiv8 - word lists - translation file.
 # Copyright (C) 2019 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
-#
+# 
 # Translators:
-# Ireneusz Imiolek, 2019
-#
+# ayman mahmoud <aimen.riyadh@gmail.com>, 2020
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.19.01\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"Last-Translator: ayman mahmoud <aimen.riyadh@gmail.com>, 2020\n"
+"Language-Team: Arabic (https://www.transifex.com/eduactiv8/teams/94947/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "cow"
-msgstr "cow"
+msgstr "البقرة"
 
 msgid "turkey"
-msgstr "turkey"
+msgstr "الديك الرومى"
 
 msgid "shrimp"
-msgstr "shrimp"
+msgstr "الجمبرى"
 
 msgid "wolf"
-msgstr "wolf"
+msgstr "الذئب"
 
 msgid "panther"
-msgstr "panther"
+msgstr "النمر"
 
 msgid "panda"
-msgstr "panda"
+msgstr "الباندا"
 
 msgid "magpie"
-msgstr "magpie"
+msgstr "غراب العقعق"
 
 msgid "clam"
-msgstr "clam"
+msgstr "سمك البطلينوس"
 
 msgid "pony"
-msgstr "pony"
+msgstr "مهر ابن الفرس"
 
 msgid "mouse"
-msgstr "mouse"
+msgstr "فار"
 
 msgid "pug"
-msgstr "pug"
+msgstr "كلب"
 
 msgid "koala"
-msgstr "koala"
+msgstr "كوالا"
 
 msgid "frog"
-msgstr "frog"
+msgstr "ضفدعة"
 
 msgid "ladybug"
-msgstr "ladybug"
+msgstr "الدعسوقة"
 
 msgid "gorilla"
-msgstr "gorilla"
+msgstr "الغوريلا"
 
 msgid "llama"
-msgstr "llama"
+msgstr "اللاما"
 
 msgid "vulture"
-msgstr "vulture"
+msgstr "النسر"
 
 msgid "hamster"
-msgstr "hamster"
+msgstr "الهامستر"
 
 msgid "bird"
-msgstr "bird"
+msgstr "طائر"
 
 msgid "starfish"
-msgstr "starfish"
+msgstr "نجم البحر"
 
 msgid "crow"
-msgstr "crow"
+msgstr "الغراب"
 
 msgid "parakeet"
-msgstr "parakeet"
+msgstr "الببغاء"
 
 msgid "caterpillar"
-msgstr "caterpillar"
+msgstr "اليرقة"
 
 msgid "tiger"
-msgstr "tiger"
+msgstr "النمر"
 
 msgid "hummingbird"
-msgstr "hummingbird"
+msgstr "الطائر الطنان"
 
 msgid "piranha"
-msgstr "piranha"
+msgstr "سمك البيرانا"
 
 msgid "pig"
-msgstr "pig"
+msgstr "الخنزير"
 
 msgid "scorpion"
-msgstr "scorpion"
+msgstr "العقرب"
 
 msgid "fox"
-msgstr "fox"
+msgstr "الثعلب"
 
 msgid "leopard"
-msgstr "leopard"
+msgstr "الفهد"
 
 msgid "iguana"
-msgstr "iguana"
+msgstr "سحلية الاجوانا"
 
 msgid "dolphin"
-msgstr "dolphin"
+msgstr "الدولفين"
 
 msgid "bat"
-msgstr "bat"
+msgstr "الخفاش"
 
 msgid "chick"
-msgstr "chick"
+msgstr "الكتكوت"
 
 msgid "crab"
-msgstr "crab"
+msgstr "كابوريا / سلطعون"
 
 msgid "hen"
-msgstr "hen"
+msgstr "الدجاجة"
 
 msgid "wasp"
-msgstr "wasp"
+msgstr "الدبور"
 
 msgid "chameleon"
-msgstr "chameleon"
+msgstr "الحرباء"
 
 msgid "whale"
-msgstr "whale"
+msgstr "الحوت"
 
 msgid "hedgehog"
-msgstr "hedgehog"
+msgstr "القنفذ"
 
 msgid "fawn"
-msgstr "fawn"
+msgstr "صغير الغزالة"
 
 msgid "moose"
-msgstr "moose"
+msgstr "الموظ"
 
 msgid "bee"
-msgstr "bee"
+msgstr "النحلة"
 
 msgid "viper"
-msgstr "viper"
+msgstr "الافعى"
 
 msgid "shrike"
-msgstr "shrike"
+msgstr "عصفور شرايك"
 
 msgid "donkey"
-msgstr "donkey"
+msgstr "الحمار"
 
 msgid "guinea pig"
-msgstr "guinea pig"
+msgstr "خنزير غينيا"
 
 msgid "sloth"
-msgstr "sloth"
+msgstr "الكسلان"
 
 msgid "horse"
-msgstr "horse"
+msgstr "الحصان"
 
 msgid "penguin"
-msgstr "penguin"
+msgstr "البطريق"
 
 msgid "otter"
-msgstr "otter"
+msgstr "القندس"
 
 msgid "bear"
-msgstr "bear"
+msgstr "الدب"
 
 msgid "zebra"
-msgstr "zebra"
+msgstr "الحمار الوحشى"
 
 msgid "ostrich"
-msgstr "ostrich"
+msgstr "النعامة"
 
 msgid "camel"
-msgstr "camel"
+msgstr "الجمل"
 
 msgid "antelope"
-msgstr "antelope"
+msgstr "الظبى"
 
 msgid "lemur"
-msgstr "lemur"
+msgstr "الليمور"
 
 msgid "pigeon"
-msgstr "pigeon"
+msgstr "الحمامة"
 
 msgid "lama"
-msgstr "lama"
+msgstr "اللاما"
 
 msgid "mole"
-msgstr "mole"
+msgstr "خلد الماء"
 
 msgid "ray"
-msgstr "ray"
+msgstr "شعاع"
 
 msgid "ram"
-msgstr "ram"
+msgstr "كبش"
 
 msgid "skunk"
-msgstr "skunk"
+msgstr "الظربان"
 
 msgid "jellyfish"
-msgstr "jellyfish"
+msgstr "قنديل البحر"
 
 msgid "sheep"
-msgstr "sheep"
+msgstr "الخروف"
 
 msgid "shark"
-msgstr "shark"
+msgstr "سمك القرش"
 
 msgid "kitten"
-msgstr "kitten"
+msgstr "قطة صغيرة"
 
 msgid "deer"
-msgstr "deer"
+msgstr "الغزال"
 
 msgid "snail"
-msgstr "snail"
+msgstr "الحلزون"
 
 msgid "flamingo"
-msgstr "flamingo"
+msgstr "الفلامنجو"
 
 msgid "rabbit"
-msgstr "rabbit"
+msgstr "الارنب"
 
 msgid "oyster"
-msgstr "oyster"
+msgstr "المحار"
 
 msgid "beaver"
-msgstr "beaver"
+msgstr "السمور"
 
 msgid "sparrow"
-msgstr "sparrow"
+msgstr "العصفور"
 
 msgid "dove"
-msgstr "dove"
+msgstr "الحمامة"
 
 msgid "eagle"
-msgstr "eagle"
+msgstr "الصقر"
 
 msgid "beetle"
-msgstr "beetle"
+msgstr "الخنفساء"
 
 msgid "hippopotamus"
-msgstr "hippopotamus"
+msgstr "فرس النهر"
 
 msgid "owl"
-msgstr "owl"
+msgstr "البومة"
 
 msgid "cobra"
-msgstr "cobra"
+msgstr "افعى الكوبرا"
 
 msgid "salamander"
-msgstr "salamander"
+msgstr "السلمندر"
 
 msgid "goose"
-msgstr "goose"
+msgstr "الاوزة"
 
 msgid "kangaroo"
-msgstr "kangaroo"
+msgstr "الكانجرو"
 
 msgid "dragonfly"
-msgstr "dragonfly"
+msgstr "اليعسوب"
 
 msgid "toad"
-msgstr "toad"
+msgstr "الضفدع"
 
 msgid "pelican"
-msgstr "pelican"
+msgstr "البجع"
 
 msgid "squid"
-msgstr "squid"
+msgstr "الحبار"
 
 msgid "lion cub"
-msgstr "lion cub"
+msgstr "شبل الاسد"
 
 msgid "jaguar"
-msgstr "jaguar"
+msgstr "النمر المرقط"
 
 msgid "duck"
-msgstr "duck"
+msgstr "البطة"
 
 msgid "lizard"
-msgstr "lizard"
+msgstr "السحلية"
 
 msgid "rhinoceros"
-msgstr "rhinoceros"
+msgstr "وحيد القرن"
 
 msgid "hyena"
-msgstr "hyena"
+msgstr "الضبع"
 
 msgid "ox"
-msgstr "ox"
+msgstr "الثور"
 
 msgid "peacock"
-msgstr "peacock"
+msgstr "الطاووس"
 
 msgid "parrot"
-msgstr "parrot"
+msgstr "الببغاء"
 
 msgid "elk"
-msgstr "elk"
+msgstr "ايل / ظبى"
 
 msgid "alligator"
-msgstr "alligator"
+msgstr "التمساح"
 
 msgid "ant"
-msgstr "ant"
+msgstr "النملة"
 
 msgid "goat"
-msgstr "goat"
+msgstr "عنزة"
 
 msgid "baby rabbit"
-msgstr "baby rabbit"
+msgstr "صغير الارنب"
 
 msgid "lion"
-msgstr "lion"
+msgstr "الاسد"
 
 msgid "squirrel"
-msgstr "squirrel"
+msgstr "السنجاب"
 
 msgid "opossum"
-msgstr "opossum"
+msgstr "الابوسوم"
 
 msgid "chimp"
-msgstr "chimp"
+msgstr "الشمبانزى"
 
 msgid "doe"
-msgstr "doe"
+msgstr "الظبية"
 
 msgid "gopher"
-msgstr "gopher"
+msgstr "سلحفاة"
 
 msgid "elephant"
-msgstr "elephant"
+msgstr "الفيل"
 
 msgid "giraffe"
-msgstr "giraffe"
+msgstr "الزرافة"
 
 msgid "spider"
-msgstr "spider"
+msgstr "العنكبوت"
 
 msgid "puppy"
-msgstr "puppy"
+msgstr "الجرو"
 
 msgid "jay"
-msgstr "jay"
+msgstr "ابوزريق"
 
 msgid "seal"
-msgstr "seal"
+msgstr "الفقمة"
 
 msgid "rooster"
-msgstr "rooster"
+msgstr "الديك"
 
 msgid "turtle"
-msgstr "turtle"
+msgstr "السلحفاة"
 
 msgid "bull"
-msgstr "bull"
+msgstr "الثور"
 
 msgid "cat"
-msgstr "cat"
+msgstr "القطة"
 
 msgid "rat"
-msgstr "rat"
+msgstr "الفأر"
 
 msgid "slug"
-msgstr "slug"
+msgstr "الحلزون"
 
 msgid "buffalo"
-msgstr "buffalo"
+msgstr "الثور الامريكى"
 
 msgid "blackbird"
-msgstr "blackbird"
+msgstr "الشحرور"
 
 msgid "swan"
-msgstr "swan"
+msgstr "الاوز العراقى"
 
 msgid "lobster"
-msgstr "lobster"
+msgstr "سرطان البحر"
 
 msgid "dog"
-msgstr "dog"
+msgstr "الكلب"
 
 msgid "mosquito"
-msgstr "mosquito"
+msgstr "الناموس"
 
 msgid "snake"
-msgstr "snake"
+msgstr "الثعبان"
 
 msgid "chicken"
-msgstr "chicken"
+msgstr "الدجاجة"
 
 msgid "anteater"
-msgstr "anteater"
+msgstr "آكل النمل"
 
 msgid "judo"
-msgstr "judo"
+msgstr "الجودو"
 
 msgid "pool"
-msgstr "pool"
+msgstr "حمام السباحة"
 
 msgid "ride"
-msgstr "ride"
+msgstr "يركب"
 
 msgid "stretch"
-msgstr "stretch"
+msgstr "مد/ مط"
 
 msgid "helmet"
-msgstr "helmet"
+msgstr "الخوذة"
 
 msgid "ice skating"
-msgstr "ice skating"
+msgstr "التزحلق على الجليد"
 
 msgid "walk"
-msgstr "walk"
+msgstr "المشى"
 
 msgid "run"
-msgstr "run"
+msgstr "الجرى"
 
 msgid "swim"
-msgstr "swim"
+msgstr "السباحة"
 
 msgid "hop"
-msgstr "hop"
+msgstr "القفز"
 
 msgid "hike"
-msgstr "hike"
+msgstr "التنزه"
 
 msgid "boxing"
-msgstr "boxing"
+msgstr "الملاكمة"
 
 msgid "hockey"
-msgstr "hockey"
+msgstr "الهوكى"
 
 msgid "race"
-msgstr "race"
+msgstr "سباق"
 
 msgid "throw"
-msgstr "throw"
+msgstr "رمى"
 
 msgid "skate"
-msgstr "skate"
+msgstr "التزلج"
 
 msgid "win"
-msgstr "win"
+msgstr "الفوز"
 
 msgid "squat"
-msgstr "squat"
+msgstr "ربض"
 
 msgid "ski"
-msgstr "ski"
+msgstr "تزلج"
 
 msgid "golf"
-msgstr "golf"
+msgstr "الجولف"
 
 msgid "whistle"
-msgstr "whistle"
+msgstr "الصفارة"
 
 msgid "torch"
-msgstr "torch"
+msgstr "شعلة"
 
 msgid "sailing"
-msgstr "sailing"
+msgstr "الابحار"
 
 msgid "stand"
-msgstr "stand"
+msgstr "وقف"
 
 msgid "tennis"
-msgstr "tennis"
+msgstr "التنس"
 
 msgid "jump"
-msgstr "jump"
+msgstr "القفز"
 
 msgid "rowing"
-msgstr "rowing"
+msgstr "التجديف"
 
 msgid "jog"
-msgstr "jog"
+msgstr "الهرولة"
 
 msgid "rope"
-msgstr "rope"
+msgstr "الحبل"
 
 msgid "teeth"
-msgstr "teeth"
+msgstr "أسنان"
 
 msgid "cheek"
-msgstr "cheek"
+msgstr "الخد"
 
 msgid "ankle"
-msgstr "ankle"
+msgstr "الكاحل"
 
 msgid "knee"
-msgstr "knee"
+msgstr "الركبة"
 
 msgid "toe"
-msgstr "toe"
+msgstr "اصبع قدم"
 
 msgid "muscle"
-msgstr "muscle"
+msgstr "العضلة"
 
 msgid "mouth"
-msgstr "mouth"
+msgstr "الفم"
 
 msgid "feet"
-msgstr "feet"
+msgstr "الاقدام"
 
 msgid "hand"
-msgstr "hand"
+msgstr "اليد"
 
 msgid "elbow"
-msgstr "elbow"
+msgstr "الكوع"
 
 msgid "hair"
-msgstr "hair"
+msgstr "الشعر"
 
 msgid "eyelash"
-msgstr "eyelash"
+msgstr "رمش العين"
 
 msgid "beard"
-msgstr "beard"
+msgstr "الذقن"
 
 msgid "belly button"
-msgstr "belly button"
+msgstr "سرة البطن"
 
 msgid "thumb"
-msgstr "thumb"
+msgstr "الابهام"
 
 msgid "breast"
-msgstr "breast"
+msgstr "الثدى"
 
 msgid "nostril"
-msgstr "nostril"
+msgstr "فتحة الانف"
 
 msgid "nose"
-msgstr "nose"
+msgstr "الانف"
 
 msgid "hip"
-msgstr "hip"
+msgstr "الورك"
 
 msgid "arm"
-msgstr "arm"
+msgstr "الذراع"
 
 msgid "eyebrow"
-msgstr "eyebrow"
+msgstr "الحاجب"
 
 msgid "fist"
-msgstr "fist"
+msgstr "القبضة"
 
 msgid "neck"
-msgstr "neck"
+msgstr "الرقبة"
 
 msgid "wrist"
-msgstr "wrist"
+msgstr "المعصم"
 
 msgid "throat"
-msgstr "throat"
+msgstr "الحلق"
 
 msgid "eye"
-msgstr "eye"
+msgstr "العين"
 
 msgid "leg"
-msgstr "leg"
+msgstr "الساق"
 
 msgid "spine"
-msgstr "spine"
+msgstr "العمود الفقرى"
 
 msgid "ear"
-msgstr "ear"
+msgstr "الاذن"
 
 msgid "finger"
-msgstr "finger"
+msgstr "اصبع اليد"
 
 msgid "foot"
-msgstr "foot"
+msgstr "القدم"
 
 msgid "braid"
-msgstr "braid"
+msgstr "جديلة شعر"
 
 msgid "face"
-msgstr "face"
+msgstr "الوجه"
 
 msgid "back"
-msgstr "back"
+msgstr "الظهر"
 
 msgid "chin"
-msgstr "chin"
+msgstr "الذقن"
 
 msgid "bottom"
-msgstr "bottom"
+msgstr "القاع"
 
 msgid "thigh"
-msgstr "thigh"
+msgstr "الفخذ"
 
 msgid "belly"
-msgstr "belly"
+msgstr "الخصر"
 
 msgid "girl"
-msgstr "girl"
+msgstr "الفتاة"
 
 msgid "male"
-msgstr "male"
+msgstr "الذكر"
 
 msgid "son"
-msgstr "son"
+msgstr "الابن"
 
 msgid "mates"
-msgstr "mates"
+msgstr "الاصحاب"
 
 msgid "friends"
-msgstr "friends"
+msgstr "الاصدقاء"
 
 msgid "baby"
-msgstr "baby"
+msgstr "الرضيع"
 
 msgid "child"
-msgstr "child"
+msgstr "الطفل"
 
 msgid "dad"
-msgstr "dad"
+msgstr "الاب"
 
 msgid "mom"
-msgstr "mom"
+msgstr "الأم"
 
 msgid "twin boys"
-msgstr "twin boys"
+msgstr "توأم أولاد"
 
 msgid "brothers"
-msgstr "brothers"
+msgstr "الاخوة"
 
 msgid "man"
-msgstr "man"
+msgstr "الانسان"
 
 msgid "mother"
-msgstr "mother"
+msgstr "الام"
 
 msgid "grandfather"
-msgstr "grandfather"
+msgstr "الجد"
 
 msgid "family"
-msgstr "family"
+msgstr "العائلة"
 
 msgid "female"
-msgstr "female"
+msgstr "الأنثى"
 
 msgid "wife"
-msgstr "wife"
+msgstr "الزوجة"
 
 msgid "husband"
-msgstr "husband"
+msgstr "الزوج"
 
 msgid "bride"
-msgstr "bride"
+msgstr "العروس"
 
 msgid "madam"
-msgstr "madam"
+msgstr "السيدة"
 
 msgid "grandmother"
-msgstr "grandmother"
+msgstr "الجدة"
 
 msgid "couple"
-msgstr "couple"
+msgstr "زوج"
 
 msgid "lad"
-msgstr "lad"
+msgstr "الفتى"
 
 msgid "twin girls"
-msgstr "twin girls"
+msgstr "توأم فتيات"
 
 msgid "tribe"
-msgstr "tribe"
+msgstr "القبيلة"
 
 msgid "boy"
-msgstr "boy"
+msgstr "الولد"
 
 msgid "sisters"
-msgstr "sisters"
+msgstr "الأخوات"
 
 msgid "woman"
-msgstr "woman"
+msgstr "المرأة"
 
 msgid "lady"
-msgstr "lady"
+msgstr "السيدة"
 
 msgid "candy"
-msgstr "candy"
+msgstr "الحلوى"
 
 msgid "sausage"
-msgstr "sausage"
+msgstr "النقانق"
 
 msgid "hamburger"
-msgstr "hamburger"
+msgstr "الهامبرغر"
 
 msgid "steak"
-msgstr "steak"
+msgstr "شريحة لحم"
 
 msgid "fudge"
-msgstr "fudge"
+msgstr "حلوى"
 
 msgid "doughnut"
-msgstr "doughnut"
+msgstr "الدونات"
 
 msgid "coconut"
-msgstr "coconut"
+msgstr "جوز الهند"
 
 msgid "rice"
-msgstr "rice"
+msgstr "الارز"
 
 msgid "ice cream"
-msgstr "ice cream"
+msgstr "الايس كريم"
 
 msgid "jelly"
-msgstr "jelly"
+msgstr "الجيلى"
 
 msgid "yoghurt"
-msgstr "yoghurt"
+msgstr "الزبادى"
 
 msgid "dessert"
-msgstr "dessert"
+msgstr "الحلويات"
 
 msgid "pretzel"
-msgstr "pretzel"
+msgstr "كعك مملح"
 
 msgid "peanut"
-msgstr "peanut"
+msgstr "الفول السودانى"
 
 msgid "jam"
-msgstr "jam"
+msgstr "المربى"
 
 msgid "feast"
-msgstr "feast"
+msgstr "وليمة"
 
 msgid "cookie"
-msgstr "cookie"
+msgstr "بسكويت"
 
 msgid "bacon"
-msgstr "bacon"
+msgstr "لحم خنزير مقدد"
 
 msgid "spice"
-msgstr "spice"
+msgstr "بهار"
 
 msgid "coffee"
-msgstr "coffee"
+msgstr "قهوة"
 
 msgid "pie"
-msgstr "pie"
+msgstr "فطيرة"
 
 msgid "lemonade"
-msgstr "lemonade"
+msgstr "الليمون"
 
 msgid "chocolate"
-msgstr "chocolate"
+msgstr "الشيكولاته"
 
 msgid "water bottle"
-msgstr "water bottle"
+msgstr "زجاجة مياة"
 
 msgid "lunch"
-msgstr "lunch"
+msgstr "الغذاء"
 
 msgid "ice"
-msgstr "ice"
+msgstr "الثلج"
 
 msgid "sugar"
-msgstr "sugar"
+msgstr "السكر"
 
 msgid "sauce"
-msgstr "sauce"
+msgstr "الصلصة"
 
 msgid "soup"
-msgstr "soup"
+msgstr "الشوربة"
 
 msgid "juice"
-msgstr "juice"
+msgstr "العصير"
 
 msgid "fries"
-msgstr "fries"
+msgstr "بطاطس مقلية"
 
 msgid "cake"
-msgstr "cake"
+msgstr "الكيك"
 
 msgid "mashed potatoes"
-msgstr "mashed potatoes"
+msgstr "بطاطس مهروسة"
 
 msgid "tea"
-msgstr "tea"
+msgstr "الشاى"
 
 msgid "bun"
-msgstr "bun"
+msgstr "الكعكة"
 
 msgid "cheese"
-msgstr "cheese"
+msgstr "الجبن"
 
 msgid "beef"
-msgstr "beef"
+msgstr "لحم بقرى"
 
 msgid "sandwich"
-msgstr "sandwich"
+msgstr "ساندوتش"
 
 msgid "slice"
-msgstr "slice"
+msgstr "شريحة"
 
 msgid "sprinkle"
-msgstr "sprinkle"
+msgstr "رش"
 
 msgid "pizza"
-msgstr "pizza"
+msgstr "البيتزا"
 
 msgid "flour"
-msgstr "flour"
+msgstr "الدقيق"
 
 msgid "gum"
-msgstr "gum"
+msgstr "علكة"
 
 msgid "spaghetti"
-msgstr "spaghetti"
+msgstr "مكرونة سباجيتى"
 
 msgid "roast"
-msgstr "roast"
+msgstr "مشوى"
 
 msgid "stew"
-msgstr "stew"
+msgstr "حساء"
 
 msgid "spread"
-msgstr "spread"
+msgstr "منتشر"
 
 msgid "meat"
-msgstr "meat"
+msgstr "اللحم"
 
 msgid "milk"
-msgstr "milk"
+msgstr "اللبن"
 
 msgid "meal"
-msgstr "meal"
+msgstr "الوجبة"
 
 msgid "corn"
-msgstr "corn"
+msgstr "الذرة"
 
 msgid "bread"
-msgstr "bread"
+msgstr "الخبز"
 
 msgid "walnut"
-msgstr "walnut"
+msgstr "عين الجمل"
 
 msgid "egg"
-msgstr "egg"
+msgstr "البيض"
 
 msgid "hot dog"
-msgstr "hot dog"
+msgstr "نقانق"
 
 msgid "ham"
-msgstr "ham"
+msgstr "لحم خنزير"
 
 msgid "jewellery"
-msgstr "jewellery"
+msgstr "المجوهرات"
 
 msgid "sock"
-msgstr "sock"
+msgstr "جورب"
 
 msgid "jacket"
-msgstr "jacket"
+msgstr "السترة"
 
 msgid "heel"
-msgstr "heel"
+msgstr "كعب الحذاء"
 
 msgid "smock"
-msgstr "smock"
+msgstr "الثوب"
 
 msgid "shorts"
-msgstr "shorts"
+msgstr "السروال القصير"
 
 msgid "pocket"
-msgstr "pocket"
+msgstr "الجيب"
 
 msgid "necklace"
-msgstr "necklace"
+msgstr "القلادة"
 
 msgid "sweatshirt"
-msgstr "sweatshirt"
+msgstr "قميص ثقيل"
 
 msgid "uniform"
-msgstr "uniform"
+msgstr "زى موحد"
 
 msgid "raincoat"
-msgstr "raincoat"
+msgstr "معطف مطر"
 
 msgid "trousers"
-msgstr "trousers"
+msgstr "البنطلون"
 
 msgid "sunglasses"
-msgstr "sunglasses"
+msgstr "النظارات"
 
 msgid "coat"
-msgstr "coat"
+msgstr "المعطف"
 
 msgid "pullover"
-msgstr "pullover"
+msgstr "البلوفر/ الكنزة"
 
 msgid "shirt"
-msgstr "shirt"
+msgstr "قميص"
 
 msgid "sandals"
-msgstr "sandals"
+msgstr "الصندل"
 
 msgid "suit"
-msgstr "suit"
+msgstr "البدلة"
 
 msgid "pyjamas"
-msgstr "pyjamas"
+msgstr "البيجاما"
 
 msgid "skirt"
-msgstr "skirt"
+msgstr "التنورة"
 
 msgid "zip"
-msgstr "zip"
+msgstr "سحاب"
 
 msgid "shoes"
-msgstr "shoes"
+msgstr "الحذاء"
 
 msgid "jewel"
-msgstr "jewel"
+msgstr "الجوهرة"
 
 msgid "tie"
-msgstr "tie"
+msgstr "ربطة العنق"
 
 msgid "slippers"
-msgstr "slippers"
+msgstr "شباشب"
 
 msgid "gloves"
-msgstr "gloves"
+msgstr "القفازات"
 
 msgid "hat"
-msgstr "hat"
+msgstr "القبعة"
 
 msgid "sleeve"
-msgstr "sleeve"
+msgstr "كم الثوب"
 
 msgid "cap"
-msgstr "cap"
+msgstr "كاب / قبعة"
 
 msgid "swimming suit"
-msgstr "swimming suit"
+msgstr "زى السباحة"
 
 msgid "trainer"
-msgstr "trainer"
+msgstr "المدرب"
 
 msgid "vest"
-msgstr "vest"
+msgstr "صديرى / سترة"
 
 msgid "glasses"
-msgstr "glasses"
+msgstr "النظارات"
 
 msgid "shoelace"
-msgstr "shoelace"
+msgstr "رباط الحذاء"
 
 msgid "patch"
-msgstr "patch"
+msgstr "رقعة قماشية"
 
 msgid "scarf"
-msgstr "scarf"
+msgstr "وشاح"
 
 msgid "shoe"
-msgstr "shoe"
+msgstr "حذاء"
 
 msgid "button"
-msgstr "button"
+msgstr "زرار"
 
 msgid "dress"
-msgstr "dress"
+msgstr "الفستان"
 
 msgid "sash"
-msgstr "sash"
+msgstr "الحزام"
 
 msgid "shoe sole"
-msgstr "shoe sole"
+msgstr "نعل الحذاء"
 
 msgid "robe"
-msgstr "robe"
+msgstr "الحبل"
 
 msgid "pants"
-msgstr "pants"
+msgstr "بنطلون / سروال"
 
 msgid "kimono"
-msgstr "kimono"
+msgstr "الكيمونو اليابانى"
 
 msgid "overalls"
-msgstr "overalls"
+msgstr "افرول / ثياب العمل"
 
 msgid "lick"
-msgstr "lick"
+msgstr "لعق"
 
 msgid "slam"
-msgstr "slam"
+msgstr "ضرب / سحق"
 
 msgid "beg"
-msgstr "beg"
+msgstr "التمس"
 
 msgid "fell"
-msgstr "fell"
+msgstr "سقط"
 
 msgid "scratch"
-msgstr "scratch"
+msgstr "خدش"
 
 msgid "touch"
-msgstr "touch"
+msgstr "لمس"
 
 msgid "sniff"
-msgstr "sniff"
+msgstr "شم / تنشق"
 
 msgid "see"
-msgstr "see"
+msgstr "يرى"
 
 msgid "climb"
-msgstr "climb"
+msgstr "يتسلق"
 
 msgid "dig"
-msgstr "dig"
+msgstr "يحفر"
 
 msgid "howl"
-msgstr "howl"
+msgstr "يعوى / عواء"
 
 msgid "sleep"
-msgstr "sleep"
+msgstr "ينام "
 
 msgid "explore"
-msgstr "explore"
+msgstr "يستكشف"
 
 msgid "draw"
-msgstr "draw"
+msgstr "يرسم"
 
 msgid "hug"
-msgstr "hug"
+msgstr "يعانق"
 
 msgid "teach"
-msgstr "teach"
+msgstr "يعلم"
 
 msgid "nap"
-msgstr "nap"
+msgstr "يغفو"
 
 msgid "clay"
-msgstr "clay"
+msgstr "طين"
 
 msgid "catch"
-msgstr "catch"
+msgstr "يمسك"
 
 msgid "clap"
-msgstr "clap"
+msgstr "يصفق"
 
 msgid "cry"
-msgstr "cry"
+msgstr "يبكى"
 
 msgid "sing"
-msgstr "sing"
+msgstr "يغنى"
 
 msgid "meet"
-msgstr "meet"
+msgstr "يقابل"
 
 msgid "sell"
-msgstr "sell"
+msgstr "يبيع"
 
 msgid "peck"
-msgstr "peck"
+msgstr "اقلق"
 
 msgid "beat"
-msgstr "beat"
+msgstr "يهزم"
 
 msgid "kneel"
-msgstr "kneel"
+msgstr "يركع"
 
 msgid "find"
-msgstr "find"
+msgstr "يكتشف"
 
 msgid "dance"
-msgstr "dance"
+msgstr "يرقص"
 
 msgid "cough"
-msgstr "cough"
+msgstr "يكح"
 
 msgid "cut"
-msgstr "cut"
+msgstr "يقطع"
 
 msgid "think"
-msgstr "think"
+msgstr "يفكر"
 
 msgid "bark"
-msgstr "bark"
+msgstr "نباح/ لحاء الشجر"
 
 msgid "speak"
-msgstr "speak"
+msgstr "يتحدث"
 
 msgid "cheer"
-msgstr "cheer"
+msgstr "يشجع"
 
 msgid "bake"
-msgstr "bake"
+msgstr "يخبز"
 
 msgid "write"
-msgstr "write"
+msgstr "يكتب"
 
 msgid "punch"
-msgstr "punch"
+msgstr "يضرب"
 
 msgid "strum"
-msgstr "strum"
+msgstr "يداعب الاوتار"
 
 msgid "study"
-msgstr "study"
+msgstr "يذاكر"
 
 msgid "plow"
-msgstr "plow"
+msgstr "محراث"
 
 msgid "dream"
-msgstr "dream"
+msgstr "حلم"
 
 msgid "post"
-msgstr "post"
+msgstr "بريد"
 
 msgid "dive"
-msgstr "dive"
+msgstr "يغوص"
 
 msgid "whisper"
-msgstr "whisper"
+msgstr "يهمس"
 
 msgid "sob"
-msgstr "sob"
+msgstr "يتنهد"
 
 msgid "shake"
-msgstr "shake"
+msgstr "يهز"
 
 msgid "feed"
-msgstr "feed"
+msgstr "يطعم"
 
 msgid "crawl"
-msgstr "crawl"
+msgstr "يزحف"
 
 msgid "camp"
-msgstr "camp"
+msgstr "يخيم"
 
 msgid "spill"
-msgstr "spill"
+msgstr "يسكب"
 
 msgid "clean"
-msgstr "clean"
+msgstr "ينظف"
 
 msgid "scream"
-msgstr "scream"
+msgstr "يصرخ"
 
 msgid "tear"
-msgstr "tear"
+msgstr "يمزق"
 
 msgid "float"
-msgstr "float"
+msgstr "يطفو"
 
 msgid "pull"
-msgstr "pull"
+msgstr "يجذب"
 
 msgid "ate"
-msgstr "ate"
+msgstr "أكل"
 
 msgid "kiss"
-msgstr "kiss"
+msgstr "يقبل"
 
 msgid "sit"
-msgstr "sit"
+msgstr "يجلس"
 
 msgid "hatch"
-msgstr "hatch"
+msgstr "يفقس"
 
 msgid "blink"
-msgstr "blink"
+msgstr "يرمش"
 
 msgid "hear"
-msgstr "hear"
+msgstr "يسمع"
 
 msgid "smooch"
-msgstr "smooch"
+msgstr "يتبادل القبل"
 
 msgid "play"
-msgstr "play"
+msgstr "يلعب"
 
 msgid "wash"
-msgstr "wash"
+msgstr "يغسل"
 
 msgid "chat"
-msgstr "chat"
+msgstr "يدردش"
 
 msgid "drive"
-msgstr "drive"
+msgstr "يقود"
 
 msgid "to drink"
-msgstr "drink"
+msgstr "يشرب"
 
 msgid "fly"
-msgstr "fly"
+msgstr "يطير"
 
 msgid "juggle"
-msgstr "juggle"
+msgstr "يقذف"
 
 msgid "bit"
-msgstr "bit"
+msgstr "عض"
 
 msgid "sweep"
-msgstr "sweep"
+msgstr "يكنس"
 
 msgid "look"
-msgstr "look"
+msgstr "ينظر"
 
 msgid "knit"
-msgstr "knit"
+msgstr "يحيك"
 
 msgid "lift"
-msgstr "lift"
+msgstr "يرفع"
 
 msgid "fetch"
-msgstr "fetch"
+msgstr "يجلب"
 
 msgid "read"
-msgstr "read"
+msgstr "يقرأ"
 
 msgid "croak"
-msgstr "croak"
+msgstr "تكلم بصوت أجش"
 
 msgid "stare"
-msgstr "stare"
+msgstr "يحملق"
 
 msgid "eat"
-msgstr "eat"
+msgstr "يأكل"
 
 msgid "lighthouse"
-msgstr "lighthouse"
+msgstr "منارة"
 
 msgid "door"
-msgstr "door"
+msgstr "الباب"
 
 msgid "circus"
-msgstr "circus"
+msgstr "سيرك"
 
 msgid "church"
-msgstr "church"
+msgstr "كنيسة"
 
 msgid "kennel"
-msgstr "kennel"
+msgstr "بيت الكلب"
 
 msgid "temple"
-msgstr "temple"
+msgstr "معبد"
 
 msgid "smoke"
-msgstr "smoke"
+msgstr "دخان"
 
 msgid "chimney"
-msgstr "chimney"
+msgstr "مدخنة"
 
 msgid "brick"
-msgstr "brick"
+msgstr "طوبة"
 
 msgid "well"
-msgstr "well"
+msgstr "بئر"
 
 msgid "street"
-msgstr "street"
+msgstr "شارع"
 
 msgid "castle"
-msgstr "castle"
+msgstr "قلعة"
 
 msgid "store"
-msgstr "store"
+msgstr "محل"
 
 msgid "staircase"
-msgstr "staircase"
+msgstr "درج"
 
 msgid "school"
-msgstr "school"
+msgstr "مدرسة"
 
 msgid "farm"
-msgstr "farm"
+msgstr "مزرعة"
 
 msgid "bridge"
-msgstr "bridge"
+msgstr "جسر"
 
 msgid "dam"
-msgstr "dam"
+msgstr "سد"
 
 msgid "pyramid"
-msgstr "pyramid"
+msgstr "هرم"
 
 msgid "barn"
-msgstr "barn"
+msgstr "حظيرة"
 
 msgid "mill"
-msgstr "mill"
+msgstr "طاحونة"
 
 msgid "window"
-msgstr "window"
+msgstr "نافذة"
 
 msgid "cabin"
-msgstr "cabin"
+msgstr "قمرة"
 
 msgid "step"
-msgstr "step"
+msgstr "درجة"
 
 msgid "shop"
-msgstr "shop"
+msgstr "محل"
 
 msgid "shed"
-msgstr "shed"
+msgstr "سقيفة"
 
 msgid "roof"
-msgstr "roof"
+msgstr "سطح"
 
 msgid "steeple"
-msgstr "steeple"
+msgstr "برج الكنيسة"
 
 msgid "garage"
-msgstr "garage"
+msgstr "كراج\\ ورشة"
 
 msgid "mosque"
-msgstr "mosque"
+msgstr "مسجد"
 
 msgid "hospital"
-msgstr "hospital"
+msgstr "مستشفي"
 
 msgid "tent"
-msgstr "tent"
+msgstr "خيمة"
 
 msgid "house"
-msgstr "house"
+msgstr "منزل"
 
 msgid "wall"
-msgstr "wall"
+msgstr "جدار"
 
 msgid "bank"
-msgstr "bank"
+msgstr "بنك"
 
 msgid "shutter"
-msgstr "shutter"
+msgstr "مصراع النافذة"
 
 msgid "hut"
-msgstr "hut"
+msgstr "كوخ"
 
 msgid "land"
-msgstr "land"
+msgstr "أرض"
 
 msgid "cliff"
-msgstr "cliff"
+msgstr "مرتقع صخري"
 
 msgid "hill"
-msgstr "hill"
+msgstr "تل"
 
 msgid "canyon"
-msgstr "canyon"
+msgstr "وادى"
 
 msgid "rock"
-msgstr "rock"
+msgstr "صخرة"
 
 msgid "sea"
-msgstr "sea"
+msgstr "البحر"
 
 msgid "lake"
-msgstr "lake"
+msgstr "البحيرة"
 
 msgid "coast"
-msgstr "coast"
+msgstr "ساحل"
 
 msgid "shore"
-msgstr "shore"
+msgstr "شاطيء"
 
 msgid "mountain"
-msgstr "mountain"
+msgstr "جبل"
 
 msgid "pond"
-msgstr "pond"
+msgstr "بحيرة"
 
 msgid "peak"
-msgstr "peak"
+msgstr "قمة"
 
 msgid "lava"
-msgstr "lava"
+msgstr "صخور ملتهبة"
 
 msgid "cave"
-msgstr "cave"
+msgstr "كهف"
 
 msgid "dune"
-msgstr "dune"
+msgstr "كثب"
 
 msgid "island"
-msgstr "island"
+msgstr "جزيرة"
 
 msgid "forest"
-msgstr "forest"
+msgstr "غابة"
 
 msgid "desert"
-msgstr "desert"
+msgstr "صحراء"
 
 msgid "iceberg"
-msgstr "iceberg"
+msgstr "جبل ثلج"
 
 msgid "clown"
-msgstr "clown"
+msgstr "مهرج"
 
 msgid "engineer"
-msgstr "engineer"
+msgstr "مهندس"
 
 msgid "priest"
-msgstr "priest"
+msgstr "قسيس"
 
 msgid "vet"
-msgstr "vet"
+msgstr "طبيب بيطرى"
 
 msgid "judge"
-msgstr "judge"
+msgstr "قاضي"
 
 msgid "chef"
-msgstr "chef"
+msgstr "طباخ"
 
 msgid "athlete"
-msgstr "athlete"
+msgstr "لاعب رياضي"
 
 msgid "librarian"
-msgstr "librarian"
+msgstr "أمين مكتبة"
 
 msgid "juggler"
-msgstr "juggler"
+msgstr "بهلوانى"
 
 msgid "policeman"
-msgstr "policeman"
+msgstr "رجل شرطة"
 
 msgid "plumber"
-msgstr "plumber"
+msgstr "سباك"
 
 msgid "badge"
-msgstr "badge"
+msgstr "شارة"
 
 msgid "queen"
-msgstr "queen"
+msgstr "ملكة"
 
 msgid "farmer"
-msgstr "farmer"
+msgstr "فلاح"
 
 msgid "magician"
-msgstr "magician"
+msgstr "ساحر"
 
 msgid "knight"
-msgstr "knight"
+msgstr "فارس"
 
 msgid "doctor"
-msgstr "doctor"
+msgstr "طبيب"
 
 msgid "bricklayer"
-msgstr "bricklayer"
+msgstr "عامل بناء"
 
 msgid "cleaner"
-msgstr "cleaner"
+msgstr "عامل نظافة"
 
 msgid "teacher"
-msgstr "teacher"
+msgstr "معلم"
 
 msgid "hunter"
-msgstr "hunter"
+msgstr "صياد"
 
 msgid "soldier"
-msgstr "soldier"
+msgstr "جندى"
 
 msgid "musician"
-msgstr "musician"
+msgstr "موسيقي"
 
 msgid "lawyer"
-msgstr "lawyer"
+msgstr "محامى"
 
 msgid "fisherman"
-msgstr "fisherman"
+msgstr "صياد"
 
 msgid "princess"
-msgstr "princess"
+msgstr "أميرة"
 
 msgid "fireman"
-msgstr "fireman"
+msgstr "إطفائي"
 
 msgid "nun"
-msgstr "nun"
+msgstr "راهبة"
 
 msgid "pirate"
-msgstr "pirate"
+msgstr "قرصان"
 
 msgid "cowboy"
-msgstr "cowboy"
+msgstr "راعى بقر"
 
 msgid "electrician"
-msgstr "electrician"
+msgstr "كهربائي"
 
 msgid "nurse"
-msgstr "nurse"
+msgstr "ممرض"
 
 msgid "king"
-msgstr "king"
+msgstr "ملك"
 
 msgid "president"
-msgstr "president"
+msgstr "رئيس"
 
 msgid "office worker"
-msgstr "office worker"
+msgstr "عامل مكتبي"
 
 msgid "carpenter"
-msgstr "carpenter"
+msgstr "نجار"
 
 msgid "jockey"
-msgstr "jockey"
+msgstr "فارس السباق"
 
 msgid "worker"
-msgstr "worker"
+msgstr "عامل"
 
 msgid "mechanic"
-msgstr "mechanic"
+msgstr "ميكانيكى"
 
 msgid "pilot"
-msgstr "pilot"
+msgstr "طيار"
 
 msgid "actor"
-msgstr "actor"
+msgstr "ممثل"
 
 msgid "cook"
-msgstr "cook"
+msgstr "طاهى"
 
 msgid "student"
-msgstr "student"
+msgstr "طالب"
 
 msgid "butcher"
-msgstr "butcher"
+msgstr "جزار"
 
 msgid "accountant"
-msgstr "accountant"
+msgstr "محاسب"
 
 msgid "prince"
-msgstr "prince"
+msgstr "أمير"
 
 msgid "pope"
-msgstr "pope"
+msgstr "بابا الفاتيكان"
 
 msgid "sailor"
-msgstr "sailor"
+msgstr "بحار"
 
 msgid "boxer"
-msgstr "boxer"
+msgstr "ملاكم"
 
 msgid "ballet dancer"
-msgstr "ballet dancer"
+msgstr "راقص بالية"
 
 msgid "coach"
-msgstr "coach"
+msgstr "مدرب"
 
 msgid "astronaut"
-msgstr "astronaut"
+msgstr "عالم فلك"
 
 msgid "painter"
-msgstr "painter"
+msgstr "رسام"
 
 msgid "anaesthesiologist"
-msgstr "anaesthesiologist"
+msgstr "طبيب تخدير"
 
 msgid "scientist"
-msgstr "scientist"
+msgstr "عالم"
 
 msgid "carrot"
-msgstr "carrot"
+msgstr "جزر"
 
 msgid "blackberries"
-msgstr "blackberries"
+msgstr "توت العليق"
 
 msgid "celery"
-msgstr "celery"
+msgstr "كرفس"
 
 msgid "turnip"
-msgstr "turnip"
+msgstr "لفت"
 
 msgid "cacao"
-msgstr "cacao"
+msgstr "كاكاو"
 
 msgid "peach"
-msgstr "peach"
+msgstr "خوخة"
 
 msgid "melon"
-msgstr "melon"
+msgstr "شمام"
 
 msgid "grapefruit"
-msgstr "grapefruit"
+msgstr "جريب فروت"
 
 msgid "broccoli"
-msgstr "broccoli"
+msgstr "بروكلى"
 
 msgid "grapes"
-msgstr "grapes"
+msgstr "عنب"
 
 msgid "spinach"
-msgstr "spinach"
+msgstr "سبانخ"
 
 msgid "fig"
-msgstr "fig"
+msgstr "تين"
 
 msgid "kernel"
-msgstr "kernel"
+msgstr "بذرة"
 
 msgid "radish"
-msgstr "radish"
+msgstr "فجل"
 
 msgid "tomato"
-msgstr "tomato"
+msgstr "طماطم"
 
 msgid "kiwi"
-msgstr "kiwi"
+msgstr "كيوي"
 
 msgid "asparagus"
-msgstr "asparagus"
+msgstr "نبات الهليون"
 
 msgid "olives"
-msgstr "olives"
+msgstr "زيتون"
 
 msgid "cucumbers"
-msgstr "cucumbers"
+msgstr "خيار"
 
 msgid "beans"
-msgstr "beans"
+msgstr "الفول"
 
 msgid "strawberry"
-msgstr "strawberry"
+msgstr "الفراولة"
 
 msgid "peppers"
-msgstr "peppers"
+msgstr "الفلفل"
 
 msgid "raspberry"
-msgstr "raspberry"
+msgstr "توت العليق"
 
 msgid "apricot"
-msgstr "apricot"
+msgstr "مشمش"
 
 msgid "potatoes"
-msgstr "potatoes"
+msgstr "بطاطس"
 
 msgid "peas"
-msgstr "peas"
+msgstr "بازيلاء"
 
 msgid "cabbage"
-msgstr "cabbage"
+msgstr "الكرنب / الملفوف"
 
 msgid "cherries"
-msgstr "cherries"
+msgstr "الكرز"
 
 msgid "squash"
-msgstr "squash"
+msgstr "سحق"
 
 msgid "blueberries"
-msgstr "blueberries"
+msgstr "توت"
 
 msgid "pear"
-msgstr "pear"
+msgstr "كمثرى"
 
 msgid "orange"
-msgstr "orange"
+msgstr "البرتقال"
 
 msgid "pumpkin"
-msgstr "pumpkin"
+msgstr "القرع العسلى"
 
 msgid "avocado"
-msgstr "avocado"
+msgstr "الافوكادو"
 
 msgid "garlic"
-msgstr "garlic"
+msgstr "الثوم"
 
 msgid "onion"
-msgstr "onion"
+msgstr "البصل"
 
 msgid "apple"
-msgstr "apple"
+msgstr "التفاح"
 
 msgid "lime"
-msgstr "lime"
+msgstr "الليمون"
 
 msgid "cauliflower"
-msgstr "cauliflower"
+msgstr "القرنبيط"
 
 msgid "mango"
-msgstr "mango"
+msgstr "المانجو"
 
 msgid "lettuce"
-msgstr "lettuce"
+msgstr "الخس"
 
 msgid "lemon"
-msgstr "lemon"
+msgstr "الليمون"
 
 msgid "aubergine"
-msgstr "aubergine"
+msgstr "الباذنجان"
 
 msgid "artichokes"
-msgstr "artichokes"
+msgstr "الخرشوف"
 
 msgid "plums"
-msgstr "plums"
+msgstr "البرقوق"
 
 msgid "leek"
-msgstr "leek"
+msgstr "الثوم"
 
 msgid "bananas"
-msgstr "bananas"
+msgstr "الموز"
 
 msgid "papaya"
-msgstr "papaya"
+msgstr "البابايا"
 
 msgid "sail"
-msgstr "sail"
+msgstr "الشراع"
 
 msgid "taxi"
-msgstr "taxi"
+msgstr "التاكسى"
 
 msgid "car"
-msgstr "car"
+msgstr "السيارة"
 
 msgid "bike"
-msgstr "bike"
+msgstr "دراجة هوائية"
 
 msgid "raft"
-msgstr "raft"
+msgstr "طوف"
 
 msgid "pedal"
-msgstr "pedal"
+msgstr "الدواسة"
 
 msgid "bus"
-msgstr "bus"
+msgstr "اوتوبيس"
 
 msgid "handlebar"
-msgstr "handlebar"
+msgstr "مقود الدراجة"
 
 msgid "boat"
-msgstr "boat"
+msgstr "القارب"
 
 msgid "truck"
-msgstr "truck"
+msgstr "الشاحنة"
 
 msgid "sleigh"
-msgstr "sleigh"
+msgstr "زلاجة الجليد"
 
 msgid "carpet"
-msgstr "carpet"
+msgstr "السجادة"
 
 msgid "motorcycle"
-msgstr "motorcycle"
+msgstr "دراجة نارية"
 
 msgid "train"
-msgstr "train"
+msgstr "قطار"
 
 msgid "ship"
-msgstr "ship"
+msgstr "سفينة"
 
 msgid "van"
-msgstr "van"
+msgstr "شاحنة صغيرة"
 
 msgid "canoe"
-msgstr "canoe"
+msgstr "قارب الكنو"
 
 msgid "rocket"
-msgstr "rocket"
+msgstr "صاروخ"
 
 msgid "mast"
-msgstr "mast"
+msgstr "سارية"
 
 msgid "sledge"
-msgstr "sledge"
+msgstr "تزلج"
 
 msgid "bicycle"
-msgstr "bicycle"
-
+msgstr "دراجة"
