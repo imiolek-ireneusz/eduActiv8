@@ -18,7 +18,7 @@ dp = dict()  # messages with pronunciation exceptions - this dictionary will ove
 
 
 def r(s):
-    return reverse(s, alpha, "ar")
+    return reverse(s, None, "ar")
 
 numbers = ['واحد', 'اثنان', 'ثلاثة', 'أربعة', 'خمسة', 'ستة', 'سبعة', 'ثمانية', 'تسعة', 'عشرة', 'أحد عشر', 'اثنا عشر',
            'ثلاثة عشر', 'أربعة عشر', 'خمسة عشر', 'ستة عشر', 'سبعة عشر', 'ثمانية عشر', 'تسعة عشر', 'عشرون', 'وَاحِد و عِشْرُونَ',
@@ -28,26 +28,23 @@ numbers2090 = ['عِشْرُونَ', 'ثَلَاثُونَ', 'أَرْبَعُو
 
 # The following 2 lines are not to be translated but replaced with a sequence of words starting in each of the letters of your alphabet in order, best if these words have a corresponding picture in images/flashcard_images.jpg. The second line has the number of the image that the word describes.
 # The images are numbered from left to bottom such that the top left is numbered 0, the last image is 73, if none of the available things have names that start with any of the letters we can add new pictures.
-dp['abc_flashcards_word_sequence'] = ['Apple', 'Butterfly', 'Cat', 'Dolphin', 'Elephant', 'Fortepiano', 'Guitar',
-                                      'Hedgehog', 'Igloo', 'Jar', 'Koala', 'Lion', 'Monitor', 'Notebook', 'Ocean',
-                                      'Parrot', 'Queen', 'Rabbit', 'Street', 'Tomato', 'Umbrella', 'Violin',
-                                      'Watermelon', 'Xylophone', 'Yarn', 'Zebra']
-d['abc_flashcards_word_sequence'] = ['<1>A<2>pple', '<1>B<2>utterfly', '<1>C<2>at', '<1>D<2>olphin',
-                                     '<1>E<2>l<1>e<2>phant', '<1>F<2>ortepiano', '<1>G<2>uitar', '<1>H<2>edge<1>h<2>og',
-                                     '<1>I<2>gloo', '<1>J<2>ar', '<1>K<2>oala', '<1>L<2>ion', '<1>M<2>onitor',
-                                     '<1>N<2>otebook', '<1>O<2>cean', '<1>P<2>arrot', '<1>Q<2>ueen', '<1>R<2>abbit',
-                                     '<1>S<2>treet', '<1>T<2>oma<1>t<2>o', '<1>U<2>mbrella', '<1>V<2>iolin',
-                                     '<1>W<2>atermelon', '<1>X<2>ylophone', '<1>Y<2>arn', '<1>Z<2>ebra']
-d['abc_flashcards_word_sequencer'] = ["??"]
-d['abc_flashcards_frame_sequence'] = [42, 27, 2, 59, 4, 34, 28, 29, 8, 9, 72, 11, 40, 13, 52, 15, 16, 17, 53, 33, 20,
-                                      21, 26, 23, 24, 25]
+d['abc_flashcards_word_sequence'] = ['ا-كلمة', 'ب-كلمة', 'ت-كلمة', 'ث-كلمة', 'ج-كلمة', 'ح-كلمة', 'خ-كلمة', 'د-كلمة', 'ذ-كلمة', 'ر-كلمة', 'ز-كلمة', 'س-كلمة', 'ش-كلمة', 'ص-كلمة', 'ض-كلمة', 'ط-كلمة', 'ظ-كلمة', 'ع-كلمة', 'غ-كلمة', 'ف-كلمة', 'ق-كلمة', 'ك-كلمة', 'ل-كلمة', 'م-كلمة', 'ن-كلمة', 'ه-كلمة', 'و-كلمة', 'ي-كلمة']
 
-# alphabet en
-alphabet_lc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-               'v', 'w', 'x', 'y', 'z']
-alphabet_uc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-               'V', 'W', 'X', 'Y', 'Z']
+dp['abc_flashcards_word_sequence'] = d['abc_flashcards_word_sequence']
+
+d['abc_flashcards_word_sequencer'] = ["None"]
+d['abc_flashcards_frame_sequence'] = [43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43, 43]
+
+alphabet_ar_iso = [r('ا'), r('ب'), r('ت'), r('ث'), r('ج'), r('ح'), r('خ'), r('د'), r('ذ'), r('ر'), r('ز'), r('س'), r('ش'), r('ص'), r('ض'), r('ط'), r('ظ'), r('ع'), r('غ'), r('ف'), r('ق'), r('ك'), r('ل'), r('م'), r('ن'), r('ه'), r('و'), r('ي')]
+alphabet_ar_ini = [r('ا'), r('بـ'), r('تـ'), r('ثـ'), r('جـ'), r('حـ'), r('خـ'), r('د'), r('ذ'), r('ر'), r('ز'), r('سـ'), r('شـ'), r('صـ'), r('ضـ'), r('طـ'), r('ظـ'), r('عـ'), r('غـ'), r('فـ'), r('قـ'), r('كـ'), r('لـ'), r('مـ'), r('نـ'), r('ھـ'), r('و'), r('يـ')]
+alphabet_ar_mid = [r('ـا'), r('ـبـ'), r('ـتـ'), r('ـثـ'), r('ـجـ'), r('ـحـ'), r('ـخـ'), r('ـد'), r('ـذ'), r('ـر'), r('ـز'), r('ـسـ'), r('ـشـ'), r('ـصـ'), r('ـضـ'), r('ـطـ'), r('ـظـ'), r('ـعـ'), r('ـغـ'), r('ـفـ'), r('ـقـ'), r('ـكـ'), r('ـلـ'), r('ـمـ'), r('ـنـ'), r('ـھـ'), r('ـو'), r('ـيـ')]
+alphabet_ar_end = [r('ـا'), r('ـب'), r('ـت'), r('ـث'), r('ـج'), r('ـح'), r('ـخ'), r('ـد'), r('ـذ'), r('ـر'), r('ـز'), r('ـس'), r('ـش'), r('ـص'), r('ـض'), r('ـط'), r('ـظ'), r('ـع'), r('ـغ'), r('ـف'), r('ـق'), r('ـك'), r('ـل'), r('ـم'), r('ـن'), r('ـه'), r('ـو'), r('ـي')]
+
+alphabet_lc = alphabet_ar_iso
+
+alphabet_uc = None
 alpha = None
+
 # correction of eSpeak pronounciation of single letters if needed
 letter_names = []
 

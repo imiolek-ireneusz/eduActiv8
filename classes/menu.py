@@ -4,7 +4,7 @@ import ast
 import classes.extras as ex
 
 """
-#games currently not used 30, 40, 48, 57, 58, 83, 86
+#games currently not used 30?, 40?, 57, 58, 83, 86
 """
 
 
