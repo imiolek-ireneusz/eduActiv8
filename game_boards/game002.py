@@ -23,7 +23,7 @@ class Board(gd.BoardGame):
         color2 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 30, 255)
 
         font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 50)
-        data = [18, 13]
+        data = [18, 11]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=True)
         if x_count > data[0]:
@@ -60,6 +60,11 @@ class Board(gd.BoardGame):
 
         # column 1
         top = 0
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Arabic", self.mainloop.config.arabic], colors[top % 2], "", 6)
+        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, ["Ayman Mahmoud"],
+                            colors[top % 2], "", 6)
+
+        top += 1
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Bulgarian", "Български"], colors[top % 2],
                             "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
@@ -98,7 +103,7 @@ class Board(gd.BoardGame):
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, "Oliver van der Bürie",
                             colors[top % 2], "", 6)
 
-        top += 1
+        top += 2
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Hebrew", "תירבע"], colors[top % 2], "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, ["Ori Hoch"],
                             colors[top % 2], "", 6)
