@@ -12,7 +12,7 @@ import os
 # lang_list = ['ca', 'de', 'el', 'en_GB', 'en_US', 'es', 'fr', 'it', 'lkt', 'pl', 'pt', 'ru', 'uk']
 
 # use this if only one language has changed
-lang_list = ['nl']
+lang_list = ['ar']
 #lang_list = ['en_GB', 'en_US']
 
 ea8_lists_str = ["a4a_animals", "a4a_sport", "a4a_body", "a4a_people", "a4a_food", "a4a_clothes_n_accessories",
@@ -71,9 +71,27 @@ for lang_id in range(len(lang_list)):
                 lst[i] = "<%s>" % lst[i]
 
     # create a new string with converted word lists
-    s = "# -*- coding: utf-8 -*-\n\nd = dict()"
-    for i in range(len(ea8_lists)):
-        s += '\nd["%s"] = %s' % (ea8_lists_str[i], repr(ea8_lists[i]))
+    s = "# -*- coding: utf-8 -*-\n\n"
+    if lang_list[lang_id] in ["ar", "he"]:
+        s += 'from classes.extras import reverse\n\n\n'
+        s += 'def r(s):\n'
+        s += '    return reverse(s, None, "' + lang_list[lang_id] + '")\n\n\n'
+
+        s += 'd = dict()\n'
+        for i in range(len(ea8_lists)):
+            s += '\nd["%s"] = [' % (ea8_lists_str[i])
+            l = len(ea8_lists[i])
+            for j in range(l):
+                if j < l - 1:
+                    s += "r('" + ea8_lists[i][j] + "'), "
+                else:
+                    s += "r('" + ea8_lists[i][j] + "')"
+            s += ']'
+
+    else:
+        s += 'd = dict()\n\n'
+        for i in range(len(ea8_lists)):
+            s += '\nd["%s"] = %s' % (ea8_lists_str[i], repr(ea8_lists[i]))
 
     # save to file
     file_name = os.path.join('a4a_py', "%s.py" % (lang_list[lang_id]))
