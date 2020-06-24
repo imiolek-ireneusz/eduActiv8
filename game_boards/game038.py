@@ -113,7 +113,15 @@ class Board(gd.BoardGame):
         # frame size 432 x 288
         self.board.add_unit(x, y + 1, 6, 4, classes.board.ImgShip, "1", frame_color, self.fish_img_src[0], alpha=True)
         self.board.ships[-1].set_outline(outline_color2, 2)
-        self.board.add_unit(x, y + 5, 6, 1, classes.board.Letter, self.word_list[0], frame_color, "", 2)
+
+        hand_y_offset = 0
+        n2txt_font_size = 2
+        if self.lang.lang == "ar":
+            hand_y_offset = 1
+            n2txt_font_size = 31
+
+        self.board.add_unit(x, y + 5, 6, 1 + hand_y_offset, classes.board.Letter, self.word_list[0], frame_color, "",
+                            n2txt_font_size)
         self.board.ships[-1].font_color = card_font_color
         if self.lang.ltr_text:
             sv = "1"
@@ -131,7 +139,7 @@ class Board(gd.BoardGame):
             font_size = 19
         elif self.lang.lang == "ru":
             font_size = 15
-        self.board.add_unit(x, y + 6, 6, 1, classes.board.Letter, handwritten, frame_color, "", font_size)
+        self.board.add_unit(x, y + 6 + hand_y_offset, 6, 1, classes.board.Letter, handwritten, frame_color, "", font_size)
         self.board.ships[-1].font_color = card_font_color
         if not self.lang.has_cursive:
             self.board.ships[-1].font_color = card_font_color

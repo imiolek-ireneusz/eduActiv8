@@ -188,6 +188,10 @@ class Board(gd.BoardGame):
                 wide_slots.append([i, j])
         random.shuffle(wide_slots)
         switch = self.square_count // 2
+        if self.lang.lang == 'ar':
+            font_size = 2
+        else:
+            font_size = 8
         for i in range(self.square_count):
             if i < switch:
                 img = "%s.jpg" % self.imgs[drawn_numbers[i]]
@@ -203,7 +207,7 @@ class Board(gd.BoardGame):
                 pos = i - switch
                 xw = 4
                 self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, 1, classes.board.Letter, caption,
-                                    color0, "", 8)
+                                    color0, "", font_size)
                 self.board.ships[-1].font_color = self.font_color
             self.board.ships[i].immobilize()
             self.board.ships[i].readable = False

@@ -62,10 +62,7 @@ def n2txt(n, twoliner=False):
             return tens
         elif m > 0:
             ones = r(numbers[m - 1])
-            if twoliner:
-                return [tens, ones]
-            else:
-                return tens + unival(" و ") + ones
+            return tens + unival(" و ") + ones
 
     elif n == 0:
         return r("صفر")

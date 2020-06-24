@@ -1,11 +1,26 @@
 # -*- coding: utf-8 -*-
 
 import ast
+import sys
 import classes.extras as ex
 
 """
 #games currently not used 30?, 40?, 57, 58, 83, 86
 """
+
+# the following is used to enable Windows packaging script to import all the games (otherwise imported dynamically).
+if sys.platform == "win32" or sys.platform == "cygwin":
+    from game_boards import game000, game001, game002, game003, game004, game005, game006, game007, game008, game009, \
+        game010, game011, game012, game013, game014, game015, game016, game017, game018, game019, game020, game021, \
+        game022, game023, game024, game025, game026, game027, game028, game029, game030, game031, game032, game033, \
+        game034,  game035, game036, game037, game038, game039, game040, game041, game042, game043, game044, game045, \
+        game046, game047, game048, game049, game050, game051, game052, game053, game054, game055, game056, game057, \
+        game058, game059, game060, game061, game062, game063, game064, game065, game066, game067, game068, game069, \
+        game070, game071, game072, game073, game074, game075, game076, game077, game078, game079, game080, game081, \
+        game082, game083, game084, game085, game086, game087, game088, game089, game090, game091, game092, game093, \
+        game094, game095, game096, game097, game098, game099, game100, game101, game102, game103, game104, game105, \
+        game106, game107, game108, game109, game110, game111, game112, game113, game114, game115, game116, game117, \
+        game118, game119, game120, game121
 
 
 class MenuCategoryGroup:
