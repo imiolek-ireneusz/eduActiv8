@@ -437,6 +437,10 @@ class GamePlay:
 
                 self.dialog = classes.dialogwnd.DialogWnd(self)
 
+                # recreate the icon
+                icon = pygame.image.load(os.path.join('res', 'icon', 'ico256.png'))
+                pygame.display.set_icon(icon)
+
                 # -------- Main Program Loop ----------- #
                 wait = False
                 while self.done is False:
