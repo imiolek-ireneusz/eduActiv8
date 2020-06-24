@@ -109,20 +109,11 @@ class Config:
         # [0 language, 1 talkative, 2 untranslated languages, 3 full screen, 4 user_name, 5 screen_w, 6 screen_h]
 
         self.settings = dict()
-        try:
-            import pyfribidi
-            self.fribidi_loaded = True
-            self.frididi = pyfribidi
-            s = ex.unival('العربية')
-            self.arabic = self.frididi.log2vis(s)
-        except:
-            self.fribidi_loaded = False
-            self.frididi = None
-            self.arabic = "Arabic"
-
         self.set_font_family()
 
-        if self.fribidi_loaded:
+        if ex.fribidi_loaded or ex.ar_reshaper_loaded:
+            s = ex.unival('العربية')
+            self.arabic = ex.ar_rtl(s)
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano",
                                 "Lakȟótiyapi", "Nederlands", "Polski", "Português", "Suomalainen", "Ελληνικά",
                                 "Български", "Русский", "Српски", "Українська", "תירבע", self.arabic]
@@ -131,6 +122,7 @@ class Config:
             self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "nl", "pl", "pt_PT", "fi", "el",
                            "bg", "ru", "sr", "uk", "he", "ar"]
         else:
+            self.arabic = "Arabic"
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano",
                                 "Lakȟótiyapi", "Nederlands", "Polski", "Português", "Suomalainen", "Ελληνικά",
                                 "Български", "Русский", "Српски", "Українська", "תירבע"]
@@ -195,7 +187,7 @@ class Config:
         pass
 
     def load_settings(self, db, userid):
-        'loads saved settings from pickled file - language and screen size dimensions and mode'
+        """loads saved settings from pickled file - language and screen size dimensions and mode"""
         # load user settings
         u = db.load_user_settings(userid)
 
@@ -227,6 +219,6 @@ class Config:
         self.loaded_settings = True
 
     def save_settings(self, db):
-        'save settings to file'
+        """save settings to file"""
         db.save_user_settings(self.settings["lang"], self.settings["sounds"], self.settings["espeak"],
                               self.settings["screenw"], self.settings["screenh"], self.settings["scheme"])

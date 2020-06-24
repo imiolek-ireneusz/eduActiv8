@@ -7,19 +7,39 @@ import sys
 import math
 
 fribidi_loaded = False
+ar_reshaper_loaded = False
+
 try:
-    import pyfribidi
-
-    fribidi_loaded = True
-    frididi = pyfribidi
+    # import pyfribidi as fribidi
+    import classes.ctfribidi as fribidi
+    if fribidi.fb is not None:
+        fribidi_loaded = True
+        print("Using fribidi library.")
+    else:
+        fribidi_loaded = False
 except:
-    frididi = None
+    fribidi = None
 
+if not fribidi_loaded:
+    try:
+        # install: pip install --upgrade arabic-reshaper
 
-# the following four color functions take 3 values in range 0 - 255
-# h - hue
-# s - saturation - s=0 white, s=255 full color
-# v - vibrance - v=0 black, v=255 full color
+        from arabic_reshaper import ArabicReshaper
+
+        configuration = {
+            'delete_harakat': False,
+            'support_ligatures': True,
+            'RIAL SIGN': True,  # Replace ر ي ا ل with ﷼
+        }
+        reshaper = ArabicReshaper(configuration=configuration)
+
+        # install: pip install python-bidi
+        from bidi.algorithm import get_display
+        ar_reshaper_loaded = True
+        print("Using arabic_reshaper library.")
+    except:
+        ar_reshaper_loaded = False
+
 
 def hsv_to_rgb(h, s, v):
     hsv = [h, s, v]
@@ -92,6 +112,63 @@ def is_rtl(s, alpha):
     return False
 
 
+def he_rtl_man(s, alpha):
+    ret = list()
+    words = s.split()
+    cur_rtl_list = list()
+    cur_ltr_list = list()
+    cur_is_rtl = False
+    for w in words:
+        if is_rtl(w, alpha) and cur_is_rtl:
+            cur_rtl_list.append(w[::-1])
+        elif is_rtl(w, alpha) and not cur_is_rtl:
+            if len(cur_ltr_list) > 0:
+                cur_ltr_list.reverse()
+                ret.extend(cur_ltr_list)
+            cur_ltr_list = list()
+            cur_rtl_list.append(w[::-1])
+            cur_is_rtl = True
+        elif not is_rtl(w, alpha) and not cur_is_rtl:
+            w = w.split()
+            w.reverse()
+            cur_ltr_list.append("".join(w))
+        elif not is_rtl(w, alpha) and cur_is_rtl:
+            if len(cur_rtl_list) > 0:
+                ret.extend(cur_rtl_list)
+            cur_rtl_list = list()
+
+            w = w.split()
+            w.reverse()
+            cur_ltr_list.append("".join(w))
+            cur_is_rtl = False
+        else:
+            pass
+    if len(cur_rtl_list) > 0:
+        ret.extend(cur_rtl_list)
+    if len(cur_ltr_list) > 0:
+        cur_ltr_list.reverse()
+        ret.extend(cur_ltr_list)
+    ln = len(ret)
+    s = ""
+    for i in range(ln - 1, -1, -1):
+        s += ret[i]
+        if i > 0:
+            s += " "
+    return s
+
+
+def ar_rtl(s):
+    st = unival(s)
+    if fribidi_loaded:
+        return fribidi.log2vis(st)
+    elif ar_reshaper_loaded:
+        #reshaped_text = arabic_reshaper.reshape(st)
+        reshaped_text = reshaper.reshape(st)
+        return get_display(reshaped_text)
+    else:
+        return st
+
+
 def reverse(s, alpha, lng):
     if sys.version_info < (3, 0):
         if not isinstance(s, unicode):
@@ -99,62 +176,13 @@ def reverse(s, alpha, lng):
         if alpha is not None:
             alpha = alpha.decode("utf-8")
     if lng == "ar":
-        if fribidi_loaded:
-            st = unival(s)
-            return frididi.log2vis(st)
-        else:
-            return ""
+        return ar_rtl(s)
     elif lng == "he":
         if fribidi_loaded:
             st = unival(s)
-            return frididi.log2vis(st)
+            return fribidi.log2vis(st)
         else:
-            ret = list()
-            words = s.split()
-
-            cur_rtl_list = list()
-            cur_ltr_list = list()
-            cur_is_rtl = False
-
-            for w in words:
-                if (is_rtl(w, alpha) and cur_is_rtl):
-                    cur_rtl_list.append(w[::-1])
-                elif (is_rtl(w, alpha) and not cur_is_rtl):
-                    if (len(cur_ltr_list) > 0):
-                        cur_ltr_list.reverse()
-                        ret.extend(cur_ltr_list)
-                    cur_ltr_list = list()
-                    cur_rtl_list.append(w[::-1])
-                    cur_is_rtl = True
-                elif (not is_rtl(w, alpha) and not cur_is_rtl):
-                    w = w.split()
-
-                    w.reverse()
-                    cur_ltr_list.append("".join(w))
-                elif (not is_rtl(w, alpha) and cur_is_rtl):
-                    if (len(cur_rtl_list) > 0):
-                        ret.extend(cur_rtl_list)
-                    cur_rtl_list = list()
-
-                    w = w.split()
-                    w.reverse()
-                    cur_ltr_list.append("".join(w))
-                    cur_is_rtl = False
-                else:
-                    pass
-            if (len(cur_rtl_list) > 0):
-                ret.extend(cur_rtl_list)
-            if (len(cur_ltr_list) > 0):
-                cur_ltr_list.reverse()
-                ret.extend(cur_ltr_list)
-
-            ln = len(ret)
-            s = ""
-            for i in range(ln - 1, -1, -1):
-                s += ret[i]
-                if i > 0:
-                    s += " "
-            return s
+            return he_rtl_man(s, alpha)
 
 
 def rr2(from1, to1, from2, to2, step=1):
