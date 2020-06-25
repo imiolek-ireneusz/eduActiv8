@@ -9,6 +9,11 @@ Usability Testing:
 Windows Setup Script (eduactiv82exe):
     Gino Ingras
 
+Arabic Reshaping Libraries:
+    arabic-reshaper - MIT Licence - Copyright (c) 2019 Abdullah Diab
+    python-bidi - GPLv3 - Development Lead: Meir Kriheli, Contributors: Just van Rossum, Jakub Wilk.
+    ctfribidi - Public Domain - Oleg A. Paraschenko
+
 Translations:
     Arabic - Ayman Mahmoud
     Bulgarian - Vanyo Georgiev
