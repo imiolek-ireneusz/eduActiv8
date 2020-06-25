@@ -11,7 +11,7 @@ ar_reshaper_loaded = False
 
 try:
     # import pyfribidi as fribidi
-    import classes.ctfribidi as fribidi
+    import classes.rtl.ctfribidi as fribidi
     if fribidi.fb is not None:
         fribidi_loaded = True
         print("Using fribidi library.")
@@ -22,19 +22,23 @@ except:
 
 if not fribidi_loaded:
     try:
-        # install: pip install --upgrade arabic-reshaper
-
-        from arabic_reshaper import ArabicReshaper
-
-        configuration = {
+        from classes.rtl.arabic_reshaper import ArabicReshaper
+        # providing ligature support slows the loading time dramatically
+        configuration_init = {
             'delete_harakat': False,
             'support_ligatures': True,
             'RIAL SIGN': True,  # Replace ر ي ا ل with ﷼
         }
+
+        configuration = {
+            'delete_harakat': False,
+            'support_ligatures': False,
+            'RIAL SIGN': False,  # Replace ر ي ا ل with ﷼
+        }
+
         reshaper = ArabicReshaper(configuration=configuration)
 
-        # install: pip install python-bidi
-        from bidi.algorithm import get_display
+        from classes.rtl.bidi.algorithm import get_display
         ar_reshaper_loaded = True
         print("Using arabic_reshaper library.")
     except:
