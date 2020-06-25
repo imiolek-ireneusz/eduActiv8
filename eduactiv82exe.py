@@ -20,6 +20,8 @@ try:
     import glob, fnmatch
     import sys, os, shutil
     import operator
+    import appdirs
+    import packaging
 except ImportError, message:
     raise SystemExit, "Unable to load module. %s" % message
 
@@ -82,7 +84,7 @@ class BuildExe:
         self.extra_datas = ["classes", "game_boards", "i18n", "locale", "res", "xml"]
 
         # Extra/excludes python modules
-        self.extra_modules = []
+        self.extra_modules = ['appdirs', 'packaging']
 
         # showed missing in result compilation
         self.exclude_modules = []
