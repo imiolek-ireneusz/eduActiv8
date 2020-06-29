@@ -74,7 +74,23 @@ def n2txt(n, twoliner=False):
 
 def n2spk(n, twoliner=False):
     """takes a number from 1 - 99 and returns it back in a word form, ie: 63 returns 'sixty three'."""
-    return n2txt(n, False)
+    if 0 < n < 30:
+        return unival(numbers[n - 1])
+    elif 30 <= n < 100:
+        m = n % 10
+        tens = numbers2090[(n // 10) - 2]
+        if m == 0:
+            return unival(tens)
+        elif m > 0:
+            ones = numbers[m - 1]
+            return unival(tens) + unival(" و ") + unival(ones)
+
+    elif n == 0:
+        return unival("صفر")
+    elif n == 100:
+        return unival("مائة")
+    else:
+        return ""
 
 
 def time2str(h, m):

@@ -142,7 +142,7 @@ class Board(gd.BoardGame):
         self.board.ships[-1].immobilize()
 
         # check if espeak icon needs disabling on display of home screen
-        if self.lang.lang in ['lkt', 'uk', 'bg']:
+        if self.lang.lang in self.lang.tts_disabled_lngs:
             self.mainloop.sb.espeak_avail(False)
         else:
             self.mainloop.sb.espeak_avail(True)
@@ -154,7 +154,7 @@ class Board(gd.BoardGame):
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             found = False
             for each in self.units:
-                if (each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom):
+                if each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom:
                     if each != self.unit_mouse_over:
                         if self.unit_mouse_over is not None:
                             self.unit_mouse_over.mouse_out()

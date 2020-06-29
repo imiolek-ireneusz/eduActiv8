@@ -88,3 +88,33 @@ class XMLConn:
                 if int(game.attrib["show_all"]) == 1:
                     return [int(game.attrib["min_age"]), int(game.attrib["max_age"])]
         return None
+
+
+class XMLLangs:
+    def __init__(self):
+        self.lang_path = ""
+        self.load_xml_lng()
+
+    def load_xml_lng(self):
+        # check for language specific files:
+        reload_file = False
+        if self.lang_path != os.path.join('xml', 'langs.xml'):
+            self.lang_path = os.path.join('xml', 'langs.xml')
+            reload_file = True
+
+        if reload_file:
+            self.lang_tree = et.parse(self.lang_path)
+            self.lang_root = self.lang_tree.getroot()
+
+    def get_lang_config(self, lng_code):
+        for lang in self.lang_root.iter('lang'):
+            if lng_code == (lang.attrib["code"]):
+                return lang
+        return None
+
+    def get_tts_disabled(self):
+        tts_disabled = []
+        for lang in self.lang_root.iter('lang'):
+            if lang.attrib["voice"] == "None":
+                tts_disabled.append(lang.attrib["code"])
+        return tts_disabled
