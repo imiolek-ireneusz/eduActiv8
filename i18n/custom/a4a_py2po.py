@@ -44,7 +44,7 @@ for lang in range(0, langs_len):
     s = header + '"Language: %s\\n"\n\n' % lang_list[lang]
     for i in range(0, lists_len):
         for j in range(0, len(a4a_words.d[lists_str[i]])):
-            a = mod_list[lang]
+            """
             a = mod_list[lang].d[lists_str[i]]
             try:
                 a = mod_list[lang].d[lists_str[i]][j]
@@ -53,6 +53,7 @@ for lang in range(0, langs_len):
                 print(len(a))
 
             a = mod_list[lang].d[lists_str[i]][j][0]
+            """
             if mod_list[lang].d[lists_str[i]][j][0] != "<":
                 s += 'msgid "%s"\nmsgstr "%s"\n\n' % (a4a_words.d[lists_str[i]][j], mod_list[lang].d[lists_str[i]][j])
             else:

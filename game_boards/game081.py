@@ -470,7 +470,7 @@ class Board(gd.BoardGame):
         return angle
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         self.tm = self.time[:]
         if event.type == pygame.MOUSEMOTION and self.hand_id > 0:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]

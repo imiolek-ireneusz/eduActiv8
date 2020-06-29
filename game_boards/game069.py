@@ -117,7 +117,6 @@ class Board(gd.BoardGame):
             self.resultl[-1].checkable = True
             self.resultl[-1].init_check_images()
 
-
         self.resultl[0].set_outline(self.activated_col, 3)
         self.home_square = self.resultl[0]
         self.board.active_ship = self.home_square.unit_id
@@ -129,7 +128,6 @@ class Board(gd.BoardGame):
     def draw_hori_line(self, unit):
         w = unit.grid_w * self.board.scale
         h = unit.grid_h * self.board.scale
-        center = [w // 2, h // 2]
 
         canv = pygame.Surface((w, h - 1))
         canv.fill(self.bg_col)
@@ -143,7 +141,7 @@ class Board(gd.BoardGame):
             each.set_display_check(None)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN:
                 self.auto_check_reset()
@@ -163,8 +161,7 @@ class Board(gd.BoardGame):
                         self.home_square.value = self.home_square.value[0:lhv - 1]
                 else:
                     char = event.unicode
-                    if (len(char) > 0 and lhv < 2 and char in self.digits):
-
+                    if len(char) > 0 and lhv < 2 and char in self.digits:
                         if self.home_square in self.resultl:
                             if lhv == 1:
                                 s = self.home_square.value + char
@@ -201,7 +198,7 @@ class Board(gd.BoardGame):
         if activate < 0 or activate > self.sumn1n2sl * 2 - 1:
             activate = self.sumn1n2sl - 1
 
-        if activate >= 0 and activate < self.sumn1n2sl * 2 - 1:
+        if 0 <= activate < self.sumn1n2sl * 2 - 1:
             self.board.active_ship = activate
             self.home_square.update_me = True
             if self.board.active_ship >= 0:
@@ -228,15 +225,15 @@ class Board(gd.BoardGame):
         self.board.units[0].font_color = self.task_str_color
         if self.home_square.pos_id > 0:
             self.carryl[self.home_square.pos_id - 1].font_color = self.font_hl
-        if (self.n1sl > self.home_square.pos_id):
+        if self.n1sl > self.home_square.pos_id:
             self.nums1l[self.home_square.pos_id].font_color = self.font_hl
-        if (self.n2sl > self.home_square.pos_id):
+        if self.n2sl > self.home_square.pos_id:
             self.nums2l[self.home_square.pos_id].font_color = self.font_hl
         self.resultl[self.home_square.pos_id].font_color = self.font_hl
 
     def update(self, game):
         game.fill(self.color)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         s = ""

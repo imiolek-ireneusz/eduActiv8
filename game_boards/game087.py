@@ -141,7 +141,7 @@ class Board(gd.BoardGame):
         self.board.all_sprites_list.move_to_front(self.home_square)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN and (event.key != pygame.K_RETURN and event.key != pygame.K_KP_ENTER):
                 lhv = len(self.home_square.value)
@@ -163,7 +163,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def auto_check_reset(self):
         self.home_square.set_display_check(None)

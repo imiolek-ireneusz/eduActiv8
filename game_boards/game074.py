@@ -180,7 +180,6 @@ class Board(gd.BoardGame):
     def draw_hori_line(self, unit):
         w = unit.grid_w * self.board.scale
         h = unit.grid_h * self.board.scale
-        center = [w // 2, h // 2]
 
         canv = pygame.Surface((w, h - 1))
         canv.fill(self.bg_col)
@@ -190,7 +189,7 @@ class Board(gd.BoardGame):
         unit.update_me = True
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN and (event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT):
                 self.next_step()
@@ -340,7 +339,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill(self.color)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

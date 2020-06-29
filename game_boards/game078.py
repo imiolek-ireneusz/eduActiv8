@@ -37,8 +37,6 @@ class Board(gd.BoardGame):
             self.h_col = ex.hsv_to_rgb(225, 190, 220)
             self.m_col = ex.hsv_to_rgb(170, 190, 220)
 
-        white = (255, 255, 255)
-
         color1 = ex.hsv_to_rgb(225, 70, 230)
         color3 = ex.hsv_to_rgb(225, 255, 255)
         color5 = ex.hsv_to_rgb(225, 180, 240)

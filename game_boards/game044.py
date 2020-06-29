@@ -91,11 +91,8 @@ class Board(gd.BoardGame):
         self.mini_grid = []
         # add objects to the board
         line = []
-        h_start = random.randrange(0, 155, 5)
-        h_step = 100 // (data[2])
 
         for i in range(data[2]):
-            h = (h_start + (self.shuffled[i] - 1) * h_step)
             caption = str(self.shuffled[i])
             self.board.add_unit(x, y, 1, 1, classes.board.ImgShip, caption, white, self.bg_img_src)
             self.board.ships[-1].img = self.bg_img.img.copy()
@@ -149,24 +146,22 @@ class Board(gd.BoardGame):
         self.board.all_sprites_list.move_to_back(self.board.board_bg)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONUP:
             self.check_result()
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         if self.changed_since_check and not self.finished:
-            ships = []
             current = [x for x in range(self.data[2] + 1)]  # self.choice_list[:]
             # collect value and x position on the grid from ships list
             for i in range(len(self.board.ships) - 1):
                 x = self.board.ships[i].grid_x - self.check[2]
                 y = self.board.ships[i].grid_y - self.check[0]
                 w = self.data[3]
-                h = self.data[4]
                 pos = x + (y * w)
                 current[pos] = int(self.board.ships[i].value)
             del (current[-1])

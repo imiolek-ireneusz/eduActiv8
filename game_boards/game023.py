@@ -180,11 +180,11 @@ class Board(gd.BoardGame):
         self.drag = False
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def walk_through(self):
         for i in range(self.word_len):

@@ -30,7 +30,6 @@ class Board(gd.BoardGame):
 
         self.color_s = random.randrange(50, 90, 5)
         self.color_v = random.randrange(230, 255, 5)
-        h = random.randrange(0, 255, 1)
         self.bg_color = [255, 255, 255]
         color = [255, 255, 255]
         white = (255, 255, 255)
@@ -107,9 +106,8 @@ class Board(gd.BoardGame):
                       [True, True, True], [True, True, True], [True, False, False]]
 
         self.canvas = pygame.Surface(
-            [self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1])
+            (self.canvas_block.grid_w * self.board.scale, self.canvas_block.grid_h * self.board.scale - 1))
         self.new_screen()
-        # self.vectors = []
         self.board.add_door(0, 0, 2, 2, classes.board.Door, "", color, "")
 
         self.tool_door = self.board.units[-1]
@@ -170,21 +168,20 @@ class Board(gd.BoardGame):
         self.backup_canvas()
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = event.pos
-            active = self.board.active_ship
-            column = (pos[0] - self.px_padding) // (self.layout.width)
-            row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+            column = (pos[0] - self.px_padding) // self.layout.width
+            row = (pos[1] - self.layout.top_margin) // self.layout.height
             if event.button == 1 and column >= 0 and 0 <= row < self.data[1]:
                 if self.points_count == 0:
-                    pass  # self.new_screen()
+                    pass
 
         elif event.type == pygame.MOUSEBUTTONUP:
             pos = event.pos
             active = self.board.active_ship
-            column = (pos[0] - self.px_padding) // (self.layout.width)
-            row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+            column = (pos[0] - self.px_padding) // self.layout.width
+            row = (pos[1] - self.layout.top_margin) // self.layout.height
             if active != self.canvas_block.unit_id:
                 if active == self.poli_btn.unit_id:
                     self.change_tool(4)
@@ -208,10 +205,9 @@ class Board(gd.BoardGame):
                             self.check_drawing()
 
         elif event.type == pygame.MOUSEMOTION and 0 < self.points_count < self.max_points:
-            active = self.board.active_ship
             pos = event.pos
-            column = (pos[0] - self.px_padding) // (self.layout.width)
-            row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+            column = (pos[0] - self.px_padding) // self.layout.width
+            row = (pos[1] - self.layout.top_margin) // self.layout.height
 
             if column >= 0 and 0 <= row < self.data[1]:
                 canvas_pos = self.snap_to_guide([pos[0] - self.px_padding, pos[1] - self.layout.top_margin])
@@ -329,7 +325,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def v2_to_int(self, vector):
         integers = [int(each) for each in vector]
@@ -381,7 +377,7 @@ class Board(gd.BoardGame):
             self.check_triangle(self.points)
             self.fill_poli(3)
         elif self.max_points == 2:
-            self.check_circle(self.points)
+            self.check_circle()
             self.fill_circle()
 
     def scalar_product(self, v1, v2):
@@ -428,8 +424,8 @@ class Board(gd.BoardGame):
             return False
 
     def collinear_all(self, p):
-        if self.collinear(p[0], p[1], p[2]) and self.collinear(p[1], p[2], p[3]) and self.collinear(p[2], p[3], p[
-            0]) and self.collinear(p[3], p[0], p[1]):
+        if (self.collinear(p[0], p[1], p[2]) and self.collinear(p[1], p[2], p[3]) and
+                self.collinear(p[2], p[3], p[0]) and self.collinear(p[3], p[0], p[1])):
             return True
         else:
             return False
@@ -455,8 +451,8 @@ class Board(gd.BoardGame):
             self.name = ""
         else:
             self.name = self.lang.d["quadrilateral"]
-        if (self.is_parallel(v[0], v[2]) and self.not_intersecting(points[1], points[3], points[0], points[2])) or (
-            self.is_parallel(v[1], v[3]) and self.not_intersecting(points[0], points[2], points[1], points[3])):
+        if ((self.is_parallel(v[0], v[2]) and self.not_intersecting(points[1], points[3], points[0], points[2])) or
+                (self.is_parallel(v[1], v[3]) and self.not_intersecting(points[0], points[2], points[1], points[3]))):
             self.name = self.lang.d["trapezium"]
             if self.is_parallel(v[0], v[2]) and self.is_parallel(v[1], v[3]):
                 self.name = self.lang.d["parallelogram"]
@@ -466,11 +462,11 @@ class Board(gd.BoardGame):
                         self.name = self.lang.d["square"]
                 elif self.is_orthogonal(v[0], v[1]):
                     self.name = self.lang.d["rectangle"]
-            elif self.is_orthogonal(v[0], v[1]) or self.is_orthogonal(v[1], v[2]) or self.is_orthogonal(v[2], v[
-                3]) or self.is_orthogonal(v[3], v[0]):
+            elif (self.is_orthogonal(v[0], v[1]) or self.is_orthogonal(v[1], v[2]) or
+                  self.is_orthogonal(v[2], v[3]) or self.is_orthogonal(v[3], v[0])):
                 self.name = self.lang.d["right_trapezium"]
-            elif abs(self.side_len(self.vectors[0]) - self.side_len(self.vectors[2])) < 0.01 or abs(
-                            self.side_len(self.vectors[1]) - self.side_len(self.vectors[3])) < 0.01:
+            elif (abs(self.side_len(self.vectors[0]) - self.side_len(self.vectors[2])) < 0.01 or
+                  abs(self.side_len(self.vectors[1]) - self.side_len(self.vectors[3])) < 0.01):
                 self.name = self.lang.d["iso_trapezium"]
         elif self.collinear4(points) and not self.collinear_all(points):
             self.name = self.lang.d["triangle_not_really"]
@@ -516,10 +512,10 @@ class Board(gd.BoardGame):
         return self.angle(v[0], v[1]) < 0 and self.angle(v[1], v[2]) < 0 and self.angle(v[2], v[0]) < 0
 
     def t_obtuse(self, v):
-        return not self.t_acute * (v)
+        return not self.t_acute * v
 
     def t_equi(self, v):
         return self.vector_len(v[0]) == self.vector_len(v[1]) == self.vector_len(v[2])
 
-    def check_circle(self, points):
+    def check_circle(self):
         self.name = self.lang.d["circle"]

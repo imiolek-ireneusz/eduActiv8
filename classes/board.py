@@ -1031,7 +1031,6 @@ class Board:
             self.font_path_default = pygame.font.match_font(system_font_list[random.randint(0, len(system_font_list)-1)], bold=False, italic=False)
             self.font_path_default2 = pygame.font.match_font(system_font_list[random.randint(0, len(system_font_list)-1)], bold=False, italic=False)
         """
-        pass
 
     def level_start(self, x_count, y_count, scale):
         self.grid = []  # square availability list

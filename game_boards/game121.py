@@ -259,7 +259,7 @@ class Board(gd.BoardGame):
         self.mainloop.redraw_needed[0] = True
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             if self.lt.rect.topleft[0] < pos[0] < self.lt.rect.topleft[0] + self.lt.rect.width and \

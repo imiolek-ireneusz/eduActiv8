@@ -138,7 +138,7 @@ class Board(gd.BoardGame):
         self.draw_nums()
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN and not self.show_msg and not self.start_sequence:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
@@ -157,7 +157,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def draw_nums(self):
         choice = [x for x in range(self.square_count)]

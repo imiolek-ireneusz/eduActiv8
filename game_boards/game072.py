@@ -205,10 +205,10 @@ class Board(gd.BoardGame):
             self.board.add_unit(xp[4] + (2 - len(str(nbr[i])) * 2) - r_offset, yp[4], len(str(nbr[i])) * 2, 1,
                                 classes.board.Label, "", self.bg_col, "", 21)
             self.draw_hori_line(self.board.units[-1])
-            for i in range(5):
-                xp[i] += 2
-                if i > 0:
-                    yp[i] += 5
+            for j in range(5):
+                xp[j] += 2
+                if j > 0:
+                    yp[j] += 5
             self.home_square = self.board.ships[0]
             self.board.active_ship = self.home_square.unit_id
 
@@ -248,7 +248,7 @@ class Board(gd.BoardGame):
         unit.update_me = True
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 self.auto_check_reset()
@@ -367,7 +367,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill(self.color)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def auto_check_reset(self):
         for i in range(len(self.mpll)):

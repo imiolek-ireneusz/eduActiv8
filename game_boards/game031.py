@@ -101,7 +101,7 @@ class Board(gd.BoardGame):
                     else:
                         color = color2  # !
                         self.board.units[unit_id].font_color = color1
-                    mul = ((i + 1) // 2) * j
+                    # mul = ((i + 1) // 2) * j
                     if i == 1 or j == 1:
                         if (i + 1) // 2 == num1 or j == num2:
                             self.board.units[unit_id].font_color = color3  # !
@@ -120,7 +120,7 @@ class Board(gd.BoardGame):
             self.level.next_board()
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN and event.key != pygame.K_RETURN:
                 lhv = len(self.home_square.value)
@@ -140,7 +140,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         if self.changed_since_check:

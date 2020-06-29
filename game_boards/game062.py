@@ -206,7 +206,7 @@ class Board(gd.BoardGame):
         pygame.draw.aalines(canvas, outline_color, True, self.scaled_lines)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and not self.ai_enabled:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
@@ -246,7 +246,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def ai_walk(self):
         if self.disp_counter < self.disp_len:

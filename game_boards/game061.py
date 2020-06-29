@@ -161,8 +161,6 @@ class Board(gd.BoardGame):
         h2 = data[1] - h1 - data[4]  # -1 #height of the bottom margin minus 1 (game label)
         w2 = (data[0] - data[3] * 4) // 2 - 1  # side margin width
 
-        x = w2
-        y = h1
         small_slots = []
         for j in range(h1, data[1] - h2):
             for i in range(w2, w2 + data[3]):
@@ -208,7 +206,7 @@ class Board(gd.BoardGame):
         self.outline_all(self.color2, 1)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and not self.ai_enabled:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
@@ -248,7 +246,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def ai_walk(self):
         if self.disp_counter < self.disp_len:

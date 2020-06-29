@@ -56,7 +56,7 @@ class Board(gd.BoardGame):
         img_src1 = os.path.join("schemes", scheme, "sheep.png")
         img_src2 = os.path.join("schemes", scheme, "sheep_herd.png")
 
-        self.mylaby = classes.laby.laby(data[0], data[1], 0, 0, scale, line_col, line_width)
+        self.mylaby = classes.laby.Laby(data[0], data[1], 0, 0, scale, line_col, line_width)
         self.mylaby.generate_laby()
 
         self.board.add_unit(0, 0, 1, 1, classes.board.ImgShip, "", bg_col, img_src1)
@@ -73,11 +73,11 @@ class Board(gd.BoardGame):
         self.drag = False
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
         if not self.show_msg:
             self.mylaby.show(game)
 

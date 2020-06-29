@@ -236,7 +236,7 @@ class Board(gd.BoardGame):
             each.font_color = color3
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
@@ -314,7 +314,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def auto_check(self):
         count = 0

@@ -162,7 +162,7 @@ class Board(gd.BoardGame):
             each.immobilize()
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             active = self.board.active_ship
             for i in range(8):

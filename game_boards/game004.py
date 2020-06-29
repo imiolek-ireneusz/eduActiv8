@@ -5,7 +5,6 @@ import classes.game_driver as gd
 import classes.level_controller as lc
 import classes.menu_items
 
-import time
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
@@ -167,7 +166,8 @@ class Board(gd.BoardGame):
 
                         for each in all_compl:
                             if each[2] - 1 < lvl_count[1]:
-                                if self.mainloop.config.user_age_group == 7 and show_all_ages[0] <= each[5] <= show_all_ages[1]:
+                                if (self.mainloop.config.user_age_group == 7 and
+                                        show_all_ages[0] <= each[5] <= show_all_ages[1]):
                                     completions[each[2] - 1] = each[4]
                                 elif self.mainloop.config.user_age_group == each[5]:
                                     completions[each[2] - 1] = each[4]
@@ -186,7 +186,7 @@ class Board(gd.BoardGame):
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             found = False
             for each in self.units:
-                if (each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom):
+                if each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom:
                     if each != self.unit_mouse_over:
                         if self.unit_mouse_over is not None:
                             self.unit_mouse_over.mouse_out()

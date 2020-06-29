@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os
 import pygame
 import random
 
@@ -9,6 +8,7 @@ import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 import classes.drw.fraction_hq
+
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
@@ -158,7 +158,7 @@ class Board(gd.BoardGame):
         ship.uncovered = False
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and self.ai_enabled is False:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
@@ -215,7 +215,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

@@ -171,7 +171,7 @@ class Board(gd.BoardGame):
         self.board.ships[-1].font_color = caption_font_color
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONUP:
             for each in self.board.units:
                 if each.is_door is True:
@@ -184,7 +184,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def auto_check(self):
         if self.board.grid[2] == self.solution_grid:

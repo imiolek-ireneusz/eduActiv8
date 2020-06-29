@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import math
-import os
 import pygame
 import random
-import sys
 
 import classes.board
 import classes.extras as ex
@@ -206,7 +204,6 @@ class Board(gd.BoardGame):
                 self.rt_btn.change_image("nav_r.png")
 
         self.mainloop.redraw_needed[0] = True
-
 
     def pick_random_shape(self):
         if self.half_only:
@@ -487,7 +484,6 @@ class Board(gd.BoardGame):
         pl.append(p)
         return self.collinear_poli(pl)
 
-
     def get_simetrical_shape(self, direction, points):
         hs = (self.canvas_side // 2) * self.scale
         p2 = []
@@ -533,7 +529,7 @@ class Board(gd.BoardGame):
         return r
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = event.pos
             column = (pos[0] - self.px_padding) // (self.layout.width)

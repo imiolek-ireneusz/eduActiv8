@@ -459,7 +459,7 @@ class Board(gd.BoardGame):
         self.mainloop.dialog.show_dialog(3, self.lang.d["Complete the pattern"])
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONUP:
             for each in self.board.units:
                 if each.is_door is True:
@@ -473,7 +473,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill(self.color)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def auto_check(self):
         for each in self.board.ships:

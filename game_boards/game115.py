@@ -670,7 +670,7 @@ class Board(gd.BoardGame):
                 self.board.move_unit(self.sm2b.unit_id, 26, 4)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             active = self.board.active_ship
             if active == 0:
@@ -782,7 +782,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

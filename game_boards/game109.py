@@ -265,7 +265,7 @@ class Board(gd.BoardGame):
         self.ans_m.set_outline(self.color4, 5)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 self.auto_check_reset()

@@ -6,66 +6,24 @@ Laby, par Mehdi Cherti 2010(mehdidc):
 
 Laby, 2010 by Mehdi Cherti(mehdidc):
 - Generation of a labyrinth
-- Use of astar algorithm to find the shortest path(selection of the destination with the mouse) #removed
-downloaded from:
+- Use of astar algorithm to find the shortest path (selection of the destination with the mouse) # removed
+Available at:
     http://www.pythonfrance.com/codes/GENERATION-LABYRINTHE-AVEC-RECHERCHE-CHEMIN-PLUS-COURT-AVEC_51293.aspx
     
 Rebuild and translated by Ireneusz Imiolek
 """
 
 import pygame
-from  random import randint, choice
+from random import randint, choice
 
 
-class def_const:
-    def __getattr__(self, attr):
-        return Const.__dict__[attr]
-
-    def __setattr__(self, attr, value):
-        if attr in self.__dict__.keys():
-            raise Exception("Impossible to redefine the constant")
-        else:
-            self.__dict__[attr] = value
-
-    def __str__(self):
-        return self.__dict.__str__()
-
-
-const = def_const()
-""" definitions des constantes """
-
-# colours
-const.white = (255, 255, 255)
-const.pink = (255, 0, 255)
-const.black = (0, 0, 0)
-const.yellow = (255, 255, 0)
-
-# directions
-const.right = 0
-const.left = 1
-const.up = 2
-const.down = 3
-
-
-class Point:
-    def __init__(self, xy):
-        self.x = xy[0]
-        self.y = xy[1]
-
-
-"""Laby Cell Class definition"""
-
-
-class Laby_cell:
+class LabyCell:
     def __init__(self):
         self.state = False
         self.laby_doors = [True, True, True, True]  # Right, Left, Up, Down
 
 
-""" Laby Class """
-
-
-class laby:
+class Laby:
     def __init__(self, w, h, sx=0, sy=0, scale=30, col=(0, 0, 0), line_width = 3):
         self.w = w
         self.h = h
@@ -76,31 +34,34 @@ class laby:
         self.hc = scale  # const.hc
         self.sx = sx
         self.sy = sy
+
+        self.right = 0
+        self.left = 1
+        self.up = 2
+        self.down = 3
+
         self.displayed_once = True
 
         """ Laby_cells initialization for each Laby_cell, it initializes its position in the labyrinth """
         for v in range(self.w * self.h):
-            a = Laby_cell()
+            a = LabyCell()
             a.x = v % self.w
             a.y = v // self.w
             self.Laby_cells.append(a)
 
-    """ returns the Laby_cell corresponding to the position(x, y) """
-
     def get_cell(self, x, y):
+        """ returns the Laby_cell corresponding to the position(x, y) """
         return self.Laby_cells[x + y * self.w]
 
-    """ return direction opposite to a direction """
-
     def notdir(self, dir):
-        if dir == const.right: return const.left
-        if dir == const.left: return const.right
-        if dir == const.up: return const.down
-        if dir == const.down: return const.up
-
-    """ generation of the labyrinth """
+        """ return a direction opposite to the direction """
+        if dir % 2 == 0:
+            return dir + 1
+        else:
+            return dir - 1
 
     def generate_laby(self, x=-1, y=-1):
+        """ generation of the labyrinth """
         if x == -1:
             x = randint(0, self.w - 1)
             y = randint(0, self.h - 1)
@@ -108,60 +69,56 @@ class laby:
         if not cell_act.state:
             cell_act.state = True
             tab = []
-            if x + 1 < self.w and not self.get_cell(x + 1, y).state: tab.append((x + 1, y, const.right))
-            if x - 1 >= 0 and not self.get_cell(x - 1, y).state: tab.append((x - 1, y, const.left))
-            if y - 1 >= 0 and not self.get_cell(x, y - 1).state: tab.append((x, y - 1, const.up))
-            if y + 1 < self.h and not self.get_cell(x, y + 1).state: tab.append((x, y + 1, const.down))
+            if x + 1 < self.w and not self.get_cell(x + 1, y).state: tab.append((x + 1, y, self.right))
+            if x - 1 >= 0 and not self.get_cell(x - 1, y).state: tab.append((x - 1, y, self.left))
+            if y - 1 >= 0 and not self.get_cell(x, y - 1).state: tab.append((x, y - 1, self.up))
+            if y + 1 < self.h and not self.get_cell(x, y + 1).state: tab.append((x, y + 1, self.down))
             if tab:
                 while tab:
-                    C = choice(tab)
-                    if not self.get_cell(C[0], C[1]).state:
-                        cell = self.get_cell(C[0], C[1])
-                        cell_act.laby_doors[C[2]] = False
-                        cell.laby_doors[self.notdir(C[2])] = False
-                        self.generate_laby(C[0], C[1])
-                    tab.remove(C)
+                    c = choice(tab)
+                    if not self.get_cell(c[0], c[1]).state:
+                        cell = self.get_cell(c[0], c[1])
+                        cell_act.laby_doors[c[2]] = False
+                        cell.laby_doors[self.notdir(c[2])] = False
+                        self.generate_laby(c[0], c[1])
+                    tab.remove(c)
                 return True
             else:
                 return False
 
-    """ display the labyrinth """
-
-    def show(self, buffer):
+    def show(self, bfr):
+        """ display the labyrinth """
         W, H = self.wc, self.hc
         sx, sy = self.sx, self.sy
         for y in range(self.h - 1):
             for x in range(self.w - 1):
                 c = self.get_cell(x, y)
-                if c.laby_doors[const.right]:
-                    pygame.draw.line(buffer, self.color, (sx + (x + 1) * W, sy + y * H),
+                if c.laby_doors[self.right]:
+                    pygame.draw.line(bfr, self.color, (sx + (x + 1) * W, sy + y * H),
                                      (sx + (x + 1) * W, sy + (y + 1) * H), self.line_width)
-                if c.laby_doors[const.down]:
-                    pygame.draw.line(buffer, self.color, (sx + (x) * W, sy + (y + 1) * H),
+                if c.laby_doors[self.down]:
+                    pygame.draw.line(bfr, self.color, (sx + (x) * W, sy + (y + 1) * H),
                                      (sx + (x + 1) * W, sy + (y + 1) * H), self.line_width)
         x = self.w - 1
         for y in range(self.h - 1):
             c = self.get_cell(x, y)
-            if c.laby_doors[const.down]:
-                pygame.draw.line(buffer, self.color, (sx + x * W, sy + (y + 1) * H),
+            if c.laby_doors[self.down]:
+                pygame.draw.line(bfr, self.color, (sx + x * W, sy + (y + 1) * H),
                                  (sx + (x + 1) * W, sy + (y + 1) * H), self.line_width)
         y = self.h - 1
         for x in range(self.w - 1):
             c = self.get_cell(x, y)
-            if c.laby_doors[const.right]:
-                pygame.draw.line(buffer, self.color, (sx + (x + 1) * W, sy + (y) * H),
+            if c.laby_doors[self.right]:
+                pygame.draw.line(bfr, self.color, (sx + (x + 1) * W, sy + (y) * H),
                                  (sx + (x + 1) * W, sy + (y + 1) * H), self.line_width)
 
-    """ create the labyrinth grid table twice as big as the original laby"""
-
     def labi_to_array(self):
-        W, H = self.wc, self.hc
-        sx, sy = self.sx, self.sy
+        """ create the labyrinth grid table twice as big as the original laby. """
         labi_grid = [[0 for x in range(0, self.w * 2 - 1)] for y in range(0, self.h * 2 - 1)]
         for y in range(self.h - 1):
             for x in range(self.w - 1):
                 c = self.get_cell(x, y)
-                if c.laby_doors[const.right]:
+                if c.laby_doors[self.right]:
                     gx = x * 2 + 1
                     gy = y * 2
                     labi_grid[gy][gx] = 1
@@ -169,7 +126,7 @@ class laby:
                         labi_grid[gy - 1][gx] = 1
                     if y < self.h - 1:
                         labi_grid[gy + 1][gx] = 1
-                if c.laby_doors[const.down]:
+                if c.laby_doors[self.down]:
                     gx = x * 2
                     gy = y * 2 + 1
                     labi_grid[gy][gx] = 1
@@ -180,7 +137,7 @@ class laby:
         x = self.w - 1
         for y in range(self.h - 1):
             c = self.get_cell(x, y)
-            if c.laby_doors[const.down]:
+            if c.laby_doors[self.down]:
                 gx = x * 2
                 gy = y * 2 + 1
                 labi_grid[gy][gx] = 1
@@ -188,7 +145,7 @@ class laby:
         y = self.h - 1
         for x in range(self.w - 1):
             c = self.get_cell(x, y)
-            if c.laby_doors[const.right]:
+            if c.laby_doors[self.right]:
                 gx = x * 2 + 1
                 gy = y * 2
                 labi_grid[gy][gx] = 1

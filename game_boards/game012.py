@@ -95,7 +95,7 @@ class Board(gd.BoardGame):
         self.add_next_move()
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if self.ship_id < 0 and event.type == pygame.MOUSEBUTTONDOWN:
             # make it impossible to deselect the main character
             self.board.active_ship = 0
@@ -146,7 +146,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def after_keydown_move(self):
         self.update_arrows()

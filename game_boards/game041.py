@@ -125,8 +125,6 @@ class Board(gd.BoardGame):
                 j += data[8]
         elif self.mainloop.m.game_variant == 1:
             for i in range(start_from, end_at):
-                s = 100
-                v = 255
                 hx = h + (i - start_from) * data[5]
                 color2 = ex.hsv_to_rgb(hx, 255, 200)
 
@@ -387,7 +385,7 @@ class Board(gd.BoardGame):
         functions[index](data, canvas, i)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
         if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
             self.auto_check_reset()
@@ -401,7 +399,7 @@ class Board(gd.BoardGame):
     def update(self, game):
         game.fill((255, 255, 255))
 
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def auto_check_reset(self):
         for each in self.board.ships:

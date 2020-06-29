@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pygame
-from math import pi, cos, sin, radians
+from math import pi, cos, sin
 
 from classes.simple_vector import Vector2
 

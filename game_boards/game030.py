@@ -19,8 +19,6 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 0, 0]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-        s = 100
-        v = 255
         h = random.randrange(0, 255)
         color3 = ex.hsv_to_rgb(h, 150, 75)
         self.digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -228,7 +226,7 @@ class Board(gd.BoardGame):
             each.font_color = color3
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]

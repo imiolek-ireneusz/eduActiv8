@@ -13,7 +13,6 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        #self.level = lc.Level(self, mainloop, 5, 6)
         self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
         self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 9, 6)
@@ -30,13 +29,11 @@ class Board(gd.BoardGame):
             self.bg_col = (255, 255, 255, 0)
             color1 = ex.hsv_to_rgb(h, s, v)  # highlight 2
             self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
-            bg_color = ex.hsv_to_rgb(h, 40, 255)
         else:
             cl = self.mainloop.scheme.u_color
             self.bg_col = (cl[0], cl[1], cl[2], 0)
             color1 = self.mainloop.scheme.u_font_color  # (0,0,0)#ex.hsv_to_rgb(h,s,v) #highlight 2
             self.color2 = self.mainloop.scheme.u_font_color3  # contours & borders
-            bg_color = self.bg_col
 
         data = [9, 5, 3]
         data.extend(
@@ -53,28 +50,24 @@ class Board(gd.BoardGame):
             obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Ship,
                            classes.board.Ship]
             instruction = self.d["Fract instr0"]
-            instrp = self.dp["Fract instr0"]
         elif self.mainloop.m.game_variant == 1:
             drawing_f = [self.draw_circles, self.draw_rectangles, self.draw_minicircles, self.draw_polygons,
                          self.draw_fractions]
             obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Ship,
                            classes.board.Letter]
             instruction = self.d["Fract instr1"]
-            instrp = self.dp["Fract instr1"]
         elif self.mainloop.m.game_variant == 2:
             drawing_f = [self.draw_fractions, self.draw_circles, self.draw_rectangles, self.draw_minicircles,
                          self.draw_polygons]
             obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Ship,
                            classes.board.Ship]
             instruction = self.d["Fract instr2"]
-            instrp = self.dp["Fract instr2"]
         elif self.mainloop.m.game_variant == 3:
             drawing_f = [self.draw_percents, self.draw_circles, self.draw_rectangles, self.draw_decimals,
                          self.draw_fractions]
             obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Letter,
                            classes.board.Letter]
             instruction = self.d["Fract instr3"]
-            instrp = self.dp["Fract instr3"]
             extra_w = 0
         elif self.mainloop.m.game_variant == 4:
             drawing_f = [self.draw_ratios, self.draw_circles, self.draw_rectangles, self.draw_minicircles,
@@ -82,13 +75,12 @@ class Board(gd.BoardGame):
             obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Ship,
                            classes.board.Ship]
             instruction = self.d["Fract instr4"]
-            instrp = self.dp["Fract instr4"]
             extra_w = 1
         self.instruction = instruction
 
         data[0] = data[0] + extra_w
         self.data = data
-        if self.mainloop.m.game_variant == 4:#2:
+        if self.mainloop.m.game_variant == 4:
             self.board.set_animation_constraints(2, data[0], 0, self.row_count)
         else:
             self.board.set_animation_constraints(1, data[0], 0, self.row_count)
@@ -187,7 +179,7 @@ class Board(gd.BoardGame):
             else:
                 canvas = pygame.Surface((size, size - 1), flags=pygame.SRCALPHA)
             canvas.fill(self.bg_col)
-            drawing_f[f_index](numbers[i - f_index * self.row_count], canvas, size, center, color1)  # data[7](data, canvas, i)
+            drawing_f[f_index](numbers[i - f_index * self.row_count], canvas, size, center, color1)
 
             if i < self.row_count:
                 self.board.units[-1].hidden_value = numbers[i]
@@ -210,21 +202,11 @@ class Board(gd.BoardGame):
 
             self.board.all_sprites_list.move_to_front(self.board.units[ind + i])
 
-
         if self.row_count < 5:
             self.board.add_unit(0, data[1] - (5 - self.row_count), data[0], data[1] - self.row_count, classes.board.Label, "", self.bg_col, "", 9)
-        """
-        self.board.add_unit(0, data[1] - 1, data[0], 1, classes.board.Letter, instruction, bg_color, "", 9)
-        self.board.ships[-1].set_outline(self.color2, 1)
-        self.board.ships[-1].immobilize()
-        self.board.ships[-1].font_color = self.color2
-        self.board.ships[-1].speaker_val = instrp
-        self.board.ships[-1].speaker_val_update = False
-        """
 
     def show_info_dialog(self):
         self.mainloop.dialog.show_dialog(3, self.instruction)
-
 
     def draw_circles(self, numbers, canvas, size, center, color):
         angle_step = 2 * pi / numbers[1]
@@ -387,7 +369,7 @@ class Board(gd.BoardGame):
         pass
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONUP:
             for each in self.board.units:
                 if each.is_door is True:
@@ -405,7 +387,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         correct = True

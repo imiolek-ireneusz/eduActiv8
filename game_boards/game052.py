@@ -20,14 +20,12 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
 
         color = ex.hsv_to_rgb(225, 15, 235)
-        color2 = (255, 255, 255)
         self.col_c = (0, 255, 255)
         self.col_m = (255, 0, 255)
         self.col_y = (255, 255, 0)
         self.col_k = (0, 0, 0)
         self.col_e = (255, 255, 255)
-        colorkey = (2, 2, 2)
-        self.col_bg = (0, 0, 0, 0)  # self.col_e  # (255,246,219)
+        self.col_bg = (0, 0, 0, 0)
         data = [32, 23]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=True)
@@ -189,11 +187,11 @@ class Board(gd.BoardGame):
         self.mix()
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

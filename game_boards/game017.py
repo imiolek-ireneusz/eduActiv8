@@ -262,7 +262,7 @@ class Board(gd.BoardGame):
         self.mainloop.redraw_needed[0] = True
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             self.active_item = self.board.ships[self.board.active_ship]
             if self.active_item.unit_id < self.abc_len:
@@ -337,7 +337,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

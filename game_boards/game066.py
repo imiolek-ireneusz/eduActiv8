@@ -69,7 +69,6 @@ class Board(gd.BoardGame):
         else:
             data = [19, 10, True, True, False, False, False, False, False, True, True, 15]
         h_pool = range(1, 13)
-        m_pool = range(0, 60)
 
         # visual display properties
         self.show_outer_ring = data[2]
@@ -346,7 +345,7 @@ class Board(gd.BoardGame):
 
         for i in range(2):
             # angle for line
-            angle = self.angles[i]  # angle_start + angle_step*i
+            angle = self.angles[i]
 
             x0 = self.center[0] - start_offset[i] * cos(angle)
             y0 = self.center[1] - start_offset[i] * sin(angle)
@@ -374,7 +373,7 @@ class Board(gd.BoardGame):
         self.mainloop.redraw_needed[0] = True
 
     def scalled_img(self, image, new_w, new_h):
-        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        """scales image depending on pygame version and bit depth using either smoothscale or scale"""
         if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             img = pygame.transform.smoothscale(image, (new_w, new_h))
         else:
@@ -439,7 +438,7 @@ class Board(gd.BoardGame):
         return angle
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         self.tm = self.time[:]
 
         if event.type == pygame.MOUSEMOTION and self.hand_id > 0:
@@ -529,7 +528,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

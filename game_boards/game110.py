@@ -326,7 +326,7 @@ class Board(gd.BoardGame):
             self.mainloop.redraw_needed[0] = True
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             active = self.board.active_ship
             if self.missing_number == 1:

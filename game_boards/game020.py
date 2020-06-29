@@ -180,7 +180,7 @@ class Board(gd.BoardGame):
                          [center[0] + size // 7, center[1] - lh // 2 + la], lh)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONUP:
             for each in self.board.units:
                 if each.is_door is True:
@@ -196,7 +196,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill(self.bg_col)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def auto_check_reset(self):
         for each in self.board.ships:

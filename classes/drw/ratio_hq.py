@@ -3,8 +3,6 @@
 import pygame
 from math import pi, cos, sin, fsum
 
-from classes.simple_vector import Vector2
-
 
 class Ratio:
     def __init__(self, unit_size, scale, color1, color2, color3, border_color1, border_color2, border_color3, numbers):
@@ -57,4 +55,3 @@ class Ratio:
             else:
                 pygame.draw.circle(self.canvas, self.color3, [int(x), int(y)], r2, 0)
                 pygame.draw.circle(self.canvas, self.border_color3, [int(x), int(y)], r2, 2)
-            # Draw the line from the self.center to the calculated end point

@@ -16,7 +16,6 @@ class Board(gd.BoardGame):
     def create_game_objects(self, level=1):
         self.board.decolorable = False
         self.board.draw_grid = False
-        white = (255, 255, 255, 0)
         self.font_col = (0, 0, 0)
         if self.mainloop.scheme is not None:
             if self.level.lvl > 1:
@@ -148,13 +147,10 @@ class Board(gd.BoardGame):
                 self.board.ships[i].font_color = self.font_col
             if self.level.lvl == 4:
                 self.board.ships[i].readable = False
-        # self.board.add_door(0,0,data[0],data[1],classes.board.Door,"",white)
-        # self.board.units[-1].image.set_colorkey(None)
+
         for each in self.board.ships:
             self.board.all_sprites_list.move_to_front(each)
             each.highlight = False
-            # each.outline_highlight = False
-            # each.set_outline([180, 180, 250], 1)
 
         for each in self.board.units:
             each.outline = False
@@ -205,23 +201,18 @@ class Board(gd.BoardGame):
 
     def draw_splash(self, canvas, size, color, outline_color):
         pygame.draw.polygon(canvas, color, self.scaled_lines, 0)
-        #pygame.draw.aalines(canvas, outline_color, True, self.scaled_lines)
         pygame.draw.lines(canvas, outline_color, True, self.scaled_lines)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
             self.auto_check_reset()
         if event.type == pygame.MOUSEMOTION:
             if self.drag:
                 self.swap_font_color()
-            #  if self.drag and self.mouse_entered_new:
-            #  self.swap_font_color()
         elif event.type == pygame.MOUSEBUTTONUP:
             self.swap_font_color()
             self.check_result()
-            #  if self.drag and self.mouse_entered_new:
-            #  self.swap_font_color()
 
     def after_keydown_move(self):
         # in case somebody uses keyboard to move the labels
@@ -235,24 +226,23 @@ class Board(gd.BoardGame):
             if self.level.lvl == 1:
                 active_ship.font_color = self.init_font_color[self.shuffled2[self.board.active_ship]]
             else:
-                active_ship.font_color = self.font_col  # (0,0,0,0)
+                active_ship.font_color = self.font_col
         active_ship.update_me = True
 
     def update(self, game):
         game.fill(self.bg_col)
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         # checking copied from number sorting game and re-done
         match_found = False
-        if self.board.grid[0][self.center - 2:self.center + 3] == [1, 1, 1, 1, 1]:  # self.solution_grid:
+        if self.board.grid[0][self.center - 2:self.center + 3] == [1, 1, 1, 1, 1]:
             ships = []
             units = []
             # collect value and x position on the grid from ships list
             for i in range(5):
                 ships.append([self.board.ships[i].grid_x, self.board.ships[i].value, self.board.ships[i]])
                 units.append([self.board.units[i].grid_x, self.board.units[i].value])
-            # ships_sorted = sorted(ships)
             ships.sort()
             units.sort()
             correct = True

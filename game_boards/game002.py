@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import pygame
-
 import classes.board
 import classes.extras as ex
 import classes.game_driver as gd
@@ -17,8 +15,6 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.show_info_btn = False
 
-        #color1 = (220, 220, 220)
-        #color2 = (255, 255, 255)
         color1 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 50, 255)
         color2 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 30, 255)
 
@@ -55,8 +51,6 @@ class Board(gd.BoardGame):
 
         left = 0
         colors = [color1, color2]
-
-        #self.board.add_unit(0, 0, data[0], 1, classes.board.Label, self.lang.d["Translators"], colors[1], "", 4)
 
         # column 1
         top = 0
@@ -172,13 +166,12 @@ class Board(gd.BoardGame):
             each.font_color = font_color
             each.align = 1
 
-
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         pass

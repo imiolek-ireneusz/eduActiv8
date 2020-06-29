@@ -168,7 +168,7 @@ class Board(gd.BoardGame):
         self.mainloop.dialog.show_dialog(3, self.d["Check the shopping list"])
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONUP:
             for each in self.board.units:
                 if each.is_door is True:

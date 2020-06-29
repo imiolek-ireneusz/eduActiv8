@@ -39,7 +39,6 @@ class Board(gd.BoardGame):
             self.h_col = color5
             self.m_col = color6
 
-            color = self.mainloop.scheme.u_color
             white = self.mainloop.scheme.u_color
             gray = (100, 100, 100)
         else:
@@ -56,7 +55,6 @@ class Board(gd.BoardGame):
             self.h_col = ex.hsv_to_rgb(225, 190, 220)
             self.m_col = ex.hsv_to_rgb(170, 190, 220)
 
-            color = (255, 255, 255)
             white = (255, 255, 255)
             gray = (100, 100, 100)
 
@@ -138,7 +136,6 @@ class Board(gd.BoardGame):
         self.data = data
 
         self.layout.update_layout(data[0], data[1])
-        scale = self.layout.scale
         self.board.level_start(data[0], data[1], self.layout.scale)
 
         gv = self.mainloop.m.game_variant
@@ -266,12 +263,10 @@ class Board(gd.BoardGame):
         self.ans_m.set_display_check(None)
 
     def hands_vars(self):
-        numbers = [2, 2]
         self.angle_step_12 = 2 * pi / 12
         self.angle_step_60 = 2 * pi / 60
 
         self.angle_start = -pi / 2
-        angle_arc_start = -pi / 2
         self.r = self.size // 3 + self.size // 10
 
         self.rs = [self.r * 0.6, self.r * 0.85, self.r * 0.6]
@@ -429,7 +424,7 @@ class Board(gd.BoardGame):
         self.mainloop.redraw_needed[0] = True
 
     def scalled_img(self, image, new_w, new_h):
-        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        """scales image depending on pygame version and bit depth using either smoothscale or scale"""
         if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             img = pygame.transform.smoothscale(image, (new_w, new_h))
         else:
@@ -490,7 +485,7 @@ class Board(gd.BoardGame):
         return angle
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         self.tm = self.time[:]
         if event.type == pygame.MOUSEMOTION and self.hand_id > 0:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
@@ -528,10 +523,8 @@ class Board(gd.BoardGame):
                 self.hand_id = 0
                 if self.is_contained(pos, coords_id=0):
                     self.hand_id = 1
-                    # print("activated: %d" % self.hand_id)
                 elif self.is_contained(pos, coords_id=1):
                     self.hand_id = 2
-                    # print("activated: %d" % self.hand_id)
                 elif self.rs[0] * 1.1 > r:
                     h = (self.current_angle(pos, r)) / self.angle_step_12
                     if int(h) == 0:
@@ -548,13 +541,6 @@ class Board(gd.BoardGame):
                 self.change_time_btn(-1, 0)
             elif active == 4:
                 self.change_time_btn(0, -1)
-            """
-            elif active == 5:
-                self.change_time_btn(0, 10)
-            elif active == 6:
-                self.change_time_btn(3, 0)
-            """
-
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             self.hand_id = 0
         if self.tm != self.time:
@@ -589,14 +575,13 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         if self.time[0] == self.target_time[0]:
             self.ans_h.set_display_check(True)
         else:
             self.ans_h.set_display_check(False)
-
 
         if self.time[1] == self.target_time[1]:
             self.ans_m.set_display_check(True)

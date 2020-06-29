@@ -21,8 +21,6 @@ class Board(gd.BoardGame):
         self.board.decolorable = False
         self.vis_buttons = [1, 1, 1, 1, 1, 0, 1, 1, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-        s = 100
-        v = 255
         h1 = random.randrange(0, 180, 5)
         h2 = random.randrange(h1+30, 255, 5)
 
@@ -92,7 +90,6 @@ class Board(gd.BoardGame):
             self.board.ships[-1].checkable = True
             self.board.ships[-1].init_check_images()
             self.board.ships[-1].readable = False
-            #self.board.ships[-1].font_color = ex.hsv_to_rgb(h, 255, 140)
 
             self.units.append(self.board.ships[-1])
 
@@ -126,7 +123,7 @@ class Board(gd.BoardGame):
         self.mainloop.dialog.show_dialog(3, self.d["Find and separate"])
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONUP:
             for each in self.board.units:
                 if each.is_door is True:
@@ -144,7 +141,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         correct = True

@@ -773,7 +773,7 @@ class Board(gd.BoardGame):
             self.board.move_unit(self.eq4.unit_id, self.sm1a.grid_x+2, 3)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             for each in self.text_fields:
@@ -908,7 +908,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         if self.response[0] == self.sum_numbers[0]:

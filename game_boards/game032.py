@@ -151,7 +151,7 @@ class Board(gd.BoardGame):
                 each.set_display_check(None)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             self.auto_check_reset()
@@ -160,7 +160,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         all_true = True

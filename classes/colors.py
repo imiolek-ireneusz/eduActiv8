@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import random
 import classes.extras as ex
 import copy
-
-
 
 
 class Color:

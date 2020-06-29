@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import colorsys
 import copy
 import os
 import pygame
 import sys
-
 import classes.extras as ex
 
 """ Template
@@ -18,6 +16,7 @@ self.board.add_universal_unit(grid_x=0, grid_y=0, grid_w=4, grid_h=4, txt="",
                                       txt_align=(0, 0), font_type=0,
                                       multi_color=True, alpha=True, immobilized=True)
 """
+
 
 class ImageLayer:
     def __init__(self, unit, canvas, img_src, alpha):
@@ -183,7 +182,7 @@ class Universal(pygame.sprite.Sprite):
 
     def set_blit_mask(self, mask_img_src):
         self.use_blit_mask = True
-        self.mask_img_src =  mask_img_src
+        self.mask_img_src = mask_img_src
         self.mask_surf = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1),
                                         flags=pygame.SRCALPHA)
         self.layer_mask = ImageLayer(self, self.mask_surf, self.mask_img_src, self.alpha)
@@ -483,7 +482,6 @@ class Universal(pygame.sprite.Sprite):
                                 test_line = ""
                                 word = ""
                                 value = []
-                                valx = ""
                                 try:
                                     valx = unicode(self.value, "utf-8")
                                 except UnicodeDecodeError:
@@ -568,7 +566,7 @@ class Universal(pygame.sprite.Sprite):
                     else:
                         val = value[i]
                     try:
-                        text = self.font.render("%s" % (val), 1, self.font_colors[0])
+                        text = self.font.render("%s" % val, 1, self.font_colors[0])
                     except:
                         pass
 
@@ -651,8 +649,8 @@ class Universal(pygame.sprite.Sprite):
         """draws an 'outline' around the unit"""
         pass
 
-    def set_outline(self, color=[255, 0, 0], width=2):
-        'enables the draw_outline and sets line color and width'
+    def set_outline(self, color=(255, 0, 0), width=2):
+        """enables the draw_outline and sets line color and width"""
         pass
 
     def move(self, board, x, y):

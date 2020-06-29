@@ -11,7 +11,6 @@ import classes.level_controller as lc
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        #self.level = lc.Level(self, mainloop, 1, 16)
         self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
         self.level = lc.Level(self, mainloop, self.lvlc[0], self.lvlc[1])
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 18, 9)
@@ -23,8 +22,8 @@ class Board(gd.BoardGame):
 
         white = (255, 255, 255)
 
-        level_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
-                                                        self.level.lvl)
+        level_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid,
+                                                           self.mainloop.config.user_age_group, self.level.lvl)
         self.chapters = self.mainloop.xml_conn.get_chapters(self.mainloop.m.game_dbid,
                                                             self.mainloop.config.user_age_group)
         data = [(level_data[0] + 1) * 2, level_data[1] + 1]
@@ -96,14 +95,11 @@ class Board(gd.BoardGame):
                     else:
                         color = color2
                         self.board.units[unit_id].font_color = color1
-                    mul = ((i + 1) // 2) + j
                     if i == 1 or j == 1:
                         if (i + 1) // 2 == num1 or j == num2:
                             self.board.units[unit_id].font_color = color3  # !
                         else:
                             self.board.units[unit_id].font_color = color1
-                    else:
-                        caption = ""
 
                     self.board.units[unit_id].color = color
                     self.board.units[unit_id].update_me = True
@@ -111,13 +107,12 @@ class Board(gd.BoardGame):
             self.outline_all(0, 1)
 
             self.home_square = self.board.units[(num1 - 1) * self.data[1] + num2 - 1]
-
             self.mainloop.redraw_needed[0] = True
         else:
             self.level.next_board()
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN and event.key != pygame.K_RETURN:
                 lhv = len(self.home_square.value)
@@ -137,7 +132,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         if self.changed_since_check:

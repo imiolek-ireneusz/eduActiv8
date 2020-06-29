@@ -59,7 +59,7 @@ class Board(gd.BoardGame):
         scale = self.layout.scale
         self.board.level_start(data[0], data[1], scale)
 
-        self.mylaby = classes.laby.laby((data[0] + 1) // 2, (data[1] + 1) // 2, 0, 0, scale)
+        self.mylaby = classes.laby.Laby((data[0] + 1) // 2, (data[1] + 1) // 2, 0, 0, scale)
         self.mylaby.generate_laby()
         laby_grid = self.mylaby.labi_to_array()
         self.solution = [data[0] - 1, data[1] - 1]
@@ -89,11 +89,11 @@ class Board(gd.BoardGame):
             if self.board.ships[0].grid_pos == self.solution:
                 self.check_result()
 
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def after_keydown_move(self):
         self.changed_since_check = True

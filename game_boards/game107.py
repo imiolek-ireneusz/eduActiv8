@@ -14,6 +14,7 @@ import classes.game_driver as gd
 import classes.level_controller as lc
 import classes.extras as ex
 
+
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.lvlc = mainloop.xml_conn.get_level_count(mainloop.m.game_dbid, mainloop.config.user_age_group)
@@ -109,7 +110,6 @@ class Board(gd.BoardGame):
         self.clock_fonts = []
         self.points = int(round((self.board.scale * 72 / 96) * 1.2, 0))
         xw = [6, 0]
-        margin_left = (data[0] - 2 * xw[0]) // 2
         self.clock_fonts.append(pygame.font.Font(os.path.join('res', 'fonts', 'FreeSans', 'FreeSansBold.ttf'),
                                                  (int(self.points / (self.board.scale / (
                                                              42 * self.size * xw[0] / 500.0))))))
@@ -286,7 +286,7 @@ class Board(gd.BoardGame):
         self.ans_m.set_outline(self.color4, 5)
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 self.auto_check_reset()
@@ -393,7 +393,6 @@ class Board(gd.BoardGame):
                 self.ans_m.value = str(int(self.ans_m.value) - 1)
 
         # update captions
-        diff = self.get_diff()
         self.h_caption.set_value([self.lang._n("hour", int(self.ans_h.value)), ""])
         self.m_caption.set_value([self.lang._n("minute", int(self.ans_m.value)), ""])
 

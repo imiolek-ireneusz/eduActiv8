@@ -179,20 +179,20 @@ class GamePlay:
 
     def on_resize(self, size, info):
         if android is None:
-            repost = False
+            # repost = False
             if size[0] < self.config.size_limits[0]:
                 size[0] = self.config.size_limits[0]
-                repost = True
+                # repost = True
             if size[0] > self.config.size_limits[2]:
                 size[0] = self.config.size_limits[2]
-                repost = True
+                # repost = True
 
             if size[1] < self.config.size_limits[1]:
                 size[1] = self.config.size_limits[1]
-                repost = True
+                # repost = True
             if size[1] > self.config.size_limits[3]:
                 size[1] = self.config.size_limits[3]
-                repost = True
+                # repost = True
 
             if size != self.fs_size or self.config.platform == "macos":
                 self.wn_size = size[:]
@@ -260,7 +260,7 @@ class GamePlay:
             self.scheme = eval("classes.colors.%sScheme()" % scheme)
         self.info.create()
         self.fs_rescale(self.info)
-        #self.m.lang_change()
+        # self.m.lang_change()
         self.game_board.line_color = self.game_board.board.board_bg.line_color
 
         if scheme is None:

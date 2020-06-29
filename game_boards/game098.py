@@ -363,9 +363,9 @@ class Board(gd.BoardGame):
         gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = event.pos
-            active = self.board.active_ship
-            column = (pos[0] - self.px_padding) // (self.layout.width)
-            row = (pos[1] - self.layout.top_margin) // (self.layout.height)
+            # active = self.board.active_ship
+            # column = (pos[0] - self.px_padding) // (self.layout.width)
+            # row = (pos[1] - self.layout.top_margin) // (self.layout.height)
 
         elif event.type == pygame.MOUSEBUTTONUP:
             pos = event.pos

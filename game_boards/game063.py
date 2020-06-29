@@ -236,8 +236,6 @@ class Board(gd.BoardGame):
 
         self.hands_vars()
         self.draw_hands()
-        #self.draw_hands(self.time, canvas, size, center, [color1, color2], [color3, color4], [color5, color6],
-        #                [color7, color8])  # data[7](data, canvas, i)
 
         self.clock_canvas.hidden_value = [2, 3]  # numbers[i]
         self.clock_canvas.font_color = color2
@@ -399,8 +397,6 @@ class Board(gd.BoardGame):
             x3 = hand_width[i] * cos(angle + pi / 2) + self.center[0]
             y3 = hand_width[i] * sin(angle + pi / 2) + self.center[1]
 
-            points = [[x0, y0], [x2, y2], [x1, y1], [x3, y3]]
-            #self.hand_coords[i] = points
         self.clock_wrapper.update_me = True
 
         for i in range(0, 2):
@@ -408,12 +404,11 @@ class Board(gd.BoardGame):
             img = self.rotatePivoted(self.hands[i], angle, self.pivot)
             self.canvas.blit(img[0], ((self.size - self.whs) // 2 + img[1][0], (self.size - self.whs) // 2 + img[1][1]))
 
-        #self.update_text_time()
         self.clock_canvas.update_me = True
         self.mainloop.redraw_needed[0] = True
 
     def scalled_img(self, image, new_w, new_h):
-        'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        """scales image depending on pygame version and bit depth using either smoothscale or scale."""
         if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             img = pygame.transform.smoothscale(image, (new_w, new_h))
         else:
@@ -427,7 +422,7 @@ class Board(gd.BoardGame):
         return image, rect
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if not self.show_msg:
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 self.auto_check_reset()
@@ -445,7 +440,7 @@ class Board(gd.BoardGame):
                         self.home_square.value = self.home_square.value[0:lhv - 1]
                 else:
                     char = event.unicode
-                    if (len(char) > 0 and lhv < 3 and char in self.digits):
+                    if len(char) > 0 and lhv < 3 and char in self.digits:
                         if lhv == 0:
                             self.home_square.value += char
                         elif lhv == 1:
@@ -549,7 +544,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def check_result(self):
         if not self.correct:

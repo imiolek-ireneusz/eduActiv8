@@ -278,7 +278,6 @@ class Board(gd.BoardGame):
 
         return points
 
-
     def pick_random_shape(self):
         """Generate a random shape that has at least one line of symmetry"""
         points = []
@@ -526,7 +525,7 @@ class Board(gd.BoardGame):
         return r
 
     def handle(self, event):
-        gd.BoardGame.handle(self, event)  # send event handling up
+        gd.BoardGame.handle(self, event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = event.pos
             column = (pos[0] - self.px_padding) // (self.layout.width)
@@ -655,7 +654,7 @@ class Board(gd.BoardGame):
 
     def update(self, game):
         game.fill((255, 255, 255))
-        gd.BoardGame.update(self, game)  # rest of painting done by parent
+        gd.BoardGame.update(self, game)
 
     def v2_to_int(self, vector):
         integers = [int(each) for each in vector]
