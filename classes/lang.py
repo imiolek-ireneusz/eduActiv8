@@ -75,10 +75,13 @@ class Language:
         lang = self.xml_langs.get_lang_config(self.lang)
         self.tts_disabled_lngs = self.xml_langs.get_tts_disabled()
         if lang is not None:
-            if lang.attrib['voice'] != "None":
+            if lang.attrib['voice_mb'] != "None" and lang.attrib['use_mb'] == "True":
+                self.voice = eval(lang.attrib["voice_mb"])
+            elif lang.attrib['voice'] != "None":
                 self.voice = eval(lang.attrib["voice"])
             else:
                 self.voice = None
+
             code_lc = self.lang.lower()
             exec("import i18n.custom." + code_lc)
             exec("import i18n.custom.word_lists." + code_lc + "_di")
