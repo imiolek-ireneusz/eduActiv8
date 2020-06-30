@@ -1770,7 +1770,7 @@ class LoginScreen:
         prev_guest = ex.unival(self.lang.b["Guest"])
         self.mainloop.db.set_lang(self.in_focus.iso_code)
         self.default_lang = self.in_focus.iso_code
-        self.lang.load_language(lang_code=self.default_lang)
+        self.lang.load_language(lang_code=self.default_lang, login=True)
         self.flang()
         new_guest = ex.unival(self.lang.b["Guest"])
         self.mainloop.db.change_username(prev_guest, new_guest)

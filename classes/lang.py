@@ -33,7 +33,7 @@ class Language:
         self.tts_disabled_lngs = []  # will be overridden with data from xml
         self.xml_langs = classes.xml_conn.XMLLangs()
 
-    def load_language(self, lang_code=None):
+    def load_language(self, lang_code=None, login=False):
         if lang_code is None:
             if self.config.settings["lang"] not in self.all_lng:
                 self.config.reset_settings()
@@ -45,12 +45,12 @@ class Language:
             else:
                 self.lang = lang_code
 
-        self.get_lang_attr()
+        self.get_lang_attr(login)
 
     def _n(self, word, count):
         return self.trans[self.lang].ngettext(word, word, count)
 
-    def get_lang_attr(self):
+    def get_lang_attr(self, login=False):
         filename = os.path.join(self.locale_dir, self.lang, "LC_MESSAGES", "eduactiv8.mo")
         try:
             self.trans[self.lang] = gettext.GNUTranslations(open(filename, "rb"))
@@ -83,16 +83,32 @@ class Language:
                 self.voice = None
 
             code_lc = self.lang.lower()
-            exec("import i18n.custom." + code_lc)
-            exec("import i18n.custom.word_lists." + code_lc + "_di")
-            exec("import i18n.custom.a4a_py." + self.lang + " as a4a_word_lst")
-            if ast.literal_eval(lang.attrib['has_keyboard']) is True:
-                exec("import i18n.custom.kbrd." + code_lc)
-                exec("import i18n.custom.kbrd." + code_lc[0:2] + "_course")
-                self.kbrd = eval("i18n.custom.kbrd." + code_lc)
-                self.kbrd_course_mod = eval("i18n.custom.kbrd." + code_lc[0:2] + "_course")
+            if sys.version_info < (3, 0):
+                exec("import i18n.custom." + code_lc)
+                if not login:
+                    exec("import i18n.custom.word_lists." + code_lc + "_di")
+                    exec("import i18n.custom.a4a_py." + self.lang + " as a4a_word_lst")
+                    if ast.literal_eval(lang.attrib['has_keyboard']) is True:
+                        exec("import i18n.custom.kbrd." + code_lc)
+                        exec("import i18n.custom.kbrd." + code_lc[0:2] + "_course")
+                        self.kbrd = eval("i18n.custom.kbrd." + code_lc)
+                        self.kbrd_course_mod = eval("i18n.custom.kbrd." + code_lc[0:2] + "_course")
 
-            self.di = eval("i18n.custom.word_lists." + code_lc + "_di.di")
+                    self.di = eval("i18n.custom.word_lists." + code_lc + "_di.di")
+            else:
+                import importlib
+                importlib.import_module("i18n.custom." + code_lc)
+                if not login:
+                    importlib.import_module("i18n.custom.word_lists." + code_lc + "_di")
+                    importlib.import_module("i18n.custom.a4a_py." + self.lang)
+                    a4a_word_lst = eval("i18n.custom.a4a_py." + self.lang)
+                    if ast.literal_eval(lang.attrib['has_keyboard']) is True:
+                        importlib.import_module("i18n.custom.kbrd." + code_lc)
+                        importlib.import_module("i18n.custom.kbrd." + code_lc[0:2] + "_course")
+                        self.kbrd = eval("i18n.custom.kbrd." + code_lc)
+                        self.kbrd_course_mod = eval("i18n.custom.kbrd." + code_lc[0:2] + "_course")
+
+                    self.di = eval("i18n.custom.word_lists." + code_lc + "_di.di")
             self.lang_file = eval("i18n.custom." + code_lc)
             self.lang_id = int(lang.attrib["id"])
 
@@ -146,20 +162,21 @@ class Language:
         self.d = dict()
         self.b = dict()
         self.dp = dict()
-        self.kbrd_course = self.kbrd_course_mod.course
 
-        self.d.update(self.oi18n.d)
-        self.d.update(self.lang_file.d)
         self.b.update(self.oi18n.b)
-        self.numbers = self.lang_file.numbers
-        self.numbers2090 = self.lang_file.numbers2090
-        self.n2txt = self.lang_file.n2txt
-        self.time2str = self.lang_file.time2str
-        self.fract2str = self.lang_file.fract2str
+        if not login:
+            self.kbrd_course = self.kbrd_course_mod.course
+            self.d.update(self.oi18n.d)
+            self.d.update(self.lang_file.d)
+            self.numbers = self.lang_file.numbers
+            self.numbers2090 = self.lang_file.numbers2090
+            self.n2txt = self.lang_file.n2txt
+            self.time2str = self.lang_file.time2str
+            self.fract2str = self.lang_file.fract2str
 
-        self.solid_names = self.oi18n.solid_names
-        self.shape_names = self.oi18n.shape_names
-        self.letter_names = self.lang_file.letter_names
+            self.solid_names = self.oi18n.solid_names
+            self.shape_names = self.oi18n.shape_names
+            self.letter_names = self.lang_file.letter_names
         self.config.set_font_family(font_variant)
         if not self.ltr_text:
             for each_d in [self.d, self.b]:
@@ -190,21 +207,21 @@ class Language:
             if len(s) > 0:
                 if s[0] == unival("א"):
                     self.d['abc_flashcards_word_sequence'] = self.d['abc_flashcards_word_sequencer']
+        if not login:
+            self.alphabet_lc = self.lang_file.alphabet_lc
+            self.alphabet_uc = self.lang_file.alphabet_uc
+            self.accents_lc = self.lang_file.accents_lc
+            self.accents_uc = self.lang_file.accents_uc
 
-        self.alphabet_lc = self.lang_file.alphabet_lc
-        self.alphabet_uc = self.lang_file.alphabet_uc
-        self.accents_lc = self.lang_file.accents_lc
-        self.accents_uc = self.lang_file.accents_uc
-
-        self.d["a4a_animals"] = a4a_word_lst.d["a4a_animals"]
-        self.d["a4a_sport"] = a4a_word_lst.d["a4a_sport"]
-        self.d["a4a_body"] = a4a_word_lst.d["a4a_body"]
-        self.d["a4a_people"] = a4a_word_lst.d["a4a_people"]
-        self.d["a4a_food"] = a4a_word_lst.d["a4a_food"]
-        self.d["a4a_clothes_n_accessories"] = a4a_word_lst.d["a4a_clothes_n_accessories"]
-        self.d["a4a_actions"] = a4a_word_lst.d["a4a_actions"]
-        self.d["a4a_construction"] = a4a_word_lst.d["a4a_construction"]
-        self.d["a4a_nature"] = a4a_word_lst.d["a4a_nature"]
-        self.d["a4a_jobs"] = a4a_word_lst.d["a4a_jobs"]
-        self.d["a4a_fruit_n_veg"] = a4a_word_lst.d["a4a_fruit_n_veg"]
-        self.d["a4a_transport"] = a4a_word_lst.d["a4a_transport"]
+            self.d["a4a_animals"] = a4a_word_lst.d["a4a_animals"]
+            self.d["a4a_sport"] = a4a_word_lst.d["a4a_sport"]
+            self.d["a4a_body"] = a4a_word_lst.d["a4a_body"]
+            self.d["a4a_people"] = a4a_word_lst.d["a4a_people"]
+            self.d["a4a_food"] = a4a_word_lst.d["a4a_food"]
+            self.d["a4a_clothes_n_accessories"] = a4a_word_lst.d["a4a_clothes_n_accessories"]
+            self.d["a4a_actions"] = a4a_word_lst.d["a4a_actions"]
+            self.d["a4a_construction"] = a4a_word_lst.d["a4a_construction"]
+            self.d["a4a_nature"] = a4a_word_lst.d["a4a_nature"]
+            self.d["a4a_jobs"] = a4a_word_lst.d["a4a_jobs"]
+            self.d["a4a_fruit_n_veg"] = a4a_word_lst.d["a4a_fruit_n_veg"]
+            self.d["a4a_transport"] = a4a_word_lst.d["a4a_transport"]
