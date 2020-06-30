@@ -15,13 +15,14 @@
 
 # Copyright (C) 2008-2010 Yaacov Zamir <kzamir_a_walla.co.il>,
 # Copyright (C) 2010-2015 Meir kriheli <mkriheli@gmail.com>.
-"bidirectional algorithm implementation"
+
+"""bidirectional algorithm implementation"""
+
 import sys
 
 import inspect
 from collections import deque
 from unicodedata import bidirectional, mirrored
-import six
 
 from .mirror import MIRRORED
 
@@ -59,6 +60,12 @@ _IS_UCS2 = sys.maxunicode == 65535
 _SURROGATE_MIN, _SURROGATE_MAX = 55296, 56319  # D800, DBFF
 
 
+if sys.version_info < (3, 0):
+    text_type = unicode
+else:
+    text_type = str
+
+
 def debug_storage(storage, base_info=False, chars=True, runs=False):
     "Display debug information for the storage"
 
@@ -66,7 +73,7 @@ def debug_storage(storage, base_info=False, chars=True, runs=False):
     import locale
     import sys
 
-    if six.PY2:
+    if sys.version_info < (3, 0):
         stderr = codecs.getwriter(locale.getpreferredencoding())(sys.stderr)
     else:
         stderr = sys.stderr
@@ -91,7 +98,7 @@ def debug_storage(storage, base_info=False, chars=True, runs=False):
         stderr.write(output + u'\n')
 
         output = u'  Res. levels : %s\n' % u''.join(
-            [six.text_type(_ch['level']) for _ch in storage['chars']])
+            [text_type(_ch['level']) for _ch in storage['chars']])
         stderr.write(output)
 
         _types = [_ch['type'].ljust(3) for _ch in storage['chars']]
@@ -626,7 +633,7 @@ def get_display(unicode_or_str, encoding='utf-8', upper_is_rtl=False,
     storage = get_empty_storage()
 
     # utf-8 ? we need unicode
-    if isinstance(unicode_or_str, six.text_type):
+    if isinstance(unicode_or_str, text_type):
         text = unicode_or_str
         decoded = False
     else:
