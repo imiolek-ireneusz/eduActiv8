@@ -24,6 +24,7 @@ if not fribidi_loaded:
     try:
         from classes.rtl.arabic_reshaper import ArabicReshaper
         # providing ligature support slows the loading time dramatically
+        """
         configuration_init = {
             'delete_harakat': False,
             'support_ligatures': True,
@@ -35,14 +36,15 @@ if not fribidi_loaded:
             'support_ligatures': False,
             'RIAL SIGN': False,  # Replace ر ي ا ل with ﷼
         }
-
-        reshaper = ArabicReshaper(configuration=configuration)
+        """
+        reshaper = ArabicReshaper()
 
         from classes.rtl.bidi.algorithm import get_display
         ar_reshaper_loaded = True
         print("Using arabic_reshaper library.")
     except:
         ar_reshaper_loaded = False
+        print("Unable to load arabic_reshaper.")
 
 
 def hsv_to_rgb(h, s, v):
