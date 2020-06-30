@@ -99,6 +99,7 @@ class Language:
             self.ltr_text = ast.literal_eval(lang.attrib['ltr'])
             self.has_uc = ast.literal_eval(lang.attrib['has_uc'])
             self.has_cursive = ast.literal_eval(lang.attrib['has_cursive'])
+            self.ico_suffix = lang.attrib['ico_suffix']
         else:
             print("Language file not found.")
             import i18n.custom.en_gb
