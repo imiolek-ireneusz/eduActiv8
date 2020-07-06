@@ -385,6 +385,11 @@ New images in eduActiv8:
 
 Wikipedia images:
     http://de.wikipedia.org/wiki/Datei:Koala.svg
+    
+Other images:
+    https://publicdomainvectors.org/en/free-clipart/Gold-vector-image/2847.html
+    https://publicdomainvectors.org/en/free-clipart/Sealed-envelope-vector-image/8256.html
+    
 
 Laby code based on:
     Laby, 2010 by Mehdi Cherti(mehdidc):
