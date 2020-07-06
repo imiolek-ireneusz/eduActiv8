@@ -1,3 +1,14 @@
+# -*- coding: utf-8 -*-
+""" This file contains all words associated with images in res/images/fc folder.
+    It can be used to assist in creation of a list of words starting with each of
+    the letters of the alphabet. The list first needs to be translated (ideally automatically)
+    and then the resulting list can be sorted to easily pick out the most appropriate word/image pair"""
+
+
+def stop():
+    raise Exception('manual stop')
+
+
 fc_list = {0: 'Ant', 1: 'Boat', 2: 'Cat', 3: 'Duck', 4: 'Elephant',
            5: 'Fish', 6: 'Grapes', 7: 'House', 8: 'Igloo', 9: 'Jar',
            10: 'Key', 11: 'Lion', 12: 'Mouse', 13: 'Notebook', 14: 'Owl',
@@ -18,27 +29,34 @@ fc_list = {0: 'Ant', 1: 'Boat', 2: 'Cat', 3: 'Duck', 4: 'Elephant',
            85: 'Lawyer', 86: 'Button', 87: 'Raccoon', 88: 'Nose', 89: 'Swing',
            90: 'Turkey', 91: 'Sack', 92: 'Nail', 93: 'Dummy', 94: 'Student',
            95: 'Paint', 96: 'Mountain', 97: 'Rock', 98: 'Four', 99: 'Acorn',
-           100: 'Three', 101: 'Juice', 102: 'Iron', 103: 'Boxing', 104: 'Corner'}
+           100: 'Three', 101: 'Juice', 102: 'Iron', 103: 'Boxing', 104: 'Corner',
+           105: 'Frog', 106: 'Rhinoceros', 107: 'Climb', 108: 'Gold', 109: 'Envelope',
+           110: 'Fox'}
 
+n = len(fc_list)
 lst = ""
-for i in range(105):
-    lst += fc_list[i].lower() + ", "
+for i in range(n):
+    lst += fc_list[i].lower()
+    if i < n - 1:
+        lst += ", "
 
-# list of words to be used for tranalation
+# print the list to copy it for translation
 # print(lst)
+# stop()
 
-fc_list_trans = ['mier', 'boot', 'kat', 'eend', 'olifant', 'vis', 'druiven', 'huis', 'iglo', 'pot', 'sleutel', 'leeuw', 'muis', 'notitieboekje', 'uil', 'papegaai', 'koningin', 'konijn', 'zon', 'theepot', 'paraplu', 'viool', 'venster', 'xylofoon', 'garen', 'zebra', 'watermeloen', 'vlinder', 'gitaar', 'egel', 'giraf', 'boom', 'joga', 'tomaat', 'fortepiano', 'brood', 'bloemen', 'chimpansee', 'vis', 'fotograaf', 'monitor', 'rok', 'appel', 'no-picture', 'mot', 'paard', 'boom', 'nijlpaard', 'kleding', 'slaap', 'vrachtwagen', 'klok', 'oceaan', 'straat', 'nacht', 'ruimte', 'hangmat', 'kaas', 'wagen', 'dolfijn', 'schoenen', 'slak', 'veulen', 'trein', 'kom', 'tijger', 'zeil', 'oven', 'hockey', 'narcis', 'GNU', 'banaan', 'koala', 'yoghurt', 'kiwi', 'oog', 'luipaard', 'bus', 'bloem', 'telefoon', 'deegrol', 'water', 'strand', 'muziek', 'drinken', 'advocaat', 'knop', 'wasbeer', 'neus', 'schommel', 'Turkije', 'zak', 'nagel', 'dummy', 'student', 'verf', 'berg', 'rots', 'vier ', 'eikel', 'drie', 'sap', 'ijzer', 'boksen', 'hoek']
-s = ""
-# turn into a dictionary
-for i in range(105):
-    s += ", " + str(i) + ": '" + fc_list_trans[i][0].upper() + fc_list_trans[i][1:] + "'"
+# enter the translated string here
+translated_string = "ant, boat, cat, duck, elephant, fish, grapes, house, igloo, jar, key, lion, mouse, notebook, owl, parrot, queen, rabbit, sun, teapot, umbrella, violin, window, xylophone, yarn, zebra, watermelon, butterfly, guitar, hedgehog, giraffe, tree, joga, tomato, fortepiano, bread, flowers, chimpanzee, fish, photographer, monitor, skirt, apple, no-picture,  moth, horse, tree, hippo, clothes, sleep, lorry, clock, ocean, street, night, space, hammack, cheese, wagon, dolphin, shoes, snail, foal, train, bowl, tiger, sail, oven, hockey, daffodil, gnu, banana, koala, yoghurt, kiwi, eye, leopard, buss, flower, phone, rolling pin, water, beach, music, drink, lawyer, button, raccoon, nose, swing, turkey, sack, nail, dummy, student, paint, mountain, rock, four, acorn, three, juice, iron, boxing, corner, frog, rhinoceros, climb, gold, envelope, fox"
+fc_list_trans = translated_string.split(', ')
 
-# print dictionary
-# print(s)
+# turn into a dictionary string
+s = "{"
+for i in range(n):
+    s += str(i) + ": '" + fc_list_trans[i][0].upper() + fc_list_trans[i][1:] + "'"
+    if i < n - 1:
+        s += ", "
+s += "}"
 
-trans = {0: 'Mier', 1: 'Boot', 2: 'Kat', 3: 'Eend', 4: 'Olifant', 5: 'Vis', 6: 'Druiven', 7: 'Huis', 8: 'Iglo', 9: 'Pot', 10: 'Sleutel', 11: 'Leeuw', 12: 'Muis', 13: 'Notitieboekje', 14: 'Uil', 15: 'Papegaai', 16: 'Koningin', 17: 'Konijn', 18: 'Zon', 19: 'Theepot', 20: 'Paraplu', 21: 'Viool', 22: 'Venster', 23: 'Xylofoon', 24: 'Garen', 25: 'Zebra', 26: 'Watermeloen', 27: 'Vlinder', 28: 'Gitaar', 29: 'Egel', 30: 'Giraf', 31: 'Boom', 32: 'Joga', 33: 'Tomaat', 34: 'Fortepiano', 35: 'Brood', 36: 'Bloemen', 37: 'Chimpansee', 38: 'Vis', 39: 'Fotograaf', 40: 'Monitor', 41: 'Rok', 42: 'Appel', 43: 'No-picture', 44: 'Mot', 45: 'Paard', 46: 'Boom', 47: 'Nijlpaard', 48: 'Kleding', 49: 'Slaap', 50: 'Vrachtwagen', 51: 'Klok', 52: 'Oceaan', 53: 'Straat', 54: 'Nacht', 55: 'Ruimte', 56: 'Hangmat', 57: 'Kaas', 58: 'Wagen', 59: 'Dolfijn', 60: 'Schoenen', 61: 'Slak', 62: 'Veulen', 63: 'Trein', 64: 'Kom', 65: 'Tijger', 66: 'Zeil', 67: 'Oven', 68: 'Hockey', 69: 'Narcis', 70: 'GNU', 71: 'Banaan', 72: 'Koala', 73: 'Yoghurt', 74: 'Kiwi', 75: 'Oog', 76: 'Luipaard', 77: 'Bus', 78: 'Bloem', 79: 'Telefoon', 80: 'Deegrol', 81: 'Water', 82: 'Strand', 83: 'Muziek', 84: 'Drinken', 85: 'Advocaat', 86: 'Knop', 87: 'Wasbeer', 88: 'Neus', 89: 'Schommel', 90: 'Turkije', 91: 'Zak', 92: 'Nagel', 93: 'Dummy', 94: 'Student', 95: 'Verf', 96: 'Berg', 97: 'Rots', 98: 'Vier ', 99: 'Eikel', 100: 'Drie', 101: 'Sap', 102: 'Ijzer', 103: 'Boksen', 104: 'Hoek'
-}
-# new_list = ['Watermelon', 'Butterfly', 'Guitar', 'Hedgehog', 'Giraffe', 'Tree', 'Joga', 'Tomato', 'Fortepiano', 'Bread', 'Flowers', 'Chimpanzee', 'Fish', 'Photographer', 'Monitor', 'Skirt', 'Apple', 'No-Picture', ' Moth', 'Horse', 'Tree', 'Hippo', 'Clothes', 'Sleep', 'Lorry', 'Clock', 'Ocean', 'Street', 'Night', 'Space', 'Hamack', 'Cheese', 'Wagon', 'Dolphin', 'Shoes', 'Snail', 'Foal', 'Train', 'Bowl', 'Tiger', 'Sail', 'Oven', 'Hockey', 'Daffodil', 'Gnu', 'Banana', 'Koala', 'Yogurt', 'Kiwi', 'Eye', 'Leopard', 'Buss', 'Flower', 'Phone', 'Rolling pin', 'Water', 'Beach', 'Music', 'Drink', 'Lawyer', 'Button', 'Racoon', 'Nose', 'Swing', 'Turkey', 'Sack', 'Nail', 'Dummy', 'Student', 'Paint', 'Mountain', 'Rock', 'Four', 'Acorn', 'Three', 'Juice', 'Iron', 'Boxing', 'Corner']
+trans = eval(s)
 
 alphabet_uc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
                'V', 'W', 'X', 'Y', 'Z']
@@ -60,17 +78,22 @@ for i in range(len(alphabet_uc)):
         frame_flow.append(43)
         string_list += '43' + ": '" + alphabet_uc[i] + "', "
 
-#print(word_list)
-#print (frame_flow)
-
-
 # print(string_list)
 
-# result
+# replace the resulting dict with the result of the string_dict and select keys for each letter -
+# the words will be automatically matched in the next step
+
 resulting_dict = {42: 'Appel', 85: 'Advocaat', 1: 'Boot', 31: 'Boom', 35: 'Brood', 36: 'Bloemen', 46: 'Boom', 71: 'Banaan', 77: 'Bus', 78: 'Bloem', 96: 'Berg', 103: 'Boksen', 37: 'Chimpansee', 6: 'Druiven', 59: 'Dolfijn', 80: 'Deegrol', 84: 'Drinken', 93: 'Dummy', 100: 'Drie', 3: 'Eend', 29: 'Egel', 99: 'Eikel', 34: 'Fortepiano', 39: 'Fotograaf', 24: 'Garen', 28: 'Gitaar', 30: 'Giraf', 70: 'GNU', 7: 'Huis', 56: 'Hangmat', 68: 'Hockey', 104: 'Hoek', 8: 'Iglo', 102: 'Ijzer', 32: 'Joga', 2: 'Kat', 16: 'Koningin', 17: 'Konijn', 48: 'Kleding', 51: 'Klok', 57: 'Kaas', 64: 'Kom', 72: 'Koala', 74: 'Kiwi', 86: 'Knop', 11: 'Leeuw', 76: 'Luipaard', 0: 'Mier', 12: 'Muis', 40: 'Monitor', 44: 'Mot', 83: 'Muziek', 13: 'Notitieboekje', 43: 'No-picture', 47: 'Nijlpaard', 54: 'Nacht', 69: 'Narcis', 88: 'Neus', 92: 'Nagel', 4: 'Olifant', 52: 'Oceaan', 67: 'Oven', 75: 'Oog', 9: 'Pot', 15: 'Papegaai', 20: 'Paraplu', 45: 'Paard', 43: 'Q', 41: 'Rok', 55: 'Ruimte', 97: 'Rots', 10: 'Sleutel', 49: 'Slaap', 53: 'Straat', 60: 'Schoenen', 61: 'Slak', 82: 'Strand', 89: 'Schommel', 94: 'Student', 101: 'Sap', 19: 'Theepot', 33: 'Tomaat', 63: 'Trein', 65: 'Tijger', 79: 'Telefoon', 90: 'Turkije', 14: 'Uil', 5: 'Vis', 21: 'Viool', 22: 'Venster', 27: 'Vlinder', 38: 'Vis', 50: 'Vrachtwagen', 62: 'Veulen', 95: 'Verf', 98: 'Vier ', 26: 'Watermeloen', 58: 'Wagen', 81: 'Water', 87: 'Wasbeer', 23: 'Xylofoon', 73: 'Yoghurt', 18: 'Zon', 25: 'Zebra', 66: 'Zeil', 91: 'Zak'}
 
 manually_selected = {42: 'Appel', 77: 'Bus', 37: 'Chimpansee', 59: 'Dolfijn', 29: 'Egel', 34: 'Fortepiano', 28: 'Gitaar', 7: 'Huis', 8: 'Iglo', 32: 'Joga', 2: 'Kat', 11: 'Leeuw', 12: 'Muis', 47: 'Nijlpaard', 4: 'Olifant', 15: 'Papegaai', 43: 'Q', 97: 'Rots', 61: 'Slak', 33: 'Tomaat',  14: 'Uil', 21: 'Viool', 81: 'Water', 23: 'Xylofoon', 73: 'Yoghurt', 25: 'Zebra'}
+manually_selected_keys = [42, 77, 37, 59, 29, 34, 28, 7, 8, 32, 2, 11, 12, 47, 4, 15, 43, 97, 61, 33, 14, 21, 81, 23, 73, 25]
 
-words = ['Appel', 'Bus', 'Chimpansee', 'Dolfijn', 'Egel', 'Fortepiano', 'Gitaar', 'Huis', 'Iglo', 'Joga', 'Kat', 'Leeuw', 'Muis', 'Nijlpaard', 'Olifant', 'Papegaai', 'Q', 'Rots', 'Slak', 'Tomaat',  'Uil', 'Viool', 'Water', 'Xylofoon', 'Yoghurt', 'Zebra']
-keys = [42, 77, 37, 59, 29, 34, 28, 7, 8, 32, 2, 11, 12, 47, 4, 15, 43, 97, 61, 33, 14, 21, 81, 23, 73, 25]
+words = "words = ["
+for i in range(len(manually_selected_keys)):
+    words += "'" + resulting_dict[manually_selected_keys[i]] + "'"
+    if i < len(manually_selected_keys) - 1:
+        words += ", "
+s += "]"
+print (words)
 
+# words = ['Appel', 'Bus', 'Chimpansee', 'Dolfijn', 'Egel', 'Fortepiano', 'Gitaar', 'Huis', 'Iglo', 'Joga', 'Kat', 'Leeuw', 'Muis', 'Nijlpaard', 'Olifant', 'Papegaai', 'Q', 'Rots', 'Slak', 'Tomaat',  'Uil', 'Viool', 'Water', 'Xylofoon', 'Yoghurt', 'Zebra']
