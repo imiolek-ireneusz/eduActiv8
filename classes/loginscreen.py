@@ -1102,9 +1102,13 @@ class Keyboard:
 
         self.extra_chars = ["-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.lower_list = self.ls.lang.alphabet_lc[:]
-        self.upper_list = self.ls.lang.alphabet_uc[:]
         self.lower_list.extend(self.extra_chars)
-        self.upper_list.extend(self.extra_chars)
+        if self.ls.lang.has_uc:
+            self.upper_list = self.ls.lang.alphabet_uc[:]
+            self.upper_list.extend(self.extra_chars)
+        else:
+            self.upper_list = self.ls.lang.alphabet_lc[:]
+            self.upper_list.extend(self.extra_chars)
         if self.ls.lang.ltr_text:
             bsp_key = "←"
             for i in range(self.all_key_count - 8):
@@ -1531,8 +1535,6 @@ class LoginScreen:
         self.keyboard.enable(False)
         self.db_status = ""
         self.scroll_item_count = len(self.config.all_lng)
-        if self.mainloop.android is not None:
-            self.scroll_item_count -= 1
         self.halfw = self.w // 2 - 50
 
         self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Default Language:"])
@@ -1564,8 +1566,8 @@ class LoginScreen:
 
             j = int(math.floor(i / frows))
             self.select.append(
-                PButton(self, w, h, self.left + self.lang_w*j+5+13, self.top + 60 + h * k, 0, self.config.lang_titles[i],
-                        self.fset_lang))
+                PButton(self, w, h, self.left + self.lang_w*j+5+13, self.top + 60 + h * k, 0,
+                        self.config.lang_titles[i], self.fset_lang))
             self.edit_list.add(self.select[i])
             self.select[i].bg_color = self.colors.btn_bg_color
             self.select[i].bg_focus = self.colors.btn_bg_focus

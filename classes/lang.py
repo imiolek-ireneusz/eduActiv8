@@ -202,17 +202,22 @@ class Language:
 
         self.dp.update(self.d)
         self.dp.update(self.lang_file.dp)
-        if self.lang == "he":
+        if not login and self.lang == "he":
             s = unival(self.d['abc_flashcards_word_sequence'][0])
             if len(s) > 0:
                 if s[0] == unival("א"):
                     self.d['abc_flashcards_word_sequence'] = self.d['abc_flashcards_word_sequencer']
-        if not login:
-            self.alphabet_lc = self.lang_file.alphabet_lc
-            self.alphabet_uc = self.lang_file.alphabet_uc
-            self.accents_lc = self.lang_file.accents_lc
-            self.accents_uc = self.lang_file.accents_uc
 
+        self.alphabet_lc = self.lang_file.alphabet_lc
+        self.accents_lc = self.lang_file.accents_lc
+        if self.has_uc:
+            self.alphabet_uc = self.lang_file.alphabet_uc
+            self.accents_uc = self.lang_file.accents_uc
+        else:
+            self.alphabet_uc = self.accents_lc
+            self.accents_uc = self.accents_lc
+
+        if not login:
             self.d["a4a_animals"] = a4a_word_lst.d["a4a_animals"]
             self.d["a4a_sport"] = a4a_word_lst.d["a4a_sport"]
             self.d["a4a_body"] = a4a_word_lst.d["a4a_body"]
