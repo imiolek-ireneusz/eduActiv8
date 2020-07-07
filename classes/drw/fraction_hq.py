@@ -7,9 +7,11 @@ from classes.simple_vector import Vector2
 
 
 class Fraction:
-    def __init__(self, unit_size, scale, color1, color2, border_color1, border_color2, numbers, border_width):
+    def __init__(self, unit_size, scale, color1, color2, border_color1, border_color2, numbers, border_width, scale_factor = 1):
         self.size = unit_size * scale
         self.center = [self.size // 2, self.size // 2]
+        self.r_base = self.size // 2 - self.size // 10
+        self.r = int(self.r_base * scale_factor)
 
         self.color1 = color1
         self.color2 = color2
@@ -52,19 +54,16 @@ class Fraction:
             self.draw_fraction()
 
     def draw_fraction(self):
+        r = self.r
+        m = (self.size - r * 2) // 2
         if self.numbers == [0, 0]:
             pass
         elif self.numbers == [1, 1]:
-            #draw circle
-            r = self.size // 2 - self.size // 10
-            m = (self.size - r * 2) // 2
             cx = m + r
             cy = m + r
             pygame.draw.circle(self.canvas, self.color1, (cx, cy), r, 0)
             pygame.draw.circle(self.canvas, self.border_color1, (cx, cy), r, 1)
         else:
-            r = self.size // 2 - self.size // 10
-            m = (self.size - r * 2) // 2
             if self.numbers[1] < 48:
                 step = 5
             else:

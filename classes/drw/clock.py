@@ -102,7 +102,7 @@ class Clock:
         self.angle_start = -pi / 2
         self.r = self.size // 3 + self.size // 10
 
-        self.rs = [int(90 * self.size / 500.0), int(170 * self.size / 500.0), int(110 * self.size / 500.0)]
+        self.rs = [int(90 * self.size / 520.0), int(170 * self.size / 520.0), int(110 * self.size / 520.0)]
 
     def draw_hands(self):
         if self.show_hour_offset:

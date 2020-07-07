@@ -7,9 +7,10 @@ from classes.simple_vector import Vector2
 
 
 class Percentage:
-    def __init__(self, unit_size, scale, color1, color2, border_color1, border_color2, number):
+    def __init__(self, unit_size, scale, color1, color2, border_color1, border_color2, number, scale_factor=1):
         self.size = unit_size * scale
         self.center = [self.size // 2, self.size // 2]
+        self.r = int((self.size // 2 - self.size // 10) * scale_factor)
 
         self.color1 = color1
         self.color2 = color2
@@ -32,15 +33,12 @@ class Percentage:
         self.draw_circles()
 
     def draw_circles(self):
-        r = self.size // 2 - self.size // 10
+        r = self.r
         m = (self.size - r * 2) // 2
 
         angles = (self.number * 3.6, (100 - self.number) * 3.6)
-        #angle_start = [int(angles[0]), 0] #int(round((self.number * angle) / 2.0))
-        #angle_start = [int(round(angles[0] / 2.0 - angles[0])), int(round(angles[0] / 2.0)) + int(angles[0])]
         angle_start = [int(round(angles[0] / 2.0 - angles[0])), int(round(angles[0] / 2.0 - angles[0]))+int(angles[0])]
         angle_start_float = [angles[0] / 2.0 - angles[0], angles[0] / 2.0]
-        #angle_start = [270, 270+int(angles[0])]
         for i in range(2):
             if i == 0:
                 col = self.color1
