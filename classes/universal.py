@@ -104,6 +104,7 @@ class Universal(pygame.sprite.Sprite):
         self.grid_last_y = grid_y
         self.alpha = alpha
         self.board = board
+        self.margin_x = self.board.scale * 0.2
         self.immobilized = immobilized
 
         self.fg_as_hover = fg_as_hover
@@ -473,7 +474,7 @@ class Universal(pygame.sprite.Sprite):
                 if sys.version_info < (3, 0):
                     if isinstance(self.value, basestring):
                         # if a passed argument is a string turn it into a 1 item list
-                        if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                        if self.font.size(self.value)[0] < self.rect.w - self.margin_x or not self.text_wrap:
                             value = [self.value]
                         else:
                             # else enter extra line breaks
@@ -498,7 +499,7 @@ class Universal(pygame.sprite.Sprite):
                                         line = "" + test_line
                                     elif valx[i] == " " or i == linelen - 1:
                                         test_line = test_line + word + valx[i]
-                                        if self.font.size(test_line)[0] < self.rect.w:
+                                        if self.font.size(test_line)[0] < self.rect.w - self.margin_x:
                                             line = "" + test_line
                                             word = ""
                                         else:
@@ -517,7 +518,7 @@ class Universal(pygame.sprite.Sprite):
                 else:
                     if isinstance(self.value, str):
                         # if a passed argument is a string turn it into a 1 item list
-                        if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                        if self.font.size(self.value)[0] < self.rect.w - self.margin_x or not self.text_wrap:
                             value = [self.value]
                         else:
                             # else enter extra line breaks
@@ -537,7 +538,7 @@ class Universal(pygame.sprite.Sprite):
                                         line = "" + test_line
                                     elif valx[i] == " " or i == linelen - 1:
                                         test_line = test_line + word + valx[i]
-                                        if self.font.size(test_line)[0] < self.rect.w:
+                                        if self.font.size(test_line)[0] < self.rect.w - self.margin_x:
                                             line = "" + test_line
                                             word = ""
                                         else:
