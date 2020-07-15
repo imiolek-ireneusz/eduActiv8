@@ -309,6 +309,16 @@ class InfoBar:
                 if btn is not None:
                     if btn.btn_id == 11:
                         self.show_menu(True)
+                    elif btn.btn_id == 3 or btn.btn_id == 8:
+                        if self.level.lvl < self.level.lvl_count:
+                            self.level.lvl = self.level.lvl_count
+                            btn.img = btn.img_2
+                            self.level.load_level()
+                    elif btn.btn_id == 1 or btn.btn_id == 7:
+                        if self.level.lvl > 1:
+                            self.level.lvl = 1
+                            btn.img = btn.img_2
+                            self.level.load_level()
 
         elif event.type == pygame.MOUSEMOTION:
             self.on_mouse_over()
