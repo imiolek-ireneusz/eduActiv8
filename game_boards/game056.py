@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import copy
 import pygame
 import random
@@ -21,18 +22,19 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.vis_buttons = [0, 1, 1, 1, 1, 0, 1, 0, 1]
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
-        self.board.draw_grid = True
+        self.board.draw_grid = False
         if self.mainloop.scheme is None:
-            s = random.randrange(100, 150, 5)
-            v = random.randrange(230, 255, 5)
+            s = 230
+            v = 230
             h = random.randrange(0, 255, 5)
             self.bg_col = (255, 255, 255, 0)
             color1 = ex.hsv_to_rgb(h, s, v)  # highlight 2
-            self.color2 = ex.hsv_to_rgb(h, 255, 170)  # contours & borders
+            self.color2 = ex.hsv_to_rgb(h, 255, 150)  # contours & borders
         else:
+            h = 50
             cl = self.mainloop.scheme.u_color
             self.bg_col = (cl[0], cl[1], cl[2], 0)
-            color1 = self.mainloop.scheme.u_font_color  # (0,0,0)#ex.hsv_to_rgb(h,s,v) #highlight 2
+            color1 = self.mainloop.scheme.u_font_color
             self.color2 = self.mainloop.scheme.u_font_color3  # contours & borders
 
         data = [9, 5, 3]
@@ -47,35 +49,26 @@ class Board(gd.BoardGame):
         if self.mainloop.m.game_variant == 0:
             drawing_f = [self.draw_circles, self.draw_rectangles, self.draw_minicircles, self.draw_polygons,
                          self.draw_petals]
-            obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Ship,
-                           classes.board.Ship]
             instruction = self.d["Fract instr0"]
         elif self.mainloop.m.game_variant == 1:
             drawing_f = [self.draw_circles, self.draw_rectangles, self.draw_minicircles, self.draw_polygons,
                          self.draw_fractions]
-            obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Ship,
-                           classes.board.Letter]
             instruction = self.d["Fract instr1"]
         elif self.mainloop.m.game_variant == 2:
             drawing_f = [self.draw_fractions, self.draw_circles, self.draw_rectangles, self.draw_minicircles,
                          self.draw_polygons]
-            obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Ship,
-                           classes.board.Ship]
             instruction = self.d["Fract instr2"]
         elif self.mainloop.m.game_variant == 3:
             drawing_f = [self.draw_percents, self.draw_circles, self.draw_rectangles, self.draw_decimals,
                          self.draw_fractions]
-            obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Letter,
-                           classes.board.Letter]
             instruction = self.d["Fract instr3"]
             extra_w = 0
         elif self.mainloop.m.game_variant == 4:
             drawing_f = [self.draw_ratios, self.draw_circles, self.draw_rectangles, self.draw_minicircles,
                          self.draw_polygons]
-            obj_classes = [classes.board.Label, classes.board.Ship, classes.board.Ship, classes.board.Ship,
-                           classes.board.Ship]
             instruction = self.d["Fract instr4"]
             extra_w = 1
+        obj_immo = [True, False, False, False, False]
         self.instruction = instruction
 
         data[0] = data[0] + extra_w
@@ -87,6 +80,8 @@ class Board(gd.BoardGame):
 
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
+
+        self.units = []
 
         self.num_list = []
         self.num_list2 = []
@@ -100,10 +95,41 @@ class Board(gd.BoardGame):
             for i in range(5, 9):
                 slots.append([i, j])
         random.shuffle(slots)
-        # num2 = 0
         if data[4] == 0:
             l2 = data[3].split(", ")
             l2l = len(l2)
+
+        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+            self.default_bg_color = ex.hsv_to_rgb(h, 200, self.mainloop.cl.bg_color_v)
+            self.hover_bg_color = ex.hsv_to_rgb(h, 255, self.mainloop.cl.fg_hover_v)
+            self.font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
+            self.semi_selected_color = ex.hsv_to_rgb(h, 230, 90)
+            self.semi_selected_font_color = [ex.hsv_to_rgb(h, 150, 200), ]
+
+            self.selected_color = ex.hsv_to_rgb(h, 150, 50)
+            self.selected_font_color = [ex.hsv_to_rgb(h, 150, 100), ]
+        else:
+            self.default_bg_color = ex.hsv_to_rgb(h, 150, self.mainloop.cl.bg_color_v)
+            self.hover_bg_color = ex.hsv_to_rgb(h, 255, self.mainloop.cl.fg_hover_v)
+            self.font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
+            self.semi_selected_color = ex.hsv_to_rgb(h, 80, self.mainloop.cl.bg_color_v)
+            self.semi_selected_font_color = [ex.hsv_to_rgb(h, 200, self.mainloop.cl.font_color_v), ]
+
+            self.selected_color = ex.hsv_to_rgb(h, 50, self.mainloop.cl.bg_color_v)
+            self.selected_font_color = [ex.hsv_to_rgb(h, 50, 250), ]
+
+        self.bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        self.door_bg_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+
+        self.bg_img_src_w = os.path.join('unit_bg', "universal_r2x1_bg.png")
+        self.door_bg_img_src_w = os.path.join('unit_bg', "universal_r2x1_door.png")
+
+        self.door_bg_img_src_w4 = os.path.join('unit_bg', "universal_r4x1_door.png")
+
+        images = [[self.bg_img_src, self.door_bg_img_src],
+                  [self.bg_img_src_w, self.door_bg_img_src_w]]
 
         while len(numbers) < self.row_count:
             if data[4] == 0:
@@ -115,7 +141,7 @@ class Board(gd.BoardGame):
             lst = [num1, num2]
             if lst not in numbers:
                 unique = True
-                if len(numbers) > 0:  # and i < 50:
+                if len(numbers) > 0:
                     for each in numbers:
                         if float(num1) / float(num2) == float(each[0]) / float(each[1]):
                             unique = False
@@ -146,11 +172,6 @@ class Board(gd.BoardGame):
             f_index = i // self.row_count
             disp = ""
             if drawing_f[f_index] == self.draw_fractions:
-                #TODO
-                #if self.level.lvl > 3:
-                #    multi = random.randrange(1, data[5])
-                #    capt[i - f_index * 5][0] *= multi
-                #    capt[i - f_index * 5][1] *= multi
                 disp = ["", str(capt[i - f_index * self.row_count][0]), str(capt[i - f_index * self.row_count][1]), ""]
             elif drawing_f[f_index] == self.draw_ratios:
 
@@ -172,8 +193,14 @@ class Board(gd.BoardGame):
                 decimal = float(capt[i - f_index * self.row_count][0]) / float(capt[i - f_index * self.row_count][1])
                 disp = str(decimal)
 
-            self.board.add_unit(xy[0] + xo, xy[1], 1 + ew, 1, obj_classes[f_index], disp, self.bg_col, "",
-                                self.font_size, alpha=True)
+            self.board.add_universal_unit(grid_x=xy[0] + xo, grid_y=xy[1], grid_w=1 + ew, grid_h=1,
+                                          txt=disp, fg_img_src=images[ew][0], bg_img_src=images[ew][0],
+                                          dc_img_src=images[ew][1], bg_color=(0, 0, 0, 0), border_color=None,
+                                          font_color=self.font_color, bg_tint_color=self.default_bg_color,
+                                          fg_tint_color=self.hover_bg_color, dc_tint_color=self.default_bg_color,
+                                          txt_align=(0, 0), font_type=self.font_size, multi_color=False, alpha=True,
+                                          immobilized=obj_immo[f_index], fg_as_hover=True)
+
             if ew == 1:
                 canvas = pygame.Surface((size * 2, size - 1))
             else:
@@ -181,24 +208,27 @@ class Board(gd.BoardGame):
             canvas.fill(self.bg_col)
             drawing_f[f_index](numbers[i - f_index * self.row_count], canvas, size, center, color1)
 
+            self.board.ships[-1].manual_painting_layer = 1
+            self.board.ships[-1].init_m_painting()
+            self.board.ships[-1].manual_painting = canvas.copy()
+            self.board.ships[-1].update_me = True
+
             if i < self.row_count:
-                self.board.units[-1].hidden_value = numbers[i]
-                self.board.units[-1].font_color = self.color2
-                self.board.units[-1].painting = canvas.copy()
+                self.board.ships[-1].hidden_value = numbers[i]
             else:
                 self.board.ships[-1].hidden_value = numbers[i - f_index * self.row_count]
-                self.board.ships[-1].font_color = self.color2
-                self.board.ships[-1].painting = canvas.copy()
-                self.board.ships[-1].readable = False
-                self.board.ships[-1].highlight = False
                 self.board.ships[-1].checkable = True
                 self.board.ships[-1].init_check_images()
 
+                self.units.append(self.board.ships[-1])
+
         ind = len(self.board.units)
         for i in range(0, self.row_count):
-            self.board.add_door(0, i, 5 + xo, 1, classes.board.Door, "", self.bg_col, "")
-            self.board.units[ind + i].door_outline = True
-            self.board.units[ind + i].perm_outline_color = self.color2
+            self.board.add_universal_unit(grid_x=1+xo, grid_y=i, grid_w=4, grid_h=1, txt=None,
+                                          fg_img_src=None, bg_img_src=self.door_bg_img_src_w4, dc_img_src=None,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=None,
+                                          bg_tint_color=self.default_bg_color, fg_tint_color=None, txt_align=(0, 0),
+                                          font_type=10, multi_color=False, alpha=True, immobilized=True, mode=2)
 
             self.board.all_sprites_list.move_to_front(self.board.units[ind + i])
 
@@ -212,7 +242,7 @@ class Board(gd.BoardGame):
         angle_step = 2 * pi / numbers[1]
         angle_start = -pi / 2
         angle_arc_start = -pi / 2
-        r = size // 2 - 10
+        r = int((size // 2 - 10) * 0.95)
         angle = angle_start
         angle_e = angle_arc_start + numbers[0] * 2 * pi / numbers[1]
 
@@ -224,7 +254,7 @@ class Board(gd.BoardGame):
             i += 1
             angle = angle_start + 0.02 * (i)
 
-        pygame.draw.ellipse(canvas, self.color2, (11, 11, size - 22, size - 22), 1)
+        pygame.draw.ellipse(canvas, self.color2, (int((size - r * 2) // 2), int((size - r * 2) // 2), r * 2, r * 2), 1)
         r = r - 1
         for i in range(numbers[1]):
             # angle for line
@@ -244,7 +274,7 @@ class Board(gd.BoardGame):
             half = True
         angle_step = 2 * pi / numbers[1]
         angle_start = -pi / 2
-        r = size // 2 - 10
+        r = int((size // 2 - 10) * 0.95)
         angle = angle_start
 
         r = r - 1
@@ -280,14 +310,14 @@ class Board(gd.BoardGame):
         pygame.draw.polygon(canvas, color, points, 0)
 
         lines.append([x, y])
-        # pygame.draw.aalines(canvas, self.color2, True, lines, True)
         pygame.draw.lines(canvas, self.color2, True, lines, 1)
         for each in multilines:
             pygame.draw.line(canvas, self.color2, each[0], each[1], 1)
 
     def draw_rectangles(self, numbers, canvas, size, center, color):
         points = []
-        step = (size - 10) // numbers[1]
+        avail_size = int(size * 0.82)
+        step = (avail_size - 10) // numbers[1]
         width = step * numbers[1]
         left = (size - width) // 2
         rectangle = [[left, 15], [size - left * 2, size - 30]]
@@ -309,7 +339,7 @@ class Board(gd.BoardGame):
     def draw_minicircles(self, numbers, canvas, size, center, color):
         angle_step = 2 * pi / numbers[1]
         angle_start = -pi / 2
-        r = size // 3
+        r = int((size // 3) * 0.95)
         # manually draw the arc - the 100% width of the arc does not impress
 
         for i in range(numbers[1]):
@@ -327,7 +357,7 @@ class Board(gd.BoardGame):
     def draw_petals(self, numbers, canvas, size, center, color):
         angle_step = 2 * pi / numbers[1]
         angle_start = -pi / 2
-        r = size // 3 + size // 10
+        r = int((size // 3 + size // 10) * 0.95)
 
         multilines = []
         for i in range(numbers[1]):
@@ -379,6 +409,8 @@ class Board(gd.BoardGame):
             self.auto_check_reset()
         elif event.type == pygame.KEYUP or event.type == pygame.MOUSEBUTTONUP:
             self.check_result()
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.default_hover(event)
 
     def auto_check_reset(self):
         for each in self.board.ships:
@@ -392,16 +424,16 @@ class Board(gd.BoardGame):
     def check_result(self):
         correct = True
 
-        for i in range(len(self.board.ships)):
-            ship = self.board.ships[i]
+        for i in range(len(self.units)):
+            ship = self.board.ships[i + self.row_count]
             if ship.grid_x >= self.data[0] - 4:
                 correct = False
                 break
 
         if correct:
-            for i in range(len(self.board.ships)):
-                ship = self.board.ships[i]
-                if ship.hidden_value == self.board.units[ship.grid_y].hidden_value:
+            for i in range(len(self.units)):
+                ship = self.board.ships[i + self.row_count]
+                if ship.hidden_value == self.board.ships[ship.grid_y].hidden_value:
                     ship.set_display_check(True)
                 else:
                     correct = False

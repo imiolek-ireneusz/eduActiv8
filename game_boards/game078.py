@@ -10,6 +10,7 @@ import classes.game_driver as gd
 import classes.level_controller as lc
 import classes.drw.clock
 
+
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.level = lc.Level(self, mainloop, 3, 16)
@@ -28,10 +29,8 @@ class Board(gd.BoardGame):
                 self.colon_col = (255, 255, 255)
             else:
                 self.colon_col = (0, 0, 0)
-
             self.h_col = self.mainloop.scheme.color3
             self.m_col = self.mainloop.scheme.color4
-
         else:
             self.colon_col = (0, 0, 0)
             self.h_col = ex.hsv_to_rgb(225, 190, 220)

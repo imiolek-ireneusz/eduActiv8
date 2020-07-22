@@ -11,6 +11,12 @@ import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 
+from classes.extras import reverse
+
+
+def r(s):
+    return reverse(s, None, "ar")
+
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
@@ -70,6 +76,29 @@ class Board(gd.BoardGame):
         self.word_list = self.lang.d['abc_flashcards_word_sequence']
         self.pword_list = self.lang.dp['abc_flashcards_word_sequence']
         self.frame_flow = self.lang.d['abc_flashcards_frame_sequence']
+
+        self.words = [
+            [r('الفيل'), r('العنب'), r('الفأر'), r('ابريق الشاي'), r('الحمار الوحشي'), r('البطيخ'), r('الشمبانزي'),
+             r('الفراغ'), r('الهوكي'), r('النرجس البري'), r('الزبادي'), r('الراكون'), r('الجبل'), r('الثعلب')],
+            [r('بطة'), r('بيت الاسكيمو'), r('بومة'), r('ببغاء'), r('بيانو'), r('بوسه'), r('بلوط')],
+            [r('تنورة'), r('تفاحة'), r('تأرجح'), r('تسلق')], [r('ثور امريكى'), r('ثلاثة')], [r('جوغا'), r('جبنه')],
+            [r('حشرة العتة'), r('حصان'), r('حلزون'), r('حديد')], [r('خبز')], [r('دفتر'), r('دولفين'), r('ديك رومي')],
+            [r('ذهب')], [r('رسم'), r('ركن')], [r('زرافة'), r('زهور'), r('زهرة'), r('زر')],
+            [r('سمك'), r('سمك'), r('ساعة حائط')],
+            [r('شمس'), r('شجرة'), r('شجرة'), r('شاحنة'), r('شارع'), r('شوبك'), r('شاطئ بحر')],
+            [r('صندوق العربة'), r('صخرة')], [r('ضفدع')], [r('طماطم'), r('طالب علم')], [r('ظرف')],
+            [r('عاء'), r('عين'), r('عصير')], [r('غزل'), r('غيتار'), r('غبي')],
+            [r('فراشة'), r('فرس النهر'), r('فرن'), r('فهد')],
+            [r('قارب'), r('قط'), r('قنفذ'), r('قطار'), r('قارب شراعى')], [r('كمان'), r('كوالا'), r('كيوي'), r('كيس')],
+            [r('ليل')],
+            [r('منزل'), r('مفتاح'), r('ملكة'), r('مظلة'), r('مصور فوتوغرافي'), r('مراقب'), r('ملابس'), r('محيط'),
+             r('مهر'), r('موز'), r('ماء'), r('موسيقى'), r('محامي'), r('مسمار'), r('ملاكمة')],
+            [r('نملة'), r('نافذة او شباك'), r('نمر')], [r('هاتف')], [r('وحيد القرن')], [r('ينام'), r('يشرب')]]
+        self.imgs = [[4, 6, 12, 19, 25, 26, 37, 55, 68, 69, 73, 87, 96, 110], [3, 8, 14, 15, 34, 77, 99],
+                     [41, 42, 89, 107], [70, 100], [32, 57], [44, 45, 61, 102], [35], [13, 59, 90], [108], [95, 104],
+                     [30, 36, 78, 86], [5, 38, 51], [18, 31, 46, 50, 53, 80, 82], [58, 97], [105], [33, 94], [109],
+                     [64, 75, 101], [24, 28, 93], [27, 47, 67, 76], [1, 2, 29, 63, 66], [21, 72, 74, 91], [54],
+                     [7, 10, 16, 20, 39, 40, 48, 52, 62, 71, 81, 83, 85, 92, 103], [0, 22, 65], [79], [106], [49, 84]]
 
         x = data[0] - 2
         y = 0
@@ -171,11 +200,11 @@ class Board(gd.BoardGame):
         self.pos_l_labels = [self.board.units[-3], self.board.units[-2], self.board.units[-1]]
 
         # frame size 288 x 216
-        img_src = os.path.join('fc', "fc%03i.jpg" % self.frame_flow[0])
-        self.board.add_unit(x - xd + img_plus, y + 4, 4, 3, classes.board.ImgShip, self.word_list[0], card_color,
+        img_src = os.path.join('fc', "fc%03i.jpg" % self.imgs[0][0])
+        self.board.add_unit(x - xd + img_plus, y + 4, 4, 3, classes.board.ImgShip, self.words[0][0], card_color,
                             img_src)
         self.slide = self.board.ships[-1]
-        self.slide.speaker_val = self.pword_list[0]
+        self.slide.speaker_val = self.words[0][0]
         self.slide.speaker_val_update = False
 
         # TO DO adjust for color schemes
@@ -184,7 +213,7 @@ class Board(gd.BoardGame):
             if self.mainloop.scheme.dark:
                 font_colors = (self.mainloop.scheme.u_font_color3, self.mainloop.scheme.u_font_color)
 
-        self.board.add_unit(x - 2 + xd, y + 7, w, 2, classes.board.Letter, self.word_list[0], card_color, "", 33)
+        self.board.add_unit(x - 2 + xd, y + 7, w, 2, classes.board.Letter, self.words[0][0], card_color, "", 33)
         self.word_label = self.board.ships[-1]
 
         self.word_label.speaker_val = self.pword_list[0]
@@ -275,10 +304,12 @@ class Board(gd.BoardGame):
         indx = [0, 1]
         self.board.units[0].value = val
 
-        self.slide.value = self.word_list[active.unit_id]
-        self.slide.speaker_val = self.pword_list[active.unit_id]
-        self.word_label.set_value(self.word_list[active.unit_id])
-        self.word_label.speaker_val = self.pword_list[active.unit_id]
+        word_index = random.randint(0, len(self.words[active.unit_id]) - 1)
+
+        self.slide.value = self.words[active.unit_id][word_index]
+        self.slide.speaker_val = self.words[active.unit_id][word_index]
+        self.word_label.set_value(self.words[active.unit_id][word_index])
+        self.word_label.speaker_val = self.words[active.unit_id][word_index]
 
         self.pos_l_labels[0].set_value(self.al_e[active.unit_id])
         self.pos_l_labels[1].value = self.al_m[active.unit_id]
@@ -287,7 +318,7 @@ class Board(gd.BoardGame):
             each.update_me = True
 
         indx2 = [self.abc_len, self.abc_len + 1]
-        img_src = os.path.join('fc', "fc%03i.jpg" % self.frame_flow[active.unit_id])
+        img_src = os.path.join('fc', "fc%03i.jpg" % self.imgs[active.unit_id][word_index])
         self.slide.change_image(img_src)
         self.board.active_ship = -1
         self.slide.update_me = True

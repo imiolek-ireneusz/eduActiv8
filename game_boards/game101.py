@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import pygame
 import random
 
@@ -67,6 +68,7 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
 
+        self.units = []
         choice = [x for x in range(0, self.square_count // 2)]
         shuffled = choice[:]
         random.shuffle(shuffled)
@@ -81,6 +83,32 @@ class Board(gd.BoardGame):
                 self.slots.append([i, j])
         random.shuffle(self.slots)
         self.center = [self.size // 2, self.size // 2]
+
+        h = (h1 + 85) % 255
+        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+            self.default_bg_color = ex.hsv_to_rgb(h, 200, self.mainloop.cl.bg_color_v)
+            self.hover_bg_color = ex.hsv_to_rgb(h, 255, self.mainloop.cl.fg_hover_v)
+            self.font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
+            self.semi_selected_color = ex.hsv_to_rgb(h, 230, 90)
+            self.semi_selected_font_color = [ex.hsv_to_rgb(h, 150, 200), ]
+
+            self.selected_color = ex.hsv_to_rgb(h, 150, 50)
+            self.selected_font_color = [ex.hsv_to_rgb(h, 150, 100), ]
+        else:
+            self.default_bg_color = ex.hsv_to_rgb(h, 150, self.mainloop.cl.bg_color_v)
+            self.hover_bg_color = ex.hsv_to_rgb(h, 255, self.mainloop.cl.fg_hover_v)
+            self.font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
+            self.semi_selected_color = ex.hsv_to_rgb(h, 80, self.mainloop.cl.bg_color_v)
+            self.semi_selected_font_color = [ex.hsv_to_rgb(h, 200, self.mainloop.cl.font_color_v), ]
+
+            self.selected_color = ex.hsv_to_rgb(h, 50, self.mainloop.cl.bg_color_v)
+            self.selected_font_color = [ex.hsv_to_rgb(h, 50, 250), ]
+
+        self.dc_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+        self.bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        self.door_bg_img_src = os.path.join('unit_bg', "universal_sq_door.png")
 
         if self.mainloop.m.game_variant == 0:
             self.add_fractions()
@@ -117,21 +145,37 @@ class Board(gd.BoardGame):
         switch = self.square_count // 2
         for i in range(self.square_count):
             if i < switch:
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.Letter, "", self.white, "", 0)
-                fraction_canvas = self.board.ships[-1]
+                self.board.add_universal_unit(grid_x=self.slots[i][0], grid_y=self.slots[i][1], grid_w=1, grid_h=1,
+                                              txt="", fg_img_src=self.bg_img_src, bg_img_src=self.bg_img_src,
+                                              dc_img_src=self.door_bg_img_src, bg_color=(0, 0, 0, 0), border_color=None,
+                                              font_color=self.font_color, bg_tint_color=self.default_bg_color,
+                                              fg_tint_color=self.hover_bg_color, dc_tint_color=self.default_bg_color,
+                                              txt_align=(0, 0), font_type=self.font_size, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
+
                 fraction = classes.drw.fraction_hq.Fraction(1, self.board.scale, self.color1, self.color2,
-                                                            self.bd_color1,
-                                                            self.bd_color2, self.fractions[i], 2)
+                                                            self.bd_color1, self.bd_color2, self.fractions[i], 2, 0.9)
                 fraction.set_offset(20, 30)
-                fraction_canvas.painting = fraction.get_canvas().copy()
+                self.board.ships[-1].manual_painting_layer = 1
+                self.board.ships[-1].init_m_painting()
+                self.board.ships[-1].manual_painting = fraction.get_canvas().copy()
+                self.board.ships[-1].update_me = True
             else:
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.Letter,
-                                    [str(self.fractions[i - switch][0]), str(self.fractions[i - switch][1])],
-                                    self.white, "", 8)
-                self.board.ships[-1].font_color = self.bd_color1
+                s = [str(self.fractions[i - switch][0]), str(self.fractions[i - switch][1])]
+                self.board.add_universal_unit(grid_x=self.slots[i][0], grid_y=self.slots[i][1], grid_w=1, grid_h=1,
+                                              txt=s, fg_img_src=self.bg_img_src, bg_img_src=self.bg_img_src,
+                                              dc_img_src=self.door_bg_img_src, bg_color=(0, 0, 0, 0), border_color=None,
+                                              font_color=self.font_color, bg_tint_color=self.default_bg_color,
+                                              fg_tint_color=self.hover_bg_color, dc_tint_color=self.default_bg_color,
+                                              txt_align=(0, 0), font_type=8, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
                 canvas = pygame.Surface((self.size, self.size - 1), flags=pygame.SRCALPHA)
                 self.draw_fraction_line(canvas, self.size, self.center)
-                self.board.ships[-1].painting = canvas.copy()
+                self.board.ships[-1].manual_painting_layer = 1
+                self.board.ships[-1].init_m_painting()
+                self.board.ships[-1].manual_painting = canvas.copy()
+                self.board.ships[-1].update_me = True
+            self.units.append(self.board.ships[-1])
 
     def add_decimals(self):
         self.fractions = []
@@ -150,18 +194,30 @@ class Board(gd.BoardGame):
         switch = self.square_count // 2
         for i in range(self.square_count):
             if i < switch:
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.Letter, "", self.white, "",
-                                    0)
-                fraction_canvas = self.board.ships[-1]
+                self.board.add_universal_unit(grid_x=self.slots[i][0], grid_y=self.slots[i][1], grid_w=1, grid_h=1,
+                                              txt="", fg_img_src=self.bg_img_src, bg_img_src=self.bg_img_src,
+                                              dc_img_src=self.door_bg_img_src, bg_color=(0, 0, 0, 0), border_color=None,
+                                              font_color=self.font_color, bg_tint_color=self.default_bg_color,
+                                              fg_tint_color=self.hover_bg_color, dc_tint_color=self.default_bg_color,
+                                              txt_align=(0, 0), font_type=self.font_size, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
                 fraction = classes.drw.fraction_hq.Fraction(1, self.board.scale, self.color1, self.color2,
-                                                            self.bd_color1,
-                                                            self.bd_color2, self.fractions[i], 2)
+                                                            self.bd_color1, self.bd_color2, self.fractions[i], 2, 0.9)
                 fraction.set_offset(20, 30)
-                fraction_canvas.painting = fraction.get_canvas().copy()
+                self.board.ships[-1].manual_painting_layer = 1
+                self.board.ships[-1].init_m_painting()
+                self.board.ships[-1].manual_painting = fraction.get_canvas().copy()
+                self.board.ships[-1].update_me = True
             else:
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.Letter,
-                                    "0." + str(self.fractions[i - switch][0]), self.white, "", 8)
-                self.board.ships[-1].font_color = self.bd_color1
+                s = "0." + str(self.fractions[i - switch][0])
+                self.board.add_universal_unit(grid_x=self.slots[i][0], grid_y=self.slots[i][1], grid_w=1, grid_h=1,
+                                              txt=s, fg_img_src=self.bg_img_src, bg_img_src=self.bg_img_src,
+                                              dc_img_src=self.door_bg_img_src, bg_color=(0, 0, 0, 0), border_color=None,
+                                              font_color=self.font_color, bg_tint_color=self.default_bg_color,
+                                              fg_tint_color=self.hover_bg_color, dc_tint_color=self.default_bg_color,
+                                              txt_align=(0, 0), font_type=8, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
+            self.units.append(self.board.ships[-1])
 
     def add_percentages(self):
         self.perc = []
@@ -182,20 +238,32 @@ class Board(gd.BoardGame):
         switch = self.square_count // 2
         for i in range(self.square_count):
             if i < switch:
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.Letter, "", self.white, "",
-                                    0)
-                perc_canvas = self.board.ships[-1]
+                self.board.add_universal_unit(grid_x=self.slots[i][0], grid_y=self.slots[i][1], grid_w=1, grid_h=1,
+                                              txt="", fg_img_src=self.bg_img_src, bg_img_src=self.bg_img_src,
+                                              dc_img_src=self.door_bg_img_src, bg_color=(0, 0, 0, 0), border_color=None,
+                                              font_color=self.font_color, bg_tint_color=self.default_bg_color,
+                                              fg_tint_color=self.hover_bg_color, dc_tint_color=self.default_bg_color,
+                                              txt_align=(0, 0), font_type=self.font_size, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
                 perc = classes.drw.percentage_hq.Percentage(1, self.board.scale, self.color1, self.color2,
-                                                            self.bd_color1,
-                                                            self.bd_color2, self.perc[i])
-                perc_canvas.painting = perc.get_canvas().copy()
+                                                            self.bd_color1, self.bd_color2, self.perc[i], 0.95)
+                self.board.ships[-1].manual_painting_layer = 1
+                self.board.ships[-1].init_m_painting()
+                self.board.ships[-1].manual_painting = perc.get_canvas().copy()
+                self.board.ships[-1].update_me = True
             else:
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.Letter,
-                                    str(self.perc[i - switch]) + "%", self.white, "", 8)
-                self.board.ships[-1].font_color = self.bd_color1
+                s = str(self.perc[i - switch]) + "%"
+                self.board.add_universal_unit(grid_x=self.slots[i][0], grid_y=self.slots[i][1], grid_w=1, grid_h=1,
+                                              txt=s, fg_img_src=self.bg_img_src, bg_img_src=self.bg_img_src,
+                                              dc_img_src=self.door_bg_img_src, bg_color=(0, 0, 0, 0), border_color=None,
+                                              font_color=self.font_color, bg_tint_color=self.default_bg_color,
+                                              fg_tint_color=self.hover_bg_color, dc_tint_color=self.default_bg_color,
+                                              txt_align=(0, 0), font_type=8, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
+
+            self.units.append(self.board.ships[-1])
 
     def add_ratios(self, rlen=3):
-        #recreate colours
         if self.mainloop.scheme is not None:
             h1 = 170
             h2 = 40
@@ -221,6 +289,7 @@ class Board(gd.BoardGame):
             self.bd_color2 = ex.hsv_to_rgb(h2, 187, 200)
             self.bd_color3 = ex.hsv_to_rgb(h3, 187, 200)
             self.colon_color = (0, 0, 0)
+        ratio_font_colors = [self.bd_color1, self.bd_color2, self.bd_color3, self.colon_color]
         self.ratios = []
         count = 0
         while True:
@@ -240,29 +309,43 @@ class Board(gd.BoardGame):
         switch = self.square_count // 2
         for i in range(self.square_count):
             if i < switch:
-                self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.Letter, "", self.white, "",
-                                    0)
-                ratio_canvas = self.board.ships[-1]
-                ratio = classes.drw.ratio_hq.Ratio(1, self.board.scale, color1, color2, color3,
-                                                           self.bd_color1, self.bd_color2, self.bd_color3, self.ratios[i])
-                ratio_canvas.painting = ratio.get_canvas().copy()
+                self.board.add_universal_unit(grid_x=self.slots[i][0], grid_y=self.slots[i][1], grid_w=1, grid_h=1,
+                                              txt="", fg_img_src=self.bg_img_src, bg_img_src=self.bg_img_src,
+                                              dc_img_src=self.door_bg_img_src, bg_color=(0, 0, 0, 0), border_color=None,
+                                              font_color=self.font_color, bg_tint_color=self.default_bg_color,
+                                              fg_tint_color=self.hover_bg_color, dc_tint_color=self.default_bg_color,
+                                              txt_align=(0, 0), font_type=self.font_size, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
+                ratio = classes.drw.ratio_hq.Ratio(1, self.board.scale, color1, color2, color3, self.bd_color1,
+                                                   self.bd_color2, self.bd_color3, self.ratios[i], 0.92)
+                self.board.ships[-1].manual_painting_layer = 1
+                self.board.ships[-1].init_m_painting()
+                self.board.ships[-1].manual_painting = ratio.get_canvas().copy()
+                self.board.ships[-1].update_me = True
 
             else:
                 if rlen == 3:
-                    self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.MultiColorLetters,
-                                        "<1>" + str(self.ratios[i - switch][0]) + "<4> : <2>" + str(self.ratios[i - switch][1]) + "<4> : <3>" + str(self.ratios[i - switch][2]),
-                                        self.white, "", 8)
+                    caption = "<1>" + str(self.ratios[i - switch][0]) + \
+                              "<4> : <2>" + str(self.ratios[i - switch][1]) + \
+                              "<4> : <3>" + str(self.ratios[i - switch][2])
                 else:
-                    self.board.add_unit(self.slots[i][0], self.slots[i][1], 1, 1, classes.board.MultiColorLetters,
-                                        "<1>" + str(self.ratios[i - switch][0]) + "<4> : <2>" + str(
-                                            self.ratios[i - switch][1]),
-                                        self.white, "", 8)
-                self.board.ships[-1].set_font_colors(self.bd_color1, self.bd_color2, self.bd_color3, self.colon_color)
+                    caption = "<1>" + str(self.ratios[i - switch][0]) + \
+                              "<4> : <2>" + str(self.ratios[i - switch][1])
+                self.board.add_universal_unit(grid_x=self.slots[i][0], grid_y=self.slots[i][1], grid_w=1, grid_h=1,
+                                              txt=caption, fg_img_src=self.bg_img_src, bg_img_src=self.bg_img_src,
+                                              dc_img_src=self.door_bg_img_src, bg_color=(0, 0, 0, 0),
+                                              border_color=None, font_color=ratio_font_colors,
+                                              bg_tint_color=self.default_bg_color,
+                                              fg_tint_color=self.hover_bg_color,
+                                              dc_tint_color=self.default_bg_color,
+                                              txt_align=(0, 0), font_type=8, multi_color=True, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
+                self.units.append(self.board.ships[-1])
 
     def draw_fraction_line(self, canvas, size, center):
         lh = 4
         la = self.mainloop.config.font_start_at_adjustment * 60 // size
-        pygame.draw.line(canvas, self.bd_color1, [center[0] - size // 7, center[1] - lh // 2 + la],
+        pygame.draw.line(canvas, self.font_color[0], [center[0] - size // 7, center[1] - lh // 2 + la],
                          [center[0] + size // 7, center[1] - lh // 2 + la], lh)
 
     def immo(self, ship):
@@ -278,36 +361,65 @@ class Board(gd.BoardGame):
                 active = self.board.ships[self.board.active_ship]
                 if not active.uncovered:
                     if self.history[0] is None:
-                        active.perm_outline_width = 6
-                        active.perm_outline_color = [150, 150, 255]
                         self.history[0] = active
+                        self.semi_select(active)
                         self.clicks += 1
                         active.uncovered = True
                     elif self.history[1] is None:
-                        active.perm_outline_width = 6
-                        active.perm_outline_color = [150, 150, 255]
                         self.history[1] = active
+                        self.semi_select(active)
                         self.clicks += 1
                         if self.chosen[self.history[0].unit_id] != self.chosen[self.history[1].unit_id]:
                             self.ai_enabled = True
                             self.history[0].uncovered = False
                         else:
-                            self.history[0].uncovered = True
-                            self.history[1].uncovered = True
-                            self.history[0].perm_outline_color = self.bd_color2  # [50,255,50]
-                            self.history[1].perm_outline_color = self.bd_color2
-                            self.history[0].image.set_alpha(50)
-                            self.history[1].image.set_alpha(50)
-                            self.history[0].update_me = True
-                            self.history[1].update_me = True
-                            self.history[0].set_display_check(True)
-                            self.history[1].set_display_check(True)
+                            self.select()
                             self.found += 2
                             if self.found == self.square_count:
                                 self.completed_mode = True
                                 self.ai_enabled = True
-                            self.history = [None, None]
+
                     active.update_me = True
+
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.custom_hover(event)
+
+    def semi_select(self, o):
+        if self.mainloop.m.game_variant == 4:
+            o.dc_tint_color = self.semi_selected_color
+            o.bg_tint_color = (50, 50, 50)
+        elif self.mainloop.m.game_variant == 5:
+            o.dc_tint_color = self.semi_selected_color
+        else:
+            o.bg_tint_color = self.semi_selected_color
+        o.mouse_out()
+        o.update_me = True
+
+    def select(self):
+        for each in self.history:
+            if self.mainloop.m.game_variant in [4, 5]:
+                each.dc_tint_color = self.selected_color
+                each.set_dc_img(self.dc_selected_img_src)
+            else:
+                each.bg_tint_color = self.selected_color
+            each.uncovered = True
+            each.set_display_check(True)
+            each.mouse_out()
+            each.update_me = True
+        self.history = [None, None]
+
+    def deselect(self):
+        for each in self.history:
+            if self.mainloop.m.game_variant in [4, 5]:
+                each.dc_tint_color = self.default_bg_color
+                each.bg_tint_color = None
+            else:
+                each.bg_tint_color = self.default_bg_color
+            each.mouse_out()
+            each.update_me = True
+        self.history = [None, None]
+        self.ai_enabled = False
+        self.disp_counter = 0
 
     def ai_walk(self):
         if self.disp_counter < self.disp_len:
@@ -315,17 +427,29 @@ class Board(gd.BoardGame):
         else:
             if self.completed_mode:
                 self.history = [None, None]
+                self.ai_enabled = False
                 self.level.next_board()
             else:
-                self.history[0].perm_outline_width = 1
-                self.history[0].perm_outline_color = self.bd_color2
-                self.history[1].perm_outline_width = 1
-                self.history[1].perm_outline_color = self.bd_color2
-                self.history[0].update_me = True
-                self.history[1].update_me = True
-                self.history = [None, None]
-                self.ai_enabled = False
-                self.disp_counter = 0
+                self.deselect()
+
+    def custom_hover(self, event):
+        if not self.drag and not self.ai_enabled:
+            pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
+            found = False
+            for each in self.units:
+                if each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom:
+                    if each != self.unit_mouse_over:
+                        if self.unit_mouse_over is not None:
+                            self.unit_mouse_over.mouse_out()
+                        self.unit_mouse_over = each
+                    found = True
+                    if not each.uncovered:
+                        each.handle(event)
+                    break
+            if not found:
+                if self.unit_mouse_over is not None:
+                    self.unit_mouse_over.mouse_out()
+                self.unit_mouse_over = None
 
     def update(self, game):
         game.fill((255, 255, 255))

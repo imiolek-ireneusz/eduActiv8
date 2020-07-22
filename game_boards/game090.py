@@ -23,7 +23,6 @@ class Board(gd.BoardGame):
         self.ai_enabled = False
         self.board.draw_grid = False
         h = random.randrange(150, 240, 5)
-        color0 = ex.hsv_to_rgb(h, 1, 255)  # highlight 1
         if self.mainloop.scheme is not None:
             if self.mainloop.scheme.dark:
                 color0 = (0, 0, 0)
@@ -147,6 +146,7 @@ class Board(gd.BoardGame):
         self.layout.update_layout(data2[0], data2[1])
         self.board.level_start(data2[0], data2[1], self.layout.scale)
 
+        self.units = []
         choice = [x for x in range(0, self.square_count // 2)]
         shuffled = choice[:]
         random.shuffle(shuffled)
@@ -204,16 +204,56 @@ class Board(gd.BoardGame):
             text_font_size = 10
         else:
             text_font_size = 8
+
+        h = random.randint(0, 255)
+        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+            self.default_bg_color = ex.hsv_to_rgb(h, 200, self.mainloop.cl.bg_color_v)
+            self.hover_bg_color = ex.hsv_to_rgb(h, 255, self.mainloop.cl.fg_hover_v)
+            self.font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
+            self.semi_selected_color = ex.hsv_to_rgb(h, 230, 90)
+            self.semi_selected_font_color = [ex.hsv_to_rgb(h, 150, 200), ]
+
+            self.selected_color = ex.hsv_to_rgb(h, 150, 50)
+            self.selected_font_color = [ex.hsv_to_rgb(h, 150, 100), ]
+        else:
+            self.default_bg_color = ex.hsv_to_rgb(h, 150, self.mainloop.cl.bg_color_v)
+            self.hover_bg_color = ex.hsv_to_rgb(h, 255, self.mainloop.cl.fg_hover_v)
+            self.font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
+            self.semi_selected_color = ex.hsv_to_rgb(h, 80, self.mainloop.cl.bg_color_v)
+            self.semi_selected_font_color = [ex.hsv_to_rgb(h, 200, self.mainloop.cl.font_color_v), ]
+
+            self.selected_color = ex.hsv_to_rgb(h, 50, self.mainloop.cl.bg_color_v)
+            self.selected_font_color = [ex.hsv_to_rgb(h, 50, 250), ]
+
+        self.dc_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+        bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        door_bg_img_src = os.path.join('unit_bg', "universal_sq_door.png")
+
+        self.dc_img_src_label = os.path.join('unit_bg', "universal_r3x1_dc.png")
+        bg_img_src_label = os.path.join('unit_bg', "universal_r3x1_bg.png")
+        door_bg_img_src_label = os.path.join('unit_bg', "universal_r3x1_door.png")
+
         for i in range(self.square_count):
             if i < switch:
                 position_list = small_slots
                 pos = i
                 xw = clock_size
-                self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, xw, classes.board.Ship, "", color0, "", self.font_size)
+                self.board.add_universal_unit(grid_x=position_list[pos][0], grid_y=position_list[pos][1], grid_w=xw, grid_h=xw, txt="",
+                                              fg_img_src=bg_img_src, bg_img_src=bg_img_src, dc_img_src=door_bg_img_src,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=self.font_color,
+                                              bg_tint_color=self.default_bg_color, fg_tint_color=self.hover_bg_color,
+                                              dc_tint_color=self.default_bg_color, txt_align=(0, 0),
+                                              font_type=self.font_size, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
                 self.clock_wrapper = self.board.ships[-1]
                 self.board.active_ship = self.clock_wrapper.unit_id
                 self.clock = classes.drw.clock.Clock(self, self.clock_wrapper, self.size*xw, self.time[i], self.data2[2:11])
-
+                self.board.ships[-1].manual_painting_layer = 1
+                self.board.ships[-1].init_m_painting()
+                self.board.ships[-1].manual_painting = self.clock.get_canvas().copy()
+                self.board.ships[-1].update_me = True
             else:
                 if self.mainloop.m.game_var2 == 0:
                     caption = self.lang.time2str(self.time[i - switch][0], self.time[i - switch][1])
@@ -222,10 +262,20 @@ class Board(gd.BoardGame):
                 position_list = wide_slots
                 pos = i - switch
                 xw = 3
-                self.board.add_unit(position_list[pos][0], position_list[pos][1], xw, 1, classes.board.Letter, caption,
-                                    color0, "", text_font_size)
+
+                self.board.add_universal_unit(grid_x=position_list[pos][0], grid_y=position_list[pos][1],
+                                              grid_w=xw, grid_h=1, txt=caption,
+                                              fg_img_src=bg_img_src_label, bg_img_src=bg_img_src_label,
+                                              dc_img_src=door_bg_img_src_label,
+                                              bg_color=(0, 0, 0, 0), border_color=None, font_color=self.font_color,
+                                              bg_tint_color=self.default_bg_color, fg_tint_color=self.hover_bg_color,
+                                              dc_tint_color=self.default_bg_color, txt_align=(0, 0),
+                                              font_type=text_font_size, multi_color=False, alpha=True,
+                                              immobilized=True, fg_as_hover=True)
+
                 self.board.ships[-1].font_color = self.font_color
 
+            self.units.append(self.board.ships[-1])
             self.board.ships[i].immobilize()
             self.board.ships[i].readable = False
             self.board.ships[i].perm_outline = True
@@ -233,44 +283,67 @@ class Board(gd.BoardGame):
             self.board.ships[i].checkable = True
             self.board.ships[i].init_check_images()
         self.outline_all(self.color2, 1)
+        self.mainloop.redraw_needed[0] = True
+
+    def immo(self, ship):
+        ship.immobilize()
+        ship.readable = False
+        ship.perm_outline = True
+        ship.uncovered = False
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)
-        if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and not self.ai_enabled:
+        if event.type == pygame.MOUSEBUTTONDOWN and self.history[1] is None and self.ai_enabled is False:
             if 0 <= self.board.active_ship < self.square_count:
                 active = self.board.ships[self.board.active_ship]
                 if not active.uncovered:
                     if self.history[0] is None:
-                        active.perm_outline_width = 6
-                        active.perm_outline_color = [150, 150, 255]
                         self.history[0] = active
+                        self.semi_select(active)
                         self.clicks += 1
                         active.uncovered = True
                     elif self.history[1] is None:
-                        active.perm_outline_width = 6
-                        active.perm_outline_color = [150, 150, 255]
                         self.history[1] = active
+                        self.semi_select(active)
                         self.clicks += 1
                         if self.chosen[self.history[0].unit_id] != self.chosen[self.history[1].unit_id]:
                             self.ai_enabled = True
                             self.history[0].uncovered = False
                         else:
-                            self.history[0].uncovered = True
-                            self.history[1].uncovered = True
-                            self.history[0].perm_outline_color = self.color2  # [50,255,50]
-                            self.history[1].perm_outline_color = self.color2
-                            self.history[0].image.set_alpha(50)
-                            self.history[1].image.set_alpha(50)
-                            self.history[0].update_me = True
-                            self.history[1].update_me = True
-                            self.history[0].set_display_check(True)
-                            self.history[1].set_display_check(True)
+                            self.select()
                             self.found += 2
                             if self.found == self.square_count:
                                 self.completed_mode = True
                                 self.ai_enabled = True
-                            self.history = [None, None]
+
                     active.update_me = True
+
+        if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
+            self.custom_hover(event)
+
+    def semi_select(self, o):
+        o.bg_tint_color = self.semi_selected_color
+        o.mouse_out()
+        o.update_me = True
+
+    def select(self):
+        for each in self.history:
+
+            each.bg_tint_color = self.selected_color
+            each.uncovered = True
+            each.set_display_check(True)
+            each.mouse_out()
+            each.update_me = True
+        self.history = [None, None]
+
+    def deselect(self):
+        for each in self.history:
+            each.bg_tint_color = self.default_bg_color
+            each.mouse_out()
+            each.update_me = True
+        self.history = [None, None]
+        self.ai_enabled = False
+        self.disp_counter = 0
 
     def update(self, game):
         game.fill((255, 255, 255))
@@ -282,17 +355,29 @@ class Board(gd.BoardGame):
         else:
             if self.completed_mode:
                 self.history = [None, None]
+                self.ai_enabled = False
                 self.level.next_board()
             else:
-                self.history[0].perm_outline_width = 1
-                self.history[0].perm_outline_color = self.color2
-                self.history[1].perm_outline_width = 1
-                self.history[1].perm_outline_color = self.color2
-                self.history[0].update_me = True
-                self.history[1].update_me = True
-                self.history = [None, None]
-                self.ai_enabled = False
-                self.disp_counter = 0
+                self.deselect()
+
+    def custom_hover(self, event):
+        if not self.drag and not self.ai_enabled:
+            pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
+            found = False
+            for each in self.units:
+                if each.rect.left < pos[0] < each.rect.right and each.rect.top < pos[1] < each.rect.bottom:
+                    if each != self.unit_mouse_over:
+                        if self.unit_mouse_over is not None:
+                            self.unit_mouse_over.mouse_out()
+                        self.unit_mouse_over = each
+                    found = True
+                    if not each.uncovered:
+                        each.handle(event)
+                    break
+            if not found:
+                if self.unit_mouse_over is not None:
+                    self.unit_mouse_over.mouse_out()
+                self.unit_mouse_over = None
 
     def check_result(self):
         pass
