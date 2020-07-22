@@ -12,8 +12,7 @@ import classes.extras as ex
 
 
 class Unit(pygame.sprite.Sprite):
-    """basic class for all on-board objects"""
-
+    """Basic class for all on-board objects."""
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", color=(0, 0, 0), alpha=False, **kwargs):
         pygame.sprite.Sprite.__init__(self)
         self.grid_x = grid_x
@@ -83,7 +82,8 @@ class Unit(pygame.sprite.Sprite):
         self.grid_w = new_grid_w
         self.grid_h = new_grid_h
         if self.alpha:
-            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1), flags=pygame.SRCALPHA)
+            self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1),
+                                        flags=pygame.SRCALPHA)
         else:
             self.image = pygame.Surface((self.grid_w * self.board.scale - 1, self.grid_h * self.board.scale - 1))
         self.image.fill(self.color)
@@ -93,7 +93,6 @@ class Unit(pygame.sprite.Sprite):
         self.update_me = True
 
     def init_check_images(self, align=2, shrink=2):
-        # w = int((self.grid_w * self.board.scale) / shrink)
         h = w = int((self.grid_h * self.board.scale) / shrink)
         if align == 2:
             self.check_x = int((self.grid_w * self.board.scale * 0.95) - w)
@@ -133,7 +132,8 @@ class Unit(pygame.sprite.Sprite):
     def draw_fraction_lines(self):
         if self.fraction_line_top or self.fraction_line_bottom:
             width = self.board.scale // 20
-            margin = (self.board.scale * self.grid_w - (self.board.scale * self.grid_w) * self.fraction_line_length // 100) // 2
+            margin = (self.board.scale * self.grid_w - (self.board.scale * self.grid_w) *
+                      self.fraction_line_length // 100) // 2
             if width > 1:
                 x = width // 2 - 1
                 y = width // 2 - 1
@@ -146,10 +146,14 @@ class Unit(pygame.sprite.Sprite):
                 y = 0
                 w2 = 2
             if self.fraction_line_top:
-                pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, y], [self.board.scale * self.grid_w - w2 + width - margin, y], width)
+                pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, y],
+                                 [self.board.scale * self.grid_w - w2 + width - margin, y], width)
 
             if self.fraction_line_bottom:
-                pygame.draw.line(self.image, self.fraction_line_color, [x - width + margin, self.board.scale * self.grid_h - w2], [self.board.scale * self.grid_w - w2 + width - margin, self.board.scale * self.grid_h - w2], width)
+                pygame.draw.line(self.image, self.fraction_line_color,
+                                 [x - width + margin, self.board.scale * self.grid_h - w2],
+                                 [self.board.scale * self.grid_w - w2 + width - margin,
+                                  self.board.scale * self.grid_h - w2], width)
 
     def pos_update(self):
         if self.grid_w > 0 and self.grid_h > 0:
@@ -159,19 +163,19 @@ class Unit(pygame.sprite.Sprite):
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
         else:
             self.image = pygame.Surface((1, 1))
-            # self.painting = self.image
             self.rect = self.image.get_rect()
             self.rect.topleft = [self.grid_x * self.board.scale + 1, self.grid_y * self.board.scale + 1]
 
     def scale_img(self, new_w, new_h):
-        """scales image depending on pygame version and bit depth using either smoothscale or scale"""
+        """Scales an image depending on pygame version and bit depth using either smoothscale or scale."""
         if self.img.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             self.img = self.img_org = pygame.transform.smoothscale(self.img, (new_w, new_h))
         else:
             self.img = self.img_org = pygame.transform.scale(self.img, (new_w, new_h))
 
     def scalled_img(self, image, new_w, new_h):
-        """scales image depending on pygame version and bit depth using either smoothscale or scale"""
+        """Scales and returns the passed image depending on pygame version and bit depth using either
+        smoothscale or scale."""
         if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             img = pygame.transform.smoothscale(image, (new_w, new_h))
         else:
@@ -202,12 +206,12 @@ class Unit(pygame.sprite.Sprite):
         self.hidden = False
         self.update_me = True
 
-    # Update color, image or text
     def update(self, board):
         if self.update_me:
             self.update_me = False
-            if self.board.mainloop.scheme is not None and self.board.decolorable and self.decolorable and self.board.mainloop.game_board is not None and (
-                    isinstance(self, Letter) or isinstance(self, Label)):
+            if (self.board.mainloop.scheme is not None and self.board.decolorable and self.decolorable and
+                    self.board.mainloop.game_board is not None and
+                    (isinstance(self, Letter) or isinstance(self, Label))):
                 self.initcolor = self.board.mainloop.scheme.u_initcolor
                 self.color = self.board.mainloop.scheme.u_color
                 self.font_color = self.board.mainloop.scheme.u_font_color
@@ -218,92 +222,7 @@ class Unit(pygame.sprite.Sprite):
                 if not self.hasimg:
                     if len(self.value) > 0:
                         if self.show_value:
-                            if sys.version_info < (3, 0):
-                                if isinstance(self.value, basestring):
-                                    # if a passed argument is a string turn it into a 1 item list
-                                    if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
-                                        value = [self.value]
-                                    else:
-                                        # else enter extra line breaks
-                                        if len(self.value) > 5:
-                                            line = ""
-                                            test_line = ""
-                                            word = ""
-                                            value = []
-                                            try:
-                                                valx = unicode(self.value, "utf-8")
-                                            except UnicodeDecodeError:
-                                                valx = self.value
-                                            except TypeError:
-                                                valx = self.value
-                                            linelen = len(valx)
-
-                                            for i in range(linelen):
-                                                if valx[i] == "\n":
-                                                    test_line = "" + word
-                                                    word = ""
-                                                    value.append(line)
-                                                    line = "" + test_line
-                                                elif valx[i] == " " or i == linelen - 1:
-                                                    test_line = test_line + word + valx[i]
-                                                    if self.font.size(test_line)[0] < self.rect.w:
-                                                        line = "" + test_line
-                                                        word = ""
-                                                    else:
-                                                        test_line = "" + word + valx[i]
-                                                        word = ""
-                                                        value.append(line)
-                                                        line = "" + test_line
-                                                else:
-                                                    word += valx[i]
-                                            if len(test_line) > 0:
-                                                value.append(test_line)
-                                        else:
-                                            value = [self.value]
-                                else:
-                                    value = self.value
-                            else:
-                                if isinstance(self.value, str):
-                                    # if a passed argument is a string turn it into a 1 item list
-                                    # value = [self.value]
-                                    # if a passed argument is a string turn it into a 1 item list
-                                    if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
-                                        value = [self.value]
-                                    else:
-                                        # else enter extra line breaks
-                                        if len(self.value) > 5:
-                                            line = ""
-                                            test_line = ""
-                                            word = ""
-                                            value = []
-                                            valx = self.value
-                                            linelen = len(valx)
-
-                                            for i in range(linelen):
-                                                if valx[i] == "\n":
-                                                    test_line = "" + word
-                                                    word = ""
-                                                    value.append(line)
-                                                    line = "" + test_line
-                                                elif valx[i] == " " or i == linelen - 1:
-                                                    test_line = test_line + word + valx[i]
-                                                    if self.font.size(test_line)[0] < self.rect.w:
-                                                        line = "" + test_line
-                                                        word = ""
-                                                    else:
-                                                        test_line = "" + word + valx[i]
-                                                        word = ""
-                                                        value.append(line)
-                                                        line = "" + test_line
-                                                else:
-                                                    word += valx[i]
-                                            if len(test_line) > 0:
-                                                value.append(test_line)
-                                        else:
-                                            value = [self.value]
-                                else:
-                                    value = self.value
-
+                            value = self.wrapped_text()
                             lv = len(value)
                             for i in range(lv):
                                 if sys.version_info < (3, 0):
@@ -328,23 +247,25 @@ class Unit(pygame.sprite.Sprite):
                                     font_x = board.scale * self.grid_w - self.font.size(val)[0] - 5
                                 if lv == 1:
                                     font_y = ((board.scale * self.grid_h - self.font.size(val)[1]) // 2)
-                                elif lv == self.grid_h:  # number of items is equal to grid height of an object - distribute lines equally in each grid square
+                                elif lv == self.grid_h:
+                                    # number of items is equal to grid height of an object - distribute lines equally
+                                    # in each grid square
                                     font_y = ((board.scale - self.font.size(val)[1]) // 2) + board.scale * i
                                 else:
                                     if self.valign == 0:
                                         # lv - total
-                                        line_h = self.font.size(value[0])[
-                                                     1] / self.board.mainloop.config.font_line_height_adjustment
+                                        line_h = self.font.size(value[0])[1] / \
+                                                 self.board.mainloop.config.font_line_height_adjustment
                                         line_margin = 0
                                         step = line_h + line_margin
                                         center = (board.scale * self.grid_h) // 2
-                                        start_at = center - (
-                                                            step * lv - line_margin) // 2 - self.board.mainloop.config.font_start_at_adjustment
+                                        start_at = center - (step * lv - line_margin) // 2 - \
+                                                   self.board.mainloop.config.font_start_at_adjustment
                                         font_y = start_at + step * i
                                     else:
                                         # lv - total
-                                        line_h = self.font.size(value[0])[
-                                                     1] / self.board.mainloop.config.font_line_height_adjustment
+                                        line_h = self.font.size(value[0])[1] / \
+                                                 self.board.mainloop.config.font_line_height_adjustment
                                         line_margin = 0
                                         step = line_h + line_margin
                                         start_at = 5
@@ -362,6 +283,92 @@ class Unit(pygame.sprite.Sprite):
 
                 self.draw_fraction_lines()
                 self.draw_check_marks()
+
+    def wrapped_text(self):
+        if sys.version_info < (3, 0):
+            if isinstance(self.value, basestring):
+                # if value is a string turn it into a single item list
+                if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                    value = [self.value]
+                else:
+                    # else enter extra line breaks
+                    if len(self.value) > 5:
+                        line = ""
+                        test_line = ""
+                        word = ""
+                        value = []
+                        try:
+                            valx = unicode(self.value, "utf-8")
+                        except UnicodeDecodeError:
+                            valx = self.value
+                        except TypeError:
+                            valx = self.value
+                        linelen = len(valx)
+
+                        for i in range(linelen):
+                            if valx[i] == "\n":
+                                test_line = "" + word
+                                word = ""
+                                value.append(line)
+                                line = "" + test_line
+                            elif valx[i] == " " or i == linelen - 1:
+                                test_line = test_line + word + valx[i]
+                                if self.font.size(test_line)[0] < self.rect.w:
+                                    line = "" + test_line
+                                    word = ""
+                                else:
+                                    test_line = "" + word + valx[i]
+                                    word = ""
+                                    value.append(line)
+                                    line = "" + test_line
+                            else:
+                                word += valx[i]
+                        if len(test_line) > 0:
+                            value.append(test_line)
+                    else:
+                        value = [self.value]
+            else:
+                value = self.value
+        else:
+            if isinstance(self.value, str):
+                # if value is a string turn it into a single item list
+                if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                    value = [self.value]
+                else:
+                    # else enter extra line breaks
+                    if len(self.value) > 5:
+                        line = ""
+                        test_line = ""
+                        word = ""
+                        value = []
+                        valx = self.value
+                        linelen = len(valx)
+
+                        for i in range(linelen):
+                            if valx[i] == "\n":
+                                test_line = "" + word
+                                word = ""
+                                value.append(line)
+                                line = "" + test_line
+                            elif valx[i] == " " or i == linelen - 1:
+                                test_line = test_line + word + valx[i]
+                                if self.font.size(test_line)[0] < self.rect.w:
+                                    line = "" + test_line
+                                    word = ""
+                                else:
+                                    test_line = "" + word + valx[i]
+                                    word = ""
+                                    value.append(line)
+                                    line = "" + test_line
+                            else:
+                                word += valx[i]
+                        if len(test_line) > 0:
+                            value.append(test_line)
+                    else:
+                        value = [self.value]
+            else:
+                value = self.value
+        return value
 
     def draw_check_marks(self):
         if self.check_display is not None:
@@ -388,7 +395,7 @@ class Unit(pygame.sprite.Sprite):
         pass
 
     def rot_center(self, image, angle):
-        """rotate an image while keeping its center and size"""
+        """Rotate an image while keeping its center and size."""
         orig_rect = image.get_rect()
         rot_image = pygame.transform.rotate(image, angle)
         rot_rect = copy.deepcopy(orig_rect)
@@ -397,7 +404,7 @@ class Unit(pygame.sprite.Sprite):
         return rot_image
 
     def draw_outline(self):
-        """draws an 'outline' around the unit"""
+        """Draws an 'outline' around the unit."""
         color = self.perm_outline_color  # [255,0,0]
         width = self.perm_outline_width
         if width > 1:
@@ -422,7 +429,7 @@ class Unit(pygame.sprite.Sprite):
                           width)
 
     def set_outline(self, color=(255, 0, 0), width=2):
-        'enables the draw_outline and sets line color and width'
+        """Enables the draw_outline and sets line color and width."""
         self.perm_outline = True
         if color == 0 and hasattr(self, "door_outline") is False:  # if color is 0 calculate colour from base colour
             # convert to hsv
@@ -494,8 +501,8 @@ class Letter(Ship):
 
 
 class MultiColorLetters(Letter):
-    """accepts string formatted in a way to allow multiple colours in one line, e.g.
-    "<1>this is in colour one<2>this is in colour two". to initialize colours use the set_font_colours method """
+    """Accepts string formatted in a way to allow multiple colours in one line, e.g.
+    "<1>this is in colour one<2>this is in colour two". to initialize colours use the set_font_colors method."""
 
     def __init__(self, board, grid_x=0, grid_y=0, grid_w=1, grid_h=1, value="", initcolor=(0, 0, 0), alpha=False,
                  **kwargs):
@@ -514,7 +521,6 @@ class MultiColorLetters(Letter):
         self.colors = [color1, color2, color3, color4]
 
     def split_tags(self, text):
-
         txt = []
         col = []
         txtln = []
@@ -546,11 +552,12 @@ class MultiColorLetters(Letter):
     def update(self, board):
         if self.update_me:
             self.update_me = False
-            if self.board.mainloop.scheme is not None and self.board.decolorable and self.decolorable and self.board.mainloop.game_board is not None and (
-                    isinstance(self, Letter) or isinstance(self, Label)):
-                self.initcolor = self.board.mainloop.scheme.u_initcolor  # (255,255,255)
-                self.color = self.board.mainloop.scheme.u_color  # (255,255,255)
-                self.font_color = self.board.mainloop.scheme.u_font_color  # (0,0,0)
+            if (self.board.mainloop.scheme is not None and self.board.decolorable and self.decolorable and
+                    self.board.mainloop.game_board is not None and
+                    (isinstance(self, Letter) or isinstance(self, Label))):
+                self.initcolor = self.board.mainloop.scheme.u_initcolor
+                self.color = self.board.mainloop.scheme.u_color
+                self.font_color = self.board.mainloop.scheme.u_font_color
 
             self.image.fill(self.color)
             self.image.blit(self.painting, (0, 0))
@@ -613,7 +620,7 @@ class ImgSurf(pygame.sprite.Sprite):
                 pass
 
     def scale_img(self, new_w, new_h):
-        """scales image depending on pygame version and bit depth using either smoothscale or scale"""
+        """Scales image depending on pygame version and bit depth using either smoothscale or scale."""
         if self.img.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             self.img = self.img_org = pygame.transform.smoothscale(self.img, (new_w, new_h))
         else:
@@ -893,7 +900,8 @@ class MultiImgSprite(ImgShip):
 
 
 class Door(ImgShip):
-    def __init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, font_size, door_alpha=True, alpha=False, **kwargs):
+    def __init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, font_size, door_alpha=True,
+                 alpha=False, **kwargs):
         ImgShip.__init__(self, board, grid_x, grid_y, grid_w, grid_h, value, initcolor, alpha=door_alpha, **kwargs)
         self.font = board.font_sizes[font_size]
         if door_alpha:
@@ -978,6 +986,7 @@ class BoardBg(Unit):
                 pygame.draw.line(self.painting, self.line_color, [0, column * self.board.scale],
                                  [self.screen_w, column * self.board.scale], self.grid_line_w)
 
+
 class PuzzleTable:
     def __init__(self):
         pass
@@ -985,8 +994,9 @@ class PuzzleTable:
     def clean(self):
         pass
 
+
 class Board:
-    """Initializes and creates an empty board with the sizes given, ie. a=Board(mainloop,10,10,50)"""
+    """Initializes and creates an empty board with the sizes given, ie. a=Board(mainloop,10,10,50)."""
     def __init__(self, mainloop, x_count=10, y_count=10, scale=8):
         self.mainloop = mainloop
         self.decolorable = True
@@ -1020,7 +1030,7 @@ class Board:
         self.load_fonts()
 
     def load_fonts(self):
-        """Load system fonts - temporarily disabled method"""
+        """Load system fonts - temporarily disabled method."""
         """
         system_font_list = pygame.font.get_fonts()
         if len(system_font_list) > 0:
@@ -1076,7 +1086,6 @@ class Board:
         h_sizes = [25, 17, 10, 1.1, 1.5, 2, 2.3, 0.7]
         handwritten_sizes = [pygame.font.Font(self.font_path_hand, (int(float(self.points) * float(h_sizes[i]))))
                              for i in range(len(h_sizes))]
-        # handwritten_sizes = [pygame.font.Font(font_path, (int(float(self.points) * float(h_sizes[i])))) for i in range(len(h_sizes))]
 
         self.font_sizes.extend(handwritten_sizes)
         # 20
@@ -1100,7 +1109,8 @@ class Board:
         xsizes = [5.5, 6.0, 6.5, 0.7, 0.9, 1]
         for i in range(len(xsizes)):
             xsizes[i] = xsizes[i] / self.mainloop.config.font_multiplier
-            self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(float(self.points) / float(xsizes[i])))))
+            self.font_sizes.append(pygame.font.Font(self.font_path_default,
+                                                    (int(float(self.points) / float(xsizes[i])))))
 
         #clock font 34, 35
         self.font_sizes.append(pygame.font.Font(self.font_path_clock, (int(self.points / 0.5))))
@@ -1135,16 +1145,17 @@ class Board:
         del self.all_sprites_list
 
     def _create_board(self, sx, sy):
-        """Creates an empty board for the initialisation method"""
+        """Creates an empty board for the initialisation method."""
         self.grid = [[0 for x in range(0, sx)] for y in range(0, sy)]
 
     def _reset_board(self):
-        """Sets all fields on Board to False"""
+        """Sets all fields on Board to False."""
         self.grid = [[0 for x in range(0, self.x_count)] for y in range(0, self.y_count)]
 
     def _set(self, x, y, grid_w=1, grid_h=1, value=1):
-        """Take/Reserve the position on board if True, or free position if False"""
-        'Before using this method use the _isfree() method first check if all squares in question are available and than go back to each field and set as True'
+        """Reserve the position on board if True, or free position if False.
+        Before using this method use the _isfree() method first - check if all squares in question are available and
+        than go back to each field and set as True."""
         x2 = x + grid_w
         y2 = y + grid_h
         for i in range(x, x2):
@@ -1152,7 +1163,7 @@ class Board:
                 self.grid[j][i] = value
 
     def _isfree(self, x, y, grid_w=1, grid_h=1):
-        """check if the position is free and within board"""
+        """Check if the position is free and within board."""
         x2 = x + grid_w
         y2 = y + grid_h
 
@@ -1167,7 +1178,7 @@ class Board:
 
     def add_unit(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, unit_class=Ship, value="A", color=(0, 0, 0), img_src='',
                  font_size=0, frame_flow=[0], frame_count=1, row_data=[1, 1], img2_src=None, alpha=False):
-        """adds a new unit to the board"""
+        """Adds a new unit to the board."""
         if self._isfree(grid_x, grid_y, grid_w, grid_h):
             unit = unit_class(self, grid_x, grid_y, grid_w, grid_h, value, initcolor=color, img_src=img_src,
                               font_size=font_size, frame_flow=frame_flow, frame_count=frame_count, row_data=row_data,
@@ -1184,24 +1195,23 @@ class Board:
             self.all_sprites_list.add(unit)
             self._set(grid_x, grid_y, grid_w, grid_h)
         else:
-            print(
-            'Sorry: position taken: (x:%d, y:%d, w:%d, h:%d), board size: %d x %d, game_id: %d, screen size: %d x %d' % (
-            grid_x, grid_y, grid_w, grid_h, self.x_count, self.y_count, self.mainloop.m.active_game_id,
-            self.mainloop.size[0], self.mainloop.size[1]))
+            print('Sorry: position taken: (x:%d, y:%d, w:%d, h:%d), board size: %d x %d, game_id: %d, '
+                  'screen size: %d x %d' % (grid_x, grid_y, grid_w, grid_h, self.x_count, self.y_count,
+                                            self.mainloop.m.active_game_id, self.mainloop.size[0],
+                                            self.mainloop.size[1]))
 
     def add_universal_unit(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, txt=None, fg_img_src=None, bg_img_src=None,
                            dc_img_src=None, bg_color=None, border_color=None, font_color=None,
                            bg_tint_color=None, fg_tint_color=None, dc_tint_color=None,
                            txt_align=(0, 0), font_type=0, multi_color=False, alpha=True, immobilized=False,
                            fg_as_hover=False, dc_as_hover=False, mode=0):
-        """ adds a new unit to the board
-            mode determines type of object, 0 - ship, 1 - obstacle, 2 - door
-        """
+        """Adds a new unit to the board, mode determines type of object, 0 - ship, 1 - obstacle, 2 - door."""
+
         if self._isfree(grid_x, grid_y, grid_w, grid_h) or mode == 2:
             unit = classes.universal.Universal(self, grid_x, grid_y, grid_w, grid_h, txt, fg_img_src, bg_img_src,
                                                dc_img_src, bg_color, border_color, font_color, bg_tint_color,
-                                               fg_tint_color, dc_tint_color, txt_align, font_type, multi_color, alpha, immobilized,
-                                               fg_as_hover, dc_as_hover, mode)
+                                               fg_tint_color, dc_tint_color, txt_align, font_type, multi_color, alpha,
+                                               immobilized, fg_as_hover, dc_as_hover, mode)
             if mode == 0:
                 unit.is_door = False
                 self.ships.append(unit)
@@ -1218,15 +1228,15 @@ class Board:
                 self.units.append(unit)
             self.all_sprites_list.add(unit)
         else:
-            print(
-                    'Sorry: position taken: (x:%d, y:%d, w:%d, h:%d), board size: %d x %d, game_id: %d, screen size: %d x %d' % (
-                grid_x, grid_y, grid_w, grid_h, self.x_count, self.y_count, self.mainloop.m.active_game_id,
-                self.mainloop.size[0], self.mainloop.size[1]))
+            print('Sorry: position taken: (x:%d, y:%d, w:%d, h:%d), board size: %d x %d, game_id: %d, '
+                  'screen size: %d x %d' % (grid_x, grid_y, grid_w, grid_h, self.x_count, self.y_count,
+                                            self.mainloop.m.active_game_id, self.mainloop.size[0],
+                                            self.mainloop.size[1]))
 
     def add_door(self, grid_x=0, grid_y=0, grid_w=1, grid_h=1, unit_class=Door, value="", color=(0, 0, 0), img_src='',
                  font_size=0, door_alpha=True, alpha=False, frame_flow=[0], frame_count=1, row_data=[1, 1]):
-        """add a unit that will be drawn to the board but will not hold a square in the grid
-        this is usually a red square indicating where other squares should be dragged to complete the task"""
+        """Add a unit that will be drawn to the board but will not hold a square in the grid
+        this is usually a square indicating where other units should be dragged to complete the task."""
         unit = unit_class(self, grid_x, grid_y, grid_w, grid_h, value, initcolor=color, img_src=img_src,
                           font_size=font_size, door_alpha=door_alpha, alpha=alpha, frame_flow=frame_flow, frame_count=frame_count,
                           row_data=row_data)
@@ -1235,7 +1245,7 @@ class Board:
         self.all_sprites_list.add(unit)
 
     def move(self, ship_id, x, y, ai=False):
-        """move the ship, diagonal move possible only if two-step non diagonal move is possible"""
+        """Move the ship, diagonal move possible only if two-step non diagonal move is possible."""
         if ai:
             s = self.aiunits[ship_id]
         else:
@@ -1335,8 +1345,8 @@ class Board:
         else:
             ship = self.units[unit_id]
 
-        if self.check_laby is False or (self.check_laby is True and self.laby_dir > -1 and not
-        self.mainloop.game_board.mylaby.get_cell(ship.grid_x, ship.grid_y).laby_doors[self.laby_dir]):
+        if (self.check_laby is False or (self.check_laby is True and self.laby_dir > -1 and not
+        self.mainloop.game_board.mylaby.get_cell(ship.grid_x, ship.grid_y).laby_doors[self.laby_dir])):
             self.laby_dir = -1
             # remove ship from board grid - take off
             self._set(ship.grid_x, ship.grid_y, ship.grid_w, ship.grid_h, False)
@@ -1434,7 +1444,6 @@ class Board:
             ship.grid_last_x = x
             ship.grid_last_y = y
 
-
     def _place_unit(self, ship_id, pos):
         ship = self.ships[ship_id]
         # remove ship from board grid - take off
@@ -1463,11 +1472,6 @@ class Board:
         ship = self.ships[ship_id]
         l = x - self.mainloop.layout.game_left
         t = y - self.mainloop.sizer.info_bar_h - self.mainloop.sizer.score_bar_h
-        # if l > 0 and l < self.mainloop.layout.game_right - self.mainloop.layout.game_left:
-
-        # update subtitle - logging
-        # self.mainloop.info.subtitle = "%s %s %s %s" % (l, r, t, b)
-        # self.mainloop.redraw_needed[1] = True
 
         # should the unit free movement be limited to a certain area or the entire game screen
         if self.animation_c_set:
@@ -1510,7 +1514,7 @@ class Board:
                 return each_unit.unit_id
 
     def activate_ship(self, x, y):
-        """this only works on binary table"""
+        """This only works on 'binary' table."""
         # unhighlight and repaint deactivated unit
         if self.active_ship != -1:
             active = self.ships[self.active_ship]
