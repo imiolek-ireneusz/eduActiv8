@@ -402,7 +402,6 @@ class Universal(pygame.sprite.Sprite):
                 if (not self.fg_as_hover) or (self.hover and self.fg_as_hover):
                     # apply foreground tint
 
-
                     if self.fg_tint_color is not None:
                         if not self.mirror:
                             if not self.use_blit_mask:
@@ -619,6 +618,12 @@ class Universal(pygame.sprite.Sprite):
                         text = self.font.render("%s" % (self.coltxt[1][i]), 1, self.font_colors[self.coltxt[0][i]])
                         self.image.blit(text, (font_x + self.coltxt[2][i], font_y))
 
+    def add_image(self, layer, img):
+        self.manual_painting_layer = layer
+        self.init_m_painting()
+        self.manual_painting = img.get_canvas().copy()
+        self.update_me = True
+
     def draw_check_marks(self):
         if self.check_display is not None:
             if self.check_display:
@@ -687,4 +692,3 @@ class Universal(pygame.sprite.Sprite):
             self.mouse_enter()
         elif event.type == pygame.MOUSEBUTTONUP:
             self.mouse_click()
-
