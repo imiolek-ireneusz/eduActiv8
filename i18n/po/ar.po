@@ -1,24 +1,26 @@
-# eduActiv8 - translation file.
+# eduActiv8 - Educational Activity Pack - translation file.
 # Copyright (C) 2012 - 2019 Ireneusz Imiolek
-# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+# This file is distributed under the same license as the eduactiv8 package.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
 #
 # Translators:
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019
+# ayman mahmoud <aimen.riyadh@gmail.com>, 2020
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2020-06-22 15:48+0100\n"
-"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
-"Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"PO-Revision-Date: 2020-07-10 14:00+0300\n"
+"Last-Translator: ayman mahmoud <aimen.riyadh@gmail.com>, 2020\n"
+"Language-Team: Arabic (https://www.transifex.com/eduactiv8/teams/94947/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n"
+"%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Poedit 2.3.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
@@ -28,12 +30,6 @@ msgid ""
 "Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
-"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
-" Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public "
-"Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
-"Commons License (CC BY-SA). \n"
-" Please view credits.txt for more info about authors of media files used in this project"
 
 msgid ""
 "This program is free software: you can redistribute it and/or modify it under the terms "
@@ -42,932 +38,930 @@ msgid ""
 "received a copy of the GNU General Public License along with this program. If not, see "
 "<http://www.gnu.org/licenses/>."
 msgstr ""
-"This program is free software: you can redistribute it and/or modify it under the terms "
-"of the GNU General Public License as published by the Free Software Foundation, either "
-"version 3 of the License, or (at your option) any later version. You should have "
-"received a copy of the GNU General Public License along with this program. If not, see "
-"<http://www.gnu.org/licenses/>."
+"هذا البرنامج هو برنامج مجاني: يمكنك إعادة توزيعه و / أو تعديله بموجب شروط رخصة جنو "
+"العمومية كما نشرتها مؤسسة البرمجيات الحرة ، إما الإصدار 3 من الترخيص ، أو (حسب اختيارك) "
+"أي إصدار لاحق. يجب أن تكون قد تلقيت نسخة من رخصة جنو العمومية جنباً إلى جنب مع هذا "
+"البرنامج. إذا لم يكن كذلك ، راجع <http://www.gnu.org/licenses/>."
 
 msgid "A collection of educational activities for kids"
-msgstr "A collection of educational activities for kids"
+msgstr "مجموعة من الانشطة التعليمية للاطفال"
 
 msgid "Educational Activities for Kids"
-msgstr "Educational Activities for Kids"
+msgstr "انشطة تعليمية للاطفال "
 
 msgid ""
 "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons "
 "License (CC BY-SA)"
 msgstr ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons "
-"License (CC BY-SA)"
 
 msgid "Default Language:"
-msgstr "Default Language:"
+msgstr "اللغة الافتراضية"
 
 msgid "Guest"
-msgstr "Guest"
+msgstr "ضيف"
 
 msgid "Log in:"
-msgstr "Log in:"
+msgstr "دخول "
 
 msgid "user name:"
-msgstr "user name:"
+msgstr "اسم المستخدم "
 
 msgid "password:"
-msgstr "password:"
+msgstr "كلمة السر"
 
 msgid "Login"
-msgstr "Login"
+msgstr "دخول "
 
 msgid "Add new user:"
-msgstr "Add new user:"
+msgstr "اضف مستخدم جديد"
 
 msgid "confirm password:"
-msgstr "confirm password:"
+msgstr "تأكيد كلمة السر"
 
 msgid "Register new user"
-msgstr "Register new user"
+msgstr "تسجيل مستخدم جديد"
 
 msgid "Administrator Login:"
-msgstr "Administrator Login:"
+msgstr "دخول المدير"
 
 msgid "User Management"
-msgstr "User Management"
+msgstr "ادارة المستخدمين"
 
 msgid "Please select a user from the list."
-msgstr "Please select a user from the list."
+msgstr "فضلا اختر مستخدم من القائمة"
 
 msgid "Delete user"
-msgstr "Delete user"
+msgstr "حذف مستخدم"
 
 msgid "Delete"
-msgstr "Delete"
+msgstr "حذف"
 
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "الغاء "
 
 #, python-format
 msgid "%s deleted from database."
-msgstr "%s deleted from database."
+msgstr "تم حذف %s من قاعدة البيانات."
 
 msgid "Failed to delete the user."
-msgstr "Failed to delete the user."
+msgstr "لا يمكن حذف المستخدم"
 
 msgid "Preferences"
-msgstr "Preferences"
+msgstr "التفضيلات"
 
 msgid "switch to full screen after login"
-msgstr "switch to full screen after login"
+msgstr "اعرض الشاشة بالكامل بعد تسجيل الدخول"
 
 msgid "allow adding new users on login screen"
-msgstr "allow adding new users on login screen"
+msgstr "اضافة مستخدمين جدد خلال شاشة تسجيل الدخول"
 
 msgid "User Name"
-msgstr "User Name"
+msgstr "اسم المستخدم"
 
 msgid "require password to log in"
-msgstr "require password to log in"
+msgstr "تحتاج كلمة سر للدخول "
 
 msgid "require password to access admin area"
-msgstr "require password to access admin area"
+msgstr "كلمة سر لوحة تحكم المدير"
 
 msgid "Update admin's password:"
-msgstr "Update admin's password:"
+msgstr "تحديث كلمة سر المدير"
 
 msgid "previous password:"
-msgstr "previous password:"
+msgstr "كلمة السر السابقة "
 
 msgid "new password:"
-msgstr "new password:"
+msgstr "كلمة السر الجديدة"
 
 msgid "confirm new password:"
-msgstr "confirm new password:"
+msgstr "تأكيد كلمة السر الجديدة "
 
 msgid "Create admin's account:"
-msgstr "Create admin's account:"
+msgstr "انشاء حساب المدير "
 
 msgid "admin's user name:"
-msgstr "admin's user name:"
+msgstr "اسم مستخدم حساب المدير"
 
 msgid "admin's password:"
-msgstr "admin's password:"
+msgstr "كلمة سر حساب المدير"
 
 msgid "confirm admin's password:"
-msgstr "confirm admin's password:"
+msgstr "تاكيد كلمة سر حساب المدير"
 
 msgid "Save"
-msgstr "Save"
+msgstr "حفظ"
 
 msgid "Please enter user name (at least 3 characters long)"
-msgstr "Please enter user name (at least 3 characters long)"
+msgstr "ادخل اسم المستخدم ( 3 حروف على الاقل )"
 
 msgid "Please enter password (at least 4 characters long)"
-msgstr "Please enter password (at least 4 characters long)"
+msgstr "ادخل كلمة السر ( 4حروف على الاقل )"
 
 msgid "This username and password combination doesn't exist."
-msgstr "This username and password combination doesn't exist."
+msgstr "توليفة اسم المستخدم وكملة السر غير موجودة"
 
 msgid "This username doesn't exist."
-msgstr "This username doesn't exist."
+msgstr "اسم المستخدم غير موجود"
 
 msgid "Passwords don't match"
-msgstr "Passwords don't match"
+msgstr "كلمات السر غير متطابقة "
 
 #, python-format
 msgid "%s added"
-msgstr "%s added"
+msgstr "تمت إضافة %s"
 
 msgid "This user name already exists, please choose a different one"
-msgstr "This user name already exists, please choose a different one"
+msgstr "هذا المستخدم موجود مسبقا اختر مستخدم اخر "
 
 msgid "Admin's password has been updated"
-msgstr "Admin's password has been updated"
+msgstr "تم تحديث كلمة سر المدير"
 
 msgid "ERROR: This operation is not allowed at this point"
-msgstr "ERROR: This operation is not allowed at this point"
+msgstr "خطأ : هذا العملية غير مسموح بها فى تلك المرحلة "
 
 msgid "Please enter previous password (at least 4 characters long)"
-msgstr "Please enter previous password (at least 4 characters long)"
+msgstr "فضلا ادخل كلمة السر السابقة ( 4 حروف على الاقل )"
 
 msgid "Please enter new password (at least 4 characters long)"
-msgstr "Please enter new password (at least 4 characters long)"
+msgstr "فضلا ادخل كلمة السر الجديدة ( 4 حروف على الاقل )"
 
 msgid "Previous password doesn't seem to be in the database"
-msgstr "Previous password doesn't seem to be in the database"
+msgstr "كلمة السر السابقة غير موجودة بقاعدة البيانات"
 
 msgid "Registered:"
-msgstr "Registered:"
+msgstr "مسجل : "
 
 msgid "Last login:"
-msgstr "Last login:"
+msgstr "الدخول الاخير :"
 
 msgid "Preferences saved..."
-msgstr "Preferences saved..."
+msgstr "تم حفظ التفضيلات : "
 
 msgid "Logged in as: "
-msgstr "Logged in as: "
+msgstr "تم تسجيل الدخول كـ : "
 
 msgid "(Log out)"
-msgstr "(Log out)"
+msgstr "(تسجيل الخروج) "
 
 msgid "remember me"
-msgstr "remember me"
+msgstr "تذكرنى"
 
 msgid "Select age group:"
-msgstr "Select age group:"
+msgstr "اختر المجموعة العمرية : "
 
 msgid "show activities for:"
-msgstr "show activities for:"
+msgstr "اعرض الانشطة لـ : "
 
 msgid "preschool"
-msgstr "preschool"
+msgstr "ماقبل المدرسة : "
 
 msgid "Year 1"
-msgstr "Year 1"
+msgstr "1 عام "
 
 msgid "Year 2"
-msgstr "Year 2"
+msgstr "2 عام "
 
 msgid "Year 3"
-msgstr "Year 3"
+msgstr "3 اعوام"
 
 msgid "Year 4"
-msgstr "Year 4"
+msgstr "4 اعوام"
 
 msgid "Year 5"
-msgstr "Year 5"
+msgstr "5 اعوام"
 
 msgid "Year 6"
-msgstr "Year 6"
+msgstr "6 اعوام"
 
 msgid "show all"
-msgstr "show all"
+msgstr "عرض الكل "
 
 msgid "Do you want to log out of the game?"
-msgstr "Do you want to log out of the game?"
+msgstr "هل ترغب بتسجيل الخروج من اللعبة ؟ "
 
 msgid "Do you want to exit the game?"
-msgstr "Do you want to exit the game?"
+msgstr "هل ترغب  بالخروج من اللعبة ؟ "
 
 # alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
 msgid "Ready to go to the next level?"
-msgstr "Ready to go to the next level?"
+msgstr "واو ..هل ترغب بالانتقال الى المستوى الاعلى ؟ "
 
 msgid "Hello"
-msgstr "Hello"
+msgstr "اهلا"
 
 msgid "Welcome back in the game."
-msgstr "Welcome back in the game."
+msgstr "اهلا بك فى اللعبة "
 
 msgid "Licence"
-msgstr "Licence"
+msgstr "ترخيص"
 
 msgid "Copyright & Credits"
-msgstr "Copyright & Credits"
+msgstr "حقوق الطبع والنشر والفضل "
 
 msgid "Translators"
-msgstr "Translators"
+msgstr "مترجمين"
 
 msgid "Language"
-msgstr "Language"
+msgstr "لغة "
 
 msgid "Translations"
-msgstr "Translations"
+msgstr "ترجمات"
 
 msgid "Addition Table"
-msgstr "Addition Table"
+msgstr "جدول الجمع"
 
 msgid "Discover Letters"
-msgstr "Discover Letters"
+msgstr "اكتشف الحروف"
 
 msgid "Learn New Words"
-msgstr "Learn New Words"
+msgstr "تعلم كلمات جديدة"
 
 msgid "Mathematics"
-msgstr "Mathematics"
+msgstr "الرياضيات"
 
 msgid "Art and Colour"
-msgstr "Art and Colour"
+msgstr "الرسم والالوان"
 
 msgid "Memory"
-msgstr "Memory"
+msgstr "الذاكرة "
 
 msgid "Games & Mazes"
-msgstr "Games & Mazes"
+msgstr "الالعاب والمتاهات "
 
 msgid "Letters"
-msgstr "Letters"
+msgstr "الحروف"
 
 msgid "Learn Letters with Flashcards"
-msgstr "Learn Letters with Flashcards"
+msgstr "تعلم الحروف باستخدام البطاقات"
 
 msgid "Learn to Write"
-msgstr "Learn to Write"
+msgstr "تعلم الكتابة"
 
 msgid "Trace Letters and Numbers"
-msgstr "Trace Letters and Numbers"
+msgstr "تتبع الحروف والارقام "
 
 msgid "Complete the ABC"
-msgstr "Complete the ABC"
+msgstr "اكمل الحروف "
 
 msgid "Sorting Letters"
-msgstr "Sorting Letters"
+msgstr "ترتيب الحروف"
 
 msgid "Lowercase Letters"
-msgstr "Lowercase Letters"
+msgstr "حروف صغيرة "
 
 msgid "Uppercase Letters"
-msgstr "Uppercase Letters"
+msgstr "حروف كبيرة "
 
 msgid "Word Builder"
-msgstr "Word Builder"
+msgstr "منشئ الكلمات "
 
 msgid "Word Maze"
-msgstr "Word Maze"
+msgstr "متاهة الكلمة"
 
 msgid "Collect all letters in the right order"
-msgstr "Collect all letters in the right order"
+msgstr "اجمع الحروف بالترتيب الصحيح "
 
 msgid "Word Maze + 4"
-msgstr "Word Maze + 4"
+msgstr "متاهة الكلمة + 4"
 
 msgid "Rainbow Keyboard"
-msgstr "Rainbow Keyboard"
+msgstr "لوحة مفاتيح قوس قزح"
 
 msgid "Touch Typing Tutor"
-msgstr "Touch Typing Tutor"
+msgstr "مدرب الكتابة باللمس "
 
 msgid "English Alphabet"
-msgstr "English Alphabet"
+msgstr "حروف الابجدية الانجليزية "
 
 # Replace "Your" with your language, ie. translation of French Alphabet
 msgid "Your Alphabet"
-msgstr "Your Alphabet"
+msgstr "حروفك الابجدية"
 
 msgid "Numbers"
-msgstr "Numbers"
+msgstr "الارقام "
 
 msgid "Number Spelling"
-msgstr "Number Spelling"
+msgstr "تهجى الارقام "
 
 msgid "Match numbers to their spelling"
-msgstr "Match numbers to their spelling"
+msgstr "وصل الارقام بهجائها "
 
 msgid "Learn Numbers with Flashcards"
-msgstr "Learn Numbers with Flashcards"
+msgstr "تعلم الارقام بالبطاقات"
 
 msgid "Learn to Count"
-msgstr "Learn to Count"
+msgstr "تعلم العد"
 
 msgid "Basic Addition"
-msgstr "Basic Addition"
+msgstr "الجمع البسيط"
 
 msgid "Basic Subtraction"
-msgstr "Basic Subtraction"
+msgstr "الطرح البسيط"
 
 msgid "Shopping List"
-msgstr "Shopping List"
+msgstr "قائمة المشتروات "
 
 msgid "Plus or Minus"
-msgstr "Plus or Minus"
+msgstr "جمع او طرح"
 
 msgid "Basic Operations"
-msgstr "Basic Operations"
+msgstr "العمليات الاساسية"
 
 msgid "Multiplication Table"
-msgstr "Multiplication Table"
+msgstr "جدول الضرب"
 
 msgid "Find the product"
-msgstr "Find the product"
+msgstr "اوجد حاصل الضرب"
 
 msgid "Find the multiplier"
-msgstr "Find the multiplier"
+msgstr "اوجد المضاعف"
 
 msgid "Division"
-msgstr "Division"
+msgstr "القسمة"
 
 msgid "Sorting Numbers"
-msgstr "Sorting Numbers"
+msgstr "ترتيب الارقام"
 
 msgid "Consecutive numbers"
-msgstr "Consecutive numbers"
+msgstr "الارقام المتتالية "
 
 msgid "Random numbers"
-msgstr "Random numbers"
+msgstr "ارقام عشوائية "
 
 msgid "Number Comparison"
-msgstr "Number Comparison"
+msgstr "المقارنة بين الاعدلد"
 
 msgid "Addition & Subtraction"
-msgstr "Addition & Subtraction"
+msgstr "الجمع والطرح"
 
 msgid "Comparison"
-msgstr "Comparison"
+msgstr "المقارنة "
 
 msgid "Even or Odd"
-msgstr "Even or Odd"
+msgstr "زوجى ام فردى"
 
 msgid "Even"
-msgstr "Even"
+msgstr "زوجى"
 
 msgid "Odd"
-msgstr "Odd"
+msgstr "فردى"
 
 msgid "Shapes and Solids"
-msgstr "Shapes and Solids"
+msgstr "أشكال ومجسمات"
 
 msgid "Shapes"
-msgstr "Shapes"
+msgstr "أشكال "
 
 msgid "Learn Shapes with Flashcards"
-msgstr "Learn Shapes with Flashcards"
+msgstr "تعلم الاشكال بالبطاقات"
 
 msgid "Solids"
-msgstr "Solids"
+msgstr "المجسمات"
 
 msgid "Solid Geometry with Flashcards"
-msgstr "Solid Geometry with Flashcards"
+msgstr "هندسة المجسمات باستخدام البطاقات التعليمية"
 
 msgid "Time Matching"
-msgstr "Time Matching"
+msgstr "مطابقة الوقت"
 
 msgid "Complete the word"
-msgstr "Complete the word"
+msgstr "اكمل الكلمة "
 
 msgid "Shape Matching"
-msgstr "Shape Matching"
+msgstr "متاهة الخراف"
 
 msgid "Help me find my shadow"
-msgstr "Help me find my shadow"
+msgstr "ساعدنى لايجاد الظل المناسب"
 
 msgid "Paint"
-msgstr "Paint"
+msgstr "لون "
 
 msgid "Colour Matching"
-msgstr "Colour Matching"
+msgstr "مطابقة الالوان"
 
 msgid "Label the colours"
-msgstr "Label the colours"
+msgstr "حدد اسماء الالوان"
 
 msgid "Follow the Arrows"
-msgstr "Follow the Arrows"
+msgstr "تتبع الاسهم "
 
 msgid "Remember directions"
-msgstr "Remember directions"
+msgstr "تذكر الاتجاهات "
 
 msgid "Photographic Memory"
-msgstr "Photographic Memory"
+msgstr "ذاكرة فواتوغرافية"
 
 msgid "Training"
-msgstr "Training"
+msgstr "تدريب"
 
 msgid "Mouse Maze"
-msgstr "Mouse Maze"
+msgstr "متاهة الفأرة"
 
 msgid "Let's have some cheese"
-msgstr "Let's have some cheese"
+msgstr "لنأخذ بعض من الجبن"
 
 msgid "Sheep Maze"
-msgstr "Sheep Maze"
+msgstr "متاهة الخراف"
 
 msgid "Find the rest of the herd"
-msgstr "Find the rest of the herd"
+msgstr "ابحث عن باقى القطيع "
 
 msgid "Connect"
-msgstr "Connect"
+msgstr "وصل"
 
 msgid "Balloons with threads"
-msgstr "Balloons with threads"
+msgstr "البالونات والخيوط"
 
 msgid "Fifteen"
-msgstr "Fifteen"
+msgstr "خمسة عشر"
 
 msgid "With a Twist"
-msgstr "With a Twist"
+msgstr "مع التواء"
 
 msgid "Mixing Colours for Painting"
-msgstr "Mixing Colours for Painting"
+msgstr "اخلط الالوان للتلوين"
 
 msgid "Mix red, yellow, blue, black and white paint"
-msgstr "Mix red, yellow, blue, black and white paint"
+msgstr "امزج الاحمر والاصفر والاسود والابيض "
 
 msgid "Additive Colour Mixing - Light"
-msgstr "Additive Colour Mixing - Light"
+msgstr "خلط الألوان المضافة - الضوء"
 
 msgid "Mix red, green and blue light to get other colours"
-msgstr "Mix red, green and blue light to get other colours"
+msgstr "امزج الضوء الأحمر والأخضر والأزرق للحصول على ألوان أخرى"
 
 msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
-msgstr "Subtractive Colour Mixing - Paints, Dyes, Inks"
+msgstr "خلط الألوان الطرحية - الدهانات والأصباغ والأحبار"
 
 msgid "Mix cyan, magenta and yellow paint to get other colours"
-msgstr "Mix cyan, magenta and yellow paint to get other colours"
+msgstr "امزج السماوي والأرجواني والأصفر للحصول على ألوان أخرى"
 
 msgid "Find the colour of the circle in the middle"
-msgstr "Find the colour of the circle in the middle"
+msgstr "ابحث عن لون الدائرة الموجودة بالمنتصف"
 
 msgid "Adjust the amount of cyan, magenta and yellow paint"
-msgstr "Adjust the amount of cyan, magenta and yellow paint"
+msgstr "اضبط كمية الطلاء السماوي والأرجواني والأصفر"
 
 msgid "Adjust the intensity of red, green and blue light"
-msgstr "Adjust the intensity of red, green and blue light"
+msgstr "اضبط شدة الضوء الأحمر والأخضر والأزرق"
 
 msgid "Match Animals"
-msgstr "Match Animals"
+msgstr "طابق الحيوانات "
 
 msgid "Find all matching animals"
-msgstr "Find all matching animals"
+msgstr "البحث عن جميع الحيوانات المطابقة"
 
 msgid "Match animals to their shadows"
-msgstr "Match animals to their shadows"
+msgstr "طابق الحيوانات بظلالها"
 
 msgid "Match Animals - Memory Game"
-msgstr "Match Animals - Memory Game"
+msgstr "مطابقةالحيوانات - لعبة الذاكرة"
 
 msgid "Match Fruits - Memory Game"
-msgstr "Match Fruits - Memory Game"
+msgstr "مطابقة الفواكه - لعبة الذاكرة"
 
 msgid "Match Vegetables - Memory Game"
-msgstr "Match Vegetables - Memory Game"
+msgstr "مطابقة الخضروات- لعبة الذاكرة"
 
 msgid "Match Numbers - Memory Game"
-msgstr "Match Numbers - Memory Game"
+msgstr "مطابقة الارقام - لعبة الذاكرة"
 
 msgid "Find matching pairs of the same image"
-msgstr "Find matching pairs of the same image"
+msgstr "ابحث عن أزواج متطابقة من نفس الصورة"
 
 msgid "Image Slider"
-msgstr "Image Slider"
+msgstr "تحريك الصورة"
 
 msgid "Animal Slider"
-msgstr "Animal Slider"
+msgstr "تحريك الحبوانات"
 
 msgid "Fruit Slider"
-msgstr "Fruit Slider"
+msgstr "تحريك الفواكه"
 
 msgid "Number Slider"
-msgstr "Number Slider"
+msgstr "تحريك الارقام "
 
 msgid "Maths Matching Game"
-msgstr "Maths Matching Game"
+msgstr "لعبة مطابقة الرياضيات"
 
 msgid "Addition"
-msgstr "Addition"
+msgstr "الجمع"
 
 msgid "Subtraction"
-msgstr "Subtraction"
+msgstr "الطرح"
 
 msgid "Multiplication"
-msgstr "Multiplication"
+msgstr "الضرب"
 
 msgid "Fractions"
-msgstr "Fractions"
+msgstr "الكسور"
 
 msgid "Decimal Fractions"
-msgstr "Decimal Fractions"
+msgstr "الكسور العشرية "
 
 msgid "Percentages"
-msgstr "Percentages"
+msgstr "النسب المئوية"
 
 msgid "Ratios"
-msgstr "Ratios"
+msgstr "النسبة والتناسب"
 
 msgid "Fraction Groups"
-msgstr "Fraction Groups"
+msgstr "مجموعات كسرية "
 
 msgid "Type your answer and hit enter"
-msgstr "Type your answer and hit enter"
+msgstr "اكتب الاجابة واضغط على مفتاح الادخال "
 
 msgid "Decimals (Category)"
-msgstr "Decimals (Category)"
+msgstr "الكسور العشرية"
 
 msgid "Fractions (Category)"
-msgstr "Fractions (Category)"
+msgstr "الكسور"
 
 msgid "Ratios (Category)"
-msgstr "Ratios (Category)"
+msgstr "النسب"
 
 msgid "Percentages (Category)"
-msgstr "Percentages (Category)"
+msgstr "النسب المئوية"
 
 msgid "Learn new words"
-msgstr "Learn new words"
+msgstr "تعلم كلمات جديدة"
 
 msgid "Word Builders"
-msgstr "Word Builders"
+msgstr "منشئ الكلمات"
 
 msgid "Word Matchers"
-msgstr "Word Matchers"
+msgstr "مطابقة الكلمات"
 
 msgid "Match images to words"
-msgstr "Match images to words"
+msgstr "طابق الصور مع الكلمات "
 
 msgid "Animals"
-msgstr "Animals"
+msgstr "حيوانات"
 
 msgid "Sports"
-msgstr "Sports"
+msgstr "الالعاب"
 
 msgid "Body"
-msgstr "Body"
+msgstr "الجسم"
 
 msgid "People"
-msgstr "People"
+msgstr "الاشخاص"
 
 msgid "Actions"
-msgstr "Actions"
+msgstr "الافعال"
 
 msgid "Constructions"
-msgstr "Constructions"
+msgstr "اعمال البناء"
 
 msgid "Nature"
-msgstr "Nature"
+msgstr "الطبيعة"
 
 msgid "Jobs"
-msgstr "Jobs"
+msgstr "المهن والوظائف"
 
 msgid "Clothes and Accessories"
-msgstr "Clothes and Accessories"
+msgstr "الملابس والاكسسوارات"
 
 msgid "Fruits and Vegetables"
-msgstr "Fruits and Vegetables"
+msgstr "الفواكه والخضراوات"
 
 msgid "Transport"
-msgstr "Transport"
+msgstr "المواصلات "
 
 msgid "Food"
-msgstr "Food"
+msgstr "الطعام"
 
 msgid "Listening Exercises"
-msgstr "Listening Exercises"
+msgstr "تمارين الاستماع"
 
 msgid "Match sounds to words"
-msgstr "Match sounds to words"
+msgstr "مطابقة الأصوات للكلمات"
 
 msgid "Patterns"
-msgstr "Patterns"
+msgstr "الانماط"
 
 msgid "Number Patterns"
-msgstr "Number Patterns"
+msgstr "أنماط رقمية"
 
 msgid "Letter Patterns"
-msgstr "Letter Patterns"
+msgstr "أنماط حرفية"
 
 msgid "Color Patterns"
-msgstr "Color Patterns"
+msgstr "أنماط لونية "
 
 msgid "Image Patterns"
-msgstr "Image Patterns"
+msgstr "انماط الصور"
 
 msgid "Fraction Patterns"
-msgstr "Fraction Patterns"
+msgstr "انماط الكسور "
 
 msgid "Shape Patterns"
-msgstr "Shape Patterns"
+msgstr "انماط الاشكال "
 
 msgid "Complete the pattern on the top line."
-msgstr "Complete the pattern on the top line."
+msgstr "أكمل النمط في السطر العلوي."
 
 msgid "Match shapes to their names"
-msgstr "Match shapes to their names"
+msgstr "طابق الأشكال مع أسمائهم"
 
 msgid "Negative numbers"
-msgstr "Negative numbers"
+msgstr "الأعداد السالبة"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr "Complete the alphabet using letters from the middle line."
+msgstr "أكمل الأبجدية باستخدام أحرف من الخط الأوسط."
 
 msgid "Drag the slider up or down so that the right sign is in the red square."
-msgstr "Drag the slider up or down so that the right sign is in the red square."
+msgstr "اسحب المنزلق لأعلى أو لأسفل بحيث تكون العلامة اليمنى في المربع الأحمر."
 
 msgid "Take your sheep to the rest of the herd."
-msgstr "Take your sheep to the rest of the herd."
+msgstr "خذ خرافك إلى بقية القطيع."
 
 msgid "Check the shopping list and drag all needed items into the basket."
-msgstr "Check the shopping list and drag all needed items into the basket."
+msgstr "تحقق من قائمة التسوق واسحب جميع العناصر المطلوبة في السلة."
 
 msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
-msgstr "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "اسحب أحد الرموز  <أو > أو =  (أقل أو أكبر أو يساوي) إلى المربع الأحمر."
 
 msgid "Drag one of the lesser, greater or equal to the red square."
-msgstr "Drag one of the lesser, greater or equal to the red square."
+msgstr "السحب واحدة من أقل أكبر أو يساوي إلى المربع الاحمر"
 
 msgid "Rearrange the numbers so they are in the right order."
-msgstr "Rearrange the numbers so they are in the right order."
+msgstr "أعد ترتيب الأرقام بحيث تكون بالترتيب الصحيح."
 
 msgid "Build the following word using the letters below."
-msgstr "Build the following word using the letters below."
+msgstr "قم ببناء الكلمة التالية باستخدام الحروف أدناه."
 
 msgid "Find and separate even numbers from odd numbers."
-msgstr "Find and separate even numbers from odd numbers."
+msgstr "ابحث عن الأرقام الزوجية وافصلها عن الأرقام الفردية."
 
 msgid "Rearrange the letters so they are in the alphabetical order."
-msgstr "Rearrange the letters so they are in the alphabetical order."
+msgstr "إعادة ترتيب الحروف حسب الترتيب الأبجدي."
 
 msgid "Rearrange the numbers so they are in the ascending order."
-msgstr "Rearrange the numbers so they are in the ascending order."
+msgstr "أعد ترتيب الأرقام بحيث تكون بالترتيب التصاعدي."
 
 msgid "Perfect! Task solved!"
-msgstr "Perfect! Task solved!"
+msgstr "رائع ! تم حل المهمة!"
 
 msgid "Game Over!"
-msgstr "Game Over!"
+msgstr "انتهت اللعبة "
 
 msgid "Congratulations! You have completed all tasks in this game."
-msgstr "Congratulations! You have completed all tasks in this game."
+msgstr "تهانينا! لقد أكملت جميع المهام في هذه اللعبة."
 
 msgid "Great job!"
-msgstr "Great job!"
+msgstr "اداء رائع "
+
+msgid "Perfect!!!"
+msgstr "ممتاز "
 
 msgid "Awesome!"
-msgstr "Awesome!"
+msgstr "رائع"
 
 msgid "Fantastic job!"
-msgstr "Fantastic job!"
+msgstr "عمل مبهر "
 
 msgid "Well done!"
-msgstr "Well done!"
+msgstr "أحسنت"
 
 msgid "Perfect! Level completed!"
-msgstr "Perfect! Level completed!"
+msgstr "رائع ! انتهى المستوى!"
 
 msgid "Perfect!"
-msgstr "Perfect!"
+msgstr "ممتاز"
 
 msgid "divided by"
 msgstr "divided by"
 
 msgid "times"
-msgstr "times"
+msgstr "مرات"
 
 msgid "equals"
-msgstr "equals"
+msgstr "يساوى"
 
 msgid "brush size"
-msgstr "brush size"
+msgstr "حجم الفرشاة "
 
 msgid "Match fraction charts on the right to the ones on the left"
-msgstr "Match fraction charts on the right to the ones on the left"
+msgstr "تطابق مخططات الكسر على اليمين إلى تلك الموجودة على اليسار"
 
 msgid ""
 "Match fraction charts and fractions on the right to the fraction charts on the left"
 msgstr ""
-"Match fraction charts and fractions on the right to the fraction charts on the left"
+"تطابق مخططات الكسور والكسور الموجودة على اليمين مع مخططات الكسور الموجودة على اليسار"
 
 msgid "Match fraction charts to the fractions on the left"
-msgstr "Match fraction charts to the fractions on the left"
+msgstr "طابق مخططات الكسور مع الكسور الموجودة على اليسار"
 
 msgid ""
 "Match fraction charts, fractions and decimal fractions on the right to their percentage "
 "representations"
-msgstr ""
-"Match fraction charts, fractions and decimal fractions on the right to their percentage "
-"representations"
+msgstr "مطابقة مخططات الكسور والكسور والكسور العشرية على اليمين لتمثيلاتها المئوية"
 
 msgid ""
 "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured "
 "pieces to white pieces"
 msgstr ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of coloured "
-"pieces to white pieces"
+"تطابق المخططات للنسب على اليسار. يتم التعبير عن النسب كنسبة من القطع الملونة إلى القطع "
+"البيضاء"
 
 msgid "Shape Maker"
-msgstr "Shape Maker"
+msgstr "صانع الاشكال "
 
 msgid "Let's see what shapes you can draw"
-msgstr "Let's see what shapes you can draw"
+msgstr "دعنا نرى الأشكال التي يمكنك رسمها"
 
 #, python-format
 msgid "Shape to draw: %s"
-msgstr "Shape to draw: %s"
+msgstr "%s :الشكل المراد رسمه"
 
 #, python-format
 msgid "such that lengths of its bases are equal to %d and %d and height to %d"
-msgstr "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "%d والارتفاع إلى %d و %d بحيث تكون أطوال قواعده تساوي"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d"
-msgstr "such that lengths of its sides are equal to %d"
+msgstr "%d بحيث تكون أطوال أضلاعه تساوي"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d and %d"
-msgstr "such that lengths of its sides are equal to %d and %d"
+msgstr "%d و %d بحيث تكون أطوال أضلاعه تساوي"
 
 #, python-format
 msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
-msgstr "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "%d والارتفاع إلى %d بحيث تكون أطوال قاعدتيه المتوازيتين تساوي"
 
 #, python-format
 msgid "such that length of its base is equal to %d and height to %d"
-msgstr "such that length of its base is equal to %d and height to %d"
+msgstr "%d والارتفاع إلى %d بحيث أن طول قاعدته يساوي"
 
 #, python-format
 msgid "such that lengths of its catheti are equal to %d and %d"
-msgstr "such that lengths of its catheti are equal to %d and %d"
+msgstr "%d و %d بحيث تكون أطوال  الاضلاع المجاورة للزاوية القائمة  مساوية لـ"
 
 #, python-format
 msgid "such that lengths of both of its catheti are equal to %d"
-msgstr "such that lengths of both of its catheti are equal to %d"
+msgstr "%d بحيث تكون أطوال الاضلاع المجاورة للزاوية القائمة مساوية لـ"
 
 #, python-format
 msgid "such that length of its hypotenuse is equal to %d"
-msgstr "such that length of its hypotenuse is equal to %d"
+msgstr "%d بحيث يساوي طول الوتر"
 
 #, python-format
 msgid "such that length of one of its sides is equal to %d and height to %d"
-msgstr "such that length of one of its sides is equal to %d and height to %d"
+msgstr "%d والارتفاع إلى %d بحيث أن طول أحد أضلاعه يساوي"
 
 #, python-format
 msgid "such that length of its radius is equal to %d"
-msgstr "such that length of its radius is equal to %d"
+msgstr "%d بحيث يساوي طول نصف قطرها"
 
 msgid "Test yourself"
-msgstr "Test yourself"
+msgstr "اختبر نفسك "
 
 msgid "Clock"
-msgstr "Clock"
+msgstr "الساعه"
 
 msgid "Learn to read the time"
-msgstr "Learn to read the time"
+msgstr "تعلم قراءة الوقت"
 
 msgid "Learn to set the clock"
-msgstr "Learn to set the clock"
+msgstr "تعلم ضبط الساعة"
 
 msgid "Set the clock to:"
-msgstr "Set the clock to:"
+msgstr "اضبط الساعة على:"
 
 msgid "Drag the clock hands to set the time"
-msgstr "Drag the clock hands to set the time"
+msgstr "اسحب عقارب الساعة لضبط الوقت"
 
 msgid "What time is it?"
-msgstr "What time is it?"
+msgstr "كم الساعه الان ؟ "
 
 msgid "Time"
-msgstr "Time"
+msgstr "الوقت "
 
 msgid "Turn the clock hands and see what happens."
-msgstr "Turn the clock hands and see what happens."
+msgstr "اقلب عقارب الساعة وانظر ماذا يحدث."
 
 msgid "Time in text version only"
-msgstr "Time in text version only"
+msgstr "الوقت كنص فقط "
 
 msgid "How clock works?"
-msgstr "How clock works?"
+msgstr "كيف تعمل الساعه ؟"
 
 msgid "Columnar addition"
-msgstr "Columnar addition"
+msgstr "الجمع بنظام الاعمدة "
 
 msgid "Columnar subtraction"
-msgstr "Columnar subtraction"
+msgstr "الطرح بنظام الاعمدة "
 
 msgid "Long multiplication"
-msgstr "Long multiplication"
+msgstr "الضرب المطول"
 
 msgid "Long division"
-msgstr "Long division"
+msgstr "القسمة المطلولة "
 
 msgid "Demonstration"
-msgstr "Demonstration"
+msgstr "إثبات"
 
 msgid "Do it yourself"
-msgstr "Do it yourself"
+msgstr "نفذها بنفسك"
 
 msgid "borrow 10"
-msgstr "borrow 10"
+msgstr "استلف 10"
 
 # in columnar addition, ie. in case of 4 + 8 you write 2 under the column and
 # carry 1
 msgid "carry"
-msgstr "carry"
+msgstr "حمل"
 
 msgid "Start >>"
-msgstr "Start >>"
+msgstr "ابدأ "
 
 msgid "Next example >>"
-msgstr "Next example >>"
+msgstr "المثال التالى "
 
 msgid "Next step >>"
-msgstr "Next step >>"
+msgstr "الخطوة التالية "
 
 # used to show which digit of the result should be entered in a box, ie.
 # "enter 5")
 msgid "write "
-msgstr "write "
+msgstr "اكتب "
 
 msgid "rewrite "
-msgstr "rewrite "
+msgstr "اعد كتابة "
 
 msgid "remainder"
-msgstr "remainder"
+msgstr "الباقى "
 
 msgid "result"
-msgstr "result"
+msgstr "النتيجة"
 
 msgid "Find solution"
-msgstr "Find solution"
+msgstr "اوجد الحل "
 
 msgid "Find missing number"
-msgstr "Find missing number"
+msgstr "اوجد الرقم المفقود"
 
 msgid "numerator"
-msgstr "numerator"
+msgstr "البسط"
 
 msgid "denominator"
-msgstr "denominator"
+msgstr "المقام"
 
 msgid "Experiment with fractions"
-msgstr "Experiment with fractions"
+msgstr "تمارين على الكسور"
 
 msgid "Experiment with decimal fractions"
-msgstr "Experiment with decimal fractions"
+msgstr "تمارين على الكسور العشرية "
 
 msgid "Ratio"
-msgstr "Ratio"
+msgstr "النسبة والتناسب"
 
 msgid "Experiment with ratios"
-msgstr "Experiment with ratios"
+msgstr "تمارين على النسبة "
 
 msgid "Experiment with percentages"
-msgstr "Experiment with percentages"
+msgstr "تمارين على النسب المئوية "
 
 msgid "What fraction is it?"
-msgstr "What fraction is it?"
+msgstr "ماهو الكسر ؟ "
 
 msgid "What decimal fraction is it?"
-msgstr "What decimal fraction is it?"
+msgstr "ماهو الكسر العشرى ؟ "
 
 msgid "Add fractions with the same denominator"
-msgstr "Add fractions with the same denominator"
+msgstr "جمع الكسور التي لها نفس المقام"
 
 msgid "Subtract fractions with the same denominator"
-msgstr "Subtract fractions with the same denominator"
+msgstr "طرح الكسور التي لها نفس المقام"
 
 msgid "Multiply fractions"
-msgstr "Multiply fractions"
+msgstr "ضرب الكسور"
 
 msgid "Divide fractions"
-msgstr "Divide fractions"
+msgstr "قسمة الكسور"
 
 msgid "Exercise 1"
-msgstr "Exercise 1"
+msgstr "تدريب رقم 1 "
 
 msgid "Exercise 2"
-msgstr "Exercise 2"
+msgstr "تدريب رقم 2"
 
 msgid "Exercise 3"
-msgstr "Exercise 3"
+msgstr "تدريب رقم 3 "
 
 msgid "Compare decimals and fractions"
-msgstr "Compare decimals and fractions"
+msgstr "قارن بين الكسور العشرية والكسور"
 
 msgid "Compare fractions"
-msgstr "Compare fractions"
+msgstr "مقارنة الكسور "
 
 msgid "Reduce fractions"
-msgstr "Reduce fractions"
+msgstr "تنسيط الكسور "
 
 msgid "Expand fractions"
-msgstr "Expand fractions"
+msgstr "كبر الكسور "
 
 msgid ""
 "To reduce a fraction divide the numerator and the denominator by one of their common "
@@ -975,469 +969,519 @@ msgid ""
 "happens. If 1 is the only common factor then the fraction can't be reduced any more - "
 "try choosing a different one."
 msgstr ""
-"To reduce a fraction divide the numerator and the denominator by one of their common "
-"factors which are displayed between the two fractions. Select one of them to see what "
-"happens. If 1 is the only common factor then the fraction can't be reduced any more - "
-"try choosing a different one."
+"لتبسيط كسر نقسم كل من البسط والمقام بأحد عواملهما المشتركة . حدد أحدهم لمعرفة ما يحدث. "
+"إذا كان الرقم 1 هو العامل المشترك الوحيد بين الكسرين ، فلا يمكن تبسيط الكسر أكثر - حاول "
+"اختيار عامل مشترك آخر."
 
 msgid ""
 "To expand a fraction multiply the numerator and the denominator by the same number. "
 "Change the multiplicand to see what happens."
-msgstr ""
-"To expand a fraction multiply the numerator and the denominator by the same number. "
-"Change the multiplicand to see what happens."
+msgstr "لتكبير الكسر اضرب البسط والمقام بنفس الرقم. قم بتغيير المضروب لمعرفة ما يحدث."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr "Use the arrows to change your answer or just type it in."
+msgstr "استخدم الأسهم لتغيير إجابتك أو فقط اكتبها."
 
 msgid "Use the arrows to change your answer."
-msgstr "Use the arrows to change your answer."
+msgstr "استخدم الأسهم لتغيير إجابتك."
 
 msgid ""
 "To add two fractions with the same denominators add their numerators together and keep "
 "the denominator unchanged. Simplify the result if the numerator is greater than the "
 "denominator and reduce the fraction if possible."
 msgstr ""
-"To add two fractions with the same denominators add their numerators together and keep "
-"the denominator unchanged. Simplify the result if the numerator is greater than the "
-"denominator and reduce the fraction if possible."
+"لجمع كسرين لهما نفس المقام قم بإضافة البسط معًا والحفاظ على المقام دون تغيير. بسّط "
+"النتيجة إذا كان البسط أكبر من المقام واختصر الكسر إن أمكن."
 
 msgid ""
 "To subtract one fraction from another one with the same denominator subtract numerators "
 "and keep the denominator unchanged. Reduce the resulting fraction if possible."
 msgstr ""
-"To subtract one fraction from another one with the same denominator subtract numerators "
-"and keep the denominator unchanged. Reduce the resulting fraction if possible."
+"لطرح كسرين لهما نفس المقام ، اطرح البسط الاول من الثانى وأبقي المقام دون تغيير. اختصر "
+"الكسر الناتج إن أمكن."
 
 msgid ""
 "To multiply two fractions multiply the numerators together and then multiply the "
 "denominators together. Reduce the resulting fraction if possible."
-msgstr ""
-"To multiply two fractions multiply the numerators together and then multiply the "
-"denominators together. Reduce the resulting fraction if possible."
+msgstr "لضرب كسرين ، اضرب البسطين معًا ثم اضرب المقامات معًا. اختزل الكسر الناتج إن أمكن."
 
 msgid ""
 "To divide a fraction by another fraction multiply the first fraction by the second "
 "fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
 msgstr ""
-"To divide a fraction by another fraction multiply the first fraction by the second "
-"fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
+"لقسمة كسر بكسر آخر اضرب الكسر الأول فى مقلوب الكسر الثانى ثم اختصر الكسر الناتج إن أمكن."
 
 msgid "Group fractions together"
-msgstr "Group fractions together"
+msgstr "جمع الكسور معا "
 
 msgid "Group percentages together"
-msgstr "Group percentages together"
+msgstr "جمع النسب المئوية مع بعضها "
 
 msgid "Group ratios together"
-msgstr "Group ratios together"
+msgstr "جمع النسب مع بعضها "
 
 msgid "Symmetry"
-msgstr "Symmetry"
+msgstr "تماثل "
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr "Reflection Symmetry - draw with shapes"
+msgstr "الانعكاس المتمائل - ارسم بالأشكال"
 
 msgid "Reflect shapes"
-msgstr "Reflect shapes"
+msgstr "اعكس الاشكال "
 
 msgid "Reflect a shape in a mirror line"
-msgstr "Reflect a shape in a mirror line"
+msgstr "انعكاس شكل في خط معكوس"
 
 msgid ""
 "Draw a shape that is a reflection of the one already displayed. The red line is the "
 "mirror line."
-msgstr ""
-"Draw a shape that is a reflection of the one already displayed. The red line is the "
-"mirror line."
+msgstr "ارسم شكلاً يعكس الشكل المعروض امامك. الخط الأحمر هو خط المرآة."
 
 msgid "Symmetrical shapes - missing half"
-msgstr "Symmetrical shapes - missing half"
+msgstr "اشكال متماثلة ..النصف مفقود"
 
 msgid "Draw the other half of the shape"
-msgstr "Draw the other half of the shape"
+msgstr "ارسم النصف الاخر من الشكل "
 
 msgid "Find lines of symmetry"
-msgstr "Find lines of symmetry"
+msgstr "اوجد خط التماثل"
 
 msgid ""
 "Find and select all lines of symmetry for a displayed shape. Click on the arrows around "
 "the drawing area to select them."
 msgstr ""
-"Find and select all lines of symmetry for a displayed shape. Click on the arrows around "
-"the drawing area to select them."
+"اوجد جميع خطوط التناظر للشكل الموضح. انقر فوق الأسهم الموجودة حول منطقة الرسم لتحديدها."
 
 msgid "Match equivalent fractions"
-msgstr "Match equivalent fractions"
+msgstr "طابق الكسور المتساوية "
 
 msgid "Match fractions"
-msgstr "Match fractions"
+msgstr "طابق الكسور "
 
 msgid "Match decimals"
-msgstr "Match decimals"
+msgstr "طابق الارقام العشرية "
 
 msgid "Match percentages"
-msgstr "Match percentages"
+msgstr "طابق النسب المئوية "
 
 msgid "Match ratios"
-msgstr "Match ratios"
+msgstr "طابق النسب "
 
 msgid "Percentages in a pie chart"
-msgstr "Percentages in a pie chart"
+msgstr "النسب المئوية في مخطط دائري"
 
 msgid "Find equivalent fraction"
-msgstr "Find equivalent fraction"
+msgstr "اوجد مكافئ الكسر"
 
 msgid "Calculating with Time"
-msgstr "Calculating with Time"
+msgstr "احسب الوقت "
 
 msgid "start time"
-msgstr "start time"
+msgstr "زمن البدأ"
 
 msgid "end time"
-msgstr "end time"
+msgstr "زمن النهاية "
 
 msgid "elapsed time"
-msgstr "elapsed time"
+msgstr "الوقت المنقضي"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr "Temperature - introduction to negative numbers"
+msgstr "درجات الحرارة - مقدمة الى الاعداد السالبة "
 
 msgid "Experiment with elapsed time"
-msgstr "Experiment with elapsed time"
+msgstr "تمارين على الوقت المنقضي "
 
 msgid "Experiment with elapsed time 2"
-msgstr "Experiment with elapsed time 2"
+msgstr "تمارين على الوقت المنقضي - 2"
 
 msgid "Calculate elapsed time"
-msgstr "Calculate elapsed time"
+msgstr "احسب الوقت المنقضي"
 
 msgid "Find the start or the end time"
-msgstr "Find the start or the end time"
+msgstr "اوجد زمن البداية او النهاية "
 
 msgid "Visualized on a clock dial"
-msgstr "Visualized on a clock dial"
+msgstr "وضح على قرص الساعه "
 
 msgid "Visualized on a number line"
-msgstr "Visualized on a number line"
+msgstr "وضح على خط الاعداد"
 
 msgid "Visualized on two number lines"
-msgstr "Visualized on two number lines"
+msgstr "وضح على خطى الاعداد "
 
 msgid "With no visualizations"
-msgstr "With no visualizations"
+msgstr "بدون توضيح"
 
 msgid "With mirrored images"
-msgstr "With mirrored images"
+msgstr "مع صور معكوسة "
 
 msgid "Theme Editor"
-msgstr "Theme Editor"
+msgstr ""
 
 msgid "Make the game look your way"
-msgstr "Make the game look your way"
+msgstr "نسق اللعبة باسلوبك"
 
 msgid "Reset colors back to the default ones?"
-msgstr "Reset colors back to the default ones?"
+msgstr "هل ترغب باستعادة الالوان الافتراضية ؟"
 
 msgid "With simplifying"
-msgstr "With simplifying"
+msgstr "مع التبسيط"
 
 msgid "Positive numbers"
-msgstr "Positive numbers"
+msgstr "ارقام موجبة "
 
 msgid "Basics"
-msgstr "Basics"
+msgstr "الاساسيات"
 
 msgid "Equivalent fractions"
-msgstr "Equivalent fractions"
+msgstr "الكسور المكافئة "
 
 msgid "Expanding and reducing fractions"
-msgstr "Expanding and reducing fractions"
+msgstr "تكبير الكسور واختصارها "
 
 msgid "Add fractions with unlike denominators"
-msgstr "Add fractions with unlike denominators"
+msgstr "جمع الكسور ذات المقامات الغير متساوية "
 
 msgid "Subtract fractions with unlike denominators"
-msgstr "Subtract fractions with unlike denominators"
+msgstr "طرح  الكسور ذات المقامات الغير متساوية "
 
 msgid ""
 "To add or subtract fractions when their denominators are not the same you have to find "
 "equivalent fractions which do have a common denominator. Finding the least common "
 "multiple of the two denominators will help you with that."
 msgstr ""
-"To add or subtract fractions when their denominators are not the same you have to find "
-"equivalent fractions which do have a common denominator. Finding the least common "
-"multiple of the two denominators will help you with that."
+"لجمع أو طرح الكسور عندما لا تكون مقاماتها متساوية ، يجب عليك العثور على الكسور "
+"المتكافئة التي لها قاسم مشترك. سيساعدك العثور على المضاعف المشترك الأدنى من المقامات في "
+"ذلك."
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
-msgstr "long form"
+msgstr "الصورة المطولة "
 
 # used for the 2 ways of telling time used in Russian and Serbian translations
 # only
 msgid "short form"
-msgstr "short form"
+msgstr "الصورة المختصرة"
 
 msgid "white"
-msgstr "white"
+msgstr "ابيض"
 
 msgid "black"
-msgstr "black"
+msgstr "اسود"
 
 msgid "grey"
-msgstr "grey"
+msgstr "رمادى"
 
 msgid "red"
-msgstr "red"
+msgstr "أحمر"
 
 msgid "orange [color]"
-msgstr "orange"
+msgstr "برتقالى (لون )"
 
 msgid "yellow"
-msgstr "yellow"
+msgstr "اصفر"
 
 msgid "olive"
-msgstr "olive"
+msgstr "زيتون"
 
 msgid "green"
-msgstr "green"
+msgstr "أخضر"
 
 msgid "sea green"
-msgstr "sea green"
+msgstr "أخضر بحرى"
 
 msgid "teal"
-msgstr "teal"
+msgstr "بط نهري صغير"
 
 msgid "blue"
-msgstr "blue"
+msgstr "أزرق"
 
 msgid "navy"
-msgstr "navy"
+msgstr "القوات البحرية "
 
 msgid "purple"
-msgstr "purple"
+msgstr "ارجوانى"
 
 msgid "violet"
-msgstr "violet"
+msgstr "بنفسجى"
 
 msgid "magenta"
-msgstr "magenta"
+msgstr "ارجوانى( فوشيا )"
 
 msgid "indigo"
-msgstr "indigo"
+msgstr "ازرق نيلى"
 
 msgid "pink"
-msgstr "pink"
+msgstr "وردى"
 
 msgid "maroon"
-msgstr "maroon"
+msgstr "كستنائي"
 
 msgid "brown"
-msgstr "brown"
+msgstr "بنى"
 
 msgid "aqua"
-msgstr "aqua"
+msgstr "مائي"
 
 msgid "lime"
-msgstr "lime"
+msgstr "ليمون"
 
 msgid "Equilateral Triangle"
-msgstr "Equilateral Triangle"
+msgstr "مثلث متساوي الاضلاع"
 
 msgid "Isosceles Triangle"
-msgstr "Isosceles Triangle"
+msgstr "مثلث متساوي الساقين"
 
 msgid "Obtuse Triangle"
-msgstr "Obtuse Triangle"
+msgstr "مثلث منفرج الزاوية"
 
 msgid "Right Triangle"
-msgstr "Right Triangle"
+msgstr "مثلث قائم الزاوية"
 
 msgid "Acute Triangle"
-msgstr "Acute Triangle"
+msgstr "مثلث حاد الزوايا"
 
 msgid "Square"
-msgstr "Square"
+msgstr "مربع"
 
 msgid "Rectangle"
-msgstr "Rectangle"
+msgstr "مستطيل"
 
 msgid "Right Trapezium"
-msgstr "Right Trapezium"
+msgstr "شبه منحرف عمودى"
 
 msgid "Isosceles Trapezium"
-msgstr "Isosceles Trapezium"
+msgstr "شبه منحرف متساوى الساقين "
 
 msgid "Rhombus"
-msgstr "Rhombus"
+msgstr "معين"
 
 msgid "Parallelogram"
-msgstr "Parallelogram"
+msgstr "متوازي الاضلاع"
 
 msgid "Pentagon"
-msgstr "Pentagon"
+msgstr "شكل خماسى الاضلاع "
 
 msgid "Hexagon"
-msgstr "Hexagon"
+msgstr "شكل سداسى الاضلاع "
 
 msgid "Heptagon"
-msgstr "Heptagon"
+msgstr "شكل سباعى الاضلاع "
 
 msgid "Octagon"
-msgstr "Octagon"
+msgstr "شكل ثمانى الاضلاع "
 
 msgid "Circle"
-msgstr "Circle"
+msgstr "دائرة "
 
 msgid "Ellipse"
-msgstr "Ellipse"
+msgstr "شكل بيضاوى - قطع ناقص"
 
 msgid "Cube"
-msgstr "Cube"
+msgstr "مكعب"
 
 msgid "Square Prism"
-msgstr "Square Prism"
+msgstr "منشور ذو قاعدة مربعه"
 
 msgid "Triangular Prism"
-msgstr "Triangular Prism"
+msgstr "منشور ذو قاعدة مثلثة"
 
 msgid "Square Pyramid"
-msgstr "Square Pyramid"
+msgstr "هرم  ذو قاعدة مربعه"
 
 msgid "Triangular Pyramid"
-msgstr "Triangular Pyramid"
+msgstr "هرم ذو قاعدة مثلثة"
 
 msgid "Sphere"
-msgstr "Sphere"
+msgstr "شكل كروى"
 
 msgid "Cylinder"
-msgstr "Cylinder"
+msgstr "أسطوانة"
 
 msgid "Cone"
-msgstr "Cone"
+msgstr "مخروط"
 
 msgid "Torus"
-msgstr "Torus"
+msgstr "نتوء مستدير"
 
 msgid "Quadrilateral"
-msgstr "Quadrilateral"
+msgstr "رباعي الاضلاع"
 
 msgid "Trapezium"
-msgstr "Trapezium"
+msgstr "شبه منحرف"
 
 msgid "Triangle"
-msgstr "Triangle"
+msgstr "مثلث"
 
 # used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all
 # points on one line
 msgid "Ouch... squished quadrilateral"
-msgstr "Ouch... squished quadrilateral"
+msgstr "عذرًا ... رباعي الأضلاع"
 
 msgid "Right isosceles triangle"
-msgstr "Right isosceles triangle"
+msgstr "مثلث قائم ومتساوى الساقين "
 
 msgid "Obtuse isosceles triangle"
-msgstr "Obtuse isosceles triangle"
+msgstr "مثلث متساوي الساقين"
 
 msgid "Acute isosceles triangle"
-msgstr "Acute isosceles triangle"
+msgstr "مثلث حاد الزاوية متساوي الساقين "
 
 # used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on
 # one line
 msgid "Ouch... squished triangle"
-msgstr "Ouch... squished triangle"
+msgstr ""
 
 # used to label a drawn "quadrilateral" with one of its angles equal to 180º -
 # in effect making it look like triangle
 msgid "Triangle? Well, not really..."
-msgstr "Triangle? Well, not really..."
+msgstr "هل هذا مثلث ؟ حسنا ..لا للاسف "
 
 msgid "area:"
-msgstr "area:"
+msgstr "المساحة"
 
 msgid "perimeter:"
-msgstr "perimeter:"
+msgstr "المحيط :"
 
 msgid "circumference:"
-msgstr "circumference:"
+msgstr "محيط الشكل "
 
 msgid "surface area:"
-msgstr "surface area:"
+msgstr "مساحة السطح :"
 
 msgid "volume:"
-msgstr "volume:"
+msgstr "الحجم : "
 
 msgid "green apple"
 msgid_plural "green apples"
-msgstr[0] "green apple"
-msgstr[1] "green apples"
+msgstr[0] "تفاح اخضر"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "red apple"
 msgid_plural "red apples"
-msgstr[0] "red apple"
-msgstr[1] "red apples"
+msgstr[0] "تفاح احمر"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "strawberry"
 msgid_plural "strawberries"
-msgstr[0] "strawberry"
-msgstr[1] "strawberries"
+msgstr[0] "الفراولة "
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "pear"
 msgid_plural "pears"
-msgstr[0] "pear"
-msgstr[1] "pears"
+msgstr[0] "الكمثرى "
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "orange [fruit]"
 msgid_plural "oranges"
-msgstr[0] "orange"
-msgstr[1] "oranges"
+msgstr[0] "البرتقال ( فاكهة )"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "onion"
 msgid_plural "onions"
-msgstr[0] "onion"
-msgstr[1] "onions"
+msgstr[0] "البصل"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "tomato"
 msgid_plural "tomatoes"
-msgstr[0] "tomato"
-msgstr[1] "tomatoes"
+msgstr[0] "الطماطم"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "lemon"
 msgid_plural "lemons"
-msgstr[0] "lemon"
-msgstr[1] "lemons"
+msgstr[0] "الليمون"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "cherry"
 msgid_plural "cherries"
-msgstr[0] "cherry"
-msgstr[1] "cherries"
+msgstr[0] "الكرز"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "pepper"
 msgid_plural "peppers"
-msgstr[0] "pepper"
-msgstr[1] "peppers"
+msgstr[0] "الفلفل"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "carrot"
 msgid_plural "carrots"
-msgstr[0] "carrot"
-msgstr[1] "carrots"
+msgstr[0] "الجزر"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "banana"
 msgid_plural "bananas"
-msgstr[0] "banana"
-msgstr[1] "bananas"
+msgstr[0] "الموز"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "watermelon"
 msgid_plural "watermelons"
-msgstr[0] "watermelon"
-msgstr[1] "watermelons"
+msgstr[0] "البطيخ"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] "hour"
-msgstr[1] "hours"
+msgstr[0] "ساعة"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] "minute"
-msgstr[1] "minutes"
+msgstr[0] "دقائق"
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""

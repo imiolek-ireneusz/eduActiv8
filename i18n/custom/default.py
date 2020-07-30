@@ -300,8 +300,8 @@ class I18n():
         self.d["ShapeMaker"] = _("Shape Maker")
 
         self.d["draw_instr1"] = _("Shape to draw: %s")
-        self.d["draw_instr2"] = _(
-            "Shape to draw: %s")  # if the following size_instr turn out to be too long the beginning can be moved here, ie. d["draw_instr2"] = _("Shape to draw: %s, such that"
+        self.d["draw_instr2"] = _("Shape to draw: %s")
+        # if the following size_instr turn out to be too long the beginning can be moved here, ie. d["draw_instr2"] = _("Shape to draw: %s, such that"
         self.d["size_instr_0"] = _(
             "such that lengths of its bases are equal to %d and %d and height to %d")  # for trapeziums
         self.d["size_instr_1"] = _("such that lengths of its sides are equal to %d")  # square

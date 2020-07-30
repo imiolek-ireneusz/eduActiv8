@@ -572,16 +572,16 @@ msgid "Type your answer and hit enter"
 msgstr "Typ uw antwoord en druk op enter"
 
 msgid "Decimals (Category)"
-msgstr "Decimalen (Categorie)"
+msgstr "Decimalen"
 
 msgid "Fractions (Category)"
-msgstr "Fracties (Categorie)"
+msgstr "Fracties"
 
 msgid "Ratios (Category)"
-msgstr "Verhoudingen (Categorie)"
+msgstr "Verhoudingen"
 
 msgid "Percentages (Category)"
-msgstr "Percentages (Categorie)"
+msgstr "Percentages"
 
 msgid "Learn new words"
 msgstr "Leer nieuwe woorden"

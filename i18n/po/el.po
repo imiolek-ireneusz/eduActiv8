@@ -585,16 +585,16 @@ msgid "Type your answer and hit enter"
 msgstr "Πληκτρολόγισε την απάντηση σου και πάτα enter"
 
 msgid "Decimals (Category)"
-msgstr "Δεκαδικοί (κατηγορία)"
+msgstr "Δεκαδικοί"
 
 msgid "Fractions (Category)"
-msgstr "Κλάσματα (κατηγορία)"
+msgstr "Κλάσματα"
 
 msgid "Ratios (Category)"
-msgstr "Λόγοι (κατηγορία)"
+msgstr "Λόγοι"
 
 msgid "Percentages (Category)"
-msgstr "Ποσοστά (κατηγορία)"
+msgstr "Ποσοστά"
 
 msgid "Learn new words"
 msgstr "Νέες λέξεις"

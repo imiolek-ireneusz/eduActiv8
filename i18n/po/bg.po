@@ -575,16 +575,16 @@ msgid "Type your answer and hit enter"
 msgstr "Напиши отговор и натисни Ентър"
 
 msgid "Decimals (Category)"
-msgstr "Decimals (Category)"
+msgstr "Decimals"
 
 msgid "Fractions (Category)"
-msgstr "Fractions (Category)"
+msgstr "Fractions"
 
 msgid "Ratios (Category)"
-msgstr "Ratios (Category)"
+msgstr "Ratios"
 
 msgid "Percentages (Category)"
-msgstr "Percentages (Category)"
+msgstr "Percentages"
 
 msgid "Learn new words"
 msgstr "Учене на нови думи"
