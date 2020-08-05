@@ -1,5 +1,5 @@
 # eduActiv8 - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
+# Copyright (C) 2012 - 2020 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
@@ -7,7 +7,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.20.08\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
 "PO-Revision-Date: 2019-01-04 22:25+0000\n"
@@ -99,7 +99,7 @@ msgstr "ביטול"
 
 #, python-format
 msgid "%s deleted from database."
-msgstr "%s נמחקו ממסד הנתונים"
+msgstr "s% נמחקו ממסד הנתונים"
 
 msgid "Failed to delete the user."
 msgstr "מחיקת משתמשים נכשלה"
@@ -166,7 +166,7 @@ msgstr "הסיסמאות לא תואמות"
 
 #, python-format
 msgid "%s added"
-msgstr "התווספו %s"
+msgstr "התווספו s%"
 
 msgid "This user name already exists, please choose a different one"
 msgstr "שם המשתמש הזה קיים, בחרו שם משתמש אחר"
@@ -770,48 +770,48 @@ msgstr "בואו נראה איזה צורות אתם יכולים לצייר"
 
 #, python-format
 msgid "Shape to draw: %s"
-msgstr "לעצב %s"
+msgstr "לעצב s%"
 
 #, python-format
 msgid "such that lengths of its bases are equal to %d and %d and height to %d"
-msgstr "כזה שאורכי בסיסיו שווים %d %d וגובה %d"
+msgstr "כזה שאורכי בסיסיו שווים d% d% וגובה d%"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d"
-msgstr "כזה שאורכי צלעותיה שווים %d"
+msgstr "כזה שאורכי צלעותיה שווים d%"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d and %d"
-msgstr "כזה שאורכי צלעותיה שווים %d %d"
+msgstr "כזה שאורכי צלעותיה שווים d% d%"
 
 #, python-format
 msgid ""
 "such that lengths of its 2 parallel bases are equal to %d and height to %d"
-msgstr "כזה שהאורכים של 2 הבסיסים המקבילים שלה שווים %d וגובה %d"
+msgstr "כזה שהאורכים של 2 הבסיסים המקבילים שלה שווים d% וגובה d%"
 
 #, python-format
 msgid "such that length of its base is equal to %d and height to %d"
-msgstr "אורכו של הבסיס שלה באופן ששווה %d וגובה %d"
+msgstr "אורכו של הבסיס שלה באופן ששווה d% וגובה d%"
 
 #, python-format
 msgid "such that lengths of its catheti are equal to %d and %d"
-msgstr "כזה שהאורכים של catheti השווים %d %d"
+msgstr "כזה שהאורכים של הניצבים השווים d% d%"
 
 #, python-format
 msgid "such that lengths of both of its catheti are equal to %d"
-msgstr "כזה שהאורכים של שני catheti השווים %d"
+msgstr "כזה שהאורכים של שני הניצבים השווים d%"
 
 #, python-format
 msgid "such that length of its hypotenuse is equal to %d"
-msgstr "אורכו של היתר שלו באופן ששווה %d"
+msgstr "אורכו של היתר שלו באופן ששווה d%"
 
 #, python-format
 msgid "such that length of one of its sides is equal to %d and height to %d"
-msgstr "אורכו של אחד מהצדדים שלה, כגון שהוא שווה %d וגובה %d"
+msgstr "אורכו של אחד מהצדדים שלה, כגון שהוא שווה d% וגובה d%"
 
 #, python-format
 msgid "such that length of its radius is equal to %d"
-msgstr "אורך הרדיוס שלו כזה שהוא שווה %d"
+msgstr "אורך הרדיוס שלו כזה שהוא שווה d%"
 
 msgid "Test yourself"
 msgstr "ביחנו את עצמכם"

@@ -64,6 +64,12 @@ class Board(gd.BoardGame):
         self.chosen = 0
         self.shape_id = -1
         self.tria_variant = 0
+        if self.lang.ltr_text:
+            self.ind3 = [0, 1, 2]
+            self.ind2 = [0, 1]
+        else:
+            self.ind3 = [2, 1, 0]
+            self.ind2 = [1, 0]
 
         data = [25, 14]
         # stretch width to fit the screen size
@@ -170,15 +176,10 @@ class Board(gd.BoardGame):
 
     def pick_shape(self):
         prev_chosen = self.chosen
-        while (self.chosen == prev_chosen):
+        while self.chosen == prev_chosen:
             self.chosen = random.choice(self.choice)
-
         self.chosen_shape_name = self.shape_names[self.chosen]
-        if self.level.lvl == 1:
-            self.name_label.value = self.lang.d["draw_instr1"] % self.chosen_shape_name
-        else:
-            self.name_label.value = self.lang.d["draw_instr2"] % self.chosen_shape_name
-
+        self.name_label.value = self.lang.d["draw_instr1"] % self.chosen_shape_name
         self.tria_variant = 0
 
         if self.check_sizes:
@@ -190,7 +191,7 @@ class Board(gd.BoardGame):
                 h = random.randrange(2, self.max_side_len - 2)
                 self.shape_sizes = [b1, b2, h]
                 self.size_instr.value = self.lang.d["size_instr_0"] % (
-                self.shape_sizes[0], self.shape_sizes[1], self.shape_sizes[2])
+                self.shape_sizes[self.ind3[0]], self.shape_sizes[self.ind3[1]], self.shape_sizes[self.ind3[2]])
 
             elif self.chosen == 7:  # iso_trapezium
                 b1 = random.randrange(4, self.max_side_len, 2)
@@ -198,13 +199,14 @@ class Board(gd.BoardGame):
                 h = random.randrange(2, self.max_side_len - 3)
                 self.shape_sizes = [b1, b2, h]
                 self.size_instr.value = self.lang.d["size_instr_0"] % (
-                self.shape_sizes[0], self.shape_sizes[1], self.shape_sizes[2])
+                self.shape_sizes[self.ind3[0]], self.shape_sizes[self.ind3[1]], self.shape_sizes[self.ind3[2]])
 
             elif self.chosen == 2:  # parallelogram
                 b1 = random.randrange(4, self.max_side_len)
                 h = random.randrange(2, self.max_side_len-3)
                 self.shape_sizes = [b1, h]
-                self.size_instr.value = self.lang.d["size_instr_3"] % (self.shape_sizes[0], self.shape_sizes[1])
+                self.size_instr.value = self.lang.d["size_instr_3"] % (
+                    self.shape_sizes[self.ind2[0]], self.shape_sizes[self.ind2[1]])
 
             elif self.chosen == 4:  # square
                 b1 = random.randrange(2, self.max_side_len)
@@ -217,7 +219,8 @@ class Board(gd.BoardGame):
                 b2_choice.extend(range(b1 + 1, self.max_side_len))
                 b2 = random.choice(b2_choice)
                 self.shape_sizes = [b1, b2]
-                self.size_instr.value = self.lang.d["size_instr_2"] % (self.shape_sizes[0], self.shape_sizes[1])
+                self.size_instr.value = self.lang.d["size_instr_2"] % (
+                    self.shape_sizes[self.ind2[0]], self.shape_sizes[self.ind2[1]])
 
             elif self.chosen == 11:  # right iso tria
                 b1 = random.randrange(2, self.max_side_len)
@@ -232,7 +235,8 @@ class Board(gd.BoardGame):
                     b2_choice.extend(range(b1 + 1, self.max_side_len))
                     b2 = random.choice(b2_choice)
                     self.shape_sizes = [b1, b2]
-                    self.size_instr.value = self.lang.d["size_instr_5"] % (self.shape_sizes[0], self.shape_sizes[1])
+                    self.size_instr.value = self.lang.d["size_instr_5"] % (
+                        self.shape_sizes[self.ind2[0]], self.shape_sizes[self.ind2[1]])
                 else:
                     b1 = random.randrange(4, self.max_side_len, 2)
                     self.shape_sizes = [b1]
@@ -249,7 +253,8 @@ class Board(gd.BoardGame):
                     b1 = random.randrange(2, self.max_side_len)
                     h = random.randrange(2, self.max_side_len)
                 self.shape_sizes = [b1, h]
-                self.size_instr.value = self.lang.d["size_instr_4"] % (self.shape_sizes[0], self.shape_sizes[1])
+                self.size_instr.value = self.lang.d["size_instr_4"] % (
+                    self.shape_sizes[self.ind2[0]], self.shape_sizes[self.ind2[1]])
             elif self.chosen == 18:  # circle
                 r = random.randrange(2, self.max_side_len)
                 self.shape_sizes = [r]

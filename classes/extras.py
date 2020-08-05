@@ -8,6 +8,7 @@ import math
 
 fribidi_loaded = False
 ar_reshaper_loaded = False
+he_reverse = False
 
 try:
     # import pyfribidi as fribidi
@@ -41,10 +42,14 @@ if not fribidi_loaded:
 
         from classes.rtl.bidi.algorithm import get_display
         ar_reshaper_loaded = True
+        he_reverse = True
         print("Using arabic_reshaper library.")
     except:
         ar_reshaper_loaded = False
         print("Unable to load arabic_reshaper.")
+
+if not he_reverse:
+    from classes.rtl.bidi.algorithm import get_display
 
 
 def hsv_to_rgb(h, s, v):
@@ -118,49 +123,9 @@ def is_rtl(s, alpha):
     return False
 
 
-def he_rtl_man(s, alpha):
-    ret = list()
-    words = s.split()
-    cur_rtl_list = list()
-    cur_ltr_list = list()
-    cur_is_rtl = False
-    for w in words:
-        if is_rtl(w, alpha) and cur_is_rtl:
-            cur_rtl_list.append(w[::-1])
-        elif is_rtl(w, alpha) and not cur_is_rtl:
-            if len(cur_ltr_list) > 0:
-                cur_ltr_list.reverse()
-                ret.extend(cur_ltr_list)
-            cur_ltr_list = list()
-            cur_rtl_list.append(w[::-1])
-            cur_is_rtl = True
-        elif not is_rtl(w, alpha) and not cur_is_rtl:
-            w = w.split()
-            w.reverse()
-            cur_ltr_list.append("".join(w))
-        elif not is_rtl(w, alpha) and cur_is_rtl:
-            if len(cur_rtl_list) > 0:
-                ret.extend(cur_rtl_list)
-            cur_rtl_list = list()
-
-            w = w.split()
-            w.reverse()
-            cur_ltr_list.append("".join(w))
-            cur_is_rtl = False
-        else:
-            pass
-    if len(cur_rtl_list) > 0:
-        ret.extend(cur_rtl_list)
-    if len(cur_ltr_list) > 0:
-        cur_ltr_list.reverse()
-        ret.extend(cur_ltr_list)
-    ln = len(ret)
-    s = ""
-    for i in range(ln - 1, -1, -1):
-        s += ret[i]
-        if i > 0:
-            s += " "
-    return s
+def he_rtl_man(s):
+    st = unival(s)
+    return get_display(st)
 
 
 def ar_rtl(s):
@@ -168,19 +133,16 @@ def ar_rtl(s):
     if fribidi_loaded:
         return fribidi.log2vis(st)
     elif ar_reshaper_loaded:
-        #reshaped_text = arabic_reshaper.reshape(st)
         reshaped_text = reshaper.reshape(st)
         return get_display(reshaped_text)
     else:
         return st
 
 
-def reverse(s, alpha, lng):
+def reverse(s, lng):
     if sys.version_info < (3, 0):
         if not isinstance(s, unicode):
             s = s.decode('utf-8')
-        if alpha is not None:
-            alpha = alpha.decode("utf-8")
     if lng == "ar":
         return ar_rtl(s)
     elif lng == "he":
@@ -188,7 +150,7 @@ def reverse(s, alpha, lng):
             st = unival(s)
             return fribidi.log2vis(st)
         else:
-            return he_rtl_man(s, alpha)
+            return he_rtl_man(s)
 
 
 def rr2(from1, to1, from2, to2, step=1):

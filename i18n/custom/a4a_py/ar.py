@@ -4,7 +4,7 @@ from classes.extras import reverse
 
 
 def r(s):
-    return reverse(s, None, "ar")
+    return reverse(s, "ar")
 
 
 d = dict()
