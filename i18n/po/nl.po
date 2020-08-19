@@ -271,7 +271,7 @@ msgid "Addition Table"
 msgstr "Optellingen tabel"
 
 msgid "Discover Letters"
-msgstr "Ontdek de brieven"
+msgstr "Ontdek de letters"
 
 msgid "Learn New Words"
 msgstr "Nieuwe woorden leren"
@@ -289,10 +289,10 @@ msgid "Games & Mazes"
 msgstr "Spelletjes & doolhoven"
 
 msgid "Letters"
-msgstr "Brieven"
+msgstr "Letters"
 
 msgid "Learn Letters with Flashcards"
-msgstr "Brieven leren met Flash cards"
+msgstr "Letters leren met Flash cards"
 
 msgid "Learn to Write"
 msgstr "Leren schrijven"
@@ -304,7 +304,7 @@ msgid "Complete the ABC"
 msgstr "Voltooi het ABC"
 
 msgid "Sorting Letters"
-msgstr "Brieven sorteren"
+msgstr "Letters sorteren"
 
 msgid "Lowercase Letters"
 msgstr "Kleine letters"
