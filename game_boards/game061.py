@@ -176,11 +176,28 @@ class Board(gd.BoardGame):
             self.selected_color = ex.hsv_to_rgb(h, 50, self.mainloop.cl.bg_color_v)
             self.selected_font_color = [ex.hsv_to_rgb(h, 50, 250), ]
 
-        self.bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        if self.mainloop.m.game_variant == 2:
+            self.bg_img_src = os.path.join('unit_bg', "universal_sq_bg_liter.png")
+        else:
+            self.bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
         self.door_bg_img_src = os.path.join('unit_bg', "universal_sq_door.png")
 
         self.bg_img_src_w = os.path.join('unit_bg', "universal_r4x1_bg.png")
         self.door_bg_img_src_w = os.path.join('unit_bg', "universal_r4x1_door.png")
+
+        dc_tint_color = ex.hsv_to_rgb(h, self.mainloop.cl.door_bg_tint_s, self.mainloop.cl.door_bg_tint_v)
+
+        if self.mainloop.scheme is not None and self.mainloop.scheme.dark:
+            img_style = "bb"
+            shape_bg_col = (0, 0, 0)
+            bg_door_img_src = os.path.join('unit_bg', "img_decor_bb.png")
+            dc_tint_color = None
+        else:
+            img_style = "wb"
+            shape_bg_col = (255, 255, 255)
+            bg_door_img_src = os.path.join('unit_bg', "img_decor_w.png")
+
+        self.dc_selected_img_src = os.path.join('unit_bg', "dc_hover_%s20.png" % img_style)
 
         h1 = (data[1] - data[4]) // 2  # height of the top margin
         h2 = data[1] - h1 - data[4]  # -1 #height of the bottom margin minus 1 (game label)
@@ -210,19 +227,17 @@ class Board(gd.BoardGame):
 
                     self.board.add_universal_unit(grid_x=position_list[pos][0], grid_y=position_list[pos][1], grid_w=xw,
                                                   grid_h=1, txt="", fg_img_src=self.bg_img_src,
-                                                  bg_img_src=self.bg_img_src, dc_img_src=self.door_bg_img_src,
+                                                  bg_img_src=self.bg_img_src, dc_img_src=bg_door_img_src,
                                                   bg_color=(0, 0, 0, 0), border_color=None, font_color=self.font_color,
                                                   bg_tint_color=self.default_bg_color,
                                                   fg_tint_color=self.hover_bg_color,
-                                                  dc_tint_color=self.default_bg_color, txt_align=(0, 0),
+                                                  dc_tint_color=dc_tint_color, txt_align=(0, 0),
                                                   font_type=draw_data[4], multi_color=False, alpha=True,
                                                   immobilized=True, fg_as_hover=True)
-                    im = classes.drw.img.Img(xw, 1, self.board.scale, img_src, scale_factor=0.87)
+                    im = classes.drw.img.Img(xw, 1, self.board.scale, img_src, scale_factor=0.85,
+                                             bg_color=shape_bg_col)
 
-                    self.board.ships[-1].manual_painting_layer = 1
-                    self.board.ships[-1].init_m_painting()
-                    self.board.ships[-1].manual_painting = im.get_canvas().copy()
-                    self.board.ships[-1].update_me = True
+                    self.board.ships[-1].add_image(0, im)
 
                 else:
                     self.board.add_universal_unit(grid_x=position_list[pos][0], grid_y=position_list[pos][1], grid_w=xw,
@@ -291,19 +306,15 @@ class Board(gd.BoardGame):
         gd.BoardGame.update(self, game)
 
     def semi_select(self, o):
-        if self.mainloop.m.game_variant == 4:
-            o.dc_tint_color = self.semi_selected_color
-            o.bg_tint_color = (50, 50, 50)
-        elif self.mainloop.m.game_variant == 5:
-            o.dc_tint_color = self.semi_selected_color
-        else:
-            o.bg_tint_color = self.semi_selected_color
+        o.bg_tint_color = self.semi_selected_color
+        o.font_colors = self.semi_selected_font_color
         o.mouse_out()
         o.update_me = True
 
     def select(self):
         for each in self.history:
-            if self.mainloop.m.game_variant in [4, 5]:
+            each.dc_tint_color = self.selected_color
+            if each.grid_w == 1:
                 each.dc_tint_color = self.selected_color
                 each.set_dc_img(self.dc_selected_img_src)
             else:
@@ -316,11 +327,8 @@ class Board(gd.BoardGame):
 
     def deselect(self):
         for each in self.history:
-            if self.mainloop.m.game_variant in [4, 5]:
-                each.dc_tint_color = self.default_bg_color
-                each.bg_tint_color = None
-            else:
-                each.bg_tint_color = self.default_bg_color
+            each.bg_tint_color = self.default_bg_color
+            each.font_colors = self.font_color
             each.mouse_out()
             each.update_me = True
         self.history = [None, None]

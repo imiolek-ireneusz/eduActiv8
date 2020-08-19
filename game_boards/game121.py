@@ -18,10 +18,8 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         color = (234, 218, 225)
         self.color = color
-        border_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 200, 200)
-        letter_bg = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 30, 255)
-        font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 150)
-        arrow_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 200, 200)
+        h = self.mainloop.cl.color_sliders[5][0] * 16
+        arrow_color = ex.hsv_to_rgb(h, 200, 200)
 
         img_top = 1
         gv = self.mainloop.m.game_variant
@@ -146,7 +144,7 @@ class Board(gd.BoardGame):
 
         self.mainloop.redraw_needed = [True, True, True]
 
-        data = [14, 8]
+        data = [14, 9]
         img_w_size = 4
         img_h_size = 4
 
@@ -191,13 +189,33 @@ class Board(gd.BoardGame):
         self.picture.speaker_val = self.wordp
         self.picture.speaker_val_update = False
 
-        self.board.add_unit(1, img_h_size + img_top + 1, data[0] - 2, 1, classes.board.Letter, self.word, letter_bg, "", 0)
+        self.units = []
+
+        label_color = ex.hsv_to_rgb(h, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+        font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+        fg_tint_color = ex.hsv_to_rgb(h, self.mainloop.cl.fg_hover_s, self.mainloop.cl.fg_hover_v)
+
+        bg_img_src_w = os.path.join('unit_bg', "universal_r6x1_bg.png")
+        #fg_img_src_w = os.path.join('unit_bg', "universal_r6x1_door.png")
+
+        if self.mainloop.scheme is None:
+            dc_img_src_w = os.path.join('unit_bg', "universal_r6x1_dc.png")
+        else:
+            dc_img_src_w = None
+
+        #self.board.add_unit(1, img_h_size + img_top + 1, data[0] - 2, 1, classes.board.Letter, self.word, letter_bg, "", 0)
+        self.board.add_universal_unit(grid_x=img_left - 4, grid_y=data[1] - 3, grid_w=12, grid_h=2, txt=self.word,
+                                      alpha=True, fg_img_src=bg_img_src_w, bg_img_src=bg_img_src_w,
+                                      dc_img_src=dc_img_src_w, bg_color=(0, 0, 0, 0), border_color=None,
+                                      font_color=font_color, bg_tint_color=label_color, fg_tint_color=fg_tint_color,
+                                      txt_align=(0, 0), font_type=25, multi_color=False, immobilized=True,
+                                      fg_as_hover=False)
         self.label = self.board.ships[-1]
-        self.label.draggable = False
-        self.label.highlight = False
-        self.label.outline_highlight = False
-        self.label.set_outline(color=border_color, width=2)
-        self.label.font_color = font_color
+        #self.label.draggable = False
+        #self.label.highlight = False
+        #self.label.outline_highlight = False
+        #self.label.set_outline(color=border_color, width=2)
+        #self.label.font_color = font_color
         self.label.readable = True
         self.label.speaker_val = self.wordp
         self.label.speaker_val_update = False

@@ -385,23 +385,13 @@ class Board(gd.BoardGame):
             self.custom_hover(event)
 
     def semi_select(self, o):
-        if self.mainloop.m.game_variant == 4:
-            o.dc_tint_color = self.semi_selected_color
-            o.bg_tint_color = (50, 50, 50)
-        elif self.mainloop.m.game_variant == 5:
-            o.dc_tint_color = self.semi_selected_color
-        else:
-            o.bg_tint_color = self.semi_selected_color
+        o.bg_tint_color = self.semi_selected_color
         o.mouse_out()
         o.update_me = True
 
     def select(self):
         for each in self.history:
-            if self.mainloop.m.game_variant in [4, 5]:
-                each.dc_tint_color = self.selected_color
-                each.set_dc_img(self.dc_selected_img_src)
-            else:
-                each.bg_tint_color = self.selected_color
+            each.bg_tint_color = self.selected_color
             each.uncovered = True
             each.set_display_check(True)
             each.mouse_out()
@@ -410,11 +400,7 @@ class Board(gd.BoardGame):
 
     def deselect(self):
         for each in self.history:
-            if self.mainloop.m.game_variant in [4, 5]:
-                each.dc_tint_color = self.default_bg_color
-                each.bg_tint_color = None
-            else:
-                each.bg_tint_color = self.default_bg_color
+            each.bg_tint_color = self.default_bg_color
             each.mouse_out()
             each.update_me = True
         self.history = [None, None]
