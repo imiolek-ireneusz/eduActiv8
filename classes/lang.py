@@ -10,6 +10,85 @@ import classes.xml_conn
 from classes.extras import reverse
 from classes.extras import unival
 
+# the following imports are required for the pygame2exe script - so they can be included
+"""
+# TODO try adding them to the extra modules within the script itself - same for the menu.py files
+if sys.platform == "win32" or sys.platform == "cygwin":
+    import i18n.custom.en_us
+    import i18n.custom.word_lists.en_us_di
+    import i18n.custom.kbrd.en_us
+    import i18n.custom.kbrd.en_course
+    import i18n.custom.a4a_py.en_US
+    import i18n.custom.pl
+    import i18n.custom.word_lists.pl_di
+    import i18n.custom.kbrd.pl
+    import i18n.custom.kbrd.pl_course
+    import i18n.custom.a4a_py.pl
+    import i18n.custom.nl
+    import i18n.custom.word_lists.nl_di
+    import i18n.custom.a4a_py.nl
+    import i18n.custom.sr
+    import i18n.custom.word_lists.sr_di
+    import i18n.custom.a4a_py.en_GB
+    import i18n.custom.ca
+    import i18n.custom.word_lists.ca_di
+    import i18n.custom.a4a_py.ca
+    import i18n.custom.es_es
+    import i18n.custom.word_lists.es_es_di
+    import i18n.custom.a4a_py.es_ES
+    import i18n.custom.pt_pt
+    import i18n.custom.word_lists.pt_pt_di
+    import i18n.custom.a4a_py.pt_PT
+    import i18n.custom.fr
+    import i18n.custom.word_lists.fr_di
+    import i18n.custom.kbrd.fr
+    import i18n.custom.kbrd.fr_course
+    import i18n.custom.a4a_py.fr
+    import i18n.custom.it
+    import i18n.custom.word_lists.it_di
+    import i18n.custom.a4a_py.it
+    import i18n.custom.de
+    import i18n.custom.word_lists.de_di
+    import i18n.custom.kbrd.de
+    import i18n.custom.kbrd.de_course
+    import i18n.custom.a4a_py.de
+    import i18n.custom.ru
+    import i18n.custom.word_lists.ru_di
+    import i18n.custom.kbrd.ru
+    import i18n.custom.kbrd.ru_course
+    import i18n.custom.a4a_py.ru
+    import i18n.custom.uk
+    import i18n.custom.word_lists.uk_di
+    import i18n.custom.kbrd.uk
+    import i18n.custom.kbrd.uk_course
+    import i18n.custom.a4a_py.uk
+    import i18n.custom.fi
+    import i18n.custom.word_lists.fi_di
+    import i18n.custom.a4a_py.en_GB
+    import i18n.custom.el
+    import i18n.custom.word_lists.el_di
+    import i18n.custom.kbrd.el
+    import i18n.custom.kbrd.el_course
+    import i18n.custom.a4a_py.el
+    import i18n.custom.he
+    import i18n.custom.word_lists.he_di
+    import i18n.custom.a4a_py.en_GB
+    import i18n.custom.lkt
+    import i18n.custom.word_lists.lkt_di
+    import i18n.custom.a4a_py.lkt
+    import i18n.custom.bg
+    import i18n.custom.word_lists.bg_di
+    import i18n.custom.a4a_py.bg
+    import i18n.custom.ar
+    import i18n.custom.word_lists.ar_di
+    import i18n.custom.a4a_py.ar
+    import i18n.custom.en_gb
+    import i18n.custom.word_lists.en_gb_di
+    import i18n.custom.kbrd.en_gb
+    import i18n.custom.kbrd.en_course
+    import i18n.custom.a4a_py.en_GB
+"""
+
 
 class Language:
     def __init__(self, configo, path):
@@ -185,20 +264,20 @@ class Language:
                         for index in range(len(each_d[key])):
                             if sys.version_info < (3, 0):
                                 if isinstance(each_d[key][index], basestring):
-                                    each_d[key][index] = reverse(each_d[key][index], self.alpha, self.lang)
+                                    each_d[key][index] = reverse(each_d[key][index], self.lang)
                             else:
                                 if isinstance(each_d[key][index], str):
-                                    each_d[key][index] = reverse(each_d[key][index], self.alpha, self.lang)
+                                    each_d[key][index] = reverse(each_d[key][index], self.lang)
                     else:
-                        each_d[key] = reverse(each_d[key], self.alpha, self.lang)
+                        each_d[key] = reverse(each_d[key], self.lang)
             for each in [self.solid_names, self.shape_names]:
                 for index in range(len(each)):
                     if sys.version_info < (3, 0):
                         if isinstance(each[index], basestring):
-                            each[index] = reverse(each[index], self.alpha, self.lang)
+                            each[index] = reverse(each[index], self.lang)
                     else:
                         if isinstance(each[index], str):
-                            each[index] = reverse(each[index], self.alpha, self.lang)
+                            each[index] = reverse(each[index], self.lang)
 
         self.dp.update(self.d)
         self.dp.update(self.lang_file.dp)
