@@ -382,6 +382,7 @@ Images for new icons:
 
 New images in eduActiv8:
     https://openclipart.org/detail/95431/star
+    http://www.clker.com/clipart-90047.html
 
 Wikipedia images:
     http://de.wikipedia.org/wiki/Datei:Koala.svg
