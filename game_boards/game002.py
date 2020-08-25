@@ -74,7 +74,7 @@ class Board(gd.BoardGame):
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Dutch", "Nederlands"], colors[top % 2],
                             "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
-                            ["Steven Es"], colors[top % 2], "", 6)
+                            ["translated by Steven Es", "updated by Larry Myerscough"], colors[top % 2], "", 6)
         top += 1
         self.board.add_unit(0, top, lang_width, 1, classes.board.Label, ["English", "English"], colors[top % 2], "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,

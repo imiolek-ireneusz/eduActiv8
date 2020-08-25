@@ -1,7 +1,11 @@
 Changelog:
-eduActiv8 - 4.20.06:
-    - Arabic language added provisionally - requires python-pyfribidi library to work
+eduActiv8 - 4.20.08:
+    - Arabic language added provisionally - recommends python-pyfribidi library, alternatively uses embedded
+      arabic_reshaper library.
     - Word list translated to Arabic by Ayman Mahmoud
+    - Minor fixes for Hebrew
+    - More activities redesigned
+    - Dutch translation reviewed by Larry Myerscough
 eduActiv8 - 4.20.05:
     - Dutch translation by Steven Es
     - code cleanup - addressing lgtm alerts
