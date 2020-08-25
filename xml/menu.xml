@@ -1526,7 +1526,7 @@
                   title="Match shapes to their names"
                   subtitle=""
                   icon="ico_g_0504.png" ico_group="" icosuffix="False" lang_activity="False"
-                  visible="1" lang_incl="['bg', 'en', 'pl', 'es']" lang_excl="" require_uc="False" listening="False" android="True">
+                  visible="1" lang_incl="" lang_excl="['ca', 'de', 'fi', 'fr', 'he', 'lkt', 'pt', 'sr']" require_uc="False" listening="False" android="True">
             </game>
             <game mline="2" dbid="64" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="59"
