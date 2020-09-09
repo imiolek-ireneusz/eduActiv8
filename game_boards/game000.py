@@ -117,7 +117,7 @@ class Board(gd.BoardGame):
                             os.path.join("home_icons", img), alpha=True)
         self.board.ships[-1].immobilize()
 
-        if self.mainloop.scheme_code is "WB":
+        if self.mainloop.scheme_code == "WB":
             img = 'score_hc_awb_l.png'
         else:
             img = 'score_hc_wb_l.png'
@@ -125,7 +125,7 @@ class Board(gd.BoardGame):
                             os.path.join("home_icons", img), alpha=True)
         self.board.ships[-1].immobilize()
 
-        if self.mainloop.scheme_code is "BW":
+        if self.mainloop.scheme_code == "BW":
             img = 'score_hc_abw_l.png'
         else:
             img = 'score_hc_bw_l.png'
@@ -133,7 +133,7 @@ class Board(gd.BoardGame):
                             os.path.join("home_icons", img), alpha=True)
         self.board.ships[-1].immobilize()
 
-        if self.mainloop.scheme_code is "BY":
+        if self.mainloop.scheme_code == "BY":
             img = 'score_hc_aby_l.png'
         else:
             img = 'score_hc_by_l.png'
