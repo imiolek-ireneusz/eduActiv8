@@ -77,7 +77,7 @@ class Board(gd.BoardGame):
             m_pool = [0]
         elif self.level.lvl == 7:
             data = [4, 2, True, True, True, False, False, True, False, True, True, 15]
-            h_pool = range(13, 24)
+            h_pool = list(range(13, 24))
             h_pool.append(0)
             m_pool = range(0, 60, 5)
         elif self.level.lvl == 8:

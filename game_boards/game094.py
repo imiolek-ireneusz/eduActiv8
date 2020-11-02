@@ -399,7 +399,7 @@ class Board(gd.BoardGame):
             return mn
         else:
             if mn > 3:
-                start = mn / 2 + 1
+                start = int(mn / 2 + 1)
             else:
                 start = 3
             for i in range(start, 1, -1):
