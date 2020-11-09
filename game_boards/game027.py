@@ -161,6 +161,7 @@ class Board(gd.BoardGame):
                 self.board.ships[-1].audible = False
                 self.board.ships[-1].speaker_val = self.img_pcaptions[i]
                 self.board.ships[-1].speaker_val_update = False
+                self.board.ships[-1].item_code = items[i]
                 self.units.append(self.board.ships[-1])
         self.board.all_sprites_list.move_to_front(self.board.units[0])
 
@@ -196,7 +197,7 @@ class Board(gd.BoardGame):
         for i in range(len(self.items)):
             count = 0
             for each in purchased:
-                if each.value == self.img_captions[i]:  # self.items[i]:
+                if each.item_code == self.items[i]:
                     count += 1
             if count > 0:
                 result[str(i)] = count
