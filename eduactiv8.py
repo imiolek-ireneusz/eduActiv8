@@ -441,11 +441,17 @@ class GamePlay:
                 icon = pygame.image.load(os.path.join('res', 'icon', 'ico256.png'))
                 pygame.display.set_icon(icon)
 
+                new_size = self.size[:]
+                resizing = False
+                frames_since_resize = 0
+
                 # -------- Main Program Loop ----------- #
                 wait = False
                 while self.done is False:
                     # uncomment the following line to test all activities across multiple languages as specified in the stresstest.py
                     # stresstest.step(self)
+
+                    resizing_this_frame = False
                     if android is not None:
                         if android.check_pause():
                             wait = True
@@ -498,13 +504,20 @@ class GamePlay:
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT or (
                                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
-                                self.dialog.show_dialog(0, self.lang.d["Do you want to exit the game?"])
+                                self.done = True
+                                self.done4good = True
+                                # don't show dialog if closing with window manager or ESC
+                                # self.dialog.show_dialog(0, self.lang.d["Do you want to exit the game?"])
                             elif event.type == pygame.VIDEORESIZE:
                                 if not self.config.fullscreen:
-                                    self.on_resize(list(event.size), info)
+                                    new_size = list(event.size)
+                                    resizing = True
+                                    resizing_this_frame = True
                             elif event.type == pygame.KEYDOWN and event.key == pygame.K_f and (
                                         event.mod & pygame.KMOD_LCTRL):
-                                self.fullscreen_toggle(info)
+                                # eduActiv8 crashes in fullscreen mode in pygame 2 so temporarily not available
+                                if pygame.version.vernum[0] < 2:
+                                    self.fullscreen_toggle(info)
                             elif event.type == pygame.KEYDOWN and event.key == pygame.K_F5:  # refresh - reload level
                                 self.game_board.level.load_level()
                             elif event.type == pygame.KEYDOWN and event.key == pygame.K_F8:
@@ -577,9 +590,19 @@ class GamePlay:
                                 else:
                                     # let the game handle other events
                                     self.game_board.handle(event)
+                        if resizing:
+                            # changed the window resizing behaviour:
+                            # only resize contents 15 frames after the user stopped resizing
+                            if not resizing_this_frame:
+                                frames_since_resize += 1
+                                if frames_since_resize > 15:
+                                    self.on_resize(new_size, info)
+                                    resizing = False
+                                    frames_since_resize = 0
+                            else:
+                                frames_since_resize = 0
 
                         # checking if any of the subsurfaces need updating and updating them if needed
-
                         if self.redraw_needed[1]:
                             info.draw(self.info_bar)
                             self.redraw_needed[1] = False
