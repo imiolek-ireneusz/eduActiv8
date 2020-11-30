@@ -205,7 +205,7 @@
           code="he"
           name="תירבע"
           name_en="Hebrew"
-          voice="['-ven+m1']"
+          voice="None"
           voice_mb="['-mb-hb1']"
           use_mb="False"
           has_uc="False"

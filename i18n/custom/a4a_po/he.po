@@ -1,1771 +1,1772 @@
 # eduActiv8 - word lists - translation file.
-# Copyright (C) 2019 Ireneusz Imiolek
+# ami.g <amihaygal@gmail.com>, 2020.
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
-#
-# Translators:
-# Ireneusz Imiolek, 2019
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.19.02\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"Last-Translator: ami.g <amihaygal@gmail.com>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
 
 msgid "cow"
-msgstr "cow"
+msgstr "פרה"
 
 msgid "turkey"
-msgstr "turkey"
+msgstr "תרנגול הודו"
 
 msgid "shrimp"
-msgstr "shrimp"
+msgstr "שרימפ"
 
 msgid "wolf"
-msgstr "wolf"
+msgstr "זאב"
 
 msgid "panther"
-msgstr "panther"
+msgstr "פנתר"
 
 msgid "panda"
-msgstr "panda"
+msgstr "פנדה"
 
 msgid "magpie"
-msgstr "magpie"
+msgstr "עקעק"
 
 msgid "clam"
-msgstr "clam"
+msgstr "צדפה"
 
 msgid "pony"
-msgstr "pony"
+msgstr "פוני"
 
 msgid "mouse"
-msgstr "mouse"
+msgstr "עכבר"
 
 msgid "pug"
-msgstr "pug"
+msgstr "פּאג"
 
 msgid "koala"
-msgstr "koala"
+msgstr "קואלה"
 
 msgid "frog"
-msgstr "frog"
+msgstr "צפרדע"
 
 msgid "ladybug"
-msgstr "ladybug"
+msgstr "מושית השש"
 
 msgid "gorilla"
-msgstr "gorilla"
+msgstr "גורילה"
 
 msgid "llama"
-msgstr "llama"
+msgstr ""
 
 msgid "vulture"
-msgstr "vulture"
+msgstr "נשר"
 
 msgid "hamster"
-msgstr "hamster"
+msgstr ""
 
 msgid "bird"
-msgstr "bird"
+msgstr "ציפור"
 
 msgid "starfish"
-msgstr "starfish"
+msgstr "כוכב ים"
 
 msgid "crow"
-msgstr "crow"
+msgstr "עורב"
 
 msgid "parakeet"
-msgstr "parakeet"
+msgstr "דררה"
 
 msgid "caterpillar"
-msgstr "caterpillar"
+msgstr "זחל"
 
 msgid "tiger"
-msgstr "tiger"
+msgstr "טיגריס"
 
 msgid "hummingbird"
-msgstr "hummingbird"
+msgstr "צופית"
 
 msgid "piranha"
-msgstr "piranha"
+msgstr "פירנה"
 
 msgid "pig"
-msgstr "pig"
+msgstr "חזיר"
 
 msgid "scorpion"
-msgstr "scorpion"
+msgstr "עקרב"
 
 msgid "fox"
-msgstr "fox"
+msgstr "שועל"
 
 msgid "leopard"
-msgstr "leopard"
+msgstr "נמר"
 
 msgid "iguana"
-msgstr "iguana"
+msgstr "איגואנה"
 
 msgid "dolphin"
-msgstr "dolphin"
+msgstr "דולפין"
 
 msgid "bat"
-msgstr "bat"
+msgstr "עטלף"
 
 msgid "chick"
-msgstr "chick"
+msgstr "אפרוח"
 
 msgid "crab"
-msgstr "crab"
+msgstr "סרטן"
 
 msgid "hen"
-msgstr "hen"
+msgstr "תרנגולת"
 
 msgid "wasp"
-msgstr "wasp"
+msgstr "צרעה"
 
 msgid "chameleon"
-msgstr "chameleon"
+msgstr "זיקית"
 
 msgid "whale"
-msgstr "whale"
+msgstr "לוויתן"
 
 msgid "hedgehog"
-msgstr "hedgehog"
+msgstr "קיפוד"
 
 msgid "fawn"
-msgstr "fawn"
+msgstr "עופר"
 
 msgid "moose"
-msgstr "moose"
+msgstr "אַיָּל קוֹרֵא"
 
 msgid "bee"
-msgstr "bee"
+msgstr "דבורה"
 
 msgid "viper"
-msgstr "viper"
+msgstr "צפע"
 
 msgid "shrike"
-msgstr "shrike"
+msgstr ""
 
 msgid "donkey"
-msgstr "donkey"
+msgstr ""
 
 msgid "guinea pig"
-msgstr "guinea pig"
+msgstr ""
 
 msgid "sloth"
-msgstr "sloth"
+msgstr "עצלן"
 
 msgid "horse"
-msgstr "horse"
+msgstr "סוס"
 
 msgid "penguin"
-msgstr "penguin"
+msgstr ""
 
 msgid "otter"
-msgstr "otter"
+msgstr "לוטרה"
 
 msgid "bear"
-msgstr "bear"
+msgstr "דוב"
 
 msgid "zebra"
-msgstr "zebra"
+msgstr "זברה"
 
 msgid "ostrich"
-msgstr "ostrich"
+msgstr "יען"
 
 msgid "camel"
-msgstr "camel"
+msgstr "גמל"
 
 msgid "antelope"
-msgstr "antelope"
+msgstr "אנטילופה"
 
 msgid "lemur"
-msgstr "lemur"
+msgstr "למור"
 
 msgid "pigeon"
-msgstr "pigeon"
+msgstr "יונה"
 
 msgid "lama"
-msgstr "lama"
+msgstr "למה"
 
 msgid "mole"
-msgstr "mole"
+msgstr "חפרפרת"
 
 msgid "ray"
-msgstr "ray"
+msgstr ""
 
 msgid "ram"
-msgstr "ram"
+msgstr ""
 
 msgid "skunk"
-msgstr "skunk"
+msgstr "בואש"
 
 msgid "jellyfish"
-msgstr "jellyfish"
+msgstr "מדוזה"
 
 msgid "sheep"
-msgstr "sheep"
+msgstr "כבשה"
 
 msgid "shark"
-msgstr "shark"
+msgstr "כריש"
 
 msgid "kitten"
-msgstr "kitten"
+msgstr "חתלתול"
 
 msgid "deer"
-msgstr "deer"
+msgstr "אייל"
 
 msgid "snail"
-msgstr "snail"
+msgstr "חלזון"
 
 msgid "flamingo"
-msgstr "flamingo"
+msgstr "פלמינגו"
 
 msgid "rabbit"
-msgstr "rabbit"
+msgstr "ארנב"
 
 msgid "oyster"
-msgstr "oyster"
+msgstr "צדפה"
 
 msgid "beaver"
-msgstr "beaver"
+msgstr "בונה"
 
 msgid "sparrow"
-msgstr "sparrow"
+msgstr "דרור"
 
 msgid "dove"
-msgstr "dove"
+msgstr "יונה"
 
 msgid "eagle"
-msgstr "eagle"
+msgstr "עיט"
 
 msgid "beetle"
-msgstr "beetle"
+msgstr "חיפושית"
 
 msgid "hippopotamus"
-msgstr "hippopotamus"
+msgstr "היפופוטם"
 
 msgid "owl"
-msgstr "owl"
+msgstr "ינשוף"
 
 msgid "cobra"
-msgstr "cobra"
+msgstr "קוברה"
 
 msgid "salamander"
-msgstr "salamander"
+msgstr "סלמנדרה"
 
 msgid "goose"
-msgstr "goose"
+msgstr "אווז"
 
 msgid "kangaroo"
-msgstr "kangaroo"
+msgstr "קנגרו"
 
 msgid "dragonfly"
-msgstr "dragonfly"
+msgstr "שפירית"
 
 msgid "toad"
-msgstr "toad"
+msgstr "קרפדה"
 
 msgid "pelican"
-msgstr "pelican"
+msgstr "שקנאי"
 
 msgid "squid"
-msgstr "squid"
+msgstr "דיונון"
 
 msgid "lion cub"
-msgstr "lion cub"
+msgstr ""
 
 msgid "jaguar"
-msgstr "jaguar"
+msgstr "יגואר"
 
 msgid "duck"
-msgstr "duck"
+msgstr "ברווז"
 
 msgid "lizard"
-msgstr "lizard"
+msgstr "לטאה"
 
 msgid "rhinoceros"
-msgstr "rhinoceros"
+msgstr "קרנף"
 
 msgid "hyena"
-msgstr "hyena"
+msgstr "תן"
 
 msgid "ox"
-msgstr "ox"
+msgstr "שור"
 
 msgid "peacock"
-msgstr "peacock"
+msgstr "טווס"
 
 msgid "parrot"
-msgstr "parrot"
+msgstr "תוכי"
 
 msgid "elk"
-msgstr "elk"
+msgstr "אַיָּל קוֹרֵא"
 
 msgid "alligator"
-msgstr "alligator"
+msgstr "תנין"
 
 msgid "ant"
-msgstr "ant"
+msgstr "נמלה"
 
 msgid "goat"
-msgstr "goat"
+msgstr "תיש"
 
 msgid "baby rabbit"
-msgstr "baby rabbit"
+msgstr ""
 
 msgid "lion"
-msgstr "lion"
+msgstr "אריה"
 
 msgid "squirrel"
-msgstr "squirrel"
+msgstr "סנאי"
 
 msgid "opossum"
-msgstr "opossum"
+msgstr "אופוסום"
 
 msgid "chimp"
-msgstr "chimp"
+msgstr "שמפנזה"
 
 msgid "doe"
-msgstr "doe"
+msgstr "איילה"
 
 msgid "gopher"
-msgstr "gopher"
+msgstr ""
 
 msgid "elephant"
-msgstr "elephant"
+msgstr ""
 
 msgid "giraffe"
-msgstr "giraffe"
+msgstr "ג'ירפה"
 
 msgid "spider"
-msgstr "spider"
+msgstr "עכביש"
 
 msgid "puppy"
-msgstr "puppy"
+msgstr "כלבלב"
 
 msgid "jay"
-msgstr "jay"
+msgstr "עורבני"
 
 msgid "seal"
-msgstr "seal"
+msgstr ""
 
 msgid "rooster"
-msgstr "rooster"
+msgstr ""
 
 msgid "turtle"
-msgstr "turtle"
+msgstr "צב"
 
 msgid "bull"
-msgstr "bull"
+msgstr "שור"
 
 msgid "cat"
-msgstr "cat"
+msgstr "חתול"
 
 msgid "rat"
-msgstr "rat"
+msgstr "עכברוש"
 
 msgid "slug"
-msgstr "slug"
+msgstr "חשופית"
 
 msgid "buffalo"
-msgstr "buffalo"
+msgstr "באפלו"
 
 msgid "blackbird"
-msgstr "blackbird"
+msgstr "שָחרוּר"
 
 msgid "swan"
-msgstr "swan"
+msgstr "ברבור"
 
 msgid "lobster"
-msgstr "lobster"
+msgstr "לובסטר"
 
 msgid "dog"
-msgstr "dog"
+msgstr "כלב"
 
 msgid "mosquito"
-msgstr "mosquito"
+msgstr "יתוש"
 
 msgid "snake"
-msgstr "snake"
+msgstr "נחש"
 
 msgid "chicken"
-msgstr "chicken"
+msgstr "תרנגולת"
 
 msgid "anteater"
-msgstr "anteater"
+msgstr "אוכל נמלים"
 
 msgid "judo"
-msgstr "judo"
+msgstr "ג'ודו"
 
 msgid "pool"
-msgstr "pool"
+msgstr "בריכת שחיה"
 
 msgid "ride"
-msgstr "ride"
+msgstr "רכיבה"
 
 msgid "stretch"
-msgstr "stretch"
+msgstr "להתמתח"
 
 msgid "helmet"
-msgstr "helmet"
+msgstr "קסדה"
 
 msgid "ice skating"
-msgstr "ice skating"
+msgstr ""
 
 msgid "walk"
-msgstr "walk"
+msgstr "ללכת"
 
 msgid "run"
-msgstr "run"
+msgstr "לרוץ"
 
 msgid "swim"
-msgstr "swim"
+msgstr "שחיה"
 
 msgid "hop"
-msgstr "hop"
+msgstr "קפיצה"
 
 msgid "hike"
-msgstr "hike"
+msgstr "טיול"
 
 msgid "boxing"
-msgstr "boxing"
+msgstr ""
 
 msgid "hockey"
-msgstr "hockey"
+msgstr "הוקי"
 
 msgid "race"
-msgstr "race"
+msgstr "מירוץ"
 
 msgid "throw"
-msgstr "throw"
+msgstr "זריקה"
 
 msgid "skate"
-msgstr "skate"
+msgstr "החלקה"
 
 msgid "win"
-msgstr "win"
+msgstr "לנצח"
 
 msgid "squat"
-msgstr "squat"
+msgstr "לכופף ברכיים"
 
 msgid "ski"
-msgstr "ski"
+msgstr "גלישה"
 
 msgid "golf"
-msgstr "golf"
+msgstr "גולף"
 
 msgid "whistle"
-msgstr "whistle"
+msgstr ""
 
 msgid "torch"
-msgstr "torch"
+msgstr "לפיד"
 
 msgid "sailing"
-msgstr "sailing"
+msgstr ""
 
 msgid "stand"
-msgstr "stand"
+msgstr "לעמוד"
 
 msgid "tennis"
-msgstr "tennis"
+msgstr "טניס"
 
 msgid "jump"
-msgstr "jump"
+msgstr "לקפוץ"
 
 msgid "rowing"
-msgstr "rowing"
+msgstr "חתירה"
 
 msgid "jog"
-msgstr "jog"
+msgstr "ריצה"
 
 msgid "rope"
-msgstr "rope"
+msgstr "חבל"
 
 msgid "teeth"
-msgstr "teeth"
+msgstr "שיניים"
 
 msgid "cheek"
-msgstr "cheek"
+msgstr "לחי"
 
 msgid "ankle"
-msgstr "ankle"
+msgstr "קרסול"
 
 msgid "knee"
-msgstr "knee"
+msgstr "ברך"
 
 msgid "toe"
-msgstr "toe"
+msgstr "בוהן"
 
 msgid "muscle"
-msgstr "muscle"
+msgstr "שריר"
 
 msgid "mouth"
-msgstr "mouth"
+msgstr "פה"
 
 msgid "feet"
-msgstr "feet"
+msgstr ""
 
 msgid "hand"
-msgstr "hand"
+msgstr "יד"
 
 msgid "elbow"
-msgstr "elbow"
+msgstr "מרפק"
 
 msgid "hair"
-msgstr "hair"
+msgstr "שיער"
 
 msgid "eyelash"
-msgstr "eyelash"
+msgstr "ריסים"
 
 msgid "beard"
-msgstr "beard"
+msgstr "זָקן"
 
 msgid "belly button"
-msgstr "belly button"
+msgstr ""
 
 msgid "thumb"
-msgstr "thumb"
+msgstr "אגודל"
 
 msgid "breast"
-msgstr "breast"
+msgstr "חזה"
 
 msgid "nostril"
-msgstr "nostril"
+msgstr "נחיר"
 
 msgid "nose"
-msgstr "nose"
+msgstr "אף"
 
 msgid "hip"
-msgstr "hip"
+msgstr "מותן"
 
 msgid "arm"
-msgstr "arm"
+msgstr "זרוע"
 
 msgid "eyebrow"
-msgstr "eyebrow"
+msgstr ""
 
 msgid "fist"
-msgstr "fist"
+msgstr "אגרוף"
 
 msgid "neck"
-msgstr "neck"
+msgstr "צוואר"
 
 msgid "wrist"
-msgstr "wrist"
+msgstr "פרק כף היד"
 
 msgid "throat"
-msgstr "throat"
+msgstr "גרון"
 
 msgid "eye"
-msgstr "eye"
+msgstr ""
 
 msgid "leg"
-msgstr "leg"
+msgstr "רגל"
 
 msgid "spine"
-msgstr "spine"
+msgstr "עמוד השידרה"
 
 msgid "ear"
-msgstr "ear"
+msgstr "אוזן"
 
 msgid "finger"
-msgstr "finger"
+msgstr "אצבע"
 
 msgid "foot"
-msgstr "foot"
+msgstr "כף הרגל"
 
 msgid "braid"
-msgstr "braid"
+msgstr "צמה"
 
 msgid "face"
-msgstr "face"
+msgstr "פנים"
 
 msgid "back"
-msgstr "back"
+msgstr "גב"
 
 msgid "chin"
-msgstr "chin"
+msgstr "סנטר"
 
 msgid "bottom"
-msgstr "bottom"
+msgstr "טוסיק"
 
 msgid "thigh"
-msgstr "thigh"
+msgstr "ירך"
 
 msgid "belly"
-msgstr "belly"
+msgstr "בטן"
 
 msgid "girl"
-msgstr "girl"
+msgstr "ילדה"
 
 msgid "male"
-msgstr "male"
+msgstr ""
 
 msgid "son"
-msgstr "son"
+msgstr "בן"
 
 msgid "mates"
-msgstr "mates"
+msgstr ""
 
 msgid "friends"
-msgstr "friends"
+msgstr ""
 
 msgid "baby"
-msgstr "baby"
+msgstr ""
 
 msgid "child"
-msgstr "child"
+msgstr "ילד"
 
 msgid "dad"
-msgstr "dad"
+msgstr "אבא"
 
 msgid "mom"
-msgstr "mom"
+msgstr "אמא"
 
 msgid "twin boys"
-msgstr "twin boys"
+msgstr ""
 
 msgid "brothers"
-msgstr "brothers"
+msgstr ""
 
 msgid "man"
-msgstr "man"
+msgstr "איש"
 
 msgid "mother"
-msgstr "mother"
+msgstr "אמא"
 
 msgid "grandfather"
-msgstr "grandfather"
+msgstr ""
 
 msgid "family"
-msgstr "family"
+msgstr "משפחה"
 
 msgid "female"
-msgstr "female"
+msgstr ""
 
 msgid "wife"
-msgstr "wife"
+msgstr "אישה"
 
 msgid "husband"
-msgstr "husband"
+msgstr "בעל"
 
 msgid "bride"
-msgstr "bride"
+msgstr "כלה"
 
 msgid "madam"
-msgstr "madam"
+msgstr ""
 
 msgid "grandmother"
-msgstr "grandmother"
+msgstr "סבתא"
 
 msgid "couple"
-msgstr "couple"
+msgstr "זוג"
 
 msgid "lad"
-msgstr "lad"
+msgstr "נער"
 
 msgid "twin girls"
-msgstr "twin girls"
+msgstr ""
 
 msgid "tribe"
-msgstr "tribe"
+msgstr "שבט"
 
 msgid "boy"
-msgstr "boy"
+msgstr "בן"
 
 msgid "sisters"
-msgstr "sisters"
+msgstr ""
 
 msgid "woman"
-msgstr "woman"
+msgstr "אישה"
 
 msgid "lady"
-msgstr "lady"
+msgstr "גברת"
 
 msgid "candy"
-msgstr "candy"
+msgstr "סוכריה"
 
 msgid "sausage"
-msgstr "sausage"
+msgstr "נקניק"
 
 msgid "hamburger"
-msgstr "hamburger"
+msgstr "המבורגר"
 
 msgid "steak"
-msgstr "steak"
+msgstr ""
 
 msgid "fudge"
-msgstr "fudge"
+msgstr "פאדג'"
 
 msgid "doughnut"
-msgstr "doughnut"
+msgstr "סופגניה"
 
 msgid "coconut"
-msgstr "coconut"
+msgstr "קוקוס"
 
 msgid "rice"
-msgstr "rice"
+msgstr "אורז"
 
 msgid "ice cream"
-msgstr "ice cream"
+msgstr ""
 
 msgid "jelly"
-msgstr "jelly"
+msgstr "ג'לי"
 
 msgid "yoghurt"
-msgstr "yoghurt"
+msgstr ""
 
 msgid "dessert"
-msgstr "dessert"
+msgstr "קינוח"
 
 msgid "pretzel"
-msgstr "pretzel"
+msgstr ""
 
 msgid "peanut"
-msgstr "peanut"
+msgstr ""
 
 msgid "jam"
-msgstr "jam"
+msgstr "ריבה"
 
 msgid "feast"
-msgstr "feast"
+msgstr "משתה"
 
 msgid "cookie"
-msgstr "cookie"
+msgstr "עוגיות"
 
 msgid "bacon"
-msgstr "bacon"
+msgstr ""
 
 msgid "spice"
-msgstr "spice"
+msgstr "תבלינים"
 
 msgid "coffee"
-msgstr "coffee"
+msgstr "קפה"
 
 msgid "pie"
-msgstr "pie"
+msgstr "פאי"
 
 msgid "lemonade"
-msgstr "lemonade"
+msgstr "לימונדה"
 
 msgid "chocolate"
-msgstr "chocolate"
+msgstr "שוקולד"
 
 msgid "water bottle"
-msgstr "water bottle"
+msgstr ""
 
 msgid "lunch"
-msgstr "lunch"
+msgstr "ארוחת צהריים"
 
 msgid "ice"
-msgstr "ice"
+msgstr "קרח"
 
 msgid "sugar"
-msgstr "sugar"
+msgstr "סוכר"
 
 msgid "sauce"
-msgstr "sauce"
+msgstr "רוטב"
 
 msgid "soup"
-msgstr "soup"
+msgstr "מרק"
 
 msgid "juice"
-msgstr "juice"
+msgstr "מיץ"
 
 msgid "fries"
-msgstr "fries"
+msgstr "טוגנים"
 
 msgid "cake"
-msgstr "cake"
+msgstr "עוגה"
 
 msgid "mashed potatoes"
-msgstr "mashed potatoes"
+msgstr ""
 
 msgid "tea"
-msgstr "tea"
+msgstr ""
 
 msgid "bun"
-msgstr "bun"
+msgstr "לחמניה"
 
 msgid "cheese"
-msgstr "cheese"
+msgstr "גבינה"
 
 msgid "beef"
-msgstr "beef"
+msgstr ""
 
 msgid "sandwich"
-msgstr "sandwich"
+msgstr "כריך"
 
 msgid "slice"
-msgstr "slice"
+msgstr ""
 
 msgid "sprinkle"
-msgstr "sprinkle"
+msgstr "פיצפוצים"
 
 msgid "pizza"
-msgstr "pizza"
+msgstr "פיצה"
 
 msgid "flour"
-msgstr "flour"
+msgstr "קמח"
 
 msgid "gum"
-msgstr "gum"
+msgstr "מסטיק"
 
 msgid "spaghetti"
-msgstr "spaghetti"
+msgstr "ספגטי"
 
 msgid "roast"
-msgstr "roast"
+msgstr "צלי"
 
 msgid "stew"
-msgstr "stew"
+msgstr "נזיד"
 
 msgid "spread"
-msgstr "spread"
+msgstr "למרוח"
 
 msgid "meat"
-msgstr "meat"
+msgstr "בשר"
 
 msgid "milk"
-msgstr "milk"
+msgstr "חלב"
 
 msgid "meal"
-msgstr "meal"
+msgstr "ארוחה"
 
 msgid "corn"
-msgstr "corn"
+msgstr "תירס"
 
 msgid "bread"
-msgstr "bread"
+msgstr "לחם"
 
 msgid "walnut"
-msgstr "walnut"
+msgstr "אגוז מלך"
 
 msgid "egg"
-msgstr "egg"
+msgstr "ביצה"
 
 msgid "hot dog"
-msgstr "hot dog"
+msgstr ""
 
 msgid "ham"
-msgstr "ham"
+msgstr "בשר חזיר"
 
 msgid "jewellery"
-msgstr "jewellery"
+msgstr ""
 
 msgid "sock"
-msgstr "sock"
+msgstr "גרב"
 
 msgid "jacket"
-msgstr "jacket"
+msgstr "מעיל"
 
 msgid "heel"
-msgstr "heel"
+msgstr "עקב"
 
 msgid "smock"
-msgstr "smock"
+msgstr "חלוק עבודה"
 
 msgid "shorts"
-msgstr "shorts"
+msgstr ""
 
 msgid "pocket"
-msgstr "pocket"
+msgstr "כיס"
 
 msgid "necklace"
-msgstr "necklace"
+msgstr "שרשרת"
 
 msgid "sweatshirt"
-msgstr "sweatshirt"
+msgstr "שווטשרט"
 
 msgid "uniform"
-msgstr "uniform"
+msgstr "מדים"
 
 msgid "raincoat"
-msgstr "raincoat"
+msgstr "מעיל גשם"
 
 msgid "trousers"
-msgstr "trousers"
+msgstr ""
 
 msgid "sunglasses"
-msgstr "sunglasses"
+msgstr ""
 
 msgid "coat"
-msgstr "coat"
+msgstr "מעיל"
 
 msgid "pullover"
-msgstr "pullover"
+msgstr "סוודר"
 
 msgid "shirt"
-msgstr "shirt"
+msgstr "חולצה"
 
 msgid "sandals"
-msgstr "sandals"
+msgstr "סנדלים"
 
 msgid "suit"
-msgstr "suit"
+msgstr "חליפה"
 
 msgid "pyjamas"
-msgstr "pyjamas"
+msgstr ""
 
 msgid "skirt"
-msgstr "skirt"
+msgstr "חצאית"
 
 msgid "zip"
-msgstr "zip"
+msgstr ""
 
 msgid "shoes"
-msgstr "shoes"
+msgstr ""
 
 msgid "jewel"
-msgstr "jewel"
+msgstr "תכשיט"
 
 msgid "tie"
-msgstr "tie"
+msgstr ""
 
 msgid "slippers"
-msgstr "slippers"
+msgstr "כפכפים"
 
 msgid "gloves"
-msgstr "gloves"
+msgstr ""
 
 msgid "hat"
-msgstr "hat"
+msgstr "כובע"
 
 msgid "sleeve"
-msgstr "sleeve"
+msgstr "שרוול"
 
 msgid "cap"
-msgstr "cap"
+msgstr "כובע"
 
 msgid "swimming suit"
-msgstr "swimming suit"
+msgstr ""
 
 msgid "trainer"
-msgstr "trainer"
+msgstr ""
 
 msgid "vest"
-msgstr "vest"
+msgstr "אפודה"
 
 msgid "glasses"
-msgstr "glasses"
+msgstr "משקפיים"
 
 msgid "shoelace"
-msgstr "shoelace"
+msgstr "שרוך"
 
 msgid "patch"
-msgstr "patch"
+msgstr "טלאי"
 
 msgid "scarf"
-msgstr "scarf"
+msgstr "צעיף"
 
 msgid "shoe"
-msgstr "shoe"
+msgstr "נעל"
 
 msgid "button"
-msgstr "button"
+msgstr "כפתור"
 
 msgid "dress"
-msgstr "dress"
+msgstr "שמלה"
 
 msgid "sash"
-msgstr "sash"
+msgstr "אבנט"
 
 msgid "shoe sole"
-msgstr "shoe sole"
+msgstr ""
 
 msgid "robe"
-msgstr "robe"
+msgstr "גלימה"
 
 msgid "pants"
-msgstr "pants"
+msgstr "מכנסיים"
 
 msgid "kimono"
-msgstr "kimono"
+msgstr "קימונו"
 
 msgid "overalls"
-msgstr "overalls"
+msgstr ""
 
 msgid "lick"
-msgstr "lick"
+msgstr "ללקק"
 
 msgid "slam"
-msgstr "slam"
+msgstr "להטביע"
 
 msgid "beg"
-msgstr "beg"
+msgstr "להתחנן"
 
 msgid "fell"
-msgstr "fell"
+msgstr ""
 
 msgid "scratch"
-msgstr "scratch"
+msgstr "לשרוט"
 
 msgid "touch"
-msgstr "touch"
+msgstr "לגעת"
 
 msgid "sniff"
-msgstr "sniff"
+msgstr "לרחרח"
 
 msgid "see"
-msgstr "see"
+msgstr "לראות"
 
 msgid "climb"
-msgstr "climb"
+msgstr "טיפוס"
 
 msgid "dig"
-msgstr "dig"
+msgstr "לחפור"
 
 msgid "howl"
-msgstr "howl"
+msgstr "לילל"
 
 msgid "sleep"
-msgstr "sleep"
+msgstr "לישון"
 
 msgid "explore"
-msgstr "explore"
+msgstr "חקירה"
 
 msgid "draw"
-msgstr "draw"
+msgstr "לצייר"
 
 msgid "hug"
-msgstr "hug"
+msgstr "לחבק"
 
 msgid "teach"
-msgstr "teach"
+msgstr "ללמד"
 
 msgid "nap"
-msgstr "nap"
+msgstr "לנמנם"
 
 msgid "clay"
-msgstr "clay"
+msgstr "חימר"
 
 msgid "catch"
-msgstr "catch"
+msgstr "לתפוס"
 
 msgid "clap"
-msgstr "clap"
+msgstr "למחוא"
 
 msgid "cry"
-msgstr "cry"
+msgstr "לבכות"
 
 msgid "sing"
-msgstr "sing"
+msgstr "לשיר"
 
 msgid "meet"
-msgstr "meet"
+msgstr "להיפגש"
 
 msgid "sell"
-msgstr "sell"
+msgstr ""
 
 msgid "peck"
-msgstr "peck"
+msgstr "לנקר"
 
 msgid "beat"
-msgstr "beat"
+msgstr "להכות"
 
 msgid "kneel"
-msgstr "kneel"
+msgstr "לכרוע ברך"
 
 msgid "find"
-msgstr "find"
+msgstr "למצוא"
 
 msgid "dance"
-msgstr "dance"
+msgstr "ריקוד"
 
 msgid "cough"
-msgstr "cough"
+msgstr "להשתעל"
 
 msgid "cut"
-msgstr "cut"
+msgstr "לחתוך"
 
 msgid "think"
-msgstr "think"
+msgstr "לחשוב"
 
 msgid "bark"
-msgstr "bark"
+msgstr "לנבוח"
 
 msgid "speak"
-msgstr "speak"
+msgstr "לדבר"
 
 msgid "cheer"
-msgstr "cheer"
+msgstr "עידוד"
 
 msgid "bake"
-msgstr "bake"
+msgstr ""
 
 msgid "write"
-msgstr "write"
+msgstr "לכתוב"
 
 msgid "punch"
-msgstr "punch"
+msgstr ""
 
 msgid "strum"
-msgstr "strum"
+msgstr ""
 
 msgid "study"
-msgstr "study"
+msgstr "ללמוד"
 
 msgid "plow"
-msgstr "plow"
+msgstr "לחרוש"
 
 msgid "dream"
-msgstr "dream"
+msgstr "לחלום"
 
 msgid "post"
-msgstr "post"
+msgstr "תיבת דואר"
 
 msgid "dive"
-msgstr "dive"
+msgstr "צלילה"
 
 msgid "whisper"
-msgstr "whisper"
+msgstr "ללחוש"
 
 msgid "sob"
-msgstr "sob"
+msgstr "להתיפח"
 
 msgid "shake"
-msgstr "shake"
+msgstr "לנעֵר"
 
 msgid "feed"
-msgstr "feed"
+msgstr "להאכיל"
 
 msgid "crawl"
-msgstr "crawl"
+msgstr "לזחול"
 
 msgid "camp"
-msgstr "camp"
+msgstr "מחנה"
 
 msgid "spill"
-msgstr "spill"
+msgstr "לשפוך"
 
 msgid "clean"
-msgstr "clean"
+msgstr "לנקות"
 
 msgid "scream"
-msgstr "scream"
+msgstr "לצרוח"
 
 msgid "tear"
-msgstr "tear"
+msgstr "לקרוע"
 
 msgid "float"
-msgstr "float"
+msgstr "לצוף"
 
 msgid "pull"
-msgstr "pull"
+msgstr "למשוך"
 
 msgid "ate"
-msgstr "ate"
+msgstr ""
 
 msgid "kiss"
-msgstr "kiss"
+msgstr "להתנשק"
 
 msgid "sit"
-msgstr "sit"
+msgstr "לשבת"
 
 msgid "hatch"
-msgstr "hatch"
+msgstr "לבקוע"
 
 msgid "blink"
-msgstr "blink"
+msgstr "לקרוץ"
 
 msgid "hear"
-msgstr "hear"
+msgstr "לשמוע"
 
 msgid "smooch"
-msgstr "smooch"
+msgstr "להתחשמק"
 
 msgid "play"
-msgstr "play"
+msgstr "לשחק"
 
 msgid "wash"
-msgstr "wash"
+msgstr "להתרחץ"
 
 msgid "chat"
-msgstr "chat"
+msgstr "לשוחח"
 
 msgid "drive"
-msgstr "drive"
+msgstr "לנהוג"
 
 msgid "to drink"
-msgstr "drink"
+msgstr "שתיה"
 
 msgid "fly"
-msgstr "fly"
+msgstr "לעוף"
 
 msgid "juggle"
-msgstr "juggle"
+msgstr ""
 
 msgid "bit"
-msgstr "bit"
+msgstr "בּיט"
 
 msgid "sweep"
-msgstr "sweep"
+msgstr ""
 
 msgid "look"
-msgstr "look"
+msgstr "להסתכל"
 
 msgid "knit"
-msgstr "knit"
+msgstr "לסרוג"
 
 msgid "lift"
-msgstr "lift"
+msgstr "הרמת משקולות"
 
 msgid "fetch"
-msgstr "fetch"
+msgstr "להביא"
 
 msgid "read"
-msgstr "read"
+msgstr "לקרוא"
 
 msgid "croak"
-msgstr "croak"
+msgstr "לקרקר"
 
 msgid "stare"
-msgstr "stare"
+msgstr "לבהות"
 
 msgid "eat"
-msgstr "eat"
+msgstr "לאכול"
 
 msgid "lighthouse"
-msgstr "lighthouse"
+msgstr "מגדלור"
 
 msgid "door"
-msgstr "door"
+msgstr "דלת"
 
 msgid "circus"
-msgstr "circus"
+msgstr "קרקס"
 
 msgid "church"
-msgstr "church"
+msgstr ""
 
 msgid "kennel"
-msgstr "kennel"
+msgstr ""
 
 msgid "temple"
-msgstr "temple"
+msgstr "מקדש"
 
 msgid "smoke"
-msgstr "smoke"
+msgstr "עשן"
 
 msgid "chimney"
-msgstr "chimney"
+msgstr "ארובה"
 
 msgid "brick"
-msgstr "brick"
+msgstr "לבֵנה"
 
 msgid "well"
-msgstr "well"
+msgstr ""
 
 msgid "street"
-msgstr "street"
+msgstr "רחוב"
 
 msgid "castle"
-msgstr "castle"
+msgstr "טירה"
 
 msgid "store"
-msgstr "store"
+msgstr "חנות"
 
 msgid "staircase"
-msgstr "staircase"
+msgstr "מדרגות"
 
 msgid "school"
-msgstr "school"
+msgstr "בית ספר"
 
 msgid "farm"
-msgstr "farm"
+msgstr "חווה"
 
 msgid "bridge"
-msgstr "bridge"
+msgstr "גשר"
 
 msgid "dam"
-msgstr "dam"
+msgstr "סכר"
 
 msgid "pyramid"
-msgstr "pyramid"
+msgstr "פירמידה"
 
 msgid "barn"
-msgstr "barn"
+msgstr "אסם"
 
 msgid "mill"
-msgstr "mill"
+msgstr "טחנת קמח"
 
 msgid "window"
-msgstr "window"
+msgstr "חלון"
 
 msgid "cabin"
-msgstr "cabin"
+msgstr "ביקתה"
 
 msgid "step"
-msgstr "step"
+msgstr "מדרגה"
 
 msgid "shop"
-msgstr "shop"
+msgstr "חנות"
 
 msgid "shed"
-msgstr "shed"
+msgstr "סככה"
 
 msgid "roof"
-msgstr "roof"
+msgstr "גג"
 
 msgid "steeple"
-msgstr "steeple"
+msgstr "צריח"
 
 msgid "garage"
-msgstr "garage"
+msgstr "חניה"
 
 msgid "mosque"
-msgstr "mosque"
+msgstr "מסגד"
 
 msgid "hospital"
-msgstr "hospital"
+msgstr "בית חולים"
 
 msgid "tent"
-msgstr "tent"
+msgstr "אוהל"
 
 msgid "house"
-msgstr "house"
+msgstr "בית"
 
 msgid "wall"
-msgstr "wall"
+msgstr "קיר"
 
 msgid "bank"
-msgstr "bank"
+msgstr "בנק"
 
 msgid "shutter"
-msgstr "shutter"
+msgstr "תריס"
 
 msgid "hut"
-msgstr "hut"
+msgstr "בקתה"
 
 msgid "land"
-msgstr "land"
+msgstr "אדמה"
 
 msgid "cliff"
-msgstr "cliff"
+msgstr "צוק"
 
 msgid "hill"
-msgstr "hill"
+msgstr "גבעה"
 
 msgid "canyon"
-msgstr "canyon"
+msgstr "קניון"
 
 msgid "rock"
-msgstr "rock"
+msgstr "סלע"
 
 msgid "sea"
-msgstr "sea"
+msgstr "ים"
 
 msgid "lake"
-msgstr "lake"
+msgstr "אגם"
 
 msgid "coast"
-msgstr "coast"
+msgstr "חוף"
 
 msgid "shore"
-msgstr "shore"
+msgstr "חוף"
 
 msgid "mountain"
-msgstr "mountain"
+msgstr "הרים"
 
 msgid "pond"
-msgstr "pond"
+msgstr "בִּיצה"
 
 msgid "peak"
-msgstr "peak"
+msgstr "פסגה"
 
 msgid "lava"
-msgstr "lava"
+msgstr "לבה"
 
 msgid "cave"
-msgstr "cave"
+msgstr "מערה"
 
 msgid "dune"
-msgstr "dune"
+msgstr "דיונה"
 
 msgid "island"
-msgstr "island"
+msgstr "אי"
 
 msgid "forest"
-msgstr "forest"
+msgstr "יער"
 
 msgid "desert"
-msgstr "desert"
+msgstr "מדבר"
 
 msgid "iceberg"
-msgstr "iceberg"
+msgstr "קרחון"
 
 msgid "clown"
-msgstr "clown"
+msgstr "ליצן"
 
 msgid "engineer"
-msgstr "engineer"
+msgstr "מהנדס"
 
 msgid "priest"
-msgstr "priest"
+msgstr "כומר"
 
 msgid "vet"
-msgstr "vet"
+msgstr "וטרינר"
 
 msgid "judge"
-msgstr "judge"
+msgstr "שופט"
 
 msgid "chef"
-msgstr "chef"
+msgstr "שף"
 
 msgid "athlete"
-msgstr "athlete"
+msgstr "ספורטאי"
 
 msgid "librarian"
-msgstr "librarian"
+msgstr "ספרן"
 
 msgid "juggler"
-msgstr "juggler"
+msgstr "להטוטן"
 
 msgid "policeman"
-msgstr "policeman"
+msgstr ""
 
 msgid "plumber"
-msgstr "plumber"
+msgstr "שרברב"
 
 msgid "badge"
-msgstr "badge"
+msgstr "תג"
 
 msgid "queen"
-msgstr "queen"
+msgstr "מלכה"
 
 msgid "farmer"
-msgstr "farmer"
+msgstr "חקלאי"
 
 msgid "magician"
-msgstr "magician"
+msgstr ""
 
 msgid "knight"
-msgstr "knight"
+msgstr "אביר/ה"
 
 msgid "doctor"
-msgstr "doctor"
+msgstr "רופא"
 
 msgid "bricklayer"
-msgstr "bricklayer"
+msgstr "בנאי"
 
 msgid "cleaner"
-msgstr "cleaner"
+msgstr ""
 
 msgid "teacher"
-msgstr "teacher"
+msgstr "מורָה"
 
 msgid "hunter"
-msgstr "hunter"
+msgstr "צייָד"
 
 msgid "soldier"
-msgstr "soldier"
+msgstr "חייל"
 
 msgid "musician"
-msgstr "musician"
+msgstr "מוזיקאי"
 
 msgid "lawyer"
-msgstr "lawyer"
+msgstr "עורך דין"
 
 msgid "fisherman"
-msgstr "fisherman"
+msgstr "דייָג"
 
 msgid "princess"
-msgstr "princess"
+msgstr "נסיכה"
 
 msgid "fireman"
-msgstr "fireman"
+msgstr "כבאי"
 
 msgid "nun"
-msgstr "nun"
+msgstr "נזירה"
 
 msgid "pirate"
-msgstr "pirate"
+msgstr "פיראט"
 
 msgid "cowboy"
-msgstr "cowboy"
+msgstr "בוקר - קאובוי"
 
 msgid "electrician"
-msgstr "electrician"
+msgstr "חשמלאי"
 
 msgid "nurse"
-msgstr "nurse"
+msgstr "אחות"
 
 msgid "king"
-msgstr "king"
+msgstr "מלך"
 
 msgid "president"
-msgstr "president"
+msgstr "נשיא/ה"
 
 msgid "office worker"
-msgstr "office worker"
+msgstr ""
 
 msgid "carpenter"
-msgstr "carpenter"
+msgstr "נגר"
 
 msgid "jockey"
-msgstr "jockey"
+msgstr "רוכב"
 
 msgid "worker"
-msgstr "worker"
+msgstr "פועל"
 
 msgid "mechanic"
-msgstr "mechanic"
+msgstr "מכונאי"
 
 msgid "pilot"
-msgstr "pilot"
+msgstr "טייס"
 
 msgid "actor"
-msgstr "actor"
+msgstr "שחקן"
 
 msgid "cook"
-msgstr "cook"
+msgstr "לבשל"
 
 msgid "student"
-msgstr "student"
+msgstr "תלמיד"
 
 msgid "butcher"
-msgstr "butcher"
+msgstr "קָצב"
 
 msgid "accountant"
-msgstr "accountant"
+msgstr "רואה-חשבון"
 
 msgid "prince"
-msgstr "prince"
+msgstr "נסיך"
 
 msgid "pope"
-msgstr "pope"
+msgstr "אפיפיור"
 
 msgid "sailor"
-msgstr "sailor"
+msgstr "מלח"
 
 msgid "boxer"
-msgstr "boxer"
+msgstr "מתאגרף"
 
 msgid "ballet dancer"
-msgstr "ballet dancer"
+msgstr ""
 
 msgid "coach"
-msgstr "coach"
+msgstr "מאמנת"
 
 msgid "astronaut"
-msgstr "astronaut"
+msgstr "אשת חלל"
 
 msgid "painter"
-msgstr "painter"
+msgstr ""
 
 msgid "anaesthesiologist"
-msgstr "anaesthesiologist"
+msgstr ""
 
 msgid "scientist"
-msgstr "scientist"
+msgstr ""
 
 msgid "carrot"
-msgstr "carrot"
+msgstr "גזר"
 
 msgid "blackberries"
-msgstr "blackberries"
+msgstr ""
 
 msgid "celery"
-msgstr "celery"
+msgstr "סלרי"
 
 msgid "turnip"
-msgstr "turnip"
+msgstr "לפת"
 
 msgid "cacao"
-msgstr "cacao"
+msgstr "קקאו"
 
 msgid "peach"
-msgstr "peach"
+msgstr "אפרסק"
 
 msgid "melon"
-msgstr "melon"
+msgstr "מילון"
 
 msgid "grapefruit"
-msgstr "grapefruit"
+msgstr "אשכולית"
 
 msgid "broccoli"
-msgstr "broccoli"
+msgstr "ברוקולי"
 
 msgid "grapes"
-msgstr "grapes"
+msgstr ""
 
 msgid "spinach"
-msgstr "spinach"
+msgstr "תרד"
 
 msgid "fig"
-msgstr "fig"
+msgstr "תאנה"
 
 msgid "kernel"
-msgstr "kernel"
+msgstr "גרעין"
 
 msgid "radish"
-msgstr "radish"
+msgstr "צנון"
 
 msgid "tomato"
-msgstr "tomato"
+msgstr ""
 
 msgid "kiwi"
-msgstr "kiwi"
+msgstr "קיווי"
 
 msgid "asparagus"
-msgstr "asparagus"
+msgstr "אספרגוס"
 
 msgid "olives"
-msgstr "olives"
+msgstr ""
 
 msgid "cucumbers"
-msgstr "cucumbers"
+msgstr ""
 
 msgid "beans"
-msgstr "beans"
+msgstr ""
 
 msgid "strawberry"
-msgstr "strawberry"
+msgstr "תות"
 
 msgid "peppers"
-msgstr "peppers"
+msgstr "פלפלים"
 
 msgid "raspberry"
-msgstr "raspberry"
+msgstr "פטל אדום"
 
 msgid "apricot"
-msgstr "apricot"
+msgstr "מישמש"
 
 msgid "potatoes"
-msgstr "potatoes"
+msgstr ""
 
 msgid "peas"
-msgstr "peas"
+msgstr ""
 
 msgid "cabbage"
-msgstr "cabbage"
+msgstr "כרוב"
 
 msgid "cherries"
-msgstr "cherries"
+msgstr ""
 
 msgid "squash"
-msgstr "squash"
+msgstr "דלועים"
 
 msgid "blueberries"
-msgstr "blueberries"
+msgstr ""
 
 msgid "pear"
-msgstr "pear"
+msgstr "אגס"
 
 msgid "orange"
-msgstr "orange"
+msgstr "תפוז"
 
 msgid "pumpkin"
-msgstr "pumpkin"
+msgstr "דלעת"
 
 msgid "avocado"
-msgstr "avocado"
+msgstr "אבוקדו"
 
 msgid "garlic"
-msgstr "garlic"
+msgstr "שום"
 
 msgid "onion"
-msgstr "onion"
+msgstr "בצל"
 
 msgid "apple"
-msgstr "apple"
+msgstr "תפוח"
 
 msgid "lime"
-msgstr "lime"
+msgstr "ליים"
 
 msgid "cauliflower"
-msgstr "cauliflower"
+msgstr "כרובית"
 
 msgid "mango"
-msgstr "mango"
+msgstr "מנגו"
 
 msgid "lettuce"
-msgstr "lettuce"
+msgstr "חסה"
 
 msgid "lemon"
-msgstr "lemon"
+msgstr "לימון"
 
 msgid "aubergine"
-msgstr "aubergine"
+msgstr ""
 
 msgid "artichokes"
-msgstr "artichokes"
+msgstr ""
 
 msgid "plums"
-msgstr "plums"
+msgstr ""
 
 msgid "leek"
-msgstr "leek"
+msgstr "כרישה"
 
 msgid "bananas"
-msgstr "bananas"
+msgstr ""
 
 msgid "papaya"
-msgstr "papaya"
+msgstr "פפאיה"
 
 msgid "sail"
-msgstr "sail"
+msgstr "להפליג"
 
 msgid "taxi"
-msgstr "taxi"
+msgstr "מונית"
 
 msgid "car"
-msgstr "car"
+msgstr "מכונית"
 
 msgid "bike"
-msgstr "bike"
+msgstr "אופניים"
 
 msgid "raft"
-msgstr "raft"
+msgstr "רפסודה"
 
 msgid "pedal"
-msgstr "pedal"
+msgstr "פֵּדָל"
 
 msgid "bus"
-msgstr "bus"
+msgstr "אוטובוס"
 
 msgid "handlebar"
-msgstr "handlebar"
+msgstr "כידון"
 
 msgid "boat"
-msgstr "boat"
+msgstr "סירה"
 
 msgid "truck"
-msgstr "truck"
+msgstr "משאית"
 
 msgid "sleigh"
-msgstr "sleigh"
+msgstr "מזחלת"
 
 msgid "carpet"
-msgstr "carpet"
+msgstr "שטיח"
 
 msgid "motorcycle"
-msgstr "motorcycle"
+msgstr "אופנוע"
 
 msgid "train"
-msgstr "train"
+msgstr "רכבת"
 
 msgid "ship"
-msgstr "ship"
+msgstr "אוניה"
 
 msgid "van"
-msgstr "van"
+msgstr "מכונית מסחרית"
 
 msgid "canoe"
-msgstr "canoe"
+msgstr "קאנו"
 
 msgid "rocket"
-msgstr "rocket"
+msgstr "טיל"
 
 msgid "mast"
-msgstr "mast"
+msgstr "תורֵן"
 
 msgid "sledge"
-msgstr "sledge"
+msgstr ""
 
 msgid "bicycle"
-msgstr "bicycle"
+msgstr ""
 

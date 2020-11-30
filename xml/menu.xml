@@ -140,7 +140,7 @@
         </cat>
         <cat mline="2" id="39" title="Learn new words" subtitle=""
              icon="ico_c_39.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="" lang_excl="['fi', 'sr', 'he']" icosuffix="False"
+             visible="1" lang_incl="" lang_excl="['fi', 'sr']" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="286" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="121"
@@ -229,7 +229,7 @@
         </cat>
         <cat mline="2" id="2" title="Word Builders" subtitle=""
              icon="ico_c_02.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="" lang_excl="['fi', 'sr', 'he']" icosuffix="False"
+             visible="1" lang_incl="" lang_excl="['fi', 'sr']" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="107" variant="0" var2="0" min_age="0" max_age="7"
                   constructor_id="82"
@@ -407,7 +407,7 @@
         </cat>
         <cat mline="2" id="4" title="Word Matchers" subtitle=""
              icon="ico_c_16.png" min_age="0" max_age="7" listening="False" android="True"
-             visible="1" lang_incl="" lang_excl="['fi', 'sr', 'he']" icosuffix="False"
+             visible="1" lang_incl="" lang_excl="['fi', 'sr']" icosuffix="False"
              has_inner="False">
             <!-- matching games using arts4apps -->
             <game mline="1" dbid="154" variant="0" var2="0" min_age="0" max_age="7"
