@@ -26,7 +26,7 @@ class Board(gd.BoardGame):
         self.languages = self.ok_lng
 
         self.lang_count = len(self.languages)
-        half = int(ceil(self.lang_count / 2))
+        half = int(ceil(self.lang_count / 2.0)) - 1
 
         data = [20, half + 3]
 
@@ -51,14 +51,21 @@ class Board(gd.BoardGame):
         for i in range(self.lang_count):
             if i <= half:
                 c = self.center - 4
-                t = i + 0
+                t = i
+                self.board.add_unit(c - 6, t, 2, 1, classes.board.Label, self.lang.lang_progress[i], white, "", 3)
+                self.board.units[-1].font_color = (200, 200, 200)
             else:
                 c = self.center + 4
-                t = i - half - 1 + 0
+                t = i - half - 1
+                self.board.add_unit(c + 4, t, 2, 1, classes.board.Label, self.lang.lang_progress[i], white, "", 3)
+                self.board.units[-1].font_color = (200, 200, 200)
             self.board.add_unit(c - 4, t, 8, 1, classes.board.Letter, self.lang_titles[i], white, "", 2)
 
             if self.all_lng[i] == lang:
                 lng_index = i
+
+        self.board.add_unit(0, data[1]-1, data[0], 1, classes.board.Label, "https://www.transifex.com/eduactiv8/eduactiv8/", white, "", 4)
+        self.board.units[-1].font_color = (150, 150, 150)
 
         for each in self.board.ships:
             each.immobilize()

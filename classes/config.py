@@ -131,6 +131,9 @@ class Config:
             self.ok_lng = ["en_GB", "en_US", "ca", "de", "es_ES", "fr", "it", "lkt", "nl", "pl", "pt_PT", "fi", "el",
                            "bg", "ru", "sr", "uk", "he"]
 
+        self.lang_progress = ["100%", "100%", "74%", "91%", "83%", "90%", "100%", "98%", "100%", "100%", "89%", "32%", "100%",
+                       "97%", "100%", "33%", "100%", "88%", "86%"]
+
         self.id2lng = {1: "English", 5: "Català", 19: "Српски", 12: "Deutsch", 8: "Español", 16: "Ελληνικά",
                        17: "תירבע", 11: "Italiano", 20: "Lakȟótiyapi", 7: "Nederlands", 3: "Polski", 9: "Português",
                        21: "Български", 13: "Русский", 15: "Suomalainen", 14: "Українська", 2: self.arabic, 10: "Français"}

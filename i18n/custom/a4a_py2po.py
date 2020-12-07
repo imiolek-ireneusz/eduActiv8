@@ -7,7 +7,7 @@
 import os
 import a4a_words
 
-import a4a_py.ca, a4a_py.de, a4a_py.el, a4a_py.en_GB, a4a_py.en_US, a4a_py.es, a4a_py.fr, a4a_py.it, a4a_py.lkt, a4a_py.pl, a4a_py.pt, a4a_py.ru, a4a_py.uk, a4a_py.bg
+import a4a_py.he #a4a_py.ca, a4a_py.de, a4a_py.el, a4a_py.en_GB, a4a_py.en_US, a4a_py.es, a4a_py.fr, a4a_py.it, a4a_py.lkt, a4a_py.pl, a4a_py.pt, a4a_py.ru, a4a_py.uk, a4a_py.bg
 
 #lang_list = ['ca', 'de', 'el', 'en_GB', 'en_US', 'es', 'fi', 'fr', 'it', 'lkt', 'pl', 'pt', 'ru', 'sr', 'uk']
 #mod_list = [ca, de, el, en_gb, en_us, es, fi, fr, it, lkt, pl, pt, ru, sr, uk]
@@ -18,8 +18,8 @@ import a4a_py.ca, a4a_py.de, a4a_py.el, a4a_py.en_GB, a4a_py.en_US, a4a_py.es, a
 #lang_list = ['bg']
 #mod_list = [a4a_py.bg]
 
-lang_list = ['bg']
-mod_list = [a4a_py.bg]
+lang_list = ['he']
+mod_list = [a4a_py.he]
 
 lists_str = ["a4a_animals", "a4a_sport", "a4a_body", "a4a_people", "a4a_food", "a4a_clothes_n_accessories", "a4a_actions", "a4a_construction", "a4a_nature", "a4a_jobs", "a4a_fruit_n_veg", "a4a_transport"]
 
@@ -64,6 +64,7 @@ for lang in range(0, langs_len):
     with open(file_name, 'w') as f:
         f.write(s)
 
+"""
 # create pot
 s = header + '"Language: en_GB\\n"\n\n'
 for i in range(0, lists_len):
@@ -74,5 +75,5 @@ for i in range(0, lists_len):
 file_name = os.path.join('a4a_po', "a4a_word_list.pot")
 with open(file_name, 'w') as f:
     f.write(s)
-
+"""
 print("DONE!!!")

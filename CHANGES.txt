@@ -1,11 +1,14 @@
 Changelog:
-eduActiv8 - 4.20.08:
+eduActiv8 - 4.20.12:
     - Arabic language added provisionally - recommends python-pyfribidi library, alternatively uses embedded
-      arabic_reshaper library.
+      arabic_reshaper library
     - Word list translated to Arabic by Ayman Mahmoud
+    - Hebrew translation of the word building activities borrowed from GCompris
     - Minor fixes for Hebrew
     - More activities redesigned
     - Dutch translation reviewed by Larry Myerscough
+    - Resizing behaviour changed (may need testing on more devices).
+    - Translation progress added to the Language selection screen.
 eduActiv8 - 4.20.05:
     - Dutch translation by Steven Es
     - code cleanup - addressing lgtm alerts
@@ -22,7 +25,7 @@ eduActiv8 - 4.19.12:
 eduActiv8 - 4.19.02:
     - a number of bug fixes
     - a number of translations updated and added to transifex.com
-    - word building activities added across multiple languages (Italian, Spanish, Catalan and Portuguese) - some with limited word list, but work nevertheless.
+    - word building activities added across multiple languages (Italian, Spanish, Catalan and Portuguese) - some translations borrowed from GCompris
     - fraction matching game (102/242) enabled in Russian, Ukrainian and Italian
     - new set of 12 word discovery activities added, also useful for confirming correctness of word list translations
     - disabled state added to the eSpeak toggle button to indicate when text-to-speech is not available in a selected language

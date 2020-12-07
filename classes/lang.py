@@ -107,6 +107,7 @@ class Language:
         self.def_imported = False
         self.trans = dict()
         self.lang_titles = self.config.lang_titles
+        self.lang_progress = self.config.lang_progress
         self.all_lng = self.config.all_lng
         self.ok_lng = self.config.ok_lng
         self.tts_disabled_lngs = []  # will be overridden with data from xml
