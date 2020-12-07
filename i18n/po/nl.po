@@ -5,13 +5,14 @@
 #
 # Translators:
 # Steven Es <transifex@stevelot.be>, 2020
+# Larry Myerscough, 2020
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.31.105\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2020-03-07 10:06+0000\n"
+"PO-Revision-Date: 2020-08-20 20:22+0200\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/eduactiv8/teams/94947/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
@@ -572,7 +573,7 @@ msgid "Type your answer and hit enter"
 msgstr "Typ uw antwoord en druk op enter"
 
 msgid "Decimals (Category)"
-msgstr "Decimalen"
+msgstr "Decimalen (Categorie)"
 
 msgid "Fractions (Category)"
 msgstr "Fracties"

@@ -31,7 +31,7 @@ fc_list = {0: 'Ant', 1: 'Boat', 2: 'Cat', 3: 'Duck', 4: 'Elephant',
            95: 'Paint', 96: 'Mountain', 97: 'Rock', 98: 'Four', 99: 'Acorn',
            100: 'Three', 101: 'Juice', 102: 'Iron', 103: 'Boxing', 104: 'Corner',
            105: 'Frog', 106: 'Rhinoceros', 107: 'Climb', 108: 'Gold', 109: 'Envelope',
-           110: 'Fox'}
+           110: 'Fox', 111: 'Bicycle', 112: 'Coat', 113: 'Quad'}
 
 n = len(fc_list)
 lst = ""
@@ -45,7 +45,7 @@ for i in range(n):
 # stop()
 
 # enter the translated string here
-translated_string = "ant, boat, cat, duck, elephant, fish, grapes, house, igloo, jar, key, lion, mouse, notebook, owl, parrot, queen, rabbit, sun, teapot, umbrella, violin, window, xylophone, yarn, zebra, watermelon, butterfly, guitar, hedgehog, giraffe, tree, joga, tomato, fortepiano, bread, flowers, chimpanzee, fish, photographer, monitor, skirt, apple, no-picture,  moth, horse, tree, hippo, clothes, sleep, lorry, clock, ocean, street, night, space, hammack, cheese, wagon, dolphin, shoes, snail, foal, train, bowl, tiger, sail, oven, hockey, daffodil, gnu, banana, koala, yoghurt, kiwi, eye, leopard, buss, flower, phone, rolling pin, water, beach, music, drink, lawyer, button, raccoon, nose, swing, turkey, sack, nail, dummy, student, paint, mountain, rock, four, acorn, three, juice, iron, boxing, corner, frog, rhinoceros, climb, gold, envelope, fox"
+translated_string = "ant, boat, cat, duck, elephant, fish, grapes, house, igloo, jar, key, lion, mouse, notebook, owl, parrot, queen, rabbit, sun, teapot, umbrella, violin, window, xylophone, yarn, zebra, watermelon, butterfly, guitar, hedgehog, giraffe, tree, joga, tomato, fortepiano, bread, flowers, chimpanzee, fish, photographer, monitor, skirt, apple, no-picture,  moth, horse, tree, hippo, clothes, sleep, lorry, clock, ocean, street, night, space, hammack, cheese, wagon, dolphin, shoes, snail, foal, train, bowl, tiger, sail, oven, hockey, daffodil, gnu, banana, koala, yoghurt, kiwi, eye, leopard, buss, flower, phone, rolling pin, water, beach, music, drink, lawyer, button, raccoon, nose, swing, turkey, sack, nail, dummy, student, paint, mountain, rock, four, acorn, three, juice, iron, boxing, corner, frog, rhinoceros, climb, gold, envelope, fox, bicycle, coat, quad"
 fc_list_trans = translated_string.split(', ')
 
 # turn into a dictionary string

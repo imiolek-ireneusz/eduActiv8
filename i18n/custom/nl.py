@@ -17,10 +17,10 @@ numbers2090 = ['twintig', 'dertig', 'veertig', 'vijftig', 'zestig', 'zeventig', 
 
 # The following 2 lines are not to be translated but replaced with a sequence of words starting in each of the letters of your alphabet in order, best if these words have a corresponding picture in images/flashcard_images.jpg. The second line has the number of the image that the word describes.
 # The images are numbered from left to bottom such that the top left is numbered 0, the last image is 73, if none of the available things have names that start with any of the letters we can add new pictures.
-dp['abc_flashcards_word_sequence'] = ['Appel', 'Bus', 'Chimpansee', 'Dolfijn', 'Egel', 'Fortepiano', 'Gitaar', 'Huis', 'Iglo', 'Joga', 'Kat', 'Leeuw', 'Muis', 'Nijlpaard', 'Olifant', 'Papegaai', 'Q', 'Rots', 'Slak', 'Tomaat',  'Uil', 'Viool', 'Water', 'Xylofoon', 'Yoghurt', 'Zebra']
-d['abc_flashcards_word_sequence'] = ['<1>A<2>ppel', '<1>B<2>us', '<1>C<2>himpansee', '<1>D<2>olfijn', '<1>E<2>g<1>e<2>l', '<1>F<2>ortepiano', '<1>G<2>itaar', '<1>H<2>uis', '<1>I<2>glo', '<1>J<2>oga', '<1>K<2>at', '<1>L<2>eeuw', '<1>M<2>uis', '<1>N<2>ijlpaard', '<1>O<2>lifant', '<1>P<2>a<1>p<2>egaai', '<1>Q', '<1>R<2>ots', '<1>S<2>lak', '<1>T<2>omaa<1>t', '<1>U<2>il', '<1>V<2>iool', '<1>W<2>ater', '<1>X<2>ylofoon', '<1>Y<2>oghurt', '<1>Z<2>ebra']
+dp['abc_flashcards_word_sequence'] = ['Appel', 'Bus', 'Chimpansee', 'Dolfijn', 'Egel', 'Fiets', 'Gitaar', 'Huis', 'Iglo', 'Jas', 'Kat', 'Leeuw', 'Muis', 'Nijlpaard', 'Olifant', 'Papegaai', 'Quad', 'Rots', 'Slak', 'Tomaat',  'Uil', 'Viool', 'Water', 'Xylofoon', 'Yoghurt', 'Zebra']
+d['abc_flashcards_word_sequence'] = ['<1>A<2>ppel', '<1>B<2>us', '<1>C<2>himpansee', '<1>D<2>olfijn', '<1>E<2>g<1>e<2>l', '<1>F<2>iets', '<1>G<2>itaar', '<1>H<2>uis', '<1>I<2>glo', '<1>J<2>as', '<1>K<2>at', '<1>L<2>eeuw', '<1>M<2>uis', '<1>N<2>ijlpaard', '<1>O<2>lifant', '<1>P<2>a<1>p<2>egaai', '<1>Q<2>uad', '<1>R<2>ots', '<1>S<2>lak', '<1>T<2>omaa<1>t', '<1>U<2>il', '<1>V<2>iool', '<1>W<2>ater', '<1>X<2>ylofoon', '<1>Y<2>oghurt', '<1>Z<2>ebra']
 
-d['abc_flashcards_frame_sequence'] = [42, 77, 37, 59, 29, 34, 28, 7, 8, 32, 2, 11, 12, 47, 4, 15, 43, 97, 61, 33, 14, 21, 81, 23, 73, 25]
+d['abc_flashcards_frame_sequence'] = [42, 77, 37, 59, 29, 111, 28, 7, 8, 112, 2, 11, 12, 47, 4, 15, 113, 97, 61, 33, 14, 21, 81, 23, 73, 25]
 
 # alphabet en
 alphabet_lc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
