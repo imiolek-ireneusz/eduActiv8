@@ -12,9 +12,7 @@
 d = dict()
 dp = dict()  # messages with pronunciation exceptions - this dictionary will override entries in a copy of d
 
-# how to selling french numbers: http://www.logilangue.com/public/Site/clicGrammaire/Nombres.php
-# numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'twenty one', 'twenty two', 'twenty three', 'twenty four', 'twenty five', 'twenty six', 'twenty seven', 'twenty eight', 'twenty nine']
-# numbers2090 = ['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
+# how to spell french numbers: http://www.logilangue.com/public/Site/clicGrammaire/Nombres.php
 # 'une' is only for hours/minutes -gender female- otherwise, it's 'un' -gender male-.
 numbers = ['un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze', 'treize',
            'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf', 'vingt', 'vingt-et-un', 'vingt-deux',
@@ -40,11 +38,11 @@ d['abc_flashcards_word_sequence'] = ['<1>A<2>rbre', '<1>B<2>ateau', '<1>C<2>anar
 d['abc_flashcards_frame_sequence'] = [31, 1, 3, 49, 4, 36, 30, 14, 8, 69, 72, 11, 7, 54, 52, 42, 64, 6, 18, 33, 55, 21,
                                       58, 23, 32, 25]
 
-# alphabet - fr - "aàâæbcçdeéèêëfghiîïjklmnoôœpqrstuùûüvwxyÿz"
-alphabet_lc = ['a', 'à', 'â', 'æ', 'b', 'c', 'ç', 'd', 'e', 'é', 'è', 'ê', 'ë', 'f', 'g', 'h', 'i', 'î', 'ï', 'j', 'k',
-               'l', 'm', 'n', 'o', 'ô', 'œ', 'p', 'q', 'r', 's', 't', 'u', 'ù', 'û', 'ü', 'v', 'w', 'x', 'y', 'ÿ', 'z']
-alphabet_uc = ['A', 'À', 'Â', 'Æ', 'B', 'C', 'Ç', 'D', 'E', 'É', 'È', 'Ê', 'Ë', 'F', 'G', 'H', 'I', 'Î', 'Ï', 'J', 'K',
-               'L', 'M', 'N', 'O', 'Ô', 'Œ', 'P', 'Q', 'R', 'S', 'T', 'U', 'Ù', 'Û', 'Ü', 'V', 'W', 'X', 'Y', 'Ÿ', 'Z']
+# alphabet - fr - "abcdefghijklmnopqrstuvwxyz"
+alphabet_lc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+               'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet_uc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+               'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 # correction of eSpeak pronounciation of single letters if needed
 letter_names = []
 
