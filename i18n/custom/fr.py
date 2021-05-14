@@ -46,9 +46,8 @@ alphabet_uc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
 # correction of eSpeak pronounciation of single letters if needed
 letter_names = []
 
-accents_lc = ['-']
-accents_uc = []
-
+accents_lc = ['-', 'à', 'â', 'æ', 'ç', 'é', 'è', 'ê', 'ë', 'î', 'ï', 'ô', 'œ', 'ù', 'û', 'ü', 'ÿ']
+accents_uc = ['À', 'Â', 'Æ', 'Ç', 'É', 'È', 'Ê', 'Ë', 'Î', 'Ï', 'Ô', 'Œ', 'Ù', 'Û', 'Ü', 'Ÿ']
 
 def n2txt(n, twoliner=False, time2txt=False):
     """takes a number from 1 - 99 and returns it back in a word form, ie: 63 returns 'sixty three'."""
