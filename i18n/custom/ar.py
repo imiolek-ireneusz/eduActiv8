@@ -151,6 +151,6 @@ d_plural = ['', 'أَنْصَاف', 'أَثْلَاث', 'أَرْبَاع', 'أ�
 
 def fract2str(n, d):
     if n == 1:
-        return numerators[0] + " " + d_singular[d-1]
+        return r(numerators[0] + " " + d_singular[d-1])
     else:
-        return numerators[n-1] + " " + d_plural[d-1]
+        return r(numerators[n-1] + " " + d_plural[d-1])

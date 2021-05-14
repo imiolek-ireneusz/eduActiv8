@@ -253,4 +253,19 @@
           ico_suffix="ru"
           ltr="True"
           />
+    <!--
+    <lang id="22"
+          code="ml"
+          name="മലയാളം"
+          name_en="Malayalam"
+          voice="None"
+          voice_mb="None"
+          use_mb="False"
+          has_uc="False"
+          has_cursive="False"
+          has_keyboard="False"
+          ico_suffix=""
+          ltr="True"
+          />
+    -->
 </languages>

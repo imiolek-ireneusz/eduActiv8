@@ -161,20 +161,28 @@ class ScoreBar:
         self.update_me = True
         self.widget_list = None
         self.mouse_over = False
+        self.font = None
+        self.font_bold = None
 
         self.points = int(round((50 * 72 / 96) / 4, 0))
         if self.mainloop.android is None:
-            points_multiplicator = 2.0
             self.btn_h = 28
             self.link_lbl_h = 32
             self.btn_spacing = 3
             self.img_ext = ".png"
         else:
-            points_multiplicator = 3.0
             self.btn_h = 48
             self.link_lbl_h = 48
             self.btn_spacing = 5
             self.img_ext = "_l.png"
+
+        self.update_fonts()
+
+    def update_fonts(self):
+        if self.mainloop.android is None:
+            points_multiplicator = 2.0
+        else:
+            points_multiplicator = 3.0
         self.font = pygame.font.Font(
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_2),
             (int(self.points * points_multiplicator)))

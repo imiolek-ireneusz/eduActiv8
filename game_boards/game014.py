@@ -91,6 +91,7 @@ class Board(gd.BoardGame):
                             img_src='nav_l_mts.png', alpha=True)
         self.board.ships[-1].set_tint_color(bd_color2)
 
+
         self.board.add_unit(data[1] + 2, 5, 2, 2, classes.board.Label, str(num2), white, "", 31)
         self.nm2 = self.board.units[-1]
         self.board.units[-1].font_color = bd_color2

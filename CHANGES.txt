@@ -1,4 +1,7 @@
 Changelog:
+eduActiv8 - 4.21.05:
+    - Added NotoSerifMalayalam font to be used alongside the Malayalam translation.
+    - Malayam translation unavaliable - so temporarily disabled in the program
 eduActiv8 - 4.20.12:
     - Arabic language added provisionally - recommends python-pyfribidi library, alternatively uses embedded
       arabic_reshaper library

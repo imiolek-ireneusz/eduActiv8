@@ -121,18 +121,24 @@ class DialogWnd:
 
         self.font_size = 0
 
-        self.font_l = pygame.font.Font(
-            os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 40)
-        self.font_s = pygame.font.Font(
-            os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 20)
-        self.font_xs = pygame.font.Font(
-            os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 20)
+        self.font_l = None
+        self.font_s = None
+        self.font_xs = None
+        self.reload_fonts()
         self.default_font = None
         #self.text = ""
         #self.set_text(self.text, font=1)
 
         self.wnd_close_function = None
         self.load_images()
+
+    def reload_fonts(self):
+        self.font_l = pygame.font.Font(
+            os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 40)
+        self.font_s = pygame.font.Font(
+            os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 20)
+        self.font_xs = pygame.font.Font(
+            os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 20)
 
     def load_images(self):
         self.bg_tint_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 100)

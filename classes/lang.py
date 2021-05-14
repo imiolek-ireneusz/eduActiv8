@@ -233,6 +233,11 @@ class Language:
             self.config.font_line_height_adjustment = 1
             self.config.font_start_at_adjustment = 0
 
+        if self.lang == 'ml':
+            font_variant = 3
+        else:
+            font_variant = 0
+
         if self.kbrd is None:
             import i18n.custom.kbrd.en_gb
             import i18n.custom.kbrd.en_course
@@ -257,6 +262,7 @@ class Language:
             self.solid_names = self.oi18n.solid_names
             self.shape_names = self.oi18n.shape_names
             self.letter_names = self.lang_file.letter_names
+        self.font_variant = font_variant
         self.config.set_font_family(font_variant)
         if not self.ltr_text:
             for each_d in [self.d, self.b]:

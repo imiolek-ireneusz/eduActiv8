@@ -27,7 +27,11 @@ class Board(gd.BoardGame):
         self.mainloop.info.hide_buttonsa(self.vis_buttons)
         v = 255
         h = random.randrange(0, 255)
-        color0 = ex.hsv_to_rgb(h, 40, 230)  # highlight 1
+
+        bg_colour = (255, 255, 255)
+        if self.mainloop.scheme is not None:
+            if self.mainloop.scheme.dark:
+                bg_colour = (0, 0, 0)
 
         lvl_data = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid,
                                                          self.mainloop.config.user_age_group,
@@ -209,9 +213,9 @@ class Board(gd.BoardGame):
                 x = data[0] - 1
             else:
                 x = 0
-            self.board.add_unit(x, data[1] - 1, 1, 1, classes.board.Label, "", color0, "", 0)
+            self.board.add_unit(x, data[1] - 1, 1, 1, classes.board.Label, "", bg_colour, "", 0)
 
-        self.outline_all(0, 1)
+        #self.outline_all(0, 1)
 
     def show_info_dialog(self):
         self.mainloop.dialog.show_dialog(3, self.d["Complete abc"])

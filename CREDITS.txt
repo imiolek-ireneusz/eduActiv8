@@ -55,6 +55,7 @@ Fonts:
     FreeSans, FreeSansBold - GPL
     LinBiolinum_RBah - LinuxLibertine - GPL - https://sourceforge.net/projects/linuxlibertine/
     KacstOne - KACST holds the copyright of the included Arabic font which is donated under GPL by KACST.
+    NotoSerifMalayalam - OFL - https://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web#b2e49b82
 
 Sounds Licence - Public Domain:
     Most of the sounds were created with help of: http://www.superflashbros.net/as3sfxr/ these are being released under Public Domain licence:

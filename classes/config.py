@@ -114,6 +114,7 @@ class Config:
         if ex.fribidi_loaded or ex.ar_reshaper_loaded:
             s = ex.unival('العربية')
             self.arabic = ex.ar_rtl(s)
+            # Malayam: "മലയാളം" 22: "",
             self.lang_titles = ["English", "American English", "Català", "Deutsch", "Español", "Français", "Italiano",
                                 "Lakȟótiyapi", "Nederlands", "Polski", "Português", "Suomalainen", "Ελληνικά",
                                 "Български", "Русский", "Српски", "Українська", "תירבע", self.arabic]
@@ -150,6 +151,7 @@ class Config:
 
     def set_font_family(self, variant=0):
         self.font_variant = variant
+
         if variant == 0:
             self.font_dir = 'LinLibertine'
             self.font_name_1 = 'LinBiolinum_RB_merged_with_Kacst.ttf'
@@ -157,7 +159,6 @@ class Config:
             self.font_multiplier = 1
             self.font_line_height_adjustment = 1.5
             self.font_start_at_adjustment = 5
-
         elif variant == 1:
             self.font_dir = 'FreeSans'
             self.font_name_1 = 'FreeSansBold.ttf'
@@ -175,6 +176,17 @@ class Config:
             self.font_multiplier = 1
             self.font_line_height_adjustment = 1
             self.font_start_at_adjustment = 0
+
+        elif variant == 3:
+            self.font_dir = 'Noto'
+            self.font_name_1 = 'NotoSerifMalayalam-BoldPlus.ttf'
+            self.font_name_2 = self.font_name_1  # 'NotoSerifMalayalam-BoldPlus.ttf'
+            #self.arabic = "Arabic"
+            self.font_multiplier = 1
+            self.font_line_height_adjustment = 1.5
+            self.font_start_at_adjustment = 5
+        self.font_dir_noto = "Noto"
+        self.font_ml = 'NotoSerifMalayalam-Regular.ttf'
 
         """
         self.font_dir = 'LinLibertine'

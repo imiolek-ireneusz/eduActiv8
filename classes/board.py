@@ -117,6 +117,10 @@ class Unit(pygame.sprite.Sprite):
     def update_font_size(self, font_size):
         self.font = self.board.font_sizes[font_size]
 
+    def update_lng_font_size(self, key):
+        if key in self.board.font_sizes_lng:
+            self.font = self.board.font_sizes_lng[key]
+
     def set_fraction_lines(self, top, bottom, color, length=90):
         if top:
             self.fraction_line_top = True
@@ -1008,6 +1012,7 @@ class Board:
         self.font_path_default2 = None
         self.font_path_hand = None
         self.font_path_print = None
+        self.font_sizes_lng = dict()
 
         self.load_default_fonts()
         self.level_start(x_count, y_count, scale)
@@ -1026,6 +1031,9 @@ class Board:
         self.font_path_print = os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8LatinPrint.ttf')
 
         self.font_path_clock = os.path.join('res', 'fonts', 'eduactiv8Fonts', 'eduactiv8Clock.ttf')
+        self.font_ml = os.path.join('res', 'fonts', self.mainloop.config.font_dir_noto,
+                                    self.mainloop.config.font_ml)
+        self.font_def = os.path.join('res', 'fonts', 'LinLibertine', 'LinBiolinum_RB_merged_with_Kacst.ttf')
 
         self.load_fonts()
 
@@ -1118,6 +1126,13 @@ class Board:
 
         #font 36
         self.font_sizes.append(pygame.font.Font(self.font_path_default, (int(self.points / 0.5))))
+
+        self.font_sizes_lng = dict()
+        self.font_sizes_lng["ml_1.75"] = pygame.font.Font(self.font_ml, (int(float(self.points) / 1.75)))
+        self.font_sizes_lng["ml_1.25"] = pygame.font.Font(self.font_ml, (int(float(self.points) / 1.25)))
+        self.font_sizes_lng["def_1.75"] = pygame.font.Font(self.font_def, (int(float(self.points) / 1.75)))
+        self.font_sizes_lng["def_1.25"] = pygame.font.Font(self.font_def, (int(float(self.points) / 1.25)))
+        self.font_sizes_lng["def_2.0"] = pygame.font.Font(self.font_def, (int(float(self.points) / 2.0)))
 
         self.board_bg = BoardBg(self, 0, 0, x_count, y_count, "", (255, 255, 255))
         self.unit_list.add(self.board_bg)

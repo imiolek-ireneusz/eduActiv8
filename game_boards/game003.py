@@ -60,12 +60,14 @@ class Board(gd.BoardGame):
                 self.board.add_unit(c + 4, t, 2, 1, classes.board.Label, self.lang.lang_progress[i], white, "", 3)
                 self.board.units[-1].font_color = (200, 200, 200)
             self.board.add_unit(c - 4, t, 8, 1, classes.board.Letter, self.lang_titles[i], white, "", 2)
-
+            self.board.units[-1].update_lng_font_size("def_2.0")
             if self.all_lng[i] == lang:
                 lng_index = i
 
-        self.board.add_unit(0, data[1]-1, data[0], 1, classes.board.Label, "https://www.transifex.com/eduactiv8/eduactiv8/", white, "", 4)
+        self.board.add_unit(0, data[1]-1, data[0], 1, classes.board.Label, "https://www.transifex.com/eduactiv8/eduactiv8/", white, "", 3)
         self.board.units[-1].font_color = (150, 150, 150)
+        self.board.units[-1].update_lng_font_size("def_2.0")
+
 
         for each in self.board.ships:
             each.immobilize()
@@ -103,6 +105,8 @@ class Board(gd.BoardGame):
             sv = lng_title
         self.say(sv)
         self.mainloop.info.update_fonts()
+        self.mainloop.sb.update_fonts()
+        self.mainloop.dialog.reload_fonts()
         self.reselect(lang_id)
         self.mainloop.sb.resize()
         self.mainloop.sb.update_me = True
@@ -115,11 +119,19 @@ class Board(gd.BoardGame):
         for each in self.board.ships:
             if each.unit_id != selectid:
                 each.font_color = (40, 40, 40)
-                each.font = self.board.font_sizes[2]
+                each.update_lng_font_size("def_1.75")
             else:
                 each.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 200)
-                each.font = self.board.font_sizes[0]
+                each.update_lng_font_size("def_1.25")
             each.update_me = True
+        """
+        # Malayam language - font selector - temporarily disabled
+        if selectid == self.board.ships[-2].unit_id:
+            self.board.ships[-2].update_lng_font_size("ml_1.25")
+        else:
+            self.board.ships[-2].update_lng_font_size("ml_1.75")
+        """
+
 
     def update(self, game):
         game.fill((255, 255, 255))

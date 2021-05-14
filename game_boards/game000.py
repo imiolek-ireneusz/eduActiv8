@@ -70,6 +70,7 @@ class Board(gd.BoardGame):
                             ["www.eduactiv8.org   |   info%seduactiv8%sorg" % ("@", "."),
                              "Copyright (C) 2012 - 2020  Ireneusz Imiolek"], color, "", 3)
         self.board.units[-1].font_color = font_color2
+        self.board.units[-1].update_lng_font_size("def_2.0")
 
         # add main category items
         posx =[data[0] // 2 - 8, data[0] // 2 - 2, data[0] // 2 + 4]

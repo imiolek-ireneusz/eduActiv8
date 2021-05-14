@@ -169,6 +169,7 @@ class InfoBar:
         self.game_board = None
         self.home_btns_w = 50 + 66
         self.last_hover = None
+        self.fonts = []
         self.create()
 
     def create(self):
