@@ -13,7 +13,7 @@ import classes.extras as ex
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
-        self.level = lc.Level(self, mainloop, 10, 5)
+        self.level = lc.Level(self, mainloop, 10, 6)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 13, 8)
 
     def create_game_objects(self, level=1):
@@ -37,9 +37,27 @@ class Board(gd.BoardGame):
         self.board.level_start(data[0], data[1], scale)
         self.board.board_bg.update_me = True
 
+        self.unit_mouse_over = None
+        self.units = []
+
         self.board.board_bg.line_color = (20, 20, 20)
-        self.number_count = random.randint(2, 5)
-        self.numbers = self.get_numbers(self.number_count, 5, 1)
+
+        # level_data[start, step, count]
+        if self.level.lvl == 1:
+            level_data = [10, 10, 2]
+        elif self.level.lvl == 2:
+            level_data = [10, 10, 3]
+        elif self.level.lvl == 3:
+            level_data = [5, 5, 3]
+        elif self.level.lvl == 4:
+            level_data = [5, 5, 4]
+        elif self.level.lvl == 5:
+            level_data = [5, 5, 5]
+        else:
+            level_data = [5, 1, 5]
+
+        self.number_count = level_data[2]
+        self.numbers = self.get_numbers(self.number_count, level_data[0], level_data[1])
         self.numbers_sh = self.numbers[:]
         random.shuffle(self.numbers_sh)
 
@@ -62,8 +80,10 @@ class Board(gd.BoardGame):
 
         if self.mainloop.scheme is None:
             dc_img_src = os.path.join('unit_bg', "universal_sq_dc.png")
+            font_color = [(0, 0, 0)]
         else:
             dc_img_src = None
+            font_color = [self.mainloop.scheme.u_font_color]
 
         bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
         bg_rect_img_src = os.path.join('unit_bg', "universal_r2x1_bg_plain_color.png")
@@ -95,7 +115,7 @@ class Board(gd.BoardGame):
             self.board.add_universal_unit(grid_x=data[1] + i + (data[0] - data[1] - self.number_count) // 2, grid_y=0,
                                           grid_w=1, grid_h=1, txt=str(self.numbers_sh[i]) + "%", fg_img_src=bg_img_src,
                                           bg_img_src=bg_img_src, dc_img_src=dc_img_src, bg_color=(0, 0, 0, 0),
-                                          border_color=None, font_color=[(0, 0, 0)], bg_tint_color=number_color,
+                                          border_color=None, font_color=font_color, bg_tint_color=number_color,
                                           fg_tint_color=fg_number_color, txt_align=(0, 0), font_type=3,
                                           multi_color=False, alpha=True, immobilized=False, fg_as_hover=True)
 
