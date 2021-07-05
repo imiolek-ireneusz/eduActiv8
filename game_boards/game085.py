@@ -2,6 +2,7 @@
 
 import pygame
 import random
+import os
 
 import classes.board
 import classes.extras as ex
@@ -29,8 +30,6 @@ class Board(gd.BoardGame):
             color1 = ex.hsv_to_rgb(h, 70, v)  # highlight 2
             color2 = ex.hsv_to_rgb(h, s, v)  # normal color
             color4 = ex.hsv_to_rgb(h, s, 200)  # headers colour
-            task_bg_color = (255, 255, 255)
-            task_font_color = ex.hsv_to_rgb(h, s, 200)
         else:
             s = 150
             v = 225
@@ -39,8 +38,6 @@ class Board(gd.BoardGame):
             color1 = ex.hsv_to_rgb(h, 70, v)  # highlight 2
             color2 = ex.hsv_to_rgb(h, s, v)  # normal color
             color4 = ex.hsv_to_rgb(h, s, 200)  # headers colour
-            task_bg_color = self.mainloop.scheme.u_color
-            task_font_color = self.mainloop.scheme.u_font_color
 
         # data = [x_count, y_count, range_from, range_to, max_sum_range, image]
         lvldata = self.mainloop.xml_conn.get_level_data(self.mainloop.m.game_dbid, self.mainloop.config.user_age_group,
@@ -61,6 +58,10 @@ class Board(gd.BoardGame):
         self.data = data
         self.layout.update_layout(data[0], data[1])
         self.board.level_start(data[0], data[1], self.layout.scale)
+
+        self.unit_mouse_over = None
+        self.units = []
+
         bottom1 = lvldata[0] - 1
         bottom2 = lvldata[2] - 1
         top1 = lvldata[1]
@@ -120,6 +121,19 @@ class Board(gd.BoardGame):
                                     "", 2)
                 self.board.units[-1].font_color = font_color
 
+        if self.mainloop.scheme is None:
+            dc_img_src = os.path.join('unit_bg', "universal_sq_dc.png")
+            door_bg_img_src = [os.path.join('unit_bg', "universal_sq_door.png"),
+                               os.path.join('unit_bg', "universal_r2x1_door.png")]
+        else:
+            dc_img_src = None
+            door_bg_img_src = [os.path.join('unit_bg', "universal_sq_door.png"),
+                               os.path.join('unit_bg', "universal_r2x1_door.png")]
+
+        bg_img_src = os.path.join('unit_bg', "universal_sq_bg.png")
+        number_color = ex.hsv_to_rgb(h, self.mainloop.cl.bg_color_s, self.mainloop.cl.bg_color_v)
+        font_color = [ex.hsv_to_rgb(h, self.mainloop.cl.font_color_s, self.mainloop.cl.font_color_v), ]
+
         # draw outline with selectable numbers
         self.multi = dict()
 
@@ -128,17 +142,25 @@ class Board(gd.BoardGame):
         captions = [str(num1), chr(215), str(num2), "="]
 
         for i in range(4):
-            self.board.add_unit(x + i, y, 1, 1, classes.board.Label, captions[i], task_bg_color, "", 2)
-            self.board.units[-1].font_color = task_font_color
+            self.board.add_universal_unit(grid_x=x + i, grid_y=y, grid_w=1, grid_h=1, txt=captions[i],
+                                          fg_img_src=None, bg_img_src=bg_img_src, dc_img_src=dc_img_src,
+                                          bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                          bg_tint_color=number_color, fg_tint_color=None,
+                                          txt_align=(0, 0), font_type=2, multi_color=False, alpha=True,
+                                          immobilized=True, fg_as_hover=False, mode=1)
 
         self.outline_all(0, 1)
 
-        self.board.add_door(x + 4, y, hsw, 1, classes.board.Door, "", task_bg_color, "", font_size=2)
+        self.board.add_universal_unit(grid_x=x + 4, grid_y=y, grid_w=hsw, grid_h=1, txt="",
+                                      fg_img_src=None, bg_img_src=door_bg_img_src[hsw-1], dc_img_src=None,
+                                      bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
+                                      bg_tint_color=number_color, fg_tint_color=None,
+                                      txt_align=(0, 0), font_type=2, multi_color=False, alpha=True,
+                                      immobilized=True, fg_as_hover=False, mode=2)
+
         self.home_square = self.board.units[-1]
         self.home_square.checkable = True
         self.home_square.init_check_images()
-        self.home_square.door_outline = True
-        self.home_square.font_color = task_font_color
         self.board.all_sprites_list.move_to_front(self.home_square)
 
     def handle(self, event):
