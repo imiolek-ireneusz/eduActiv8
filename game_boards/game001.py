@@ -17,7 +17,7 @@ class Board(gd.BoardGame):
 
         self.color = (255, 255, 255)
 
-        font_color2 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 150)
+        font_color2 = ex.hsv_to_rgb(self.mainloop.cl.get_interface_hue(), 255, 150)
         data = [23, 16]
 
         self.data = data

@@ -18,7 +18,7 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         color = (234, 218, 225)
         self.color = color
-        h = self.mainloop.cl.color_sliders[5][0] * 16
+        h = self.mainloop.cl.get_interface_hue()
         arrow_color = ex.hsv_to_rgb(h, 200, 200)
 
         img_top = 1

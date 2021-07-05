@@ -121,7 +121,7 @@ class Board(gd.BoardGame):
                 each.font_color = (40, 40, 40)
                 each.update_lng_font_size("def_1.75")
             else:
-                each.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 200)
+                each.font_color = ex.hsv_to_rgb(self.mainloop.cl.get_interface_hue(), 255, 200)
                 each.update_lng_font_size("def_1.25")
             each.update_me = True
         """

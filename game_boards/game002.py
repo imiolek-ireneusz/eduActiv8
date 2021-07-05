@@ -15,10 +15,10 @@ class Board(gd.BoardGame):
         self.board.draw_grid = False
         self.show_info_btn = False
 
-        color1 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 50, 255)
-        color2 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 30, 255)
+        color1 = ex.hsv_to_rgb(self.mainloop.cl.get_interface_hue(), 50, 255)
+        color2 = ex.hsv_to_rgb(self.mainloop.cl.get_interface_hue(), 30, 255)
 
-        font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 50)
+        font_color = ex.hsv_to_rgb(self.mainloop.cl.get_interface_hue(), 255, 50)
         data = [18, 11]
         # stretch width to fit the screen size
         x_count = self.get_x_count(data[1], even=True)
