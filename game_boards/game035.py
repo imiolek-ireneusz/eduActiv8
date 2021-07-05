@@ -147,7 +147,7 @@ class Board(gd.BoardGame):
 
         self.board.add_universal_unit(grid_x=18, grid_y=y, grid_w=1, grid_h=1, txt="",
                                       fg_img_src=None, bg_img_src=door_bg_img_src, dc_img_src=None,
-                                      bg_color=(0, 0, 0, 0), border_color=None, font_color=None,
+                                      bg_color=(0, 0, 0, 0), border_color=None, font_color=font_color,
                                       bg_tint_color=number_color, fg_tint_color=None,
                                       txt_align=(0, 0), font_type=2, multi_color=False, alpha=True,
                                       immobilized=True, fg_as_hover=False, mode=2)
