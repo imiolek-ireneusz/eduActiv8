@@ -33,6 +33,9 @@ class Board(gd.BoardGame):
 
         self.color = color
         font_color2 = (20, 75, 92)
+        self.digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        self.imput_limit = 3
+
         data = [25, 16]
 
         x_count = self.get_x_count(data[1], even=False)
@@ -57,6 +60,16 @@ class Board(gd.BoardGame):
         self.board.units[-1].align = 2
         self.board.units[-1].font_color = font_color2
 
+        # main category item locations and icons
+        posx = [data[0] // 2 - 8, data[0] // 2 - 2, data[0] // 2 + 4]
+        ico = ["ico_tn_00.png", "ico_tn_01.png", "ico_tn_02.png"]
+
+        # activity quick launch
+        self.board.add_unit(posx[1], 13, 5, 1, classes.board.Letter, "", color, "", 0)
+        self.board.ships[-1].font_color = font_color2
+        self.board.ships[-1].immobilize()
+
+
         self.board.add_unit(7, 0, data[0]-14, 4, classes.board.ImgCenteredShip, "", color, "home_screen_icon.png", alpha=True)
 
         self.board.ships[-1].immobilize()
@@ -68,13 +81,9 @@ class Board(gd.BoardGame):
 
         self.board.add_unit((data[0]-11)//2, 14, 11, 2, classes.board.Label,
                             ["www.eduactiv8.org   |   info%seduactiv8%sorg" % ("@", "."),
-                             "Copyright (C) 2012 - 2020  Ireneusz Imiolek"], color, "", 3)
+                             "Copyright (C) 2012 - 2021  Ireneusz Imiolek"], color, "", 3)
         self.board.units[-1].font_color = font_color2
         self.board.units[-1].update_lng_font_size("def_2.0")
-
-        # add main category items
-        posx =[data[0] // 2 - 8, data[0] // 2 - 2, data[0] // 2 + 4]
-        ico = ["ico_tn_00.png", "ico_tn_01.png", "ico_tn_02.png"]
 
         self.top_categories = []
         self.units = []
@@ -91,7 +100,7 @@ class Board(gd.BoardGame):
 
         #add home info icons
         self.home_icons = [["home_icon_1.png", "home_icon_2.png", "home_icon_3.png", "home_icon_4.png"],
-                       ["home_ico_1.png", "home_ico_2.png", "home_ico_3.png", "home_ico_4.png"]]
+                           ["home_ico_1.png", "home_ico_2.png", "home_ico_3.png", "home_ico_4.png"]]
 
         self.board.add_unit(data[0]-5, data[1] - 2, 3, 2, classes.board.ImgCenteredShip, "", color,
                             os.path.join("home_icons", "home_icon_1.png"), alpha=True)
@@ -109,7 +118,7 @@ class Board(gd.BoardGame):
                             os.path.join("home_icons", "home_icon_4.png"), alpha=True)
         self.board.ships[-1].immobilize()
 
-        #add scheme switchers
+        # add scheme switchers
         if self.mainloop.scheme_code is None:
             img = 'score_hc_anone_l.png'
         else:
@@ -150,6 +159,31 @@ class Board(gd.BoardGame):
 
     def handle(self, event):
         gd.BoardGame.handle(self, event)
+        if event.type == pygame.KEYDOWN and (event.key != pygame.K_RETURN and event.key != pygame.K_KP_ENTER):
+            self.active_unit = self.board.ships[0]
+            lhv = len(self.active_unit.value)
+            self.changed_since_check = True
+            if event.key == pygame.K_BACKSPACE:
+                if lhv > 0:
+                    self.active_unit.value = self.active_unit.value[0:lhv - 1]
+            else:
+                char = event.unicode
+                if len(char) > 0 and (char in self.digits):
+                    if lhv < self.imput_limit:
+                        self.active_unit.value += char
+                    else:
+                        self.active_unit.value = char
+            self.active_unit.update_me = True
+            self.mainloop.redraw_needed[0] = True
+        elif event.type == pygame.KEYDOWN and (event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER):
+            lhv = len(self.active_unit.value)
+            if lhv > 0:
+                try:
+                    activity_id = int(self.active_unit.value)
+                    if activity_id > 0:
+                        self.start_game(activity_id)
+                except:
+                    pass
 
         if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONUP:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
@@ -168,7 +202,6 @@ class Board(gd.BoardGame):
                     self.unit_mouse_over.mouse_out()
                 self.unit_mouse_over = None
 
-
         if event.type == pygame.MOUSEMOTION:
             pos = [event.pos[0] - self.layout.game_left, event.pos[1] - self.layout.top_margin]
             for i in range(-8, -4):
@@ -186,7 +219,6 @@ class Board(gd.BoardGame):
             if event.button == 1:
                 active = self.board.active_ship
                 if active > 0:
-                    realign = False
                     if self.board.ships[active] == self.board.ships[-4]:
                         self.mainloop.switch_scheme(None)
                     elif self.board.ships[active] == self.board.ships[-3]:
@@ -197,29 +229,25 @@ class Board(gd.BoardGame):
                         self.mainloop.switch_scheme("BY")
 
                     elif self.board.ships[active] == self.board.ships[-8]:
-                        self.mainloop.m.start_hidden_game(273)
-                        self.mainloop.menu_level = 1
-                        realign = True
-
+                        self.start_game(273)
                     elif self.board.ships[active] == self.board.ships[-7]:
-                        self.mainloop.m.start_hidden_game(3)
-                        self.mainloop.menu_level = 1
-                        realign = True
+                        self.start_game(3)
                     elif self.board.ships[active] == self.board.ships[-6]:
-                        self.mainloop.m.start_hidden_game(1)
-                        self.mainloop.menu_level = 1
-                        realign = True
+                        self.start_game(1)
                     elif self.board.ships[active] == self.board.ships[-5]:
-                        self.mainloop.m.start_hidden_game(2)
-                        self.mainloop.menu_level = 1
-                        realign = True
-                    if realign:
-                        self.mainloop.menu_type = 1
-                        self.mainloop.info.realign()
-                        self.mainloop.info.reset_titles()
+                        self.start_game(2)
 
     def start_game(self, gameid):
-        self.mainloop.m.start_hidden_game(gameid)
+        game_changed = self.mainloop.m.start_hidden_game(gameid)
+        if game_changed:
+            self.mainloop.menu_level = 1
+            self.mainloop.menu_type = 1
+            self.mainloop.info.realign()
+            self.mainloop.info.reset_titles()
+        else:
+            self.board.ships[0].value = ""
+            self.board.ships[0].update_me = True
+            self.mainloop.redraw_needed[0] = True
 
     def update(self, game):
         game.fill(self.color)

@@ -141,6 +141,8 @@ class Menu:
                 self.tab_game_id = -1
                 self.mainloop.score = 0
                 self.mainloop.redraw_needed = [True, True, True]
+                return True
+        return False
 
     def reset_titles(self):
         self.mainloop.info.title = ""
