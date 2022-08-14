@@ -48,7 +48,7 @@ msgid "pug"
 msgstr "pug"
 
 msgid "koala"
-msgstr "coala"
+msgstr "koala"
 
 msgid "frog"
 msgstr "rana"
