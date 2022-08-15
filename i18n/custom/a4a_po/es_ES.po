@@ -162,7 +162,7 @@ msgid "horse"
 msgstr "caballo"
 
 msgid "penguin"
-msgstr ""
+msgstr "pingüino"
 
 msgid "otter"
 msgstr "nutria"
@@ -195,10 +195,10 @@ msgid "mole"
 msgstr "topo"
 
 msgid "ray"
-msgstr ""
+msgstr "mantaraya"
 
 msgid "ram"
-msgstr ""
+msgstr "carnero"
 
 msgid "skunk"
 msgstr "mofeta"
@@ -258,7 +258,7 @@ msgid "salamander"
 msgstr "salamandra"
 
 msgid "goose"
-msgstr "oca"
+msgstr "ganso"
 
 msgid "kangaroo"
 msgstr "canguro"
@@ -276,7 +276,7 @@ msgid "squid"
 msgstr "calamar"
 
 msgid "lion cub"
-msgstr ""
+msgstr "león bebe"
 
 msgid "jaguar"
 msgstr "jaguar"
@@ -315,7 +315,7 @@ msgid "goat"
 msgstr "cabra"
 
 msgid "baby rabbit"
-msgstr ""
+msgstr "conejito"
 
 msgid "lion"
 msgstr "león"
@@ -333,7 +333,7 @@ msgid "doe"
 msgstr "ciervo"
 
 msgid "gopher"
-msgstr ""
+msgstr "perrito de la pradera"
 
 msgid "elephant"
 msgstr "elefante"
@@ -351,7 +351,7 @@ msgid "jay"
 msgstr "arrendajo"
 
 msgid "seal"
-msgstr ""
+msgstr "foca"
 
 msgid "rooster"
 msgstr "gallo"
@@ -414,7 +414,7 @@ msgid "helmet"
 msgstr "casco"
 
 msgid "ice skating"
-msgstr ""
+msgstr "patinaje sobre hielo"
 
 msgid "walk"
 msgstr "caminar"
@@ -432,7 +432,7 @@ msgid "hike"
 msgstr "caminata"
 
 msgid "boxing"
-msgstr ""
+msgstr "boxeo"
 
 msgid "hockey"
 msgstr "hockey"
@@ -459,13 +459,13 @@ msgid "golf"
 msgstr "golf"
 
 msgid "whistle"
-msgstr ""
+msgstr "silbato"
 
 msgid "torch"
 msgstr "antorcha"
 
 msgid "sailing"
-msgstr ""
+msgstr "navegar"
 
 msgid "stand"
 msgstr "derecho"
@@ -507,7 +507,7 @@ msgid "mouth"
 msgstr "boca"
 
 msgid "feet"
-msgstr ""
+msgstr "pies"
 
 msgid "hand"
 msgstr "mano"
@@ -525,7 +525,7 @@ msgid "beard"
 msgstr "barba"
 
 msgid "belly button"
-msgstr ""
+msgstr "ombligo"
 
 msgid "thumb"
 msgstr "pulgar"
@@ -561,7 +561,7 @@ msgid "throat"
 msgstr "garganta"
 
 msgid "eye"
-msgstr ""
+msgstr "ojo"
 
 msgid "leg"
 msgstr "pierna"
@@ -609,10 +609,10 @@ msgid "son"
 msgstr "hijo"
 
 msgid "mates"
-msgstr ""
+msgstr "amigos"
 
 msgid "friends"
-msgstr ""
+msgstr "amigos"
 
 msgid "baby"
 msgstr "bebé"
@@ -627,10 +627,10 @@ msgid "mom"
 msgstr "mama"
 
 msgid "twin boys"
-msgstr ""
+msgstr "mellizos"
 
 msgid "brothers"
-msgstr ""
+msgstr "hermanos"
 
 msgid "man"
 msgstr "hombre"
@@ -657,7 +657,7 @@ msgid "bride"
 msgstr "novia"
 
 msgid "madam"
-msgstr ""
+msgstr "señora"
 
 msgid "grandmother"
 msgstr "abuela"
@@ -669,7 +669,7 @@ msgid "lad"
 msgstr "mozo"
 
 msgid "twin girls"
-msgstr ""
+msgstr "mellizas"
 
 msgid "tribe"
 msgstr "tribu"
@@ -678,7 +678,7 @@ msgid "boy"
 msgstr "niño"
 
 msgid "sisters"
-msgstr ""
+msgstr "hermanas"
 
 msgid "woman"
 msgstr "mujer"
@@ -696,7 +696,7 @@ msgid "hamburger"
 msgstr "hamburguesa"
 
 msgid "steak"
-msgstr ""
+msgstr "carne"
 
 msgid "fudge"
 msgstr "dulce de chocolate"
@@ -711,22 +711,22 @@ msgid "rice"
 msgstr "arroz"
 
 msgid "ice cream"
-msgstr ""
+msgstr "helado"
 
 msgid "jelly"
 msgstr "jalea"
 
 msgid "yoghurt"
-msgstr ""
+msgstr "yogur"
 
 msgid "dessert"
 msgstr "postre"
 
 msgid "pretzel"
-msgstr ""
+msgstr "pretzel"
 
 msgid "peanut"
-msgstr ""
+msgstr "maní"
 
 msgid "jam"
 msgstr "mermelada"
@@ -738,7 +738,7 @@ msgid "cookie"
 msgstr "galleta"
 
 msgid "bacon"
-msgstr ""
+msgstr "tocino"
 
 msgid "spice"
 msgstr "especia"
@@ -756,7 +756,7 @@ msgid "chocolate"
 msgstr "chocolate"
 
 msgid "water bottle"
-msgstr ""
+msgstr "agua embotellada"
 
 msgid "lunch"
 msgstr "almuerzo"
@@ -783,10 +783,10 @@ msgid "cake"
 msgstr "pastel"
 
 msgid "mashed potatoes"
-msgstr ""
+msgstr "puré de papa"
 
 msgid "tea"
-msgstr ""
+msgstr "té"
 
 msgid "bun"
 msgstr "brioche"
@@ -795,13 +795,13 @@ msgid "cheese"
 msgstr "queso"
 
 msgid "beef"
-msgstr ""
+msgstr "carne de res"
 
 msgid "sandwich"
 msgstr "sándwich"
 
 msgid "slice"
-msgstr ""
+msgstr "rebanada"
 
 msgid "sprinkle"
 msgstr "chispas"
@@ -849,13 +849,13 @@ msgid "egg"
 msgstr "huevo"
 
 msgid "hot dog"
-msgstr ""
+msgstr "hot dog"
 
 msgid "ham"
 msgstr "jamón"
 
 msgid "jewellery"
-msgstr ""
+msgstr "joyería"
 
 msgid "sock"
 msgstr "calcetín"
@@ -870,7 +870,7 @@ msgid "smock"
 msgstr "bata"
 
 msgid "shorts"
-msgstr ""
+msgstr "shorts"
 
 msgid "pocket"
 msgstr "bolsillo"
@@ -888,10 +888,10 @@ msgid "raincoat"
 msgstr "impermeable"
 
 msgid "trousers"
-msgstr ""
+msgstr "pantalones"
 
 msgid "sunglasses"
-msgstr ""
+msgstr "gafas de sol"
 
 msgid "coat"
 msgstr "abrigo"
@@ -909,28 +909,28 @@ msgid "suit"
 msgstr "arreglada"
 
 msgid "pyjamas"
-msgstr ""
+msgstr "pijama"
 
 msgid "skirt"
 msgstr "falda"
 
 msgid "zip"
-msgstr ""
+msgstr "cierre"
 
 msgid "shoes"
-msgstr ""
+msgstr "zapatos"
 
 msgid "jewel"
 msgstr "joya"
 
 msgid "tie"
-msgstr ""
+msgstr "corbata"
 
 msgid "slippers"
 msgstr "zapatilla"
 
 msgid "gloves"
-msgstr ""
+msgstr "guantes"
 
 msgid "hat"
 msgstr "sombrero"
@@ -942,7 +942,7 @@ msgid "cap"
 msgstr "gorra"
 
 msgid "swimming suit"
-msgstr ""
+msgstr "traje de baño"
 
 msgid "trainer"
 msgstr ""
@@ -975,7 +975,7 @@ msgid "sash"
 msgstr "faja"
 
 msgid "shoe sole"
-msgstr ""
+msgstr "suela del zapato"
 
 msgid "robe"
 msgstr "manto"
@@ -987,7 +987,7 @@ msgid "kimono"
 msgstr "quimono"
 
 msgid "overalls"
-msgstr ""
+msgstr "overol"
 
 msgid "lick"
 msgstr "lamer"
@@ -999,7 +999,7 @@ msgid "beg"
 msgstr "pedir"
 
 msgid "fell"
-msgstr ""
+msgstr "cayó"
 
 msgid "scratch"
 msgstr "arañar"
@@ -1095,16 +1095,16 @@ msgid "cheer"
 msgstr "animar"
 
 msgid "bake"
-msgstr ""
+msgstr "hornear"
 
 msgid "write"
 msgstr "escribir"
 
 msgid "punch"
-msgstr ""
+msgstr "golpear"
 
 msgid "strum"
-msgstr ""
+msgstr "rasguear"
 
 msgid "study"
 msgstr "estudiar"
@@ -1158,7 +1158,7 @@ msgid "pull"
 msgstr "estirar"
 
 msgid "ate"
-msgstr ""
+msgstr "comió"
 
 msgid "kiss"
 msgstr "beso"
