@@ -60,7 +60,7 @@ msgid "gorilla"
 msgstr "gorila"
 
 msgid "llama"
-msgstr ""
+msgstr "llama"
 
 msgid "vulture"
 msgstr "buitre"
@@ -147,13 +147,13 @@ msgid "viper"
 msgstr "víbora"
 
 msgid "shrike"
-msgstr ""
+msgstr "alcaudón"
 
 msgid "donkey"
 msgstr "burro"
 
 msgid "guinea pig"
-msgstr ""
+msgstr "conejillo de indias"
 
 msgid "sloth"
 msgstr "perezoso"
@@ -945,7 +945,7 @@ msgid "swimming suit"
 msgstr "traje de baño"
 
 msgid "trainer"
-msgstr ""
+msgstr "ropa deportiva"
 
 msgid "vest"
 msgstr "chaleco"
@@ -1197,13 +1197,13 @@ msgid "fly"
 msgstr "volar"
 
 msgid "juggle"
-msgstr ""
+msgstr "malabarismo"
 
 msgid "bit"
 msgstr "poco"
 
 msgid "sweep"
-msgstr ""
+msgstr "barrer"
 
 msgid "look"
 msgstr "mirarse"
@@ -1242,7 +1242,7 @@ msgid "church"
 msgstr "iglesia"
 
 msgid "kennel"
-msgstr ""
+msgstr "perrera"
 
 msgid "temple"
 msgstr "templo"
@@ -1425,7 +1425,7 @@ msgid "juggler"
 msgstr "malabarista"
 
 msgid "policeman"
-msgstr ""
+msgstr "policía"
 
 msgid "plumber"
 msgstr "fontanero"
@@ -1440,7 +1440,7 @@ msgid "farmer"
 msgstr "agricultor"
 
 msgid "magician"
-msgstr ""
+msgstr "mago"
 
 msgid "knight"
 msgstr "caballero"
@@ -1452,7 +1452,7 @@ msgid "bricklayer"
 msgstr "albañil"
 
 msgid "cleaner"
-msgstr ""
+msgstr "persona de limpieza"
 
 msgid "teacher"
 msgstr "maestro"
@@ -1500,7 +1500,7 @@ msgid "president"
 msgstr "presidente"
 
 msgid "office worker"
-msgstr ""
+msgstr "oficinista"
 
 msgid "carpenter"
 msgstr "carpintero"
@@ -1545,7 +1545,7 @@ msgid "boxer"
 msgstr "boxeador"
 
 msgid "ballet dancer"
-msgstr ""
+msgstr "bailarina de ballet"
 
 msgid "coach"
 msgstr "entrenador"
@@ -1554,19 +1554,19 @@ msgid "astronaut"
 msgstr "astronauta"
 
 msgid "painter"
-msgstr ""
+msgstr "pintor"
 
 msgid "anaesthesiologist"
-msgstr ""
+msgstr "anestesiólogo"
 
 msgid "scientist"
-msgstr ""
+msgstr "científico"
 
 msgid "carrot"
 msgstr "zanahoria"
 
 msgid "blackberries"
-msgstr ""
+msgstr "moras"
 
 msgid "celery"
 msgstr "apio"
@@ -1590,7 +1590,7 @@ msgid "broccoli"
 msgstr "brócoli"
 
 msgid "grapes"
-msgstr ""
+msgstr "uvas"
 
 msgid "spinach"
 msgstr "espinacas"
@@ -1605,7 +1605,7 @@ msgid "radish"
 msgstr "rábano"
 
 msgid "tomato"
-msgstr ""
+msgstr "tomate"
 
 msgid "kiwi"
 msgstr "kiwi"
@@ -1614,13 +1614,13 @@ msgid "asparagus"
 msgstr "espárragos"
 
 msgid "olives"
-msgstr ""
+msgstr "aceituna"
 
 msgid "cucumbers"
-msgstr ""
+msgstr "pepino"
 
 msgid "beans"
-msgstr ""
+msgstr "frijoles"
 
 msgid "strawberry"
 msgstr "fresa"
@@ -1635,22 +1635,22 @@ msgid "apricot"
 msgstr "albaricoque"
 
 msgid "potatoes"
-msgstr ""
+msgstr "papas"
 
 msgid "peas"
-msgstr ""
+msgstr "guisantes"
 
 msgid "cabbage"
 msgstr "repollo"
 
 msgid "cherries"
-msgstr ""
+msgstr "cerezas"
 
 msgid "squash"
 msgstr "calabacín"
 
 msgid "blueberries"
-msgstr ""
+msgstr "arándano"
 
 msgid "pear"
 msgstr "pera"
@@ -1689,19 +1689,19 @@ msgid "lemon"
 msgstr "limón"
 
 msgid "aubergine"
-msgstr ""
+msgstr "berenjena"
 
 msgid "artichokes"
-msgstr ""
+msgstr "alcachofas"
 
 msgid "plums"
-msgstr ""
+msgstr "ciruela"
 
 msgid "leek"
 msgstr "puerro"
 
 msgid "bananas"
-msgstr ""
+msgstr "plátano"
 
 msgid "papaya"
 msgstr "papaya"
@@ -1764,8 +1764,8 @@ msgid "mast"
 msgstr "mástil"
 
 msgid "sledge"
-msgstr ""
+msgstr "trineo"
 
 msgid "bicycle"
-msgstr ""
+msgstr "bicicleta"
 
