@@ -5,13 +5,13 @@ if [ -d "/usr/share/games/eduactiv8" ]
 then
    echo "Working directory: /usr/share/games/eduactiv8"
    cd "/usr/share/games/eduactiv8"
-   python2 /usr/share/games/eduactiv8/eduactiv8.py "$@"
+   python3 /usr/share/games/eduactiv8/eduactiv8.py "$@"
 else
    if [ -d "/usr/share/eduactiv8" ]
    then
      echo "Working directory: /usr/share/eduactiv8"
      cd "/usr/share/eduactiv8"
-     python2 /usr/share/eduactiv8/eduactiv8.py "$@"
+     python3 /usr/share/eduactiv8/eduactiv8.py "$@"
    else
      echo "eduActiv8 is not installed"
    fi

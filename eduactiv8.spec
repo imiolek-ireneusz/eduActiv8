@@ -5,23 +5,16 @@ import sys
 p = sys.platform
 block_cipher = None
 
-# command: $ pyinstaller eduactiv8.spec
-
 # hiddenimports=["_io", "pyimod03_importers", "colorsys", "_struct", "struct"],
-if p == "linux" or p == "linux2":
-    hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct", "sqlite3", "ast", "xml.etree.ElementTree", "json"]
-else:
-    hidden_imports = ["_io", "pyimod03_importers", "colorsys", "_struct", "struct", "json", "sqlite3", "ast", "xml.etree.ElementTree"]
-
 a = Analysis(['eduactiv8.py'],
              pathex=['/Users/cextested/Documents/eduActiv8/eduActiv8-3.70.823/dist/eduActiv8'],
              binaries=[],
              datas = [("CHANGES.txt", "."), ("CREDITS.txt", "."), ("LICENSE", "."), ("README.txt", "."), ("xml", "xml"),
                       ("locale", "locale"), ("res", "res"), ("classes", "classes"), ("game_boards", "game_boards"), ("i18n","i18n")],
-             hiddenimports=hidden_imports,
+             hiddenimports=["_io", "pyimod03_importers", "colorsys", "_struct", "struct", "sqlite3", "json", "ast", "xml.etree.ElementTree"],
              hookspath=[],
              runtime_hooks=[],
-             excludes=["numpy", "scipy", 'matplotlib', 'PIL', 'cython', 'zmq'],
+             excludes=["numpy", "scipy", 'matplotlib','PIL','cython','zmq'],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
              cipher=block_cipher)
@@ -62,7 +55,7 @@ elif p == "darwin":
               strip=False,
               upx=True,
               console=False,
-              icon='res/icon/eduactiv8.ico')
+              icon='res/icon/eduactiv8.icns')
 
     app = BUNDLE(exe,
                  name='eduActiv8.app',
