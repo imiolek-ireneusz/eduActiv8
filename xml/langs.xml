@@ -253,8 +253,21 @@
           ico_suffix="ru"
           ltr="True"
           />
+        <lang id="22"
+          code="kab"
+          name="Taqbaylit"
+          name_en="Kabyle"
+          voice="None"
+          voice_mb="None"
+          use_mb="False"
+          has_uc="True"
+          has_cursive="True"
+          has_keyboard="False"
+          ico_suffix=""
+          ltr="True"
+          />
     <!--
-    <lang id="22"
+    <lang id="23"
           code="ml"
           name="മലയാളം"
           name_en="Malayalam"

@@ -2,9 +2,6 @@
 # Copyright (C) 2019 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
-# Translators:
-# Ireneusz Imiolek, 2019
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.19.02\n"
@@ -12,1760 +9,1760 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
+"Language: fi\n"
 
 msgid "cow"
-msgstr "cow"
+msgstr "lehmä"
 
 msgid "turkey"
-msgstr "turkey"
+msgstr "kalkkuna"
 
 msgid "shrimp"
-msgstr "shrimp"
+msgstr "katkarapu"
 
 msgid "wolf"
-msgstr "wolf"
+msgstr "susi"
 
 msgid "panther"
-msgstr "panther"
+msgstr "pantteri"
 
 msgid "panda"
 msgstr "panda"
 
 msgid "magpie"
-msgstr "magpie"
+msgstr "harakka"
 
 msgid "clam"
-msgstr "clam"
+msgstr "simpukka"
 
 msgid "pony"
-msgstr "pony"
+msgstr "poni"
 
 msgid "mouse"
-msgstr "mouse"
+msgstr "hiiri"
 
 msgid "pug"
-msgstr "pug"
+msgstr "mopsi"
 
 msgid "koala"
 msgstr "koala"
 
 msgid "frog"
-msgstr "frog"
+msgstr "sammakko"
 
 msgid "ladybug"
-msgstr "ladybug"
+msgstr "leppäkerttu"
 
 msgid "gorilla"
 msgstr "gorilla"
 
 msgid "llama"
-msgstr "llama"
+msgstr ""
 
 msgid "vulture"
-msgstr "vulture"
+msgstr "petolintu"
 
 msgid "hamster"
-msgstr "hamster"
+msgstr ""
 
 msgid "bird"
-msgstr "bird"
+msgstr "lintu"
 
 msgid "starfish"
-msgstr "starfish"
+msgstr "meritähti"
 
 msgid "crow"
-msgstr "crow"
+msgstr "varis"
 
 msgid "parakeet"
-msgstr "parakeet"
+msgstr "papukaija"
 
 msgid "caterpillar"
-msgstr "caterpillar"
+msgstr "toukka"
 
 msgid "tiger"
-msgstr "tiger"
+msgstr "tiikeri"
 
 msgid "hummingbird"
-msgstr "hummingbird"
+msgstr "kolibri"
 
 msgid "piranha"
-msgstr "piranha"
+msgstr "piraija"
 
 msgid "pig"
-msgstr "pig"
+msgstr "sika"
 
 msgid "scorpion"
-msgstr "scorpion"
+msgstr "skorpioni"
 
 msgid "fox"
-msgstr "fox"
+msgstr "kettu"
 
 msgid "leopard"
-msgstr "leopard"
+msgstr "leopardi"
 
 msgid "iguana"
-msgstr "iguana"
+msgstr "iguaani"
 
 msgid "dolphin"
-msgstr "dolphin"
+msgstr "delfiini"
 
 msgid "bat"
-msgstr "bat"
+msgstr "lepakko"
 
 msgid "chick"
-msgstr "chick"
+msgstr "kananpoika"
 
 msgid "crab"
-msgstr "crab"
+msgstr "rapu"
 
 msgid "hen"
-msgstr "hen"
+msgstr "kana"
 
 msgid "wasp"
-msgstr "wasp"
+msgstr "ampiainen"
 
 msgid "chameleon"
-msgstr "chameleon"
+msgstr "kameleontti"
 
 msgid "whale"
-msgstr "whale"
+msgstr "valas"
 
 msgid "hedgehog"
-msgstr "hedgehog"
+msgstr "siili"
 
 msgid "fawn"
-msgstr "fawn"
+msgstr "kellanruskea"
 
 msgid "moose"
-msgstr "moose"
+msgstr "hirvi"
 
 msgid "bee"
-msgstr "bee"
+msgstr "mehiläinen"
 
 msgid "viper"
-msgstr "viper"
+msgstr "kyy"
 
 msgid "shrike"
-msgstr "shrike"
+msgstr ""
 
 msgid "donkey"
-msgstr "donkey"
+msgstr ""
 
 msgid "guinea pig"
-msgstr "guinea pig"
+msgstr ""
 
 msgid "sloth"
-msgstr "sloth"
+msgstr "laiskiainen"
 
 msgid "horse"
-msgstr "horse"
+msgstr "hevonen"
 
 msgid "penguin"
-msgstr "penguin"
+msgstr ""
 
 msgid "otter"
-msgstr "otter"
+msgstr "saukko"
 
 msgid "bear"
-msgstr "bear"
+msgstr "karhu"
 
 msgid "zebra"
-msgstr "zebra"
+msgstr "seepra"
 
 msgid "ostrich"
-msgstr "ostrich"
+msgstr "strutsi"
 
 msgid "camel"
-msgstr "camel"
+msgstr "kameli"
 
 msgid "antelope"
-msgstr "antelope"
+msgstr "antilooppi"
 
 msgid "lemur"
-msgstr "lemur"
+msgstr "maki"
 
 msgid "pigeon"
-msgstr "pigeon"
+msgstr "kyyhkynen"
 
 msgid "lama"
-msgstr "lama"
+msgstr "laama"
 
 msgid "mole"
-msgstr "mole"
+msgstr "myyrä"
 
 msgid "ray"
-msgstr "ray"
+msgstr ""
 
 msgid "ram"
-msgstr "ram"
+msgstr ""
 
 msgid "skunk"
-msgstr "skunk"
+msgstr "haisunäätä"
 
 msgid "jellyfish"
-msgstr "jellyfish"
+msgstr "meduusa"
 
 msgid "sheep"
-msgstr "sheep"
+msgstr "lammas"
 
 msgid "shark"
-msgstr "shark"
+msgstr "hai"
 
 msgid "kitten"
-msgstr "kitten"
+msgstr "kissanpentu"
 
 msgid "deer"
-msgstr "deer"
+msgstr "kauris"
 
 msgid "snail"
-msgstr "snail"
+msgstr "etana"
 
 msgid "flamingo"
 msgstr "flamingo"
 
 msgid "rabbit"
-msgstr "rabbit"
+msgstr "kani"
 
 msgid "oyster"
-msgstr "oyster"
+msgstr "osteri"
 
 msgid "beaver"
-msgstr "beaver"
+msgstr "majava"
 
 msgid "sparrow"
-msgstr "sparrow"
+msgstr "pääskynen"
 
 msgid "dove"
-msgstr "dove"
+msgstr "kyyhkynen"
 
 msgid "eagle"
-msgstr "eagle"
+msgstr "kotka"
 
 msgid "beetle"
-msgstr "beetle"
+msgstr "koppakuoriainen"
 
 msgid "hippopotamus"
-msgstr "hippopotamus"
+msgstr "virtahepo"
 
 msgid "owl"
-msgstr "owl"
+msgstr "pöllö"
 
 msgid "cobra"
-msgstr "cobra"
+msgstr "kobra"
 
 msgid "salamander"
-msgstr "salamander"
+msgstr "salamanteri"
 
 msgid "goose"
-msgstr "goose"
+msgstr "hanhi"
 
 msgid "kangaroo"
-msgstr "kangaroo"
+msgstr "kenguru"
 
 msgid "dragonfly"
-msgstr "dragonfly"
+msgstr "sudenkorento"
 
 msgid "toad"
-msgstr "toad"
+msgstr "rupikonna"
 
 msgid "pelican"
-msgstr "pelican"
+msgstr "pelikaani"
 
 msgid "squid"
-msgstr "squid"
+msgstr "mustekala"
 
 msgid "lion cub"
-msgstr "lion cub"
+msgstr ""
 
 msgid "jaguar"
-msgstr "jaguar"
+msgstr "jaguaari"
 
 msgid "duck"
-msgstr "duck"
+msgstr "ankka"
 
 msgid "lizard"
-msgstr "lizard"
+msgstr "lisko"
 
 msgid "rhinoceros"
-msgstr "rhinoceros"
+msgstr "sarvikuono"
 
 msgid "hyena"
-msgstr "hyena"
+msgstr "hyeena"
 
 msgid "ox"
-msgstr "ox"
+msgstr "härkä"
 
 msgid "peacock"
-msgstr "peacock"
+msgstr "riikinkukko"
 
 msgid "parrot"
-msgstr "parrot"
+msgstr "papukaija"
 
 msgid "elk"
-msgstr "elk"
+msgstr "hirvi"
 
 msgid "alligator"
-msgstr "alligator"
+msgstr "alligaattori"
 
 msgid "ant"
-msgstr "ant"
+msgstr "muurahainen"
 
 msgid "goat"
-msgstr "goat"
+msgstr "vuohi"
 
 msgid "baby rabbit"
-msgstr "baby rabbit"
+msgstr ""
 
 msgid "lion"
-msgstr "lion"
+msgstr "leijona"
 
 msgid "squirrel"
-msgstr "squirrel"
+msgstr "orava"
 
 msgid "opossum"
-msgstr "opossum"
+msgstr "opossumi"
 
 msgid "chimp"
-msgstr "chimp"
+msgstr "simpanssi"
 
 msgid "doe"
-msgstr "doe"
+msgstr "naaraspeura"
 
 msgid "gopher"
-msgstr "gopher"
+msgstr ""
 
 msgid "elephant"
-msgstr "elephant"
+msgstr ""
 
 msgid "giraffe"
-msgstr "giraffe"
+msgstr "kirahvi"
 
 msgid "spider"
-msgstr "spider"
+msgstr "hämähäkki"
 
 msgid "puppy"
-msgstr "puppy"
+msgstr "koiranpentu"
 
 msgid "jay"
-msgstr "jay"
+msgstr "närhi"
 
 msgid "seal"
-msgstr "seal"
+msgstr ""
 
 msgid "rooster"
-msgstr "rooster"
+msgstr ""
 
 msgid "turtle"
-msgstr "turtle"
+msgstr "kilpikonna"
 
 msgid "bull"
-msgstr "bull"
+msgstr "härkä"
 
 msgid "cat"
-msgstr "cat"
+msgstr "kissa"
 
 msgid "rat"
-msgstr "rat"
+msgstr "rotta"
 
 msgid "slug"
-msgstr "slug"
+msgstr "etana"
 
 msgid "buffalo"
-msgstr "buffalo"
+msgstr "puhveli"
 
 msgid "blackbird"
-msgstr "blackbird"
+msgstr "mustarastas"
 
 msgid "swan"
-msgstr "swan"
+msgstr "joutsen"
 
 msgid "lobster"
-msgstr "lobster"
+msgstr "hummeri"
 
 msgid "dog"
-msgstr "dog"
+msgstr "koira"
 
 msgid "mosquito"
-msgstr "mosquito"
+msgstr "hyttynen"
 
 msgid "snake"
-msgstr "snake"
+msgstr "käärme"
 
 msgid "chicken"
-msgstr "chicken"
+msgstr "kana"
 
 msgid "anteater"
-msgstr "anteater"
+msgstr "muurahaiskarhu"
 
 msgid "judo"
 msgstr "judo"
 
 msgid "pool"
-msgstr "pool"
+msgstr "uima-allas"
 
 msgid "ride"
-msgstr "ride"
+msgstr "ratsastaa"
 
 msgid "stretch"
-msgstr "stretch"
+msgstr "venyttää"
 
 msgid "helmet"
-msgstr "helmet"
+msgstr "kypärä"
 
 msgid "ice skating"
-msgstr "ice skating"
+msgstr ""
 
 msgid "walk"
-msgstr "walk"
+msgstr "kävellä"
 
 msgid "run"
-msgstr "run"
+msgstr "juosta"
 
 msgid "swim"
-msgstr "swim"
+msgstr "uinti"
 
 msgid "hop"
-msgstr "hop"
+msgstr "hypätä"
 
 msgid "hike"
-msgstr "hike"
+msgstr "patikkaretki"
 
 msgid "boxing"
-msgstr "boxing"
+msgstr ""
 
 msgid "hockey"
-msgstr "hockey"
+msgstr "jääkiekko"
 
 msgid "race"
-msgstr "race"
+msgstr "kisa"
 
 msgid "throw"
-msgstr "throw"
+msgstr "heitto"
 
 msgid "skate"
-msgstr "skate"
+msgstr "luistelu"
 
 msgid "win"
-msgstr "win"
+msgstr "voittaa"
 
 msgid "squat"
-msgstr "squat"
+msgstr "kyykistyä"
 
 msgid "ski"
-msgstr "ski"
+msgstr "hiihto"
 
 msgid "golf"
 msgstr "golf"
 
 msgid "whistle"
-msgstr "whistle"
+msgstr ""
 
 msgid "torch"
-msgstr "torch"
+msgstr "soihtu"
 
 msgid "sailing"
-msgstr "sailing"
+msgstr ""
 
 msgid "stand"
-msgstr "stand"
+msgstr "seistä"
 
 msgid "tennis"
 msgstr "tennis"
 
 msgid "jump"
-msgstr "jump"
+msgstr "hypätä"
 
 msgid "rowing"
-msgstr "rowing"
+msgstr "soutu"
 
 msgid "jog"
-msgstr "jog"
+msgstr "hölkkä"
 
 msgid "rope"
-msgstr "rope"
+msgstr "köysi"
 
 msgid "teeth"
-msgstr "teeth"
+msgstr "hampaat"
 
 msgid "cheek"
-msgstr "cheek"
+msgstr "poski"
 
 msgid "ankle"
-msgstr "ankle"
+msgstr "nilkka"
 
 msgid "knee"
-msgstr "knee"
+msgstr "polvi"
 
 msgid "toe"
-msgstr "toe"
+msgstr "varvas"
 
 msgid "muscle"
-msgstr "muscle"
+msgstr "lihas"
 
 msgid "mouth"
-msgstr "mouth"
+msgstr "suu"
 
 msgid "feet"
-msgstr "feet"
+msgstr ""
 
 msgid "hand"
-msgstr "hand"
+msgstr "käsi"
 
 msgid "elbow"
-msgstr "elbow"
+msgstr "kyynärpää"
 
 msgid "hair"
-msgstr "hair"
+msgstr "tukka"
 
 msgid "eyelash"
-msgstr "eyelash"
+msgstr "silmäripsi"
 
 msgid "beard"
-msgstr "beard"
+msgstr "parta"
 
 msgid "belly button"
-msgstr "belly button"
+msgstr ""
 
 msgid "thumb"
-msgstr "thumb"
+msgstr "peukalo"
 
 msgid "breast"
-msgstr "breast"
+msgstr "rinta"
 
 msgid "nostril"
-msgstr "nostril"
+msgstr "sierain"
 
 msgid "nose"
-msgstr "nose"
+msgstr "nenä"
 
 msgid "hip"
-msgstr "hip"
+msgstr "lonkka"
 
 msgid "arm"
-msgstr "arm"
+msgstr "käsivarsi"
 
 msgid "eyebrow"
-msgstr "eyebrow"
+msgstr ""
 
 msgid "fist"
-msgstr "fist"
+msgstr "nyrkki"
 
 msgid "neck"
-msgstr "neck"
+msgstr "niska"
 
 msgid "wrist"
-msgstr "wrist"
+msgstr "ranne"
 
 msgid "throat"
-msgstr "throat"
+msgstr "kurkku"
 
 msgid "eye"
-msgstr "eye"
+msgstr ""
 
 msgid "leg"
-msgstr "leg"
+msgstr "sääri"
 
 msgid "spine"
-msgstr "spine"
+msgstr "selkäranka"
 
 msgid "ear"
-msgstr "ear"
+msgstr "korva"
 
 msgid "finger"
-msgstr "finger"
+msgstr "sormi"
 
 msgid "foot"
-msgstr "foot"
+msgstr "jalka"
 
 msgid "braid"
-msgstr "braid"
+msgstr "letti"
 
 msgid "face"
-msgstr "face"
+msgstr "kasvot"
 
 msgid "back"
-msgstr "back"
+msgstr "selkä"
 
 msgid "chin"
-msgstr "chin"
+msgstr "leuka"
 
 msgid "bottom"
-msgstr "bottom"
+msgstr "takamus"
 
 msgid "thigh"
-msgstr "thigh"
+msgstr "reisi"
 
 msgid "belly"
-msgstr "belly"
+msgstr "masu"
 
 msgid "girl"
-msgstr "girl"
+msgstr "tyttö"
 
 msgid "male"
-msgstr "male"
+msgstr ""
 
 msgid "son"
-msgstr "son"
+msgstr "poika"
 
 msgid "mates"
-msgstr "mates"
+msgstr ""
 
 msgid "friends"
-msgstr "friends"
+msgstr ""
 
 msgid "baby"
-msgstr "baby"
+msgstr ""
 
 msgid "child"
-msgstr "child"
+msgstr "lapsi"
 
 msgid "dad"
-msgstr "dad"
+msgstr "isä"
 
 msgid "mom"
-msgstr "mom"
+msgstr "äiti"
 
 msgid "twin boys"
-msgstr "twin boys"
+msgstr ""
 
 msgid "brothers"
-msgstr "brothers"
+msgstr ""
 
 msgid "man"
-msgstr "man"
+msgstr "mies"
 
 msgid "mother"
-msgstr "mother"
+msgstr "äiti"
 
 msgid "grandfather"
-msgstr "grandfather"
+msgstr ""
 
 msgid "family"
-msgstr "family"
+msgstr "perhe"
 
 msgid "female"
-msgstr "female"
+msgstr ""
 
 msgid "wife"
-msgstr "wife"
+msgstr "vaimo"
 
 msgid "husband"
-msgstr "husband"
+msgstr "aviomies"
 
 msgid "bride"
-msgstr "bride"
+msgstr "morsian"
 
 msgid "madam"
-msgstr "madam"
+msgstr ""
 
 msgid "grandmother"
-msgstr "grandmother"
+msgstr "isoäiti"
 
 msgid "couple"
-msgstr "couple"
+msgstr "pariskunta"
 
 msgid "lad"
-msgstr "lad"
+msgstr "poika"
 
 msgid "twin girls"
-msgstr "twin girls"
+msgstr ""
 
 msgid "tribe"
-msgstr "tribe"
+msgstr "heimo"
 
 msgid "boy"
-msgstr "boy"
+msgstr "poika"
 
 msgid "sisters"
-msgstr "sisters"
+msgstr ""
 
 msgid "woman"
-msgstr "woman"
+msgstr "nainen"
 
 msgid "lady"
-msgstr "lady"
+msgstr "rouva"
 
 msgid "candy"
-msgstr "candy"
+msgstr "karkki"
 
 msgid "sausage"
-msgstr "sausage"
+msgstr "makkara"
 
 msgid "hamburger"
-msgstr "hamburger"
+msgstr "hampurilainen"
 
 msgid "steak"
-msgstr "steak"
+msgstr ""
 
 msgid "fudge"
-msgstr "fudge"
+msgstr "toffee"
 
 msgid "doughnut"
-msgstr "doughnut"
+msgstr "donitsi"
 
 msgid "coconut"
-msgstr "coconut"
+msgstr "kookos"
 
 msgid "rice"
-msgstr "rice"
+msgstr "riisi"
 
 msgid "ice cream"
-msgstr "ice cream"
+msgstr ""
 
 msgid "jelly"
-msgstr "jelly"
+msgstr "hyytelö"
 
 msgid "yoghurt"
-msgstr "yoghurt"
+msgstr ""
 
 msgid "dessert"
-msgstr "dessert"
+msgstr "jälkiruoka"
 
 msgid "pretzel"
-msgstr "pretzel"
+msgstr ""
 
 msgid "peanut"
-msgstr "peanut"
+msgstr ""
 
 msgid "jam"
-msgstr "jam"
+msgstr "hillo"
 
 msgid "feast"
-msgstr "feast"
+msgstr "juhla"
 
 msgid "cookie"
-msgstr "cookie"
+msgstr "keksi"
 
 msgid "bacon"
-msgstr "bacon"
+msgstr ""
 
 msgid "spice"
-msgstr "spice"
+msgstr "mauste"
 
 msgid "coffee"
-msgstr "coffee"
+msgstr "kahvi"
 
 msgid "pie"
-msgstr "pie"
+msgstr "piirakka"
 
 msgid "lemonade"
-msgstr "lemonade"
+msgstr "limonadi"
 
 msgid "chocolate"
-msgstr "chocolate"
+msgstr "suklaa"
 
 msgid "water bottle"
-msgstr "water bottle"
+msgstr ""
 
 msgid "lunch"
-msgstr "lunch"
+msgstr "lounas"
 
 msgid "ice"
-msgstr "ice"
+msgstr "jää"
 
 msgid "sugar"
-msgstr "sugar"
+msgstr "sokeri"
 
 msgid "sauce"
-msgstr "sauce"
+msgstr "kastike"
 
 msgid "soup"
-msgstr "soup"
+msgstr "keitto"
 
 msgid "juice"
-msgstr "juice"
+msgstr "mehu"
 
 msgid "fries"
-msgstr "fries"
+msgstr "ranskalaiset"
 
 msgid "cake"
-msgstr "cake"
+msgstr "kakku"
 
 msgid "mashed potatoes"
-msgstr "mashed potatoes"
+msgstr ""
 
 msgid "tea"
-msgstr "tea"
+msgstr ""
 
 msgid "bun"
-msgstr "bun"
+msgstr "pulla"
 
 msgid "cheese"
-msgstr "cheese"
+msgstr "juusto"
 
 msgid "beef"
-msgstr "beef"
+msgstr ""
 
 msgid "sandwich"
-msgstr "sandwich"
+msgstr "voileipä"
 
 msgid "slice"
-msgstr "slice"
+msgstr ""
 
 msgid "sprinkle"
-msgstr "sprinkle"
+msgstr "nonparelli"
 
 msgid "pizza"
-msgstr "pizza"
+msgstr "pitsa"
 
 msgid "flour"
-msgstr "flour"
+msgstr "jauhot"
 
 msgid "gum"
-msgstr "gum"
+msgstr "purukumi"
 
 msgid "spaghetti"
-msgstr "spaghetti"
+msgstr "spagetti"
 
 msgid "roast"
-msgstr "roast"
+msgstr "paisti"
 
 msgid "stew"
-msgstr "stew"
+msgstr "muhennos"
 
 msgid "spread"
-msgstr "spread"
+msgstr "levittää"
 
 msgid "meat"
-msgstr "meat"
+msgstr "liha"
 
 msgid "milk"
-msgstr "milk"
+msgstr "maito"
 
 msgid "meal"
-msgstr "meal"
+msgstr "ateria"
 
 msgid "corn"
-msgstr "corn"
+msgstr "maissi"
 
 msgid "bread"
-msgstr "bread"
+msgstr "leipä"
 
 msgid "walnut"
-msgstr "walnut"
+msgstr "saksanpähkinä"
 
 msgid "egg"
-msgstr "egg"
+msgstr "kananmuna"
 
 msgid "hot dog"
-msgstr "hot dog"
+msgstr ""
 
 msgid "ham"
-msgstr "ham"
+msgstr "kinkku"
 
 msgid "jewellery"
-msgstr "jewellery"
+msgstr ""
 
 msgid "sock"
-msgstr "sock"
+msgstr "sukka"
 
 msgid "jacket"
-msgstr "jacket"
+msgstr "takki"
 
 msgid "heel"
-msgstr "heel"
+msgstr "kantapää"
 
 msgid "smock"
-msgstr "smock"
+msgstr "työtakki"
 
 msgid "shorts"
-msgstr "shorts"
+msgstr ""
 
 msgid "pocket"
-msgstr "pocket"
+msgstr "tasku"
 
 msgid "necklace"
-msgstr "necklace"
+msgstr "kaulakoru"
 
 msgid "sweatshirt"
-msgstr "sweatshirt"
+msgstr "huppari"
 
 msgid "uniform"
-msgstr "uniform"
+msgstr "univormu"
 
 msgid "raincoat"
-msgstr "raincoat"
+msgstr "sadetakki"
 
 msgid "trousers"
-msgstr "trousers"
+msgstr ""
 
 msgid "sunglasses"
-msgstr "sunglasses"
+msgstr ""
 
 msgid "coat"
-msgstr "coat"
+msgstr "takki"
 
 msgid "pullover"
-msgstr "pullover"
+msgstr "villapaita"
 
 msgid "shirt"
-msgstr "shirt"
+msgstr "paita"
 
 msgid "sandals"
-msgstr "sandals"
+msgstr "sandaalit"
 
 msgid "suit"
-msgstr "suit"
+msgstr "puku"
 
 msgid "pyjamas"
-msgstr "pyjamas"
+msgstr ""
 
 msgid "skirt"
-msgstr "skirt"
+msgstr "mekko"
 
 msgid "zip"
-msgstr "zip"
+msgstr ""
 
 msgid "shoes"
-msgstr "shoes"
+msgstr ""
 
 msgid "jewel"
-msgstr "jewel"
+msgstr "jalokivi"
 
 msgid "tie"
-msgstr "tie"
+msgstr ""
 
 msgid "slippers"
-msgstr "slippers"
+msgstr "tossut"
 
 msgid "gloves"
-msgstr "gloves"
+msgstr ""
 
 msgid "hat"
-msgstr "hat"
+msgstr "hattu"
 
 msgid "sleeve"
-msgstr "sleeve"
+msgstr "hiha"
 
 msgid "cap"
-msgstr "cap"
+msgstr "lakki"
 
 msgid "swimming suit"
-msgstr "swimming suit"
+msgstr ""
 
 msgid "trainer"
-msgstr "trainer"
+msgstr ""
 
 msgid "vest"
-msgstr "vest"
+msgstr "liivi"
 
 msgid "glasses"
-msgstr "glasses"
+msgstr "silmälasit"
 
 msgid "shoelace"
-msgstr "shoelace"
+msgstr "kengännauha"
 
 msgid "patch"
-msgstr "patch"
+msgstr "paikka"
 
 msgid "scarf"
-msgstr "scarf"
+msgstr "huivi"
 
 msgid "shoe"
-msgstr "shoe"
+msgstr "kenkä"
 
 msgid "button"
-msgstr "button"
+msgstr "nappi"
 
 msgid "dress"
-msgstr "dress"
+msgstr "puku"
 
 msgid "sash"
-msgstr "sash"
+msgstr "liina"
 
 msgid "shoe sole"
-msgstr "shoe sole"
+msgstr ""
 
 msgid "robe"
-msgstr "robe"
+msgstr "kylpytakki"
 
 msgid "pants"
-msgstr "pants"
+msgstr "housut"
 
 msgid "kimono"
 msgstr "kimono"
 
 msgid "overalls"
-msgstr "overalls"
+msgstr ""
 
 msgid "lick"
-msgstr "lick"
+msgstr "nuolla"
 
 msgid "slam"
-msgstr "slam"
+msgstr "läimäyttää"
 
 msgid "beg"
-msgstr "beg"
+msgstr "rukoilla"
 
 msgid "fell"
-msgstr "fell"
+msgstr ""
 
 msgid "scratch"
-msgstr "scratch"
+msgstr "raapia"
 
 msgid "touch"
-msgstr "touch"
+msgstr "koskettaa"
 
 msgid "sniff"
-msgstr "sniff"
+msgstr "nuuhkaista"
 
 msgid "see"
-msgstr "see"
+msgstr "nähdä"
 
 msgid "climb"
-msgstr "climb"
+msgstr "nousu"
 
 msgid "dig"
-msgstr "dig"
+msgstr "kaivaa"
 
 msgid "howl"
-msgstr "howl"
+msgstr "ulvoa"
 
 msgid "sleep"
-msgstr "sleep"
+msgstr "nukkua"
 
 msgid "explore"
-msgstr "explore"
+msgstr "tutkia"
 
 msgid "draw"
-msgstr "draw"
+msgstr "piirtää"
 
 msgid "hug"
-msgstr "hug"
+msgstr "halata"
 
 msgid "teach"
-msgstr "teach"
+msgstr "opettaa"
 
 msgid "nap"
-msgstr "nap"
+msgstr "torkkua"
 
 msgid "clay"
-msgstr "clay"
+msgstr "savi"
 
 msgid "catch"
-msgstr "catch"
+msgstr "ottaa kiinni"
 
 msgid "clap"
-msgstr "clap"
+msgstr "taputtaa"
 
 msgid "cry"
-msgstr "cry"
+msgstr "itkeä"
 
 msgid "sing"
-msgstr "sing"
+msgstr "laulaa"
 
 msgid "meet"
-msgstr "meet"
+msgstr "tavata"
 
 msgid "sell"
-msgstr "sell"
+msgstr ""
 
 msgid "peck"
-msgstr "peck"
+msgstr "nokkia"
 
 msgid "beat"
-msgstr "beat"
+msgstr "lyödä"
 
 msgid "kneel"
-msgstr "kneel"
+msgstr "polvistua"
 
 msgid "find"
-msgstr "find"
+msgstr "etsiä"
 
 msgid "dance"
-msgstr "dance"
+msgstr "tanssi"
 
 msgid "cough"
-msgstr "cough"
+msgstr "yskiä"
 
 msgid "cut"
-msgstr "cut"
+msgstr "leikata"
 
 msgid "think"
-msgstr "think"
+msgstr "ajatella"
 
 msgid "bark"
-msgstr "bark"
+msgstr "haukkua"
 
 msgid "speak"
-msgstr "speak"
+msgstr "puhua"
 
 msgid "cheer"
-msgstr "cheer"
+msgstr "tervehdys"
 
 msgid "bake"
-msgstr "bake"
+msgstr ""
 
 msgid "write"
-msgstr "write"
+msgstr "kirjoittaa"
 
 msgid "punch"
-msgstr "punch"
+msgstr ""
 
 msgid "strum"
-msgstr "strum"
+msgstr ""
 
 msgid "study"
-msgstr "study"
+msgstr "opiskella"
 
 msgid "plow"
-msgstr "plow"
+msgstr "kyntää"
 
 msgid "dream"
-msgstr "dream"
+msgstr "nähdä unta"
 
 msgid "post"
-msgstr "post"
+msgstr "lähettää"
 
 msgid "dive"
-msgstr "dive"
+msgstr "sukellus"
 
 msgid "whisper"
-msgstr "whisper"
+msgstr "kuiskata"
 
 msgid "sob"
-msgstr "sob"
+msgstr "nyyhkytys"
 
 msgid "shake"
-msgstr "shake"
+msgstr "ravistaa"
 
 msgid "feed"
-msgstr "feed"
+msgstr "syöttää"
 
 msgid "crawl"
-msgstr "crawl"
+msgstr "ryömiä"
 
 msgid "camp"
-msgstr "camp"
+msgstr "leiri"
 
 msgid "spill"
-msgstr "spill"
+msgstr "läikyttää"
 
 msgid "clean"
-msgstr "clean"
+msgstr "siivota"
 
 msgid "scream"
-msgstr "scream"
+msgstr "kirkua"
 
 msgid "tear"
-msgstr "tear"
+msgstr "repiä"
 
 msgid "float"
-msgstr "float"
+msgstr "kellua"
 
 msgid "pull"
-msgstr "pull"
+msgstr "vetää"
 
 msgid "ate"
-msgstr "ate"
+msgstr ""
 
 msgid "kiss"
-msgstr "kiss"
+msgstr "suudella"
 
 msgid "sit"
-msgstr "sit"
+msgstr "istua"
 
 msgid "hatch"
-msgstr "hatch"
+msgstr "kuoriutua"
 
 msgid "blink"
-msgstr "blink"
+msgstr "räpäyttää"
 
 msgid "hear"
-msgstr "hear"
+msgstr "kuulla"
 
 msgid "smooch"
-msgstr "smooch"
+msgstr "pussata"
 
 msgid "play"
-msgstr "play"
+msgstr "leikkiä"
 
 msgid "wash"
-msgstr "wash"
+msgstr "pestä"
 
 msgid "chat"
-msgstr "chat"
+msgstr "jutella"
 
 msgid "drive"
-msgstr "drive"
+msgstr "ajaa"
 
 msgid "to drink"
-msgstr "drink"
+msgstr "juoma"
 
 msgid "fly"
-msgstr "fly"
+msgstr "lentää"
 
 msgid "juggle"
-msgstr "juggle"
+msgstr ""
 
 msgid "bit"
-msgstr "bit"
+msgstr "bitti"
 
 msgid "sweep"
-msgstr "sweep"
+msgstr ""
 
 msgid "look"
-msgstr "look"
+msgstr "katsoa"
 
 msgid "knit"
-msgstr "knit"
+msgstr "kutoa"
 
 msgid "lift"
-msgstr "lift"
+msgstr "hissi"
 
 msgid "fetch"
-msgstr "fetch"
+msgstr "noutaa"
 
 msgid "read"
-msgstr "read"
+msgstr "lukea"
 
 msgid "croak"
-msgstr "croak"
+msgstr "kurnuttaa"
 
 msgid "stare"
-msgstr "stare"
+msgstr "tuijottaa"
 
 msgid "eat"
-msgstr "eat"
+msgstr "syödä"
 
 msgid "lighthouse"
-msgstr "lighthouse"
+msgstr "majakka"
 
 msgid "door"
-msgstr "door"
+msgstr "ovi"
 
 msgid "circus"
-msgstr "circus"
+msgstr "sirkus"
 
 msgid "church"
-msgstr "church"
+msgstr ""
 
 msgid "kennel"
-msgstr "kennel"
+msgstr ""
 
 msgid "temple"
-msgstr "temple"
+msgstr "temppeli"
 
 msgid "smoke"
-msgstr "smoke"
+msgstr "savu"
 
 msgid "chimney"
-msgstr "chimney"
+msgstr "savupiippu"
 
 msgid "brick"
-msgstr "brick"
+msgstr "tiili"
 
 msgid "well"
-msgstr "well"
+msgstr ""
 
 msgid "street"
-msgstr "street"
+msgstr "katu"
 
 msgid "castle"
-msgstr "castle"
+msgstr "linna"
 
 msgid "store"
-msgstr "store"
+msgstr "kauppa"
 
 msgid "staircase"
-msgstr "staircase"
+msgstr "portaikko"
 
 msgid "school"
-msgstr "school"
+msgstr "koulu"
 
 msgid "farm"
-msgstr "farm"
+msgstr "maatila"
 
 msgid "bridge"
-msgstr "bridge"
+msgstr "silta"
 
 msgid "dam"
-msgstr "dam"
+msgstr "pato"
 
 msgid "pyramid"
-msgstr "pyramid"
+msgstr "pyramidi"
 
 msgid "barn"
-msgstr "barn"
+msgstr "lato"
 
 msgid "mill"
-msgstr "mill"
+msgstr "mylly"
 
 msgid "window"
-msgstr "window"
+msgstr "ikkuna"
 
 msgid "cabin"
-msgstr "cabin"
+msgstr "hytti"
 
 msgid "step"
-msgstr "step"
+msgstr "porras"
 
 msgid "shop"
-msgstr "shop"
+msgstr "kauppa"
 
 msgid "shed"
-msgstr "shed"
+msgstr "vaja"
 
 msgid "roof"
-msgstr "roof"
+msgstr "katto"
 
 msgid "steeple"
-msgstr "steeple"
+msgstr "kirkontorni"
 
 msgid "garage"
-msgstr "garage"
+msgstr "autotalli"
 
 msgid "mosque"
-msgstr "mosque"
+msgstr "moskeija"
 
 msgid "hospital"
-msgstr "hospital"
+msgstr "sairaala"
 
 msgid "tent"
-msgstr "tent"
+msgstr "teltta"
 
 msgid "house"
-msgstr "house"
+msgstr "talo"
 
 msgid "wall"
-msgstr "wall"
+msgstr "seinä"
 
 msgid "bank"
-msgstr "bank"
+msgstr "rinne"
 
 msgid "shutter"
-msgstr "shutter"
+msgstr "ikkunaluukku"
 
 msgid "hut"
-msgstr "hut"
+msgstr "maja"
 
 msgid "land"
-msgstr "land"
+msgstr "maa"
 
 msgid "cliff"
-msgstr "cliff"
+msgstr "kallio"
 
 msgid "hill"
-msgstr "hill"
+msgstr "mäki"
 
 msgid "canyon"
-msgstr "canyon"
+msgstr "kanjoni"
 
 msgid "rock"
-msgstr "rock"
+msgstr "lohkare"
 
 msgid "sea"
-msgstr "sea"
+msgstr "meri"
 
 msgid "lake"
-msgstr "lake"
+msgstr "järvi"
 
 msgid "coast"
-msgstr "coast"
+msgstr "rannikko"
 
 msgid "shore"
-msgstr "shore"
+msgstr "ranta"
 
 msgid "mountain"
-msgstr "mountain"
+msgstr "vuori"
 
 msgid "pond"
-msgstr "pond"
+msgstr "lampi"
 
 msgid "peak"
-msgstr "peak"
+msgstr "huippu"
 
 msgid "lava"
-msgstr "lava"
+msgstr "laava"
 
 msgid "cave"
-msgstr "cave"
+msgstr "luola"
 
 msgid "dune"
-msgstr "dune"
+msgstr "dyyni"
 
 msgid "island"
-msgstr "island"
+msgstr "saari"
 
 msgid "forest"
-msgstr "forest"
+msgstr "metsä"
 
 msgid "desert"
-msgstr "desert"
+msgstr "aavikko"
 
 msgid "iceberg"
-msgstr "iceberg"
+msgstr "jäävuori"
 
 msgid "clown"
-msgstr "clown"
+msgstr "pelle"
 
 msgid "engineer"
-msgstr "engineer"
+msgstr "insinööri"
 
 msgid "priest"
-msgstr "priest"
+msgstr "pappi"
 
 msgid "vet"
-msgstr "vet"
+msgstr "eläinlääkäri"
 
 msgid "judge"
-msgstr "judge"
+msgstr "tuomari"
 
 msgid "chef"
-msgstr "chef"
+msgstr "kokki"
 
 msgid "athlete"
-msgstr "athlete"
+msgstr "yleisurheilija"
 
 msgid "librarian"
-msgstr "librarian"
+msgstr "kirjastonhoitaja"
 
 msgid "juggler"
-msgstr "juggler"
+msgstr "jonglööri"
 
 msgid "policeman"
-msgstr "policeman"
+msgstr ""
 
 msgid "plumber"
-msgstr "plumber"
+msgstr "putkiasentaja"
 
 msgid "badge"
-msgstr "badge"
+msgstr "virkamerkki"
 
 msgid "queen"
-msgstr "queen"
+msgstr "kuningatar"
 
 msgid "farmer"
-msgstr "farmer"
+msgstr "maanviljelijä"
 
 msgid "magician"
-msgstr "magician"
+msgstr ""
 
 msgid "knight"
-msgstr "knight"
+msgstr "ritari"
 
 msgid "doctor"
-msgstr "doctor"
+msgstr "lääkäri"
 
 msgid "bricklayer"
-msgstr "bricklayer"
+msgstr "muurari"
 
 msgid "cleaner"
-msgstr "cleaner"
+msgstr ""
 
 msgid "teacher"
-msgstr "teacher"
+msgstr "opettaja"
 
 msgid "hunter"
-msgstr "hunter"
+msgstr "metsästäjä"
 
 msgid "soldier"
-msgstr "soldier"
+msgstr "sotilas"
 
 msgid "musician"
-msgstr "musician"
+msgstr "muusikko"
 
 msgid "lawyer"
-msgstr "lawyer"
+msgstr "juristi"
 
 msgid "fisherman"
-msgstr "fisherman"
+msgstr "kalastaja"
 
 msgid "princess"
-msgstr "princess"
+msgstr "prinsessa"
 
 msgid "fireman"
-msgstr "fireman"
+msgstr "palomies"
 
 msgid "nun"
-msgstr "nun"
+msgstr "nunna"
 
 msgid "pirate"
-msgstr "pirate"
+msgstr "merirosvo"
 
 msgid "cowboy"
 msgstr "cowboy"
 
 msgid "electrician"
-msgstr "electrician"
+msgstr "sähköasentaja"
 
 msgid "nurse"
-msgstr "nurse"
+msgstr "sairaanhoitaja"
 
 msgid "king"
-msgstr "king"
+msgstr "kuningas"
 
 msgid "president"
-msgstr "president"
+msgstr "presidentti"
 
 msgid "office worker"
-msgstr "office worker"
+msgstr ""
 
 msgid "carpenter"
-msgstr "carpenter"
+msgstr "puuseppä"
 
 msgid "jockey"
 msgstr "jockey"
 
 msgid "worker"
-msgstr "worker"
+msgstr "työntekijä"
 
 msgid "mechanic"
-msgstr "mechanic"
+msgstr "mekaanikko"
 
 msgid "pilot"
-msgstr "pilot"
+msgstr "ohjaaja"
 
 msgid "actor"
-msgstr "actor"
+msgstr "näyttelijä"
 
 msgid "cook"
-msgstr "cook"
+msgstr "keittää"
 
 msgid "student"
-msgstr "student"
+msgstr "opiskelija"
 
 msgid "butcher"
-msgstr "butcher"
+msgstr "lihakauppias"
 
 msgid "accountant"
-msgstr "accountant"
+msgstr "kirjanpitäjä"
 
 msgid "prince"
-msgstr "prince"
+msgstr "prinssi"
 
 msgid "pope"
-msgstr "pope"
+msgstr "paavi"
 
 msgid "sailor"
-msgstr "sailor"
+msgstr "merimies"
 
 msgid "boxer"
-msgstr "boxer"
+msgstr "nyrkkeilijä"
 
 msgid "ballet dancer"
-msgstr "ballet dancer"
+msgstr ""
 
 msgid "coach"
-msgstr "coach"
+msgstr "valmentaja"
 
 msgid "astronaut"
-msgstr "astronaut"
+msgstr "avaruuslentäjä"
 
 msgid "painter"
-msgstr "painter"
+msgstr ""
 
 msgid "anaesthesiologist"
-msgstr "anaesthesiologist"
+msgstr ""
 
 msgid "scientist"
-msgstr "scientist"
+msgstr ""
 
 msgid "carrot"
-msgstr "carrot"
+msgstr "porkkana"
 
 msgid "blackberries"
-msgstr "blackberries"
+msgstr ""
 
 msgid "celery"
-msgstr "celery"
+msgstr "selleri"
 
 msgid "turnip"
-msgstr "turnip"
+msgstr "nauris"
 
 msgid "cacao"
-msgstr "cacao"
+msgstr "kaakao"
 
 msgid "peach"
-msgstr "peach"
+msgstr "persikka"
 
 msgid "melon"
-msgstr "melon"
+msgstr "meloni"
 
 msgid "grapefruit"
-msgstr "grapefruit"
+msgstr "ananas"
 
 msgid "broccoli"
-msgstr "broccoli"
+msgstr "parsakaali"
 
 msgid "grapes"
-msgstr "grapes"
+msgstr ""
 
 msgid "spinach"
-msgstr "spinach"
+msgstr "pinaatti"
 
 msgid "fig"
-msgstr "fig"
+msgstr "viikuna"
 
 msgid "kernel"
-msgstr "kernel"
+msgstr "ydin"
 
 msgid "radish"
-msgstr "radish"
+msgstr "retiisi"
 
 msgid "tomato"
-msgstr "tomato"
+msgstr ""
 
 msgid "kiwi"
-msgstr "kiwi"
+msgstr "kiivi"
 
 msgid "asparagus"
-msgstr "asparagus"
+msgstr "parsa"
 
 msgid "olives"
-msgstr "olives"
+msgstr ""
 
 msgid "cucumbers"
-msgstr "cucumbers"
+msgstr ""
 
 msgid "beans"
-msgstr "beans"
+msgstr ""
 
 msgid "strawberry"
-msgstr "strawberry"
+msgstr "mansikka"
 
 msgid "peppers"
-msgstr "peppers"
+msgstr "pippuri"
 
 msgid "raspberry"
-msgstr "raspberry"
+msgstr "vadelma"
 
 msgid "apricot"
-msgstr "apricot"
+msgstr "aprikoosi"
 
 msgid "potatoes"
-msgstr "potatoes"
+msgstr ""
 
 msgid "peas"
-msgstr "peas"
+msgstr ""
 
 msgid "cabbage"
-msgstr "cabbage"
+msgstr "kaali"
 
 msgid "cherries"
-msgstr "cherries"
+msgstr ""
 
 msgid "squash"
-msgstr "squash"
+msgstr "kurpitsa"
 
 msgid "blueberries"
-msgstr "blueberries"
+msgstr ""
 
 msgid "pear"
-msgstr "pear"
+msgstr "päärynä"
 
 msgid "orange"
-msgstr "orange"
+msgstr "appelsiini"
 
 msgid "pumpkin"
-msgstr "pumpkin"
+msgstr "kurpitsa"
 
 msgid "avocado"
-msgstr "avocado"
+msgstr "avokado"
 
 msgid "garlic"
-msgstr "garlic"
+msgstr "valkosipuli"
 
 msgid "onion"
-msgstr "onion"
+msgstr "sipuli"
 
 msgid "apple"
-msgstr "apple"
+msgstr "omena"
 
 msgid "lime"
-msgstr "lime"
+msgstr "limetti"
 
 msgid "cauliflower"
-msgstr "cauliflower"
+msgstr "kukkakaali"
 
 msgid "mango"
 msgstr "mango"
 
 msgid "lettuce"
-msgstr "lettuce"
+msgstr "lehtisalaatti"
 
 msgid "lemon"
-msgstr "lemon"
+msgstr "sitruuna"
 
 msgid "aubergine"
-msgstr "aubergine"
+msgstr ""
 
 msgid "artichokes"
-msgstr "artichokes"
+msgstr ""
 
 msgid "plums"
-msgstr "plums"
+msgstr ""
 
 msgid "leek"
-msgstr "leek"
+msgstr "purjo"
 
 msgid "bananas"
-msgstr "bananas"
+msgstr ""
 
 msgid "papaya"
-msgstr "papaya"
+msgstr "papaija"
 
 msgid "sail"
-msgstr "sail"
+msgstr "purje"
 
 msgid "taxi"
-msgstr "taxi"
+msgstr "taksi"
 
 msgid "car"
-msgstr "car"
+msgstr "auto"
 
 msgid "bike"
-msgstr "bike"
+msgstr "polkupyörä"
 
 msgid "raft"
-msgstr "raft"
+msgstr "lautta"
 
 msgid "pedal"
-msgstr "pedal"
+msgstr "poljin"
 
 msgid "bus"
-msgstr "bus"
+msgstr "linja-auto"
 
 msgid "handlebar"
-msgstr "handlebar"
+msgstr "kahva"
 
 msgid "boat"
-msgstr "boat"
+msgstr "vene"
 
 msgid "truck"
-msgstr "truck"
+msgstr "kuorma-auto"
 
 msgid "sleigh"
-msgstr "sleigh"
+msgstr "kelkka"
 
 msgid "carpet"
-msgstr "carpet"
+msgstr "matto"
 
 msgid "motorcycle"
-msgstr "motorcycle"
+msgstr "moottoripyörä"
 
 msgid "train"
-msgstr "train"
+msgstr "juna"
 
 msgid "ship"
-msgstr "ship"
+msgstr "laiva"
 
 msgid "van"
-msgstr "van"
+msgstr "pakettiauto"
 
 msgid "canoe"
-msgstr "canoe"
+msgstr "kanootti"
 
 msgid "rocket"
-msgstr "rocket"
+msgstr "raketti"
 
 msgid "mast"
-msgstr "mast"
+msgstr "masto"
 
 msgid "sledge"
-msgstr "sledge"
+msgstr ""
 
 msgid "bicycle"
-msgstr "bicycle"
+msgstr ""
 

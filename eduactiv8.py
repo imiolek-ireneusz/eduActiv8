@@ -1,8 +1,8 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # eduActiv8 - Educational Activities for Kids
-# Copyright (C) 2012-2019  Ireneusz Imiolek
+# Copyright (C) 2012-2022  Ireneusz Imiolek
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,6 +31,7 @@
 
 # Import the android module. If we can't import it, set it to None - this
 # lets us test it, and check to see if we want android-specific behavior.
+__version__ = "4.22.08"
 try:
     import android
 except ImportError:
@@ -60,7 +61,7 @@ import classes.dialogwnd
 import classes.updater
 import classes.sizer
 
-import stresstest
+# import stresstest
 
 # setting the working directory to the directory of this file
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
@@ -378,8 +379,10 @@ class GamePlay:
                                 self.config.settings["screenh"] <= self.config.size_limits[3]:
                     self.wn_size = [self.config.settings["screenw"], self.config.settings["screenh"]]
                 else:
-                    self.wn_size = [min(self.config.fs_width - self.config.os_panels_w, self.config.size_limits[2]),
-                                    min(self.config.fs_height - self.config.os_panels_h, self.config.size_limits[3])]
+                    # set default screen size - as small as possible
+                    #self.wn_size = [min(self.config.fs_width - self.config.os_panels_w, self.config.size_limits[2]),
+                    #                min(self.config.fs_height - self.config.os_panels_h, self.config.size_limits[3])]
+                    self.wn_size = [800, 600]
                     self.config.settings["screenw"] = self.wn_size[0]
                     self.config.settings["screenh"] = self.wn_size[1]
 

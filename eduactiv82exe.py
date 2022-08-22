@@ -72,7 +72,7 @@ class BuildExe:
         # Auhor of program
         self.author_name = "Ireneusz Imiolek"
         self.author_email = "imiolek.i@gmail.com"
-        self.copyright = "Copyright (c) 2012-2019 Ireneusz Imiolek"
+        self.copyright = "Copyright (c) 2012-2022 Ireneusz Imiolek"
 
         # Description
         self.project_description = "eduActiv8 - Educational Activities for Kids"
@@ -94,6 +94,13 @@ class BuildExe:
 
         # python scripts (strings) to be included, seperated by a comma
         self.extra_scripts = []
+        lst = self.find_extra_scripts("i18n", '*.py')
+        # change backlash into a module dot notation
+        self.extra_scripts = []
+        for each in lst:
+            if each[-3:] == ".py":
+                each = each.replace("\\", ".").replace(".py", "")
+                self.extra_scripts.append(each)
 
         # Zip file name (None will bundle files in exe instead of zip file)
         self.zipfile_name = None
@@ -124,6 +131,34 @@ class BuildExe:
                         names.append(filename)
             if names:
                 lst.append((dirname, names))
+
+        file_list = []
+        recursive = kw.get('recursive', True)
+        if recursive:
+            os.path.walk(srcdir, walk_helper, (file_list, wildcards))
+        else:
+            walk_helper((file_list, wildcards),
+                        srcdir,
+                        [os.path.basename(f) for f in glob.glob(self.opj(srcdir, '*'))])
+        return file_list
+
+    def find_extra_scripts(self, srcdir, *wildcards, **kw):
+        # get a list of all files under the srcdir matching wildcards,
+        # returned in a format to be used for install_data
+        def walk_helper(arg, dirname, files):
+            if '.svn' in dirname:
+                return
+            names = []
+            lst, wildcards = arg
+            for wc in wildcards:
+                wc_name = self.opj(dirname, wc)
+                for f in files:
+                    filename = self.opj(dirname, f)
+
+                    if fnmatch.fnmatch(filename, wc_name) and not os.path.isdir(filename):
+                        names.append(filename)
+            if names:
+                lst.extend(names)
 
         file_list = []
         recursive = kw.get('recursive', True)
