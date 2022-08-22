@@ -11,7 +11,8 @@ import re
 import word_list
 import copy
 
-lang_files = ["content-es.json", "content-ca.json", "content-it.json", "content-pt.json"]
+#lang_files = ["content-es.json", "content-ca.json", "content-it.json", "content-pt.json"]
+lang_files = ["content-fi.json"]
 
 ea8_lists_str = ["a4a_animals", "a4a_sport", "a4a_body", "a4a_people", "a4a_food", "a4a_clothes_n_accessories",
                  "a4a_actions", "a4a_construction", "a4a_nature", "a4a_jobs", "a4a_fruit_n_veg", "a4a_transport"]
