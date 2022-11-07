@@ -1,4 +1,7 @@
 Changelog:
+eduActiv8 - 4.22.11:
+    - Spanish and Finnish translations updated.
+    - Maintenance updates.
 eduActiv8 - 4.21.07:
     - Added a way to start any activity from the home screen by typing in its ID.
     - Additional activities redesigned

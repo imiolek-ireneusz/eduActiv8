@@ -31,7 +31,7 @@
 
 # Import the android module. If we can't import it, set it to None - this
 # lets us test it, and check to see if we want android-specific behavior.
-__version__ = "4.22.08"
+__version__ = "4.22.11"
 try:
     import android
 except ImportError:
