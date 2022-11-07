@@ -2,6 +2,9 @@
 # Copyright (C) 2019 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
+# Kindly Shared by GCompris Maintainers
+# From: https://invent.kde.org/education/gcompris/-/blob/master/src/activities/lang/resource/content-fi.json
+
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.19.02\n"
@@ -996,13 +999,13 @@ msgid "beg"
 msgstr "rukoilla"
 
 msgid "fell"
-msgstr ""
+msgstr "kaatua"
 
 msgid "scratch"
 msgstr "raapia"
 
 msgid "touch"
-msgstr "koskettaa"
+msgstr "koskea"
 
 msgid "sniff"
 msgstr "nuuhkaista"
@@ -1068,7 +1071,7 @@ msgid "kneel"
 msgstr "polvistua"
 
 msgid "find"
-msgstr "etsiä"
+msgstr "löytää"
 
 msgid "dance"
 msgstr "tanssi"
@@ -1765,4 +1768,3 @@ msgstr ""
 
 msgid "bicycle"
 msgstr ""
-
