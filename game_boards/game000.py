@@ -81,7 +81,7 @@ class Board(gd.BoardGame):
 
         self.board.add_unit((data[0]-11)//2, 14, 11, 2, classes.board.Label,
                             ["www.eduactiv8.org   |   info%seduactiv8%sorg" % ("@", "."),
-                             "Copyright (C) 2012 - 2021  Ireneusz Imiolek"], color, "", 3)
+                             "Copyright (C) 2012 - 2025  Ireneusz Imiolek"], color, "", 3)
         self.board.units[-1].font_color = font_color2
         self.board.units[-1].update_lng_font_size("def_2.0")
 
