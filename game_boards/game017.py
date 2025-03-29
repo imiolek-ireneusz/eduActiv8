@@ -25,10 +25,12 @@ class Board(gd.BoardGame):
         card_font_color = ex.hsv_to_rgb(hue, 255, 140)
         arrow_color = ex.hsv_to_rgb(hue, 200, 200)
         font_color2 = ex.hsv_to_rgb(hue, 255, 50)
-        outline_color2 = (255, 102, 0)
+        #outline_color2 = (255, 102, 0)
+        outline_color2 = ex.hsv_to_rgb(hue, 255, 170)
 
         if self.mainloop.scheme is not None:
             card_color = self.mainloop.scheme.u_color
+            outline_color2 = (255, 102, 0)
         else:
             card_color = (255, 255, 255)
 
@@ -171,7 +173,7 @@ class Board(gd.BoardGame):
                 self.board.add_unit(x + 2 - xd, y, 2, 1, classes.board.Label, alc[0], card_color, "", self.card_font_size_top)
 
         # frame size 288 x 216
-        img_src = os.path.join('fc', "fc%03i.jpg" % self.frame_flow[0])
+        img_src = os.path.join('fc', "fc%03i.webp" % self.frame_flow[0])
         self.board.add_unit(x - xd + img_plus, y + 1, 4, 3, classes.board.ImgShip, self.word_list[0], card_color,
                             img_src)
         self.board.ships[-1].speaker_val = self.pword_list[0]
@@ -190,6 +192,7 @@ class Board(gd.BoardGame):
         else:
             self.board.add_unit(x - 2 + xd, y + 4, w, 1, classes.board.Letter, self.word_list[0], card_color, "", 2)
 
+
         self.board.ships[-1].speaker_val = self.pword_list[0]
         self.board.ships[-1].speaker_val_update = False
         if self.lang.has_cursive:
@@ -200,13 +203,15 @@ class Board(gd.BoardGame):
             else:
                 self.board.add_unit(x - 2 + xd, y + 5, w, 2, classes.board.Letter, self.word_list[0], card_color, "",
                                     self.font_size)
+
+            self.board.ships[-1].set_outline(color=outline_color2, width=1)
             self.board.ships[-1].speaker_val = self.pword_list[0]
             self.board.ships[-1].speaker_val_update = False
             h = 7
         else:
             h = 5
         self.board.add_door(x - 2 + xd, y, w, h, classes.board.Door, "", card_color, "")
-        self.board.units[-1].set_outline(color=outline_color2, width=2)
+        self.board.units[-1].set_outline(color=outline_color2, width=4)
         self.board.all_sprites_list.move_to_front(self.board.units[-1])
 
         self.board.add_unit(x - 3 + xd, y, 1, h, classes.board.ImgCenteredShip, "", (0, 0, 0, 0),
@@ -220,7 +225,7 @@ class Board(gd.BoardGame):
         self.rt = self.board.ships[-1]
 
         self.slide = self.board.ships[self.abc_len]
-        self.slide.set_outline(color=outline_color2, width=2)
+        self.slide.set_outline(color=outline_color2, width=1)
         for each in self.board.ships:
             each.immobilize()
             each.font_color = card_font_color
@@ -325,7 +330,7 @@ class Board(gd.BoardGame):
             self.board.ships[self.abc_len + 2].speaker_val = self.pword_list[active.unit_id]
         else:
             indx2 = [self.abc_len, self.abc_len + 1]
-        img_src = os.path.join('fc', "fc%03i.jpg" % self.frame_flow[active.unit_id])
+        img_src = os.path.join('fc', "fc%03i.webp" % self.frame_flow[active.unit_id])
         self.slide.change_image(img_src)
         self.board.active_ship = -1
         self.slide.update_me = True

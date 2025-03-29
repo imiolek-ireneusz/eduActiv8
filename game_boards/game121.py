@@ -138,7 +138,7 @@ class Board(gd.BoardGame):
         else:
             self.wordp = self.word
 
-        img_src = "%s.jpg" % self.imgs[self.w_index]
+        img_src = "%s.webp" % self.imgs[self.w_index]
 
         w_len = len(self.word)
 
@@ -264,7 +264,7 @@ class Board(gd.BoardGame):
             self.wordp = self.word
 
         # change image and pronunciation
-        img_src = "%s.jpg" % self.imgs[self.w_index]
+        img_src = "%s.webp" % self.imgs[self.w_index]
         self.picture.change_image(os.path.join('art4apps', self.category, img_src))
         self.picture.speaker_val = self.wordp
         self.picture.update_me = True

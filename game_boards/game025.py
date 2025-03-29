@@ -190,7 +190,7 @@ class Board(gd.BoardGame):
                 else:
                     v = ""
                 if self.mainloop.m.game_variant == 3:
-                    img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
+                    img = "%s.webp" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                     img_src = os.path.join('art4apps', self.category, img)
                     self.board.add_universal_unit(grid_x=self.positions[p_ind], grid_y=2, grid_w=1, grid_h=1, txt="",
                                                   fg_img_src=img_src, bg_img_src=img_src, dc_img_src=None,
@@ -277,7 +277,7 @@ class Board(gd.BoardGame):
                 else:
                     v = ""
                 if self.mainloop.m.game_variant == 3:
-                    img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
+                    img = "%s.webp" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                     img_src = os.path.join('art4apps', self.category, img)
                     self.board.add_universal_unit(grid_x=self.left_offset + i, grid_y=0, grid_w=1, grid_h=1, txt="",
                                                   fg_img_src=None, bg_img_src=img_src, dc_img_src=bg_door_img_src,
@@ -365,7 +365,7 @@ class Board(gd.BoardGame):
             else:
                 v = ""
             if self.mainloop.m.game_variant == 3:
-                img = "%s.jpg" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
+                img = "%s.webp" % self.imgs[self.term_values[int(self.term[i % self.term_len])]]
                 img_src = os.path.join('art4apps', self.category, img)
                 self.board.add_universal_unit(grid_x=self.positions[i], grid_y=2, grid_w=1, grid_h=1, txt="",
                                               fg_img_src=img_src, bg_img_src=img_src, dc_img_src=None,

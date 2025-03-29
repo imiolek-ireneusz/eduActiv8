@@ -237,7 +237,7 @@ class Board(gd.BoardGame):
             font_size = 8
         for i in range(self.square_count):
             if i < switch:
-                img = "%s.jpg" % self.imgs[drawn_numbers[i]]
+                img = "%s.webp" % self.imgs[drawn_numbers[i]]
                 img_src = os.path.join("res", "images", 'art4apps', category, img)
                 position_list = small_slots
                 pos = i

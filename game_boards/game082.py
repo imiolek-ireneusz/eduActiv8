@@ -136,7 +136,7 @@ class Board(gd.BoardGame):
         else:
             self.wordp = self.word
         if self.mainloop.m.game_var2 == 0:
-            img_src = "%s.jpg" % self.imgs[self.w_index]
+            img_src = "%s.webp" % self.imgs[self.w_index]
         elif self.mainloop.m.game_var2 == 1:
             img_src = "speaker_icon.png"
 

@@ -86,14 +86,14 @@ class Board(gd.BoardGame):
         self.temp_term = list(self.term)
         for i in range(self.term_len):
             if not same_images:
-                self.term_images.append(os.path.join('art4apps', self.category, "%s.jpg" %
+                self.term_images.append(os.path.join('art4apps', self.category, "%s.webp" %
                                                      self.imgs[self.term_values[int(self.term[i % self.term_len])]]))
             else:
                 if self.term_len == 2:
                     if i > 0:
                         repeats.append(i)
                     self.term_images.append(
-                        os.path.join('art4apps', self.category, "%s.jpg" % self.imgs[self.term_values[
+                        os.path.join('art4apps', self.category, "%s.webp" % self.imgs[self.term_values[
                             int(self.term[0])]]))
                 elif self.term_len > 2:
                     if i > 0:
@@ -102,7 +102,7 @@ class Board(gd.BoardGame):
                             self.temp_term[i] = str((9 - int(self.term[i])))
 
                     self.term_images.append(
-                        os.path.join('art4apps', self.category, "%s.jpg" % self.imgs[self.term_values[
+                        os.path.join('art4apps', self.category, "%s.webp" % self.imgs[self.term_values[
                             int(self.term[i % self.term_len])]]))
 
 

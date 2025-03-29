@@ -25,7 +25,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.allow_unit_animations = False
-        self.board.draw_grid = False
+        self.board.draw_grid = True
         hue = random.randrange(0, 225)
 
         card_font_color = ex.hsv_to_rgb(hue, 255, 140)
@@ -200,7 +200,7 @@ class Board(gd.BoardGame):
         self.pos_l_labels = [self.board.units[-3], self.board.units[-2], self.board.units[-1]]
 
         # frame size 288 x 216
-        img_src = os.path.join('fc', "fc%03i.jpg" % self.imgs[0][0])
+        img_src = os.path.join('fc', "fc%03i.webp" % self.imgs[0][0])
         self.board.add_unit(x - xd + img_plus, y + 4, 4, 3, classes.board.ImgShip, self.words[0][0], card_color,
                             img_src)
         self.slide = self.board.ships[-1]
@@ -318,7 +318,7 @@ class Board(gd.BoardGame):
             each.update_me = True
 
         indx2 = [self.abc_len, self.abc_len + 1]
-        img_src = os.path.join('fc', "fc%03i.jpg" % self.imgs[active.unit_id][word_index])
+        img_src = os.path.join('fc', "fc%03i.webp" % self.imgs[active.unit_id][word_index])
         self.slide.change_image(img_src)
         self.board.active_ship = -1
         self.slide.update_me = True
