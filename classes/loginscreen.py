@@ -1265,13 +1265,13 @@ class LoginScreen:
 
         try:
             self.bg_img = self.scale_img(
-                pygame.image.load(os.path.join('res', 'images', "gradient_large.jpg")).convert(),
+                pygame.image.load(os.path.join('res', 'images', "gradient_large.webp")).convert(),
                 self.screen.get_size()[0],
                 self.screen.get_size()[1])
         except:
             try:
                 self.bg_img = self.scale_img(
-                    pygame.image.load(os.path.join('res', 'images', "gradient.jpg")).convert(),
+                    pygame.image.load(os.path.join('res', 'images', "gradient.webp")).convert(),
                     self.screen.get_size()[0],
                     self.screen.get_size()[1])
             except:
