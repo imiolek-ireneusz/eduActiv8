@@ -26,15 +26,15 @@ numbers2090 = ['vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta'
 dp['abc_flashcards_word_sequence'] = ['Abeto', 'Barco', 'Casa', 'Dormir', 'Elefante', 'Formiga', 'Girafa', 'Hipopótamo',
                                       'Iglu', 'Janela', 'Koala', 'Leão', 'Maçã', 'Narciso-amarelo', 'Ouriço', 'Peixe',
                                       'Queijo', 'Rainha', 'Sol', 'Tomate', 'Uvas', 'Violino', 'Windsurf', 'Xilofone',
-                                      'Y', 'Zebra']
+                                      'Yoga', 'Zebra']
 d['abc_flashcards_word_sequence'] = ['<1>A<2>beto', '<1>B<2>arco', '<1>C<2>asa', '<1>D<2>ormir',
                                      '<1>E<2>l<1>e<2>fant<1>e', '<1>F<2>ormiga', '<1>G<2>irafa', '<1>H<2>ipopótamo',
                                      '<1>I<2>glu', '<1>J<2>anela', '<1>K<2>oala', '<1>L<2>eão', '<1>M<2>açã',
                                      '<1>N<2>arciso-amarelo', '<1>O<2>uriç<1>o', '<1>P<2>eixe', '<1>Q<2>ueijo',
                                      '<1>R<2>ainha', '<1>S<2>ol', '<1>T<2>oma<1>t<2>e', '<1>U<2>vas', '<1>V<2>iolino',
-                                     '<1>W<2>indsurf', '<1>X<2>ilofone', '<1>Y<2> ', '<1>Z<2>ebra']
+                                     '<1>W<2>indsurf', '<1>X<2>ilofone', '<1>Y<2>oga ', '<1>Z<2>ebra']
 d['abc_flashcards_frame_sequence'] = [31, 1, 7, 49, 4, 0, 30, 47, 8, 22, 72, 11, 42, 69, 29, 5, 57, 16, 18, 33, 6, 21,
-                                      66, 23, 43, 25]
+                                      66, 23, 32, 25]
 
 # alphabet - pt - "abcdefghijlmnopqrstuvxz"
 alphabet_lc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',

@@ -36,7 +36,7 @@ d['abc_flashcards_word_sequence'] = ['<1>A<2>pfel', '<2>H<1>ä<2>ngematte', '<1>
                                      '<1>T<2>oma<1>t<2>e', '<1>U<2>mgehen', '<2>Schl<1>ü<2>ssel', '<1>V<2>ioline',
                                      '<1>W<2>assermelone', '<1>X<2>ylophon', '<1>Y<2>oga', '<1>Z<2>ebra']
 
-d['abc_flashcards_frame_sequence'] = [42, 56, 36, 43, 3, 14, 5, 30, 7, 8, 73, 17, 11, 12, 13, 52, 16, 15, 43, 20, 18,
+d['abc_flashcards_frame_sequence'] = [42, 56, 36, 114, 3, 14, 5, 30, 7, 8, 73, 17, 11, 12, 13, 52, 16, 15, 115, 20, 18,
                                       53, 33, 41, 10, 21, 26, 23, 32, 25]
 
 # alphabet - de

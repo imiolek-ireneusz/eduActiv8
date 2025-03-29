@@ -26,17 +26,17 @@ numbers2090 = ['kaksikymmentä', 'kolmekymmentä', 'neljäkymmentä', 'viiskymme
 # The images are numbered from left to bottom such that the top left is numbered 0, the last image is 73, if none of the available things have names that start with any of the letters we can add new pictures.
 dp['abc_flashcards_word_sequence'] = ['Avain', 'Banaani', 'Cheddar', 'Delfiini', 'Elefantti', 'Flyygeli', 'Gnuu',
                                       'Hiiri', 'Ikkuna', 'Jooga', 'Kirahvi', 'Leipä', 'Muurahainen', 'Näyttö', 'Omena',
-                                      'Papukaija', 'Q', 'Riippumatto', 'Seepra', 'Talo', 'Uuni', 'Vene', 'Watti',
-                                      'Xylofoni', 'Yö', 'Z', 'Å', 'Ämpäri', 'Öinen']
+                                      'Papukaija', 'Aquariumi', 'Riippumatto', 'Seepra', 'Talo', 'Uuni', 'Vene', 'Watti',
+                                      'Xylofoni', 'Yö', 'Zebu', 'Å', 'Ämpäri', 'Öinen']
 d['abc_flashcards_word_sequence'] = ['<1>A<2>v<1>a<2>in', '<1>B<2>anaani', '<1>C<2>heddar', '<1>D<2>elfiini',
                                      '<1>E<2>l<1>e<2>fantti', '<1>F<2>lyygeli', '<1>G<2>nuu', '<1>H<2>iiri',
                                      '<1>I<2>kkuna', '<1>J<2>ooga', '<1>K<2>irahvi', '<1>L<2>eipä', '<1>M<2>uurahainen',
-                                     '<1>N<2>äyttö', '<1>O<2>mena', '<1>P<2>a<1>p<2>ukaija', '<1>Q<2> ',
+                                     '<1>N<2>äyttö', '<1>O<2>mena', '<1>P<2>a<1>p<2>ukaija', '<2>A<1>q<2>uariumi ',
                                      '<1>R<2>iippumatto', '<1>S<2>eepra', '<1>T<2>alo', '<1>U<2>uni', '<1>V<2>ene',
-                                     '<1>W<2>atti', '<1>X<2>ylofoni', '<1>Y<2>ö', '<1>Z<2> ', '<1>Å<2> ',
+                                     '<1>W<2>atti', '<1>X<2>ylofoni', '<1>Y<2>ö', '<1>Z<2>ebu', '<1>Å<2> ',
                                      '<1>Ä<2>mp<1>ä<2>ri', '<1>Ö<2>inen']
-d['abc_flashcards_frame_sequence'] = [10, 71, 57, 59, 4, 34, 70, 12, 22, 32, 30, 35, 0, 40, 42, 15, 43, 56, 25, 7, 67,
-                                      1, 18, 23, 54, 43, 43, 73, 54]
+d['abc_flashcards_frame_sequence'] = [10, 71, 57, 59, 4, 34, 70, 12, 22, 32, 30, 35, 0, 40, 42, 15, 116, 56, 25, 7, 67,
+                                      1, 18, 23, 54, 118, 43, 73, 54]
 
 # alphabet en
 alphabet_lc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
