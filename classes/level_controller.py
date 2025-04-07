@@ -162,7 +162,8 @@ class Level:
                     self.mainloop.completions[self.lvl - 1] = 1
                 self.game_board.mainloop.db.update_completion(self.game_board.mainloop.userid,
                                                               self.game_board.active_game.dbgameid, self.lvl)
-                self.mainloop.completions_dict[self.game_board.active_game.dbgameid][self.lvl - 1] = 1
+                if self.game_board.active_game.dbgameid in self.mainloop.completions_dict.keys():
+                    self.mainloop.completions_dict[self.game_board.active_game.dbgameid][self.lvl - 1] = 1
                 if all_completed_already or not self.all_completed():
                     self.levelup()
                     if tts != None:
