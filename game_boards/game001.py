@@ -33,7 +33,7 @@ class Board(gd.BoardGame):
         self.board.board_bg.update_me = True
         self.board.board_bg.line_color = (20, 20, 20)
 
-        self.board.add_unit(0, 0, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2020  Ireneusz Imiolek",
+        self.board.add_unit(0, 0, data[0], 1, classes.board.Label, "Copyright (C) 2012 - 2025  Ireneusz Imiolek",
                             self.color, "", 1)
         self.board.add_unit(0, 1, data[0], 1, classes.board.Label, "", self.color, "", 2)
         self.board.add_unit(0, 2, data[0], 5, classes.board.Label, self.lang.d["Credits_long"], self.color, "", 2)
