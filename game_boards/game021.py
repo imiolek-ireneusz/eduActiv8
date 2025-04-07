@@ -26,6 +26,7 @@ class Board(gd.BoardGame):
         self.brush_height = 4  # used by brush2 only
         self.var_brush = 1
         self.sizing = False
+        self.level.set_lock_override(True)
         if self.level.lvl == 1:
             self.horizontal = True
         else:
