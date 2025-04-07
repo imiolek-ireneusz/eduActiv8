@@ -98,6 +98,9 @@ class Color:
                                                self.color_sliders[5][1] * 16,
                                                self.color_sliders[5][2] * 16)
 
+        self.info_buttons_col_disabled = ex.hsv_to_rgb(self.color_sliders[5][0] * 16, 100, 200)
+        self.info_buttons_col_locked = ex.hsv_to_rgb(self.color_sliders[5][0] * 16, 100, 200)
+
     def update_cfg_color(self, h, s, v):
         self.c_fg_tint_color = ex.hsv_to_rgb(h, s, v)
 

@@ -40,6 +40,7 @@ class Config:
         self.fullscreen = False
         # self.read_inst = False #no longer used
         self.check_updates = True
+        self.allow_manual_level_up = True
 
         self.user_age_group = 0  # default group - showing all games - TO DO: will be overridden by data stored in database
         self.max_age = 7
@@ -211,6 +212,8 @@ class Config:
         a = db.get_login_defs()
         # lang, sounds, espeak, screenw, screenh
 
+        if len(a[1]) > 5:
+            self.allow_manual_level_up = bool(int(a[1][5]))
 
         self.settings["check_updates"] = int(a[1][2])
         if self.settings["check_updates"] == 1:

@@ -1222,6 +1222,8 @@ class LoginScreen:
         self.scroll_min_top = 0
         self.side_panel_w = 80
         self.loading = False
+        # allow users to manually level up, will be overridden with the value stored in database
+        self.allow_manual_level_up = True
         self.load_login_defs()
         self.lang = self.mainloop.lang
         self.lang.load_language(lang_code=self.default_lang)
@@ -1370,6 +1372,8 @@ class LoginScreen:
         self.check_updates = bool(int(self.login_defs[1][2]))
         self.require_pass = bool(int(self.login_defs[1][3]))
         self.require_adminpass = bool(int(self.login_defs[1][4]))
+        if len(self.login_defs[1]) > 5:
+            self.allow_manual_level_up = bool(int(self.login_defs[1][5]))
 
     def merge_sprite_lists(self):
         self.all_list.empty()
@@ -1795,6 +1799,7 @@ class LoginScreen:
             self.cb0.checked = self.full_screen
         self.cb3.checked = self.require_pass
         self.cb4.checked = self.require_adminpass
+        self.cb5.checked = self.allow_manual_level_up
 
     def add_prefs_elements(self):
         self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Preferences"])
@@ -1827,6 +1832,9 @@ class LoginScreen:
         self.cb4 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 90, False,
                              self.lang.b["require password to access admin area"])
         self.edit_list.add(self.cb4)
+        self.cb5 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 150, False,
+                             self.lang.b["allow manual level up"])
+        self.edit_list.add(self.cb5)
 
         #self.font_prefs = PButton(self, 200, 30, self.left + 20, self.top + 150, 4, self.lang.b["Font Preferences"],
         #                       self.fontprefs)
@@ -2527,7 +2535,7 @@ class LoginScreen:
                         self.cpassword.value = ""
         # update prefs
         defs = ""
-        for i in range(5):
+        for i in range(6):
             if i == 1:
                 defs += "1"
             else:

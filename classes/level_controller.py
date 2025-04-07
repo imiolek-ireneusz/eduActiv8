@@ -11,14 +11,24 @@ class Level:
         self.mainloop = mainloop
         self.next_pressed = False
         self.name = self.mainloop.user_name
+        self.lvl = 1
+        self.game_step = 1
         self.prev_lvl = -1  # used to check if level changed
         self.games_per_lvl = gpl  # number of games to play in order to level up
         self.lvl_count = lvl_count  # number of levels
+        self.lock_override = False
+        self.last_level_completed = 0
         self.completed = 0  # how many times was this level completed - loaded from db later on
         self.completed_time = time.time()
         self.restart()
-
         self.dp = self.mainloop.lang.dp
+
+    def set_lock_override(self, override):
+        """Set the lock override flag.
+
+        Created for activities that are not level based and the level arrows are used for other purposes,
+        i.e., the drawing activity where the arrows are used to change the layout style."""
+        self.lock_override = override
 
     def restart(self):
         self.lvl = 1  # current level
@@ -47,11 +57,20 @@ class Level:
         chs = self.game_board.chapters
         lch = len(chs)
         if lch > 1:
+            current_lvl = self.lvl
             current_chapter = self.get_current_chapter(chs, lch)
             if current_chapter < lch - 1:
-                self.lvl = chs[current_chapter + 1]
-                self.mainloop.sfx.play(7)
-                self.load_level_plus()
+                new_level = chs[current_chapter + 1]
+                if self.mainloop.config.allow_manual_level_up:
+                    self.lvl = new_level
+                else:
+                    if new_level < self.last_level_completed + 1:
+                        self.lvl = new_level
+                    else:
+                        self.lvl = self.last_level_completed + 1
+                if current_lvl != self.lvl:
+                    self.mainloop.sfx.play(7)
+                    self.load_level_plus()
 
     def chapter_down(self):
         chs = self.game_board.chapters
@@ -134,7 +153,6 @@ class Level:
                 self.game_board.show_msg = True
                 self.completed_time = time.time()
             else:
-
                 if self.all_completed():
                     all_completed_already = True
                 else:
@@ -162,8 +180,6 @@ class Level:
         else:
             if self.lvl < self.lvl_count:
                 self.levelup()
-            else:
-                pass
 
     def load_level(self, args=None):
         self.game_board.create_game_objects(self.lvl)
@@ -172,6 +188,7 @@ class Level:
             self.game_board.board.board_bg.update_me = True
         if args is None:
             self.update_level_dictx()
+        self.last_level_completed = self.get_last_level_completed()
         self.game_board.mainloop.redraw_needed = [True, True, True]
         self.next_pressed = False
 
@@ -187,6 +204,13 @@ class Level:
             return True
         else:
             return False
+
+    def get_last_level_completed(self):
+        if self.game_board.mainloop.completions is not None:
+            for i in range(len(self.game_board.mainloop.completions) - 1, -1, -1):
+                if self.game_board.mainloop.completions[i] == 1:
+                    return i + 1
+        return 0
 
     def update_level_dictx(self):
         self.update_level_dict()

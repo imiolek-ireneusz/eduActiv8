@@ -4,6 +4,21 @@ import os
 import pygame
 import classes.extras as ex
 
+from enum import IntEnum
+
+class ButtonCode(IntEnum):
+    CONFIRM = 0
+    LEVEL_DOWN = 1
+    LEVELS = 2
+    LEVEL_UP = 3
+    CLOSE = 4
+    REFRESH = 5
+    TITLES = 6
+    CHAPTER_DOWN = 7
+    CHAPTER_UP = 8
+    SHOW_INFO = 9
+    BACKGROUND = 10
+    BACK = 11
 
 class BaseButton(pygame.sprite.Sprite):
     def __init__(self, panel, pos_x, pos_y, width, height, img_src_1="", img_src_2="", img_src_3="", rev=False):
@@ -63,6 +78,11 @@ class Button(BaseButton):
         self.btn_id = len(panel.btns)
         self.panel = panel
         self.btntype = btntype
+        self.img = None
+        self.disabled = False
+        self.locked = False
+        self.img_disabled = None
+        self.img_locked = None
         BaseButton.__init__(self, panel, pos_x, pos_y, width, height, img_src_1, img_src_2, img_src_3, rev)
 
     def load_images(self, rev):
@@ -72,20 +92,43 @@ class Button(BaseButton):
         self.img_1.fill(self.panel.mainloop.cl.info_buttons_col, special_flags=pygame.BLEND_ADD)
         self.img_2 = pygame.image.load(os.path.join('res', 'images', "info_bar", "mask", self.img_src_2)).convert_alpha()
         self.img_2.fill(self.panel.mainloop.cl.info_buttons_col, special_flags=pygame.BLEND_ADD)
-        self.img_4 = pygame.image.load(
-            os.path.join('res', 'images', "info_bar", "decor", self.img_src_2)).convert_alpha()
+        self.img_4 = pygame.image.load(os.path.join('res', 'images', "info_bar", "decor", self.img_src_2)).convert_alpha()
+        self.img_disabled = pygame.image.load(os.path.join('res', 'images', "info_bar", "mask", self.img_src_1)).convert_alpha()
+        self.img_disabled.fill(self.panel.mainloop.cl.info_buttons_col_disabled, special_flags=pygame.BLEND_ADD)
 
         if self.img_src_3 != "":
-            self.img_3 = pygame.image.load(
-                os.path.join('res', 'images', "info_bar", self.img_src_3)).convert_alpha()
+            self.img_locked = pygame.image.load(os.path.join('res', 'images', "info_bar", "mask", self.img_src_3)).convert_alpha()
+        else:
+            self.img_locked = pygame.image.load(os.path.join('res', 'images', "info_bar", "mask", self.img_src_2)).convert_alpha()
+
+        self.img_locked.fill(self.panel.mainloop.cl.info_buttons_col_locked, special_flags=pygame.BLEND_ADD)
+
         if rev:
             self.img_1 = pygame.transform.flip(self.img_1, 1, 0)
             self.img_2 = pygame.transform.flip(self.img_2, 1, 0)
             self.img_4 = pygame.transform.flip(self.img_4, 1, 0)
+            self.img_disabled = pygame.transform.flip(self.img_disabled, 1, 0)
+            self.img_locked = pygame.transform.flip(self.img_locked, 1, 0)
 
         self.img = self.img_2
         self.hasimg = True
         self.update()
+
+    def update_image(self):
+        if self.disabled and self.img_disabled is not None:
+            self.img = self.img_disabled
+        elif self.locked and self.img_locked is not None:
+            self.img = self.img_locked
+        else:
+            self.img = self.img_2
+
+    def set_disabled(self, disabled):
+        self.disabled = disabled
+        self.update_image()
+
+    def set_locked(self, locked):
+        self.locked = locked
+        self.update_image()
 
     def reload_colors(self):
         self.load_images(self.rev)
@@ -96,10 +139,10 @@ class Button(BaseButton):
             self.hover = True
             self.panel.mainloop.redraw_needed[1] = True
             if self.hasimg:
-                if not (((self.btn_id == 1 or self.btn_id == 7)
+                if not (self.locked or self.disabled or (((self.btn_id == ButtonCode.LEVEL_DOWN or self.btn_id == ButtonCode.CHAPTER_DOWN)
                          and self.panel.level.lvl == self.panel.mainloop.game_board.min_level)
-                        or ((self.btn_id == 3 or self.btn_id == 8)
-                            and self.panel.level.lvl == self.panel.level.lvl_count)):
+                        or ((self.btn_id == ButtonCode.LEVEL_UP or self.btn_id == ButtonCode.CHAPTER_UP)
+                            and self.panel.level.lvl == self.panel.level.lvl_count))):
                     self.img = self.img_1
 
     def on_mouse_out(self):
@@ -107,7 +150,7 @@ class Button(BaseButton):
             self.hover = False
             self.panel.mainloop.redraw_needed[1] = True
             if self.hasimg:
-                self.img = self.img_2
+                self.update_image()
 
     def update_levels(self):
         if 1 < self.panel.level.games_per_lvl != 99:
@@ -153,7 +196,8 @@ class Button(BaseButton):
     def update(self):
         self.image.fill(self.color)
         if self.btntype == "imgbtn":
-            self.image.blit(self.img, self.img_pos)
+            if self.img is not None:
+                self.image.blit(self.img, self.img_pos)
             if self.img_4 is not None:
                 self.image.blit(self.img_4, self.img_pos)
         elif self.btntype == "levels":
@@ -174,14 +218,6 @@ class InfoBar:
 
     def create(self):
         self.btns = []
-        """
-        self.font_color = (255, 75, 0, 0)
-        self.font_color1 = (255, 125, 0, 0)
-        self.font_color4 = (255, 175, 0, 0)
-        self.font_color2 = (225, 75, 0, 0)
-        self.font_color3 = (255, 175, 0, 0)
-        """
-
         self.load_font_colors()
 
         if self.mainloop.scheme is not None:
@@ -243,6 +279,7 @@ class InfoBar:
             self.add_btns()
         self.layout_update()
         self.game_board.dialog.layout_update()
+        self.reset_button_state()
 
     def hover(self, pos, l):
         for btn in self.btns:
@@ -259,6 +296,62 @@ class InfoBar:
             if each.btntype == "imgbtn":
                 each.reload_colors()
 
+    def set_disabled(self, disabled, direction):
+        if direction == 0:
+            if disabled:
+                self.btns[ButtonCode.LEVEL_DOWN].set_disabled(True)
+                self.btns[ButtonCode.CHAPTER_DOWN].set_disabled(True)
+            else:
+                self.btns[ButtonCode.LEVEL_DOWN].set_disabled(False)
+                self.btns[ButtonCode.CHAPTER_DOWN].set_disabled(False)
+
+        if direction == 1:
+            if disabled:
+                self.btns[ButtonCode.LEVEL_UP].set_disabled(True)
+                self.btns[ButtonCode.CHAPTER_UP].set_disabled(True)
+            else:
+                self.btns[ButtonCode.LEVEL_UP].set_disabled(False)
+                self.btns[ButtonCode.CHAPTER_UP].set_disabled(False)
+
+    def set_locked(self, locked):
+        if locked and not self.level.lock_override:
+            self.btns[ButtonCode.LEVEL_UP].set_locked(True)
+            self.btns[ButtonCode.CHAPTER_UP].set_locked(True)
+        else:
+            self.btns[ButtonCode.LEVEL_UP].set_locked(False)
+            self.btns[ButtonCode.CHAPTER_UP].set_locked(False)
+
+    def set_locked_both(self, locked):
+        if locked and not self.level.lock_override:
+            self.btns[ButtonCode.LEVEL_DOWN].set_locked(True)
+            self.btns[ButtonCode.CHAPTER_DOWN].set_locked(True)
+            self.btns[ButtonCode.LEVEL_UP].set_locked(True)
+            self.btns[ButtonCode.CHAPTER_UP].set_locked(True)
+        else:
+            self.btns[ButtonCode.LEVEL_DOWN].set_locked(False)
+            self.btns[ButtonCode.CHAPTER_DOWN].set_locked(False)
+            self.btns[ButtonCode.LEVEL_UP].set_locked(False)
+            self.btns[ButtonCode.CHAPTER_UP].set_locked(False)
+
+    def reset_button_state(self):
+        if self.level.lvl == 1:
+            self.set_disabled(True, 0)
+        elif self.level.lvl == self.level.lvl_count:
+            self.set_disabled(True, 1)
+
+        if self.level.lvl > 1:
+            self.set_disabled(False, 0)
+
+        if self.level.lvl < self.level.lvl_count:
+            self.set_disabled(False, 1)
+
+        if not self.level.completed and not self.mainloop.config.allow_manual_level_up:
+            self.set_locked(True)
+        else:
+            self.set_locked(False)
+        self.mainloop.redraw_needed[1] = True
+
+
     def handle(self, event, layout, mainloop):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
@@ -274,51 +367,57 @@ class InfoBar:
             if event.button == 1 and self.mainloop.mbtndno == btn:
                 self.mainloop.game_board.drag = False
                 if btn is not None:
-                    if btn.btn_id == 0:
+                    if btn.btn_id == ButtonCode.CONFIRM:
                         btn.img = btn.img_2
                         self.game_board.check_result()
-                    elif btn.btn_id == 1:
+                    elif btn.btn_id == ButtonCode.LEVEL_DOWN:
                         if self.level.lvl > self.mainloop.game_board.min_level:
                             self.level.manual_leveldown()
-                        if self.level.lvl == self.mainloop.game_board.min_level:
-                            btn.img = btn.img_2
-                    elif btn.btn_id == 3:
-                        if self.level.lvl == self.level.lvl_count:
-                            btn.img = btn.img_2
-                        else:
+                        self.reset_button_state()
+                    elif btn.btn_id == ButtonCode.LEVEL_UP:
+                        if not btn.locked and self.level.lvl < self.level.lvl_count:
                             self.level.manual_levelup()
-                    elif btn.btn_id == 4:  # clicked on close button
+                        self.reset_button_state()
+                    elif btn.btn_id == ButtonCode.CLOSE:  # clicked on close button
                         mainloop.dialog.show_dialog(0, self.lang.d["Do you want to exit the game?"])
-                    elif btn.btn_id == 5:
+                    elif btn.btn_id == ButtonCode.REFRESH:
                         self.level.load_level()
                         self.mainloop.sfx.play(1)
-                    elif btn.btn_id == 7:
-                        if self.level.lvl == self.mainloop.game_board.min_level:
-                            btn.img = btn.img_2
-                        else:
+                    elif btn.btn_id == ButtonCode.CHAPTER_DOWN:
+                        if self.level.lvl > self.mainloop.game_board.min_level:
                             self.level.chapter_down()
-                    elif btn.btn_id == 8:
-                        if self.level.lvl == self.level.lvl_count:
-                            btn.img = btn.img_2
-                        else:
+                        self.reset_button_state()
+                    elif btn.btn_id == ButtonCode.CHAPTER_UP:
+                        # TODO disable the ability to level up if the level if the next level is not unlocked
+                        if self.level.lvl < self.level.lvl_count:
                             self.level.chapter_up()
-                    elif btn.btn_id == 9:
+                        self.reset_button_state()
+                    elif btn.btn_id == ButtonCode.SHOW_INFO:
                         self.show_info_dialog()
-                    elif btn.btn_id == 11:
+                    elif btn.btn_id == ButtonCode.BACK:
                         self.show_menu()
             elif event.button > 1:
                 if btn is not None:
-                    if btn.btn_id == 11:
+                    if btn.btn_id == ButtonCode.BACK:
                         self.show_menu(True)
-                    elif btn.btn_id == 3 or btn.btn_id == 8:
-                        if self.level.lvl < self.level.lvl_count:
-                            self.level.lvl = self.level.lvl_count
-                            btn.img = btn.img_2
-                            self.level.load_level()
-                    elif btn.btn_id == 1 or btn.btn_id == 7:
+                    elif btn.btn_id == ButtonCode.LEVEL_UP or btn.btn_id == ButtonCode.CHAPTER_UP:
+                        if  self.level.lvl < self.level.lvl_count:
+                            if self.mainloop.config.allow_manual_level_up:
+                                self.level.lvl = self.level.lvl_count
+                                self.level.load_level()
+                            else:
+                                if self.level.last_level_completed + 1 > self.level.lvl_count:
+                                    self.level.lvl = self.level.lvl_count
+                                    self.level.load_level()
+                                elif self.level.lvl < self.level.last_level_completed + 1:
+                                    self.level.lvl = self.level.last_level_completed + 1
+                                    self.level.load_level()
+                            self.reset_button_state()
+                    elif btn.btn_id == ButtonCode.LEVEL_DOWN or btn.btn_id == ButtonCode.CHAPTER_DOWN:
+                        # if right click pressed on left arrow go to the first level
                         if self.level.lvl > 1:
                             self.level.lvl = 1
-                            btn.img = btn.img_2
+                            self.reset_button_state()
                             self.level.load_level()
 
         elif event.type == pygame.MOUSEMOTION:
@@ -415,9 +514,16 @@ class InfoBar:
             self.mainloop.redraw_needed[1] = True
 
     def resetbtns(self):
+        self.reset_button_state()
+
         for btn in self.btns:
             if btn.hasimg:
-                btn.img = btn.img_2
+                if btn.disabled:
+                    btn.img = btn.img_disabled
+                if btn.locked:
+                    btn.img = btn.img_locked
+                else:
+                    btn.img = btn.img_2
 
     def add_btn(self, panel, pos_x, pos_y, btn_size_x, btn_size_y, btntype="imgbtn", img_src_1="", img_src_2="",
                 img_src_3="", rev=False):
@@ -428,10 +534,10 @@ class InfoBar:
     def add_btns(self):
         self.add_btn(self, self.home_btns_w + 122, 5 + self.margin_top, 84, 66, "imgbtn", "info_ok2.png", "info_ok1.png")
         self.add_btn(self, self.width - 315, 5 + self.margin_top, 66, 66, "imgbtn", "info_arrow2.png",
-                     "info_arrow1.png")
+                     "info_arrow1.png", "info_arrow_locked.png")
         self.add_btn(self, self.width - 253, 5 + self.margin_top, 74, 66, "levels")  # level number label
         self.add_btn(self, self.width - 182, 5 + self.margin_top, 66, 66, "imgbtn", "info_arrow2.png",
-                     "info_arrow1.png", "", True)
+                     "info_arrow1.png", "info_arrow_locked.png", True)
         self.add_btn(self, self.width - 71, 5 + self.margin_top, 66, 66, "imgbtn", "info_close2.png", "info_close1.png")
         self.add_btn(self, self.home_btns_w + 222, 5 + self.margin_top, 66, 66, "imgbtn", "info_refresh2.png", "info_refresh1.png")
         title_width = self.width
@@ -452,8 +558,8 @@ class InfoBar:
 
         self.btns[-1].hidden = False
 
-        self.btn_list.move_to_back(self.btns[10])
-        self.btn_list.move_to_back(self.btns[6])
+        self.btn_list.move_to_back(self.btns[ButtonCode.BACKGROUND])
+        self.btn_list.move_to_back(self.btns[ButtonCode.TITLES])
 
     def layout_update(self):
         self.btns[6].update_size(self.width, self.btns[6].rect.height)

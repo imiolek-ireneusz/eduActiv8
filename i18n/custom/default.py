@@ -53,6 +53,7 @@ class I18n():
         self.b["switch to full screen after login"] = _("switch to full screen after login")
         self.b["require password to log in"] = _("require password to log in")
         self.b["require password to access admin area"] = _("require password to access admin area")
+        self.b["allow manual level up"] = _("allow users to navigate to locked levels")
         self.b["Update admin's password:"] = _("Update admin's password:")
         self.b["previous password:"] = _("previous password:")
         self.b["new password:"] = _("new password:")
