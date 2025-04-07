@@ -61,6 +61,8 @@ class Board(gd.BoardGame):
         self.bg_img_src = image_src[self.level.lvl - 1]  # os.path.join('memory', "m_img13a.png")
         if len(grey_image_src) > 1:
             self.bg_img_grey_src = grey_image_src[self.level.lvl - 1]  # os.path.join('memory', "m_img13b.png")
+        elif len(grey_image_src) == 1:
+            self.bg_img_grey_src = grey_image_src[0]
         else:
             self.bg_img_grey_src = ""  # grey_image_src[0]
         self.bg_img = classes.board.ImgSurf(self.board, 3, 3, white, self.bg_img_src)
@@ -167,6 +169,7 @@ class Board(gd.BoardGame):
             del (current[-1])
             if self.choice_list == current:
                 self.mainloop.db.update_completion(self.mainloop.userid, self.active_game.dbgameid, self.level.lvl)
+                self.mainloop.completions_dict[self.active_game.dbgameid][self.level.lvl - 1] += 1
                 self.level.update_level_dictx()
                 self.mainloop.redraw_needed[1] = True
                 self.finished = True
@@ -179,3 +182,4 @@ class Board(gd.BoardGame):
                 self.say(praise, 6)
                 self.board.units[2].value = praise
                 self.board.units[2].update_me = True
+                self.mainloop.info.resetbtns()
