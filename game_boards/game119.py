@@ -539,8 +539,8 @@ class Board(gd.BoardGame):
 
         if simplified_1 or simplified_2:
             if lcd > den1:
-                self.divisors2[0].set_value("%s%s" % (chr(215), str(lcd/den1)))
-                self.divisors2[1].set_value("%s%s" % (chr(215), str(lcd/den1)))
+                self.divisors2[0].set_value("%s%s" % (chr(215), str(int(lcd/den1))))
+                self.divisors2[1].set_value("%s%s" % (chr(215), str(int(lcd/den1))))
 
                 self.nm1xa2.set_font_color(self.font_color6)
                 self.nm1xb2.set_font_color(self.font_color6)
@@ -553,8 +553,8 @@ class Board(gd.BoardGame):
                     self.nm1xb2.set_font_color(self.font_color2)
 
             if lcd > den2:
-                self.divisors2[2].set_value("%s%s" % (chr(215), str(lcd/den2)))
-                self.divisors2[3].set_value("%s%s" % (chr(215), str(lcd/den2)))
+                self.divisors2[2].set_value("%s%s" % (chr(215), str(int(lcd/den2))))
+                self.divisors2[3].set_value("%s%s" % (chr(215), str(int(lcd/den2))))
 
                 self.nm2xa2.set_font_color(self.font_color7)
                 self.nm2xb2.set_font_color(self.font_color7)
@@ -567,8 +567,8 @@ class Board(gd.BoardGame):
                     self.nm2xb2.set_font_color(self.font_color3)
         else:
             if lcd > den1:
-                self.divisors[0].set_value("%s%s" % (chr(215), str(lcd / den1)))
-                self.divisors[1].set_value("%s%s" % (chr(215), str(lcd / den1)))
+                self.divisors[0].set_value("%s%s" % (chr(215), str(int(lcd / den1))))
+                self.divisors[1].set_value("%s%s" % (chr(215), str(int(lcd / den1))))
 
                 self.nm1xa2.set_font_color(self.font_color6)
                 self.nm1xb2.set_font_color(self.font_color6)
@@ -577,8 +577,8 @@ class Board(gd.BoardGame):
                 self.divisors[1].set_value("")
 
             if lcd > den2:
-                self.divisors[2].set_value("%s%s" % (chr(215), str(lcd / den2)))
-                self.divisors[3].set_value("%s%s" % (chr(215), str(lcd / den2)))
+                self.divisors[2].set_value("%s%s" % (chr(215), str(int(lcd / den2))))
+                self.divisors[3].set_value("%s%s" % (chr(215), str(int(lcd / den2))))
 
                 self.nm2xa2.set_font_color(self.font_color7)
                 self.nm2xb2.set_font_color(self.font_color7)
