@@ -100,13 +100,33 @@ def time2str(h, m):
         return "mázaškaŋškaŋ %s itȟókab oápȟe čík’ala %s" % (n2txt(h), n2txt(60 - m))
     return ""
 
-#write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
 
 def fract2str(n, d):
-    if n == 1:
-        return numerators[0] + " " + d_singular[d-1]
+    # this needs proofreading by a native speaker, for now disabling relevant activities and returning empty string
+    if n - n == 0:
+        return ""
+
+    if not (1 <= n <= d <= 12):
+        return "Unsupported fraction"
+
+    special_cases = {
+        2: "ičáŋku",
+        3: "yatíŋčaka",
+        4: "tópa el",
+        5: "záptaŋ el",
+        6: "šákpe el",
+        7: "šakówiŋ el",
+        8: "šaglóǧaŋ el",
+        9: "napčíyuŋka el",
+        10: "wikčémna el",
+        11: "akéwaŋzi el",
+        12: "akénuŋpa el"
+    }
+
+    if n == 1 and d in special_cases:
+        if d == 2:
+            return special_cases[d]  # just "ičáŋku"
+        else:
+            return f"{special_cases[d]} wáŋži"
     else:
-        return numerators[n-1] + " " + d_plural[d-1]
+        return f"{numbers[n - 1]} {special_cases[d]}"

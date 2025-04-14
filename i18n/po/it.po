@@ -1,5 +1,5 @@
 # eduActiv8 - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
@@ -7,18 +7,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2019-01-15 16:49+0100\n"
+"PO-Revision-Date: 2025-04-14 17:57+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
-"Language-Team: Italian (https://www.transifex.com/eduactiv8/teams/94947/it/)\n"
+"Language-Team: Italian (https://app.transifex.com/eduactiv8/teams/94947/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
@@ -120,6 +120,9 @@ msgstr "Preferenze:"
 
 msgid "switch to full screen after login"
 msgstr "passa in modalità schermo intero dopo l'accesso"
+
+msgid "allow users to navigate to locked levels"
+msgstr "consenti agli utenti di navigare ai livelli bloccati"
 
 msgid "allow adding new users on login screen"
 msgstr "consenti l'inserimento di nuovi utente dalla schermata di accesso"
@@ -722,6 +725,9 @@ msgstr "Congratulazioni! Hai completato tutte le prove di questo gioco."
 
 msgid "Great job!"
 msgstr "Grandioso!"
+
+msgid "Perfect!!!"
+msgstr "Perfetto!"
 
 msgid "Awesome!"
 msgstr "Imponente!"
@@ -1376,73 +1382,88 @@ msgid "green apple"
 msgid_plural "green apples"
 msgstr[0] "mela verde"
 msgstr[1] "mele verdi"
+msgstr[2] "mele verdi"
 
 msgid "red apple"
 msgid_plural "red apples"
 msgstr[0] "mela rossa"
 msgstr[1] "mele rosse"
+msgstr[2] "mele rosse"
 
 msgid "strawberry"
 msgid_plural "strawberries"
 msgstr[0] "fragola"
 msgstr[1] "fragole"
+msgstr[2] "fragole"
 
 msgid "pear"
 msgid_plural "pears"
 msgstr[0] "pera"
 msgstr[1] "pere"
+msgstr[2] "pere"
 
 msgid "orange [fruit]"
 msgid_plural "oranges"
 msgstr[0] "arancia"
 msgstr[1] "arance"
+msgstr[2] "arance"
 
 msgid "onion"
 msgid_plural "onions"
 msgstr[0] "cipolla"
 msgstr[1] "cipolle"
+msgstr[2] "cipolle"
 
 msgid "tomato"
 msgid_plural "tomatoes"
 msgstr[0] "pomodoro"
 msgstr[1] "pomodori"
+msgstr[2] "pomodori"
 
 msgid "lemon"
 msgid_plural "lemons"
 msgstr[0] "limone"
 msgstr[1] "limoni"
+msgstr[2] "limoni"
 
 msgid "cherry"
 msgid_plural "cherries"
 msgstr[0] "ciliegia"
 msgstr[1] "ciliegie"
+msgstr[2] "ciliegie"
 
 msgid "pepper"
 msgid_plural "peppers"
 msgstr[0] "pepeone"
 msgstr[1] "peperoni"
+msgstr[2] "peperoni"
 
 msgid "carrot"
 msgid_plural "carrots"
 msgstr[0] "carota"
 msgstr[1] "carote"
+msgstr[2] "carote"
 
 msgid "banana"
 msgid_plural "bananas"
 msgstr[0] "banana "
 msgstr[1] "banane "
+msgstr[2] "banane "
 
 msgid "watermelon"
 msgid_plural "watermelons"
 msgstr[0] "anguria"
 msgstr[1] "angurie"
+msgstr[2] "angurie"
 
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "ora"
 msgstr[1] "ore"
+msgstr[2] "ore"
 
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minuto"
 msgstr[1] "minuti"
+msgstr[2] "minuti"

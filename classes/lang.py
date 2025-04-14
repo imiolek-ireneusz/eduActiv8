@@ -212,6 +212,7 @@ class Language:
 
         if self.lang == 'sr':
             self.time2str_short = self.lang_file.time2str_short
+            # cursive disabled in lang.xml - font do not contain all letters
         elif self.lang == 'ru':
             self.time2spk_short = self.lang_file.time2spk_short
             self.time2str_short = self.lang_file.time2str_short

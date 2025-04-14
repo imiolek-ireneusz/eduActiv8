@@ -1,5 +1,5 @@
 # eduActiv8 - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
@@ -7,20 +7,20 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2019-12-13 22:07+0000\n"
+"PO-Revision-Date: 2025-04-14 17:59+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Polish (https://www.transifex.com/eduactiv8/teams/94947/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n"
-"%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n"
-"%100<=14) ? 2 : 3);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || "
+"n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && "
+"n%100<=14) ? 2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
@@ -120,6 +120,9 @@ msgstr "Ustawienia"
 
 msgid "switch to full screen after login"
 msgstr "włącz pełny ekran po zalogowaniu"
+
+msgid "allow users to navigate to locked levels"
+msgstr "pozwól użytkownikom na przechodzenie do zablokowanych poziomów"
 
 msgid "allow adding new users on login screen"
 msgstr "zezwól na dodawanie nowych użytkowników na ekranie logowania"
@@ -722,6 +725,9 @@ msgstr "Gratulacje! Wszystkie zadania wykonane."
 
 msgid "Great job!"
 msgstr "Świetnie!"
+
+msgid "Perfect!!!"
+msgstr "Perfekcyjnie!"
 
 msgid "Awesome!"
 msgstr "Idealnie!"

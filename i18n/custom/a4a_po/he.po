@@ -4,13 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Last-Translator: ami.g <amihaygal@gmail.com>\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
@@ -61,13 +58,13 @@ msgid "gorilla"
 msgstr "גורילה"
 
 msgid "llama"
-msgstr ""
+msgstr "למה"
 
 msgid "vulture"
 msgstr "נשר"
 
 msgid "hamster"
-msgstr ""
+msgstr "אוגר"
 
 msgid "bird"
 msgstr "ציפור"
@@ -148,13 +145,13 @@ msgid "viper"
 msgstr "צפע"
 
 msgid "shrike"
-msgstr ""
+msgstr "חנקן"
 
 msgid "donkey"
-msgstr ""
+msgstr "חמור"
 
 msgid "guinea pig"
-msgstr ""
+msgstr "חזיר ים"
 
 msgid "sloth"
 msgstr "עצלן"
@@ -163,7 +160,7 @@ msgid "horse"
 msgstr "סוס"
 
 msgid "penguin"
-msgstr ""
+msgstr "פינגווין"
 
 msgid "otter"
 msgstr "לוטרה"
@@ -196,10 +193,10 @@ msgid "mole"
 msgstr "חפרפרת"
 
 msgid "ray"
-msgstr ""
+msgstr "חתול ים"
 
 msgid "ram"
-msgstr ""
+msgstr "איל"
 
 msgid "skunk"
 msgstr "בואש"
@@ -277,7 +274,7 @@ msgid "squid"
 msgstr "דיונון"
 
 msgid "lion cub"
-msgstr ""
+msgstr "גור אריות"
 
 msgid "jaguar"
 msgstr "יגואר"
@@ -316,7 +313,7 @@ msgid "goat"
 msgstr "תיש"
 
 msgid "baby rabbit"
-msgstr ""
+msgstr "גור ארנב"
 
 msgid "lion"
 msgstr "אריה"
@@ -334,10 +331,10 @@ msgid "doe"
 msgstr "איילה"
 
 msgid "gopher"
-msgstr ""
+msgstr "חולד"
 
 msgid "elephant"
-msgstr ""
+msgstr "פיל"
 
 msgid "giraffe"
 msgstr "ג'ירפה"
@@ -352,10 +349,10 @@ msgid "jay"
 msgstr "עורבני"
 
 msgid "seal"
-msgstr ""
+msgstr "כלב ים"
 
 msgid "rooster"
-msgstr ""
+msgstr "תרנגול"
 
 msgid "turtle"
 msgstr "צב"
@@ -415,7 +412,7 @@ msgid "helmet"
 msgstr "קסדה"
 
 msgid "ice skating"
-msgstr ""
+msgstr "החלקה על הקרח"
 
 msgid "walk"
 msgstr "ללכת"
@@ -433,7 +430,7 @@ msgid "hike"
 msgstr "טיול"
 
 msgid "boxing"
-msgstr ""
+msgstr "איגרוף"
 
 msgid "hockey"
 msgstr "הוקי"
@@ -460,13 +457,13 @@ msgid "golf"
 msgstr "גולף"
 
 msgid "whistle"
-msgstr ""
+msgstr "משרוקית"
 
 msgid "torch"
 msgstr "לפיד"
 
 msgid "sailing"
-msgstr ""
+msgstr "שיט"
 
 msgid "stand"
 msgstr "לעמוד"
@@ -508,7 +505,7 @@ msgid "mouth"
 msgstr "פה"
 
 msgid "feet"
-msgstr ""
+msgstr "רגליים"
 
 msgid "hand"
 msgstr "יד"
@@ -526,7 +523,7 @@ msgid "beard"
 msgstr "זָקן"
 
 msgid "belly button"
-msgstr ""
+msgstr "פופיק"
 
 msgid "thumb"
 msgstr "אגודל"
@@ -547,7 +544,7 @@ msgid "arm"
 msgstr "זרוע"
 
 msgid "eyebrow"
-msgstr ""
+msgstr "גבה"
 
 msgid "fist"
 msgstr "אגרוף"
@@ -562,7 +559,7 @@ msgid "throat"
 msgstr "גרון"
 
 msgid "eye"
-msgstr ""
+msgstr "עין"
 
 msgid "leg"
 msgstr "רגל"
@@ -604,19 +601,19 @@ msgid "girl"
 msgstr "ילדה"
 
 msgid "male"
-msgstr ""
+msgstr "זכר"
 
 msgid "son"
 msgstr "בן"
 
 msgid "mates"
-msgstr ""
+msgstr "חברים"
 
 msgid "friends"
-msgstr ""
+msgstr "חברים"
 
 msgid "baby"
-msgstr ""
+msgstr "תינוק"
 
 msgid "child"
 msgstr "ילד"
@@ -628,10 +625,10 @@ msgid "mom"
 msgstr "אמא"
 
 msgid "twin boys"
-msgstr ""
+msgstr "תאומים"
 
 msgid "brothers"
-msgstr ""
+msgstr "אחים"
 
 msgid "man"
 msgstr "איש"
@@ -640,13 +637,13 @@ msgid "mother"
 msgstr "אמא"
 
 msgid "grandfather"
-msgstr ""
+msgstr "סבא"
 
 msgid "family"
 msgstr "משפחה"
 
 msgid "female"
-msgstr ""
+msgstr "נקבה"
 
 msgid "wife"
 msgstr "אישה"
@@ -658,7 +655,7 @@ msgid "bride"
 msgstr "כלה"
 
 msgid "madam"
-msgstr ""
+msgstr "גברת"
 
 msgid "grandmother"
 msgstr "סבתא"
@@ -670,7 +667,7 @@ msgid "lad"
 msgstr "נער"
 
 msgid "twin girls"
-msgstr ""
+msgstr "תאומות"
 
 msgid "tribe"
 msgstr "שבט"
@@ -679,7 +676,7 @@ msgid "boy"
 msgstr "בן"
 
 msgid "sisters"
-msgstr ""
+msgstr "אחיות"
 
 msgid "woman"
 msgstr "אישה"
@@ -697,7 +694,7 @@ msgid "hamburger"
 msgstr "המבורגר"
 
 msgid "steak"
-msgstr ""
+msgstr "סטייק"
 
 msgid "fudge"
 msgstr "פאדג'"
@@ -712,22 +709,22 @@ msgid "rice"
 msgstr "אורז"
 
 msgid "ice cream"
-msgstr ""
+msgstr "גלידה"
 
 msgid "jelly"
 msgstr "ג'לי"
 
 msgid "yoghurt"
-msgstr ""
+msgstr "יוגורט"
 
 msgid "dessert"
 msgstr "קינוח"
 
 msgid "pretzel"
-msgstr ""
+msgstr "בייגלה"
 
 msgid "peanut"
-msgstr ""
+msgstr "בוטן"
 
 msgid "jam"
 msgstr "ריבה"
@@ -739,7 +736,7 @@ msgid "cookie"
 msgstr "עוגיות"
 
 msgid "bacon"
-msgstr ""
+msgstr "בייקון"
 
 msgid "spice"
 msgstr "תבלינים"
@@ -757,7 +754,7 @@ msgid "chocolate"
 msgstr "שוקולד"
 
 msgid "water bottle"
-msgstr ""
+msgstr "בקבוק מים"
 
 msgid "lunch"
 msgstr "ארוחת צהריים"
@@ -784,10 +781,10 @@ msgid "cake"
 msgstr "עוגה"
 
 msgid "mashed potatoes"
-msgstr ""
+msgstr "פירה"
 
 msgid "tea"
-msgstr ""
+msgstr "תה"
 
 msgid "bun"
 msgstr "לחמניה"
@@ -796,13 +793,13 @@ msgid "cheese"
 msgstr "גבינה"
 
 msgid "beef"
-msgstr ""
+msgstr "בקר"
 
 msgid "sandwich"
 msgstr "כריך"
 
 msgid "slice"
-msgstr ""
+msgstr "פרוסה"
 
 msgid "sprinkle"
 msgstr "פיצפוצים"
@@ -850,13 +847,13 @@ msgid "egg"
 msgstr "ביצה"
 
 msgid "hot dog"
-msgstr ""
+msgstr "נקניקיה"
 
 msgid "ham"
 msgstr "בשר חזיר"
 
 msgid "jewellery"
-msgstr ""
+msgstr "תכשיטים"
 
 msgid "sock"
 msgstr "גרב"
@@ -871,7 +868,7 @@ msgid "smock"
 msgstr "חלוק עבודה"
 
 msgid "shorts"
-msgstr ""
+msgstr "מכנסיים קצרים"
 
 msgid "pocket"
 msgstr "כיס"
@@ -889,10 +886,10 @@ msgid "raincoat"
 msgstr "מעיל גשם"
 
 msgid "trousers"
-msgstr ""
+msgstr "מכנסיים"
 
 msgid "sunglasses"
-msgstr ""
+msgstr "משקפי שמש"
 
 msgid "coat"
 msgstr "מעיל"
@@ -910,28 +907,28 @@ msgid "suit"
 msgstr "חליפה"
 
 msgid "pyjamas"
-msgstr ""
+msgstr "פיג'מה"
 
 msgid "skirt"
 msgstr "חצאית"
 
 msgid "zip"
-msgstr ""
+msgstr "רוכסן"
 
 msgid "shoes"
-msgstr ""
+msgstr "נעליים"
 
 msgid "jewel"
 msgstr "תכשיט"
 
 msgid "tie"
-msgstr ""
+msgstr "עניבה"
 
 msgid "slippers"
 msgstr "כפכפים"
 
 msgid "gloves"
-msgstr ""
+msgstr "כפפות"
 
 msgid "hat"
 msgstr "כובע"
@@ -943,10 +940,10 @@ msgid "cap"
 msgstr "כובע"
 
 msgid "swimming suit"
-msgstr ""
+msgstr "בגד ים"
 
 msgid "trainer"
-msgstr ""
+msgstr "נעל ספורט"
 
 msgid "vest"
 msgstr "אפודה"
@@ -976,7 +973,7 @@ msgid "sash"
 msgstr "אבנט"
 
 msgid "shoe sole"
-msgstr ""
+msgstr "סוליית נעל"
 
 msgid "robe"
 msgstr "גלימה"
@@ -988,7 +985,7 @@ msgid "kimono"
 msgstr "קימונו"
 
 msgid "overalls"
-msgstr ""
+msgstr "אוברול"
 
 msgid "lick"
 msgstr "ללקק"
@@ -1000,7 +997,7 @@ msgid "beg"
 msgstr "להתחנן"
 
 msgid "fell"
-msgstr ""
+msgstr "נפל"
 
 msgid "scratch"
 msgstr "לשרוט"
@@ -1060,7 +1057,7 @@ msgid "meet"
 msgstr "להיפגש"
 
 msgid "sell"
-msgstr ""
+msgstr "למכור"
 
 msgid "peck"
 msgstr "לנקר"
@@ -1096,16 +1093,16 @@ msgid "cheer"
 msgstr "עידוד"
 
 msgid "bake"
-msgstr ""
+msgstr "לאפות"
 
 msgid "write"
 msgstr "לכתוב"
 
 msgid "punch"
-msgstr ""
+msgstr "אגרוף"
 
 msgid "strum"
-msgstr ""
+msgstr "לפרוט (על כלי מיתר)"
 
 msgid "study"
 msgstr "ללמוד"
@@ -1159,7 +1156,7 @@ msgid "pull"
 msgstr "למשוך"
 
 msgid "ate"
-msgstr ""
+msgstr "אכל"
 
 msgid "kiss"
 msgstr "להתנשק"
@@ -1198,13 +1195,13 @@ msgid "fly"
 msgstr "לעוף"
 
 msgid "juggle"
-msgstr ""
+msgstr "ללהטט"
 
 msgid "bit"
 msgstr "בּיט"
 
 msgid "sweep"
-msgstr ""
+msgstr "לטאטא"
 
 msgid "look"
 msgstr "להסתכל"
@@ -1240,10 +1237,10 @@ msgid "circus"
 msgstr "קרקס"
 
 msgid "church"
-msgstr ""
+msgstr "כנסייה"
 
 msgid "kennel"
-msgstr ""
+msgstr "מלונה"
 
 msgid "temple"
 msgstr "מקדש"
@@ -1258,7 +1255,7 @@ msgid "brick"
 msgstr "לבֵנה"
 
 msgid "well"
-msgstr ""
+msgstr "באר"
 
 msgid "street"
 msgstr "רחוב"
@@ -1426,7 +1423,7 @@ msgid "juggler"
 msgstr "להטוטן"
 
 msgid "policeman"
-msgstr ""
+msgstr "שוטר"
 
 msgid "plumber"
 msgstr "שרברב"
@@ -1441,7 +1438,7 @@ msgid "farmer"
 msgstr "חקלאי"
 
 msgid "magician"
-msgstr ""
+msgstr "קוסם"
 
 msgid "knight"
 msgstr "אביר/ה"
@@ -1453,7 +1450,7 @@ msgid "bricklayer"
 msgstr "בנאי"
 
 msgid "cleaner"
-msgstr ""
+msgstr "מנקה"
 
 msgid "teacher"
 msgstr "מורָה"
@@ -1501,7 +1498,7 @@ msgid "president"
 msgstr "נשיא/ה"
 
 msgid "office worker"
-msgstr ""
+msgstr "פקיד"
 
 msgid "carpenter"
 msgstr "נגר"
@@ -1546,7 +1543,7 @@ msgid "boxer"
 msgstr "מתאגרף"
 
 msgid "ballet dancer"
-msgstr ""
+msgstr "רקדן בלט"
 
 msgid "coach"
 msgstr "מאמנת"
@@ -1555,19 +1552,19 @@ msgid "astronaut"
 msgstr "אשת חלל"
 
 msgid "painter"
-msgstr ""
+msgstr "צייר"
 
 msgid "anaesthesiologist"
-msgstr ""
+msgstr "מרדים"
 
 msgid "scientist"
-msgstr ""
+msgstr "מדען"
 
 msgid "carrot"
 msgstr "גזר"
 
 msgid "blackberries"
-msgstr ""
+msgstr "אוכמניות שחורות"
 
 msgid "celery"
 msgstr "סלרי"
@@ -1591,7 +1588,7 @@ msgid "broccoli"
 msgstr "ברוקולי"
 
 msgid "grapes"
-msgstr ""
+msgstr "ענבים"
 
 msgid "spinach"
 msgstr "תרד"
@@ -1606,7 +1603,7 @@ msgid "radish"
 msgstr "צנון"
 
 msgid "tomato"
-msgstr ""
+msgstr "עגבנייה"
 
 msgid "kiwi"
 msgstr "קיווי"
@@ -1615,13 +1612,13 @@ msgid "asparagus"
 msgstr "אספרגוס"
 
 msgid "olives"
-msgstr ""
+msgstr "זיתים"
 
 msgid "cucumbers"
-msgstr ""
+msgstr "מלפפונים"
 
 msgid "beans"
-msgstr ""
+msgstr "שעועית"
 
 msgid "strawberry"
 msgstr "תות"
@@ -1636,22 +1633,22 @@ msgid "apricot"
 msgstr "מישמש"
 
 msgid "potatoes"
-msgstr ""
+msgstr "תפוחי אדמה"
 
 msgid "peas"
-msgstr ""
+msgstr "אפונה"
 
 msgid "cabbage"
 msgstr "כרוב"
 
 msgid "cherries"
-msgstr ""
+msgstr "דובדבנים"
 
 msgid "squash"
 msgstr "דלועים"
 
 msgid "blueberries"
-msgstr ""
+msgstr "אוכמניות"
 
 msgid "pear"
 msgstr "אגס"
@@ -1690,19 +1687,19 @@ msgid "lemon"
 msgstr "לימון"
 
 msgid "aubergine"
-msgstr ""
+msgstr "חציל"
 
 msgid "artichokes"
-msgstr ""
+msgstr "ארטישוקים"
 
 msgid "plums"
-msgstr ""
+msgstr "שזיפים"
 
 msgid "leek"
 msgstr "כרישה"
 
 msgid "bananas"
-msgstr ""
+msgstr "בננות"
 
 msgid "papaya"
 msgstr "פפאיה"
@@ -1765,8 +1762,7 @@ msgid "mast"
 msgstr "תורֵן"
 
 msgid "sledge"
-msgstr ""
+msgstr "מזחלת"
 
 msgid "bicycle"
-msgstr ""
-
+msgstr "אופניים"

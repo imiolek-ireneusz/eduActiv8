@@ -143,13 +143,43 @@ def time2str(h, m):
             return "les %s menys un minut" % hores[h - 1]
 
 #write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+numerators = ['un', 'dos', 'tres', 'quatre', 'cinc', 'sis', 'set', 'vuit', 'nou', 'deu', 'onze', 'dotze']
+
+# Singular forms for 1/x
+d_singular = [
+    '',         # dummy 0
+    'mig',      # 1/2
+    'terç',     # 1/3
+    'quart',    # 1/4
+    'cinquè',   # 1/5
+    'sisè',     # 1/6
+    'setè',     # 1/7
+    'vuitè',    # 1/8
+    'novè',     # 1/9
+    'desè',     # 1/10
+    'onzè',     # 1/11
+    'dotzè'     # 1/12
+]
+
+# Plural forms for 2+/x
+d_plural = [
+    '',           # dummy 0
+    'migs',       # 2/2
+    'terços',     # 2/3
+    'quarts',     # 2/4
+    'cinquens',   # 2/5
+    'sisens',     # 2/6
+    'setens',     # 2/7
+    'vuitens',    # 2/8
+    'novens',     # 2/9
+    'desens',     # 2/10
+    'onzens',     # 2/11
+    'dotzens'     # 2/12
+]
 
 
 def fract2str(n, d):
     if n == 1:
-        return numerators[0] + " " + d_singular[d-1]
+        return numerators[0] + " " + d_singular[d - 1]
     else:
-        return numerators[n-1] + " " + d_plural[d-1]
+        return numerators[n - 1] + " " + d_plural[d - 1]

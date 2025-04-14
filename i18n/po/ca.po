@@ -1,44 +1,48 @@
 # eduActiv8 - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
 # Guillem Jover, 2014
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2019-01-04 22:25+0000\n"
+"PO-Revision-Date: 2025-04-14 17:56+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
-"Language-Team: Catalan (https://www.transifex.com/eduactiv8/teams/94947/ca/)\n"
+"Language-Team: Catalan (https://app.transifex.com/eduactiv8/teams/94947/ca/)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps."
+"org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Laby, 2010 per Mehdi Cherti (mehdidc) \n"
 " Sons per diversos autors qui van contribuir les seves obres a freesound.org. \n"
-" Imatges per diversos autors qui van contribuir les seves obres a openclipart.org (domini públic) i http://www.art4apps.org/ - Art4Apps by Smart4Kids - sota una llicència Creative Commons (CC BY-SA). \n"
+" Imatges per diversos autors qui van contribuir les seves obres a openclipart.org (domini públic) i http://www."
+"art4apps.org/ - Art4Apps by Smart4Kids - sota una llicència Creative Commons (CC BY-SA). \n"
 " Vegeu credits.txt per obtenir-ne més informació sobre els autors dels fitxers multimèdia emprats a aquest projecte"
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
-"<http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public "
+"License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any "
+"later version. You should have received a copy of the GNU General Public License along with this program. If not, "
+"see <http://www.gnu.org/licenses/>."
 msgstr ""
+"Aquest programa és programari lliure: el podeu redistribuir i/o modificar d'acord amb els termes de la Llicència "
+"Pública General GNU tal com la publica la Free Software Foundation, ja sigui la versió 3 de la Llicència o (si ho "
+"preferiu) qualsevol versió posterior. Hauríeu d’haver rebut una còpia de la Llicència Pública General GNU "
+"juntament amb aquest programa. Si no, vegeu <http://www.gnu.org/licenses/>."
 
 msgid "A collection of educational activities for kids"
 msgstr "Un petit conjunt d'aplicacions educatives per a nens"
@@ -46,15 +50,11 @@ msgstr "Un petit conjunt d'aplicacions educatives per a nens"
 msgid "Educational Activities for Kids"
 msgstr "Paquet d'activitats educatives per nens i nenes"
 
-msgid ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
-msgstr ""
-"Imatges de: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Llicència "
-"Creative Commons (CC BY-SA)"
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr "Imatges de: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Llicència Creative Commons (CC BY-SA)"
 
 msgid "Default Language:"
-msgstr ""
+msgstr "Idioma predeterminat:"
 
 msgid "Guest"
 msgstr "Convidat"
@@ -110,6 +110,9 @@ msgstr "Preferències"
 
 msgid "switch to full screen after login"
 msgstr "canvia a pantalla completa després d'iniciar sessió"
+
+msgid "allow users to navigate to locked levels"
+msgstr "permetre als usuaris navegar a nivells bloquejats"
 
 msgid "allow adding new users on login screen"
 msgstr "permet afegir usuaris nous a la pantalla d'inici de sessió"
@@ -291,13 +294,13 @@ msgid "Letters"
 msgstr "Lletres"
 
 msgid "Learn Letters with Flashcards"
-msgstr ""
+msgstr "Aprèn les lletres amb targetes didàctiques"
 
 msgid "Learn to Write"
 msgstr "Aprèn a escriure"
 
 msgid "Trace Letters and Numbers"
-msgstr ""
+msgstr "Ressegueix lletres i números"
 
 msgid "Complete the ABC"
 msgstr "Completa l'abecedari"
@@ -318,7 +321,7 @@ msgid "Word Maze"
 msgstr "Laberint de paraules"
 
 msgid "Collect all letters in the right order"
-msgstr ""
+msgstr "Recull totes les lletres en l'ordre correcte"
 
 msgid "Word Maze + 4"
 msgstr "Laberint de paraules + 4"
@@ -327,7 +330,7 @@ msgid "Rainbow Keyboard"
 msgstr "Teclat d'arc de Sant Martí"
 
 msgid "Touch Typing Tutor"
-msgstr ""
+msgstr "Tutor de mecanografia"
 
 msgid "English Alphabet"
 msgstr "Alfabet anglès"
@@ -340,13 +343,13 @@ msgid "Numbers"
 msgstr "Números"
 
 msgid "Number Spelling"
-msgstr ""
+msgstr "Deletreig de nombres"
 
 msgid "Match numbers to their spelling"
-msgstr ""
+msgstr "Relaciona els nombres amb la seva escriptura"
 
 msgid "Learn Numbers with Flashcards"
-msgstr ""
+msgstr "Aprèn els nombres amb targetes didàctiques"
 
 msgid "Learn to Count"
 msgstr "Aprèn a contar"
@@ -382,10 +385,10 @@ msgid "Sorting Numbers"
 msgstr "Ordena els números"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Nombres consecutius"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Nombres aleatoris"
 
 msgid "Number Comparison"
 msgstr "Compara els números"
@@ -412,22 +415,22 @@ msgid "Shapes"
 msgstr "Formes"
 
 msgid "Learn Shapes with Flashcards"
-msgstr ""
+msgstr "Aprèn les formes amb targetes didàctiques"
 
 msgid "Solids"
 msgstr "Sòlids"
 
 msgid "Solid Geometry with Flashcards"
-msgstr ""
+msgstr "Geometria en 3D amb targetes didàctiques"
 
 msgid "Time Matching"
-msgstr ""
+msgstr "Associació d'hores"
 
 msgid "Complete the word"
 msgstr "Completa la paraula"
 
 msgid "Shape Matching"
-msgstr ""
+msgstr "Associació de formes"
 
 msgid "Help me find my shadow"
 msgstr "ajuda'm a trobar la meva ombra"
@@ -436,7 +439,7 @@ msgid "Paint"
 msgstr "Pinta"
 
 msgid "Colour Matching"
-msgstr ""
+msgstr "Associació de colors"
 
 msgid "Label the colours"
 msgstr "etiqueta els colors"
@@ -475,58 +478,58 @@ msgid "Fifteen"
 msgstr "Quinze"
 
 msgid "With a Twist"
-msgstr ""
+msgstr "Amb un gir"
 
 msgid "Mixing Colours for Painting"
-msgstr ""
+msgstr "Mescla de colors per pintar"
 
 msgid "Mix red, yellow, blue, black and white paint"
-msgstr ""
+msgstr "Barreja pintura vermella, groga, blava, negra i blanca"
 
 msgid "Additive Colour Mixing - Light"
-msgstr ""
+msgstr "Mescla additiva de colors - Llum"
 
 msgid "Mix red, green and blue light to get other colours"
-msgstr ""
+msgstr "Barreja llum vermella, verda i blava per obtenir altres colors"
 
 msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
-msgstr ""
+msgstr "Mescla subtractiva de colors - Pintures, tints, tintes"
 
 msgid "Mix cyan, magenta and yellow paint to get other colours"
-msgstr ""
+msgstr "Barreja pintura cian, magenta i groga per obtenir altres colors"
 
 msgid "Find the colour of the circle in the middle"
-msgstr ""
+msgstr "Troba el color del cercle del mig"
 
 msgid "Adjust the amount of cyan, magenta and yellow paint"
-msgstr ""
+msgstr "Ajusta la quantitat de pintura cian, magenta i groga"
 
 msgid "Adjust the intensity of red, green and blue light"
-msgstr ""
+msgstr "Ajusta la intensitat de la llum vermella, verda i blava"
 
 msgid "Match Animals"
-msgstr ""
+msgstr "Relaciona animals"
 
 msgid "Find all matching animals"
-msgstr ""
+msgstr "Troba tots els animals iguals"
 
 msgid "Match animals to their shadows"
-msgstr ""
+msgstr "Relaciona els animals amb les seves ombres"
 
 msgid "Match Animals - Memory Game"
-msgstr ""
+msgstr "Relaciona animals - Joc de memòria"
 
 msgid "Match Fruits - Memory Game"
-msgstr ""
+msgstr "Relaciona fruites - Joc de memòria"
 
 msgid "Match Vegetables - Memory Game"
-msgstr ""
+msgstr "Relaciona verdures - Joc de memòria"
 
 msgid "Match Numbers - Memory Game"
-msgstr ""
+msgstr "Relaciona nombres - Joc de memòria"
 
 msgid "Find matching pairs of the same image"
-msgstr ""
+msgstr "Troba parelles iguals de la mateixa imatge"
 
 msgid "Image Slider"
 msgstr "Imatges tallades"
@@ -541,7 +544,7 @@ msgid "Number Slider"
 msgstr "Números"
 
 msgid "Maths Matching Game"
-msgstr ""
+msgstr "Joc de relació matemàtica"
 
 msgid "Addition"
 msgstr "Suma"
@@ -583,123 +586,121 @@ msgid "Percentages (Category)"
 msgstr "Percentatges"
 
 msgid "Learn new words"
-msgstr ""
+msgstr "Aprèn paraules noves"
 
 msgid "Word Builders"
-msgstr ""
+msgstr "Constructors de paraules"
 
 msgid "Word Matchers"
-msgstr ""
+msgstr "Relacionadors de paraules"
 
 msgid "Match images to words"
-msgstr ""
+msgstr "Relaciona imatges amb paraules"
 
 msgid "Animals"
-msgstr ""
+msgstr "Animals"
 
 msgid "Sports"
-msgstr ""
+msgstr "Esports"
 
 msgid "Body"
-msgstr ""
+msgstr "Cos"
 
 msgid "People"
-msgstr ""
+msgstr "Persones"
 
 msgid "Actions"
-msgstr ""
+msgstr "Accions"
 
 msgid "Constructions"
-msgstr ""
+msgstr "Construccions"
 
 msgid "Nature"
-msgstr ""
+msgstr "Natura"
 
 msgid "Jobs"
-msgstr ""
+msgstr "Feines"
 
 msgid "Clothes and Accessories"
-msgstr ""
+msgstr "Roba i accessoris"
 
 msgid "Fruits and Vegetables"
-msgstr ""
+msgstr "Fruites i verdures"
 
 msgid "Transport"
-msgstr ""
+msgstr "Transport"
 
 msgid "Food"
-msgstr ""
+msgstr "Menjar"
 
 msgid "Listening Exercises"
-msgstr ""
+msgstr "Exercicis d'escolta"
 
 msgid "Match sounds to words"
-msgstr ""
+msgstr "Relaciona sons amb paraules"
 
 msgid "Patterns"
-msgstr ""
+msgstr "Patrons"
 
 msgid "Number Patterns"
-msgstr ""
+msgstr "Patrons numèrics"
 
 msgid "Letter Patterns"
-msgstr ""
+msgstr "Patrons de lletres"
 
 msgid "Color Patterns"
-msgstr ""
+msgstr "Patrons de colors"
 
 msgid "Image Patterns"
-msgstr ""
+msgstr "Patrons d'imatges"
 
 msgid "Fraction Patterns"
-msgstr ""
+msgstr "Patrons de fraccions"
 
 msgid "Shape Patterns"
-msgstr ""
+msgstr "Patrons de formes"
 
 msgid "Complete the pattern on the top line."
-msgstr ""
+msgstr "Completa el patró de la línia superior."
 
 msgid "Match shapes to their names"
-msgstr ""
+msgstr "Relaciona les formes amb els seus noms"
 
 msgid "Negative numbers"
-msgstr ""
+msgstr "Nombres negatius"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr ""
+msgstr "Completa l'alfabet utilitzant les lletres de la línia del mig."
 
-msgid ""
-"Drag the slider up or down so that the right sign is in the red square."
-msgstr ""
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Arrossega el control lliscant amunt o avall perquè el signe correcte estigui al quadrat vermell."
 
 msgid "Take your sheep to the rest of the herd."
-msgstr ""
+msgstr "Porta la teva ovella cap a la resta del ramat."
 
 msgid "Check the shopping list and drag all needed items into the basket."
-msgstr ""
+msgstr "Comprova la llista de la compra i arrossega tots els articles necessaris al cistell."
 
-msgid ""
-"Drag one of the <, > or = (lesser, greater or equal) to the red square."
-msgstr ""
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Arrossega un dels signes <, > o = (menor, major o igual) al quadrat vermell."
 
 msgid "Drag one of the lesser, greater or equal to the red square."
-msgstr ""
+msgstr "Arrossega un dels signes de menor, major o igual al quadrat vermell."
 
 msgid "Rearrange the numbers so they are in the right order."
-msgstr ""
+msgstr "Reordena els números perquè estiguin en l'ordre correcte."
 
 msgid "Build the following word using the letters below."
-msgstr ""
+msgstr "Construeix la següent paraula amb les lletres de sota."
 
 msgid "Find and separate even numbers from odd numbers."
-msgstr ""
+msgstr "Troba i separa els nombres parells dels senars."
 
 msgid "Rearrange the letters so they are in the alphabetical order."
-msgstr ""
+msgstr "Reordena les lletres en ordre alfabètic."
 
 msgid "Rearrange the numbers so they are in the ascending order."
-msgstr ""
+msgstr "Reordena els números en ordre ascendent."
 
 msgid "Perfect! Task solved!"
 msgstr "Perfecte! La feina està resolta!"
@@ -712,6 +713,9 @@ msgstr "Enhorabona! Has completat totes les tasques d'aquest joc."
 
 msgid "Great job!"
 msgstr "Bona feina!"
+
+msgid "Perfect!!!"
+msgstr "Perfecte!"
 
 msgid "Awesome!"
 msgstr "Meravellós!"
@@ -741,31 +745,28 @@ msgid "brush size"
 msgstr "mida del pinzell"
 
 msgid "Match fraction charts on the right to the ones on the left"
-msgstr ""
+msgstr "Relaciona els gràfics de fraccions de la dreta amb els de l'esquerra"
 
-msgid ""
-"Match fraction charts and fractions on the right to the fraction charts on "
-"the left"
-msgstr ""
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Relaciona els gràfics i fraccions de la dreta amb els gràfics de l'esquerra"
 
 msgid "Match fraction charts to the fractions on the left"
-msgstr ""
+msgstr "Relaciona els gràfics de fraccions amb les fraccions de l'esquerra"
 
-msgid ""
-"Match fraction charts, fractions and decimal fractions on the right to their"
-" percentage representations"
+msgid "Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
 msgstr ""
+"Relaciona gràfics de fraccions, fraccions i fraccions decimals de la dreta amb la seva representació percentual"
 
-msgid ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of "
-"coloured pieces to white pieces"
+msgid "Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
 msgstr ""
+"Relaciona els gràfics amb les proporcions de l'esquerra. Les proporcions s'expressen com a relació entre peces de "
+"colors i peces blanques"
 
 msgid "Shape Maker"
-msgstr ""
+msgstr "Creador de formes"
 
 msgid "Let's see what shapes you can draw"
-msgstr ""
+msgstr "Vegem quines formes pots dibuixar"
 
 #, python-format
 msgid "Shape to draw: %s"
@@ -773,47 +774,46 @@ msgstr "Forma a dibuixar: %s"
 
 #, python-format
 msgid "such that lengths of its bases are equal to %d and %d and height to %d"
-msgstr ""
+msgstr "de manera que les bases tinguin una longitud de %d i %d, i l'altura sigui de %d"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d"
-msgstr ""
+msgstr "de manera que els costats tinguin una longitud de %d"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d and %d"
-msgstr ""
+msgstr "de manera que els costats tinguin una longitud de %d i %d"
 
 #, python-format
-msgid ""
-"such that lengths of its 2 parallel bases are equal to %d and height to %d"
-msgstr ""
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "de manera que les dues bases paral·leles tinguin una longitud de %d i l'altura sigui de %d"
 
 #, python-format
 msgid "such that length of its base is equal to %d and height to %d"
-msgstr ""
+msgstr "de manera que la base tingui una longitud de %d i l'altura sigui de %d"
 
 #, python-format
 msgid "such that lengths of its catheti are equal to %d and %d"
-msgstr ""
+msgstr "de manera que els catets tinguin una longitud de %d i %d"
 
 #, python-format
 msgid "such that lengths of both of its catheti are equal to %d"
-msgstr ""
+msgstr "de manera que els dos catets tinguin una longitud de %d"
 
 #, python-format
 msgid "such that length of its hypotenuse is equal to %d"
-msgstr ""
+msgstr "de manera que la hipotenusa tingui una longitud de %d"
 
 #, python-format
 msgid "such that length of one of its sides is equal to %d and height to %d"
-msgstr ""
+msgstr "de manera que un dels costats tingui una longitud de %d i l'altura sigui de %d"
 
 #, python-format
 msgid "such that length of its radius is equal to %d"
-msgstr ""
+msgstr "de manera que el radi tingui una longitud de %d"
 
 msgid "Test yourself"
-msgstr ""
+msgstr "Posa't a prova"
 
 msgid "Clock"
 msgstr "Rellotge"
@@ -828,7 +828,7 @@ msgid "Set the clock to:"
 msgstr "Posa el rellotge a:"
 
 msgid "Drag the clock hands to set the time"
-msgstr ""
+msgstr "Arrossega les agulles del rellotge per posar l'hora"
 
 msgid "What time is it?"
 msgstr "Quina hora és?"
@@ -837,10 +837,10 @@ msgid "Time"
 msgstr "Temps"
 
 msgid "Turn the clock hands and see what happens."
-msgstr ""
+msgstr "Gira les agulles del rellotge i mira què passa."
 
 msgid "Time in text version only"
-msgstr ""
+msgstr "Hora només en format de text"
 
 msgid "How clock works?"
 msgstr "Com funciona un rellotge?"
@@ -901,255 +901,263 @@ msgid "Find missing number"
 msgstr "Troba el número que falta"
 
 msgid "numerator"
-msgstr ""
+msgstr "numerador"
 
 msgid "denominator"
-msgstr ""
+msgstr "denominador"
 
 msgid "Experiment with fractions"
-msgstr ""
+msgstr "Experimenta amb fraccions"
 
 msgid "Experiment with decimal fractions"
-msgstr ""
+msgstr "Experimenta amb fraccions decimals"
 
 msgid "Ratio"
 msgstr "Proporció"
 
 msgid "Experiment with ratios"
-msgstr ""
+msgstr "Experimenta amb proporcions"
 
 msgid "Experiment with percentages"
-msgstr ""
+msgstr "Experimenta amb percentatges"
 
 msgid "What fraction is it?"
-msgstr ""
+msgstr "Quina fracció és?"
 
 msgid "What decimal fraction is it?"
-msgstr ""
+msgstr "Quina fracció decimal és?"
 
 msgid "Add fractions with the same denominator"
-msgstr ""
+msgstr "Suma fraccions amb el mateix denominador"
 
 msgid "Subtract fractions with the same denominator"
-msgstr ""
+msgstr "Resta fraccions amb el mateix denominador"
 
 msgid "Multiply fractions"
-msgstr ""
+msgstr "Multiplica fraccions"
 
 msgid "Divide fractions"
-msgstr ""
+msgstr "Divideix fraccions"
 
 msgid "Exercise 1"
-msgstr ""
+msgstr "Exercici 1"
 
 msgid "Exercise 2"
-msgstr ""
+msgstr "Exercici 2"
 
 msgid "Exercise 3"
-msgstr ""
+msgstr "Exercici 3"
 
 msgid "Compare decimals and fractions"
-msgstr ""
+msgstr "Compara decimals i fraccions"
 
 msgid "Compare fractions"
-msgstr ""
+msgstr "Compara fraccions"
 
 msgid "Reduce fractions"
-msgstr ""
+msgstr "Redueix fraccions"
 
 msgid "Expand fractions"
-msgstr ""
+msgstr "Expandeix fraccions"
 
 msgid ""
-"To reduce a fraction divide the numerator and the denominator by one of "
-"their common factors which are displayed between the two fractions. Select "
-"one of them to see what happens. If 1 is the only common factor then the "
+"To reduce a fraction divide the numerator and the denominator by one of their common factors which are displayed "
+"between the two fractions. Select one of them to see what happens. If 1 is the only common factor then the "
 "fraction can't be reduced any more - try choosing a different one."
 msgstr ""
+"Per reduir una fracció, divideix el numerador i el denominador per un dels seus factors comuns, que es mostren "
+"entre les dues fraccions. Selecciona'n un per veure què passa. Si 1 és l'únic factor comú, aleshores la fracció ja "
+"no es pot reduir més – prova'n una altra."
 
 msgid ""
-"To expand a fraction multiply the numerator and the denominator by the same "
-"number. Change the multiplicand to see what happens."
+"To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand to see "
+"what happens."
 msgstr ""
+"Per expandir una fracció, multiplica el numerador i el denominador pel mateix número. Canvia el multiplicador per "
+"veure què passa."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr ""
+msgstr "Fes servir les fletxes per canviar la resposta o escriu-la directament."
 
 msgid "Use the arrows to change your answer."
-msgstr ""
+msgstr "Fes servir les fletxes per canviar la resposta."
 
 msgid ""
-"To add two fractions with the same denominators add their numerators "
-"together and keep the denominator unchanged. Simplify the result if the "
-"numerator is greater than the denominator and reduce the fraction if "
-"possible."
+"To add two fractions with the same denominators add their numerators together and keep the denominator unchanged. "
+"Simplify the result if the numerator is greater than the denominator and reduce the fraction if possible."
 msgstr ""
+"Per sumar dues fraccions amb el mateix denominador, suma els numeradors i mantén el denominador igual. Simplifica "
+"el resultat si el numerador és més gran que el denominador, i redueix la fracció si és possible."
 
 msgid ""
-"To subtract one fraction from another one with the same denominator subtract"
-" numerators and keep the denominator unchanged. Reduce the resulting "
-"fraction if possible."
+"To subtract one fraction from another one with the same denominator subtract numerators and keep the denominator "
+"unchanged. Reduce the resulting fraction if possible."
 msgstr ""
+"Per restar una fracció d'una altra amb el mateix denominador, resta els numeradors i mantén el denominador igual. "
+"Redueix la fracció resultant si és possible."
 
 msgid ""
-"To multiply two fractions multiply the numerators together and then multiply"
-" the denominators together. Reduce the resulting fraction if possible."
+"To multiply two fractions multiply the numerators together and then multiply the denominators together. Reduce the "
+"resulting fraction if possible."
 msgstr ""
+"Per multiplicar dues fraccions, multiplica els numeradors i després els denominadors. Redueix la fracció resultant "
+"si és possible."
 
 msgid ""
-"To divide a fraction by another fraction multiply the first fraction by the "
-"second fraction flipped up side down. Simplify and reduce the resulting "
-"fraction if possible."
+"To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side down. "
+"Simplify and reduce the resulting fraction if possible."
 msgstr ""
+"Per dividir una fracció entre una altra, multiplica la primera fracció per la segona invertida. Simplifica i "
+"redueix la fracció resultant si és possible."
 
 msgid "Group fractions together"
-msgstr ""
+msgstr "Agrupa fraccions"
 
 msgid "Group percentages together"
-msgstr ""
+msgstr "Agrupa percentatges"
 
 msgid "Group ratios together"
-msgstr ""
+msgstr "Agrupa proporcions"
 
 msgid "Symmetry"
-msgstr ""
+msgstr "Simetria"
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr ""
+msgstr "Simetria especular – dibuixa amb formes"
 
 msgid "Reflect shapes"
-msgstr ""
+msgstr "Reflexa formes"
 
 msgid "Reflect a shape in a mirror line"
-msgstr ""
+msgstr "Reflexa una forma respecte d’una línia de mirall"
 
-msgid ""
-"Draw a shape that is a reflection of the one already displayed. The red line"
-" is the mirror line."
-msgstr ""
+msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgstr "Dibuixa una forma que sigui la reflexió de la que ja està mostrada. La línia vermella és la línia de mirall."
 
 msgid "Symmetrical shapes - missing half"
-msgstr ""
+msgstr "Formes simètriques – meitat que falta"
 
 msgid "Draw the other half of the shape"
-msgstr ""
+msgstr "Dibuixa l'altra meitat de la forma"
 
 msgid "Find lines of symmetry"
-msgstr ""
+msgstr "Troba línies de simetria"
 
 msgid ""
-"Find and select all lines of symmetry for a displayed shape. Click on the "
-"arrows around the drawing area to select them."
+"Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to select "
+"them."
 msgstr ""
+"Troba i selecciona totes les línies de simetria de la forma mostrada. Fes clic a les fletxes al voltant de l'àrea "
+"de dibuix per seleccionar-les."
 
 msgid "Match equivalent fractions"
-msgstr ""
+msgstr "Relaciona fraccions equivalents"
 
 msgid "Match fractions"
-msgstr ""
+msgstr "Relaciona fraccions"
 
 msgid "Match decimals"
-msgstr ""
+msgstr "Relaciona decimals"
 
 msgid "Match percentages"
-msgstr ""
+msgstr "Relaciona percentatges"
 
 msgid "Match ratios"
-msgstr ""
+msgstr "Relaciona proporcions"
 
 msgid "Percentages in a pie chart"
-msgstr ""
+msgstr "Percentatges en un diagrama de sectors"
 
 msgid "Find equivalent fraction"
-msgstr ""
+msgstr "Troba la fracció equivalent"
 
 msgid "Calculating with Time"
-msgstr ""
+msgstr "Càlcul amb el temps"
 
 msgid "start time"
-msgstr ""
+msgstr "hora d'inici"
 
 msgid "end time"
-msgstr ""
+msgstr "hora de finalització"
 
 msgid "elapsed time"
-msgstr ""
+msgstr "temps transcorregut"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr ""
+msgstr "Temperatura – introducció als nombres negatius"
 
 msgid "Experiment with elapsed time"
-msgstr ""
+msgstr "Experimenta amb el temps transcorregut"
 
 msgid "Experiment with elapsed time 2"
-msgstr ""
+msgstr "Experimenta amb el temps transcorregut 2"
 
 msgid "Calculate elapsed time"
-msgstr ""
+msgstr "Calcula el temps transcorregut"
 
 msgid "Find the start or the end time"
-msgstr ""
+msgstr "Troba l'hora d'inici o de finalització"
 
 msgid "Visualized on a clock dial"
-msgstr ""
+msgstr "Visualitzat en una esfera de rellotge"
 
 msgid "Visualized on a number line"
-msgstr ""
+msgstr "Visualitzat en una recta numèrica"
 
 msgid "Visualized on two number lines"
-msgstr ""
+msgstr "Visualitzat en dues rectes numèriques"
 
 msgid "With no visualizations"
-msgstr ""
+msgstr "Sense visualitzacions"
 
 msgid "With mirrored images"
-msgstr ""
+msgstr "Amb imatges reflectides"
 
 msgid "Theme Editor"
-msgstr ""
+msgstr "Editor de tema"
 
 msgid "Make the game look your way"
-msgstr ""
+msgstr "Fes que el joc tingui l’aspecte que vulguis"
 
 msgid "Reset colors back to the default ones?"
-msgstr ""
+msgstr "Vols restablir els colors als valors predeterminats?"
 
 msgid "With simplifying"
-msgstr ""
+msgstr "Amb simplificació"
 
 msgid "Positive numbers"
-msgstr ""
+msgstr "Nombres positius"
 
 msgid "Basics"
-msgstr ""
+msgstr "Conceptes bàsics"
 
 msgid "Equivalent fractions"
-msgstr ""
+msgstr "Fraccions equivalents"
 
 msgid "Expanding and reducing fractions"
-msgstr ""
+msgstr "Expansió i reducció de fraccions"
 
 msgid "Add fractions with unlike denominators"
-msgstr ""
+msgstr "Suma fraccions amb denominadors diferents"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr ""
+msgstr "Resta fraccions amb denominadors diferents"
 
 msgid ""
-"To add or subtract fractions when their denominators are not the same you "
-"have to find equivalent fractions which do have a common denominator. "
-"Finding the least common multiple of the two denominators will help you with"
-" that."
+"To add or subtract fractions when their denominators are not the same you have to find equivalent fractions which "
+"do have a common denominator. Finding the least common multiple of the two denominators will help you with that."
 msgstr ""
+"Per sumar o restar fraccions amb denominadors diferents, cal trobar fraccions equivalents amb un denominador comú. "
+"Trobar el mínim comú múltiple dels dos denominadors t'ajudarà a fer-ho."
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
-msgstr ""
+msgstr "forma llarga"
 
 # used for the 2 ways of telling time used in Russian and Serbian translations
 # only
 msgid "short form"
-msgstr ""
+msgstr "forma curta"
 
 msgid "white"
 msgstr "blanc"
@@ -1254,10 +1262,10 @@ msgid "Hexagon"
 msgstr "Hexàgon"
 
 msgid "Heptagon"
-msgstr ""
+msgstr "Heptàgon"
 
 msgid "Octagon"
-msgstr ""
+msgstr "Octàgon"
 
 msgid "Circle"
 msgstr "Cercle"
@@ -1407,10 +1415,10 @@ msgstr[1] "síndries"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "hora"
+msgstr[1] "hores"
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "minut"
+msgstr[1] "minuts"

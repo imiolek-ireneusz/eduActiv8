@@ -32,7 +32,7 @@ d['abc_flashcards_word_sequence'] = ['<1>А<2>утобус', '<1>Б<2>анана
                                      '<1>Х<2>леб', '<1>Ц<2>у<1>ц<2>ла', '<1>Ч<2>амац', '<1>Џ<2>ак', '<1>Ш<2>порет']
 # d['abc_flashcards_frame_sequence'] = [42, 27, 2, 59, 4, 34, 28, 29, 8, 9, 72, 11, 40, 13, 52, 15, 16, 17, 53, 33, 20, 21, 26, 23, 24, 25]
 #                                     77, 71, 21, 28, 59, Ђђ, Ее, 30, 25, 8, 31, 72, 11, Љљ, 9, 54, Њњ, 80, 60, 5, 57, 79, Ћћ, 53, 39, 35, Цц, 1, Џџ, 67
-d['abc_flashcards_frame_sequence'] = [77, 71, 21, 28, 59, 94, 92, 30, 25, 8, 31, 72, 11, 89, 9, 54, 88, 80, 60, 5, 57,
+d['abc_flashcards_frame_sequence'] = [77, 71, 21, 28, 59, 94, 92, 30, 25, 8, 31, 72, 11, 89, 119, 54, 88, 80, 60, 5, 57,
                                       79, 90, 53, 39, 35, 93, 1, 91, 67]
 # alphabet sr
 alphabet_lc = ['а', 'б', 'в', 'г', 'д', 'ђ', 'е', 'ж', 'з', 'и', 'ј', 'к', 'л', 'љ', 'м', 'н', 'њ', 'о', 'п', 'р', 'с',
@@ -127,14 +127,22 @@ def time2str(h, m):
         return "%s %s до %s %s" % (n2txt(60 - m), mx, n2txt(h), ha[h - 1])
     return ""
 
-#write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+numerators = ['једна', 'две', 'три', 'четири', 'пет', 'шест', 'седам', 'осам', 'девет', 'десет', 'једанаест', 'дванаест']
+
+d_singular = ['', 'половина', 'трећина', 'четвртина', 'петина', 'шестина', 'седмина', 'осмина', 'деветина',
+              'десетина', 'једанаестина', 'дванаестина']
+
+d_plural_234 = ['', 'половине', 'трећине', 'четвртине', 'петине', 'шестине', 'седмине', 'осмине', 'деветине',
+                'десетине', 'једанаестине', 'дванаестине']
+
+d_plural_5plus = ['', 'половина', 'трећина', 'четвртина', 'петина', 'шестина', 'седмина', 'осмина', 'деветина',
+                  'десетина', 'једанаестина', 'дванаестина']
 
 
 def fract2str(n, d):
     if n == 1:
-        return numerators[0] + " " + d_singular[d-1]
+        return numerators[0] + " " + d_singular[d - 1]
+    elif 2 <= n % 10 <= 4 and (n % 100 < 10 or n % 100 >= 20):
+        return numerators[n - 1] + " " + d_plural_234[d - 1]
     else:
-        return numerators[n-1] + " " + d_plural[d-1]
+        return numerators[n - 1] + " " + d_plural_5plus[d - 1]

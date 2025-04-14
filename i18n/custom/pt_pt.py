@@ -100,13 +100,25 @@ def time2str(h, m):
         return "%s minutos para %s" % (n2txt(60 - m), horas[h - 1])
     return ""
 
-#write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+
+# Numerators (1–12)
+numerators = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis',
+              'sete', 'oito', 'nove', 'dez', 'onze', 'doze']
+
+# Singular forms (for numerator == 1)
+d_singular = [
+    '', 'meio', 'terço', 'quarto', 'quinto', 'sexto',
+    'sétimo', 'oitavo', 'nono', 'décimo', 'décimo primeiro', 'décimo segundo'
+]
+
+# Plural forms (for numerator > 1)
+d_plural = [
+    '', 'meios', 'terços', 'quartos', 'quintos', 'sextos',
+    'sétimos', 'oitavos', 'nonos', 'décimos', 'décimos primeiros', 'décimos segundos'
+]
 
 def fract2str(n, d):
     if n == 1:
-        return numerators[0] + " " + d_singular[d-1]
+        return numerators[0] + " " + d_singular[d - 1]
     else:
-        return numerators[n-1] + " " + d_plural[d-1]
+        return numerators[n - 1] + " " + d_plural[d - 1]

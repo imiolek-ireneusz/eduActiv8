@@ -64,7 +64,7 @@ class Board(gd.BoardGame):
             if self.all_lng[i] == lang:
                 lng_index = i
 
-        self.board.add_unit(0, data[1]-1, data[0], 1, classes.board.Label, "https://www.transifex.com/eduactiv8/eduactiv8/", white, "", 3)
+        self.board.add_unit(0, data[1]-1, data[0], 1, classes.board.Label, "https://app.transifex.com/eduactiv8/eduactiv8/", white, "", 3)
         self.board.units[-1].font_color = (150, 150, 150)
         self.board.units[-1].update_lng_font_size("def_2.0")
 

@@ -1,63 +1,65 @@
 # eduActiv8 - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
 # Aapo Rantalainen, 2014
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2019-01-04 22:25+0000\n"
+"PO-Revision-Date: 2025-04-14 17:56+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
-"Language-Team: Finnish (https://www.transifex.com/eduactiv8/teams/94947/fi/)\n"
+"Language-Team: Finnish (https://app.transifex.com/eduactiv8/teams/94947/fi/)\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) "
+"and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License "
+"(CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Äänet, monia tekijöitä, jotka ovat osallistuneet: freesound.org. \n"
-" Kuvat, monia tekijöitä, jotka ovat osallistuneet: openclipart.org (Public Domain) ja http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: Creative Commons (CC BY-SA). \n"
+" Kuvat, monia tekijöitä, jotka ovat osallistuneet: openclipart.org (Public Domain) ja "
+"http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: Creative Commons (CC BY-"
+"SA). \n"
 " Tiedostosta credits.txt löydät lisää tietoa tämän projektin käyttämistä mediatiedostoista."
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
-"<http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of "
+"the GNU General Public License as published by the Free Software Foundation, either "
+"version 3 of the License, or (at your option) any later version. You should have received "
+"a copy of the GNU General Public License along with this program. If not, see <http://www."
+"gnu.org/licenses/>."
 msgstr ""
-"Tämä on vapaa ohjelma: tätä ohjelmaa saa levittää edelleen ja muuttaa Free "
-"Software Foundationin julkaiseman GNU General Public Licensen (GPL-lisenssi)"
-" version 3 tai (valinnan mukaan) myöhemmän version ehtojen mukaisestiTämän "
-"ohjelman mukana pitäisi tulla kopio GPL-lisenssistä. Jos näin ei ole, katso "
-"<http://www.gnu.org/licenses/>. (Epävirallinen suomennos: "
-"<http://www.turre.com/licenses/gpl_fi.html>)."
+"Tämä on vapaa ohjelma: tätä ohjelmaa saa levittää edelleen ja muuttaa Free Software "
+"Foundationin julkaiseman GNU General Public Licensen (GPL-lisenssi) version 3 tai "
+"(valinnan mukaan) myöhemmän version ehtojen mukaisestiTämän ohjelman mukana pitäisi tulla "
+"kopio GPL-lisenssistä. Jos näin ei ole, katso <http://www.gnu.org/licenses/>. "
+"(Epävirallinen suomennos: <http://www.turre.com/licenses/gpl_fi.html>)."
 
 msgid "A collection of educational activities for kids"
 msgstr "Pieni kokoelmia opettavaisia sovelluksia lapsille"
 
 msgid "Educational Activities for Kids"
-msgstr ""
+msgstr "Koulutustoimintaa lapsille"
 
 msgid ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
+"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License "
+"(CC BY-SA)"
 msgstr ""
-"Kuvat: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: "
-"Creative Commons (CC BY-SA)"
+"Kuvat: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Lisenssi: Creative Commons (CC "
+"BY-SA)"
 
 msgid "Default Language:"
 msgstr "Oletuskieli"
@@ -116,6 +118,9 @@ msgstr "Asetukset"
 
 msgid "switch to full screen after login"
 msgstr "vaihda kirjautumisen jälkeen kokoruututilaan"
+
+msgid "allow users to navigate to locked levels"
+msgstr "salli käyttäjien siirtyä lukittuihin tasoihin"
 
 msgid "allow adding new users on login screen"
 msgstr "salli käyttäjien lisääminen kirjautumisnäkymässä"
@@ -203,7 +208,7 @@ msgid "Preferences saved..."
 msgstr "Asetukset tallennettu..."
 
 msgid "Logged in as: "
-msgstr "Käyttäjä:"
+msgstr "Käyttäjä: "
 
 msgid "(Log out)"
 msgstr "(Kirjaudu ulos)"
@@ -388,10 +393,10 @@ msgid "Sorting Numbers"
 msgstr "Lukujen järjestäminen"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Peräkkäiset numerot"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Satunnaiset numerot"
 
 msgid "Number Comparison"
 msgstr "Lukujen vertaileminen"
@@ -589,16 +594,16 @@ msgid "Percentages (Category)"
 msgstr "Prosentit"
 
 msgid "Learn new words"
-msgstr ""
+msgstr "Opettele uusia sanoja"
 
 msgid "Word Builders"
 msgstr "Sananrakennus"
 
 msgid "Word Matchers"
-msgstr ""
+msgstr "Sanojen yhdistämisharjoitukset"
 
 msgid "Match images to words"
-msgstr ""
+msgstr "Yhdistä kuvia sanoihin"
 
 msgid "Animals"
 msgstr "Eläimet"
@@ -637,46 +642,45 @@ msgid "Food"
 msgstr "Ruoka"
 
 msgid "Listening Exercises"
-msgstr ""
+msgstr "Kuunteluharjoitukset"
 
 msgid "Match sounds to words"
-msgstr ""
+msgstr "Yhdistä äänet sanoihin"
 
 msgid "Patterns"
-msgstr ""
+msgstr "Kuviot"
 
 msgid "Number Patterns"
-msgstr ""
+msgstr "Lukukuviot"
 
 msgid "Letter Patterns"
-msgstr ""
+msgstr "Kirjainkuviot"
 
 msgid "Color Patterns"
-msgstr ""
+msgstr "Värikuviot"
 
 msgid "Image Patterns"
-msgstr ""
+msgstr "Kuvakuviot"
 
 msgid "Fraction Patterns"
-msgstr ""
+msgstr "Murtokuviot"
 
 msgid "Shape Patterns"
-msgstr ""
+msgstr "Muotokuvat"
 
 msgid "Complete the pattern on the top line."
-msgstr ""
+msgstr "Täydennä kuvio yläpuolella olevalla rivillä."
 
 msgid "Match shapes to their names"
-msgstr ""
+msgstr "Yhdistä muodot nimensä mukaan"
 
 msgid "Negative numbers"
-msgstr ""
+msgstr "Negatiiviset luvut"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr ""
+msgstr "Täydennä aakkoset keskimmäisellä rivillä olevilla kirjaimilla."
 
-msgid ""
-"Drag the slider up or down so that the right sign is in the red square."
+msgid "Drag the slider up or down so that the right sign is in the red square."
 msgstr "Raahaa liukusäädintä ylös ja alas."
 
 msgid "Take your sheep to the rest of the herd."
@@ -685,8 +689,7 @@ msgstr "Vie lampaasi loppulauman luokse."
 msgid "Check the shopping list and drag all needed items into the basket."
 msgstr "Katso ostoslistasta mitä sinun pitää raahata koriin."
 
-msgid ""
-"Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
 msgstr "Raahaa oikea merkki punaiseen ruutuun: <, > tai =."
 
 msgid "Drag one of the lesser, greater or equal to the red square."
@@ -719,6 +722,9 @@ msgstr "Onnittelut! Olet suorittanut kaikki tämän pelin tehtävät."
 msgid "Great job!"
 msgstr "Hyvää työtä!"
 
+msgid "Perfect!!!"
+msgstr "Täydellistä!"
+
 msgid "Awesome!"
 msgstr "Mahtavaa!"
 
@@ -749,25 +755,21 @@ msgstr "pensselin koko"
 msgid "Match fraction charts on the right to the ones on the left"
 msgstr "Etsi vasemmanpuoleisille kuvioille samansuuruiset palaset"
 
-msgid ""
-"Match fraction charts and fractions on the right to the fraction charts on "
-"the left"
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
 msgstr "Etsi vasemmanpuoleisille kuvioille samansuuruiset palaset"
 
 msgid "Match fraction charts to the fractions on the left"
 msgstr "Etsi murtoluvulle samansuuruiset kuviot"
 
 msgid ""
-"Match fraction charts, fractions and decimal fractions on the right to their"
-" percentage representations"
+"Match fraction charts, fractions and decimal fractions on the right to their percentage "
+"representations"
 msgstr "Etsi prosenteille samansuuruiset kuviot, murtoluvut ja desimaaliluvut"
 
 msgid ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of "
-"coloured pieces to white pieces"
-msgstr ""
-"Etsi suhteille samansuuruiset kuviot. Suhteet ovat värillisen suhde "
-"valkoiseen"
+"Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces "
+"to white pieces"
+msgstr "Etsi suhteille samansuuruiset kuviot. Suhteet ovat värillisen suhde valkoiseen"
 
 msgid "Shape Maker"
 msgstr "Tee muotoja"
@@ -792,8 +794,7 @@ msgid "such that lengths of its sides are equal to %d and %d"
 msgstr "sivut ovat %d ja %d"
 
 #, python-format
-msgid ""
-"such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
 msgstr "samansuuntaiset sivut ovat %d ja korkeus on %d"
 
 #, python-format
@@ -909,255 +910,272 @@ msgid "Find missing number"
 msgstr "Etsi puuttuva luku"
 
 msgid "numerator"
-msgstr ""
+msgstr "laskija"
 
 msgid "denominator"
-msgstr ""
+msgstr "nimittäjä"
 
 msgid "Experiment with fractions"
-msgstr ""
+msgstr "Kokeile murtolukuja"
 
 msgid "Experiment with decimal fractions"
-msgstr ""
+msgstr "Kokeile desimaalimurtolukuja"
 
 msgid "Ratio"
 msgstr "Suhde"
 
 msgid "Experiment with ratios"
-msgstr ""
+msgstr "Kokeile suhteita"
 
 msgid "Experiment with percentages"
-msgstr ""
+msgstr "Kokeile prosentteja"
 
 msgid "What fraction is it?"
-msgstr ""
+msgstr "Mikä murtoluku tämä on?"
 
 msgid "What decimal fraction is it?"
-msgstr ""
+msgstr "Mikä desimaalimurtoluku tämä on?"
 
 msgid "Add fractions with the same denominator"
-msgstr ""
+msgstr "Lisää murtolukuja, joilla on sama nimittäjä"
 
 msgid "Subtract fractions with the same denominator"
-msgstr ""
+msgstr "Vähennä murtolukuja, joilla on sama nimittäjä"
 
 msgid "Multiply fractions"
-msgstr ""
+msgstr "Kerro murtolukuja"
 
 msgid "Divide fractions"
-msgstr ""
+msgstr "Jaa murtolukuja"
 
 msgid "Exercise 1"
-msgstr ""
+msgstr "Harjoitus 1"
 
 msgid "Exercise 2"
-msgstr ""
+msgstr "Harjoitus 2"
 
 msgid "Exercise 3"
-msgstr ""
+msgstr "Harjoitus 3"
 
 msgid "Compare decimals and fractions"
-msgstr ""
+msgstr "Vertaile desimaalilukuja ja murtolukuja"
 
 msgid "Compare fractions"
-msgstr ""
+msgstr "Vertaile murtolukuja"
 
 msgid "Reduce fractions"
-msgstr ""
+msgstr "Supista murtolukuja"
 
 msgid "Expand fractions"
-msgstr ""
+msgstr "Laajenna murtolukuja"
 
 msgid ""
-"To reduce a fraction divide the numerator and the denominator by one of "
-"their common factors which are displayed between the two fractions. Select "
-"one of them to see what happens. If 1 is the only common factor then the "
-"fraction can't be reduced any more - try choosing a different one."
+"To reduce a fraction divide the numerator and the denominator by one of their common "
+"factors which are displayed between the two fractions. Select one of them to see what "
+"happens. If 1 is the only common factor then the fraction can't be reduced any more - try "
+"choosing a different one."
 msgstr ""
+"Vähentääksesi murtolukua jaa osoittaja ja nimittäjä jollakin niiden yhteisistä tekijöistä, "
+"jotka on näytetty kahden murtoluvun välissä. Valitse yksi niistä nähdäksesi, mitä "
+"tapahtuu. Jos 1 on ainoa yhteinen tekijä, murtolukua ei voi enää vähentää – kokeile valita "
+"toinen."
 
 msgid ""
-"To expand a fraction multiply the numerator and the denominator by the same "
-"number. Change the multiplicand to see what happens."
+"To expand a fraction multiply the numerator and the denominator by the same number. Change "
+"the multiplicand to see what happens."
 msgstr ""
+"Laajentaaksesi murtolukua kerro osoittaja ja nimittäjä samalla luvulla. Muuta kertoluku "
+"nähdäksesi, mitä tapahtuu."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr ""
+msgstr "Käytä nuolia muuttaaksesi vastaustasi tai kirjoita se itse."
 
 msgid "Use the arrows to change your answer."
-msgstr ""
+msgstr "Käytä nuolia muuttaaksesi vastaustasi."
 
 msgid ""
-"To add two fractions with the same denominators add their numerators "
-"together and keep the denominator unchanged. Simplify the result if the "
-"numerator is greater than the denominator and reduce the fraction if "
-"possible."
+"To add two fractions with the same denominators add their numerators together and keep the "
+"denominator unchanged. Simplify the result if the numerator is greater than the "
+"denominator and reduce the fraction if possible."
 msgstr ""
+"Lisätäksesi kaksi murtolukua, joilla on sama nimittäjä, lisää niiden osoittajat yhteen ja "
+"pidä nimittäjä muuttumattomana. Yksinkertaista tulos, jos osoittaja on suurempi kuin "
+"nimittäjä, ja supista murtoluku, jos mahdollista."
 
 msgid ""
-"To subtract one fraction from another one with the same denominator subtract"
-" numerators and keep the denominator unchanged. Reduce the resulting "
-"fraction if possible."
+"To subtract one fraction from another one with the same denominator subtract numerators "
+"and keep the denominator unchanged. Reduce the resulting fraction if possible."
 msgstr ""
+"Vähentääksesi yhden murtoluvun toisesta, jolla on sama nimittäjä, vähennä osoittajat ja "
+"pidä nimittäjä muuttumattomana. Supista tuloksena oleva murtoluku, jos mahdollista."
 
 msgid ""
-"To multiply two fractions multiply the numerators together and then multiply"
-" the denominators together. Reduce the resulting fraction if possible."
+"To multiply two fractions multiply the numerators together and then multiply the "
+"denominators together. Reduce the resulting fraction if possible."
 msgstr ""
+"Kertoaksesi kaksi murtolukua, kerro osoittajat yhteen ja sitten kerro nimittäjät yhteen. "
+"Supista tuloksena oleva murtoluku, jos mahdollista."
 
 msgid ""
-"To divide a fraction by another fraction multiply the first fraction by the "
-"second fraction flipped up side down. Simplify and reduce the resulting "
-"fraction if possible."
+"To divide a fraction by another fraction multiply the first fraction by the second "
+"fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
 msgstr ""
+"Jaaaksesi murtoluvun toisella murtoluvulla, kerro ensimmäinen murtoluku toisen murtoluvun "
+"käänteisellä versiolla. Yksinkertaista ja supista tuloksena oleva murtoluku, jos "
+"mahdollista."
 
 msgid "Group fractions together"
-msgstr ""
+msgstr "Yhdistä murtolukuja"
 
 msgid "Group percentages together"
-msgstr ""
+msgstr "Yhdistä prosentteja"
 
 msgid "Group ratios together"
-msgstr ""
+msgstr "Yhdistä suhteita"
 
 msgid "Symmetry"
-msgstr ""
+msgstr "Symmetria"
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr ""
+msgstr "Peilikuvasyymmetria - piirrä muodoilla"
 
 msgid "Reflect shapes"
-msgstr ""
+msgstr "Peilaa muotoja"
 
 msgid "Reflect a shape in a mirror line"
-msgstr ""
+msgstr "Peilaa muoto peililinjassa"
 
 msgid ""
-"Draw a shape that is a reflection of the one already displayed. The red line"
-" is the mirror line."
-msgstr ""
+"Draw a shape that is a reflection of the one already displayed. The red line is the mirror "
+"line."
+msgstr "Piirrä muoto, joka on jo näytetyn muodon peilikuva. Punainen viiva on peililinja."
 
 msgid "Symmetrical shapes - missing half"
-msgstr ""
+msgstr "Symmetriset muodot - puuttuva puoli"
 
 msgid "Draw the other half of the shape"
-msgstr ""
+msgstr "Piirrä muodon toinen puolikas"
 
 msgid "Find lines of symmetry"
-msgstr ""
+msgstr "Etsi symmetriaviivat"
 
 msgid ""
-"Find and select all lines of symmetry for a displayed shape. Click on the "
-"arrows around the drawing area to select them."
+"Find and select all lines of symmetry for a displayed shape. Click on the arrows around "
+"the drawing area to select them."
 msgstr ""
+"Etsi ja valitse kaikki symmetriaviivat näytetylle muodolle. Napsauta nuolia piirtoalueen "
+"ympärillä valitaksesi ne."
 
 msgid "Match equivalent fractions"
-msgstr ""
+msgstr "Yhdistä vastaavat murtoluvut"
 
 msgid "Match fractions"
-msgstr ""
+msgstr "Yhdistä murtoluvut"
 
 msgid "Match decimals"
-msgstr ""
+msgstr "Yhdistä desimaaliluvut"
 
 msgid "Match percentages"
-msgstr ""
+msgstr "Yhdistä prosentit"
 
 msgid "Match ratios"
-msgstr ""
+msgstr "Yhdistä suhteet"
 
 msgid "Percentages in a pie chart"
-msgstr ""
+msgstr "Prosentit piirakkakaaviossa"
 
 msgid "Find equivalent fraction"
-msgstr ""
+msgstr "Etsi vastaava murtoluku"
 
 msgid "Calculating with Time"
-msgstr ""
+msgstr "Ajan laskeminen"
 
 msgid "start time"
-msgstr ""
+msgstr "aloitusaika"
 
 msgid "end time"
-msgstr ""
+msgstr "lopetusaika"
 
 msgid "elapsed time"
-msgstr ""
+msgstr "kulunut aika"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr ""
+msgstr "Lämpötila - johdanto negatiivisiin lukuihin"
 
 msgid "Experiment with elapsed time"
-msgstr ""
+msgstr "Kokeile kulunutta aikaa"
 
 msgid "Experiment with elapsed time 2"
-msgstr ""
+msgstr "Kokeile kulunutta aikaa 2"
 
 msgid "Calculate elapsed time"
-msgstr ""
+msgstr "Laske kulunut aika"
 
 msgid "Find the start or the end time"
-msgstr ""
+msgstr "Etsi aloitus- tai lopetusaika"
 
 msgid "Visualized on a clock dial"
-msgstr ""
+msgstr "Visualisoitu kellotaululla"
 
 msgid "Visualized on a number line"
-msgstr ""
+msgstr "Visualisoitu numeroakselilla"
 
 msgid "Visualized on two number lines"
-msgstr ""
+msgstr "Visualisoitu kahdella numeroakselilla"
 
 msgid "With no visualizations"
-msgstr ""
+msgstr "Ilman visualisointeja"
 
 msgid "With mirrored images"
-msgstr ""
+msgstr "Peilikuvilla"
 
 msgid "Theme Editor"
-msgstr ""
+msgstr "Teemojen editori"
 
 msgid "Make the game look your way"
-msgstr ""
+msgstr "Muuta pelin ulkoasu mielesi mukaan"
 
 msgid "Reset colors back to the default ones?"
-msgstr ""
+msgstr "Nollataanko värit oletusväreiksi?"
 
 msgid "With simplifying"
-msgstr ""
+msgstr "Yksinkertaistamalla"
 
 msgid "Positive numbers"
-msgstr ""
+msgstr "Positiiviset luvut"
 
 msgid "Basics"
-msgstr ""
+msgstr "Perusteet"
 
 msgid "Equivalent fractions"
-msgstr ""
+msgstr "Vastaavat murtoluvut"
 
 msgid "Expanding and reducing fractions"
-msgstr ""
+msgstr "Murtolukuja laajentaminen ja supistaminen"
 
 msgid "Add fractions with unlike denominators"
-msgstr ""
+msgstr "Lisää murtolukuja, joilla ei ole samaa nimittäjää"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr ""
+msgstr "Vähennä murtolukuja, joilla ei ole samaa nimittäjää"
 
 msgid ""
-"To add or subtract fractions when their denominators are not the same you "
-"have to find equivalent fractions which do have a common denominator. "
-"Finding the least common multiple of the two denominators will help you with"
-" that."
+"To add or subtract fractions when their denominators are not the same you have to find "
+"equivalent fractions which do have a common denominator. Finding the least common multiple "
+"of the two denominators will help you with that."
 msgstr ""
+"Lisätäksesi tai vähentääksesi murtolukuja, joiden nimittäjät eivät ole samoja, sinun on "
+"löydettävä vastaavat murtoluvut, joilla on yhteinen nimittäjä. Kahden nimittäjän pienimmän "
+"yhteisen moninkertaisen löytäminen auttaa sinua tässä."
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
-msgstr ""
+msgstr "long form"
 
 # used for the 2 ways of telling time used in Russian and Serbian translations
 # only
 msgid "short form"
-msgstr ""
+msgstr "short form"
 
 msgid "white"
 msgstr "valkoinen"
@@ -1262,10 +1280,10 @@ msgid "Hexagon"
 msgstr "Kuusikulmio"
 
 msgid "Heptagon"
-msgstr ""
+msgstr "Heptagoni"
 
 msgid "Octagon"
-msgstr ""
+msgstr "Oktaani"
 
 msgid "Circle"
 msgstr "Ympyrä"
@@ -1415,10 +1433,10 @@ msgstr[1] "vesimelonia"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "tunti"
+msgstr[1] "tuntia"
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "minuutti"
+msgstr[1] "minuuttia"

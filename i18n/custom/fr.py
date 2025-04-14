@@ -18,12 +18,12 @@ numbers = ['un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf
            'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf', 'vingt', 'vingt-et-un', 'vingt-deux',
            'vingt-trois', 'vingt-quatre', 'vingt-cinq', 'vingt-six', 'vingt-sept', 'vingt-huit', 'vingt-neuf']
 
+numbers2090 = ['vingt', 'trente', 'quarante', 'cinquante', 'soixante', 'soixante-dix', 'quatre-vingt',
+               'quatre-vingt-dix']
+
 hrs = ['une', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze', 'treize',
        'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf', 'vingt', 'vingt-et-une', 'vingt-deux',
        'vingt-trois', 'vingt-quatre', 'vingt-cinq', 'vingt-six', 'vingt-sept', 'vingt-huit', 'vingt-neuf']
-
-numbers2090 = ['vingt', 'trente', 'quarante', 'cinquante', 'soixante', 'soixante-dix', 'quatre-vingt',
-               'quatre-vingt-dix']
 
 dp['abc_flashcards_word_sequence'] = ['Arbre', 'Bateau', 'Canard', 'Dormir', 'Éléphant', 'Fleurs', 'Girafe', 'Hibou',
                                       'Iglou', 'Jonquille', 'Koala', 'Lion', 'Maison', 'Nuitée', 'Océan', 'Pomme',
@@ -128,6 +128,7 @@ def time2str(h, m):
             return "%s heures moins %s minutes" % (hrs[h - 1], n2txt(60 - m, time2txt=True))
     return ""
 
+"""
 #write a fraction in words
 numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
 d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
@@ -138,3 +139,44 @@ def fract2str(n, d):
         return numerators[0] + " " + d_singular[d-1]
     else:
         return numerators[n-1] + " " + d_plural[d-1]
+"""
+
+# Numerators 1–12
+numerators = ['un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze']
+
+# Denominator names (singular and plural)
+d_singular = [
+    '',           # index 0 placeholder
+    'demi',       # 1/2
+    'tiers',      # 1/3
+    'quart',      # 1/4
+    'cinquième',  # 1/5
+    'sixième',    # 1/6
+    'septième',   # 1/7
+    'huitième',   # 1/8
+    'neuvième',   # 1/9
+    'dixième',    # 1/10
+    'onzième',    # 1/11
+    'douzième'    # 1/12
+]
+
+d_plural = [
+    '',             # index 0 placeholder
+    'demis',        # 2+ halves
+    'tiers',        # 2+ thirds – stays "tiers" in plural in French
+    'quarts',       # 2+ quarters
+    'cinquièmes',   # 2+ fifths
+    'sixièmes',
+    'septièmes',
+    'huitièmes',
+    'neuvièmes',
+    'dixièmes',
+    'onzièmes',
+    'douzièmes'
+]
+
+def fract2str(n, d):
+    if n == 1:
+        return numerators[0] + " " + d_singular[d - 1]
+    else:
+        return numerators[n - 1] + " " + d_plural[d - 1]

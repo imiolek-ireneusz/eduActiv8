@@ -1,4 +1,13 @@
 Changelog:
+eduActiv8 - 4.25.04:
+    - replaced the flash card images with a new set of higher quality images
+    - reformatted jpg images to webp format
+    - upscaled x2 art4apps images for better quality
+    - added ability to prevent users from navigating to "locked" levels (Issue #47)
+    - translations downloaded from transifex
+    - Swedish translation added (@TigerTanker)
+    - most of the missing translations have been updated with help of AI (will require a review)
+    - minor bug fixes
 eduActiv8 - 4.22.11:
     - Spanish and Finnish translations updated.
     - Maintenance updates.
@@ -7,7 +16,7 @@ eduActiv8 - 4.21.07:
     - Additional activities redesigned
 eduActiv8 - 4.21.05:
     - Added NotoSerifMalayalam font to be used alongside the Malayalam translation.
-    - Malayam translation unavaliable - so temporarily disabled in the program
+    - Malayam translation unavailable - so temporarily disabled in the program
 eduActiv8 - 4.20.12:
     - Arabic language added provisionally - recommends python-pyfribidi library, alternatively uses embedded
       arabic_reshaper library

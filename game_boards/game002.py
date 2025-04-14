@@ -54,7 +54,8 @@ class Board(gd.BoardGame):
 
         # column 1
         top = 0
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Arabic", self.mainloop.config.arabic], colors[top % 2], "", 6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Arabic", self.mainloop.config.arabic],
+                            colors[top % 2], "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, ["Ayman Mahmoud"],
                             colors[top % 2], "", 6)
 
@@ -65,8 +66,8 @@ class Board(gd.BoardGame):
                             ["Vanyo Georgiev"], colors[top % 2], "", 6)
 
         top += 1
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Catalan", "Català"], colors[top % 2], "",
-                            6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Catalan", "Català"], colors[top % 2],
+                            "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
                             ["Guillem Jover (www.hadrons.org/~guillem/)", "updated by Jordi Mallach"], colors[top % 2],
                             "", 6)
@@ -86,32 +87,33 @@ class Board(gd.BoardGame):
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, ["Aapo Rantalainen"],
                             colors[top % 2], "", 6)
         top += 1
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["French", "Français"], colors[top % 2], "",
-                            6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["French", "Français"], colors[top % 2],
+                            "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
-                            ["Gino Ingras", "updated by Johnny Jazeix"],
+                            ["Gino Ingras", "updated by Johnny Jazeix, bf5man, Florian Carpentier"],
                             colors[top % 2], "", 6)
         top += 1
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["German", "Deutsch"], colors[top % 2], "",
-                            6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["German", "Deutsch"], colors[top % 2],
+                            "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, "Oliver van der Bürie",
                             colors[top % 2], "", 6)
 
         top += 2
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Hebrew", "תירבע"], colors[top % 2], "", 6)
-        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, ["Ori Hoch"],
-                            colors[top % 2], "", 6)
+        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
+                            ["Ori Hoch", "updated by Albert Kimyagarov, ami.g"], colors[top % 2], "", 6)
 
         # column 2
         top = 0
         left = middle
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Italian", "Italiano"], colors[top % 2], "",
-                            6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Italian", "Italiano"], colors[top % 2],
+                            "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, "Giuliano", colors[top % 2],
                             "", 6)
 
         top += 1
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Lakota", "Lakȟótiyapi"], colors[top % 2], "", 6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Lakota", "Lakȟótiyapi"], colors[top % 2],
+                            "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
                             ["Peter Hill, Derek Lackaff and Matthew Rama"], colors[top % 2], "", 6)
 
@@ -122,31 +124,30 @@ class Board(gd.BoardGame):
         top += 1
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Portuguese", "Português"], colors[top % 2],
                             "", 6)
-        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label, "Américo Monteiro",
-                            colors[top % 2], "", 6)
-        top += 1
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Russian", "Русский"], colors[top % 2], "",
-                            6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
-                            ["Anton Kayukov (Антон Каюков)", "Alexey Loginov (Алексей Логинов)"], colors[top % 2], "",
-                            6)
+                            ["Américo Monteiro", "updated by José Nuno Coelho Pires, Rui"], colors[top % 2], "", 6)
         top += 1
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Serbian", "Српски"], colors[top % 2], "",
-                            6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Russian", "Русский"], colors[top % 2],
+                            "", 6)
+        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
+                            ["Anton Kayukov (Антон Каюков)", "Alexey Loginov (Алексей Логинов)"], colors[top % 2],
+                            "", 6)
+        top += 1
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Serbian", "Српски"], colors[top % 2],
+                            "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
                             ["Miroslav Nikolic (Мирослав Николић)"], colors[top % 2], "", 6)
         top += 1
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Spanish", "Español"], colors[top % 2], "",
-                            6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Spanish", "Español"], colors[top % 2],
+                            "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
                             ["Miriam Ruiz (www.miriamruiz.es)", "updated by Mario Izquierdo"],
                             colors[top % 2], "", 6)
         top += 1
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Ukrainian", "Українська"], colors[top % 2],
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Swedish", "Svenska"], colors[top % 2],
                             "", 6)
         self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
-                            "Yuri Chornoivan (Юрій Чорноіван)", colors[top % 2], "",
-                            6)
+                            ["Tiger Tanker"], colors[top % 2], "", 6)
         """
         top += 1
         self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["", ""], colors[top % 2], "", 6)
@@ -156,11 +157,19 @@ class Board(gd.BoardGame):
         # update top - to the height of the tallest column
         top = 8
         left = 0
-        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Greek", "Ελληνικά"], colors[top % 2], "",
-                            6)
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Greek", "Ελληνικά"], colors[top % 2],
+                            "", 6)
         self.board.add_unit(left + lang_width, top, data[0] - lang_width, 1, classes.board.Label, [
             "Στέλιος, versys650gr, sdim, lucinos and other members of The Official Greek Community of Linux Mint,",
-            "updated by Alexandros Moskofidis (Αλέξανδρος Μοσκοφίδης) and Yannis Kaskamanidis (Γιάννης Κασκαμανίδης)"], colors[top % 2], "", 6)
+            "updated by Alexandros Moskofidis (Αλέξανδρος Μοσκοφίδης) and Yannis Kaskamanidis (Γιάννης Κασκαμανίδης)"],
+                            colors[top % 2], "", 6)
+
+        top += 1
+        left = middle
+        self.board.add_unit(left, top, lang_width, 1, classes.board.Label, ["Ukrainian", "Українська"], colors[top % 2],
+                            "", 6)
+        self.board.add_unit(left + lang_width, top, credits_width, 1, classes.board.Label,
+                            "Yuri Chornoivan (Юрій Чорноіван)", colors[top % 2], "", 6)
 
         for each in self.board.units:
             each.font_color = font_color

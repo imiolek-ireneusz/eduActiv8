@@ -4,15 +4,14 @@
 #
 # Kindly Shared by GCompris Maintainers
 # From: https://invent.kde.org/education/gcompris/-/blob/master/src/activities/lang/resource/content-fi.json
-
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi\n"
 
 msgid "cow"
 msgstr "lehmä"
@@ -60,13 +59,13 @@ msgid "gorilla"
 msgstr "gorilla"
 
 msgid "llama"
-msgstr ""
+msgstr "laama"
 
 msgid "vulture"
 msgstr "petolintu"
 
 msgid "hamster"
-msgstr ""
+msgstr "hamsteri"
 
 msgid "bird"
 msgstr "lintu"
@@ -147,13 +146,13 @@ msgid "viper"
 msgstr "kyy"
 
 msgid "shrike"
-msgstr ""
+msgstr "leppälintu"
 
 msgid "donkey"
-msgstr ""
+msgstr "aasi"
 
 msgid "guinea pig"
-msgstr ""
+msgstr "marsu"
 
 msgid "sloth"
 msgstr "laiskiainen"
@@ -162,7 +161,7 @@ msgid "horse"
 msgstr "hevonen"
 
 msgid "penguin"
-msgstr ""
+msgstr "pingviini"
 
 msgid "otter"
 msgstr "saukko"
@@ -195,10 +194,10 @@ msgid "mole"
 msgstr "myyrä"
 
 msgid "ray"
-msgstr ""
+msgstr "rausku"
 
 msgid "ram"
-msgstr ""
+msgstr "pässi"
 
 msgid "skunk"
 msgstr "haisunäätä"
@@ -276,7 +275,7 @@ msgid "squid"
 msgstr "mustekala"
 
 msgid "lion cub"
-msgstr ""
+msgstr "leijonanpentu"
 
 msgid "jaguar"
 msgstr "jaguaari"
@@ -315,7 +314,7 @@ msgid "goat"
 msgstr "vuohi"
 
 msgid "baby rabbit"
-msgstr ""
+msgstr "kaninpoikanen"
 
 msgid "lion"
 msgstr "leijona"
@@ -333,10 +332,10 @@ msgid "doe"
 msgstr "naaraspeura"
 
 msgid "gopher"
-msgstr ""
+msgstr "taskurotta"
 
 msgid "elephant"
-msgstr ""
+msgstr "norsu"
 
 msgid "giraffe"
 msgstr "kirahvi"
@@ -351,10 +350,10 @@ msgid "jay"
 msgstr "närhi"
 
 msgid "seal"
-msgstr ""
+msgstr "hylje"
 
 msgid "rooster"
-msgstr ""
+msgstr "kukko"
 
 msgid "turtle"
 msgstr "kilpikonna"
@@ -414,7 +413,7 @@ msgid "helmet"
 msgstr "kypärä"
 
 msgid "ice skating"
-msgstr ""
+msgstr "luistelu"
 
 msgid "walk"
 msgstr "kävellä"
@@ -432,7 +431,7 @@ msgid "hike"
 msgstr "patikkaretki"
 
 msgid "boxing"
-msgstr ""
+msgstr "nyrkkeily"
 
 msgid "hockey"
 msgstr "jääkiekko"
@@ -459,13 +458,13 @@ msgid "golf"
 msgstr "golf"
 
 msgid "whistle"
-msgstr ""
+msgstr "pilli"
 
 msgid "torch"
 msgstr "soihtu"
 
 msgid "sailing"
-msgstr ""
+msgstr "purjehdus"
 
 msgid "stand"
 msgstr "seistä"
@@ -507,7 +506,7 @@ msgid "mouth"
 msgstr "suu"
 
 msgid "feet"
-msgstr ""
+msgstr "jalat"
 
 msgid "hand"
 msgstr "käsi"
@@ -525,7 +524,7 @@ msgid "beard"
 msgstr "parta"
 
 msgid "belly button"
-msgstr ""
+msgstr "napa"
 
 msgid "thumb"
 msgstr "peukalo"
@@ -546,7 +545,7 @@ msgid "arm"
 msgstr "käsivarsi"
 
 msgid "eyebrow"
-msgstr ""
+msgstr "kulmakarva"
 
 msgid "fist"
 msgstr "nyrkki"
@@ -561,7 +560,7 @@ msgid "throat"
 msgstr "kurkku"
 
 msgid "eye"
-msgstr ""
+msgstr "silmä"
 
 msgid "leg"
 msgstr "sääri"
@@ -603,19 +602,19 @@ msgid "girl"
 msgstr "tyttö"
 
 msgid "male"
-msgstr ""
+msgstr "mies"
 
 msgid "son"
 msgstr "poika"
 
 msgid "mates"
-msgstr ""
+msgstr "kaverit"
 
 msgid "friends"
-msgstr ""
+msgstr "ystävät"
 
 msgid "baby"
-msgstr ""
+msgstr "vauva"
 
 msgid "child"
 msgstr "lapsi"
@@ -627,10 +626,10 @@ msgid "mom"
 msgstr "äiti"
 
 msgid "twin boys"
-msgstr ""
+msgstr "kaksoispojat"
 
 msgid "brothers"
-msgstr ""
+msgstr "veljet"
 
 msgid "man"
 msgstr "mies"
@@ -639,13 +638,13 @@ msgid "mother"
 msgstr "äiti"
 
 msgid "grandfather"
-msgstr ""
+msgstr "isoisä"
 
 msgid "family"
 msgstr "perhe"
 
 msgid "female"
-msgstr ""
+msgstr "nainen"
 
 msgid "wife"
 msgstr "vaimo"
@@ -657,7 +656,7 @@ msgid "bride"
 msgstr "morsian"
 
 msgid "madam"
-msgstr ""
+msgstr "rouva"
 
 msgid "grandmother"
 msgstr "isoäiti"
@@ -669,7 +668,7 @@ msgid "lad"
 msgstr "poika"
 
 msgid "twin girls"
-msgstr ""
+msgstr "kaksoistytöt"
 
 msgid "tribe"
 msgstr "heimo"
@@ -678,7 +677,7 @@ msgid "boy"
 msgstr "poika"
 
 msgid "sisters"
-msgstr ""
+msgstr "siskot"
 
 msgid "woman"
 msgstr "nainen"
@@ -696,7 +695,7 @@ msgid "hamburger"
 msgstr "hampurilainen"
 
 msgid "steak"
-msgstr ""
+msgstr "pihvi"
 
 msgid "fudge"
 msgstr "toffee"
@@ -711,22 +710,22 @@ msgid "rice"
 msgstr "riisi"
 
 msgid "ice cream"
-msgstr ""
+msgstr "jäätelö"
 
 msgid "jelly"
 msgstr "hyytelö"
 
 msgid "yoghurt"
-msgstr ""
+msgstr "jogurtti"
 
 msgid "dessert"
 msgstr "jälkiruoka"
 
 msgid "pretzel"
-msgstr ""
+msgstr "suolarinkeli"
 
 msgid "peanut"
-msgstr ""
+msgstr "maapähkinä"
 
 msgid "jam"
 msgstr "hillo"
@@ -738,7 +737,7 @@ msgid "cookie"
 msgstr "keksi"
 
 msgid "bacon"
-msgstr ""
+msgstr "pekoni"
 
 msgid "spice"
 msgstr "mauste"
@@ -756,7 +755,7 @@ msgid "chocolate"
 msgstr "suklaa"
 
 msgid "water bottle"
-msgstr ""
+msgstr "vesipullo"
 
 msgid "lunch"
 msgstr "lounas"
@@ -783,10 +782,10 @@ msgid "cake"
 msgstr "kakku"
 
 msgid "mashed potatoes"
-msgstr ""
+msgstr "perunamuusi"
 
 msgid "tea"
-msgstr ""
+msgstr "tee"
 
 msgid "bun"
 msgstr "pulla"
@@ -795,13 +794,13 @@ msgid "cheese"
 msgstr "juusto"
 
 msgid "beef"
-msgstr ""
+msgstr "naudanliha"
 
 msgid "sandwich"
 msgstr "voileipä"
 
 msgid "slice"
-msgstr ""
+msgstr "viipale"
 
 msgid "sprinkle"
 msgstr "nonparelli"
@@ -849,13 +848,13 @@ msgid "egg"
 msgstr "kananmuna"
 
 msgid "hot dog"
-msgstr ""
+msgstr "hodari"
 
 msgid "ham"
 msgstr "kinkku"
 
 msgid "jewellery"
-msgstr ""
+msgstr "korut"
 
 msgid "sock"
 msgstr "sukka"
@@ -870,7 +869,7 @@ msgid "smock"
 msgstr "työtakki"
 
 msgid "shorts"
-msgstr ""
+msgstr "shortsit"
 
 msgid "pocket"
 msgstr "tasku"
@@ -888,10 +887,10 @@ msgid "raincoat"
 msgstr "sadetakki"
 
 msgid "trousers"
-msgstr ""
+msgstr "housut"
 
 msgid "sunglasses"
-msgstr ""
+msgstr "aurinkolasit"
 
 msgid "coat"
 msgstr "takki"
@@ -909,28 +908,28 @@ msgid "suit"
 msgstr "puku"
 
 msgid "pyjamas"
-msgstr ""
+msgstr "yöpuku"
 
 msgid "skirt"
 msgstr "mekko"
 
 msgid "zip"
-msgstr ""
+msgstr "vetoketju"
 
 msgid "shoes"
-msgstr ""
+msgstr "kengät"
 
 msgid "jewel"
 msgstr "jalokivi"
 
 msgid "tie"
-msgstr ""
+msgstr "solmio"
 
 msgid "slippers"
 msgstr "tossut"
 
 msgid "gloves"
-msgstr ""
+msgstr "hanskat"
 
 msgid "hat"
 msgstr "hattu"
@@ -942,10 +941,10 @@ msgid "cap"
 msgstr "lakki"
 
 msgid "swimming suit"
-msgstr ""
+msgstr "uimapuku"
 
 msgid "trainer"
-msgstr ""
+msgstr "lenkkari"
 
 msgid "vest"
 msgstr "liivi"
@@ -975,7 +974,7 @@ msgid "sash"
 msgstr "liina"
 
 msgid "shoe sole"
-msgstr ""
+msgstr "kengänpohja"
 
 msgid "robe"
 msgstr "kylpytakki"
@@ -987,7 +986,7 @@ msgid "kimono"
 msgstr "kimono"
 
 msgid "overalls"
-msgstr ""
+msgstr "haalarit"
 
 msgid "lick"
 msgstr "nuolla"
@@ -1059,7 +1058,7 @@ msgid "meet"
 msgstr "tavata"
 
 msgid "sell"
-msgstr ""
+msgstr "myydä"
 
 msgid "peck"
 msgstr "nokkia"
@@ -1095,16 +1094,16 @@ msgid "cheer"
 msgstr "tervehdys"
 
 msgid "bake"
-msgstr ""
+msgstr "leipoa"
 
 msgid "write"
 msgstr "kirjoittaa"
 
 msgid "punch"
-msgstr ""
+msgstr "lyödä"
 
 msgid "strum"
-msgstr ""
+msgstr "rämpyttää"
 
 msgid "study"
 msgstr "opiskella"
@@ -1158,7 +1157,7 @@ msgid "pull"
 msgstr "vetää"
 
 msgid "ate"
-msgstr ""
+msgstr "söi"
 
 msgid "kiss"
 msgstr "suudella"
@@ -1197,13 +1196,13 @@ msgid "fly"
 msgstr "lentää"
 
 msgid "juggle"
-msgstr ""
+msgstr "jongleerata"
 
 msgid "bit"
 msgstr "bitti"
 
 msgid "sweep"
-msgstr ""
+msgstr "lakaisi"
 
 msgid "look"
 msgstr "katsoa"
@@ -1239,10 +1238,10 @@ msgid "circus"
 msgstr "sirkus"
 
 msgid "church"
-msgstr ""
+msgstr "kirkko"
 
 msgid "kennel"
-msgstr ""
+msgstr "koiratarha"
 
 msgid "temple"
 msgstr "temppeli"
@@ -1257,7 +1256,7 @@ msgid "brick"
 msgstr "tiili"
 
 msgid "well"
-msgstr ""
+msgstr "kaivo"
 
 msgid "street"
 msgstr "katu"
@@ -1425,7 +1424,7 @@ msgid "juggler"
 msgstr "jonglööri"
 
 msgid "policeman"
-msgstr ""
+msgstr "poliisi"
 
 msgid "plumber"
 msgstr "putkiasentaja"
@@ -1440,7 +1439,7 @@ msgid "farmer"
 msgstr "maanviljelijä"
 
 msgid "magician"
-msgstr ""
+msgstr "taikuri"
 
 msgid "knight"
 msgstr "ritari"
@@ -1452,7 +1451,7 @@ msgid "bricklayer"
 msgstr "muurari"
 
 msgid "cleaner"
-msgstr ""
+msgstr "siivooja"
 
 msgid "teacher"
 msgstr "opettaja"
@@ -1500,7 +1499,7 @@ msgid "president"
 msgstr "presidentti"
 
 msgid "office worker"
-msgstr ""
+msgstr "toimistotyöntekijä"
 
 msgid "carpenter"
 msgstr "puuseppä"
@@ -1545,7 +1544,7 @@ msgid "boxer"
 msgstr "nyrkkeilijä"
 
 msgid "ballet dancer"
-msgstr ""
+msgstr "balettitanssija"
 
 msgid "coach"
 msgstr "valmentaja"
@@ -1554,19 +1553,19 @@ msgid "astronaut"
 msgstr "avaruuslentäjä"
 
 msgid "painter"
-msgstr ""
+msgstr "maalari"
 
 msgid "anaesthesiologist"
-msgstr ""
+msgstr "anestesiologi"
 
 msgid "scientist"
-msgstr ""
+msgstr "tutkija"
 
 msgid "carrot"
 msgstr "porkkana"
 
 msgid "blackberries"
-msgstr ""
+msgstr "karhunvatukat"
 
 msgid "celery"
 msgstr "selleri"
@@ -1590,7 +1589,7 @@ msgid "broccoli"
 msgstr "parsakaali"
 
 msgid "grapes"
-msgstr ""
+msgstr "viinirypäleet"
 
 msgid "spinach"
 msgstr "pinaatti"
@@ -1605,7 +1604,7 @@ msgid "radish"
 msgstr "retiisi"
 
 msgid "tomato"
-msgstr ""
+msgstr "tomaatti"
 
 msgid "kiwi"
 msgstr "kiivi"
@@ -1614,13 +1613,13 @@ msgid "asparagus"
 msgstr "parsa"
 
 msgid "olives"
-msgstr ""
+msgstr "oliivit"
 
 msgid "cucumbers"
-msgstr ""
+msgstr "kurkut"
 
 msgid "beans"
-msgstr ""
+msgstr "pavut"
 
 msgid "strawberry"
 msgstr "mansikka"
@@ -1635,22 +1634,22 @@ msgid "apricot"
 msgstr "aprikoosi"
 
 msgid "potatoes"
-msgstr ""
+msgstr "perunat"
 
 msgid "peas"
-msgstr ""
+msgstr "herneet"
 
 msgid "cabbage"
 msgstr "kaali"
 
 msgid "cherries"
-msgstr ""
+msgstr "kirsikat"
 
 msgid "squash"
 msgstr "kurpitsa"
 
 msgid "blueberries"
-msgstr ""
+msgstr "mustikat"
 
 msgid "pear"
 msgstr "päärynä"
@@ -1689,19 +1688,19 @@ msgid "lemon"
 msgstr "sitruuna"
 
 msgid "aubergine"
-msgstr ""
+msgstr "munakoiso"
 
 msgid "artichokes"
-msgstr ""
+msgstr "artisokat"
 
 msgid "plums"
-msgstr ""
+msgstr "luumut"
 
 msgid "leek"
 msgstr "purjo"
 
 msgid "bananas"
-msgstr ""
+msgstr "banaanit"
 
 msgid "papaya"
 msgstr "papaija"
@@ -1764,7 +1763,7 @@ msgid "mast"
 msgstr "masto"
 
 msgid "sledge"
-msgstr ""
+msgstr "reki"
 
 msgid "bicycle"
-msgstr ""
+msgstr "polkupyörä"

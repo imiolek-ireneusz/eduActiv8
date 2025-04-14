@@ -1,49 +1,51 @@
 # eduActiv8 - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
 # Oliver van der Bürie, 2016
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2019-01-04 22:25+0000\n"
+"PO-Revision-Date: 2025-04-14 17:56+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
 "Language-Team: German (https://www.transifex.com/eduactiv8/teams/94947/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public "
+"Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public "
+"Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
+"This program is free software: you can redistribute it and/or modify it under the terms "
+"of the GNU General Public License as published by the Free Software Foundation, either "
+"version 3 of the License, or (at your option) any later version. You should have "
+"received a copy of the GNU General Public License along with this program. If not, see "
 "<http://www.gnu.org/licenses/>."
 msgstr ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
+"This program is free software: you can redistribute it and/or modify it under the terms "
+"of the GNU General Public License as published by the Free Software Foundation, either "
+"version 3 of the License, or (at your option) any later version. You should have "
+"received a copy of the GNU General Public License along with this program. If not, see "
 "<http://www.gnu.org/licenses/>."
 
 msgid "A collection of educational activities for kids"
@@ -53,9 +55,11 @@ msgid "Educational Activities for Kids"
 msgstr "Lernpaket für Kinder"
 
 msgid ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
+"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons "
+"License (CC BY-SA)"
 msgstr ""
+"Bilder von: http://www.art4apps.org/ – Art4Apps von Smart4Kids – Creative Commons "
+"Lizenz (CC BY-SA)"
 
 msgid "Default Language:"
 msgstr "Standardsprache:"
@@ -114,6 +118,9 @@ msgstr "Einstellungen"
 
 msgid "switch to full screen after login"
 msgstr "Ganzen Bildschirm anzeigen"
+
+msgid "allow users to navigate to locked levels"
+msgstr "Benutzern erlauben, zu gesperrten Leveln zu navigieren"
 
 msgid "allow adding new users on login screen"
 msgstr "Nutzer im Homescreen registrieren"
@@ -386,10 +393,10 @@ msgid "Sorting Numbers"
 msgstr "Zahlen sortieren"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Aufeinanderfolgende Zahlen"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Zufallszahlen"
 
 msgid "Number Comparison"
 msgstr "Zahlen vergleichen"
@@ -587,7 +594,7 @@ msgid "Percentages (Category)"
 msgstr "Prozente"
 
 msgid "Learn new words"
-msgstr ""
+msgstr "Lerne neue Wörter"
 
 msgid "Word Builders"
 msgstr "Wörter bauen"
@@ -635,49 +642,46 @@ msgid "Food"
 msgstr "Essen"
 
 msgid "Listening Exercises"
-msgstr ""
+msgstr "Hörübungen"
 
 msgid "Match sounds to words"
-msgstr ""
+msgstr "Ordne die Geräusche den Wörtern zu"
 
 msgid "Patterns"
-msgstr ""
+msgstr "Muster"
 
 msgid "Number Patterns"
-msgstr ""
+msgstr "Zahlenmuster"
 
 msgid "Letter Patterns"
-msgstr ""
+msgstr "Buchstabenmuster"
 
 msgid "Color Patterns"
-msgstr ""
+msgstr "Farbenmuster"
 
 msgid "Image Patterns"
-msgstr ""
+msgstr "Bildmuster"
 
 msgid "Fraction Patterns"
-msgstr ""
+msgstr "Bruchmuster"
 
 msgid "Shape Patterns"
-msgstr ""
+msgstr "Formenmuster"
 
 msgid "Complete the pattern on the top line."
-msgstr ""
+msgstr "Vervollständige das Muster in der obersten Reihe."
 
 msgid "Match shapes to their names"
-msgstr ""
+msgstr "Ordne die Formen ihren Namen zu"
 
 msgid "Negative numbers"
-msgstr ""
+msgstr "Negative Zahlen"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr ""
+msgstr "Vervollständige das Alphabet mit den Buchstaben aus der mittleren Zeile."
 
-msgid ""
-"Drag the slider up or down so that the right sign is in the red square."
-msgstr ""
-"Ziehe den Schlitten hoch oder runter, sodass das richtige Zeichen im Quadrat"
-" ist."
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Ziehe den Schlitten hoch oder runter, sodass das richtige Zeichen im Quadrat ist."
 
 msgid "Take your sheep to the rest of the herd."
 msgstr "Packe dein Schaf zum Rest der Herde."
@@ -685,10 +689,8 @@ msgstr "Packe dein Schaf zum Rest der Herde."
 msgid "Check the shopping list and drag all needed items into the basket."
 msgstr "Schaue auf deine Einkaufsliste und fülle deinen Einkaufskorb."
 
-msgid ""
-"Drag one of the <, > or = (lesser, greater or equal) to the red square."
-msgstr ""
-"Ziehe einen der <, > oder = (kleiner, größer oder gleich) zum roten Quadrat."
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Ziehe einen der <, > oder = (kleiner, größer oder gleich) zum roten Quadrat."
 
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr "Ziehe einen kleiner, größer oder gleich zum roten Quadrat."
@@ -719,6 +721,9 @@ msgstr "Herzlichen Glückwunsch! Du hast alle Aufgaben im Spiel gelöst!"
 
 msgid "Great job!"
 msgstr "Toll gemacht!"
+
+msgid "Perfect!!!"
+msgstr "Perfekt!"
 
 msgid "Awesome!"
 msgstr "Unglaublich!"
@@ -751,26 +756,24 @@ msgid "Match fraction charts on the right to the ones on the left"
 msgstr "Vergleiche die rechten Bruchformen mit den linken Bruchformen"
 
 msgid ""
-"Match fraction charts and fractions on the right to the fraction charts on "
-"the left"
+"Match fraction charts and fractions on the right to the fraction charts on the left"
 msgstr ""
-"Vergleiche die rechten Bruchformen und Brüche mit den linken Bruchformen "
-"undBrüchen"
+"Vergleiche die rechten Bruchformen und Brüche mit den linken Bruchformen undBrüchen"
 
 msgid "Match fraction charts to the fractions on the left"
 msgstr "Vergleiche die Bruchformen mit den Brüchen"
 
 msgid ""
-"Match fraction charts, fractions and decimal fractions on the right to their"
-" percentage representations"
+"Match fraction charts, fractions and decimal fractions on the right to their percentage "
+"representations"
 msgstr "Ordne die Elemente links zu ihren Prozenten rechts zu"
 
 msgid ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of "
-"coloured pieces to white pieces"
+"Match charts to the ratios on the left. Ratios are expressed as ratio of coloured "
+"pieces to white pieces"
 msgstr ""
-"Ordne die Bilder zu den Verhältnissen links, welche das Verhältnis von "
-"farbigen zu weißen Stücken angeben"
+"Ordne die Bilder zu den Verhältnissen links, welche das Verhältnis von farbigen zu "
+"weißen Stücken angeben"
 
 msgid "Shape Maker"
 msgstr "Formen erstellen"
@@ -795,11 +798,8 @@ msgid "such that lengths of its sides are equal to %d and %d"
 msgstr "sodass die Länge ihrer Seiten gleich ist zu %d und %d"
 
 #, python-format
-msgid ""
-"such that lengths of its 2 parallel bases are equal to %d and height to %d"
-msgstr ""
-"sodass die Länge der 2 parallelen Basen gleich ist zu %d und der Nenner zu "
-"%d"
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "sodass die Länge der 2 parallelen Basen gleich ist zu %d und der Nenner zu %d"
 
 #, python-format
 msgid "such that length of its base is equal to %d and height to %d"
@@ -914,255 +914,273 @@ msgid "Find missing number"
 msgstr "Finde die fehlende Zahl"
 
 msgid "numerator"
-msgstr ""
+msgstr "Zähler"
 
 msgid "denominator"
-msgstr ""
+msgstr "Nenner"
 
 msgid "Experiment with fractions"
-msgstr ""
+msgstr "Experimentiere mit Brüchen"
 
 msgid "Experiment with decimal fractions"
-msgstr ""
+msgstr "Experimentiere mit Dezimalbrüchen"
 
 msgid "Ratio"
 msgstr "Verhältnis"
 
 msgid "Experiment with ratios"
-msgstr ""
+msgstr "Experimentiere mit Verhältnissen"
 
 msgid "Experiment with percentages"
-msgstr ""
+msgstr "Experimentiere mit Prozentwerten"
 
 msgid "What fraction is it?"
-msgstr ""
+msgstr "Welcher Bruch ist das?"
 
 msgid "What decimal fraction is it?"
-msgstr ""
+msgstr "Welcher Dezimalbruch ist das?"
 
 msgid "Add fractions with the same denominator"
-msgstr ""
+msgstr "Brüche mit gleichem Nenner addieren"
 
 msgid "Subtract fractions with the same denominator"
-msgstr ""
+msgstr "Brüche mit gleichem Nenner subtrahieren"
 
 msgid "Multiply fractions"
-msgstr ""
+msgstr "Brüche multiplizieren"
 
 msgid "Divide fractions"
-msgstr ""
+msgstr "Brüche dividieren"
 
 msgid "Exercise 1"
-msgstr ""
+msgstr "Übung 1"
 
 msgid "Exercise 2"
-msgstr ""
+msgstr "Übung 2"
 
 msgid "Exercise 3"
-msgstr ""
+msgstr "Übung 3"
 
 msgid "Compare decimals and fractions"
-msgstr ""
+msgstr "Vergleiche Dezimalzahlen und Brüche"
 
 msgid "Compare fractions"
-msgstr ""
+msgstr "Brüche vergleichen"
 
 msgid "Reduce fractions"
-msgstr ""
+msgstr "Brüche kürzen"
 
 msgid "Expand fractions"
-msgstr ""
+msgstr "Brüche erweitern"
 
 msgid ""
-"To reduce a fraction divide the numerator and the denominator by one of "
-"their common factors which are displayed between the two fractions. Select "
-"one of them to see what happens. If 1 is the only common factor then the "
-"fraction can't be reduced any more - try choosing a different one."
+"To reduce a fraction divide the numerator and the denominator by one of their common "
+"factors which are displayed between the two fractions. Select one of them to see what "
+"happens. If 1 is the only common factor then the fraction can't be reduced any more - "
+"try choosing a different one."
 msgstr ""
+"Um einen Bruch zu kürzen, teile Zähler und Nenner durch einen ihrer gemeinsamen Teiler, "
+"die zwischen den beiden Brüchen angezeigt werden. Wähle einen davon aus, um zu sehen, "
+"was passiert. Wenn 1 der einzige gemeinsame Teiler ist, kann der Bruch nicht weiter "
+"gekürzt werden – versuche einen anderen zu wählen."
 
 msgid ""
-"To expand a fraction multiply the numerator and the denominator by the same "
-"number. Change the multiplicand to see what happens."
+"To expand a fraction multiply the numerator and the denominator by the same number. "
+"Change the multiplicand to see what happens."
 msgstr ""
+"Um einen Bruch zu erweitern, multipliziere Zähler und Nenner mit derselben Zahl. Ändere "
+"den Multiplikator, um zu sehen, was passiert."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr ""
+msgstr "Verwende die Pfeile, um deine Antwort zu ändern, oder gib sie einfach ein."
 
 msgid "Use the arrows to change your answer."
-msgstr ""
+msgstr "Verwende die Pfeile, um deine Antwort zu ändern."
 
 msgid ""
-"To add two fractions with the same denominators add their numerators "
-"together and keep the denominator unchanged. Simplify the result if the "
-"numerator is greater than the denominator and reduce the fraction if "
-"possible."
+"To add two fractions with the same denominators add their numerators together and keep "
+"the denominator unchanged. Simplify the result if the numerator is greater than the "
+"denominator and reduce the fraction if possible."
 msgstr ""
+"Um zwei Brüche mit gleichem Nenner zu addieren, addiere die Zähler und lasse den Nenner "
+"unverändert. Vereinfache das Ergebnis, wenn der Zähler größer als der Nenner ist, und "
+"kürze den Bruch, wenn möglich."
 
 msgid ""
-"To subtract one fraction from another one with the same denominator subtract"
-" numerators and keep the denominator unchanged. Reduce the resulting "
-"fraction if possible."
+"To subtract one fraction from another one with the same denominator subtract numerators "
+"and keep the denominator unchanged. Reduce the resulting fraction if possible."
 msgstr ""
+"Um einen Bruch von einem anderen mit gleichem Nenner zu subtrahieren, subtrahiere die "
+"Zähler und lasse den Nenner unverändert. Kürze den resultierenden Bruch, wenn möglich."
 
 msgid ""
-"To multiply two fractions multiply the numerators together and then multiply"
-" the denominators together. Reduce the resulting fraction if possible."
+"To multiply two fractions multiply the numerators together and then multiply the "
+"denominators together. Reduce the resulting fraction if possible."
 msgstr ""
+"Um zwei Brüche zu multiplizieren, multipliziere die Zähler miteinander und dann die "
+"Nenner. Kürze den resultierenden Bruch, wenn möglich."
 
 msgid ""
-"To divide a fraction by another fraction multiply the first fraction by the "
-"second fraction flipped up side down. Simplify and reduce the resulting "
-"fraction if possible."
+"To divide a fraction by another fraction multiply the first fraction by the second "
+"fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
 msgstr ""
+"Um einen Bruch durch einen anderen zu teilen, multipliziere den ersten Bruch mit dem "
+"Kehrwert des zweiten. Vereinfache und kürze den resultierenden Bruch, wenn möglich."
 
 msgid "Group fractions together"
-msgstr ""
+msgstr "Brüche gruppieren"
 
 msgid "Group percentages together"
-msgstr ""
+msgstr "Prozentwerte gruppieren"
 
 msgid "Group ratios together"
-msgstr ""
+msgstr "Verhältnisse gruppieren"
 
 msgid "Symmetry"
-msgstr ""
+msgstr "Symmetrie"
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr ""
+msgstr "Spiegelsymmetrie – mit Formen zeichnen"
 
 msgid "Reflect shapes"
-msgstr ""
+msgstr "Formen spiegeln"
 
 msgid "Reflect a shape in a mirror line"
-msgstr ""
+msgstr "Spiegle eine Form an einer Spiegelachse"
 
 msgid ""
-"Draw a shape that is a reflection of the one already displayed. The red line"
-" is the mirror line."
+"Draw a shape that is a reflection of the one already displayed. The red line is the "
+"mirror line."
 msgstr ""
+"Zeichne eine Form, die das Spiegelbild der bereits dargestellten Form ist. Die rote "
+"Linie ist die Spiegelachse."
 
 msgid "Symmetrical shapes - missing half"
-msgstr ""
+msgstr "Symmetrische Formen – fehlende Hälfte"
 
 msgid "Draw the other half of the shape"
-msgstr ""
+msgstr "Zeichne die andere Hälfte der Form"
 
 msgid "Find lines of symmetry"
-msgstr ""
+msgstr "Finde die Symmetrielinien"
 
 msgid ""
-"Find and select all lines of symmetry for a displayed shape. Click on the "
-"arrows around the drawing area to select them."
+"Find and select all lines of symmetry for a displayed shape. Click on the arrows around "
+"the drawing area to select them."
 msgstr ""
+"Finde und wähle alle Symmetrielinien einer dargestellten Form. Klicke auf die Pfeile "
+"rund um den Zeichenbereich, um sie auszuwählen."
 
 msgid "Match equivalent fractions"
-msgstr ""
+msgstr "Ordne gleichwertige Brüche zu"
 
 msgid "Match fractions"
-msgstr ""
+msgstr "Ordne Brüche zu"
 
 msgid "Match decimals"
-msgstr ""
+msgstr "Ordne Dezimalzahlen zu"
 
 msgid "Match percentages"
-msgstr ""
+msgstr "Ordne Prozentwerte zu"
 
 msgid "Match ratios"
-msgstr ""
+msgstr "Ordne Verhältnisse zu"
 
 msgid "Percentages in a pie chart"
-msgstr ""
+msgstr "Prozentwerte in einem Kreisdiagramm"
 
 msgid "Find equivalent fraction"
-msgstr ""
+msgstr "Finde einen gleichwertigen Bruch"
 
 msgid "Calculating with Time"
-msgstr ""
+msgstr "Mit Zeit rechnen"
 
 msgid "start time"
-msgstr ""
+msgstr "Startzeit"
 
 msgid "end time"
-msgstr ""
+msgstr "Endzeit"
 
 msgid "elapsed time"
-msgstr ""
+msgstr "verstrichene Zeit"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr ""
+msgstr "Temperatur – Einführung in negative Zahlen"
 
 msgid "Experiment with elapsed time"
-msgstr ""
+msgstr "Experimentiere mit verstrichener Zeit"
 
 msgid "Experiment with elapsed time 2"
-msgstr ""
+msgstr "Experimentiere mit verstrichener Zeit 2"
 
 msgid "Calculate elapsed time"
-msgstr ""
+msgstr "Berechne die verstrichene Zeit"
 
 msgid "Find the start or the end time"
-msgstr ""
+msgstr "Finde die Start- oder Endzeit"
 
 msgid "Visualized on a clock dial"
-msgstr ""
+msgstr "Dargestellt auf einem Zifferblatt"
 
 msgid "Visualized on a number line"
-msgstr ""
+msgstr "Dargestellt auf einem Zahlenstrahl"
 
 msgid "Visualized on two number lines"
-msgstr ""
+msgstr "Dargestellt auf zwei Zahlenstrahlen"
 
 msgid "With no visualizations"
-msgstr ""
+msgstr "Ohne Visualisierungen"
 
 msgid "With mirrored images"
-msgstr ""
+msgstr "Mit gespiegelten Bildern"
 
 msgid "Theme Editor"
-msgstr ""
+msgstr "Design-Editor"
 
 msgid "Make the game look your way"
-msgstr ""
+msgstr "Gestalte das Spiel nach deinem Geschmack"
 
 msgid "Reset colors back to the default ones?"
-msgstr ""
+msgstr "Farben auf Standardwerte zurücksetzen?"
 
 msgid "With simplifying"
-msgstr ""
+msgstr "Mit Vereinfachung"
 
 msgid "Positive numbers"
-msgstr ""
+msgstr "Positive Zahlen"
 
 msgid "Basics"
-msgstr ""
+msgstr "Grundlagen"
 
 msgid "Equivalent fractions"
-msgstr ""
+msgstr "Gleichwertige Brüche"
 
 msgid "Expanding and reducing fractions"
-msgstr ""
+msgstr "Brüche erweitern und kürzen"
 
 msgid "Add fractions with unlike denominators"
-msgstr ""
+msgstr "Brüche mit ungleichen Nennern addieren"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr ""
+msgstr "Brüche mit ungleichen Nennern subtrahieren"
 
 msgid ""
-"To add or subtract fractions when their denominators are not the same you "
-"have to find equivalent fractions which do have a common denominator. "
-"Finding the least common multiple of the two denominators will help you with"
-" that."
+"To add or subtract fractions when their denominators are not the same you have to find "
+"equivalent fractions which do have a common denominator. Finding the least common "
+"multiple of the two denominators will help you with that."
 msgstr ""
+"Um Brüche mit ungleichen Nennern zu addieren oder zu subtrahieren, musst du "
+"gleichwertige Brüche mit einem gemeinsamen Nenner finden. Der kleinste gemeinsame "
+"Vielfache der beiden Nenner hilft dir dabei."
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
-msgstr ""
+msgstr "lange Form"
 
 # used for the 2 ways of telling time used in Russian and Serbian translations
 # only
 msgid "short form"
-msgstr ""
+msgstr "kurze Form"
 
 msgid "white"
 msgstr "Weiß"
@@ -1267,10 +1285,10 @@ msgid "Hexagon"
 msgstr "Hexagon"
 
 msgid "Heptagon"
-msgstr ""
+msgstr "Heptagon"
 
 msgid "Octagon"
-msgstr ""
+msgstr "Oktagon"
 
 msgid "Circle"
 msgstr "Kreis"
@@ -1420,10 +1438,10 @@ msgstr[1] "Wassermelonen"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Stunde"
+msgstr[1] "Stunden"
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Minute"
+msgstr[1] "Minuten"

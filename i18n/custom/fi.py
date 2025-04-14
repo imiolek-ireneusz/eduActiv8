@@ -99,13 +99,29 @@ def time2str(h, m):
         return "%s vaille %s" % (n2txt(60 - m), n2txt(h))
     return ""
 
-#write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+# Numerators 1–12
+numerators = [
+    'yksi', 'kaksi', 'kolme', 'neljä', 'viisi', 'kuusi',
+    'seitsemän', 'kahdeksan', 'yhdeksän', 'kymmenen',
+    'yksitoista', 'kaksitoista'
+]
+
+# Denominators - nominative singular for 1/n
+d_singular = [
+    '', 'puoli', 'kolmasosa', 'neljäsosa', 'viidesosa', 'kuudesosa',
+    'seitsemäsosa', 'kahdeksasosa', 'yhdeksäsosa', 'kymmenesosa',
+    'yhdestoista osa', 'kahdestoista osa'
+]
+
+# Denominators - partitive plural for n>1
+d_plural = [
+    '', 'puolia', 'kolmasosia', 'neljäsosia', 'viidesosia', 'kuudesosia',
+    'seitsemäsosia', 'kahdeksasosia', 'yhdeksäsosia', 'kymmenesosia',
+    'yhdestoista osia', 'kahdestoista osia'
+]
 
 def fract2str(n, d):
     if n == 1:
-        return numerators[0] + " " + d_singular[d-1]
+        return numerators[0] + " " + d_singular[d - 1]
     else:
-        return numerators[n-1] + " " + d_plural[d-1]
+        return numerators[n - 1] + " " + d_plural[d - 1]

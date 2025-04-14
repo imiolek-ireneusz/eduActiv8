@@ -1,46 +1,52 @@
 # eduActiv8 - Educational Activity Pack - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
-# This file is distributed under the same license as the eduactiv8 package.
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
 # Peter Hill, 2018
 # Derek Lackaff, 2018
-# 
+# Peter Hill <petermhill@yahoo.com>, 2019
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2019-01-04 22:25+0000\n"
-"Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
-"Language-Team: Lakota (https://www.transifex.com/eduactiv8/teams/94947/lkt/)\n"
+"PO-Revision-Date: 2025-04-14 17:57+0100\n"
+"Last-Translator: Peter Hill <petermhill@yahoo.com>, 2019\n"
+"Language-Team: Lakota (https://app.transifex.com/eduactiv8/teams/94947/lkt/)\n"
+"Language: lkt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lkt\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public "
+"Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative "
+"Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) Sounds by various authors who contributed their "
+"works to freesound.org. Images by various authors who contributed their works to "
+"openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - "
+"under a Creative Commons License (CC BY-SA). Please view credits.txt for more info "
+"about authors of media files used in this project"
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
+"This program is free software: you can redistribute it and/or modify it under the terms "
+"of the GNU General Public License as published by the Free Software Foundation, either "
+"version 3 of the License, or (at your option) any later version. You should have "
+"received a copy of the GNU General Public License along with this program. If not, see "
 "<http://www.gnu.org/licenses/>."
 msgstr ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
+"This program is free software: you can redistribute it and/or modify it under the terms "
+"of the GNU General Public License as published by the Free Software Foundation, either "
+"version 3 of the License, or (at your option) any later version. You should have "
+"received a copy of the GNU General Public License along with this program. If not, see "
 "<http://www.gnu.org/licenses/>."
 
 msgid "A collection of educational activities for kids"
@@ -50,11 +56,11 @@ msgid "Educational Activities for Kids"
 msgstr "Wakȟáŋyeža Wóuŋspe Wóečhuŋ"
 
 msgid ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
+"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons "
+"License (CC BY-SA)"
 msgstr ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
+"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons "
+"License (CC BY-SA)"
 
 msgid "Default Language:"
 msgstr "Iyápi Ikčéka:"
@@ -113,6 +119,9 @@ msgstr "Tȟokáhekhiyapi"
 
 msgid "switch to full screen after login"
 msgstr "čhaž’óigwapi óhakab naówaŋčaya tȟaŋíŋ kte"
+
+msgid "allow users to navigate to locked levels"
+msgstr ""
 
 msgid "allow adding new users on login screen"
 msgstr "čhaž’óigwapi ektá tuwá tȟéča kiŋ aégnag-phičápi kte"
@@ -385,10 +394,10 @@ msgid "Sorting Numbers"
 msgstr "Wóiyawa Ečhékčhe Égnakapi"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Wóiyawa ówečhiŋhaŋ hé"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Wóiyawa oštéšteya kaȟníǧapi"
 
 msgid "Number Comparison"
 msgstr "Wóiyawa Íčhiwaŋyaŋkapi"
@@ -490,16 +499,14 @@ msgid "Additive Colour Mixing - Light"
 msgstr "Oówa Íčhičahiyapi - Ožáŋžaŋ"
 
 msgid "Mix red, green and blue light to get other colours"
-msgstr ""
-"Ožáŋžaŋ šá na tȟózi na tȟó íčhičahiyiŋ na ečhél oówa lečhákčhala káǧa yo/ye."
+msgstr "Ožáŋžaŋ šá na tȟózi na tȟó íčhičahiyiŋ na ečhél oówa lečhákčhala káǧa yo/ye."
 
 msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
 msgstr "Oówa Íčhiaglaskil Égnakapi - Wíyuŋpi, Wílulye, Mnisápa Očháže "
 
 msgid "Mix cyan, magenta and yellow paint to get other colours"
 msgstr ""
-"Wíyuŋpi tȟósaŋȟča na šástaŋȟča na zí íčhičahiyiŋ na ečhél oówa lečhákčhala "
-"káǧa yo/ye."
+"Wíyuŋpi tȟósaŋȟča na šástaŋȟča na zí íčhičahiyiŋ na ečhél oówa lečhákčhala káǧa yo/ye."
 
 msgid "Find the colour of the circle in the middle"
 msgstr "Miméla kiŋ oówa tókheča héči abléza yo/ye."
@@ -517,8 +524,7 @@ msgid "Find all matching animals"
 msgstr "Wamákȟaškaŋ kiŋ iyúha iyéwičhaya yo/ye."
 
 msgid "Match animals to their shadows"
-msgstr ""
-"Wamákȟaškaŋ kiŋ iyúha naǧípi kiŋ isákhibkhib ečhékčhe éwičhagnaka yo/ye"
+msgstr "Wamákȟaškaŋ kiŋ iyúha naǧípi kiŋ isákhibkhib ečhékčhe éwičhagnaka yo/ye"
 
 msgid "Match Animals - Memory Game"
 msgstr "Wamákȟaškaŋ Núŋmnuŋm Éwičhagnakapi - Wókiksuye Wóškate"
@@ -578,19 +584,19 @@ msgid "Type your answer and hit enter"
 msgstr "Wóayupte okíwa na heháŋl \"enter\" naȟtágya yo/ye"
 
 msgid "Decimals (Category)"
-msgstr "Decimals"
+msgstr "Wóiyawa haŋké"
 
 msgid "Fractions (Category)"
-msgstr "Fractions"
+msgstr "Wóiyawa owákse"
 
 msgid "Ratios (Category)"
-msgstr "Ratios"
+msgstr "Wóiyawa wótakuye"
 
 msgid "Percentages (Category)"
-msgstr "Percentages"
+msgstr "Opáwiŋǧe etáŋhaŋ"
 
 msgid "Learn new words"
-msgstr ""
+msgstr "Wičhóiye lečhála uŋspéič’ičhiya yo/ye"
 
 msgid "Word Builders"
 msgstr "Wičhóiye Káǧapi"
@@ -599,7 +605,7 @@ msgid "Word Matchers"
 msgstr "Wičhóiye Káǧapi 2"
 
 msgid "Match images to words"
-msgstr ""
+msgstr "Itówapi na wičhóiye íčhikȟoyagyapi"
 
 msgid "Animals"
 msgstr "Wamákȟaškaŋ"
@@ -638,67 +644,64 @@ msgid "Food"
 msgstr "Wóyute"
 
 msgid "Listening Exercises"
-msgstr ""
+msgstr "Waánaǧoptaŋpi"
 
 msgid "Match sounds to words"
-msgstr ""
+msgstr "Wičhóiye na onáȟ’uŋ íčhikȟoyagyapi"
 
 msgid "Patterns"
-msgstr ""
+msgstr "Wógligleyapi"
 
 msgid "Number Patterns"
-msgstr ""
+msgstr "Wóiyawa Wógligleyapi"
 
 msgid "Letter Patterns"
-msgstr ""
+msgstr "Oówaptaya Wógligleyapi"
 
 msgid "Color Patterns"
-msgstr ""
+msgstr "Oówa Wógligleyapi"
 
 msgid "Image Patterns"
-msgstr ""
+msgstr "Itówapi Wógligleyapi"
 
 msgid "Fraction Patterns"
-msgstr ""
+msgstr "Wóiyawa-owákse Wógligleyapi"
 
 msgid "Shape Patterns"
-msgstr ""
+msgstr "Oúŋčhaǧe Wógligleyapi"
 
 msgid "Complete the pattern on the top line."
-msgstr ""
+msgstr "Wógligleyapi kiŋ yuštáŋ yo/ye"
 
 msgid "Match shapes to their names"
-msgstr ""
+msgstr "Oúŋčhaǧe é na čhažé kiŋ íčhikȟoyagya yo/ye"
 
 msgid "Negative numbers"
-msgstr ""
+msgstr "Wóiyawa tákunišni ikhúta"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr ""
+msgstr "Óhiye iyókogna yaŋké kiŋ hetáŋhaŋ oówaptaya kiŋ yuštáŋ yo/ye"
 
-msgid ""
-"Drag the slider up or down so that the right sign is in the red square."
+msgid "Drag the slider up or down so that the right sign is in the red square."
 msgstr ""
-"Wápȟetȟokeča tukté waŋží oblótȟuŋ šá él yaŋkíŋ kta iyéčheča héči hé ektá "
-"yuslóhaŋ áya yo/ye."
+"Wápȟetȟokeča tukté waŋží oblótȟuŋ šá él yaŋkíŋ kta iyéčheča héči hé ektá yuslóhaŋ áya "
+"yo/ye."
 
 msgid "Take your sheep to the rest of the herd."
 msgstr "Tȟáȟčašuŋkala kiŋ optáye ektá gloáya yo/ye."
 
 msgid "Check the shopping list and drag all needed items into the basket."
-msgstr ""
-"Wówapi kiŋ yawá na takú yačhíŋ kte kiŋ hená wógnake ektá yuslóhaŋ áya yo/ye."
+msgstr "Wówapi kiŋ yawá na takú yačhíŋ kte kiŋ hená wógnake ektá yuslóhaŋ áya yo/ye."
 
-msgid ""
-"Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
 msgstr ""
-"\"<, >, =\" wápȟetȟokeča kiŋ hená ayúta na tukté waŋží oblótȟuŋ šá él yaŋkíŋ"
-" kta iyéčheča héči hé ektá yuslóhaŋ áya yo/ye."
+"\"<, >, =\" wápȟetȟokeča kiŋ hená ayúta na tukté waŋží oblótȟuŋ šá él yaŋkíŋ kta "
+"iyéčheča héči hé ektá yuslóhaŋ áya yo/ye."
 
 msgid "Drag one of the lesser, greater or equal to the red square."
 msgstr ""
-"Wápȟetȟokeča kiŋ hená (isáŋm tȟáŋka, isáŋm čík’ala, ákhiyenakča) tukté waŋží"
-" oblótȟuŋ šá él yaŋkíŋ kta iyéčheča héči hé ektá yuslóhaŋ áya yo/ye."
+"Wápȟetȟokeča kiŋ hená (isáŋm tȟáŋka, isáŋm čík’ala, ákhiyenakča) tukté waŋží oblótȟuŋ "
+"šá él yaŋkíŋ kta iyéčheča héči hé ektá yuslóhaŋ áya yo/ye."
 
 msgid "Rearrange the numbers so they are in the right order."
 msgstr "Wóiyawa eyá yuíženapi kiŋ lená yuéčhel yuówečhiŋhaŋ égnaka yo/ye."
@@ -708,17 +711,14 @@ msgstr "Oówa eyá hukhúl hé kiŋ hená uŋ wičhóiye kiŋ yuštáŋ yo/ye."
 
 msgid "Find and separate even numbers from odd numbers."
 msgstr ""
-"Wóiyawa kiŋ hená ayúta na wíotkuŋza na wíyušna eyá ópȟa héči hená "
-"yukhínuŋkȟaŋ égnaka yo/ye."
+"Wóiyawa kiŋ hená ayúta na wíotkuŋza na wíyušna eyá ópȟa héči hená yukhínuŋkȟaŋ égnaka "
+"yo/ye."
 
 msgid "Rearrange the letters so they are in the alphabetical order."
-msgstr ""
-"Oówa eyá yuíženapi kiŋ lená yuéčhel égnakiŋ na ečhél wičhóiye kiŋ owá yo/ye."
+msgstr "Oówa eyá yuíženapi kiŋ lená yuéčhel égnakiŋ na ečhél wičhóiye kiŋ owá yo/ye."
 
 msgid "Rearrange the numbers so they are in the ascending order."
-msgstr ""
-"Wóiyawa kiŋ lená waŋkátakiya sáŋm óta áyiŋ kta čha yuówečhiŋhaŋ égnaka "
-"yo/ye."
+msgstr "Wóiyawa kiŋ lená waŋkátakiya sáŋm óta áyiŋ kta čha yuówečhiŋhaŋ égnaka yo/ye."
 
 msgid "Perfect! Task solved!"
 msgstr "Wašté! Taŋyáŋ ečhánuŋ!"
@@ -731,6 +731,9 @@ msgstr "Yuphíya walúštaŋ...Wašté!"
 
 msgid "Great job!"
 msgstr "Taŋyáŋ ečhánuŋ!"
+
+msgid "Perfect!!!"
+msgstr "Yuphíyeȟčiŋ!!!"
 
 msgid "Awesome!"
 msgstr "Áta nikhíli!"
@@ -761,35 +764,32 @@ msgstr "uŋ wíyuŋpi kiŋ tíŋskokeča"
 
 msgid "Match fraction charts on the right to the ones on the left"
 msgstr ""
-"Wóiyawa owákse optáye eyá čhatkáyataŋhaŋ na išláyataŋhaŋ yaŋké kiŋ núŋmnuŋm "
-"yuéčhel égnaka yo/ye."
+"Wóiyawa owákse optáye eyá čhatkáyataŋhaŋ na išláyataŋhaŋ yaŋké kiŋ núŋmnuŋm yuéčhel "
+"égnaka yo/ye."
 
 msgid ""
-"Match fraction charts and fractions on the right to the fraction charts on "
-"the left"
+"Match fraction charts and fractions on the right to the fraction charts on the left"
 msgstr ""
-"Wóiyawa owákse optáye na wóiyawa waŋžígžila išláyataŋhaŋ yaŋké kiŋ hená "
-"čhatkáyataŋhaŋ ečhékčhe égnaka yo/ye."
+"Wóiyawa owákse optáye na wóiyawa waŋžígžila išláyataŋhaŋ yaŋké kiŋ hená čhatkáyataŋhaŋ "
+"ečhékčhe égnaka yo/ye."
 
 msgid "Match fraction charts to the fractions on the left"
-msgstr ""
-"Wóiyawa owákse optáye eyá yaŋké kiŋ čhatkáyataŋhaŋ ečhékčhe égnaka yo/ye."
+msgstr "Wóiyawa owákse optáye eyá yaŋké kiŋ čhatkáyataŋhaŋ ečhékčhe égnaka yo/ye."
 
 msgid ""
-"Match fraction charts, fractions and decimal fractions on the right to their"
-" percentage representations"
+"Match fraction charts, fractions and decimal fractions on the right to their percentage "
+"representations"
 msgstr ""
-"Wóiyawa owákse optáye, na wóiyawa waŋžígžila, na wóiyawa haŋké eyá "
-"išláyataŋhaŋ yaŋké kiŋ hená opáwiŋǧe etáŋhaŋ tónagnakča héči hená "
-"isákhibkhib ečhékčhe égnaka yo/ye."
+"Wóiyawa owákse optáye, na wóiyawa waŋžígžila, na wóiyawa haŋké eyá išláyataŋhaŋ yaŋké "
+"kiŋ hená opáwiŋǧe etáŋhaŋ tónagnakča héči hená isákhibkhib ečhékčhe égnaka yo/ye."
 
 msgid ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of "
-"coloured pieces to white pieces"
+"Match charts to the ratios on the left. Ratios are expressed as ratio of coloured "
+"pieces to white pieces"
 msgstr ""
-"Wóiyawa optáye kiŋ hená čhatkáyataŋhaŋ wóiyawa wótakuye kiŋ isákhibkhib "
-"ečhékčhe égnaka yo/ye. Wóiyawa wótakuye k’uŋ hená oúŋčhaǧe-haŋké sásaŋ "
-"oúŋčhaǧe-haŋké skaská uŋ iyáčhiŋpi."
+"Wóiyawa optáye kiŋ hená čhatkáyataŋhaŋ wóiyawa wótakuye kiŋ isákhibkhib ečhékčhe égnaka "
+"yo/ye. Wóiyawa wótakuye k’uŋ hená oúŋčhaǧe-haŋké sásaŋ oúŋčhaǧe-haŋké skaská uŋ "
+"iyáčhiŋpi."
 
 msgid "Shape Maker"
 msgstr "Oúŋčhaǧe Okáǧe"
@@ -803,9 +803,7 @@ msgstr "Ouŋčhaǧe waŋ oyáwa kte kiŋ: %s"
 
 #, python-format
 msgid "such that lengths of its bases are equal to %d and %d and height to %d"
-msgstr ""
-"héčhel húte kiŋ %d na %d íakhilehaŋhaŋkča na wówaŋkatuya kiŋ %d "
-"íakhilehaŋkeča"
+msgstr "héčhel húte kiŋ %d na %d íakhilehaŋhaŋkča na wówaŋkatuya kiŋ %d íakhilehaŋkeča"
 
 #, python-format
 msgid "such that lengths of its sides are equal to %d"
@@ -816,11 +814,9 @@ msgid "such that lengths of its sides are equal to %d and %d"
 msgstr "héčhel hepíya kiŋ %d na %d íakhilehaŋhaŋkeča"
 
 #, python-format
-msgid ""
-"such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
 msgstr ""
-"héčhel húte ótkuŋze kiŋ henáuŋs %d íakhilehaŋhaŋkča na wówaŋkatuya kiŋ %d "
-"íakhilehaŋkeča"
+"héčhel húte ótkuŋze kiŋ henáuŋs %d íakhilehaŋhaŋkča na wówaŋkatuya kiŋ %d íakhilehaŋkeča"
 
 #, python-format
 msgid "such that length of its base is equal to %d and height to %d"
@@ -840,8 +836,7 @@ msgstr "héčhel hepíya-háŋske kiŋ %d íakhilehaŋkča"
 
 #, python-format
 msgid "such that length of one of its sides is equal to %d and height to %d"
-msgstr ""
-"héčhel hepíya kiŋ waŋží %d íakhilehaŋkča na wówaŋkatuya kiŋ %d íakhilehaŋkča"
+msgstr "héčhel hepíya kiŋ waŋží %d íakhilehaŋkča na wówaŋkatuya kiŋ %d íakhilehaŋkča"
 
 #, python-format
 msgid "such that length of its radius is equal to %d"
@@ -936,75 +931,75 @@ msgid "Find missing number"
 msgstr "Wóiyawa waŋ tókȟaȟ’aŋ kiŋ iyéya yo/ye"
 
 msgid "numerator"
-msgstr ""
+msgstr "Ičázopi akáŋl wóiyawa"
 
 msgid "denominator"
-msgstr ""
+msgstr "Ičázopi ihúkhul wóiyawa"
 
 msgid "Experiment with fractions"
-msgstr ""
+msgstr "Wóiyawa-owákse uŋ waíyutȟapi"
 
 msgid "Experiment with decimal fractions"
-msgstr ""
+msgstr "Wóiyawa haŋké uŋ waíyutȟapi"
 
 msgid "Ratio"
 msgstr "Wóiyawa Wótakuye"
 
 msgid "Experiment with ratios"
-msgstr ""
+msgstr "Wóiyawa wótakuye uŋ waíyutȟapi"
 
 msgid "Experiment with percentages"
-msgstr ""
+msgstr "Opáwiŋǧe etáŋhaŋ wóiyawa uŋ waíyutȟapi"
 
 msgid "What fraction is it?"
-msgstr ""
+msgstr "Wóiyawa-owákse kiŋ táku he?"
 
 msgid "What decimal fraction is it?"
-msgstr ""
+msgstr "Wóiyawa haŋké kiŋ táku he?"
 
 msgid "Add fractions with the same denominator"
-msgstr ""
+msgstr "Wóiyawa-owákse yupȟáǧapi - ičázopi ihúkhul kiŋ ákhilečheča"
 
 msgid "Subtract fractions with the same denominator"
-msgstr ""
+msgstr "Wóiyawa-owákse yuáoptetupi - ičázopi ihúkhul kiŋ ákhilečheča"
 
 msgid "Multiply fractions"
-msgstr ""
+msgstr "Wóiyawa-owákse yuótapi"
 
 msgid "Divide fractions"
-msgstr ""
+msgstr "Wóiyawa-owákse khiyúšpapi"
 
 msgid "Exercise 1"
-msgstr ""
+msgstr "Wóečhuŋ 1"
 
 msgid "Exercise 2"
-msgstr ""
+msgstr "Wóečhuŋ 2"
 
 msgid "Exercise 3"
-msgstr ""
+msgstr "Wóečhuŋ 3"
 
 msgid "Compare decimals and fractions"
-msgstr ""
+msgstr "Wóiyawa haŋké na wóiyawa owákse íčhiwaŋyaŋkapi"
 
 msgid "Compare fractions"
-msgstr ""
+msgstr "Wóiyawa owákse íčhiwaŋyaŋkapi"
 
 msgid "Reduce fractions"
-msgstr ""
+msgstr "Wóiyawa owákse yučík’alapi"
 
 msgid "Expand fractions"
+msgstr "Wóiyawa owákse yutȟáŋkapi"
+
+msgid ""
+"To reduce a fraction divide the numerator and the denominator by one of their common "
+"factors which are displayed between the two fractions. Select one of them to see what "
+"happens. If 1 is the only common factor then the fraction can't be reduced any more - "
+"try choosing a different one."
 msgstr ""
 
 msgid ""
-"To reduce a fraction divide the numerator and the denominator by one of "
-"their common factors which are displayed between the two fractions. Select "
-"one of them to see what happens. If 1 is the only common factor then the "
-"fraction can't be reduced any more - try choosing a different one."
-msgstr ""
-
-msgid ""
-"To expand a fraction multiply the numerator and the denominator by the same "
-"number. Change the multiplicand to see what happens."
+"To expand a fraction multiply the numerator and the denominator by the same number. "
+"Change the multiplicand to see what happens."
 msgstr ""
 
 msgid "Use the arrows to change your answer or just type it in."
@@ -1014,43 +1009,40 @@ msgid "Use the arrows to change your answer."
 msgstr ""
 
 msgid ""
-"To add two fractions with the same denominators add their numerators "
-"together and keep the denominator unchanged. Simplify the result if the "
-"numerator is greater than the denominator and reduce the fraction if "
-"possible."
+"To add two fractions with the same denominators add their numerators together and keep "
+"the denominator unchanged. Simplify the result if the numerator is greater than the "
+"denominator and reduce the fraction if possible."
 msgstr ""
 
 msgid ""
-"To subtract one fraction from another one with the same denominator subtract"
-" numerators and keep the denominator unchanged. Reduce the resulting "
-"fraction if possible."
+"To subtract one fraction from another one with the same denominator subtract numerators "
+"and keep the denominator unchanged. Reduce the resulting fraction if possible."
 msgstr ""
 
 msgid ""
-"To multiply two fractions multiply the numerators together and then multiply"
-" the denominators together. Reduce the resulting fraction if possible."
+"To multiply two fractions multiply the numerators together and then multiply the "
+"denominators together. Reduce the resulting fraction if possible."
 msgstr ""
 
 msgid ""
-"To divide a fraction by another fraction multiply the first fraction by the "
-"second fraction flipped up side down. Simplify and reduce the resulting "
-"fraction if possible."
+"To divide a fraction by another fraction multiply the first fraction by the second "
+"fraction flipped up side down. Simplify and reduce the resulting fraction if possible."
 msgstr ""
 
 msgid "Group fractions together"
-msgstr ""
+msgstr "Wóiyawa owákse yuptáya égnakapi"
 
 msgid "Group percentages together"
-msgstr ""
+msgstr "Opáwiŋǧe etáŋhaŋ wóiyawa yuptáya égnakapi"
 
 msgid "Group ratios together"
-msgstr ""
+msgstr "Wóiyawa wótakuye yuptáya égnakapi"
 
 msgid "Symmetry"
-msgstr ""
+msgstr "Anúŋg ákhilečheča"
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr ""
+msgstr "Míyoglas’okhíse - oúŋčhaǧe itówapi"
 
 msgid "Reflect shapes"
 msgstr ""
@@ -1059,83 +1051,83 @@ msgid "Reflect a shape in a mirror line"
 msgstr ""
 
 msgid ""
-"Draw a shape that is a reflection of the one already displayed. The red line"
-" is the mirror line."
+"Draw a shape that is a reflection of the one already displayed. The red line is the "
+"mirror line."
 msgstr ""
 
 msgid "Symmetrical shapes - missing half"
-msgstr ""
+msgstr "Anúŋg ákhilečheča - okhíse tókȟaȟ’aŋ"
 
 msgid "Draw the other half of the shape"
-msgstr ""
+msgstr "Oúŋčhaǧe uŋmá okhíse kiŋ itówa yo/ye"
 
 msgid "Find lines of symmetry"
 msgstr ""
 
 msgid ""
-"Find and select all lines of symmetry for a displayed shape. Click on the "
-"arrows around the drawing area to select them."
+"Find and select all lines of symmetry for a displayed shape. Click on the arrows around "
+"the drawing area to select them."
 msgstr ""
 
 msgid "Match equivalent fractions"
-msgstr ""
+msgstr "Wóiyawa-owákse ákhilečheča íčhikȟoyagyapi"
 
 msgid "Match fractions"
-msgstr ""
+msgstr "Wóiyawa-owákse íčhikȟoyagyapi"
 
 msgid "Match decimals"
-msgstr ""
+msgstr "Wóiyawa haŋké íčhikȟoyagyapi"
 
 msgid "Match percentages"
-msgstr ""
+msgstr "Opáwiŋǧe etáŋhaŋ wóiyawa íčhikȟoyagyapi"
 
 msgid "Match ratios"
-msgstr ""
+msgstr "Wóiyawa wótakuye íčhikȟoyagyapi"
 
 msgid "Percentages in a pie chart"
 msgstr ""
 
 msgid "Find equivalent fraction"
-msgstr ""
+msgstr "Wóiyawa-owákse ákhilečheča iyéyapi"
 
 msgid "Calculating with Time"
-msgstr ""
+msgstr "Mázaškaŋškaŋ uŋ wíyawapi"
 
 msgid "start time"
-msgstr ""
+msgstr "Mázaškaŋškaŋ letáŋhaŋ"
 
 msgid "end time"
-msgstr ""
+msgstr "Mázaškaŋškaŋ leháŋyaŋ"
 
 msgid "elapsed time"
-msgstr ""
+msgstr "Mázaškaŋškaŋ toháŋyaŋ"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr ""
+msgstr "Kȟal’íyutȟapi"
 
 msgid "Experiment with elapsed time"
-msgstr ""
+msgstr "Mázaškaŋškaŋ uŋ waíyutȟapi"
 
 msgid "Experiment with elapsed time 2"
-msgstr ""
+msgstr "Mázaškaŋškaŋ uŋ waíyutȟapi 2"
 
 msgid "Calculate elapsed time"
-msgstr ""
+msgstr "Mázaškaŋškaŋ toháŋyaŋ iyáwapi"
 
 msgid "Find the start or the end time"
-msgstr ""
+msgstr "Mázaškaŋškaŋ oíyaye na oíhaŋke kiŋ iyéyapi"
 
 msgid "Visualized on a clock dial"
-msgstr ""
+msgstr "Mázaškaŋškaŋ miméla él"
 
 msgid "Visualized on a number line"
-msgstr ""
+msgstr "Wóiyawa ikázopi waŋ él"
 
 msgid "Visualized on two number lines"
-msgstr ""
+msgstr "Wóiyawa ikázopi núm él"
 
 msgid "With no visualizations"
-msgstr ""
+msgstr "Itówapi wanílya"
 
 msgid "With mirrored images"
 msgstr ""
@@ -1153,38 +1145,37 @@ msgid "With simplifying"
 msgstr ""
 
 msgid "Positive numbers"
-msgstr ""
+msgstr "Wóyawa tákunišni iwáŋkab "
 
 msgid "Basics"
-msgstr ""
+msgstr "Oágle"
 
 msgid "Equivalent fractions"
-msgstr ""
+msgstr "Wóiyawa owákse ákhilečheča"
 
 msgid "Expanding and reducing fractions"
-msgstr ""
+msgstr "Wóiyawa owákse yutȟáŋkapi na yučík’alapi"
 
 msgid "Add fractions with unlike denominators"
-msgstr ""
+msgstr "Wóiyawa-owákse yupȟáǧapi - ičázopi ihúkhul kiŋ íčhitȟokča"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr ""
+msgstr "Wóiyawa-owákse yuáoptetupi - ičázopi ihúkhul kiŋ íčhitȟokča"
 
 msgid ""
-"To add or subtract fractions when their denominators are not the same you "
-"have to find equivalent fractions which do have a common denominator. "
-"Finding the least common multiple of the two denominators will help you with"
-" that."
+"To add or subtract fractions when their denominators are not the same you have to find "
+"equivalent fractions which do have a common denominator. Finding the least common "
+"multiple of the two denominators will help you with that."
 msgstr ""
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
-msgstr ""
+msgstr "háŋskeya owápi"
 
 # used for the 2 ways of telling time used in Russian and Serbian translations
 # only
 msgid "short form"
-msgstr ""
+msgstr "ptélyela owápi"
 
 msgid "white"
 msgstr "ská"
@@ -1289,10 +1280,10 @@ msgid "Hexagon"
 msgstr "Obló Šákpe"
 
 msgid "Heptagon"
-msgstr ""
+msgstr "Obló Šakówiŋ"
 
 msgid "Octagon"
-msgstr ""
+msgstr "Obló Šaglóǧaŋ"
 
 msgid "Circle"
 msgstr "Miméla"
@@ -1429,8 +1420,8 @@ msgstr[0] "wagmúšpaŋšni"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
+msgstr[0] "oápȟe"
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
+msgstr[0] "oápȟe čík’ala"

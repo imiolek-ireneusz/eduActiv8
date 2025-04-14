@@ -1,5 +1,5 @@
 # eduActiv8 - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
 #
 # Translators:
@@ -7,37 +7,38 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2019-01-04 22:25+0000\n"
+"PO-Revision-Date: 2025-04-14 17:59+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019\n"
-"Language-Team: Serbian (https://www.transifex.com/eduactiv8/teams/94947/sr/)\n"
+"Language-Team: Serbian (https://app.transifex.com/eduactiv8/teams/94947/sr/)\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sr\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || "
+"n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
 " Sounds by various authors who contributed their works to freesound.org. \n"
-" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://www."
+"art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
 " Please view credits.txt for more info about authors of media files used in this project"
 msgstr ""
 "Лаби, 2010 Меди Кери (mehdidc) \n"
 " Разни аутори су допринели звуку својим радовима на „freesound.org“. \n"
-" Разни аутори су допринели сликама својим радовима на „openclipart.org“-у (Јавни домен) и „http://www.art4apps.org/“-у — „Art4Apps“ од „Smart4Kids“ — под дозволом Заједничког стваралаштва (CC BY-SA). \n"
+" Разни аутори су допринели сликама својим радовима на „openclipart.org“-у (Јавни домен) и „http://www."
+"art4apps.org/“-у — „Art4Apps“ од „Smart4Kids“ — под дозволом Заједничког стваралаштва (CC BY-SA). \n"
 " Погледајте датотеку „credits.txt“ за више података о ауторима медијских датотека коришћеним у овом пројекту"
 
 msgid ""
-"This program is free software: you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation, either version 3 of the License, or (at your option) "
-"any later version. You should have received a copy of the GNU General Public"
-" License along with this program. If not, see "
-"<http://www.gnu.org/licenses/>."
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU General "
+"Public License as published by the Free Software Foundation, either version 3 of the License, or (at your "
+"option) any later version. You should have received a copy of the GNU General Public License along with "
+"this program. If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
 "Овај програм је слободан софтвер; можете га расподељивати\n"
 "и/или мењати под условима Гнуове опште јавне лиценце коју је\n"
@@ -52,12 +53,10 @@ msgstr "Малени скуп образовних програма за деч�
 msgid "Educational Activities for Kids"
 msgstr "Комплет образовних активности за дечицу"
 
-msgid ""
-"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative "
-"Commons License (CC BY-SA)"
+msgid "Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
 msgstr ""
-"Слике су са „http://www.art4apps.org/“ — „Art4Apps“ од „Smart4Kids“ — "
-"Дозвола Заједничког стваралаштва (CC BY-SA)"
+"Слике су са „http://www.art4apps.org/“ — „Art4Apps“ од „Smart4Kids“ — Дозвола Заједничког стваралаштва (CC "
+"BY-SA)"
 
 msgid "Default Language:"
 msgstr "Основни језик:"
@@ -116,6 +115,9 @@ msgstr "Поставке"
 
 msgid "switch to full screen after login"
 msgstr "пребаците се на цео екран након пријаве"
+
+msgid "allow users to navigate to locked levels"
+msgstr "дозволити корисницима да се крећу до закључаних нивоа"
 
 msgid "allow adding new users on login screen"
 msgstr "дозволи додавање нових корисника на екрану пријављивања"
@@ -388,10 +390,10 @@ msgid "Sorting Numbers"
 msgstr "Ређање бројева"
 
 msgid "Consecutive numbers"
-msgstr ""
+msgstr "Узастопни бројеви"
 
 msgid "Random numbers"
-msgstr ""
+msgstr "Насумични бројеви"
 
 msgid "Number Comparison"
 msgstr "Поређење бројева"
@@ -589,16 +591,16 @@ msgid "Percentages (Category)"
 msgstr "Проценти"
 
 msgid "Learn new words"
-msgstr ""
+msgstr "Научи нове речи"
 
 msgid "Word Builders"
 msgstr "Градитељ речи"
 
 msgid "Word Matchers"
-msgstr ""
+msgstr "Повезивање речи"
 
 msgid "Match images to words"
-msgstr ""
+msgstr "Повежи слике са речима"
 
 msgid "Animals"
 msgstr "животиње"
@@ -637,49 +639,46 @@ msgid "Food"
 msgstr "храна"
 
 msgid "Listening Exercises"
-msgstr ""
+msgstr "Вежбе слушања"
 
 msgid "Match sounds to words"
-msgstr ""
+msgstr "Повежи звукове са речима"
 
 msgid "Patterns"
-msgstr ""
+msgstr "Обрасци"
 
 msgid "Number Patterns"
-msgstr ""
+msgstr "Бројевни обрасци"
 
 msgid "Letter Patterns"
-msgstr ""
+msgstr "Словни обрасци"
 
 msgid "Color Patterns"
-msgstr ""
+msgstr "Шарени обрасци"
 
 msgid "Image Patterns"
-msgstr ""
+msgstr "Сликовни обрасци"
 
 msgid "Fraction Patterns"
-msgstr ""
+msgstr "Обрасци разломака"
 
 msgid "Shape Patterns"
-msgstr ""
+msgstr "Обрасци облика"
 
 msgid "Complete the pattern on the top line."
-msgstr ""
+msgstr "Допуни образац у горњем реду."
 
 msgid "Match shapes to their names"
-msgstr ""
+msgstr "Повежи облике са њиховим именима"
 
 msgid "Negative numbers"
-msgstr ""
+msgstr "Негативни бројеви"
 
 msgid "Complete the alphabet using letters from the middle line."
-msgstr ""
+msgstr "Допуни азбуку користећи слова из средњег реда."
 
-msgid ""
-"Drag the slider up or down so that the right sign is in the red square."
-msgstr ""
-"Превуци клизач горе или доле тако да је одговарајући знак у црвеном "
-"квадрату."
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Превуци клизач горе или доле тако да је одговарајући знак у црвеном квадрату."
 
 msgid "Take your sheep to the rest of the herd."
 msgstr "Одведи твоју овчицу до остатка стада."
@@ -687,8 +686,7 @@ msgstr "Одведи твоју овчицу до остатка стада."
 msgid "Check the shopping list and drag all needed items into the basket."
 msgstr "Провери списак за куповину и убаци све потребне састојке у корпу."
 
-msgid ""
-"Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
 msgstr "Превуци <, > или = (мање, веће или једнако) у црвени квадрат."
 
 msgid "Drag one of the lesser, greater or equal to the red square."
@@ -721,6 +719,9 @@ msgstr "Честитам! Сви задаци у овој игри су завр
 msgid "Great job!"
 msgstr "Одличан посао!"
 
+msgid "Perfect!!!"
+msgstr "Савршено!!!"
+
 msgid "Awesome!"
 msgstr "Задивљујуће!"
 
@@ -749,35 +750,25 @@ msgid "brush size"
 msgstr "величина четкице"
 
 msgid "Match fraction charts on the right to the ones on the left"
-msgstr ""
-"Премести графике разломака са десне стране на одговарајућа места на левој "
-"страни"
+msgstr "Премести графике разломака са десне стране на одговарајућа места на левој страни"
 
-msgid ""
-"Match fraction charts and fractions on the right to the fraction charts on "
-"the left"
-msgstr ""
-"Премести графике разломака и разломке са десне стране на одговарајућа места "
-"на левој страни"
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Премести графике разломака и разломке са десне стране на одговарајућа места на левој страни"
 
 msgid "Match fraction charts to the fractions on the left"
-msgstr ""
-"Премести графике разломака са десне стране на одговарајућа места на левој "
-"страни"
+msgstr "Премести графике разломака са десне стране на одговарајућа места на левој страни"
 
 msgid ""
-"Match fraction charts, fractions and decimal fractions on the right to their"
-" percentage representations"
+"Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
 msgstr ""
-"Премести графике разломака, разломке и децималне разломке са десне стране "
-"поред одговарајућих процената на левој страни"
+"Премести графике разломака, разломке и децималне разломке са десне стране поред одговарајућих процената на "
+"левој страни"
 
 msgid ""
-"Match charts to the ratios on the left. Ratios are expressed as ratio of "
-"coloured pieces to white pieces"
+"Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white pieces"
 msgstr ""
-"Премести графике са десне стране поред одговарајућих односа на левој страни."
-" Односи су представљени као однос обојених делова и белих делова"
+"Премести графике са десне стране поред одговарајућих односа на левој страни. Односи су представљени као "
+"однос обојених делова и белих делова"
 
 msgid "Shape Maker"
 msgstr "Цртач облика"
@@ -802,8 +793,7 @@ msgid "such that lengths of its sides are equal to %d and %d"
 msgstr "тако да су дужине његових страна једнаке %d и %d"
 
 #, python-format
-msgid ""
-"such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
 msgstr "тако да су дужине 2 његове паралелне основе једнаке %d а висина %d"
 
 #, python-format
@@ -919,246 +909,255 @@ msgid "Find missing number"
 msgstr "Нађи број који недостаје"
 
 msgid "numerator"
-msgstr ""
+msgstr "бројилац"
 
 msgid "denominator"
-msgstr ""
+msgstr "именилац"
 
 msgid "Experiment with fractions"
-msgstr ""
+msgstr "Експериментиши са разломцима"
 
 msgid "Experiment with decimal fractions"
-msgstr ""
+msgstr "Експериментиши са децималним разломцима"
 
 msgid "Ratio"
 msgstr "Однос"
 
 msgid "Experiment with ratios"
-msgstr ""
+msgstr "Експериментиши са односима"
 
 msgid "Experiment with percentages"
-msgstr ""
+msgstr "Експериментиши са процентима"
 
 msgid "What fraction is it?"
-msgstr ""
+msgstr "Који је то разломак?"
 
 msgid "What decimal fraction is it?"
-msgstr ""
+msgstr "Који је то децимални разломак?"
 
 msgid "Add fractions with the same denominator"
-msgstr ""
+msgstr "Сабирај разломке са истим имениоцем"
 
 msgid "Subtract fractions with the same denominator"
-msgstr ""
+msgstr "Одузимај разломке са истим имениоцем"
 
 msgid "Multiply fractions"
-msgstr ""
+msgstr "Множи разломке"
 
 msgid "Divide fractions"
-msgstr ""
+msgstr "Дели разломке"
 
 msgid "Exercise 1"
-msgstr ""
+msgstr "Вежба 1"
 
 msgid "Exercise 2"
-msgstr ""
+msgstr "Вежба 2"
 
 msgid "Exercise 3"
-msgstr ""
+msgstr "Вежба 3"
 
 msgid "Compare decimals and fractions"
-msgstr ""
+msgstr "Упореди децимале и разломке"
 
 msgid "Compare fractions"
-msgstr ""
+msgstr "Упореди разломке"
 
 msgid "Reduce fractions"
-msgstr ""
+msgstr "Скрати разломке"
 
 msgid "Expand fractions"
-msgstr ""
+msgstr "Прошири разломке"
 
 msgid ""
-"To reduce a fraction divide the numerator and the denominator by one of "
-"their common factors which are displayed between the two fractions. Select "
-"one of them to see what happens. If 1 is the only common factor then the "
-"fraction can't be reduced any more - try choosing a different one."
+"To reduce a fraction divide the numerator and the denominator by one of their common factors which are "
+"displayed between the two fractions. Select one of them to see what happens. If 1 is the only common factor "
+"then the fraction can't be reduced any more - try choosing a different one."
 msgstr ""
+"Да бисте скратили разломак, поделите бројилац и именилац једним од њихових заједничких чинилаца који су "
+"приказани између два разломка. Изаберите један од њих да бисте видели шта ће се десити. Ако је 1 једини "
+"заједнички чинилац, разломак се више не може скратити – пробајте са другим."
 
 msgid ""
-"To expand a fraction multiply the numerator and the denominator by the same "
-"number. Change the multiplicand to see what happens."
+"To expand a fraction multiply the numerator and the denominator by the same number. Change the multiplicand "
+"to see what happens."
 msgstr ""
+"Да бисте проширили разломак, помножите бројилац и именилац истим бројем. Промените број да видите резултат."
 
 msgid "Use the arrows to change your answer or just type it in."
-msgstr ""
+msgstr "Користите стрелице да промените одговор или га укуцајте."
 
 msgid "Use the arrows to change your answer."
-msgstr ""
+msgstr "Користите стрелице да промените одговор."
 
 msgid ""
-"To add two fractions with the same denominators add their numerators "
-"together and keep the denominator unchanged. Simplify the result if the "
-"numerator is greater than the denominator and reduce the fraction if "
+"To add two fractions with the same denominators add their numerators together and keep the denominator "
+"unchanged. Simplify the result if the numerator is greater than the denominator and reduce the fraction if "
 "possible."
 msgstr ""
+"Да бисте сабрали два разломка са истим имениоцем, саберите бројиоце и задржите исти именилац. "
+"Поједноставите резултат ако је бројилац већи од имениоца и скратите разломак ако је могуће."
 
 msgid ""
-"To subtract one fraction from another one with the same denominator subtract"
-" numerators and keep the denominator unchanged. Reduce the resulting "
-"fraction if possible."
+"To subtract one fraction from another one with the same denominator subtract numerators and keep the "
+"denominator unchanged. Reduce the resulting fraction if possible."
 msgstr ""
+"Да бисте одузели један разломак од другог са истим имениоцем, одузмите бројиоце и задржите исти именилац. "
+"Скратите добијени разломак ако је могуће."
 
 msgid ""
-"To multiply two fractions multiply the numerators together and then multiply"
-" the denominators together. Reduce the resulting fraction if possible."
+"To multiply two fractions multiply the numerators together and then multiply the denominators together. "
+"Reduce the resulting fraction if possible."
 msgstr ""
+"Да бисте помножили два разломка, помножите бројиоце међусобно и затим имениоце. Скратите добијени разломак "
+"ако је могуће."
 
 msgid ""
-"To divide a fraction by another fraction multiply the first fraction by the "
-"second fraction flipped up side down. Simplify and reduce the resulting "
-"fraction if possible."
+"To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up side "
+"down. Simplify and reduce the resulting fraction if possible."
 msgstr ""
+"Да бисте поделили разломак другим разломком, помножите први разломак са обрнутим другим. Поједноставите и "
+"скратите добијени разломак ако је могуће."
 
 msgid "Group fractions together"
-msgstr ""
+msgstr "Групиши разломке"
 
 msgid "Group percentages together"
-msgstr ""
+msgstr "Групиши проценте"
 
 msgid "Group ratios together"
-msgstr ""
+msgstr "Групиши односе"
 
 msgid "Symmetry"
-msgstr ""
+msgstr "Симетрија"
 
 msgid "Reflection Symmetry - draw with shapes"
-msgstr ""
+msgstr "Огледална симетрија – цртање облицима"
 
 msgid "Reflect shapes"
-msgstr ""
+msgstr "Огледај облике"
 
 msgid "Reflect a shape in a mirror line"
-msgstr ""
+msgstr "Огледај облик преко линије огледала"
 
-msgid ""
-"Draw a shape that is a reflection of the one already displayed. The red line"
-" is the mirror line."
-msgstr ""
+msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgstr "Нацртај облик који је огледало већ приказаног облика. Црвена линија је линија огледала."
 
 msgid "Symmetrical shapes - missing half"
-msgstr ""
+msgstr "Симетрични облици – недостаје половина"
 
 msgid "Draw the other half of the shape"
-msgstr ""
+msgstr "Нацртај другу половину облика"
 
 msgid "Find lines of symmetry"
-msgstr ""
+msgstr "Пронађи осе симетрије"
 
 msgid ""
-"Find and select all lines of symmetry for a displayed shape. Click on the "
-"arrows around the drawing area to select them."
+"Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing area to "
+"select them."
 msgstr ""
+"Пронађи и изабери све осе симетрије приказаног облика. Кликни на стрелице око области за цртање да их "
+"изабереш."
 
 msgid "Match equivalent fractions"
-msgstr ""
+msgstr "Повежи еквивалентне разломке"
 
 msgid "Match fractions"
-msgstr ""
+msgstr "Повежи разломке"
 
 msgid "Match decimals"
-msgstr ""
+msgstr "Повежи децимале"
 
 msgid "Match percentages"
-msgstr ""
+msgstr "Повежи проценте"
 
 msgid "Match ratios"
-msgstr ""
+msgstr "Повежи односе"
 
 msgid "Percentages in a pie chart"
-msgstr ""
+msgstr "Проценти у кружном дијаграму"
 
 msgid "Find equivalent fraction"
-msgstr ""
+msgstr "Пронађи еквивалентни разломак"
 
 msgid "Calculating with Time"
-msgstr ""
+msgstr "Рачунање са временом"
 
 msgid "start time"
-msgstr ""
+msgstr "време почетка"
 
 msgid "end time"
-msgstr ""
+msgstr "време завршетка"
 
 msgid "elapsed time"
-msgstr ""
+msgstr "протекло време"
 
 msgid "Temperature - introduction to negative numbers"
-msgstr ""
+msgstr "Температура – увод у негативне бројеве"
 
 msgid "Experiment with elapsed time"
-msgstr ""
+msgstr "Експериментиши са протеклим временом"
 
 msgid "Experiment with elapsed time 2"
-msgstr ""
+msgstr "Експериментиши са протеклим временом 2"
 
 msgid "Calculate elapsed time"
-msgstr ""
+msgstr "Израчунај протекло време"
 
 msgid "Find the start or the end time"
-msgstr ""
+msgstr "Пронађи почетно или крајње време"
 
 msgid "Visualized on a clock dial"
-msgstr ""
+msgstr "Приказано на бројчанику"
 
 msgid "Visualized on a number line"
-msgstr ""
+msgstr "Приказано на бројевној прави"
 
 msgid "Visualized on two number lines"
-msgstr ""
+msgstr "Приказано на две бројевне праве"
 
 msgid "With no visualizations"
-msgstr ""
+msgstr "Без визуализације"
 
 msgid "With mirrored images"
-msgstr ""
+msgstr "Са огледалским сликама"
 
 msgid "Theme Editor"
-msgstr ""
+msgstr "Уређивач теме"
 
 msgid "Make the game look your way"
-msgstr ""
+msgstr "Прилагоди изглед игре по својој жељи"
 
 msgid "Reset colors back to the default ones?"
-msgstr ""
+msgstr "Вратити боје на подразумеване вредности?"
 
 msgid "With simplifying"
-msgstr ""
+msgstr "Са поједностављивањем"
 
 msgid "Positive numbers"
-msgstr ""
+msgstr "Позитивни бројеви"
 
 msgid "Basics"
-msgstr ""
+msgstr "Основе"
 
 msgid "Equivalent fractions"
-msgstr ""
+msgstr "Еквивалентни разломци"
 
 msgid "Expanding and reducing fractions"
-msgstr ""
+msgstr "Проширивање и скраћивање разломака"
 
 msgid "Add fractions with unlike denominators"
-msgstr ""
+msgstr "Сабирање разломака са различитим имениоцима"
 
 msgid "Subtract fractions with unlike denominators"
-msgstr ""
+msgstr "Одузимање разломака са различитим имениоцима"
 
 msgid ""
-"To add or subtract fractions when their denominators are not the same you "
-"have to find equivalent fractions which do have a common denominator. "
-"Finding the least common multiple of the two denominators will help you with"
-" that."
+"To add or subtract fractions when their denominators are not the same you have to find equivalent fractions "
+"which do have a common denominator. Finding the least common multiple of the two denominators will help you "
+"with that."
 msgstr ""
+"Да бисте сабрали или одузели разломке који немају исти именилац, потребно је да нађете еквивалентне "
+"разломке са заједничким имениоцем. Проналажење најмањег заједничког садржаоца ће вам у томе помоћи."
 
 # used for the 2 ways of telling time in Russian and Serbian translations only
 msgid "long form"
@@ -1272,10 +1271,10 @@ msgid "Hexagon"
 msgstr "Шестоугаоник"
 
 msgid "Heptagon"
-msgstr ""
+msgstr "Хептагон"
 
 msgid "Octagon"
-msgstr ""
+msgstr "Октагон"
 
 msgid "Circle"
 msgstr "Круг"
@@ -1438,12 +1437,12 @@ msgstr[2] "лубеница"
 
 msgid "hour"
 msgid_plural "hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "сат"
+msgstr[1] "сата"
+msgstr[2] "сати"
 
 msgid "minute"
 msgid_plural "minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "минут"
+msgstr[1] "минута"
+msgstr[2] "минута"

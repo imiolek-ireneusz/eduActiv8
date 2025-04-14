@@ -1,11 +1,11 @@
 # eduActiv8 - translation file.
-# Copyright (C) 2012 - 2019 Ireneusz Imiolek
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
 # This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
-# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.19.02\n"
+"Project-Id-Version: 4.25.04\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
 "PO-Revision-Date: 2016-11-18 23:14+0000\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid ""
 "Laby, 2010 by Mehdi Cherti (mehdidc) \n"
@@ -95,6 +95,9 @@ msgid "Preferences"
 msgstr ""
 
 msgid "switch to full screen after login"
+msgstr ""
+
+msgid "allow users to navigate to locked levels"
 msgstr ""
 
 msgid "allow adding new users on login screen"
@@ -695,6 +698,9 @@ msgid "Congratulations! You have completed all tasks in this game."
 msgstr ""
 
 msgid "Great job!"
+msgstr ""
+
+msgid "Perfect!!!"
 msgstr ""
 
 msgid "Awesome!"

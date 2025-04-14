@@ -101,13 +101,29 @@ def time2str(h, m):
         return "%s vor %s" % (n2txt(60 - m), n2txt(h))
     return ""
 
-#write a fraction in words
-numerators = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve']
-d_singular = ['', 'half', 'third', 'quarter', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
-d_plural = ['', 'halves', 'thirds', 'quarters', 'fifths', 'sixths', 'sevenths', 'eighths', 'ninths', 'tenths', 'elevenths', 'twelfths']
+# Numerators 1–12
+numerators = ['ein', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'elf', 'zwölf']
+
+# Same singular and plural (no distinction in German for most fractions)
+# Just remember to use 'ein' not 'eins'
+denominators = [
+    '',            # dummy index 0
+    'halb',        # 1/2
+    'Drittel',     # 1/3
+    'Viertel',     # 1/4
+    'Fünftel',     # 1/5
+    'Sechstel',    # 1/6
+    'Siebtel',     # 1/7
+    'Achtel',      # 1/8
+    'Neuntel',     # 1/9
+    'Zehntel',     # 1/10
+    'Elftel',      # 1/11
+    'Zwölftel'     # 1/12
+]
+
 
 def fract2str(n, d):
     if n == 1:
-        return numerators[0] + " " + d_singular[d-1]
+        return numerators[0] + " " + denominators[d-1]
     else:
-        return numerators[n-1] + " " + d_plural[d-1]
+        return numerators[n-1] + " " + denominators[d-1]
