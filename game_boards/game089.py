@@ -9,6 +9,7 @@ import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 import classes.drw.img
+import classes.word_lists as wl
 
 
 class Board(gd.BoardGame):
@@ -29,102 +30,14 @@ class Board(gd.BoardGame):
         self.disp_counter = 0
         self.disp_len = 1
 
-        gv = self.mainloop.m.game_variant
-        if gv == 0:
-            category = "animals"
-            self.imgs = ['cow', 'turkey', 'shrimp', 'wolf', 'panther', 'panda', 'magpie', 'clam', 'pony', 'mouse',
-                         'pug', 'koala', 'frog', 'ladybug', 'gorilla', 'llama', 'vulture', 'hamster', '',
-                         'starfish', 'crow', 'parakeet', 'caterpillar', 'tiger', 'hummingbird', 'piranha', 'pig',
-                         'scorpion', 'fox', 'leopard', 'iguana', 'dolphin', 'bat', 'chick', 'crab', 'hen', 'wasp',
-                         'chameleon', 'whale', 'hedgehog', 'fawn', 'moose', 'bee', 'viper', 'shrike', 'donkey',
-                         'guinea_pig', 'sloth', 'horse', 'penguin', 'otter', 'bear', 'zebra', 'ostrich', 'camel',
-                         'antelope', 'lemur', 'pigeon', '', 'mole', 'ray', 'ram', 'skunk', 'jellyfish', 'sheep',
-                         'shark', 'kitten', 'deer', 'snail', 'flamingo', 'rabbit', 'oyster', 'beaver', 'sparrow',
-                         'dove', 'eagle', 'beetle', 'hippopotamus', 'owl', 'cobra', 'salamander', 'goose', 'kangaroo',
-                         'dragonfly', '', 'pelican', 'squid', 'lion_cub', 'jaguar', 'duck', 'lizard', 'rhinoceros',
-                         'hyena', 'ox', 'peacock', 'parrot', '', 'alligator', 'ant', 'goat', 'baby_rabbit', 'lion',
-                         'squirrel', 'opossum', 'chimp', 'doe', 'gopher', 'elephant', 'giraffe', 'spider', 'puppy',
-                         'jay', 'seal', 'rooster', 'turtle', 'bull', 'cat', 'rat', 'slug', '',
-                         'blackbird', 'swan', 'lobster', 'dog', 'mosquito', 'snake', 'chicken', 'anteater']
-        elif gv == 1:
-            category = "sport"
-            self.imgs = ['judo', 'pool', 'ride', 'stretch', 'helmet', 'ice_skating', 'walk', 'run', 'swim',
-                         '', '', 'boxing', 'hockey', 'race', 'throw', 'skate', 'win', 'squat', 'ski', 'golf',
-                         'whistle', 'torch', 'sailing', 'stand', 'tennis', 'jump', 'rowing', '', 'rope']
-        elif gv == 2:
-            category = "body"
-            self.imgs = ['teeth', 'cheek', 'ankle', 'knee', 'toe', 'muscle', 'mouth', 'feet', 'hand', 'elbow', 'hair',
-                         'eyelash', 'beard', 'belly_button', 'thumb', 'breast', 'nostril', 'nose', 'hip', 'arm',
-                         'eyebrow', 'fist', 'neck', 'wrist', 'throat', 'eye', 'leg', 'spine', 'ear', 'finger', 'foot',
-                         'braid', 'face', 'back', 'chin', 'bottom', 'thigh', 'belly']
-        elif gv == 3:
-            category = "people"
-            self.imgs = ['girl', '', 'son', '', 'friends', 'baby', 'child', 'dad', 'mom', 'twin_boys',
-                         'brothers', 'man', '', 'grandfather', 'family', '', 'wife', 'husband', '',
-                         '', 'grandmother', 'couple', '', 'twin_girls', 'tribe', 'boy', 'sisters', 'woman',
-                         '']
-        elif gv == 4:
-            category = "actions"
-            self.imgs = ['lick', 'slam', 'beg', 'fell', 'scratch', 'touch', 'sniff', 'see', 'climb', 'dig', 'howl',
-                         'sleep', 'explore', 'draw', 'hug', 'teach', 'nap', 'clay', 'catch', 'clap', 'cry', 'sing',
-                         'meet', 'sell', 'peck', 'beat', 'kneel', 'find', 'dance', 'cough', 'cut', 'think', 'bark',
-                         'speak', 'cheer', 'bake', 'write', 'punch', 'strum', 'study', 'plow', 'dream', 'post', 'dive',
-                         'whisper', 'sob', 'shake', 'feed', 'crawl', 'camp', 'spill', 'clean', 'scream', 'tear',
-                         'float', 'pull', 'ate', 'kiss', 'sit', 'hatch', 'blink', 'hear', 'smooch', 'play', 'wash',
-                         'chat', 'drive', 'drink', 'fly', 'juggle', 'bit', 'sweep', 'look', 'knit', 'lift', 'fetch',
-                         'read', 'croak', 'stare', 'eat']
-        elif gv == 5:
-            category = "construction"
-            self.imgs = ['lighthouse', 'door', 'circus', 'church', 'kennel', 'temple', 'smoke', 'chimney', 'brick',
-                         'well', 'street', 'castle', 'store', 'staircase', 'school', 'farm', 'bridge', 'dam', 'pyramid',
-                         'barn', 'mill', 'window', '', 'step', 'shop', 'shed', 'roof', 'steeple', 'garage',
-                         'mosque', 'hospital', 'tent', 'house', 'wall', 'bank', 'shutter', 'hut']
-        elif gv == 6:
-            category = "nature"
-            self.imgs = ['land', 'cliff', 'hill', 'canyon', 'rock', 'sea', 'lake', 'coast', 'shore', 'mountain', 'pond',
-                         'peak', 'lava', 'cave', 'dune', 'island', 'forest', 'desert', 'iceberg']
-        elif gv == 7:
-            category = "jobs"
-            self.imgs = ['clown', 'engineer', 'priest', 'vet', 'judge', '', 'athlete', 'librarian', 'juggler',
-                         'police', 'plumber', '', 'queen', 'farmer', 'magic', 'knight', 'doctor', 'bricklayer',
-                         'cleaner', 'teacher', 'hunter', 'soldier', 'musician', 'lawyer', 'fisherman', 'princess',
-                         'fireman', 'nun', 'pirate', 'cowboy', 'electrician', 'nurse', 'king', 'president',
-                         'office', 'carpenter', 'jockey', 'worker', 'mechanic', 'pilot', 'actor', 'cook', 'student',
-                         'butcher', 'accountant', 'prince', 'pope', 'sailor', 'boxer', 'ballet', 'coach', 'astronaut',
-                         'painter', 'anaesthesiologist', 'scientist']
-        elif gv == 8:
-            category = "clothes_n_accessories"
-            self.imgs = ['jewellery', 'sock', 'jacket', 'heel', 'smock', 'shorts', 'pocket', 'necklace', 'sweatshirt',
-                         'uniform', 'raincoat', 'trousers', 'sunglasses', 'coat', 'pullover', 'shirt', 'sandals',
-                         'suit', 'pyjamas', 'skirt', 'zip', 'shoes', 'jewel', 'tie', 'slippers', 'gloves', 'hat',
-                         'sleeve', 'cap', 'swimming_suit', 'sneaker', 'vest', 'glasses', 'shoelace', 'patch', 'scarf',
-                         'shoe', 'button', 'dress', 'sash', 'shoe_sole', 'robe', 'pants', 'kimono', 'overalls']
-        elif gv == 9:
-            category = "fruit_n_veg"
-            self.imgs = ['carrot', 'blackberries', 'celery', 'turnip', 'cacao', 'peach', 'melon', 'grapefruit',
-                         'broccoli', 'grapes', 'spinach', 'fig', 'kernel', 'radish', 'tomato', 'kiwi', 'asparagus',
-                         'olives', 'cucumbers', 'beans', 'strawberry', 'peppers', 'raspberry', 'apricot', 'potatoes',
-                         'peas', 'cabbage', 'cherries', 'squash', 'blueberries', 'pear', 'orange', 'pumpkin', 'avocado',
-                         'garlic', 'onion', 'apple', 'lime', 'cauliflower', 'mango', 'lettuce', 'lemon', 'aubergine',
-                         'artichokes', 'plums', 'leek', 'bananas', 'papaya']
-        elif gv == 10:
-            category = "transport"
-            self.imgs = ['sail', 'taxi', 'car', '', 'raft', 'pedal', 'bus', 'handlebar', 'boat', 'truck', 'sleigh',
-                         'carpet', 'motorcycle', 'train', 'ship', 'van', 'canoe', 'rocket', 'mast', 'sledge', 'bicycle']
-        elif gv == 11:
-            category = "food"
-            self.imgs = ['candy', 'sausage', 'hamburger', 'steak', 'fudge', 'doughnut', 'coconut', 'rice', 'ice_cream',
-                         'jelly', 'yoghurt', 'dessert', 'pretzel', 'peanut', 'jam', 'feast', 'cookie', 'bacon', 'spice',
-                         'coffee', 'pie', 'lemonade', 'chocolate', 'water_bottle', 'lunch', 'ice', 'sugar', 'sauce',
-                         'soup', 'juice', 'fries', 'cake', 'mashed_potatoes', 'tea', 'bun', 'cheese', 'beef',
-                         'sandwich', 'slice', 'sprinkle', 'pizza', 'flour', 'gum', 'spaghetti', 'roast',
-                         'stew', 'spread', 'meat', 'milk', 'meal', 'corn', 'bread', 'walnut', 'egg', 'hot_dog', 'ham']
-
         # Maximum words per screen 19 (nature)
 
-        self.captions = self.d["a4a_%s" % category]
+        category, self.imgs = wl.word_lists_filtered.get(self.mainloop.m.game_variant, ("default", []))
+        self.captions = self.d[f"a4a_{category}"]
+
+        #self.captions = self.d["a4a_%s" % category]
         if self.mainloop.lang.lang == "ru":
-            self.captionsp = eval("self.dp['a4a_%s']" % category)
+            self.captionsp = self.dp.get(f"a4a_{category}", []) #eval("self.dp['a4a_%s']" % category)
 
         if self.level.lvl > self.level.lvl_count:
             self.level.lvl = self.level.lvl_count

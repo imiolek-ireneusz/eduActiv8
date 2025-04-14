@@ -9,6 +9,8 @@ import classes.extras as ex
 import classes.game_driver as gd
 import classes.level_controller as lc
 
+import classes.word_lists as wl
+
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
@@ -24,6 +26,7 @@ class Board(gd.BoardGame):
         white = (255, 255, 255)
 
         img_top = 1
+        """
         gv = self.mainloop.m.game_variant
         if gv == 0:
             category = "animals"
@@ -114,6 +117,12 @@ class Board(gd.BoardGame):
                          'soup', 'juice', 'fries', 'cake', 'mashed_potatoes', 'tea', 'bun', 'cheese', 'beef',
                          'sandwich', 'slice', 'sprinkle', 'pizza', 'flour', 'gum', 'spaghetti', 'roast',
                          'stew', 'spread', 'meat', 'milk', 'meal', 'corn', 'bread', 'walnut', 'egg', 'hot_dog', 'ham']
+        """
+
+
+        category, self.imgs = wl.word_lists_complete.get(self.mainloop.m.game_variant, ("default", []))
+        self.captions = self.d[f"a4a_{category}"]
+
 
         self.words = self.d["a4a_%s" % category]
 
