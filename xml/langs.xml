@@ -222,7 +222,7 @@
           voice_mb="None"
           use_mb="False"
           has_uc="True"
-          has_cursive="True"
+          has_cursive="False"
           has_keyboard="False"
           ico_suffix="ru"
           ltr="True"
@@ -281,4 +281,17 @@
           ltr="True"
           />
     -->
+        <lang id="24"
+          code="sv"
+          name="Svenska"
+          name_en="Swedish"
+          voice="['-vsv+m1']"
+          voice_mb="None"
+          use_mb="False"
+          has_uc="True"
+          has_cursive="True"
+          has_keyboard="False"
+          ico_suffix=""
+          ltr="True"
+          />
 </languages>

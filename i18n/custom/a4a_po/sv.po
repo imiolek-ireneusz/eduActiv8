@@ -1,0 +1,1773 @@
+# eduActiv8 - word lists - translation file.
+# Copyright (C) 2019 Ireneusz Imiolek
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+# 
+# Translators:
+# Tiger Tanker, 2023
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.19.01\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"Last-Translator: Tiger Tanker, 2023\n"
+"Language-Team: Swedish (https://app.transifex.com/eduactiv8/teams/94947/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "cow"
+msgstr "ko"
+
+msgid "turkey"
+msgstr "kalkon"
+
+msgid "shrimp"
+msgstr "räka"
+
+msgid "wolf"
+msgstr "varg"
+
+msgid "panther"
+msgstr "panter"
+
+msgid "panda"
+msgstr "panda"
+
+msgid "magpie"
+msgstr "skata"
+
+msgid "clam"
+msgstr "mussla"
+
+msgid "pony"
+msgstr "ponny"
+
+msgid "mouse"
+msgstr "mus"
+
+msgid "pug"
+msgstr "mops"
+
+msgid "koala"
+msgstr "koala"
+
+msgid "frog"
+msgstr "groda"
+
+msgid "ladybug"
+msgstr "nyckelpiga"
+
+msgid "gorilla"
+msgstr "gorilla"
+
+msgid "llama"
+msgstr "lama"
+
+msgid "vulture"
+msgstr "gam"
+
+msgid "hamster"
+msgstr "hamster"
+
+msgid "bird"
+msgstr "fågel"
+
+msgid "starfish"
+msgstr "sjöstjärna"
+
+msgid "crow"
+msgstr "kråka"
+
+msgid "parakeet"
+msgstr "parakit"
+
+msgid "caterpillar"
+msgstr "fjärilslarv"
+
+msgid "tiger"
+msgstr "tiger"
+
+msgid "hummingbird"
+msgstr "kolibri"
+
+msgid "piranha"
+msgstr "piraya"
+
+msgid "pig"
+msgstr "gris"
+
+msgid "scorpion"
+msgstr "skorpion"
+
+msgid "fox"
+msgstr "räv"
+
+msgid "leopard"
+msgstr "leopard"
+
+msgid "iguana"
+msgstr "leguan"
+
+msgid "dolphin"
+msgstr "delfin"
+
+msgid "bat"
+msgstr "fladdermus"
+
+msgid "chick"
+msgstr "kyckling"
+
+msgid "crab"
+msgstr "krabba"
+
+msgid "hen"
+msgstr "höna"
+
+msgid "wasp"
+msgstr "geting"
+
+msgid "chameleon"
+msgstr "kameleont"
+
+msgid "whale"
+msgstr "val"
+
+msgid "hedgehog"
+msgstr "igelkott"
+
+msgid "fawn"
+msgstr "rådjur"
+
+msgid "moose"
+msgstr "älg"
+
+msgid "bee"
+msgstr "bi"
+
+msgid "viper"
+msgstr "huggorm"
+
+msgid "shrike"
+msgstr "skata"
+
+msgid "donkey"
+msgstr "åsna"
+
+msgid "guinea pig"
+msgstr "marsvin"
+
+msgid "sloth"
+msgstr "sengångare"
+
+msgid "horse"
+msgstr "häst"
+
+msgid "penguin"
+msgstr "pingvin"
+
+msgid "otter"
+msgstr "utter"
+
+msgid "bear"
+msgstr "björn"
+
+msgid "zebra"
+msgstr "zebra"
+
+msgid "ostrich"
+msgstr "struts"
+
+msgid "camel"
+msgstr "kamel"
+
+msgid "antelope"
+msgstr "antilop"
+
+msgid "lemur"
+msgstr "lemur"
+
+msgid "pigeon"
+msgstr "duva"
+
+msgid "lama"
+msgstr "lama"
+
+msgid "mole"
+msgstr "mullvad"
+
+msgid "ray"
+msgstr "rocka"
+
+msgid "ram"
+msgstr "bock"
+
+msgid "skunk"
+msgstr "skunk"
+
+msgid "jellyfish"
+msgstr "manet"
+
+msgid "sheep"
+msgstr "får"
+
+msgid "shark"
+msgstr "haj"
+
+msgid "kitten"
+msgstr "källing"
+
+msgid "deer"
+msgstr "hjort"
+
+msgid "snail"
+msgstr "snigel"
+
+msgid "flamingo"
+msgstr "flamingo"
+
+msgid "rabbit"
+msgstr "kanin"
+
+msgid "oyster"
+msgstr "ostron"
+
+msgid "beaver"
+msgstr "bäver"
+
+msgid "sparrow"
+msgstr "sparv"
+
+msgid "dove"
+msgstr "duva"
+
+msgid "eagle"
+msgstr "örn"
+
+msgid "beetle"
+msgstr "skalbagge"
+
+msgid "hippopotamus"
+msgstr "flodhäst"
+
+msgid "owl"
+msgstr "uggla"
+
+msgid "cobra"
+msgstr "kobra"
+
+msgid "salamander"
+msgstr "salamander"
+
+msgid "goose"
+msgstr "gås"
+
+msgid "kangaroo"
+msgstr "känguru"
+
+msgid "dragonfly"
+msgstr "trollslända"
+
+msgid "toad"
+msgstr "padda"
+
+msgid "pelican"
+msgstr "pelikan"
+
+msgid "squid"
+msgstr "bläckfisk"
+
+msgid "lion cub"
+msgstr "lejonunge"
+
+msgid "jaguar"
+msgstr "jaguar"
+
+msgid "duck"
+msgstr "anka"
+
+msgid "lizard"
+msgstr "ödla"
+
+msgid "rhinoceros"
+msgstr "noshörning"
+
+msgid "hyena"
+msgstr "hyena"
+
+msgid "ox"
+msgstr "oxe"
+
+msgid "peacock"
+msgstr "påfågel"
+
+msgid "parrot"
+msgstr "papegoja"
+
+msgid "elk"
+msgstr "vapiti"
+
+msgid "alligator"
+msgstr "alligator"
+
+msgid "ant"
+msgstr "myra"
+
+msgid "goat"
+msgstr "get"
+
+msgid "baby rabbit"
+msgstr "kaninunge"
+
+msgid "lion"
+msgstr "lejon"
+
+msgid "squirrel"
+msgstr "ekorre"
+
+msgid "opossum"
+msgstr "pungdjur"
+
+msgid "chimp"
+msgstr "schimpans"
+
+msgid "doe"
+msgstr "hind"
+
+msgid "gopher"
+msgstr "kindpåsråtta"
+
+msgid "elephant"
+msgstr "elefant"
+
+msgid "giraffe"
+msgstr "giraff"
+
+msgid "spider"
+msgstr "spindel"
+
+msgid "puppy"
+msgstr "valp"
+
+msgid "jay"
+msgstr "nötskrika"
+
+msgid "seal"
+msgstr "säl"
+
+msgid "rooster"
+msgstr "tupp"
+
+msgid "turtle"
+msgstr "sköldpadda"
+
+msgid "bull"
+msgstr "tjur"
+
+msgid "cat"
+msgstr "katt"
+
+msgid "rat"
+msgstr "råtta"
+
+msgid "slug"
+msgstr "snigel"
+
+msgid "buffalo"
+msgstr "buffel"
+
+msgid "blackbird"
+msgstr "koltrast"
+
+msgid "swan"
+msgstr "svan"
+
+msgid "lobster"
+msgstr "hummer"
+
+msgid "dog"
+msgstr "hund"
+
+msgid "mosquito"
+msgstr "mygga"
+
+msgid "snake"
+msgstr "orm"
+
+msgid "chicken"
+msgstr "kyckling"
+
+msgid "anteater"
+msgstr "myrslok"
+
+msgid "judo"
+msgstr "judo"
+
+msgid "pool"
+msgstr "pool"
+
+msgid "ride"
+msgstr "rida"
+
+msgid "stretch"
+msgstr "strech"
+
+msgid "helmet"
+msgstr "hjälm"
+
+msgid "ice skating"
+msgstr "skridskoåkning"
+
+msgid "walk"
+msgstr "gå"
+
+msgid "run"
+msgstr "spring"
+
+msgid "swim"
+msgstr "simma"
+
+msgid "hop"
+msgstr "hopp"
+
+msgid "hike"
+msgstr "vandra"
+
+msgid "boxing"
+msgstr "boxning"
+
+msgid "hockey"
+msgstr "hockey"
+
+msgid "race"
+msgstr "tävla"
+
+msgid "throw"
+msgstr "kasta"
+
+msgid "skate"
+msgstr "skridsko"
+
+msgid "win"
+msgstr "vinna"
+
+msgid "squat"
+msgstr "knäböj"
+
+msgid "ski"
+msgstr "åka skidor"
+
+msgid "golf"
+msgstr "golf"
+
+msgid "whistle"
+msgstr "vissla"
+
+msgid "torch"
+msgstr "fackla"
+
+msgid "sailing"
+msgstr "skeppa"
+
+msgid "stand"
+msgstr "stå"
+
+msgid "tennis"
+msgstr "tennis"
+
+msgid "jump"
+msgstr "hoppa"
+
+msgid "rowing"
+msgstr "rodd"
+
+msgid "jog"
+msgstr "jogga"
+
+msgid "rope"
+msgstr "rep"
+
+msgid "teeth"
+msgstr "tänder"
+
+msgid "cheek"
+msgstr "kind"
+
+msgid "ankle"
+msgstr "ankel"
+
+msgid "knee"
+msgstr "knä"
+
+msgid "toe"
+msgstr "tå"
+
+msgid "muscle"
+msgstr "muskel"
+
+msgid "mouth"
+msgstr "mun"
+
+msgid "feet"
+msgstr "fot"
+
+msgid "hand"
+msgstr "hand"
+
+msgid "elbow"
+msgstr "armbåge"
+
+msgid "hair"
+msgstr "hår"
+
+msgid "eyelash"
+msgstr "ögonlock"
+
+msgid "beard"
+msgstr "skägg"
+
+msgid "belly button"
+msgstr "navel"
+
+msgid "thumb"
+msgstr "tumme"
+
+msgid "breast"
+msgstr "bröst"
+
+msgid "nostril"
+msgstr "näsborre"
+
+msgid "nose"
+msgstr "näsa"
+
+msgid "hip"
+msgstr "höft"
+
+msgid "arm"
+msgstr "arm"
+
+msgid "eyebrow"
+msgstr "ögonbryn"
+
+msgid "fist"
+msgstr "knoge"
+
+msgid "neck"
+msgstr "nacke"
+
+msgid "wrist"
+msgstr "handled"
+
+msgid "throat"
+msgstr "hals"
+
+msgid "eye"
+msgstr "öga"
+
+msgid "leg"
+msgstr "ben"
+
+msgid "spine"
+msgstr "ryggrad"
+
+msgid "ear"
+msgstr "öra"
+
+msgid "finger"
+msgstr "finger"
+
+msgid "foot"
+msgstr "fot"
+
+msgid "braid"
+msgstr "fläta"
+
+msgid "face"
+msgstr "ansikte"
+
+msgid "back"
+msgstr "rygg"
+
+msgid "chin"
+msgstr "haka"
+
+msgid "bottom"
+msgstr "botten"
+
+msgid "thigh"
+msgstr "lår"
+
+msgid "belly"
+msgstr "buk"
+
+msgid "girl"
+msgstr "flicka"
+
+msgid "male"
+msgstr "hane"
+
+msgid "son"
+msgstr "son"
+
+msgid "mates"
+msgstr "par"
+
+msgid "friends"
+msgstr "vänner"
+
+msgid "baby"
+msgstr "barn"
+
+msgid "child"
+msgstr "barn"
+
+msgid "dad"
+msgstr "pappa"
+
+msgid "mom"
+msgstr "mamma"
+
+msgid "twin boys"
+msgstr "tvillingpojkar"
+
+msgid "brothers"
+msgstr "bröder"
+
+msgid "man"
+msgstr "man"
+
+msgid "mother"
+msgstr "moder"
+
+msgid "grandfather"
+msgstr "farfar"
+
+msgid "family"
+msgstr "familj"
+
+msgid "female"
+msgstr "hona"
+
+msgid "wife"
+msgstr "fru"
+
+msgid "husband"
+msgstr "man"
+
+msgid "bride"
+msgstr "brud"
+
+msgid "madam"
+msgstr "dam"
+
+msgid "grandmother"
+msgstr "farmor"
+
+msgid "couple"
+msgstr "par"
+
+msgid "lad"
+msgstr "gosse"
+
+msgid "twin girls"
+msgstr "tvillingflickor"
+
+msgid "tribe"
+msgstr "stam"
+
+msgid "boy"
+msgstr "pojke"
+
+msgid "sisters"
+msgstr "systrar"
+
+msgid "woman"
+msgstr "kvinna"
+
+msgid "lady"
+msgstr "dam"
+
+msgid "candy"
+msgstr "godis"
+
+msgid "sausage"
+msgstr "korv"
+
+msgid "hamburger"
+msgstr "hamburgare"
+
+msgid "steak"
+msgstr "stek"
+
+msgid "fudge"
+msgstr "mjuk kola"
+
+msgid "doughnut"
+msgstr "munk"
+
+msgid "coconut"
+msgstr "kokosnöt"
+
+msgid "rice"
+msgstr "ris"
+
+msgid "ice cream"
+msgstr "glass"
+
+msgid "jelly"
+msgstr "gele"
+
+msgid "yoghurt"
+msgstr "yoghurt"
+
+msgid "dessert"
+msgstr "dessert"
+
+msgid "pretzel"
+msgstr "kringla"
+
+msgid "peanut"
+msgstr "jordnöt"
+
+msgid "jam"
+msgstr "sylt"
+
+msgid "feast"
+msgstr "festmåltid"
+
+msgid "cookie"
+msgstr "kaka"
+
+msgid "bacon"
+msgstr "bacon"
+
+msgid "spice"
+msgstr "krydda"
+
+msgid "coffee"
+msgstr "kaffe"
+
+msgid "pie"
+msgstr "paj"
+
+msgid "lemonade"
+msgstr "lemonad"
+
+msgid "chocolate"
+msgstr "choklad"
+
+msgid "water bottle"
+msgstr "vattenflaska"
+
+msgid "lunch"
+msgstr "lunch"
+
+msgid "ice"
+msgstr "is"
+
+msgid "sugar"
+msgstr "socker"
+
+msgid "sauce"
+msgstr "sås"
+
+msgid "soup"
+msgstr "soppa"
+
+msgid "juice"
+msgstr "juice"
+
+msgid "fries"
+msgstr "pommes frites"
+
+msgid "cake"
+msgstr "kaka"
+
+msgid "mashed potatoes"
+msgstr "potatismos"
+
+msgid "tea"
+msgstr "te"
+
+msgid "bun"
+msgstr "bulle"
+
+msgid "cheese"
+msgstr "ost"
+
+msgid "beef"
+msgstr "biff"
+
+msgid "sandwich"
+msgstr "macka"
+
+msgid "slice"
+msgstr "skiva"
+
+msgid "sprinkle"
+msgstr "strö"
+
+msgid "pizza"
+msgstr "pizza"
+
+msgid "flour"
+msgstr "mjöl"
+
+msgid "gum"
+msgstr "tandkött"
+
+msgid "spaghetti"
+msgstr "spagetti"
+
+msgid "roast"
+msgstr "steka"
+
+msgid "stew"
+msgstr "gryta"
+
+msgid "spread"
+msgstr "sprida"
+
+msgid "meat"
+msgstr "kött"
+
+msgid "milk"
+msgstr "mjölk"
+
+msgid "meal"
+msgstr "målltid"
+
+msgid "corn"
+msgstr "majs"
+
+msgid "bread"
+msgstr "bröd"
+
+msgid "walnut"
+msgstr "vallnöt"
+
+msgid "egg"
+msgstr "ägg"
+
+msgid "hot dog"
+msgstr "korv"
+
+msgid "ham"
+msgstr "skinka"
+
+msgid "jewellery"
+msgstr "smycken"
+
+msgid "sock"
+msgstr "strumpa"
+
+msgid "jacket"
+msgstr "jacka"
+
+msgid "heel"
+msgstr "häl"
+
+msgid "smock"
+msgstr "skyddsrock"
+
+msgid "shorts"
+msgstr "shorts"
+
+msgid "pocket"
+msgstr "ficka"
+
+msgid "necklace"
+msgstr "halsband"
+
+msgid "sweatshirt"
+msgstr "tröja"
+
+msgid "uniform"
+msgstr "uniform"
+
+msgid "raincoat"
+msgstr "regnjacka"
+
+msgid "trousers"
+msgstr "byxor"
+
+msgid "sunglasses"
+msgstr "solglasögon"
+
+msgid "coat"
+msgstr "kappa"
+
+msgid "pullover"
+msgstr "pullover"
+
+msgid "shirt"
+msgstr "skjorta"
+
+msgid "sandals"
+msgstr "sandaler"
+
+msgid "suit"
+msgstr "kostym"
+
+msgid "pyjamas"
+msgstr "pyjamas"
+
+msgid "skirt"
+msgstr "kjol"
+
+msgid "zip"
+msgstr "stänga"
+
+msgid "shoes"
+msgstr "skor"
+
+msgid "jewel"
+msgstr "juvel"
+
+msgid "tie"
+msgstr "slips"
+
+msgid "slippers"
+msgstr "tofflor"
+
+msgid "gloves"
+msgstr "handskar"
+
+msgid "hat"
+msgstr "hat"
+
+msgid "sleeve"
+msgstr "ärm"
+
+msgid "cap"
+msgstr "mössa"
+
+msgid "swimming suit"
+msgstr "simdräkt"
+
+msgid "trainer"
+msgstr "tränare"
+
+msgid "vest"
+msgstr "väst"
+
+msgid "glasses"
+msgstr "glasögon"
+
+msgid "shoelace"
+msgstr "skosnöre"
+
+msgid "patch"
+msgstr "lapp"
+
+msgid "scarf"
+msgstr "skarf"
+
+msgid "shoe"
+msgstr "sko"
+
+msgid "button"
+msgstr "knapp"
+
+msgid "dress"
+msgstr "klänning"
+
+msgid "sash"
+msgstr "skärp"
+
+msgid "shoe sole"
+msgstr "skosula"
+
+msgid "robe"
+msgstr "dräkt"
+
+msgid "pants"
+msgstr "byxor"
+
+msgid "kimono"
+msgstr "kimono"
+
+msgid "overalls"
+msgstr "overall"
+
+msgid "lick"
+msgstr "slicka"
+
+msgid "slam"
+msgstr "smälla"
+
+msgid "beg"
+msgstr "be"
+
+msgid "fell"
+msgstr "ramla"
+
+msgid "scratch"
+msgstr "skrapa"
+
+msgid "touch"
+msgstr "nudda"
+
+msgid "sniff"
+msgstr "lukta"
+
+msgid "see"
+msgstr "se"
+
+msgid "climb"
+msgstr "klättra"
+
+msgid "dig"
+msgstr "gräva"
+
+msgid "howl"
+msgstr "yla"
+
+msgid "sleep"
+msgstr "sova"
+
+msgid "explore"
+msgstr "utforska"
+
+msgid "draw"
+msgstr "dra"
+
+msgid "hug"
+msgstr "krama"
+
+msgid "teach"
+msgstr "lära"
+
+msgid "nap"
+msgstr "tupplur"
+
+msgid "clay"
+msgstr "lera"
+
+msgid "catch"
+msgstr "fånga"
+
+msgid "clap"
+msgstr "klappa"
+
+msgid "cry"
+msgstr "gråta"
+
+msgid "sing"
+msgstr "sjunga"
+
+msgid "meet"
+msgstr "träffa"
+
+msgid "sell"
+msgstr "sälja"
+
+msgid "peck"
+msgstr "picka"
+
+msgid "beat"
+msgstr "slå"
+
+msgid "kneel"
+msgstr "knäböja"
+
+msgid "find"
+msgstr "hitta"
+
+msgid "dance"
+msgstr "dansa"
+
+msgid "cough"
+msgstr "hosta"
+
+msgid "cut"
+msgstr "skära"
+
+msgid "think"
+msgstr "tänka"
+
+msgid "bark"
+msgstr "skälla"
+
+msgid "speak"
+msgstr "tala"
+
+msgid "cheer"
+msgstr "heja"
+
+msgid "bake"
+msgstr "baka"
+
+msgid "write"
+msgstr "skriva"
+
+msgid "punch"
+msgstr "slå"
+
+msgid "strum"
+msgstr "knäppa"
+
+msgid "study"
+msgstr "studera"
+
+msgid "plow"
+msgstr "ploga"
+
+msgid "dream"
+msgstr "drömma"
+
+msgid "post"
+msgstr "posta"
+
+msgid "dive"
+msgstr "dyka"
+
+msgid "whisper"
+msgstr "viska"
+
+msgid "sob"
+msgstr "snyfta"
+
+msgid "shake"
+msgstr "skaka"
+
+msgid "feed"
+msgstr "mata"
+
+msgid "crawl"
+msgstr "kravla"
+
+msgid "camp"
+msgstr "kampa"
+
+msgid "spill"
+msgstr "spilla"
+
+msgid "clean"
+msgstr "städa"
+
+msgid "scream"
+msgstr "skrika"
+
+msgid "tear"
+msgstr "tår"
+
+msgid "float"
+msgstr "flyta"
+
+msgid "pull"
+msgstr "dra"
+
+msgid "ate"
+msgstr "åt"
+
+msgid "kiss"
+msgstr "kyss"
+
+msgid "sit"
+msgstr "sitta"
+
+msgid "hatch"
+msgstr "kläcka"
+
+msgid "blink"
+msgstr "blinka"
+
+msgid "hear"
+msgstr "höra"
+
+msgid "smooch"
+msgstr "pussas"
+
+msgid "play"
+msgstr "spela"
+
+msgid "wash"
+msgstr "tvätta"
+
+msgid "chat"
+msgstr "chatta"
+
+msgid "drive"
+msgstr "köra"
+
+msgid "to drink"
+msgstr "att dricka"
+
+msgid "fly"
+msgstr "flyga"
+
+msgid "juggle"
+msgstr "jonglera"
+
+msgid "bit"
+msgstr "bit"
+
+msgid "sweep"
+msgstr "svepa"
+
+msgid "look"
+msgstr "se"
+
+msgid "knit"
+msgstr "sticka"
+
+msgid "lift"
+msgstr "lyfta"
+
+msgid "fetch"
+msgstr "hämta"
+
+msgid "read"
+msgstr "läsa"
+
+msgid "croak"
+msgstr "kväka"
+
+msgid "stare"
+msgstr "stirra"
+
+msgid "eat"
+msgstr "äta"
+
+msgid "lighthouse"
+msgstr "fyr"
+
+msgid "door"
+msgstr "dörr"
+
+msgid "circus"
+msgstr "cirkus"
+
+msgid "church"
+msgstr "kyrka"
+
+msgid "kennel"
+msgstr "kennel"
+
+msgid "temple"
+msgstr "tempel"
+
+msgid "smoke"
+msgstr "rök"
+
+msgid "chimney"
+msgstr "skorsten"
+
+msgid "brick"
+msgstr "tegel"
+
+msgid "well"
+msgstr "brunn"
+
+msgid "street"
+msgstr "gata"
+
+msgid "castle"
+msgstr "slott"
+
+msgid "store"
+msgstr "affär"
+
+msgid "staircase"
+msgstr "trappa"
+
+msgid "school"
+msgstr "skola"
+
+msgid "farm"
+msgstr "bondgård"
+
+msgid "bridge"
+msgstr "bro"
+
+msgid "dam"
+msgstr "damm"
+
+msgid "pyramid"
+msgstr "pyramid"
+
+msgid "barn"
+msgstr "lada"
+
+msgid "mill"
+msgstr "kvarn"
+
+msgid "window"
+msgstr "fönster"
+
+msgid "cabin"
+msgstr "stuga"
+
+msgid "step"
+msgstr "steg"
+
+msgid "shop"
+msgstr "butik"
+
+msgid "shed"
+msgstr "skjul"
+
+msgid "roof"
+msgstr "task"
+
+msgid "steeple"
+msgstr "kyrktorn"
+
+msgid "garage"
+msgstr "garage"
+
+msgid "mosque"
+msgstr "moské"
+
+msgid "hospital"
+msgstr "sjukhus"
+
+msgid "tent"
+msgstr "tält"
+
+msgid "house"
+msgstr "hus"
+
+msgid "wall"
+msgstr "vägg"
+
+msgid "bank"
+msgstr "bank"
+
+msgid "shutter"
+msgstr "slutare"
+
+msgid "hut"
+msgstr "hydda"
+
+msgid "land"
+msgstr "mark"
+
+msgid "cliff"
+msgstr "klippa"
+
+msgid "hill"
+msgstr "kulle"
+
+msgid "canyon"
+msgstr "kanjon"
+
+msgid "rock"
+msgstr "sten"
+
+msgid "sea"
+msgstr "hav"
+
+msgid "lake"
+msgstr "sjö"
+
+msgid "coast"
+msgstr "kust"
+
+msgid "shore"
+msgstr "strand"
+
+msgid "mountain"
+msgstr "berg"
+
+msgid "pond"
+msgstr "damm"
+
+msgid "peak"
+msgstr "topp"
+
+msgid "lava"
+msgstr "lava"
+
+msgid "cave"
+msgstr "grotta"
+
+msgid "dune"
+msgstr "dyn"
+
+msgid "island"
+msgstr "ö"
+
+msgid "forest"
+msgstr "skog"
+
+msgid "desert"
+msgstr "öken"
+
+msgid "iceberg"
+msgstr "isberg"
+
+msgid "clown"
+msgstr "clown"
+
+msgid "engineer"
+msgstr "ingenjör"
+
+msgid "priest"
+msgstr "präst"
+
+msgid "vet"
+msgstr "vetrinär"
+
+msgid "judge"
+msgstr "domare"
+
+msgid "chef"
+msgstr "kock"
+
+msgid "athlete"
+msgstr "atlet"
+
+msgid "librarian"
+msgstr "bibliotekarie"
+
+msgid "juggler"
+msgstr "jonglör"
+
+msgid "policeman"
+msgstr "polis"
+
+msgid "plumber"
+msgstr "rörmockare"
+
+msgid "badge"
+msgstr "bricka"
+
+msgid "queen"
+msgstr "drottning"
+
+msgid "farmer"
+msgstr "bonde"
+
+msgid "magician"
+msgstr "magiker"
+
+msgid "knight"
+msgstr "riddare"
+
+msgid "doctor"
+msgstr "doktor"
+
+msgid "bricklayer"
+msgstr "murare"
+
+msgid "cleaner"
+msgstr "städare"
+
+msgid "teacher"
+msgstr "lärare"
+
+msgid "hunter"
+msgstr "jägare"
+
+msgid "soldier"
+msgstr "soldat"
+
+msgid "musician"
+msgstr "musikant"
+
+msgid "lawyer"
+msgstr "advokat"
+
+msgid "fisherman"
+msgstr "fiskare"
+
+msgid "princess"
+msgstr "prinsessa"
+
+msgid "fireman"
+msgstr "brandman"
+
+msgid "nun"
+msgstr "nuna"
+
+msgid "pirate"
+msgstr "pirat"
+
+msgid "cowboy"
+msgstr "cowboy"
+
+msgid "electrician"
+msgstr "elektriker"
+
+msgid "nurse"
+msgstr "sjuksköterska"
+
+msgid "king"
+msgstr "kung"
+
+msgid "president"
+msgstr "president"
+
+msgid "office worker"
+msgstr "kontorsarbetare"
+
+msgid "carpenter"
+msgstr "snickare"
+
+msgid "jockey"
+msgstr "jockey"
+
+msgid "worker"
+msgstr "arbetare"
+
+msgid "mechanic"
+msgstr "mekaniker"
+
+msgid "pilot"
+msgstr "pilot"
+
+msgid "actor"
+msgstr "skådespelare"
+
+msgid "cook"
+msgstr "kock"
+
+msgid "student"
+msgstr "student"
+
+msgid "butcher"
+msgstr "slaktare"
+
+msgid "accountant"
+msgstr "ekonom"
+
+msgid "prince"
+msgstr "prins"
+
+msgid "pope"
+msgstr "påve"
+
+msgid "sailor"
+msgstr "sjöman"
+
+msgid "boxer"
+msgstr "boxare"
+
+msgid "ballet dancer"
+msgstr "ballerina"
+
+msgid "coach"
+msgstr "tränare"
+
+msgid "astronaut"
+msgstr "astronaut"
+
+msgid "painter"
+msgstr "målare"
+
+msgid "anaesthesiologist"
+msgstr "anestesiolog"
+
+msgid "scientist"
+msgstr "forskare"
+
+msgid "carrot"
+msgstr "morot"
+
+msgid "blackberries"
+msgstr "björnbär"
+
+msgid "celery"
+msgstr "selleri"
+
+msgid "turnip"
+msgstr "rova"
+
+msgid "cacao"
+msgstr "kakao"
+
+msgid "peach"
+msgstr "persika"
+
+msgid "melon"
+msgstr "melon"
+
+msgid "grapefruit"
+msgstr "grapefrukt"
+
+msgid "broccoli"
+msgstr "broccoli"
+
+msgid "grapes"
+msgstr "vindruvor"
+
+msgid "spinach"
+msgstr "spenat"
+
+msgid "fig"
+msgstr "fikon"
+
+msgid "kernel"
+msgstr "kärna"
+
+msgid "radish"
+msgstr "rädisa"
+
+msgid "tomato"
+msgstr "tomat"
+
+msgid "kiwi"
+msgstr "kiwi"
+
+msgid "asparagus"
+msgstr "sparris"
+
+msgid "olives"
+msgstr "oliver"
+
+msgid "cucumbers"
+msgstr "gurka"
+
+msgid "beans"
+msgstr "bönor"
+
+msgid "strawberry"
+msgstr "jordgubbe"
+
+msgid "peppers"
+msgstr "paprikor"
+
+msgid "raspberry"
+msgstr "hallon"
+
+msgid "apricot"
+msgstr "aprikos"
+
+msgid "potatoes"
+msgstr "potatis"
+
+msgid "peas"
+msgstr "ärtor"
+
+msgid "cabbage"
+msgstr "kål"
+
+msgid "cherries"
+msgstr "körsbär"
+
+msgid "squash"
+msgstr "squash"
+
+msgid "blueberries"
+msgstr "blåbär"
+
+msgid "pear"
+msgstr "päron"
+
+msgid "orange"
+msgstr "apelsin"
+
+msgid "pumpkin"
+msgstr "pumpa"
+
+msgid "avocado"
+msgstr "avokado"
+
+msgid "garlic"
+msgstr "vitlök"
+
+msgid "onion"
+msgstr "lök"
+
+msgid "apple"
+msgstr "äpple"
+
+msgid "lime"
+msgstr "lime"
+
+msgid "cauliflower"
+msgstr "blomkål"
+
+msgid "mango"
+msgstr "mango"
+
+msgid "lettuce"
+msgstr "sallad"
+
+msgid "lemon"
+msgstr "citron"
+
+msgid "aubergine"
+msgstr "aubergine"
+
+msgid "artichokes"
+msgstr "kronärtskocka"
+
+msgid "plums"
+msgstr "plommon"
+
+msgid "leek"
+msgstr "purjolök"
+
+msgid "bananas"
+msgstr "bananer"
+
+msgid "papaya"
+msgstr "papaya"
+
+msgid "sail"
+msgstr "segel"
+
+msgid "taxi"
+msgstr "taxi"
+
+msgid "car"
+msgstr "bil"
+
+msgid "bike"
+msgstr "cykel"
+
+msgid "raft"
+msgstr "flotte"
+
+msgid "pedal"
+msgstr "pedal"
+
+msgid "bus"
+msgstr "buss"
+
+msgid "handlebar"
+msgstr "styre"
+
+msgid "boat"
+msgstr "båt"
+
+msgid "truck"
+msgstr "lastbil"
+
+msgid "sleigh"
+msgstr "släde"
+
+msgid "carpet"
+msgstr "matta"
+
+msgid "motorcycle"
+msgstr "motorcykel"
+
+msgid "train"
+msgstr "tåg"
+
+msgid "ship"
+msgstr "skepp"
+
+msgid "van"
+msgstr "skåpbil"
+
+msgid "canoe"
+msgstr "kanot"
+
+msgid "rocket"
+msgstr "raket"
+
+msgid "mast"
+msgstr "mast"
+
+msgid "sledge"
+msgstr "slägga"
+
+msgid "bicycle"
+msgstr "cykel"

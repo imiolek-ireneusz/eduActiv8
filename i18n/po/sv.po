@@ -1,0 +1,1432 @@
+# eduActiv8 - Educational Activity Pack - translation file.
+# Copyright (C) 2012 - 2025 Ireneusz Imiolek
+# This file is part of the eduActiv8 project and is distributed under GPLv3 licence.
+# Ireneusz Imiolek <imiolek.i@googlemail.com>, 2019.
+#
+# Translators:
+# Tiger Tanker, 2023
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.25.04\n"
+"Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
+"POT-Creation-Date: 2013-11-01 15:33+0000\n"
+"PO-Revision-Date: 2025-04-14 17:59+0100\n"
+"Last-Translator: Tiger Tanker, 2023\n"
+"Language-Team: Swedish (https://app.transifex.com/eduactiv8/teams/94947/sv/)\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+msgid ""
+"Laby, 2010 by Mehdi Cherti (mehdidc) \n"
+" Sounds by various authors who contributed their works to freesound.org. \n"
+" Images by various authors who contributed their works to openclipart.org (Public Domain) and http://"
+"www.art4apps.org/ - Art4Apps by Smart4Kids - under a Creative Commons License (CC BY-SA). \n"
+" Please view credits.txt for more info about authors of media files used in this project"
+msgstr ""
+"Laby, 2010 av Mehdi Cherti (mehdidc) \n"
+" Ljud av olika författare som bidrog med sina verk till freesound.org. \n"
+" Bilder av olika författare som bidrog med sina verk till openclipart.org (Public Domain) och http://"
+"www.art4apps.org/ - Art4Apps av Smart4Kids - under en Creative Commons-licens (CC BY-SA). \n"
+" Vänligen se credits.txt för mer information om författarna till mediafiler som används i detta projekt"
+
+msgid ""
+"This program is free software: you can redistribute it and/or modify it under the terms of the GNU "
+"General Public License as published by the Free Software Foundation, either version 3 of the License, "
+"or (at your option) any later version. You should have received a copy of the GNU General Public "
+"License along with this program. If not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+"Detta program är fri programvara: du kan redistribuera det och/eller modifiera det enligt villkoren i "
+"GNU General Public License som publicerats av Free Software Foundation, antingen version 3 av "
+"licensen, eller (efter eget val) någon senare version. Du borde ha fått en kopia av GNU General Public "
+"License tillsammans med detta program. Om inte, se <http://www.gnu.org/licenses/>."
+
+msgid "A collection of educational activities for kids"
+msgstr "En samling av lärande aktiviteter för barn"
+
+msgid "Educational Activities for Kids"
+msgstr "Lärande Aktiviteter för Barn"
+
+msgid ""
+"Images from: http://www.art4apps.org/ - Art4Apps by Smart4Kids - Creative Commons License (CC BY-SA)"
+msgstr ""
+"Bilder från: http://www.art4apps.org/ - Art4Apps av Smart4Kids - Creative Commons License (CC BY-SA)"
+
+msgid "Default Language:"
+msgstr "Standard Språk:"
+
+msgid "Guest"
+msgstr "Gäst"
+
+msgid "Log in:"
+msgstr "Logga in:"
+
+msgid "user name:"
+msgstr "användarnamn:"
+
+msgid "password:"
+msgstr "lösenord:"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Add new user:"
+msgstr "Lägg till ny användare:"
+
+msgid "confirm password:"
+msgstr "bekräfta lösenord:"
+
+msgid "Register new user"
+msgstr "Registrera ny användare"
+
+msgid "Administrator Login:"
+msgstr "Administratör Login:"
+
+msgid "User Management"
+msgstr "Användarhantering"
+
+msgid "Please select a user from the list."
+msgstr "Välj en användare ifrån listan."
+
+msgid "Delete user"
+msgstr "Ta bort användare"
+
+msgid "Delete"
+msgstr "Ta bort"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+#, python-format
+msgid "%s deleted from database."
+msgstr "%sborttagen från databasen."
+
+msgid "Failed to delete the user."
+msgstr "Misslyckades ta bort användaren."
+
+msgid "Preferences"
+msgstr "Inställningar"
+
+msgid "switch to full screen after login"
+msgstr "växla till fullskärm efter inloggning"
+
+msgid "allow users to navigate to locked levels"
+msgstr "tillåt användare att navigera till låsta nivåer"
+
+msgid "allow adding new users on login screen"
+msgstr "tillåt lägga till ny användare på inloggningsskärmen"
+
+msgid "User Name"
+msgstr "Användarnamn"
+
+msgid "require password to log in"
+msgstr "kräv lösenord vid inloggning"
+
+msgid "require password to access admin area"
+msgstr "kräv lösenord för åtkomst till administrationsområdet"
+
+msgid "Update admin's password:"
+msgstr "Uppdatera administratörens lösenord:"
+
+msgid "previous password:"
+msgstr "tidigare lösenord:"
+
+msgid "new password:"
+msgstr "nytt lösenord:"
+
+msgid "confirm new password:"
+msgstr "bekräfta nytt lösenord:"
+
+msgid "Create admin's account:"
+msgstr "Skapa administratörskonto:"
+
+msgid "admin's user name:"
+msgstr "administratörens användarnamn:"
+
+msgid "admin's password:"
+msgstr "administratörens lösenord:"
+
+msgid "confirm admin's password:"
+msgstr "bekräfta administratörens lösenord:"
+
+msgid "Save"
+msgstr "Spara"
+
+msgid "Please enter user name (at least 3 characters long)"
+msgstr "Fyll i användarnamn (minst 3 tecken långt)"
+
+msgid "Please enter password (at least 4 characters long)"
+msgstr "Fyll i lösenord (minst 4 tecken långt)"
+
+msgid "This username and password combination doesn't exist."
+msgstr "Denna kombination av användarnamn och lösenord existerar inte."
+
+msgid "This username doesn't exist."
+msgstr "Detta användarnamn existerar inte."
+
+msgid "Passwords don't match"
+msgstr "Lösenorden stämmer ej överens"
+
+#, python-format
+msgid "%s added"
+msgstr "%s tillagd"
+
+msgid "This user name already exists, please choose a different one"
+msgstr "Detta användarnamn existerar redan, välj ett annat"
+
+msgid "Admin's password has been updated"
+msgstr "Administratörens lösenord har blivit uppdaterat"
+
+msgid "ERROR: This operation is not allowed at this point"
+msgstr "FEL: Denna handling är en möjligt just nu"
+
+msgid "Please enter previous password (at least 4 characters long)"
+msgstr "Fyll i föregående lösenord (minst 4 tecken långt)"
+
+msgid "Please enter new password (at least 4 characters long)"
+msgstr "Fyll i nytt lösenord (minst 4 tecken långt)"
+
+msgid "Previous password doesn't seem to be in the database"
+msgstr "Föregående lösenord hittats ej i databasen"
+
+msgid "Registered:"
+msgstr "Registrerad:"
+
+msgid "Last login:"
+msgstr "Senaste inloggning:"
+
+msgid "Preferences saved..."
+msgstr "Inställningar sparade..."
+
+msgid "Logged in as: "
+msgstr "Inloggad som: "
+
+msgid "(Log out)"
+msgstr "(Logga ut)"
+
+msgid "remember me"
+msgstr "kom ihåg mig"
+
+msgid "Select age group:"
+msgstr "Välj åldersgrupp:"
+
+msgid "show activities for:"
+msgstr "visa aktiviteter för:"
+
+msgid "preschool"
+msgstr "förskola"
+
+msgid "Year 1"
+msgstr "Årskurs 1"
+
+msgid "Year 2"
+msgstr "Årskurs 2"
+
+msgid "Year 3"
+msgstr "Årskurs 3"
+
+msgid "Year 4"
+msgstr "Årskurs 4"
+
+msgid "Year 5"
+msgstr "Årskurs 5"
+
+msgid "Year 6"
+msgstr "Årskurs 6"
+
+msgid "show all"
+msgstr "visa alla"
+
+msgid "Do you want to log out of the game?"
+msgstr "Vill du logga ut ifrån spelet?"
+
+msgid "Do you want to exit the game?"
+msgstr "Vill du avsluta spelet?"
+
+# alternative: "Well done!\nLevel completed!\nAre you ready for the next one?"
+msgid "Ready to go to the next level?"
+msgstr "Redo att gå till nästa nivå?"
+
+msgid "Hello"
+msgstr "Hejsan"
+
+msgid "Welcome back in the game."
+msgstr "Välkommen tillbaka till spelet."
+
+msgid "Licence"
+msgstr "Licens"
+
+msgid "Copyright & Credits"
+msgstr "Upphovsrätt och krediter"
+
+msgid "Translators"
+msgstr "Översättare"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Translations"
+msgstr "Översättningar"
+
+msgid "Addition Table"
+msgstr "Additionstabell"
+
+msgid "Discover Letters"
+msgstr "Upptäck bokstäver"
+
+msgid "Learn New Words"
+msgstr "Lär dig nya ord"
+
+msgid "Mathematics"
+msgstr "Matematik"
+
+msgid "Art and Colour"
+msgstr "Konst och färg"
+
+msgid "Memory"
+msgstr "Minne"
+
+msgid "Games & Mazes"
+msgstr "Spel och labyrinter"
+
+msgid "Letters"
+msgstr "Bokstäver"
+
+msgid "Learn Letters with Flashcards"
+msgstr "Lär dig bokstäver med bildkort"
+
+msgid "Learn to Write"
+msgstr "Lär dig att skriva"
+
+msgid "Trace Letters and Numbers"
+msgstr "Spåra bokstäver och siffror"
+
+msgid "Complete the ABC"
+msgstr "Fyll i ABC"
+
+msgid "Sorting Letters"
+msgstr "Sortera bokstäver"
+
+msgid "Lowercase Letters"
+msgstr "Gemener"
+
+msgid "Uppercase Letters"
+msgstr "Versaler"
+
+msgid "Word Builder"
+msgstr "Ordbyggare"
+
+msgid "Word Maze"
+msgstr "Ordlabyrint"
+
+msgid "Collect all letters in the right order"
+msgstr "Samla alla bokstäver i rätt ordning"
+
+msgid "Word Maze + 4"
+msgstr "Ordlabyrint + 4"
+
+msgid "Rainbow Keyboard"
+msgstr "Regnbågstangentbord"
+
+msgid "Touch Typing Tutor"
+msgstr "Touch-typningsövning"
+
+msgid "English Alphabet"
+msgstr "Engelska alfabetet"
+
+# Replace "Your" with your language, ie. translation of French Alphabet
+msgid "Your Alphabet"
+msgstr "Svenska alfabetet"
+
+msgid "Numbers"
+msgstr "Siffror"
+
+msgid "Number Spelling"
+msgstr "Sifferstavning"
+
+msgid "Match numbers to their spelling"
+msgstr "Matcha siffror med deras stavning"
+
+msgid "Learn Numbers with Flashcards"
+msgstr "Lär dig siffror med bildkort"
+
+msgid "Learn to Count"
+msgstr "Lär dig räkna"
+
+msgid "Basic Addition"
+msgstr "Grundläggande addition"
+
+msgid "Basic Subtraction"
+msgstr "Grundläggande subtraktion"
+
+msgid "Shopping List"
+msgstr "Inköpslista"
+
+msgid "Plus or Minus"
+msgstr "Plus eller minus"
+
+msgid "Basic Operations"
+msgstr "Grundläggande räknesätt"
+
+msgid "Multiplication Table"
+msgstr "Multiplikationstabell"
+
+msgid "Find the product"
+msgstr "Hitta produkten"
+
+msgid "Find the multiplier"
+msgstr "Hitta multiplikatorn"
+
+msgid "Division"
+msgstr "Division"
+
+msgid "Sorting Numbers"
+msgstr "Sortera siffror"
+
+msgid "Consecutive numbers"
+msgstr "På varandra följande siffror"
+
+msgid "Random numbers"
+msgstr "Slumpmässiga siffror"
+
+msgid "Number Comparison"
+msgstr "Jämförelse av siffror"
+
+msgid "Addition & Subtraction"
+msgstr "Addition och subtraktion"
+
+msgid "Comparison"
+msgstr "Jämförelse"
+
+msgid "Even or Odd"
+msgstr "Udda eller jämn"
+
+msgid "Even"
+msgstr "Jämn"
+
+msgid "Odd"
+msgstr "Udda"
+
+msgid "Shapes and Solids"
+msgstr "Former och kroppar"
+
+msgid "Shapes"
+msgstr "Former"
+
+msgid "Learn Shapes with Flashcards"
+msgstr "Lär dig former med bildkort"
+
+msgid "Solids"
+msgstr "Geometriska kroppar"
+
+msgid "Solid Geometry with Flashcards"
+msgstr "Kroppsgeometri med bildkort"
+
+msgid "Time Matching"
+msgstr "Tidsmatchning"
+
+msgid "Complete the word"
+msgstr "Fyll i ordet"
+
+msgid "Shape Matching"
+msgstr "Formmatchning"
+
+msgid "Help me find my shadow"
+msgstr "Hjälp mig hitta min skugga"
+
+msgid "Paint"
+msgstr "Måla"
+
+msgid "Colour Matching"
+msgstr "Färgmatchning"
+
+msgid "Label the colours"
+msgstr "Namnge färgerna"
+
+msgid "Follow the Arrows"
+msgstr "Följ pilarna"
+
+msgid "Remember directions"
+msgstr "Kom ihåg riktningar"
+
+msgid "Photographic Memory"
+msgstr "Fotografiskt minne"
+
+msgid "Training"
+msgstr "Träning"
+
+msgid "Mouse Maze"
+msgstr "Muslabyrint"
+
+msgid "Let's have some cheese"
+msgstr "Låt oss äta lite ost"
+
+msgid "Sheep Maze"
+msgstr "Fårlabyrint"
+
+msgid "Find the rest of the herd"
+msgstr "Hitta resten av flocken"
+
+msgid "Connect"
+msgstr "Koppla"
+
+msgid "Balloons with threads"
+msgstr "Ballonger med trådar"
+
+msgid "Fifteen"
+msgstr "Femton"
+
+msgid "With a Twist"
+msgstr "Med en twist"
+
+msgid "Mixing Colours for Painting"
+msgstr "Blanda färger för målning"
+
+msgid "Mix red, yellow, blue, black and white paint"
+msgstr "Blanda röd, gul, blå, svart och vit färg"
+
+msgid "Additive Colour Mixing - Light"
+msgstr "Additiv färgblandning – ljus"
+
+msgid "Mix red, green and blue light to get other colours"
+msgstr "Blanda rött, grönt och blått ljus för att få andra färger"
+
+msgid "Subtractive Colour Mixing - Paints, Dyes, Inks"
+msgstr "Subtraktiv färgblandning – färger, färgämnen, bläck"
+
+msgid "Mix cyan, magenta and yellow paint to get other colours"
+msgstr "Blanda cyan, magenta och gul färg för att få andra färger"
+
+msgid "Find the colour of the circle in the middle"
+msgstr "Hitta färgen på cirkeln i mitten"
+
+msgid "Adjust the amount of cyan, magenta and yellow paint"
+msgstr "Justera mängden cyan, magenta och gul färg"
+
+msgid "Adjust the intensity of red, green and blue light"
+msgstr "Justera intensiteten på rött, grönt och blått ljus"
+
+msgid "Match Animals"
+msgstr "Para ihop djur"
+
+msgid "Find all matching animals"
+msgstr "Hitta alla matchande djur"
+
+msgid "Match animals to their shadows"
+msgstr "Matcha djur med deras skuggor"
+
+msgid "Match Animals - Memory Game"
+msgstr "Para ihop djur – memoryspel"
+
+msgid "Match Fruits - Memory Game"
+msgstr "Para ihop frukter – memoryspel"
+
+msgid "Match Vegetables - Memory Game"
+msgstr "Para ihop grönsaker – memoryspel"
+
+msgid "Match Numbers - Memory Game"
+msgstr "Para ihop siffror – memoryspel"
+
+msgid "Find matching pairs of the same image"
+msgstr "Hitta matchande par av samma bild"
+
+msgid "Image Slider"
+msgstr "Bildpussel"
+
+msgid "Animal Slider"
+msgstr "Djurpussel"
+
+msgid "Fruit Slider"
+msgstr "Fruktpussel"
+
+msgid "Number Slider"
+msgstr "Sifferpussel"
+
+msgid "Maths Matching Game"
+msgstr "Matematikmatchningsspel"
+
+msgid "Addition"
+msgstr "Addition"
+
+msgid "Subtraction"
+msgstr "Subtraktion"
+
+msgid "Multiplication"
+msgstr "Multiplikation"
+
+msgid "Fractions"
+msgstr "Bråktal"
+
+msgid "Decimal Fractions"
+msgstr "Decimaltal"
+
+msgid "Percentages"
+msgstr "Procent"
+
+msgid "Ratios"
+msgstr "Förhållanden"
+
+msgid "Fraction Groups"
+msgstr "Bråkgrupper"
+
+msgid "Type your answer and hit enter"
+msgstr "Skriv ditt svar och tryck på enter"
+
+msgid "Decimals (Category)"
+msgstr "Decimaltal (kategori)"
+
+msgid "Fractions (Category)"
+msgstr "Bråktal (kategori)"
+
+msgid "Ratios (Category)"
+msgstr "Förhållanden (kategori)"
+
+msgid "Percentages (Category)"
+msgstr "Procent (kategori)"
+
+msgid "Learn new words"
+msgstr "Lär dig nya ord"
+
+msgid "Word Builders"
+msgstr "Ordbyggare"
+
+msgid "Word Matchers"
+msgstr "Ordmatchare"
+
+msgid "Match images to words"
+msgstr "Matcha bilder med ord"
+
+msgid "Animals"
+msgstr "Djur"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Body"
+msgstr "Kropp"
+
+msgid "People"
+msgstr "Personer"
+
+msgid "Actions"
+msgstr "Handlingar"
+
+msgid "Constructions"
+msgstr "Byggnader"
+
+msgid "Nature"
+msgstr "Natur"
+
+msgid "Jobs"
+msgstr "Yrken"
+
+msgid "Clothes and Accessories"
+msgstr "Kläder och tillbehör"
+
+msgid "Fruits and Vegetables"
+msgstr "Frukter och grönsaker"
+
+msgid "Transport"
+msgstr "Transport"
+
+msgid "Food"
+msgstr "Mat"
+
+msgid "Listening Exercises"
+msgstr "Lyssningsövningar"
+
+msgid "Match sounds to words"
+msgstr "Matcha ljud med ord"
+
+msgid "Patterns"
+msgstr "Mönster"
+
+msgid "Number Patterns"
+msgstr "Siffermönster"
+
+msgid "Letter Patterns"
+msgstr "Bokstavsmönster"
+
+msgid "Color Patterns"
+msgstr "Färgmönster"
+
+msgid "Image Patterns"
+msgstr "Bildmönster"
+
+msgid "Fraction Patterns"
+msgstr "Bråkmönster"
+
+msgid "Shape Patterns"
+msgstr "Formmönster"
+
+msgid "Complete the pattern on the top line."
+msgstr "Fyll i mönstret på översta raden."
+
+msgid "Match shapes to their names"
+msgstr "Matcha former med deras namn"
+
+msgid "Negative numbers"
+msgstr "Negativa tal"
+
+msgid "Complete the alphabet using letters from the middle line."
+msgstr "Fyll i alfabetet med bokstäver från den mittersta raden."
+
+msgid "Drag the slider up or down so that the right sign is in the red square."
+msgstr "Dra reglaget upp eller ner så att rätt tecken hamnar i den röda rutan."
+
+msgid "Take your sheep to the rest of the herd."
+msgstr "Följ fåret till resten av flocken."
+
+msgid "Check the shopping list and drag all needed items into the basket."
+msgstr "Kontrollera inköpslistan och dra alla nödvändiga saker till korgen."
+
+msgid "Drag one of the <, > or = (lesser, greater or equal) to the red square."
+msgstr "Dra ett av <, > eller = (mindre än, större än eller lika med) till den röda rutan."
+
+msgid "Drag one of the lesser, greater or equal to the red square."
+msgstr "Dra ett av mindre än, större än eller lika med till den röda rutan."
+
+msgid "Rearrange the numbers so they are in the right order."
+msgstr "Ordna siffrorna så att de är i rätt ordning."
+
+msgid "Build the following word using the letters below."
+msgstr "Bygg följande ord med hjälp av bokstäverna nedan."
+
+msgid "Find and separate even numbers from odd numbers."
+msgstr "Hitta och skilj på jämna och udda tal."
+
+msgid "Rearrange the letters so they are in the alphabetical order."
+msgstr "Ordna bokstäverna i alfabetisk ordning."
+
+msgid "Rearrange the numbers so they are in the ascending order."
+msgstr "Ordna siffrorna i stigande ordning."
+
+msgid "Perfect! Task solved!"
+msgstr "Perfekt! Uppgiften löst!"
+
+msgid "Game Over!"
+msgstr "Spelet är slut!"
+
+msgid "Congratulations! You have completed all tasks in this game."
+msgstr "Grattis! Du har slutfört alla uppgifter i det här spelet."
+
+msgid "Great job!"
+msgstr "Bra jobbat!"
+
+msgid "Perfect!!!"
+msgstr "Perfekt!!!"
+
+msgid "Awesome!"
+msgstr "Fantastiskt!"
+
+msgid "Fantastic job!"
+msgstr "Fantastiskt bra jobbat!"
+
+msgid "Well done!"
+msgstr "Snyggt jobbat!"
+
+msgid "Perfect! Level completed!"
+msgstr "Perfekt! Nivån klar!"
+
+msgid "Perfect!"
+msgstr "Perfekt!"
+
+msgid "divided by"
+msgstr "delat med"
+
+msgid "times"
+msgstr "gånger"
+
+msgid "equals"
+msgstr "är lika med"
+
+msgid "brush size"
+msgstr "penselstorlek"
+
+msgid "Match fraction charts on the right to the ones on the left"
+msgstr "Matcha bråkscheman till höger med de till vänster"
+
+msgid "Match fraction charts and fractions on the right to the fraction charts on the left"
+msgstr "Matcha bråkscheman och bråk till höger med bråkscheman till vänster"
+
+msgid "Match fraction charts to the fractions on the left"
+msgstr "Matcha bråkscheman med bråken till vänster"
+
+msgid ""
+"Match fraction charts, fractions and decimal fractions on the right to their percentage representations"
+msgstr "Matcha bråkscheman, bråk och decimaltal till höger med deras procentform"
+
+msgid ""
+"Match charts to the ratios on the left. Ratios are expressed as ratio of coloured pieces to white "
+"pieces"
+msgstr ""
+"Matcha diagram med förhållandena till vänster. Förhållandena anges som förhållandet mellan färgade och "
+"vita delar"
+
+msgid "Shape Maker"
+msgstr "Formskapare"
+
+msgid "Let's see what shapes you can draw"
+msgstr "Låt oss se vilka former du kan rita"
+
+#, python-format
+msgid "Shape to draw: %s"
+msgstr "Form att rita: %s"
+
+#, python-format
+msgid "such that lengths of its bases are equal to %d and %d and height to %d"
+msgstr "så att längderna på dess baser är %d och %d och höjden är %d"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d"
+msgstr "så att sidorna är %d långa"
+
+#, python-format
+msgid "such that lengths of its sides are equal to %d and %d"
+msgstr "så att sidorna är %d och %d långa"
+
+#, python-format
+msgid "such that lengths of its 2 parallel bases are equal to %d and height to %d"
+msgstr "så att längderna på de två parallella baserna är %d och höjden är %d"
+
+#, python-format
+msgid "such that length of its base is equal to %d and height to %d"
+msgstr "så att basen är %d lång och höjden är %d"
+
+#, python-format
+msgid "such that lengths of its catheti are equal to %d and %d"
+msgstr "så att kateterna är %d och %d långa"
+
+#, python-format
+msgid "such that lengths of both of its catheti are equal to %d"
+msgstr "så att båda kateterna är %d långa"
+
+#, python-format
+msgid "such that length of its hypotenuse is equal to %d"
+msgstr "så att hypotenusan är %d lång"
+
+#, python-format
+msgid "such that length of one of its sides is equal to %d and height to %d"
+msgstr "så att en sida är %d lång och höjden är %d"
+
+#, python-format
+msgid "such that length of its radius is equal to %d"
+msgstr "så att radien är %d"
+
+msgid "Test yourself"
+msgstr "Testa dig själv"
+
+msgid "Clock"
+msgstr "Klocka"
+
+msgid "Learn to read the time"
+msgstr "Lär dig att läsa tiden"
+
+msgid "Learn to set the clock"
+msgstr "Lär dig att ställa klockan"
+
+msgid "Set the clock to:"
+msgstr "Ställ klockan på:"
+
+msgid "Drag the clock hands to set the time"
+msgstr "Dra visarna för att ställa tiden"
+
+msgid "What time is it?"
+msgstr "Vad är klockan?"
+
+msgid "Time"
+msgstr "Tid"
+
+msgid "Turn the clock hands and see what happens."
+msgstr "Vrid visarna och se vad som händer."
+
+msgid "Time in text version only"
+msgstr "Tid i endast textversion"
+
+msgid "How clock works?"
+msgstr "Hur fungerar klockan?"
+
+msgid "Columnar addition"
+msgstr "Addition i kolumner"
+
+msgid "Columnar subtraction"
+msgstr "Subtraktion i kolumner"
+
+msgid "Long multiplication"
+msgstr "Lång multiplikation"
+
+msgid "Long division"
+msgstr "Lång division"
+
+msgid "Demonstration"
+msgstr "Demonstration"
+
+msgid "Do it yourself"
+msgstr "Gör det själv"
+
+msgid "borrow 10"
+msgstr "låna 10"
+
+# in columnar addition, ie. in case of 4 + 8 you write 2 under the column and
+# carry 1
+msgid "carry"
+msgstr "överför"
+
+msgid "Start >>"
+msgstr "Starta >>"
+
+msgid "Next example >>"
+msgstr "Nästa exempel >>"
+
+msgid "Next step >>"
+msgstr "Nästa steg >>"
+
+# used to show which digit of the result should be entered in a box, ie.
+# "enter 5")
+msgid "write "
+msgstr "skriv "
+
+msgid "rewrite "
+msgstr "skriv om "
+
+msgid "remainder"
+msgstr "rest"
+
+msgid "result"
+msgstr "resultat"
+
+msgid "Find solution"
+msgstr "Hitta lösning"
+
+msgid "Find missing number"
+msgstr "Hitta det saknade talet"
+
+msgid "numerator"
+msgstr "täljare"
+
+msgid "denominator"
+msgstr "nämnare"
+
+msgid "Experiment with fractions"
+msgstr "Experimentera med bråk"
+
+msgid "Experiment with decimal fractions"
+msgstr "Experimentera med decimaltal"
+
+msgid "Ratio"
+msgstr "Förhållande"
+
+msgid "Experiment with ratios"
+msgstr "Experimentera med förhållanden"
+
+msgid "Experiment with percentages"
+msgstr "Experimentera med procent"
+
+msgid "What fraction is it?"
+msgstr "Vilket bråk är det?"
+
+msgid "What decimal fraction is it?"
+msgstr "Vilket decimaltal är det?"
+
+msgid "Add fractions with the same denominator"
+msgstr "Lägg till bråk med samma nämnare"
+
+msgid "Subtract fractions with the same denominator"
+msgstr "Subtrahera bråk med samma nämnare"
+
+msgid "Multiply fractions"
+msgstr "Multiplicera bråk"
+
+msgid "Divide fractions"
+msgstr "Dividera bråk"
+
+msgid "Exercise 1"
+msgstr "Övning 1"
+
+msgid "Exercise 2"
+msgstr "Övning 2"
+
+msgid "Exercise 3"
+msgstr "Övning 3"
+
+msgid "Compare decimals and fractions"
+msgstr "Jämför decimaltal och bråk"
+
+msgid "Compare fractions"
+msgstr "Jämför bråk"
+
+msgid "Reduce fractions"
+msgstr "Förkorta bråk"
+
+msgid "Expand fractions"
+msgstr "Expandera bråk"
+
+msgid ""
+"To reduce a fraction divide the numerator and the denominator by one of their common factors which are "
+"displayed between the two fractions. Select one of them to see what happens. If 1 is the only common "
+"factor then the fraction can't be reduced any more - try choosing a different one."
+msgstr ""
+"För att förkorta ett bråk, dela täljaren och nämnaren med en av deras gemensamma faktorer som visas "
+"mellan de två bråken. Välj en av dem för att se vad som händer. Om 1 är den enda gemensamma faktorn "
+"kan bråket inte förkortas längre - försök att välja en annan."
+
+msgid ""
+"To expand a fraction multiply the numerator and the denominator by the same number. Change the "
+"multiplicand to see what happens."
+msgstr ""
+"För att expandera ett bråk, multiplicera täljaren och nämnaren med samma tal. Ändra multiplikatorn för "
+"att se vad som händer."
+
+msgid "Use the arrows to change your answer or just type it in."
+msgstr "Använd pilarna för att ändra ditt svar eller skriv det direkt."
+
+msgid "Use the arrows to change your answer."
+msgstr "Använd pilarna för att ändra ditt svar."
+
+msgid ""
+"To add two fractions with the same denominators add their numerators together and keep the denominator "
+"unchanged. Simplify the result if the numerator is greater than the denominator and reduce the "
+"fraction if possible."
+msgstr ""
+"För att addera två bråk med samma nämnare, lägg till deras täljare och håll nämnaren oförändrad. "
+"Förenkla resultatet om täljaren är större än nämnaren och förkorta bråket om möjligt."
+
+msgid ""
+"To subtract one fraction from another one with the same denominator subtract numerators and keep the "
+"denominator unchanged. Reduce the resulting fraction if possible."
+msgstr ""
+"För att subtrahera ett bråk från ett annat med samma nämnare, subtrahera täljarna och håll nämnaren "
+"oförändrad. Förkorta det resulterande bråket om möjligt."
+
+msgid ""
+"To multiply two fractions multiply the numerators together and then multiply the denominators "
+"together. Reduce the resulting fraction if possible."
+msgstr ""
+"För att multiplicera två bråk, multiplicera täljarna med varandra och sedan multiplicera nämnarna med "
+"varandra. Förkorta det resulterande bråket om möjligt."
+
+msgid ""
+"To divide a fraction by another fraction multiply the first fraction by the second fraction flipped up "
+"side down. Simplify and reduce the resulting fraction if possible."
+msgstr ""
+"För att dividera ett bråk med ett annat bråk, multiplicera det första bråket med det andra bråket upp "
+"och ner. Förenkla och förkorta det resulterande bråket om möjligt."
+
+msgid "Group fractions together"
+msgstr "Gruppera bråk tillsammans"
+
+msgid "Group percentages together"
+msgstr "Gruppera procent tillsammans"
+
+msgid "Group ratios together"
+msgstr "Gruppera förhållanden tillsammans"
+
+msgid "Symmetry"
+msgstr "Symmetri"
+
+msgid "Reflection Symmetry - draw with shapes"
+msgstr "Reflexiv symmetri - rita med former"
+
+msgid "Reflect shapes"
+msgstr "Spegelvänd former"
+
+msgid "Reflect a shape in a mirror line"
+msgstr "Spegelvänd en form i en spegelaxel"
+
+msgid "Draw a shape that is a reflection of the one already displayed. The red line is the mirror line."
+msgstr "Rita en form som är en spegelbild av den redan visade. Den röda linjen är spegelaxeln."
+
+msgid "Symmetrical shapes - missing half"
+msgstr "Symmetriska former - saknas ena halvan"
+
+msgid "Draw the other half of the shape"
+msgstr "Rita den andra halvan av formen"
+
+msgid "Find lines of symmetry"
+msgstr "Hitta symmetrilinjer"
+
+msgid ""
+"Find and select all lines of symmetry for a displayed shape. Click on the arrows around the drawing "
+"area to select them."
+msgstr ""
+"Hitta och välj alla symmetrilinjer för en visad form. Klicka på pilarna runt ritområdet för att välja "
+"dem."
+
+msgid "Match equivalent fractions"
+msgstr "Matcha ekvivalenta bråk"
+
+msgid "Match fractions"
+msgstr "Matcha bråk"
+
+msgid "Match decimals"
+msgstr "Matcha decimaltal"
+
+msgid "Match percentages"
+msgstr "Matcha procent"
+
+msgid "Match ratios"
+msgstr "Matcha förhållanden"
+
+msgid "Percentages in a pie chart"
+msgstr "Procent i ett cirkeldiagram"
+
+msgid "Find equivalent fraction"
+msgstr "Hitta ekvivalent bråk"
+
+msgid "Calculating with Time"
+msgstr "Beräkningar med tid"
+
+msgid "start time"
+msgstr "starttid"
+
+msgid "end time"
+msgstr "sluttid"
+
+msgid "elapsed time"
+msgstr "förfluten tid"
+
+msgid "Temperature - introduction to negative numbers"
+msgstr "Temperatur - introduktion till negativa tal"
+
+msgid "Experiment with elapsed time"
+msgstr "Experimentera med förfluten tid"
+
+msgid "Experiment with elapsed time 2"
+msgstr "Experimentera med förfluten tid 2"
+
+msgid "Calculate elapsed time"
+msgstr "Beräkna förfluten tid"
+
+msgid "Find the start or the end time"
+msgstr "Hitta start- eller sluttid"
+
+msgid "Visualized on a clock dial"
+msgstr "Visualiserad på en klockskiva"
+
+msgid "Visualized on a number line"
+msgstr "Visualiserad på en talinje"
+
+msgid "Visualized on two number lines"
+msgstr "Visualiserad på två tallinjer"
+
+msgid "With no visualizations"
+msgstr "Utan visualiseringar"
+
+msgid "With mirrored images"
+msgstr "Med spegelbilder"
+
+msgid "Theme Editor"
+msgstr "Temaredigerare"
+
+msgid "Make the game look your way"
+msgstr "Gör spelet som du vill"
+
+msgid "Reset colors back to the default ones?"
+msgstr "Återställ färgerna till standardfärgerna?"
+
+msgid "With simplifying"
+msgstr "Med förenkling"
+
+msgid "Positive numbers"
+msgstr "Positiva tal"
+
+msgid "Basics"
+msgstr "Grunder"
+
+msgid "Equivalent fractions"
+msgstr "Ekvivalenta bråk"
+
+msgid "Expanding and reducing fractions"
+msgstr "Expandera och förkorta bråk"
+
+msgid "Add fractions with unlike denominators"
+msgstr "Lägg till bråk med olika nämnare"
+
+msgid "Subtract fractions with unlike denominators"
+msgstr "Subtrahera bråk med olika nämnare"
+
+msgid ""
+"To add or subtract fractions when their denominators are not the same you have to find equivalent "
+"fractions which do have a common denominator. Finding the least common multiple of the two "
+"denominators will help you with that."
+msgstr ""
+"För att lägga till eller subtrahera bråk när deras nämnare inte är samma, måste du hitta ekvivalenta "
+"bråk som har en gemensam nämnare. Att hitta det minsta gemensamma multiplet av de två nämnarna kommer "
+"att hjälpa dig med det."
+
+# used for the 2 ways of telling time in Russian and Serbian translations only
+msgid "long form"
+msgstr "lång form"
+
+# used for the 2 ways of telling time used in Russian and Serbian translations
+# only
+msgid "short form"
+msgstr "kort form"
+
+msgid "white"
+msgstr "vit"
+
+msgid "black"
+msgstr "svart"
+
+msgid "grey"
+msgstr "grå"
+
+msgid "red"
+msgstr "röd"
+
+msgid "orange [color]"
+msgstr "orange"
+
+msgid "yellow"
+msgstr "gul"
+
+msgid "olive"
+msgstr "oliv"
+
+msgid "green"
+msgstr "grön"
+
+msgid "sea green"
+msgstr "havsgrön"
+
+msgid "teal"
+msgstr "blågrön"
+
+msgid "blue"
+msgstr "blå"
+
+msgid "navy"
+msgstr "marinblå"
+
+msgid "purple"
+msgstr "lila"
+
+msgid "violet"
+msgstr "violett"
+
+msgid "magenta"
+msgstr "magenta"
+
+msgid "indigo"
+msgstr "indigo"
+
+msgid "pink"
+msgstr "rosa"
+
+msgid "maroon"
+msgstr "kastanjebrun"
+
+msgid "brown"
+msgstr "brun"
+
+msgid "aqua"
+msgstr "akvamarin"
+
+msgid "lime"
+msgstr "lime"
+
+msgid "Equilateral Triangle"
+msgstr "Likbent triangel"
+
+msgid "Isosceles Triangle"
+msgstr "Likbent triangel"
+
+msgid "Obtuse Triangle"
+msgstr "Trubbig triangel"
+
+msgid "Right Triangle"
+msgstr "Rätvinklig triangel"
+
+msgid "Acute Triangle"
+msgstr "Spetsig triangel"
+
+msgid "Square"
+msgstr "Kvadrat"
+
+msgid "Rectangle"
+msgstr "Rektangel"
+
+msgid "Right Trapezium"
+msgstr "Rätvinkligt trapezoid"
+
+msgid "Isosceles Trapezium"
+msgstr "Likbent trapezoid"
+
+msgid "Rhombus"
+msgstr "Romb"
+
+msgid "Parallelogram"
+msgstr "Parallellogram"
+
+msgid "Pentagon"
+msgstr "Femhörning"
+
+msgid "Hexagon"
+msgstr "Sexhörning"
+
+msgid "Heptagon"
+msgstr "Sjuhörning"
+
+msgid "Octagon"
+msgstr "Åttahörning"
+
+msgid "Circle"
+msgstr "Cirkel"
+
+msgid "Ellipse"
+msgstr "Ellips"
+
+msgid "Cube"
+msgstr "Kub"
+
+msgid "Square Prism"
+msgstr "Kvadratprism"
+
+msgid "Triangular Prism"
+msgstr "Triangulärt prism"
+
+msgid "Square Pyramid"
+msgstr "Kvadratpyramid"
+
+msgid "Triangular Pyramid"
+msgstr "Triangulär pyramid"
+
+msgid "Sphere"
+msgstr "Sfär"
+
+msgid "Cylinder"
+msgstr "Cylindrar"
+
+msgid "Cone"
+msgstr "Kon"
+
+msgid "Torus"
+msgstr "Torus"
+
+msgid "Quadrilateral"
+msgstr "Fyrahörning"
+
+msgid "Trapezium"
+msgstr "Trapezoid"
+
+msgid "Triangle"
+msgstr "Triangel"
+
+# used to label a drawn "quadrilateral" with angles: 0º, 180º, 0º, 180º - all
+# points on one line
+msgid "Ouch... squished quadrilateral"
+msgstr "Aj... krossad fyrhörning"
+
+msgid "Right isosceles triangle"
+msgstr "Rätvinklig likbent triangel"
+
+msgid "Obtuse isosceles triangle"
+msgstr "Trubbig likbent triangel"
+
+msgid "Acute isosceles triangle"
+msgstr "Spetsig likbent triangel"
+
+# used to label a drawn "triangle" with angles: 0º, 180º, 0º - all points on
+# one line
+msgid "Ouch... squished triangle"
+msgstr "Aj... krossad triangel"
+
+# used to label a drawn "quadrilateral" with one of its angles equal to 180º -
+# in effect making it look like triangle
+msgid "Triangle? Well, not really..."
+msgstr "Triangel? Tja, inte riktigt..."
+
+msgid "area:"
+msgstr "yta:"
+
+msgid "perimeter:"
+msgstr "omkrets:"
+
+msgid "circumference:"
+msgstr "omkrets:"
+
+msgid "surface area:"
+msgstr "ytarea:"
+
+msgid "volume:"
+msgstr "volym:"
+
+msgid "green apple"
+msgid_plural "green apples"
+msgstr[0] "grön äpple"
+msgstr[1] "gröna äpplen"
+
+msgid "red apple"
+msgid_plural "red apples"
+msgstr[0] "röd äpple"
+msgstr[1] "röda äpplen"
+
+msgid "strawberry"
+msgid_plural "strawberries"
+msgstr[0] "jordgubbe"
+msgstr[1] "jordgubbar"
+
+msgid "pear"
+msgid_plural "pears"
+msgstr[0] "päron"
+msgstr[1] "päron"
+
+msgid "orange [fruit]"
+msgid_plural "oranges"
+msgstr[0] "apelsin"
+msgstr[1] "apelsiner"
+
+msgid "onion"
+msgid_plural "onions"
+msgstr[0] "lök"
+msgstr[1] "lökar"
+
+msgid "tomato"
+msgid_plural "tomatoes"
+msgstr[0] "tomat"
+msgstr[1] "tomater"
+
+msgid "lemon"
+msgid_plural "lemons"
+msgstr[0] "citron"
+msgstr[1] "citrons"
+
+msgid "cherry"
+msgid_plural "cherries"
+msgstr[0] "körsbär"
+msgstr[1] "körsbär"
+
+msgid "pepper"
+msgid_plural "peppers"
+msgstr[0] "peppar"
+msgstr[1] "peppar"
+
+msgid "carrot"
+msgid_plural "carrots"
+msgstr[0] "morot"
+msgstr[1] "morötter"
+
+msgid "banana"
+msgid_plural "bananas"
+msgstr[0] "banan"
+msgstr[1] "bananer"
+
+msgid "watermelon"
+msgid_plural "watermelons"
+msgstr[0] "vattenmelon"
+msgstr[1] "vattenmeloner"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "timme"
+msgstr[1] "timmar"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minut"
+msgstr[1] "minuter"

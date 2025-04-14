@@ -318,7 +318,7 @@
         </cat>
         <cat mline="2" id="3" title="Word Builders" subtitle="Listening Exercises"
              icon="ico_c_20.png" min_age="0" max_age="7" listening="True" android="True"
-             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'ru', 'fr', 'de', 'el', 'pt', 'it', 'nl', 'fi']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="" lang_excl="['lkt', 'bg', 'sr', 'uk', 'he', 'ar']" icosuffix="False"
              has_inner="False">
             <game mline="1" dbid="182" variant="0" var2="1" min_age="0" max_age="7"
                   constructor_id="82"
@@ -497,7 +497,7 @@
         </cat>
         <cat mline="2" id="5" title="Word Matchers" subtitle="Listening Exercises"
              icon="ico_c_21.png" min_age="0" max_age="7" listening="True" android="True"
-             visible="1" lang_incl="['en', 'es', 'ca', 'pl', 'ru', 'fr', 'de', 'el', 'pt', 'it', 'nl', 'fi']" lang_excl="" icosuffix="False"
+             visible="1" lang_incl="" lang_excl="['lkt', 'bg', 'sr', 'uk', 'he', 'ar']" icosuffix="False"
              has_inner="False">
             <!-- matching games using arts4apps -->
             <game mline="1" dbid="194" variant="0" var2="0" min_age="0" max_age="7"
@@ -1192,7 +1192,7 @@
                       title="Matching fractions"
                       subtitle=""
                       icon="ico_g_2412.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="['bg', 'en', 'pl', 'ru', 'uk', 'it', 'el', 'nl', 'ar']" lang_excl="" require_uc="False" listening="False" android="True">
+                      visible="1" lang_incl="" lang_excl="['he', 'lk']" require_uc="False" listening="False" android="True">
                 </game>
                 <!--
                 <game mline="0" dbid="229" variant="0" var2="0" min_age="1" max_age="7"
@@ -1680,7 +1680,7 @@
                       title="Clock2"
                       subtitle="Set time"
                       icon="ico_g_1009.png" ico_group="" icosuffix="False" lang_activity="False"
-                      visible="1" lang_incl="['bg', 'en', 'pl', 'ru', 'fr', 'de', 'el']" lang_excl="" require_uc="False" listening="True" android="True">
+                      visible="1" lang_incl="" lang_excl="['ar', 'bg', 'he', 'lk', 'uk']" require_uc="False" listening="True" android="True">
                 </game>
                 <game mline="2" dbid="67" variant="0" var2="0" min_age="0" max_age="7"
                       constructor_id="63"
