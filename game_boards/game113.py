@@ -237,6 +237,7 @@ class Board(gd.BoardGame):
         if self.active_selection.my_id == 5:
             self.info_ind.change_colors(self.bg_color, None, self.active_color, self.active_color)
             self.mainloop.dialog.load_images()
+            self.mainloop.cl.create_colors()
             self.mainloop.info.load_font_colors()
             self.mainloop.info.reload_colors()
 
