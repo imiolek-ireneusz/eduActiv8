@@ -22,8 +22,8 @@ try:
     import operator
     import appdirs
     import packaging
-except ImportError, message:
-    raise SystemExit, "Unable to load module. %s" % message
+except ImportError as message:
+    raise SystemExit("Unable to load module. %s" % message)
 
 # hack which fixes the pygame mixer and pygame font
 origIsSystemDLL = py2exe.build_exe.isSystemDLL  # save the orginal before we edit it
@@ -64,7 +64,7 @@ class BuildExe:
         self.project_url = "https://www.eduactiv8.org"
 
         # Version of program
-        self.project_version = "1.0"
+        self.project_version = "4.25.04"
 
         # License of the program
         self.license = "GPL3"
@@ -72,7 +72,7 @@ class BuildExe:
         # Auhor of program
         self.author_name = "Ireneusz Imiolek"
         self.author_email = "imiolek.i@gmail.com"
-        self.copyright = "Copyright (c) 2012-2022 Ireneusz Imiolek"
+        self.copyright = "Copyright (c) 2012-2025 Ireneusz Imiolek"
 
         # Description
         self.project_description = "eduActiv8 - Educational Activities for Kids"
