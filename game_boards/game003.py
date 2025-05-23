@@ -52,18 +52,20 @@ class Board(gd.BoardGame):
             if i <= half:
                 c = self.center - 4
                 t = i
-                self.board.add_unit(c - 6, t, 2, 1, classes.board.Label, self.lang.lang_progress[i], white, "", 3)
-                self.board.units[-1].font_color = (200, 200, 200)
+                #self.board.add_unit(c - 6, t, 2, 1, classes.board.Label, self.lang.lang_progress[i], white, "", 3)
+                #self.board.units[-1].font_color = (200, 200, 200)
             else:
                 c = self.center + 4
                 t = i - half - 1
-                self.board.add_unit(c + 4, t, 2, 1, classes.board.Label, self.lang.lang_progress[i], white, "", 3)
-                self.board.units[-1].font_color = (200, 200, 200)
+                # self.board.add_unit(c + 4, t, 2, 1, classes.board.Label, self.lang.lang_progress[i], white, "", 3)
+                # self.board.units[-1].font_color = (200, 200, 200)
             self.board.add_unit(c - 4, t, 8, 1, classes.board.Letter, self.lang_titles[i], white, "", 2)
-            self.board.units[-1].update_lng_font_size("def_2.0")
+            #self.board.units[-1].update_lng_font_size("def_2.0")
             if self.all_lng[i] == lang:
                 lng_index = i
 
+        self.board.add_unit(0, data[1] - 2, data[0], 1, classes.board.Label, "Contribute to translations or review at:", white, "", 3)
+        self.board.units[-1].font_color = (160, 160, 160)
         self.board.add_unit(0, data[1]-1, data[0], 1, classes.board.Label, "https://app.transifex.com/eduactiv8/eduactiv8/", white, "", 3)
         self.board.units[-1].font_color = (150, 150, 150)
         self.board.units[-1].update_lng_font_size("def_2.0")
