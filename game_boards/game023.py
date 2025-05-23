@@ -216,7 +216,8 @@ class Board(gd.BoardGame):
                                 break
                     break
                 else:
-                    self.level.game_over()
+                    # so game over was a little too harsh, let's just walk over the letter
+                    #self.level.game_over()
                     break
 
     def ai_walk(self):
