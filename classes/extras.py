@@ -51,6 +51,14 @@ if not fribidi_loaded:
 if not he_reverse:
     from classes.rtl.bidi.algorithm import get_display
 
+def adjusted_v_contrast(h, base_v=1.0):
+    """
+    Dynamically adjusts brightness (V) of font colour based on hue,
+    compensating for overly bright hues in the yellow–cyan range.
+    """
+    if 33 <= h <= 144:
+        return base_v * 0.6 * 255
+    return base_v * 255
 
 def hsv_to_rgb(h, s, v):
     hsv = [h, s, v]

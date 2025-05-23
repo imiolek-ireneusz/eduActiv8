@@ -246,9 +246,10 @@ class InfoBar:
         self.update_fonts()
 
     def load_font_colors(self):
-        self.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 220)
-        self.font_color1 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 255)
-        self.font_color4 = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 150, 255)
+        hue = self.mainloop.cl.color_sliders[5][0] * self.mainloop.cl.step
+        self.font_color = ex.hsv_to_rgb(hue, 255, ex.adjusted_v_contrast(hue, 0.85))
+        self.font_color1 = ex.hsv_to_rgb(hue, 255, ex.adjusted_v_contrast(hue))
+        self.font_color4 = ex.hsv_to_rgb(hue, 150, ex.adjusted_v_contrast(hue))
         self.font_color2 = self.font_color
         self.font_color3 = self.font_color4
 

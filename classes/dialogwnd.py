@@ -141,8 +141,8 @@ class DialogWnd:
             os.path.join('res', 'fonts', self.mainloop.config.font_dir, self.mainloop.config.font_name_1), 20)
 
     def load_images(self):
-        self.bg_tint_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 100)
-        self.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * 16, 255, 100)
+        self.bg_tint_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * self.mainloop.cl.step, 255, 100)
+        self.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * self.mainloop.cl.step, 255, 100)
 
         for each in self.elements:
             each.load_images()

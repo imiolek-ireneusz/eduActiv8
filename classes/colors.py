@@ -25,8 +25,12 @@ class Color:
         self.door_bg_tint_s = 255
         self.door_bg_tint_v = 200
 
+        self.selector_count = 22
+        self.step = 256.0 / self.selector_count
+
         # color steps
-        self.default_color_sliders = [[1, 16, 15], [1, 2, 16], [1, 16, 15], [1, 2, 16], [9, 16, 12], [1, 16, 15], [0, 0, 0]]
+        #self.default_color_sliders = [[1, 16, 15], [1, 2, 16], [1, 16, 15], [1, 2, 16], [9, 16, 12], [1, 16, 15], [0, 0, 0]]
+        self.default_color_sliders = [[1, 21, 20], [1, 2, 21], [1, 21, 20], [1, 2, 21], [13, 21, 18], [1, 21, 20], [0, 0, 0]]
         self.reset_colors()
         self.menu_shapes = ["cat_bg_circle", "cat_bg_square", "cat_bg_hex", "cat_bg_star"]
 
@@ -60,46 +64,46 @@ class Color:
         self.color_sliders = copy.deepcopy(self.default_color_sliders)
 
     def create_colors(self):
-        self.tc_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[0][0] * 16,
-                                              self.color_sliders[0][1] * 16,
-                                              self.color_sliders[0][2] * 16)
+        self.tc_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[0][0] * self.step,
+                                              self.color_sliders[0][1] * self.step,
+                                              self.color_sliders[0][2] * self.step)
 
-        self.tc_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[1][0] * 16,
-                                              self.color_sliders[1][1] * 16,
-                                              self.color_sliders[1][2] * 16)
+        self.tc_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[1][0] * self.step,
+                                              self.color_sliders[1][1] * self.step,
+                                              self.color_sliders[1][2] * self.step)
 
         # category
-        self.c_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[0][0] * 16,
-                                             self.color_sliders[0][1] * 16,
-                                             self.color_sliders[0][2] * 16)
+        self.c_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[0][0] * self.step,
+                                             self.color_sliders[0][1] * self.step,
+                                             self.color_sliders[0][2] * self.step)
 
-        self.c_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[1][0] * 16,
-                                             self.color_sliders[1][1] * 16,
-                                             self.color_sliders[1][2] * 16)
+        self.c_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[1][0] * self.step,
+                                             self.color_sliders[1][1] * self.step,
+                                             self.color_sliders[1][2] * self.step)
 
         # game
-        self.g_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[2][0] * 16,
-                                             self.color_sliders[2][1] * 16,
-                                             self.color_sliders[2][2] * 16)
+        self.g_bg_tint_color = ex.hsv_to_rgb(self.color_sliders[2][0] * self.step,
+                                             self.color_sliders[2][1] * self.step,
+                                             self.color_sliders[2][2] * self.step)
 
-        self.g_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[3][0] * 16,
-                                             self.color_sliders[3][1] * 16,
-                                             self.color_sliders[3][2] * 16)
+        self.g_fg_tint_color = ex.hsv_to_rgb(self.color_sliders[3][0] * self.step,
+                                             self.color_sliders[3][1] * self.step,
+                                             self.color_sliders[3][2] * self.step)
 
         # game progress
-        self.lvl_completed_col = ex.hsv_to_rgb(self.color_sliders[4][0] * 16,
-                                               self.color_sliders[4][1] * 16,
-                                               self.color_sliders[4][2] * 16)
+        self.lvl_completed_col = ex.hsv_to_rgb(self.color_sliders[4][0] * self.step,
+                                               self.color_sliders[4][1] * self.step,
+                                               self.color_sliders[4][2] * self.step)
 
-        self.lvl_not_compl_col = ex.hsv_to_rgb(self.color_sliders[4][0] * 16, 96, 255)
-        self.lvl_not_compl_col_dark = ex.hsv_to_rgb(self.color_sliders[4][0] * 16, 96, 96)
+        self.lvl_not_compl_col = ex.hsv_to_rgb(self.color_sliders[4][0] * self.step, 96, 255)
+        self.lvl_not_compl_col_dark = ex.hsv_to_rgb(self.color_sliders[4][0] * self.step, 96, 96)
 
-        self.info_buttons_col = ex.hsv_to_rgb(self.color_sliders[5][0] * 16,
-                                               self.color_sliders[5][1] * 16,
-                                               self.color_sliders[5][2] * 16)
+        self.info_buttons_col = ex.hsv_to_rgb(self.color_sliders[5][0] * self.step,
+                                               self.color_sliders[5][1] * self.step,
+                                               self.color_sliders[5][2] * self.step)
 
-        self.info_buttons_col_disabled = ex.hsv_to_rgb(self.color_sliders[5][0] * 16, 100, 200)
-        self.info_buttons_col_locked = ex.hsv_to_rgb(self.color_sliders[5][0] * 16, 100, 200)
+        self.info_buttons_col_disabled = ex.hsv_to_rgb(self.color_sliders[5][0] * self.step, 100, 200)
+        self.info_buttons_col_locked = ex.hsv_to_rgb(self.color_sliders[5][0] * self.step, 100, 200)
 
     def update_cfg_color(self, h, s, v):
         self.c_fg_tint_color = ex.hsv_to_rgb(h, s, v)
