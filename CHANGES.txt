@@ -1,5 +1,5 @@
 Changelog:
-eduActiv8 - 4.25.04:
+eduActiv8 - 4.25.05:
     - replaced the flash card images with a new set of higher quality images
     - reformatted jpg images to webp format
     - upscaled x2 art4apps images for better quality
@@ -7,6 +7,8 @@ eduActiv8 - 4.25.04:
     - translations downloaded from transifex
     - Swedish translation added (@TigerTanker)
     - most of the missing translations have been updated with help of AI (will require a review)
+    - the Theme Editor UI updated - hopefully more intuitive now - more colours to choose from too
+    - Word Maze Activity changed - user no longer "looses" after walking onto a wrong letter - the letter is just not picked up.
     - minor bug fixes
 eduActiv8 - 4.22.11:
     - Spanish and Finnish translations updated.
