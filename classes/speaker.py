@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# import os
+import os
 import platform
 # import signal
 import subprocess
@@ -35,11 +35,15 @@ class Speaker(threading.Thread):
     def start_server(self):
         if self.android is None:
             if self.enabled and self.lang.voice is not None:
-                cmd = ['espeak']
+                is_win = platform.system() == "Windows"
+                if is_win:
+                    espeak_path = os.path.join(sys._MEIPASS, "bin", "espeak.exe") if getattr(sys, 'frozen',
+                                                                                             False) else "espeak"
+                else:
+                    espeak_path = 'espeak'
+                cmd = [espeak_path]
                 cmd.extend(self.lang.voice)
                 try:
-                    # IS_WIN32 = 'win32' in str(sys.platform).lower() #maybe sys.platform is more secure
-                    is_win = platform.system() == "Windows"
                     if is_win:
                         startupinfo = subprocess.STARTUPINFO()
                         startupinfo.dwFlags = subprocess.CREATE_NEW_CONSOLE | subprocess.STARTF_USESHOWWINDOW
