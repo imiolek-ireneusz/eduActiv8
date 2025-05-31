@@ -29,7 +29,7 @@ if sys.platform == "win32" or sys.platform == "cygwin":
     import i18n.custom.a4a_py.nl
     import i18n.custom.sr
     import i18n.custom.word_lists.sr_di
-    import i18n.custom.a4a_py.en_GB
+    import i18n.custom.a4a_py.sr
     import i18n.custom.ca
     import i18n.custom.word_lists.ca_di
     import i18n.custom.a4a_py.ca
@@ -64,7 +64,10 @@ if sys.platform == "win32" or sys.platform == "cygwin":
     import i18n.custom.a4a_py.uk
     import i18n.custom.fi
     import i18n.custom.word_lists.fi_di
-    import i18n.custom.a4a_py.en_GB
+    import i18n.custom.a4a_py.fi
+    import i18n.custom.sv
+    import i18n.custom.word_lists.sv_di
+    import i18n.custom.a4a_py.sv
     import i18n.custom.el
     import i18n.custom.word_lists.el_di
     import i18n.custom.kbrd.el
@@ -72,7 +75,7 @@ if sys.platform == "win32" or sys.platform == "cygwin":
     import i18n.custom.a4a_py.el
     import i18n.custom.he
     import i18n.custom.word_lists.he_di
-    import i18n.custom.a4a_py.en_GB
+    import i18n.custom.a4a_py.he
     import i18n.custom.lkt
     import i18n.custom.word_lists.lkt_di
     import i18n.custom.a4a_py.lkt
