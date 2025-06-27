@@ -1,45 +1,84 @@
-.\" 
-.TH "eduactiv8" "6" "4.25.05" "" "Games"
+.TH "eduactiv8" "6" "4.25.07" "" "Games"
 .SH "NAME"
-eduactiv8 \-  Educational Activities for Kids
+eduactiv8 \- Free and Open-Source Educational Activities for Kids
+
 .SH "SYNOPSIS"
 .B eduactiv8
+
 .SH "DESCRIPTION"
-eduActiv8 is a set of educational activities and games for children aged between 3 and 10. The activities are grid based and can be played all in a single window. eduActiv8 includes maths, reading, writing, painting, and memory activities.
+.B eduActiv8
+is a free, open-source collection of interactive educational activities and games designed for children aged 3 and upwards. It aims to make learning mathematics, language, and other fundamental subjects fun and accessible. The application provides hundreds of diverse activities that are primarily grid-based or interactive, playable within a single window, and operate entirely offline.
+
+.P
+Initially developed as a personal project, eduActiv8 (formerly known as pySioGame) has grown into a cross-platform program used by thousands globally, including in homes and schools, with a strong focus on intuitive, child-friendly design.
 
 .SH "FEATURES"
 .TP
-- Letter flashcards, jumbled abc, word mazes, sort letters
+.B Comprehensive Learning Areas
+Activities cover core concepts in mathematics (number recognition, counting, basic operations, fractions, shapes, patterns, time, elapsed time), language (letter flashcards, alphabetizing, word mazes, word building, learn-to-write exercises), general logic games, short-term memory training, puzzles, and colour recognition.
 .TP
-- Learn to write (best used with touchscreens or drawing tablets)
+.B Learn-to-Write
+Features exercises to learn printed and cursive letters (best used with touchscreens or drawing tablets).
 .TP
-- Maths: count, basic operations, sort numbers, fractions, shapes, patterns, time, elapsed time
+.B Touch Typing Tutor
+Aids in learning key positions on a keyboard (UK, US, German, Greek, French, Polish, Russian layouts supported on desktop).
 .TP
-- Learn colour names
+.B Interactive Worksheets & Simulations
+Offers traditional drill activities through interactive worksheets and "simulation" activities allowing children to manipulate numbers and observe changes for deeper understanding.
 .TP
-- Short term memory training activities
+.B Customizable Difficulty
+Activities can be tailored to match a child's age and skill level, with advanced options for manual difficulty adjustment via XML configuration files.
 .TP
-- Mazes and puzzles
+.B Progress Tracking
+Includes a user management system to track progress within each activity for individual learners.
+.TP
+.B Multilingual Support
+Available in a wide range of languages, with ongoing community contributions for translations.
+.TP
+.B Offline Operation
+All activities run completely offline, requiring no internet connection after initial download.
+.TP
+.B Cross-Platform Availability
+Runs on Windows, macOS, and Linux. A limited mobile version for iOS (under the names eduActiv8: Language Arts and eduActiv8: Math & Science) is developed as a separate project.
 
 .SH "REQUIREMENTS"
 .TP
-- python 2.7+
+.B Python 3+
+The application is compatible with Python 3.
 .TP
-- python-pygame
+.B python-pygame
+Required for graphical user interface and game logic.
 .TP
-- espeak
+.B espeak
+(Optional) Needed for text-to-speech voice synthesis, enabling listening exercises. Note: eSpeak functionality may be limited on non-Linux platforms.
+.TP
+.B python-pyfribidi
+(Optional) Required for correct rendering of Hebrew and Arabic languages.
+.TP
+.B Fonts
+Certain font packages (e.g., fonts-freefont-ttf on Debian, ttf-freefont on Ubuntu, gnu-free-sans-fonts on Fedora) may be required depending on your distribution for proper display of characters.
 
 .SH "USAGE"
+The application starts by default in windowed mode but can be switched to fullscreen by pressing Ctrl+F after logging in, or via the Preferences on the login screen. Fullscreen preference is saved for future sessions.
 
-The game will start by default in windowed mode, but it can be changed into a fullscreen mode. The configuration will be maintained whenever it is started again later.
+Upon launch, a login screen is presented. Users can create an offline account or use the default Guest account. A desired age (school year) can be selected during login to fine-tune activity difficulty.
 
-Initially a login screen will be presented to the user. Users can either create an offline account for themselves or use the default Guest account. When logging into the game a desired age (school year) can be selected to fine tune the difficulty of activities.
+Once logged in, the home screen displays three main categories of activities. Selecting a group presents a list of categories suitable for the chosen age, and further selection reveals available activities. Clicking an activity icon starts it in full-screen mode. A 'back' button in the top-left corner allows navigation to previous screens.
 
-When logged in, the game will present a starting screen with 3 main groups of categories of activities to choose from. When a group is selected a list of all categories suitable for previously selected age group will be shown. Further selection of a category will display a list of available activities. Upon clicking on an activity icon it will start taking up the whole screen. A back button is located in the top left corner to go back to the previous screen.
-
-There are two steps to selecting a language. The language selected on the login screen will change the language of the login screen only, but also will be used as a default language for new users. After logging in individual users can choose a different language - the icon to access the language selection screen is located in the bottom left corner of the home screen - the language selected here will be saved for each user individually. This allows users to use the program to learn other languages.
+Language selection is twofold: a language chosen on the login screen sets the default for new users and the login screen itself. After logging in, individual users can select a different language via an icon in the bottom-left corner of the home screen; this preference is saved per user, allowing the program to be used for learning other languages.
 
 .SH "FILES"
-The game data for each user is stored at ~/.local/share/eduactiv8/
+User-specific game data for eduActiv8 is stored in the `~/.local/share/eduactiv8/` directory.
+
 .SH "SEE ALSO"
-You can find more information at https://www.eduactiv8.org
+For more comprehensive information, installation guides, and to support the project, please visit the official website:
+.UR https://www.eduactiv8.org
+.UE
+
+The project's source code and development discussions can be found on GitHub:
+.UR https://github.com/imiolek-ireneusz/eduActiv8
+.UE
+
+For community contributions to translations, visit Transifex:
+.UR https://www.transifex.com/eduactiv8/eduactiv8/
+.UE
