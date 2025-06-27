@@ -109,54 +109,36 @@ def rgb_to_hsl(r, g, b, a=255):
 
 
 def unival(value):
-    val = value
-    if sys.version_info < (3, 0):
-        try:
-            if not isinstance(value, unicode):
-                val = unicode(value, "utf-8")
-        except UnicodeDecodeError:
-            val = value
-        except TypeError:
-            val = value
-    else:
-        val = value
-    return val
+    """Deprecated - Python 2 support dropped. Left in as a lot of code still uses it."""
+    return value
 
 
 def is_rtl(s, alpha):
-    if sys.version_info < (3, 0):
-        alpha = unival(alpha)
     if s[0] in alpha and s[-1] in alpha:
         return True
     return False
 
 
 def he_rtl_man(s):
-    st = unival(s)
-    return get_display(st)
+    return get_display(s)
 
 
 def ar_rtl(s):
-    st = unival(s)
     if fribidi_loaded:
-        return fribidi.log2vis(st)
+        return fribidi.log2vis(s)
     elif ar_reshaper_loaded:
-        reshaped_text = reshaper.reshape(st)
+        reshaped_text = reshaper.reshape(s)
         return get_display(reshaped_text)
     else:
-        return st
+        return s
 
 
 def reverse(s, lng):
-    if sys.version_info < (3, 0):
-        if not isinstance(s, unicode):
-            s = s.decode('utf-8')
     if lng == "ar":
         return ar_rtl(s)
     elif lng == "he":
         if fribidi_loaded:
-            st = unival(s)
-            return fribidi.log2vis(st)
+            return fribidi.log2vis(s)
         else:
             return he_rtl_man(s)
 
@@ -248,15 +230,7 @@ def get_word_list(di):
 
 
 def first_upper(text):
-    # word_list[i][k][0]) + word_list[i][k][1:]
-    if sys.version_info < (3, 0):
-        utf = unicode(text, "utf-8")
-        # utf = text
-        text = utf[0].upper() + utf[1:]
-        text = text.encode("utf-8")
-    else:
-        text = text[0].upper() + text[1:]
-
+    text = text[0].upper() + text[1:]
     return text
 
 
