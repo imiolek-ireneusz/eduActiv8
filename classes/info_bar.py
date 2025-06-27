@@ -2,9 +2,11 @@
 
 import os
 import pygame
+import logging
 import classes.extras as ex
 
 from enum import IntEnum
+from classes.enums import MenuLevel
 
 class ButtonCode(IntEnum):
     CONFIRM = 0
@@ -355,12 +357,14 @@ class InfoBar:
 
     def handle(self, event, layout, mainloop):
         if event.type == pygame.MOUSEBUTTONDOWN:
+            logging.debug("Handling mouse button down event in InfoBar.")
             if event.button == 1:
                 pos = event.pos
                 btn = self.hover(pos, layout)
                 self.mainloop.mbtndno = btn
 
         if event.type == pygame.MOUSEBUTTONUP:
+            logging.debug("Handling mouse button up event in InfoBar.")
             # Change the x/y screen coordinates to grid coordinates
             pos = event.pos
             btn = self.hover(pos, layout)
@@ -396,11 +400,11 @@ class InfoBar:
                     elif btn.btn_id == ButtonCode.SHOW_INFO:
                         self.show_info_dialog()
                     elif btn.btn_id == ButtonCode.BACK:
-                        self.show_menu()
+                        self.back_to_menu()
             elif event.button > 1:
                 if btn is not None:
                     if btn.btn_id == ButtonCode.BACK:
-                        self.show_menu(True)
+                        self.back_to_menu(True)
                     elif btn.btn_id == ButtonCode.LEVEL_UP or btn.btn_id == ButtonCode.CHAPTER_UP:
                         if  self.level.lvl < self.level.lvl_count:
                             if self.mainloop.config.allow_manual_level_up:
@@ -463,31 +467,45 @@ class InfoBar:
         if self.last_hover is not None:
             self.last_hover.on_mouse_out()
 
-    def show_menu(self, start=False):
+    def back_to_menu(self, start=False):
         self.mainloop.redraw_needed = [True, True, True]
+        #self.mainloop.menu_content_changed = True
+        logging.debug(f"Back to menu: {self.mainloop.menu_level}")
         if start:
-            self.mainloop.menu_level = 0
+            self.mainloop.menu_level = MenuLevel.HOME #0
+            logging.debug(f"Back to HOME")
         else:
-            if self.mainloop.menu_level == 4:
-                self.mainloop.menu_level = 3
-            elif self.mainloop.menu_level == 3:
+            if self.mainloop.menu_level == MenuLevel.GAME: #4:
+                self.mainloop.menu_level = MenuLevel.GAMES_IN_CATEGORY # 3
+                logging.debug(f"Back to GAMES_IN_CATEGORY")
+            elif self.mainloop.menu_level == MenuLevel.GAMES_IN_CATEGORY: #3:
                 if self.mainloop.m.current_inner:
-                    self.mainloop.m.current_inner = False
-                    self.mainloop.menu_level = 2
+                    #*# self.mainloop.m.current_inner = False
+                    logging.debug(f"Back to SUB_CATEGORIES")
+                    self.mainloop.menu_level = MenuLevel.SUB_CATEGORIES #2
+
+                    #self.mainloop.m.change_cat(self.mainloop.menu_category)
                 else:
                     self.mainloop.m.current_inner = False
-                    self.mainloop.menu_level = 1
-            elif self.mainloop.menu_level == 2:
-                self.mainloop.menu_level = 1
+                    logging.debug(f"Back to CATEGORIES from games")
+                    self.mainloop.menu_level = MenuLevel.CATEGORIES # 1
+                    #self.mainloop.m.change_cat(self.mainloop.menu_category)
+            elif self.mainloop.menu_level == MenuLevel.SUB_CATEGORIES: #2:
+                logging.debug(f"Back to CATEGORIES from games")
+                self.mainloop.menu_level = MenuLevel.CATEGORIES #1
+                #self.mainloop.m.change_cat(self.mainloop.menu_category)
             else:
-                self.mainloop.menu_level = 0
-        if self.mainloop.menu_level == 0:
+                logging.debug(f"Back to HOME from category")
+                self.mainloop.menu_level = MenuLevel.HOME #0
+
+        if self.mainloop.menu_level == MenuLevel.HOME: #0:
             self.mainloop.game_board.vis_buttons = (0, 0, 0, 0, 1, 0, 1, 0, 0)
             self.buttons_restore()
             self.mainloop.m.start_hidden_game(0)
         else:
             self.title = ""
             self.subtitle = ""
+            #self.mainloop.m.start_hidden_game(272)
             if self.mainloop.m.game_dbid == 271:
                 self.mainloop.m.start_hidden_game(272)
             else:
@@ -598,13 +616,13 @@ class InfoBar:
         self.layout_update()
 
     def realign(self):
-        if self.mainloop.menu_level > 0:
+        if self.mainloop.menu_level != MenuLevel.HOME: # > 0:
             self.home_btns_w = 50 + 66
             self.btns[11].rect.top = 5 + self.margin_top
         else:
             self.home_btns_w = 0
             self.btns[11].rect.top = -200
-        if self.mainloop.menu_level < 3:
+        if self.mainloop.menu_level != MenuLevel.GAME: #< 3:
             self.reset_titles()
         self.rescale_title_space()
         self.resetbtns()
