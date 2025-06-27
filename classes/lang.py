@@ -166,32 +166,19 @@ class Language:
                 self.voice = None
 
             code_lc = self.lang.lower()
-            if sys.version_info < (3, 0):
-                exec("import i18n.custom." + code_lc)
-                if not login:
-                    exec("import i18n.custom.word_lists." + code_lc + "_di")
-                    exec("import i18n.custom.a4a_py." + self.lang + " as a4a_word_lst")
-                    if ast.literal_eval(lang.attrib['has_keyboard']) is True:
-                        exec("import i18n.custom.kbrd." + code_lc)
-                        exec("import i18n.custom.kbrd." + code_lc[0:2] + "_course")
-                        self.kbrd = eval("i18n.custom.kbrd." + code_lc)
-                        self.kbrd_course_mod = eval("i18n.custom.kbrd." + code_lc[0:2] + "_course")
+            import importlib
+            importlib.import_module("i18n.custom." + code_lc)
+            if not login:
+                importlib.import_module("i18n.custom.word_lists." + code_lc + "_di")
+                importlib.import_module("i18n.custom.a4a_py." + self.lang)
+                a4a_word_lst = eval("i18n.custom.a4a_py." + self.lang)
+                if ast.literal_eval(lang.attrib['has_keyboard']) is True:
+                    importlib.import_module("i18n.custom.kbrd." + code_lc)
+                    importlib.import_module("i18n.custom.kbrd." + code_lc[0:2] + "_course")
+                    self.kbrd = eval("i18n.custom.kbrd." + code_lc)
+                    self.kbrd_course_mod = eval("i18n.custom.kbrd." + code_lc[0:2] + "_course")
 
-                    self.di = eval("i18n.custom.word_lists." + code_lc + "_di.di")
-            else:
-                import importlib
-                importlib.import_module("i18n.custom." + code_lc)
-                if not login:
-                    importlib.import_module("i18n.custom.word_lists." + code_lc + "_di")
-                    importlib.import_module("i18n.custom.a4a_py." + self.lang)
-                    a4a_word_lst = eval("i18n.custom.a4a_py." + self.lang)
-                    if ast.literal_eval(lang.attrib['has_keyboard']) is True:
-                        importlib.import_module("i18n.custom.kbrd." + code_lc)
-                        importlib.import_module("i18n.custom.kbrd." + code_lc[0:2] + "_course")
-                        self.kbrd = eval("i18n.custom.kbrd." + code_lc)
-                        self.kbrd_course_mod = eval("i18n.custom.kbrd." + code_lc[0:2] + "_course")
-
-                    self.di = eval("i18n.custom.word_lists." + code_lc + "_di.di")
+                self.di = eval("i18n.custom.word_lists." + code_lc + "_di.di")
             self.lang_file = eval("i18n.custom." + code_lc)
             self.lang_id = int(lang.attrib["id"])
 
@@ -273,22 +260,14 @@ class Language:
                 for key in each_d.keys():
                     if isinstance(each_d[key], list):
                         for index in range(len(each_d[key])):
-                            if sys.version_info < (3, 0):
-                                if isinstance(each_d[key][index], basestring):
-                                    each_d[key][index] = reverse(each_d[key][index], self.lang)
-                            else:
-                                if isinstance(each_d[key][index], str):
-                                    each_d[key][index] = reverse(each_d[key][index], self.lang)
+                            if isinstance(each_d[key][index], str):
+                                each_d[key][index] = reverse(each_d[key][index], self.lang)
                     else:
                         each_d[key] = reverse(each_d[key], self.lang)
             for each in [self.solid_names, self.shape_names]:
                 for index in range(len(each)):
-                    if sys.version_info < (3, 0):
-                        if isinstance(each[index], basestring):
-                            each[index] = reverse(each[index], self.lang)
-                    else:
-                        if isinstance(each[index], str):
-                            each[index] = reverse(each[index], self.lang)
+                    if isinstance(each[index], str):
+                        each[index] = reverse(each[index], self.lang)
 
         self.dp.update(self.d)
         self.dp.update(self.lang_file.dp)

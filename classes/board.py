@@ -5,7 +5,6 @@ import copy
 import os
 import pygame
 import random
-import sys
 
 import classes.universal
 import classes.extras as ex
@@ -229,15 +228,7 @@ class Unit(pygame.sprite.Sprite):
                             value = self.wrapped_text()
                             lv = len(value)
                             for i in range(lv):
-                                if sys.version_info < (3, 0):
-                                    try:
-                                        val = unicode(value[i], "utf-8")
-                                    except UnicodeDecodeError:
-                                        val = value[i]
-                                    except TypeError:
-                                        val = value[i]
-                                else:
-                                    val = value[i]
+                                val = value[i]
                                 try:
                                     text = self.font.render("%s" % (val), 1, self.font_color)
                                 except:
@@ -289,89 +280,44 @@ class Unit(pygame.sprite.Sprite):
                 self.draw_check_marks()
 
     def wrapped_text(self):
-        if sys.version_info < (3, 0):
-            if isinstance(self.value, basestring):
-                # if value is a string turn it into a single item list
-                if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
-                    value = [self.value]
-                else:
-                    # else enter extra line breaks
-                    if len(self.value) > 5:
-                        line = ""
-                        test_line = ""
-                        word = ""
-                        value = []
-                        try:
-                            valx = unicode(self.value, "utf-8")
-                        except UnicodeDecodeError:
-                            valx = self.value
-                        except TypeError:
-                            valx = self.value
-                        linelen = len(valx)
+        if isinstance(self.value, str):
+            # if value is a string turn it into a single item list
+            if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
+                value = [self.value]
+            else:
+                # else enter extra line breaks
+                if len(self.value) > 5:
+                    line = ""
+                    test_line = ""
+                    word = ""
+                    value = []
+                    valx = self.value
+                    linelen = len(valx)
 
-                        for i in range(linelen):
-                            if valx[i] == "\n":
-                                test_line = "" + word
+                    for i in range(linelen):
+                        if valx[i] == "\n":
+                            test_line = "" + word
+                            word = ""
+                            value.append(line)
+                            line = "" + test_line
+                        elif valx[i] == " " or i == linelen - 1:
+                            test_line = test_line + word + valx[i]
+                            if self.font.size(test_line)[0] < self.rect.w:
+                                line = "" + test_line
+                                word = ""
+                            else:
+                                test_line = "" + word + valx[i]
                                 word = ""
                                 value.append(line)
                                 line = "" + test_line
-                            elif valx[i] == " " or i == linelen - 1:
-                                test_line = test_line + word + valx[i]
-                                if self.font.size(test_line)[0] < self.rect.w:
-                                    line = "" + test_line
-                                    word = ""
-                                else:
-                                    test_line = "" + word + valx[i]
-                                    word = ""
-                                    value.append(line)
-                                    line = "" + test_line
-                            else:
-                                word += valx[i]
-                        if len(test_line) > 0:
-                            value.append(test_line)
-                    else:
-                        value = [self.value]
-            else:
-                value = self.value
+                        else:
+                            word += valx[i]
+                    if len(test_line) > 0:
+                        value.append(test_line)
+                else:
+                    value = [self.value]
         else:
-            if isinstance(self.value, str):
-                # if value is a string turn it into a single item list
-                if self.font.size(self.value)[0] < self.rect.w or not self.text_wrap:
-                    value = [self.value]
-                else:
-                    # else enter extra line breaks
-                    if len(self.value) > 5:
-                        line = ""
-                        test_line = ""
-                        word = ""
-                        value = []
-                        valx = self.value
-                        linelen = len(valx)
-
-                        for i in range(linelen):
-                            if valx[i] == "\n":
-                                test_line = "" + word
-                                word = ""
-                                value.append(line)
-                                line = "" + test_line
-                            elif valx[i] == " " or i == linelen - 1:
-                                test_line = test_line + word + valx[i]
-                                if self.font.size(test_line)[0] < self.rect.w:
-                                    line = "" + test_line
-                                    word = ""
-                                else:
-                                    test_line = "" + word + valx[i]
-                                    word = ""
-                                    value.append(line)
-                                    line = "" + test_line
-                            else:
-                                word += valx[i]
-                        if len(test_line) > 0:
-                            value.append(test_line)
-                    else:
-                        value = [self.value]
-            else:
-                value = self.value
+            value = self.value
         return value
 
     def draw_check_marks(self):
