@@ -2,6 +2,7 @@
 
 import os
 import pygame
+import logging  # Import logging for better error reporting
 
 import classes.extras as ex
 
@@ -59,17 +60,21 @@ class DialogBtn(pygame.sprite.Sprite):
         self.active_img = self.img1
         if not self.hover:
             self.hover = True
-            self.update()
+            self.wnd.mainloop.redraw_needed[0] = True
+            self.wnd.mainloop.redraw_needed[1] = True
+            #self.update()
             self.wnd.update_me = True
-            self.wnd.update()
+            #self.wnd.update()
 
     def mouse_out(self):
         self.active_img = self.img1
         if self.hover:
             self.hover = False
-            self.update()
+            self.wnd.mainloop.redraw_needed[0] = True
+            self.wnd.mainloop.redraw_needed[1] = True
+            #self.update()
             self.wnd.update_me = True
-            self.wnd.update()
+            #self.wnd.update()
 
     def update(self):
         self.wnd.mainloop.flip_needed = True
@@ -94,8 +99,13 @@ class TextRectException:
 class DialogWnd:
     def __init__(self, mainloop):
         self.mainloop = mainloop
-        self.sbg = None
+        self.screen = self.mainloop.dialogwnd
+        self.screenbg = self.mainloop.dialogbg
+        self.sbg = pygame.Surface(
+            (self.mainloop.sizer.screen_w, self.mainloop.sizer.screen_h),
+            flags=pygame.SRCALPHA)
         self.dialog_type = 0
+        self.update_me = True
 
         self.color = (255, 255, 255)
         self.widget_list = pygame.sprite.LayeredUpdates()
@@ -126,8 +136,9 @@ class DialogWnd:
         self.font_xs = None
         self.reload_fonts()
         self.default_font = None
-        #self.text = ""
-        #self.set_text(self.text, font=1)
+        self.font_color = ex.hsv_to_rgb(self.mainloop.cl.color_sliders[5][0] * self.mainloop.cl.step, 255, 100)
+        self.text = ""
+        self.set_text(self.text, font=1)
 
         self.wnd_close_function = None
         self.load_images()
@@ -173,32 +184,29 @@ class DialogWnd:
         pass
 
     def fsubmit_close_game(self, args):
+        logging.info("Dialog: Close Game requested.")
         self.hide_dialog()
-        self.mainloop.done = True
-        self.mainloop.done4good = True
+        # Use mainloop's running flag for application exit
+        self.mainloop.running = False
 
     def flogout(self, args):
+        logging.info("Dialog: Logout requested.")
         self.hide_dialog()
-        self.mainloop.done = True
-        self.mainloop.window_state = "LOG IN"
+        # Transition to LoginState using the change_state mechanism
+        from eduactiv8 import LoginState  # Import here to avoid circular dependency
+        self.mainloop.change_state(LoginState(self.mainloop))
         self.mainloop.userid = -1
         self.mainloop.logged_out = True
         self.mainloop.db.unset_autologin()
-
-        self.mainloop.size = self.mainloop.wn_size[:]
-        self.mainloop.fs_rescale(self.mainloop.info)
-        self.mainloop.sizer.update_sizer(self.mainloop.size[0], self.mainloop.size[1])
 
     def fsubmit_close_wnd(self, args):
         self.hide_dialog()
 
     def show_dialog(self, dialog_type, txt, f=None, fc=None, bg_type=0, decor_type=0):
-        self.sbg = pygame.Surface(
-            (self.mainloop.sizer.screen_w, self.mainloop.sizer.screen_h),
-            flags=pygame.SRCALPHA)  # the size of your rect
         self.wnd_close_function = fc
         self.mainloop.show_dialogwnd = True
-        self.mainloop.redraw_needed = [True, True, True]
+        self.update_me = True
+        #self.mainloop.redraw_needed = [True, True, True]
         self.dialog_type = dialog_type
         self.bg_type = bg_type
         self.decor_type = decor_type
@@ -254,42 +262,63 @@ class DialogWnd:
 
     def handle(self, event):
         if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.MOUSEBUTTONUP:
-            pos = [event.pos[0] - self.mainloop.game_board.sizer.dialogwnd_pos[0],
+            try:
+                pos = [event.pos[0] - self.mainloop.game_board.sizer.dialogwnd_pos[0],
                    event.pos[1] - self.mainloop.game_board.sizer.dialogwnd_pos[1]]
-            found = False
-            for each in self.elements:
-                if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and \
-                        each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
-                    each.handle(event)
-                    found = True
-            if not found:
+                found = False
                 for each in self.elements:
-                    each.mouse_out()
-        else:
-            pass
+                    if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and \
+                            each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
+                        each.handle(event)
+                        found = True
+                if not found:
+                    for each in self.elements:
+                        each.mouse_out()
+            except:
+                pass
+
+        elif event.type == pygame.VIDEORESIZE:
+            self.resize()
+
+    def resize(self):
+        self.sbg = pygame.Surface(
+            (self.mainloop.sizer.screen_w, self.mainloop.sizer.screen_h),
+            flags=pygame.SRCALPHA)
+        #self.mainloop.redraw_needed = [True, True, True]
+        self.update_me = True
+
 
     def update(self):
-        self.screen = self.mainloop.dialogwnd
-        self.screenbg = self.mainloop.dialogbg
-        self.sbg.fill((255, 255, 255, 180))  # this fills the entire surface
-        self.screenbg.blit(self.sbg, (0, 0))
-        self.mainloop.redraw_needed = [True, True, True]
+        if self.mainloop.show_dialogwnd and self.update_me:
+            self.screen = self.mainloop.dialogwnd
+            self.screenbg = self.mainloop.dialogbg
 
-        self.screen.blit(self.images[self.bg_type], self.img_pos)
+            if self.sbg is not None:
+                self.sbg.fill((255, 255, 255, 180))  # this fills the entire surface
+                self.screenbg.blit(self.sbg, (0, 0))
+                #self.mainloop.redraw_needed = [True, True, True]
 
-        self.screen.blit(self.decors[self.decor_type], self.img_pos)
-        if self.font_size == 2:
-            self.screen.blit(self.text_canvas, (72, 70))
-        else:
-            self.screen.blit(self.text_canvas, (69, 62))
+            self.screen.blit(self.images[self.bg_type], self.img_pos)
 
-        for each in self.widget_list:
-            each.update()
+            self.screen.blit(self.decors[self.decor_type], self.img_pos)
+            if self.font_size == 2:
+                self.screen.blit(self.text_canvas, (72, 70))
+            else:
+                self.screen.blit(self.text_canvas, (69, 62))
 
-        if self.dialog_type < 3:
-            self.widget_list.draw(self.screen)
-        else:
-            self.widget_list2.draw(self.screen)
+            for each in self.widget_list:
+                each.update()
+
+            if self.dialog_type < 3:
+                self.widget_list.draw(self.screen)
+            else:
+                self.widget_list2.draw(self.screen)
+
+            # self.mainloop.redraw_needed[0] = True
+            # Signal mainloop for full screen update after drawing dialog
+            #self.mainloop.redraw_needed = [True, True, True]  # This forces GameState to redraw everything
+            self.mainloop.flip_needed = True  # Flag mainloop to flip the display
+            self.update_me = False  # Reset update_me to avoid unnecessary redraws
 
     # Title: Word-wrapped text display module - render_textrect
     # Author: David Clark (da_clark at shaw.ca)
