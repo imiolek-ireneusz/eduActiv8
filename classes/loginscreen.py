@@ -4,8 +4,11 @@ import os
 import pygame
 import sys
 import math
+import logging  # Added logging for better debugging
 
 import classes.extras as ex
+
+# from classes.enums import WindowState, MenuLevel  # Assuming these are defined here
 
 
 class Colors:
@@ -53,10 +56,10 @@ class Colors:
         self.bg_color_disabled = (255, 255, 255, 10)  # default disabled color of the age buttons
         self.border_disabled = (255, 255, 255, 30)  # age buttons disabled
 
-        self.border_color = self.color_mono #(128, 116, 85)
-        self.border_focused = self.color_mono_focused # (118, 106, 75)
+        self.border_color = self.color_mono  # (128, 116, 85)
+        self.border_focused = self.color_mono_focused  # (118, 106, 75)
 
-        self.font_color = self.color_mono_font #(81, 35, 4)
+        self.font_color = self.color_mono_font  # (81, 35, 4)
         self.edit_font_color = self.color_mono_font
 
         # Check boxes
@@ -74,10 +77,10 @@ class Colors:
         self.btn_font_color = self.color_mono_font  # (52, 17, 2)
         self.trans_btn_font_color = (255, 85, 85)
 
-        self.btn_border_color = self.color_mono #(26, 6, 0)
-        self.btn_border_focused = self.color_mono_focused #(72, 17, 2)
-        self.btn_border_color_l = self.color_mono #(26, 6, 0)
-        self.btn_border_focused_l = self.color_mono_focused #(72, 17, 2)
+        self.btn_border_color = self.color_mono  # (26, 6, 0)
+        self.btn_border_focused = self.color_mono_focused  # (72, 17, 2)
+        self.btn_border_color_l = self.color_mono  # (26, 6, 0)
+        self.btn_border_focused_l = self.color_mono_focused  # (72, 17, 2)
 
         self.c2a_btn_bg_color = (25, 255, 25, 125)  # all butons and non selected age buttons
         self.c2a_btn_hover_color = (25, 255, 25, 175)
@@ -91,8 +94,8 @@ class Colors:
         self.slb_mid_lines = self.color_mono
 
         # LoginScreen
-        self.ls_font_color = self.color_mono_font #(81, 35, 4)
-        self.ls_header_font_color = self.color_mono_font #(255, 179, 111)
+        self.ls_font_color = self.color_mono_font  # (81, 35, 4)
+        self.ls_header_font_color = self.color_mono_font  # (255, 179, 111)
         self.ls_bg_col = (255, 255, 255, 70)  # main panel
         self.bg_col = self.ls_bg_col
         self.ls_bg_sidecol = (0, 0, 0, 50)  # menu panel
@@ -103,7 +106,6 @@ class Colors:
         self.key_bg_color_disabled = self.inner_color
         self.key_bg_color = self.bg_color_disabled
 
-
         self.key_bg_color_mouse_dn = (255, 255, 255, 130)
         self.key_bg_color_mouse_ovr = (255, 255, 255, 100)
 
@@ -111,7 +113,7 @@ class Colors:
         self.key_bg_focus = (255, 255, 255, 100)
         self.key_border_color = (0, 0, 0)
         self.key_border_focused = (255, 0, 0)
-        self.key_font_color = self.color_mono_font #(81, 35, 4)
+        self.key_font_color = self.color_mono_font  # (81, 35, 4)
 
     def fill_gradient(self, surface, color, gradient, rect=None, vertical=True, forward=True):
         """fill a surface with a gradient pattern
@@ -201,7 +203,8 @@ class PEdit(pygame.sprite.Sprite):
 
         self.lines = [[0, 0], [self.w - 1, 0], [self.w - 1, self.h - 1], [0, self.h - 1]]
         self.lines_focused = [[0, 0], [self.w - 2, 0], [self.w - 2, self.h - 2], [0, self.h - 2]]
-        self.image = pygame.Surface((w, h), flags=pygame.SRCALPHA)
+        # Ensure dimensions are at least 1x1 to prevent Pygame errors
+        self.image = pygame.Surface((max(1, w), max(1, h)), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [l, t]
         self.update()
@@ -241,15 +244,8 @@ class PEdit(pygame.sprite.Sprite):
                 for i in range(len(self.value)):
                     val += "*"
             else:
-                if sys.version_info < (3, 0):
-                    try:
-                        val = unicode(self.value, "utf-8")
-                    except UnicodeDecodeError:
-                        val = self.value
-                    except TypeError:
-                        val = self.value
-                else:
-                    val = self.value
+                # Python 2/3 compatibility for unicode removed, assuming Python 3
+                val = self.value
             text = self.ls.font_2.render("%s" % val, 1, self.ls.colors.edit_font_color)
 
             if self.select_item:
@@ -266,6 +262,7 @@ class PEdit(pygame.sprite.Sprite):
 
             self.image.blit(text, (self.font_x, self.font_y))
             self.image.blit(text, (self.font_x, self.font_y))
+
         elif self.update_me and not self.visible:
             self.update_me = False
             self.image.fill(self.bg_color)
@@ -425,7 +422,8 @@ class PCheckbox(pygame.sprite.Sprite):
         self.border_focused = self.ls.colors.cb_border_focused
 
         self.font_color = self.ls.font_color
-        self.image = pygame.Surface((w, h), flags=pygame.SRCALPHA)
+        # Ensure dimensions are at least 1x1
+        self.image = pygame.Surface((max(1, w), max(1, h)), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [l, t]
 
@@ -446,21 +444,15 @@ class PCheckbox(pygame.sprite.Sprite):
             if self.checked:
                 pygame.draw.lines(self.image, self.border_color, False, self.cbtick, 3)
 
-            if sys.version_info < (3, 0):
-                try:
-                    val = unicode(self.value, "utf-8")
-                except UnicodeDecodeError:
-                    val = self.value
-                except TypeError:
-                    val = self.value
-            else:
-                val = self.value
+            # Python 2/3 compatibility removed
+            val = self.value
             text = self.ls.font_2.render("%s" % (val), 1, self.font_color)
             if self.right_align:
                 font_x = (self.w - self.ls.font_2.size(val)[0]) - 35
             else:
                 font_x = 30
             font_y = (self.h - self.ls.font_2.size(val)[1]) // 2
+            self.image.blit(text, (font_x, font_y))
             self.image.blit(text, (font_x, font_y))
         elif self.update_me:
             self.update_me = False
@@ -482,10 +474,7 @@ class PCheckbox(pygame.sprite.Sprite):
 
     def onMouseButtonDown(self):
         self.onFocus()
-        if self.checked:
-            self.checked = False
-        else:
-            self.checked = True
+        self.checked = not self.checked  # Toggle checked state
 
     def onMouseButtonUp(self):
         pass
@@ -539,7 +528,8 @@ class PLabel(pygame.sprite.Sprite):
         self.select_item = False
         self.update_me = True
         self.hover = False
-        self.image = pygame.Surface((w, h), flags=pygame.SRCALPHA)
+        # Ensure dimensions are at least 1x1
+        self.image = pygame.Surface((max(1, w), max(1, h)), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [l, t]
         self.font_v = self.ls.font_2
@@ -548,15 +538,8 @@ class PLabel(pygame.sprite.Sprite):
         if self.update_me:
             self.update_me = False
             self.image.fill(self.ls.colors.transparent_fill)
-            if sys.version_info < (3, 0):
-                try:
-                    val = unicode(self.value, "utf-8")
-                except UnicodeDecodeError:
-                    val = self.value
-                except TypeError:
-                    val = self.value
-            else:
-                val = self.value
+            # Python 2/3 compatibility removed
+            val = self.value
             try:
                 text = self.font_v.render("%s" % val, 1, self.font_color)
 
@@ -567,8 +550,11 @@ class PLabel(pygame.sprite.Sprite):
                 self.font_y = (self.h - self.font_v.size(val)[1]) // 2
 
                 self.image.blit(text, (self.font_x, self.font_y))
-            except:
-                pass
+                self.image.blit(text, (self.font_x, self.font_y))
+            except Exception as e:
+                logging.error(f"Error rendering PLabel text '{val}': {e}")
+                # Fallback: draw an empty surface or a placeholder
+                self.image.fill(self.ls.colors.transparent_fill)
 
     def handle(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -661,6 +647,10 @@ class PButton2(PButton):
         PButton.__init__(self, ls, w, h, l, t, focus_order, value, fsubmit, right_align=right_align,
                          transparent=transparent)
         self.disabled = True
+        # Ensure dimensions are at least 1x1
+        self.image = pygame.Surface((max(1, w), max(1, h)), flags=pygame.SRCALPHA)
+        self.rect = self.image.get_rect()
+        self.rect.topleft = [l, t]
 
     def set_value2(self, txt):
         self.value2 = txt
@@ -695,14 +685,14 @@ class PButton2(PButton):
                 font_x2 = (self.w - self.font_v2.size(val2)[0]) // 2
                 font_y2 = 25
                 self.image.blit(text2, (font_x2, font_y2))
+                self.image.blit(text2, (font_x2, font_y2))
             else:
                 font_y = (self.h - self.font_v.size(val)[1]) // 2
-            # double blit due to a problem with semi-transparent background - especially with Hebrew letters
+
             self.image.blit(text, (font_x, font_y))
             self.image.blit(text, (font_x, font_y))
-            if self.ls.mainloop.lang.lang == "he":
-                self.image.blit(text, (font_x, font_y))
-                self.image.blit(text, (font_x, font_y))
+            # if self.ls.mainloop.lang.lang == "he":
+            #    self.image.blit(text, (font_x, font_y))
 
 
 class PScrollBar(pygame.sprite.Sprite):
@@ -731,7 +721,8 @@ class PScrollBar(pygame.sprite.Sprite):
         self.rect_init()
 
     def rect_init(self):
-        self.image = pygame.Surface((self.w, self.h), flags=pygame.SRCALPHA)
+        # Ensure dimensions are at least 1x1
+        self.image = pygame.Surface((max(1, self.w), max(1, self.h)), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.left, self.top]
 
@@ -829,19 +820,24 @@ class PIMGButton(pygame.sprite.Sprite):
         self.visible = True
         self.bg_color = (255, 250, 200, 0)
 
-        #self.lines = [[0, 0], [self.w - 1, 0], [self.w - 1, self.h - 1], [0, self.h - 1]]
-        #self.lines_focused = [[0, 0], [self.w - 2, 0], [self.w - 2, self.h - 2], [0, self.h - 2]]
-        self.image = pygame.Surface((w, h), flags=pygame.SRCALPHA)
+        self.image = pygame.Surface((max(1, w), max(1, h)), flags=pygame.SRCALPHA)  # Ensure positive dimensions
         self.img_loaded = False
         try:
             self.img = pygame.image.load(os.path.join('res', 'images', self.img_src)).convert_alpha()
             self.img2 = pygame.image.load(os.path.join('res', 'images', self.img_src2)).convert_alpha()
+            # Scale images to button size
+            self.img = pygame.transform.scale(self.img, (max(1, w), max(1, h)))
+            self.img2 = pygame.transform.scale(self.img2, (max(1, w), max(1, h)))
+
             self.img_pos = (0, 0)
             self.img_loaded = True
-        except IOError:
-            pass
+        except pygame.error as e:
+            logging.error(f"Failed to load image for PIMGButton from {self.img_src} or {self.img_src2}: {e}")
+        except Exception as e:
+            logging.exception(f"Unexpected error loading image for PIMGButton: {e}")
+
         self.rect = self.image.get_rect()
-        self.rect.topleft = [l, t]
+        self.rect.topleft = (l, t)
 
     def update(self):
         if self.update_me and self.visible:
@@ -919,7 +915,7 @@ class PIMGButton(pygame.sprite.Sprite):
 
 
 class KbrdKey(pygame.sprite.Sprite):
-    def __init__(self, ls, x, y, w, h, lower, upper, fcode = 0):
+    def __init__(self, ls, x, y, w, h, lower, upper, fcode=0):
         pygame.sprite.Sprite.__init__(self)
         self.label_lower = lower
         self.label_upper = upper
@@ -931,11 +927,11 @@ class KbrdKey(pygame.sprite.Sprite):
 
         self.ls = ls
 
-        #size and position
-        self.x = x+1
-        self.y = y+1
-        self.w = w-2
-        self.h = h-2
+        # size and position
+        self.x = x + 1
+        self.y = y + 1
+        self.w = w - 2
+        self.h = h - 2
 
         self.font_x = 0
         self.font_y = 0
@@ -955,7 +951,8 @@ class KbrdKey(pygame.sprite.Sprite):
 
         self.lines = [[0, 0], [self.w - 1, 0], [self.w - 1, self.h - 1], [0, self.h - 1]]
         self.lines_focused = [[0, 0], [self.w - 2, 0], [self.w - 2, self.h - 2], [0, self.h - 2]]
-        self.image = pygame.Surface((self.w, self.h), flags=pygame.SRCALPHA)
+        # Ensure dimensions are at least 1x1
+        self.image = pygame.Surface((max(1, self.w), max(1, self.h)), flags=pygame.SRCALPHA)
         self.rect = self.image.get_rect()
         self.rect.topleft = [self.x, self.y]
 
@@ -997,22 +994,17 @@ class KbrdKey(pygame.sprite.Sprite):
         else:
             self.image.fill(self.bg_color)
 
-        if sys.version_info < (3, 0):
-            try:
-                val = unicode(self.get_value(), "utf-8")
-            except UnicodeDecodeError:
-                val = self.get_value()
-            except TypeError:
-                val = self.get_value()
-        else:
-            val = self.get_value()
+        # Python 2/3 compatibility removed
+        val = self.get_value()
         try:
             text = self.font_v.render("%s" % (val), 1, self.font_color)
             self.font_x = (self.w - self.font_v.size(val)[0]) // 2
             self.font_y = (self.h - self.font_v.size(val)[1]) // 2
             self.image.blit(text, (self.font_x, self.font_y))
-        except:
-            pass
+            self.image.blit(text, (self.font_x, self.font_y))
+        except Exception as e:
+            logging.error(f"Error rendering KbrdKey text '{val}': {e}")
+            self.image.fill(self.bg_color)  # Fill to prevent drawing artifacts
 
     def mouse_down(self):
         if not self.mouse_dn:
@@ -1044,32 +1036,31 @@ class KbrdKey(pygame.sprite.Sprite):
                 if self.fcode == 2:  # shift
                     self.ls.keyboard.shift_it()
                     self.activate_color()
-                elif self.ls.in_focus is not None:
+                elif self.ls.in_focus is not None and isinstance(self.ls.in_focus, PEdit):
                     lhv = len(self.ls.in_focus.value)
-                    if isinstance(self.ls.in_focus, PEdit):
-                        if self.fcode == 0: # key
-                            char = ex.unival(self.get_value())
-                            if len(char) > 0 and lhv < 21:
-                                if self.ls.lang.ltr_text:
-                                    self.ls.in_focus.value = ex.unival(self.ls.in_focus.value) + char
-                                else:
-                                    self.ls.in_focus.value = char + ex.unival(self.ls.in_focus.value)
-                        if self.fcode == 1:  # backspace
-                            if lhv > 0:
-                                if self.ls.lang.ltr_text:
-                                    self.ls.in_focus.value = self.ls.in_focus.value[0:lhv - 1]
-                                else:
-                                    self.ls.in_focus.value = self.ls.in_focus.value[1:lhv]
+                    if self.fcode == 0:  # key
+                        char = ex.unival(self.get_value())
+                        if len(char) > 0 and lhv < 21:
+                            if self.ls.lang.ltr_text:
+                                self.ls.in_focus.value = ex.unival(self.ls.in_focus.value) + char
+                            else:
+                                self.ls.in_focus.value = char + ex.unival(self.ls.in_focus.value)
+                    elif self.fcode == 1:  # backspace
+                        if lhv > 0:
+                            if self.ls.lang.ltr_text:
+                                self.ls.in_focus.value = self.ls.in_focus.value[0:lhv - 1]
+                            else:
+                                self.ls.in_focus.value = self.ls.in_focus.value[1:lhv]
 
-                        if self.ls.in_focus.selection_modifier:
-                            if self.ls.prev_user_checked:
-                                if self.ls.in_focus.value != self.ls.prev_user_checked.value:
-                                    self.ls.prev_user_checked.update_me = True
-                                    self.ls.prev_user_checked.checked = False
-                            if self.ls.username_count > 5:
-                                self.ls.reload_selects()
-                            self.ls.set_scrollbar_top(self.ls.scroll_min_top)
-                        self.ls.in_focus.update_trigger()
+                    if self.ls.in_focus.selection_modifier:
+                        if self.ls.prev_user_checked:
+                            if self.ls.in_focus.value != self.ls.prev_user_checked.value:
+                                self.ls.prev_user_checked.update_me = True
+                                self.ls.prev_user_checked.checked = False
+                        if self.ls.username_count > 5:
+                            self.ls.reload_selects()
+                        self.ls.set_scrollbar_top(self.ls.scroll_min_top)
+                    self.ls.in_focus.update_trigger()
             elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 pass
 
@@ -1112,13 +1103,13 @@ class Keyboard:
         if self.ls.lang.ltr_text:
             bsp_key = "←"
             for i in range(self.all_key_count - 8):
-                if i < self.keys_per_line-2:
+                if i < self.keys_per_line - 2:
                     j = 0
-                elif i < self.keys_per_line * 2-4:
+                elif i < self.keys_per_line * 2 - 4:
                     j = 1
                 else:
                     j = 2
-                x = self.margin + self.x + (i - j * (self.keys_per_line-2)) * self.key_w
+                x = self.margin + self.x + (i - j * (self.keys_per_line - 2)) * self.key_w
                 y = self.y + j * self.key_h
 
                 key = KbrdKey(self.ls, x, y, self.key_w, self.key_h, self.lower_list[i], self.upper_list[i])
@@ -1139,13 +1130,13 @@ class Keyboard:
         else:
             bsp_key = "→"
             for i in range(self.all_key_count - 8):
-                if i < self.keys_per_line-2:
+                if i < self.keys_per_line - 2:
                     j = 0
-                elif i < self.keys_per_line * 2-4:
+                elif i < self.keys_per_line * 2 - 4:
                     j = 1
                 else:
                     j = 2
-                x = self.margin + self.x + (self.keys_per_line - 1 - (i - j * (self.keys_per_line-2))) * self.key_w
+                x = self.margin + self.x + (self.keys_per_line - 1 - (i - j * (self.keys_per_line - 2))) * self.key_w
                 y = self.y + j * self.key_h
 
                 key = KbrdKey(self.ls, x, y, self.key_w, self.key_h, self.lower_list[i], self.upper_list[i])
@@ -1172,6 +1163,7 @@ class Keyboard:
         self.ls.update_me = True
 
     def update(self):
+        # Update individual keys' surfaces
         for each in self.keys:
             each.update()
         self.keys.draw(self.ls.screen)
@@ -1179,8 +1171,13 @@ class Keyboard:
     def handle(self, event):
         if event.type == pygame.MOUSEMOTION:
             pos = event.pos
+            # Mouse motion events need to be translated to keyboard's local coordinates if not already
+            # Assuming event.pos is global screen coordinates.
+            # Convert pos relative to keyboard's top-left
+            rel_pos = (pos[0] - self.x, pos[1] - self.y)
             for each in self.keys:
-                if each.x < pos[0] < each.x + each.w and each.y < pos[1] < each.y + each.h:
+                # Check collision relative to key's position within keyboard
+                if each.rect.collidepoint(rel_pos[0] + self.x, rel_pos[1] + self.y):  # Use global pos for collidepoint
                     each.mouse_over()
                 else:
                     each.mouse_out()
@@ -1189,21 +1186,22 @@ class Keyboard:
             if self.enabled:
                 pos = event.pos
                 for each in self.keys:
-                    if each.x < pos[0] < each.x + each.w and each.y < pos[1] < each.y + each.h:
+                    if each.rect.collidepoint(pos):  # Check collision using global pos
                         each.mouse_down()
-                        each.handle(event)
+                        each.handle(event)  # Delegate to key's handle
                     else:
-                        each.mouse_up()
+                        each.mouse_up()  # Ensure other keys are released
+                self.ls.update_me = True  # Signal LoginScreen to redraw
+
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             if self.enabled:
                 pos = event.pos
                 for each in self.keys:
-                    each.mouse_up()
-                    if each.x < pos[0] < each.x + each.w and each.y < pos[1] < each.y + each.h:
-                        each.handle(event)
-                        return
-            self.update()
-            self.ls.update_me = True
+                    each.mouse_up()  # Always try to mouse_up for all keys
+                    if each.rect.collidepoint(pos):
+                        each.handle(event)  # Delegate to key's handle if released over it
+            self.update()  # Update keyboard internal state
+            self.ls.update_me = True  # Signal LoginScreen to redraw
 
 
 class LoginScreen:
@@ -1213,16 +1211,15 @@ class LoginScreen:
         self.config = self.mainloop.config
         self.colors = Colors(mainloop)
 
-        if self.mainloop.android is not None:
-            self.w = self.mainloop.android_login_size[0]
-        else:
-            self.w = 800
-        self.h = 570
+        # Use mainloop's size for consistency
+        self.w = size[0]
+        self.h = size[1]
+
         self.keyboard_h = 120
         self.scroll_min_top = 0
         self.side_panel_w = 80
         self.loading = False
-        # allow users to manually level up, will be overridden with the value stored in database
+
         self.allow_manual_level_up = True
         self.load_login_defs()
         self.lang = self.mainloop.lang
@@ -1230,15 +1227,23 @@ class LoginScreen:
         self.user_exists = True
         self.admin_authorised = False
         self.admin_exists = self.mainloop.db.admin_exists()
-        self.def_screenw = self.w
-        self.def_screenh = self.h
-        self.left = (size[0] - self.def_screenw) // 2
-        self.top = (size[1] - self.def_screenh) // 2
+
+        # These should match the current screen size from mainloop, which is passed in 'size'
+        self.def_screenw = size[0]
+        self.def_screenh = size[1]
+
+        # Calculate left/top offsets if the login screen panel is smaller than the full screen
+        # Assuming the login screen panel is centered on the 'screen' surface (mainloop.screen)
+        self.panel_w = 800  # Fixed width for the login panel
+        self.panel_h = 570  # Fixed height for the login panel
+        self.left = (size[0] - self.panel_w) // 2
+        self.top = (size[1] - self.panel_h) // 2
+
         self.loginto = None
         self.scroll_down = False
         self.usr_count = 1
         self.in_focus = None
-        self.state = "LOGIN"
+        self.state = "LOGIN"  # Internal state for login screen tabs (LOGIN, PREFERENCES, USERS, LANG, FONTS)
         self.side_highlight = None
         self.font_color = self.colors.ls_font_color
         self.header_font_color = self.colors.ls_header_font_color
@@ -1250,11 +1255,13 @@ class LoginScreen:
         self.prev_user_checked = None
         self.age_groups = []
 
-        self.points = int(round((50 * 72 / 96) / 4, 0))
+        # Font sizes based on the LoginScreen's panel_h for consistency
+        # Assuming 570px height for calculation of points
+        self.points = int(round((50 * 72 / 96) / 4, 0))  # Using a base scale from original
 
         self.load_fonts()
-        self.mainloop.redraw_needed[0] = True
-        self.update_me = True
+        self.mainloop.redraw_needed[0] = True  # Signal mainloop to redraw
+        self.update_me = True  # Signal self to update internally
         self.hover = None
 
         self.edit_list = pygame.sprite.LayeredUpdates()
@@ -1265,24 +1272,27 @@ class LoginScreen:
         self.img = pygame.image.load(os.path.join('res', 'images', "login_screen_logo.png")).convert_alpha()
         self.img_rect = self.img.get_rect()
 
+        # Handle background image loading with error handling and proper scaling
         try:
+            # Use self.w and self.h from LoginScreen for bg_img scaling (actual screen size)
             self.bg_img = self.scale_img(
                 pygame.image.load(os.path.join('res', 'images', "gradient_large.webp")).convert(),
-                self.screen.get_size()[0],
-                self.screen.get_size()[1])
-        except:
+                self.w, self.h)
+        except pygame.error:
             try:
                 self.bg_img = self.scale_img(
                     pygame.image.load(os.path.join('res', 'images', "gradient.webp")).convert(),
-                    self.screen.get_size()[0],
-                    self.screen.get_size()[1])
-            except:
-                self.bg_img = None
+                    self.w, self.h)
+            except pygame.error as e:
+                logging.error(f"Could not load background image for LoginScreen: {e}")
+                self.bg_img = None  # No background image on failure
 
         # add keyboard
-        self.keyboard = Keyboard(self, self.left+5, self.top + self.h - self.keyboard_h - 5, self.w-10, self.keyboard_h)
+        # Keyboard position relative to LoginScreen's panel (self.left, self.top)
+        self.keyboard = Keyboard(self, self.left + 5, self.top + self.panel_h - self.keyboard_h - 5,
+                                 self.panel_w - 10, self.keyboard_h)
 
-        normal_login = True
+        # normal_login = True
         al = self.mainloop.db.get_autologin()
 
         if al is not None:
@@ -1290,19 +1300,25 @@ class LoginScreen:
                 normal_login = False
                 self.fauto_login(al[0])
 
-        if normal_login:
-            self.in_focus = None
-            self.add_login_elements()
-            self.add_side_btns()
-            self.merge_sprite_lists()
-            self.swich_hl(self.login_tab)
+        # if True: #normal_login or True:
+        self.in_focus = None
+        self.add_login_elements()
+        self.add_side_btns()
+        self.merge_sprite_lists()
+        self.swich_hl(self.login_tab)
 
-        self.layer1 = pygame.Surface(screen.get_size(), flags=pygame.SRCALPHA, depth=32)
-        self.layer4 = pygame.Surface(screen.get_size(), flags=pygame.SRCALPHA, depth=32)
-        self.draw_background()
+        # Create layers as surfaces that will be blitted onto main screen
+        # These should be sized to the actual panel dimensions (self.panel_w, self.panel_h)
+        self.layer1 = pygame.Surface((self.panel_w, self.panel_h), flags=pygame.SRCALPHA, depth=32)
+        self.layer4 = pygame.Surface((self.panel_w, self.panel_h), flags=pygame.SRCALPHA, depth=32)
+        self.draw_background()  # Draw background to the layers
 
     def scale_img(self, image, new_w, new_h):
         'scales image depending on pygame version and bit depth using either smoothscale or scale'
+        # Ensure target dimensions are positive
+        new_w = max(1, new_w)
+        new_h = max(1, new_h)
+
         if image.get_bitsize() in [32, 24] and pygame.version.vernum >= (1, 8):
             img = pygame.transform.smoothscale(image, (new_w, new_h))
         else:
@@ -1310,44 +1326,47 @@ class LoginScreen:
         return img
 
     def draw_background(self):
-
-        layer2 = pygame.Surface(self.screen.get_size(), flags=pygame.SRCALPHA, depth=32)
-        layer3 = pygame.Surface(self.screen.get_size(), flags=pygame.SRCALPHA, depth=32)
+        # These layers are drawn relative to the panel (0,0)
+        layer2 = pygame.Surface((self.panel_w, self.panel_h), flags=pygame.SRCALPHA, depth=32)
+        layer3 = pygame.Surface((self.panel_w, self.panel_h), flags=pygame.SRCALPHA, depth=32)
 
         if self.bg_img is not None:
-            self.layer1.blit(self.bg_img, (0, 0), self.layer1.get_rect())
+            # Scale bg_img to the panel size, then blit to layer1
+            scaled_bg_img = self.scale_img(self.bg_img, self.panel_w, self.panel_h)
+            self.layer1.blit(scaled_bg_img, (0, 0))
         else:
             if self.mainloop.android is None:
                 self.colors.fill_gradient(self.layer1, self.colors.inner_color, self.colors.inner_color_end, rect=None,
                                           vertical=True, forward=True)
                 self.colors.fill_gradient(layer2, self.colors.inner_color2, self.colors.inner_color2_end, rect=None,
                                           vertical=False, forward=True)
-                self.layer1.blit(layer2, (0, 0), self.layer1.get_rect())
+                self.layer1.blit(layer2, (0, 0))
             else:
                 self.layer1.fill(self.colors.android_backup_color)
 
-        lines = [[self.left + 0, self.top + 0], [self.left + self.w - 1, self.top + 0],
-                 [self.left + self.w - 1, self.top + self.h - 1], [self.left + 0, self.top + self.h - 1]]
+        # Drawing panel borders on layer3 (relative to panel's 0,0)
+        lines = [[0, 0], [self.panel_w - 1, 0], [self.panel_w - 1, self.panel_h - 1], [0, self.panel_h - 1]]
         pygame.draw.polygon(layer3, self.colors.inner_color, lines, 0)
         pygame.draw.polygon(layer3, self.colors.alpha_overlay, lines, 0)
         pygame.draw.lines(layer3, (255, 255, 255, 100), True, lines, 1)
 
-        lines = [[self.left + 10, self.top + 10], [self.left + self.w - self.side_panel_w - 30, self.top + 10],
-                 [self.left + self.w - self.side_panel_w - 30, self.top + self.h - 30 - self.keyboard_h],
-                 [self.left + 10, self.top + self.h - 30 - self.keyboard_h]]
+        # Inner content area (relative to panel's 0,0)
+        lines = [[10, 10], [self.panel_w - self.side_panel_w - 30, 10],
+                 [self.panel_w - self.side_panel_w - 30, self.panel_h - 30 - self.keyboard_h],
+                 [10, self.panel_h - 30 - self.keyboard_h]]
         pygame.draw.polygon(layer3, self.bg_col, lines, 0)
         pygame.draw.lines(layer3, (255, 255, 255, 100), True, lines, 1)
 
-        lines = [[self.left + self.w - self.side_panel_w - 10, self.top + 10 + 55],
-                 [self.left + self.w - 10, self.top + 10 + 55],
-                 [self.left + self.w - 10, self.top + self.h - 30 - self.keyboard_h],
-                 [self.left + self.w - self.side_panel_w - 10, self.top + self.h - 30 - self.keyboard_h]]
+        # Side panel area (relative to panel's 0,0)
+        lines = [[self.panel_w - self.side_panel_w - 10, 10 + 55],
+                 [self.panel_w - 10, 10 + 55],
+                 [self.panel_w - 10, self.panel_h - 30 - self.keyboard_h],
+                 [self.panel_w - self.side_panel_w - 10, self.panel_h - 30 - self.keyboard_h]]
         pygame.draw.polygon(layer3, self.bg_sidecol, lines, 0)
         pygame.draw.lines(layer3, (255, 255, 255, 100), True, lines, 1)
 
-
-        self.layer4.blit(self.layer1, (0, 0), self.layer1.get_rect())
-        self.layer4.blit(layer3, (0, 0), self.layer1.get_rect())
+        self.layer4.blit(self.layer1, (0, 0))
+        self.layer4.blit(layer3, (0, 0))
 
     def load_fonts(self):
         # headers
@@ -1377,7 +1396,9 @@ class LoginScreen:
 
     def merge_sprite_lists(self):
         self.all_list.empty()
-        self.db_status_lbl = PLabel(self, self.w - 135, 30, self.left + 15, self.top + self.h - 55 - self.keyboard_h + 25, "")
+        # db_status_lbl positioned relative to login panel (self.left, self.top)
+        self.db_status_lbl = PLabel(self, self.panel_w - 135, 30, self.left + 15,
+                                    self.top + self.panel_h - 55 - self.keyboard_h + 25, "")
         self.db_status_lbl.bg_color = (0, 0, 0, 0)
         self.db_status_lbl.font_color = (255, 255, 255)
         self.edit_list.add(self.db_status_lbl)
@@ -1391,7 +1412,7 @@ class LoginScreen:
         self.username_count = len(self.usernames)
         self.scroll_item_count = 5
         self.db_status = self.login_welcome_msg
-        self.halfw = self.w // 2 - 50
+        self.halfw = self.panel_w // 2 - 50  # Relative to panel width
         label_w = self.halfw - 35
 
         # header
@@ -1442,7 +1463,8 @@ class LoginScreen:
             editw = self.halfw - 40 - 20
             l = 5
         for i in range(l):
-            self.select.append(PButton2(self, editw, h, self.left + 20, self.top + hs[i], 0, "", self.change_user_selection))
+            self.select.append(
+                PButton2(self, editw, h, self.left + 20, self.top + hs[i], 0, "", self.change_user_selection))
             self.select[i].select_item = True
             self.select[i].disabled = False
             self.edit_list.add(self.select[i])
@@ -1462,7 +1484,8 @@ class LoginScreen:
 
         self.reload_selects()
 
-        self.hlb2 = PLabel(self, self.halfw - 35, 30, self.left + self.halfw + 20, self.top + 15, self.lang.b["Select age group:"])
+        self.hlb2 = PLabel(self, self.halfw - 35, 30, self.left + self.halfw + 20, self.top + 15,
+                           self.lang.b["Select age group:"])
         self.hlb2.font_color = self.header_font_color
         self.hlb2.font_v = self.font_1
         self.edit_list.add(self.hlb2)
@@ -1487,9 +1510,9 @@ class LoginScreen:
 
         # preselect first user
         if self.username_count < 6:
-            self.select[0].onMouseButtonDown()
-            self.select[0].onBlur()
-
+            if self.select:  # Check if select list is not empty
+                self.select[0].onMouseButtonDown()
+                self.select[0].onBlur()
 
     def change_age_group(self):
         if self.username.value in self.usernames:
@@ -1502,6 +1525,7 @@ class LoginScreen:
                     self.prev_checked = each
                     if self.username.value in self.usernames:
                         self.mainloop.db.update_age_group(self.username.value, each.age_group)
+        self.update_me = True
 
     def change_user_selection(self):
         for each in self.select:
@@ -1510,9 +1534,11 @@ class LoginScreen:
                 if self.prev_user_checked:
                     self.prev_user_checked.checked = False
                 self.prev_user_checked = each
+        self.update_me = True
 
     def add_admin_login_elements(self):
-        self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Administrator Login:"])
+        self.hlb1 = PLabel(self, self.panel_w - 135, 30, self.left + 20, self.top + 15,
+                           self.lang.b["Administrator Login:"])
         self.hlb1.font_color = self.header_font_color
         self.hlb1.font_v = self.font_1
         self.edit_list.add(self.hlb1)
@@ -1539,9 +1565,10 @@ class LoginScreen:
         self.keyboard.enable(False)
         self.db_status = ""
         self.scroll_item_count = len(self.config.all_lng)
-        self.halfw = self.w // 2 - 50
+        self.halfw = self.panel_w // 2 - 50
 
-        self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Default Language:"])
+        self.hlb1 = PLabel(self, self.panel_w - 135, 30, self.left + 20, self.top + 15,
+                           self.lang.b["Default Language:"])
         self.hlb1.font_color = self.header_font_color
         self.hlb1.font_v = self.font_1
         self.edit_list.add(self.hlb1)
@@ -1558,19 +1585,19 @@ class LoginScreen:
         frows = float(rows)
         cols = int(math.ceil(self.scroll_item_count / frows))
 
-        self.lang_w = (self.w - 120) // cols
+        self.lang_w = max(1, (self.panel_w - 120) // cols)  # Ensure positive dimension
 
         h = (360 + 30 - 45) // rows
         w = self.lang_w - 15
         k = 0
 
         for i in range(self.scroll_item_count):
-            if k > rows-1:
+            if k > rows - 1:
                 k = 0
 
             j = int(math.floor(i / frows))
             self.select.append(
-                PButton(self, w, h, self.left + self.lang_w*j+5+13, self.top + 60 + h * k, 0,
+                PButton(self, w, h, self.left + self.lang_w * j + 5 + 13, self.top + 60 + h * k, 0,
                         self.config.lang_titles[i], self.fset_lang))
             self.edit_list.add(self.select[i])
             self.select[i].bg_color = self.colors.btn_bg_color
@@ -1588,12 +1615,12 @@ class LoginScreen:
     def add_users_elements(self):
         self.db_status = ""
         self.scroll_item_count = 7
-        self.halfw = self.w // 2 - 50
-        self.thirdw = (self.w - 96) // 3
+        self.halfw = self.panel_w // 2 - 50
+        self.thirdw = (self.panel_w - 96) // 3
 
         cw = self.thirdw - 20
 
-        self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["User Management"])
+        self.hlb1 = PLabel(self, self.panel_w - 135, 30, self.left + 20, self.top + 15, self.lang.b["User Management"])
         self.hlb1.font_color = self.header_font_color
         self.hlb1.font_v = self.font_1
         self.edit_list.add(self.hlb1)
@@ -1614,7 +1641,7 @@ class LoginScreen:
             self.select[i].border_focused = self.colors.btn_border_focused_l
             self.select[i].font_color = self.colors.edit_font_color
 
-        self.scroll_max_h = self.scroll_item_count * 30 - 4  # 150
+        self.scroll_max_h = self.scroll_item_count * 30 - 4
         self.scroll_min_h = 30
         self.scroll_min_top = self.top + 60 + 2
 
@@ -1628,8 +1655,8 @@ class LoginScreen:
         self.reload_selects()
 
         # add new user
-        self.lb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 285, self.lang.b["Add new user:"])
-        self.lb1.font_color = self.colors.ls_font_color # (255, 179, 111)
+        self.lb1 = PLabel(self, self.panel_w - 135, 30, self.left + 20, self.top + 285, self.lang.b["Add new user:"])
+        self.lb1.font_color = self.colors.ls_font_color
         self.lb2 = PLabel(self, cw, 30, self.left + 20, self.top + 315, self.lang.b["user name:"])
         self.rusername = PEdit(self, cw, 30, self.left + 20, self.top + 340, 1)
         self.lb3 = PLabel(self, cw, 30, self.left + 20 + cw + 10, self.top + 315, self.lang.b["password:"])
@@ -1637,12 +1664,12 @@ class LoginScreen:
         self.lb4 = PLabel(self, cw, 30, self.left + 20 + cw + 10 + cw + 10, self.top + 315,
                           self.lang.b["confirm password:"])
         self.rconfirmpassword = PEdit(self, cw, 30, self.left + 20 + cw + 10 + cw + 10, self.top + 340, 3, True)
-        self.rregisterbtn = PButton(self, cw*2 + 10, 30, self.left + 20 + cw + 10, self.top + 380, 4,
+        self.rregisterbtn = PButton(self, cw * 2 + 10, 30, self.left + 20 + cw + 10, self.top + 380, 4,
                                     self.lang.b["Register"], self.fregister)
 
         # user info elements w h l t
-        self.dlb1 = PLabel(self, cw * 2 - 10, 30, self.left + cw + 50, self.top + 60, self.lang.b["Please select"])  # name field
-        self.dlb1.font_color = self.colors.ls_font_color # (100, 200, 255)
+        self.dlb1 = PLabel(self, cw * 2 - 10, 30, self.left + cw + 50, self.top + 60, self.lang.b["Please select"])
+        self.dlb1.font_color = self.colors.ls_font_color
         if self.lang.ltr_text:
             l = [self.left + cw + 70, self.left + 2 * cw + 40]
         else:
@@ -1655,16 +1682,16 @@ class LoginScreen:
             self.dlb2.right_align = True
             self.dlb3.right_align = True
         # delete user buttons
-        # calculate distance from right
         text = self.lang.b["delete user"]
         w = self.get_text_w(text) + 6
 
-        # add text button
-        self.delete_btn = PButton(self, w, 30, self.left + self.w - 150 - w, self.top + 220, 0, text, self.showfdeluser,
+        self.delete_btn = PButton(self, w, 30, self.left + self.panel_w - 150 - w, self.top + 220, 0, text,
+                                  self.showfdeluser,
                                   right_align=True, transparent=True)
         self.delete_btn.visible = False
         self.delete_btn.update()
-        self.delete_imgbtn = PIMGButton(self, 30, 30, self.left + self.w - 150, self.top + 220, 0, "login_delete_usr.png",
+        self.delete_imgbtn = PIMGButton(self, 30, 30, self.left + self.panel_w - 150, self.top + 220, 0,
+                                        "login_delete_usr.png",
                                         "login_delete_usr.png", self.showfdeluser)
 
         self.delete_imgbtn.visible = False
@@ -1672,13 +1699,15 @@ class LoginScreen:
         # confirm delete
         text = self.lang.b["Cancel"]
         w1 = self.get_text_w(text) + 6
-        self.delete_no = PButton(self, w1, 30, self.left + self.w - 120 - w1, self.top + 250, 0, text, self.hidefdeluser,
+        self.delete_no = PButton(self, w1, 30, self.left + self.panel_w - 120 - w1, self.top + 250, 0, text,
+                                 self.hidefdeluser,
                                  right_align=True, transparent=True)
         self.delete_no.visible = False
         self.delete_no.font_color = (40, 255, 40)
         text = self.lang.b["Delete"]
         w2 = self.get_text_w(text) + 6
-        self.delete_yes = PButton(self, w2, 30, self.left + self.w - 120 - w1 - w2 - 15, self.top + 250, 0, text, self.fdeluser,
+        self.delete_yes = PButton(self, w2, 30, self.left + self.panel_w - 120 - w1 - w2 - 15, self.top + 250, 0, text,
+                                  self.fdeluser,
                                   right_align=True, transparent=True)
         self.delete_yes.visible = False
         self.delete_yes.font_color = (255, 40, 40)
@@ -1693,7 +1722,7 @@ class LoginScreen:
     def add_fonts_elements(self):
         self.scroll_item_count = 10
         self.db_status = self.login_welcome_msg
-        self.halfw = self.w // 2 - 50
+        self.halfw = self.panel_w // 2 - 50  # Relative to panel width
         label_w = 310
         # header
         self.hlb1 = PLabel(self, label_w, 30, self.left + 20, self.top + 15, self.lang.b["Log in:"])
@@ -1704,7 +1733,7 @@ class LoginScreen:
         btn_top = 333
 
         self.font_apply = PButton(self, self.halfw // 2 - 40, 30, self.left + 20 + self.halfw // 2,
-                                self.top + btn_top + 30, 3, "TMPBTN", self.fapplyfont)
+                                  self.top + btn_top + 30, 3, "TMPBTN", self.fapplyfont)
         self.edit_list.add(self.font_apply)
         self.select = []
 
@@ -1743,8 +1772,11 @@ class LoginScreen:
             self.sample_text.font_v = pygame.font.Font(pygame.font.match_font(font_name.lower()),
                                                        (int(self.points * 4.0)))
             self.sample_text2.font_v = self.sample_text.font_v
-        except:
-            pass
+            self.sample_text.update_me = True  # Ensure sample text updates
+            self.sample_text2.update_me = True
+            self.update_me = True  # Signal LoginScreen to redraw
+        except Exception as e:
+            logging.error(f"Failed to update sample font '{font_name}': {e}")
 
     def showfdeluser(self):
         self.delete_no.visible = True
@@ -1777,11 +1809,11 @@ class LoginScreen:
         self.mainloop.db.set_lang(self.in_focus.iso_code)
         self.default_lang = self.in_focus.iso_code
         self.lang.load_language(lang_code=self.default_lang, login=True)
-        self.flang()
+        self.flang()  # Re-draw the language selection screen
         new_guest = ex.unival(self.lang.b["Guest"])
         self.mainloop.db.change_username(prev_guest, new_guest)
         self.login_welcome_msg = ""
-        self.keyboard.add_keys()
+        self.keyboard.add_keys()  # Re-add keyboard keys with new language alphabet
 
     def fselect_lang(self):
         iso_code = self.mainloop.db.get_lang()
@@ -1789,50 +1821,50 @@ class LoginScreen:
             if each.iso_code == iso_code:
                 if self.in_focus is not None:
                     self.in_focus.onBlur()
-                    self.load_fonts()
+                    self.load_fonts()  # Reload fonts as language might affect font selection
                 self.in_focus = each
                 self.in_focus.update_me = True
                 self.in_focus.onFocus()
+                break  # Exit loop once found
 
     def recheck(self):
         if self.mainloop.android is None:
             self.cb0.checked = self.full_screen
-        self.cb3.checked = self.require_pass
-        self.cb4.checked = self.require_adminpass
-        self.cb5.checked = self.allow_manual_level_up
+        # Check if checkboxes exist before accessing them
+        if hasattr(self, 'cb3'): self.cb3.checked = self.require_pass
+        if hasattr(self, 'cb4'): self.cb4.checked = self.require_adminpass
+        if hasattr(self, 'cb5'): self.cb5.checked = self.allow_manual_level_up
 
     def add_prefs_elements(self):
-        self.hlb1 = PLabel(self, self.w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Preferences"])
+        self.hlb1 = PLabel(self, self.panel_w - 135, 30, self.left + 20, self.top + 15, self.lang.b["Preferences"])
         self.hlb1.font_color = self.header_font_color
         self.hlb1.font_v = self.font_1
         self.edit_list.add(self.hlb1)
-        self.halfw = (self.w - 150) // 2
+        self.halfw = (self.panel_w - 150) // 2  # Relative to panel width
         self.db_status = ""
-        #positions - 60, 90, 120, 150
-        self.cb0 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 120, False,
+        # positions - 60, 90, 120, 150
+        self.cb0 = PCheckbox(self, self.panel_w - 135, 30, self.left + 20, self.top + 120, False,
                              self.lang.b["switch to full screen after login"])
+
         if self.mainloop.android is not None:
             self.cb0.visible = False
         self.edit_list.add(self.cb0)
 
 
         self.cb2 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 150, False, "")
-        """
-        
+        """        
         if self.mainloop.android is not None:
             self.cb2.visible = False
             
         self.edit_list.add(self.cb2)
         """
-
-
-        self.cb3 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 60, False,
+        self.cb3 = PCheckbox(self, self.panel_w - 135, 30, self.left + 20, self.top + 60, False,
                              self.lang.b["require password to log in"])
         self.edit_list.add(self.cb3)
-        self.cb4 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 90, False,
+        self.cb4 = PCheckbox(self, self.panel_w - 135, 30, self.left + 20, self.top + 90, False,
                              self.lang.b["require password to access admin area"])
         self.edit_list.add(self.cb4)
-        self.cb5 = PCheckbox(self, self.w - 135, 30, self.left + 20, self.top + 150, False,
+        self.cb5 = PCheckbox(self, self.panel_w - 135, 30, self.left + 20, self.top + 150, False,
                              self.lang.b["allow manual level up"])
         self.edit_list.add(self.cb5)
 
@@ -1840,29 +1872,36 @@ class LoginScreen:
         #                       self.fontprefs)
 
         if self.admin_exists:
-            self.lb1 = PLabel(self, self.w - 140, 30, self.left + 20, self.top + 220, self.lang.b["Update admin's password:"])
+            self.lb1 = PLabel(self, self.panel_w - 140, 30, self.left + 20, self.top + 220,
+                              self.lang.b["Update admin's password:"])
 
-            self.lb2 = PLabel(self, self.w - 140, 30, self.left + 20, self.top + 255, self.lang.b["previous password:"])
-            self.username = PEdit(self, self.w - 140, 30, self.left + 20, self.top + 280, 1, True)
+            self.lb2 = PLabel(self, self.panel_w - 140, 30, self.left + 20, self.top + 255,
+                              self.lang.b["previous password:"])
+            self.username = PEdit(self, self.panel_w - 140, 30, self.left + 20, self.top + 280, 1, True)
 
             self.lb3 = PLabel(self, self.halfw, 30, self.left + 20, self.top + 315, self.lang.b["new password:"])
             self.password = PEdit(self, self.halfw, 30, self.left + 20, self.top + 340, 2, True)
 
-            self.lb4 = PLabel(self, self.halfw, 30, self.left + self.halfw + 30, self.top + 315, self.lang.b["confirm new password:"])
+            self.lb4 = PLabel(self, self.halfw, 30, self.left + self.halfw + 30, self.top + 315,
+                              self.lang.b["confirm new password:"])
             self.cpassword = PEdit(self, self.halfw, 30, self.left + self.halfw + 30, self.top + 340, 3, True)
         else:
-            self.lb1 = PLabel(self, self.w - 140, 30, self.left + 20, self.top + 220, self.lang.b["Create admin's account:"])
+            self.lb1 = PLabel(self, self.panel_w - 140, 30, self.left + 20, self.top + 220,
+                              self.lang.b["Create admin's account:"])
 
-            self.lb2 = PLabel(self, self.w - 140, 30, self.left + 20, self.top + 255, self.lang.b["admin's user name:"])
-            self.username = PEdit(self, self.w - 140, 30, self.left + 20, self.top + 280, 1)
+            self.lb2 = PLabel(self, self.panel_w - 140, 30, self.left + 20, self.top + 255,
+                              self.lang.b["admin's user name:"])
+            self.username = PEdit(self, self.panel_w - 140, 30, self.left + 20, self.top + 280, 1)
 
             self.lb3 = PLabel(self, self.halfw, 30, self.left + 20, self.top + 315, self.lang.b["admin's password:"])
             self.password = PEdit(self, self.halfw, 30, self.left + 20, self.top + 340, 2, True)
 
-            self.lb4 = PLabel(self, self.halfw, 30, self.left + self.halfw + 30, self.top + 315, self.lang.b["confirm admin's password:"])
+            self.lb4 = PLabel(self, self.halfw, 30, self.left + self.halfw + 30, self.top + 315,
+                              self.lang.b["confirm admin's password:"])
             self.cpassword = PEdit(self, self.halfw, 30, self.left + self.halfw + 30, self.top + 340, 3, True)
 
-        self.savebtn = PButton(self, 200, 30, self.left + self.halfw - 75, self.top + 380, 4, self.lang.b["Save"], self.fprefsave)
+        self.savebtn = PButton(self, 200, 30, self.left + self.halfw - 75, self.top + 380, 4, self.lang.b["Save"],
+                               self.fprefsave)
 
         self.edit_list.add(self.lb1)
         self.edit_list.add(self.lb2)
@@ -1878,20 +1917,28 @@ class LoginScreen:
 
     def add_side_btns(self):
         sp = 20
-        self.close_tab = PIMGButton(self, 70, 35, self.left + self.w - 84,
+        # Close button relative to panel
+        self.close_tab = PIMGButton(self, 70, 35, self.left + self.panel_w - 84,
                                     self.top + 17, 1, "login_close_n.png",
                                     "login_close.png", self.fclose)
         self.btn_list.add(self.close_tab)
-        self.login_tab = PIMGButton(self, 70, 70, self.left + self.w - 85, self.top + sp + 35 + sp, 1, "login_login_n.png",
+        # Login button relative to panel
+        self.login_tab = PIMGButton(self, 70, 70, self.left + self.panel_w - 85, self.top + sp + 35 + sp, 1,
+                                    "login_login_n.png",
                                     "login_login.png", self.flogint)
         self.btn_list.add(self.login_tab)
-        self.settings_tab = PIMGButton(self, 70, 70, self.left + self.w - 85, self.top + sp + 35 + sp + 70 + sp + sp + 70, 1,
+        # Settings button relative to panel
+        self.settings_tab = PIMGButton(self, 70, 70, self.left + self.panel_w - 85,
+                                       self.top + sp + 35 + sp + 70 + sp + sp + 70, 1,
                                        "login_settings_n.png", "login_settings.png", self.fprefs)
         self.btn_list.add(self.settings_tab)
-        self.lang_tab = PIMGButton(self, 70, 70, self.left + self.w - 85, self.top + sp + 35 + sp + 70 + sp, 1,
+        # Language button relative to panel
+        self.lang_tab = PIMGButton(self, 70, 70, self.left + self.panel_w - 85, self.top + sp + 35 + sp + 70 + sp, 1,
                                    "login_lang_n.png", "login_lang.png", self.flang)
         self.btn_list.add(self.lang_tab)
-        self.users_tab = PIMGButton(self, 70, 70, self.left + self.w - 85, self.top + sp + 35 + sp + 70 + sp + 70 + sp + 70 + sp,
+        # Users button relative to panel
+        self.users_tab = PIMGButton(self, 70, 70, self.left + self.panel_w - 85,
+                                    self.top + sp + 35 + sp + 70 + sp + 70 + sp + 70 + sp,
                                     1, "login_users_n.png", "login_users.png", self.fusers)
         self.btn_list.add(self.users_tab)
 
@@ -1911,7 +1958,8 @@ class LoginScreen:
                     index += 1
         else:
             for i in range(0, self.username_count):
-                self.select[i].value = self.usernames[i]
+                if i < len(self.select):  # Safety check for select list bounds
+                    self.select[i].value = self.usernames[i]
         if self.username_count < 6:
             self.age_groups_trigger()
             self.users_trigger()
@@ -1942,28 +1990,40 @@ class LoginScreen:
         if self.username.value in self.usernames:
             if self.prev_checked:
                 self.prev_checked.checked = False
+                self.prev_checked.update_me = True  # Ensure old selection updates
             for each in self.age_groups:
                 each.disabled = False
+                each.update_me = True  # Ensure age group buttons update
             age_group = self.mainloop.db.get_age_group(self.username.value)
-            if age_group is not None:
+            if age_group is not None and 0 <= age_group < len(self.age_groups):
                 self.prev_checked = self.age_groups[age_group]
                 self.age_groups[age_group].checked = True
+                self.age_groups[age_group].update_me = True  # Ensure new selection updates
         else:
+            if self.prev_checked:
+                self.prev_checked.checked = False
+                self.prev_checked.update_me = True
+                self.prev_checked = None  # Clear previous checked if no user selected
             for each in self.age_groups:
                 each.disabled = True
+                each.update_me = True
 
     def users_trigger(self):
         if self.prev_user_checked:
             self.prev_user_checked.checked = False
+            self.prev_user_checked.update_me = True
         for each in self.select:
             each.disabled = False
+            each.update_me = True
 
         if self.in_focus is not None and self.in_focus.select_item:
             pass
 
     def filter_usernames(self):
         if self.state == "LOGIN":
-            fltr = self.username.value
+            fltr = self.username.value if self.username else ""  # Check if username exists
+            if not isinstance(fltr, str):  # Ensure filter is a string
+                fltr = str(fltr)
 
             self.age_groups_trigger()
         else:
@@ -1974,15 +2034,19 @@ class LoginScreen:
             return self.usernames
         else:
             for each in self.usernames:
-                if each[0:ln] == fltr:
+                # Ensure 'each' is a string before slicing/comparing
+                if isinstance(each, str) and each[0:ln] == fltr:
                     usr_fltred.append(each)
             return usr_fltred
 
     def reload_scroll_bar_h(self):
+        #if self.scroll_bar is None: return  # No scroll bar to reload
+
         if len(self.usernames) > self.scroll_item_count:
             if self.usr_count < self.scroll_item_count + 1:
                 self.scroll_h = self.scroll_max_h
             else:
+                # Ensure division by float to avoid integer division issues
                 h = int((self.scroll_item_count * 30) / (self.usr_count / float(self.scroll_item_count)))
                 if h > self.scroll_min_h:
                     self.scroll_h = h
@@ -2002,6 +2066,8 @@ class LoginScreen:
             self.scroll_bar.update()
 
     def reload_font_scroll_bar_h(self):
+        #if self.scroll_bar is None: return  # No scroll bar to reload
+
         if self.usr_count > self.scroll_item_count:
             if self.usr_count < self.scroll_item_count + 1:
                 self.scroll_h = self.scroll_max_h
@@ -2020,7 +2086,6 @@ class LoginScreen:
             self.scroll_bar.update_me = True
             self.scroll_bar.update()
         else:
-
             h = int((self.scroll_item_count * 30) / (self.usr_count / float(self.scroll_item_count)))
             if h > self.scroll_min_h:
                 self.scroll_h = h
@@ -2038,6 +2103,8 @@ class LoginScreen:
             self.scroll_bar.update()
 
     def update_scrollbar_top(self, top):
+        #if self.scroll_bar is None: return  # No scroll bar to update
+
         if self.usr_count > self.scroll_item_count:
             if top > self.scroll_max_top + self.scroll_bar.dist2top:
                 t = self.scroll_max_top
@@ -2046,7 +2113,6 @@ class LoginScreen:
             else:
                 t = top - self.scroll_bar.dist2top
 
-
             bar_offset = t - self.scroll_min_top
             usr_offset = int((bar_offset * (self.usr_count - self.scroll_item_count)) / float(self.max_offset))
             self.reload_selects(usr_offset)
@@ -2054,7 +2120,11 @@ class LoginScreen:
         else:
             self.set_scrollbar_top(self.scroll_min_top)
 
+        self.update_me = True
+
     def update_fonts_scrollbar_top(self, top):
+        #if self.scroll_bar is None: return  # No scroll bar to update
+
         if self.usr_count > self.scroll_item_count:
             if top > self.scroll_max_top + self.scroll_bar.dist2top:
                 t = self.scroll_max_top
@@ -2091,11 +2161,13 @@ class LoginScreen:
         self.update_me = True
         self.mainloop.redraw_needed[0] = True
 
+    def draw(self, screen):
+        self.update()
+
     def update(self):
         if self.update_me:
             self.update_me = False
             self.screen.fill(self.colors.outer_color)
-
 
             if not self.loading:
                 self.screen.blit(self.layer4, (0, 0), self.screen.get_rect())
@@ -2114,7 +2186,10 @@ class LoginScreen:
                 if self.keyboard.enabled:
                     self.keyboard.update()
                 else:
-                    self.screen.blit(self.img, (self.left + (self.w-self.img_rect.w)//2, self.top + self.h - self.img_rect.h - 30), (0, 0, self.img_rect.w, self.img_rect.h))#(self.left + (self.w-self.img_rect.w)//2, self.top + self.h - self.img_rect.h - 30, self.img_rect.w, self.img_rect.h))
+                    self.screen.blit(self.img, (
+                    self.left + (self.w - self.img_rect.w) // 2, self.top + self.h - self.img_rect.h - 30), (
+                                     0, 0, self.img_rect.w,
+                                     self.img_rect.h))  # (self.left + (self.w-self.img_rect.w)//2, self.top + self.h - self.img_rect.h - 30, self.img_rect.w, self.img_rect.h))
             else:
                 self.screen.blit(self.layer1, (0, 0), self.screen.get_rect())
 
@@ -2125,7 +2200,8 @@ class LoginScreen:
                 if not self.scroll_down:
                     hover_found = False
                     for each in self.btn_list:
-                        if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
+                        if each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and \
+                                each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
                             each.handle(event)
                             if self.hover is not None:
                                 if self.hover != each:
@@ -2134,7 +2210,8 @@ class LoginScreen:
                             self.hover = each
 
                     for each in self.edit_list:
-                        if each.visible and each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
+                        if each.visible and each.rect.topleft[0] + each.rect.width >= pos[0] >= each.rect.topleft[0] and \
+                                each.rect.topleft[1] + each.rect.height >= pos[1] >= each.rect.topleft[1]:
                             each.handle(event)
                             if self.hover is not None:
                                 if self.hover != each:
@@ -2227,6 +2304,8 @@ class LoginScreen:
         print("font apply")
 
     def flogin(self):
+        # Assuming LoginState handles the actual state change to GameState
+        # This function primarily validates login and sets mainloop.userid
         if self.require_pass:
             if ex.unival(self.username.value) == ex.unival(self.lang.b["Guest"]):
                 m = self.mainloop.db.login_user_no_pass(self.username.value)
@@ -2235,12 +2314,12 @@ class LoginScreen:
                 self.complete_login()
             elif len(self.username.value) < 3:
                 self.db_status = self.lang.b["Please enter user name (at least 3 characters long)"]
-                self.in_focus.onBlur()
+                if self.in_focus: self.in_focus.onBlur()
                 self.in_focus = self.username
                 self.username.onFocus()
             elif len(self.password.value) < 4:
                 self.db_status = self.lang.b["Please enter password (at least 4 characters long)"]
-                self.in_focus.onBlur()
+                if self.in_focus: self.in_focus.onBlur()
                 self.in_focus = self.password
                 self.password.onFocus()
             else:
@@ -2248,10 +2327,10 @@ class LoginScreen:
                 if m == -1:
                     self.db_status = self.lang.b["This username and password combination doesn't exist."]
                 self.complete_login()
-        else:
+        else:  # No password required
             if len(self.username.value) < 3:
                 self.db_status = self.lang.b["Please enter user name (at least 3 characters long)"]
-                self.in_focus.onBlur()
+                if self.in_focus: self.in_focus.onBlur()
                 self.in_focus = self.username
                 self.username.onFocus()
             else:
@@ -2259,22 +2338,30 @@ class LoginScreen:
                 if m == -1:
                     self.db_status = self.lang.b["This username doesn't exist."]
                 self.complete_login()
+        self.update_trigger()  # Ensure status message is drawn
 
     def fauto_login(self, userid):
+        from eduactiv8 import GameState  # Import GameState here to avoid circular dependency
         self.mainloop.db.login_auto(userid)
 
         self.mainloop.user_name = self.mainloop.db.username
         self.mainloop.userid = self.mainloop.db.userid
-        self.mainloop.done = True
-        self.mainloop.window_state = self.mainloop.window_states[1]
+
+        # Transition to GameState directly
+        # self.loading = True  # Show loading screen during transition
+        self.update_me = True
+        self.mainloop.redraw_needed[0] = True
+        ### self.mainloop.change_state(GameState(self.mainloop))
 
     def complete_login(self):
+        from eduactiv8 import GameState  # Import GameState here to avoid circular dependency
         if self.mainloop.db.userid > -1:
-            self.loading = True
+            # self.loading = True  # Show a loading screen/state while transitioning
             self.update_me = True
+            # Clear UI elements of login screen as we are leaving
             self.edit_list.empty()
             self.btn_list.empty()
-            self.all_list = []
+            self.all_list = []  # Not a LayeredUpdates, just a list
             self.screen.fill((70, 70, 70))
 
             if self.cb_remember.checked:
@@ -2284,24 +2371,25 @@ class LoginScreen:
 
             self.mainloop.user_name = self.mainloop.db.username
             self.mainloop.userid = self.mainloop.db.userid
-
-            self.mainloop.done = True
-            self.mainloop.window_state = self.mainloop.window_states[1]
+        else:
+            # Login failed, don't transition
+            logging.info("Login failed, remaining in LoginScreen.")
+            self.update_trigger()
 
     def fregister(self):
         if len(self.rusername.value) < 3:
             self.db_status = self.lang.b["Please enter user name (at least 3 characters long)"]
-            self.in_focus.onBlur()
+            if self.in_focus: self.in_focus.onBlur()
             self.in_focus = self.rusername
             self.rusername.onFocus()
         elif len(self.rpassword.value) < 4:
             self.db_status = self.lang.b["Please enter password (at least 4 characters long)"]
-            self.in_focus.onBlur()
+            if self.in_focus: self.in_focus.onBlur()
             self.in_focus = self.rpassword
             self.rpassword.onFocus()
         elif self.rpassword.value != self.rconfirmpassword.value:
             self.db_status = self.lang.b["Passwords don't match"]
-            self.in_focus.onBlur()
+            if self.in_focus: self.in_focus.onBlur()
             self.in_focus = self.rpassword
             self.rpassword.onFocus()
             self.rpassword.value = ""
@@ -2314,7 +2402,7 @@ class LoginScreen:
             else:
                 self.db_status = self.lang.b["This user name already exists, please choose a different one"]
             self.reload_selects()
-            self.in_focus.onBlur()
+            if self.in_focus: self.in_focus.onBlur()
             self.rusername.value = ""
             self.rpassword.value = ""
             self.rconfirmpassword.value = ""
@@ -2322,6 +2410,7 @@ class LoginScreen:
             self.update_scrollbar_top(0)
             self.update_me = True
             self.mainloop.redraw_needed[0] = True
+        self.update_trigger()
 
     def load_usernames(self):
         self.usernames = self.mainloop.db.load_usernames()
@@ -2332,6 +2421,9 @@ class LoginScreen:
             details = self.mainloop.db.load_user_details(username)
         else:
             details = None
+
+        if details is not None:
+            logging.debug(f"Show user details {details}")
 
         if details is not None:
             self.ilb1.value = self.lang.b["registered:"]
@@ -2356,8 +2448,12 @@ class LoginScreen:
             self.delete_imgbtn.visible = False
             self.update_me = True
             self.mainloop.redraw_needed[0] = True
+
+        for each in self.edit_list:
+            each.update_me = True
         self.delete_btn.update_me = True
         self.delete_imgbtn.update_me = True
+        self.update_me = True
 
     def flogint(self):
         self.state = "LOGIN"
@@ -2448,12 +2544,12 @@ class LoginScreen:
     def fadminlogin(self):
         if len(self.username.value) < 3:
             self.db_status = self.lang.b["Please enter user name (at least 3 characters long)"]
-            self.in_focus.onBlur()
+            if self.in_focus: self.in_focus.onBlur()
             self.in_focus = self.username
             self.username.onFocus()
         elif len(self.password.value) < 4:
             self.db_status = self.lang.b["Please enter password (at least 4 characters long)"]
-            self.in_focus.onBlur()
+            if self.in_focus: self.in_focus.onBlur()
             self.in_focus = self.password
             self.password.onFocus()
         else:
@@ -2464,7 +2560,7 @@ class LoginScreen:
                 self.db_status = self.lang.b["This username and password combination doesn't exist."]
             else:
                 self.db_status = "ERROR FAL-2"
-            if self.mainloop.db.userid == -2:
+            if self.mainloop.db.userid == -2:  # Assuming -2 indicates successful admin login
                 self.admin_authorised = True
                 if self.loginto == "USERS":
                     self.fusers()
@@ -2474,6 +2570,9 @@ class LoginScreen:
                     self.flang()
                 elif self.loginto == "FONTS":
                     self.ffonts()
+            else:
+                logging.warning(f"Admin login failed for user {self.username.value}. DB status: {m}")
+        self.update_trigger()
 
     def fontprefs(self):
         self.update_me = True
@@ -2482,45 +2581,45 @@ class LoginScreen:
 
     def fprefsave(self):
         self.update_me = True
-        # update username or password
         if self.username.value != "":
             if self.password.value != self.cpassword.value:
                 self.db_status = self.lang.b["Passwords don't match"]
                 self.password.value = ""
                 self.cpassword.value = ""
-                self.in_focus.onBlur()
+                if self.in_focus: self.in_focus.onBlur()
                 self.in_focus = self.password
                 self.password.onFocus()
             else:
-                if not self.admin_exists:
+                if not self.admin_exists:  # Creating admin account
                     if len(self.username.value) < 3:
                         self.db_status = self.lang.b["Please enter user name (at least 3 characters long)"]
-                        self.in_focus.onBlur()
+                        if self.in_focus: self.in_focus.onBlur()
                         self.in_focus = self.username
                         self.username.onFocus()
                     elif len(self.password.value) < 4:
                         self.db_status = self.lang.b["Please enter password (at least 4 characters long)"]
-                        self.in_focus.onBlur()
+                        if self.in_focus: self.in_focus.onBlur()
                         self.in_focus = self.password
                         self.password.onFocus()
                     else:
                         m = self.mainloop.db.add_admin_name(self.username.value, self.password.value)
                         if m == 0:
-                            self.db_status = self.lang.b["Admin's password has been updated"]
+                            self.db_status = self.lang.b[
+                                "Admin's password has been updated"]
                             self.admin_exists = True
                             self.admin_authorised = True
                             self.fprefs()
                         elif m == -1:
                             self.db_status = self.lang.b["ERROR: This operation is not allowed at this point"]
-                else:
-                    if len(self.username.value) < 4:
+                else:  # Updating admin password
+                    if len(self.username.value) < 4:  # This is 'previous password' field
                         self.db_status = self.lang.b["Please enter previous password (at least 4 characters long)"]
-                        self.in_focus.onBlur()
+                        if self.in_focus: self.in_focus.onBlur()
                         self.in_focus = self.username
                         self.username.onFocus()
-                    elif len(self.password.value) < 4:
+                    elif len(self.password.value) < 4:  # This is 'new password' field
                         self.db_status = self.lang.b["Please enter new password (at least 4 characters long)"]
-                        self.in_focus.onBlur()
+                        if self.in_focus: self.in_focus.onBlur()
                         self.in_focus = self.password
                         self.password.onFocus()
                     else:
@@ -2529,37 +2628,38 @@ class LoginScreen:
                             self.db_status = self.lang.b["Admin's password has been updated"]
                         else:
                             self.db_status = self.lang.b["Previous password doesn't seem to be in the database"]
-                        self.in_focus.onBlur()
+                        if self.in_focus: self.in_focus.onBlur()
                         self.username.value = ""
                         self.password.value = ""
                         self.cpassword.value = ""
-        # update prefs
+        # Update prefs checkboxes
         defs = ""
-        for i in range(6):
-            if i == 1:
-                defs += "1"
+        for i in range(6):  # Assuming cb0 to cb5 exist
+            # Evaluate cb attributes dynamically, ensure they exist.
+            # Using getattr for safety
+            cb_attr_name = "cb" + str(i)
+            if hasattr(self, cb_attr_name):
+                checkbox = getattr(self, cb_attr_name)
+                defs += str(int(checkbox.checked))
             else:
-                defs += str(int(eval("self.cb" + str(i) + ".checked")))
+                logging.warning(f"Checkbox '{cb_attr_name}' not found when saving preferences.")
+                defs += "0"  # Default to false if checkbox not found
 
         self.mainloop.db.update_defaults(defs)
-        self.load_login_defs()
+        self.load_login_defs()  # Reload definitions to reflect changes
         self.savebtn.onBlur()
         if self.db_status == "":
             self.db_status = self.lang.b["Prefs saved..."]
+        self.update_trigger()
 
     def fclose(self):
-        self.mainloop.done = True
-        self.mainloop.done4good = True
+        """
+        Signals the main application to shut down completely.
+        This is typically called by the 'Close' button on the login screen.
+        """
+        # Set the global running flag to False to terminate the main application loop
+        self.mainloop.running = False
 
     def get_text_w(self, text):
-        if sys.version_info < (3, 0):
-            try:
-                val = unicode(text, "utf-8")
-            except UnicodeDecodeError:
-                val = text
-            except TypeError:
-                val = text
-        else:
-            val = text
+        return self.font_2.size(text)[0]
 
-        return self.font_2.size(val)[0]
