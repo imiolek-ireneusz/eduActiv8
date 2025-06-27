@@ -1,4 +1,11 @@
 Changelog:
+eduActiv8 - 4.25.07:
+    - Refactored main file and implemented state management for the login and game screens
+    - Improved maintainability and readability of the code in the main file
+    - Resolved the issue with the application crashing on startup due to mismatched surface sizes
+    - Resolved the issue with the application crashing when resizing the window
+    - Resolved the dialog screen causing fatal errors on window resize (size-down)
+    - Resolved the issue with the Login Screen - User management where details were not shown when clicking on the user name
 eduActiv8 - 4.25.05:
     - replaced the flash card images with a new set of higher quality images
     - reformatted jpg images to webp format
