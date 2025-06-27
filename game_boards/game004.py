@@ -5,13 +5,83 @@ import classes.game_driver as gd
 import classes.level_controller as lc
 import classes.menu_items
 
+from classes.enums import MenuLevel
+
+import logging
+
+# --- Constants for game004 ---
+MIN_ICON_GRID_UNIT_PIXEL_SIZE = 6
+ICON_GRID_UNITS = 5
+MIN_BOARD_GRID_WIDTH = ICON_GRID_UNITS + 2
+MIN_BOARD_GRID_HEIGHT = ICON_GRID_UNITS + 2
+
 
 class Board(gd.BoardGame):
     def __init__(self, mainloop, speaker, config, screen_w, screen_h):
         self.level = lc.Level(self, mainloop, 1, 1)
         gd.BoardGame.__init__(self, mainloop, speaker, config, screen_w, screen_h, 17, 11)
 
+    def clean_up_game_objects(self):
+        """
+        Cleans up existing game objects and their surfaces references.
+        Relies on Python's garbage collection for actual memory release.
+        This method was introduced to help with potential lingering references,
+        but the primary crash cause was found to be excessive redraws on MOUSEMOTION.
+        Keeping this for good practice.
+        """
+        # logging.debug("Cleaning up old game objects and sprites references.")
+        if hasattr(self, 'board') and hasattr(self.board, 'all_sprites_list'):
+            self.board.all_sprites_list.empty()
+
+        if hasattr(self, 'units') and self.units is not None:
+            # Set references to None to encourage garbage collection of Pygame Surfaces
+            for unit in self.units:
+                if hasattr(unit, 'image'):
+                    unit.image = None
+                if hasattr(unit, 'img1'):
+                    unit.img1 = None
+                if hasattr(unit, 'img2'):
+                    unit.img2 = None
+                if hasattr(unit, 'img2h'):
+                    unit.img2h = None
+                if hasattr(unit, 'img2d'):
+                    unit.img2d = None
+                if hasattr(unit, 'img3'):
+                    unit.img3 = None
+                if hasattr(unit, 'img3h'):
+                    unit.img3h = None
+                if hasattr(unit, 'img3d'):
+                    unit.img3d = None
+                if hasattr(unit, 'canvas'):
+                    unit.canvas = None
+                if hasattr(unit, 'canvas2'):
+                    unit.canvas2 = None
+            self.units = []
+
+        if hasattr(self, 'template_units') and self.template_units is not None:
+            for key in self.template_units:
+                if self.template_units[key] is not None:
+                    unit = self.template_units[key]
+                    if hasattr(unit, 'image'): unit.image = None
+                    if hasattr(unit, 'img1'): unit.img1 = None
+                    if hasattr(unit, 'img2'): unit.img2 = None
+                    if hasattr(unit, 'img2h'): unit.img2h = None
+                    if hasattr(unit, 'img2d'): unit.img2d = None
+                    if hasattr(unit, 'img3'): unit.img3 = None
+                    if hasattr(unit, 'img3h'): unit.img3h = None
+                    if hasattr(unit, 'img3d'): unit.img3d = None
+                    if hasattr(unit, 'canvas'): unit.canvas = None
+                    if hasattr(unit, 'canvas2'): unit.canvas2 = None
+            self.template_units = {0: None, 1: None, 2: None}
+
+
     def create_game_objects(self, level=1):
+        """
+        Creates and arranges the menu category or game icons based on the current menu level.
+        This method is called when the game board is initialized or re-initialized.
+        """
+        self.clean_up_game_objects() # Call cleanup before re-creation
+
         self.board.draw_grid = False
         self.show_info_btn = False
         self.unit_mouse_over = None
@@ -30,7 +100,7 @@ class Board(gd.BoardGame):
 
         l = 0
         self.lncnt = [0, 0, 0]
-        if self.mainloop.menu_level == 1:
+        if self.mainloop.menu_level == MenuLevel.CATEGORIES:
             self.categories = []
             for each in self.mainloop.m.categories:
                 if each.top_id == self.mainloop.menu_group:
@@ -39,13 +109,15 @@ class Board(gd.BoardGame):
                     if each.menu_line > 0:
                         self.lncnt[each.menu_line - 1] += 1
 
-        elif self.mainloop.menu_level == 2:
+        elif self.mainloop.menu_level == MenuLevel.SUB_CATEGORIES:
+            logging.debug(f"In sub-categories 004")
             self.categories = []
             for each in self.mainloop.m.cats_current:
                 l += 1
                 self.categories.append(each)
                 if each.menu_line > 0:
                     self.lncnt[each.menu_line - 1] += 1
+            logging.debug(f"Categories found: {len(self.categories)}")
         else:
             self.games = []
             for each in self.mainloop.m.games_current:
@@ -136,8 +208,9 @@ class Board(gd.BoardGame):
                 posy = py1 + py2 + py3
 
         self.template_units = {0: None, 1: None, 2: None}
-
-        if self.mainloop.menu_level < 3:
+        #print("In game004", self.mainloop.menu_level)
+        logging.debug(f"Initializing menu activity. {self.mainloop.menu_level}")
+        if self.mainloop.menu_level in [MenuLevel.CATEGORIES, MenuLevel.SUB_CATEGORIES]:
             for i in range(l):
                 unit = classes.menu_items.Category(self, self.categories[i], posx[i] + 1, posy[i], 5, 5,
                                                    self.categories[i].cat_id, self.color, self.categories[i].img_src,
@@ -198,7 +271,11 @@ class Board(gd.BoardGame):
                 if self.unit_mouse_over is not None:
                     self.unit_mouse_over.mouse_out()
                 self.unit_mouse_over = None
-        self.board.mainloop.redraw_needed[0] = True
+
+        # Add redraw for VIDEORESIZE event to update screen smoothly during resize
+        if event.type == pygame.VIDEORESIZE:
+            logging.debug(f"Resize event detected: {event.size}")
+            self.board.mainloop.redraw_needed[0] = True
 
     def start_game(self, gameid):
         self.mainloop.m.start_hidden_game(gameid)
