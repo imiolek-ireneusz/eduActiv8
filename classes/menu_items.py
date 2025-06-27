@@ -3,7 +3,7 @@
 import os
 import pygame
 from math import pi, cos, sin, sqrt
-
+from classes.enums import MenuLevel
 
 class TopCategory(pygame.sprite.Sprite):
     """basic class for all on-board objects"""
@@ -151,7 +151,7 @@ class TopCategory(pygame.sprite.Sprite):
 
     def mouse_click(self):
         self.board.mainloop.menu_group = self.item_id + 1
-        self.board.mainloop.menu_level = 1
+        self.board.mainloop.menu_level = MenuLevel.CATEGORIES #1
         self.board.mainloop.info.realign()
         self.board.mainloop.m.start_hidden_game(271)
 
@@ -317,27 +317,24 @@ class Category(pygame.sprite.Sprite):
 
     def mouse_click(self):
         a = []
-        if self.board.mainloop.menu_level == 1:
+        if self.board.mainloop.menu_level == MenuLevel.CATEGORIES: #1:
             if self.board.mainloop.m.categories_dict[self.item_id].has_inner:
                 self.board.mainloop.m.current_inner = True
                 self.board.mainloop.menu_inner_cat = self.item_id + 1
-                self.board.mainloop.menu_level = 2
+                self.board.mainloop.menu_level = MenuLevel.SUB_CATEGORIES #2
             else:
                 self.board.mainloop.m.current_inner = False
                 self.board.mainloop.menu_category = self.item_id + 1
-                self.board.mainloop.menu_level = 3
+                self.board.mainloop.menu_level = MenuLevel.GAMES_IN_CATEGORY
 
             self.board.mainloop.m.change_cat(self.item_id)
-        elif self.board.mainloop.menu_level == 2:
+        elif self.board.mainloop.menu_level == MenuLevel.SUB_CATEGORIES: #2:
             self.board.mainloop.m.current_inner = True
-            self.board.mainloop.menu_level = 3
+            self.board.mainloop.menu_level = MenuLevel.GAMES_IN_CATEGORY # 3
             self.board.mainloop.menu_category = self.item_id + 1
             self.board.mainloop.m.change_cat(self.item_id)
 
-        if self.board.mainloop.m.game_dbid == 271:
-            self.board.mainloop.m.start_hidden_game(272)
-        else:
-            self.board.mainloop.m.start_hidden_game(271)
+        self.board.mainloop.menu_content_changed = True
 
     def handle(self, event):
         if event.type == pygame.MOUSEMOTION:
@@ -653,7 +650,7 @@ class GameIcon(pygame.sprite.Sprite):
         self.update()
 
     def mouse_click(self):
-        self.board.mainloop.menu_level = 4
+        self.board.mainloop.menu_level = MenuLevel.GAME #4
         self.board.mainloop.completions = self.completions
         self.board.mainloop.m.start_hidden_game(self.item_id)
 
