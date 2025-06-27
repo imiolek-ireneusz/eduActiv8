@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.25.04\n"
+"Project-Id-Version: 4.25.07\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "POT-Creation-Date: 2013-11-01 15:33+0000\n"
-"PO-Revision-Date: 2025-04-14 17:56+0100\n"
+"PO-Revision-Date: 2025-05-31 22:21+0100\n"
 "Last-Translator: Ireneusz Imiolek <imiolek.i@googlemail.com>\n"
 "Language-Team: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: en_GB\n"
@@ -302,7 +302,7 @@ msgid "Letters"
 msgstr "Letters"
 
 msgid "Learn Letters with Flashcards"
-msgstr "Learn Letters with Flashcards"
+msgstr "Let's Learn Letters with Flashcards!"
 
 msgid "Learn to Write"
 msgstr "Learn to Write"
@@ -311,7 +311,7 @@ msgid "Trace Letters and Numbers"
 msgstr "Trace Letters and Numbers"
 
 msgid "Complete the ABC"
-msgstr "Complete the ABC"
+msgstr "Can You Finish the ABC?"
 
 msgid "Sorting Letters"
 msgstr "Sorting Letters"
@@ -326,10 +326,10 @@ msgid "Word Builder"
 msgstr "Word Builder"
 
 msgid "Word Maze"
-msgstr "Word Maze"
+msgstr "Word Maze!"
 
 msgid "Collect all letters in the right order"
-msgstr "Collect all letters in the right order"
+msgstr "Find the letters to make the word!"
 
 msgid "Word Maze + 4"
 msgstr "Word Maze + 4"
@@ -345,13 +345,13 @@ msgstr "English Alphabet"
 
 # Replace "Your" with your language, ie. translation of French Alphabet
 msgid "Your Alphabet"
-msgstr "Your Alphabet"
+msgstr "English Alphabet"
 
 msgid "Numbers"
 msgstr "Numbers"
 
 msgid "Number Spelling"
-msgstr "Number Spelling"
+msgstr "Spell the Numbers!"
 
 msgid "Match numbers to their spelling"
 msgstr "Match numbers to their spelling"
@@ -378,7 +378,7 @@ msgid "Basic Operations"
 msgstr "Basic Operations"
 
 msgid "Multiplication Table"
-msgstr "Multiplication Table"
+msgstr "Times Table Challenge"
 
 msgid "Find the product"
 msgstr "Find the product"

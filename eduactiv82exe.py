@@ -64,7 +64,7 @@ class BuildExe:
         self.project_url = "https://www.eduactiv8.org"
 
         # Version of program
-        self.project_version = "4.25.04"
+        self.project_version = "4.25.07"
 
         # License of the program
         self.license = "GPL3"

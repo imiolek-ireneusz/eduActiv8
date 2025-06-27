@@ -18,11 +18,11 @@ VSVersionInfo(
                     [
                         StringStruct('CompanyName', 'eduActiv8.org'),
                         StringStruct('FileDescription', 'eduActiv8'),
-                        StringStruct('FileVersion', '4.25.06'),
+                        StringStruct('FileVersion', '4.25.07'),
                         StringStruct('InternalName', 'eduActiv8'),
                         StringStruct('OriginalFilename', 'eduactiv8.exe'),
                         StringStruct('ProductName', 'eduActiv8'),
-                        StringStruct('ProductVersion', '4.25.06')
+                        StringStruct('ProductVersion', '4.25.07')
                     ]
                 )
             ]
