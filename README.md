@@ -16,7 +16,7 @@ eduActiv8 is a **free and open-source** collection of fun and interactive educat
 * **Suitable for Early Years and Primary:** Ideal for children in the first six years of primary school and can be used by pre-schoolers with some guidance.
 * **Customizable:** Offers experimental higher contrast modes and a theme editor for activity icons. Advanced users can customize displayed activities and difficulty levels by editing XML files.
 * **Translated by the Community:** Available in multiple languages thanks to the contributions of volunteers worldwide. Help us translate at [https://app.transifex.com/eduactiv8/eduactiv8/](https://app.transifex.com/eduactiv8/eduactiv8/).
-* **Award-Winning:** Recipient of the SourceForge Community Choice Award and Favorite Award (2022), and the All Digital School Editors' Pick Award (2020).
+* **Award-Winning:** Recipient of the SourceForge Community Leader in 2025 and SourceForge Community Choice Award and Favorite Award (2022), and the All Digital School Editors' Pick Award (2020).
 * **Free and Open Source:** Licensed under GPLv3, meaning it's free for anyone to use, share, and modify.
 
 ## Getting Started
@@ -32,6 +32,14 @@ eduActiv8 is a **free and open-source** collection of fun and interactive educat
     * Clone this repository: `git clone https://github.com/imiolek-ireneusz/eduActiv8.git`
     * Navigate to the project directory: `cd eduActiv8`
     * Run the application: `python eduactiv8.py`
+
+### Alternative Installation (Linux Only)
+
+For advanced Linux users, **eduActiv8** can also be run inside an [Apptainer](https://apptainer.org/) container.  
+This approach allows you to build and run the application in a self-contained environment, which can be useful if you encounter dependency issues or wish to run it on different distributions.
+
+For instructions, see:  
+[`linux_extras/apptainer/README.md`](linux_extras/apptainer/README.md)
 
 ### Learn More
 
