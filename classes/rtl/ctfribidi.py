@@ -1,55 +1,93 @@
 # -*- coding: utf-8 -*-
-
-# Code by Oleg A. Paraschenko <olpa uucode com>
+"""
+# Initial Code by Oleg A. Paraschenko <olpa uucode com>
 # Adapted from http://uucode.com/blog/2014/12/08/using-freebidi-from-python-using-ctypes/
 # LICENCE: Public Domain
+
+Updated FriBidi wrapper compatible with FriBidi >= 1.0
+Keeps backward support for old libfribidi versions.
+"""
 
 import ctypes
 import ctypes.util
 import sys
+import array
 
 fb_name = ctypes.util.find_library('fribidi')
 fb = None
-
 if fb_name is not None:
     fb = ctypes.CDLL(fb_name)
 
+# Detect availability of old API symbols
+has_old_api = hasattr(fb, "fribidi_utf8_to_unicode")
+
+# FriBidi types
+FriBidiChar = ctypes.c_uint32
+FriBidiCharType = ctypes.c_int
+
+
+def _string_to_unicode_buffer(s):
+    """Convert Python string to FriBidiChar buffer."""
+    codepoints = array.array('I', (ord(ch) for ch in s))
+    n = len(codepoints)
+    buf = (FriBidiChar * (n + 1))()
+    for i, cp in enumerate(codepoints):
+        buf[i] = cp
+    return buf, n
+
+
+def _unicode_buffer_to_string(buf, n):
+    """Convert FriBidiChar buffer back to Python string."""
+    return ''.join(chr(buf[i]) for i in range(n))
+
 
 def _preamble(s):
-    if sys.version_info < (3, 0):
-        if isinstance(s, unicode):
+    """Prepare input/output buffers depending on available API."""
+    if has_old_api:
+        # Old FriBidi API (pre-1.0)
+        if sys.version_info < (3, 0):
+            if isinstance(s, unicode):
+                utf8_bytes = s.encode('utf-8')
+                n = len(s)
+            else:
+                utf8_bytes = s
+                n = len(unicode(s, 'utf8'))
+        else:
             utf8_bytes = s.encode('utf-8')
             n = len(s)
-        else:
-            utf8_bytes = s  # assume that the strings are utf8
-            n = len(unicode(s, 'utf8'))
+        c_buf1 = ctypes.create_string_buffer(4 * n)
+        c_buf2 = ctypes.create_string_buffer(4 * n)
+        n2 = fb.fribidi_utf8_to_unicode(utf8_bytes, len(utf8_bytes), c_buf1)
+        assert n == n2
+        return c_buf1, c_buf2, n
     else:
-        utf8_bytes = s.encode('utf-8')
-        n = len(s)
-    c_buf1 = ctypes.create_string_buffer(4*n)  # fribidi: 4 bytes per char,
-    c_buf2 = ctypes.create_string_buffer(4*n)  # utf8: max 4 bytes per char
-    n2 = fb.fribidi_utf8_to_unicode(utf8_bytes, len(utf8_bytes), c_buf1)
-    assert n == n2
-    return (c_buf1, c_buf2, n)
+        # New FriBidi API (1.0+)
+        c_buf1, n = _string_to_unicode_buffer(s)
+        c_buf2 = (FriBidiChar * (n + 1))()
+        return c_buf1, c_buf2, n
 
 
 def log2vis(s, pbase_dir=1):
     (c_buf1, c_buf2, n) = _preamble(s)
     c_dir = ctypes.c_int(pbase_dir)
     fb.fribidi_log2vis(c_buf1, n, ctypes.byref(c_dir), c_buf2, None, None, None)
-    fb.fribidi_unicode_to_utf8(c_buf2, n, c_buf1)
-    if sys.version_info < (3, 0):
-        s = unicode(c_buf1.value, 'utf8')
+
+    if has_old_api:
+        # Convert back using old helper
+        fb.fribidi_unicode_to_utf8(c_buf2, n, c_buf1)
+        if sys.version_info < (3, 0):
+            return unicode(c_buf1.value, 'utf8')
+        else:
+            return c_buf1.value.decode('utf8')
     else:
-        s = c_buf1.value.decode('utf8')
-    return s
+        # Convert back manually
+        return _unicode_buffer_to_string(c_buf2, n)
 
 
 def log2levels(s, pbase_dir=1):
     (c_buf1, c_buf2, n) = _preamble(s)
     c_dir = ctypes.c_byte(pbase_dir)
     c_levels = (ctypes.c_byte * n)()
-    ctypes.cast(c_levels, ctypes.POINTER(ctypes.c_byte))
     fb.fribidi_log2vis(c_buf1, n, ctypes.byref(c_dir), None, None, None, c_levels)
     return c_levels
 
