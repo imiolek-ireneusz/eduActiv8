@@ -44,5 +44,5 @@ eduActiv8 should now start in its containerised environment.
 
 This Apptainer-based method is **not the primary installation method** for eduActiv8, but rather an optional alternative for users who prefer containerised environments or encounter compatibility issues on older distributions.
 
-For typical installations or packaging formats better suited to end users (e.g. AppImage), please refer to the main [eduActiv8 installation instructions](../README.md).
+For typical installations or packaging formats better suited to end users (e.g. AppImage), please refer to the main [eduActiv8 installation instructions](../../README.md).
 
