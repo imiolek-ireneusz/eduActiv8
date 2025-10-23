@@ -37,7 +37,7 @@
 
 # import stresstest
 
-__version__ = "4.25.07"
+__version__ = "4.25.10"
 try:
     import android
 except ImportError:
@@ -214,6 +214,7 @@ class GameState(BaseState):
         # Flags for resize debounce
         self.new_size = self.game_play.size[:]
         self.resizing = False
+        self.mouse_down = False
         self.frames_since_resize = 0
 
     def enter(self):
@@ -381,6 +382,17 @@ class GameState(BaseState):
         elif self.game_board:  # Delegate to game board for other unhandled events
             self.game_board.handle(event)
 
+    def _handle_game_object_mouse_out(self, event):
+        """
+        Handles the mouse events when the mouse button is down and dragged away from the main game area,
+        so that the items do not get stuck between grid squares.
+        """
+        if self.mouse_down and event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+            self.mouse_down = False
+            self.game_board.handle(event)
+        if self.mouse_down and event.type == pygame.MOUSEMOTION:
+            self.game_board.handle(event)
+
     def _handle_mouse_event(self, event):
         """
         Helper to handle mouse events for game screen elements.
@@ -392,6 +404,7 @@ class GameState(BaseState):
 
         # Check interaction with score bar
         if pos[0] > 0 and self.sizer.score_bar_h > pos[1]:
+            self._handle_game_object_mouse_out(event)
             if gp.mouse_over[0] is not None and gp.mouse_over[0] != self.sb:
                 gp.mouse_over[0].on_mouse_out()
             gp.mouse_over[0] = self.sb
@@ -399,6 +412,7 @@ class GameState(BaseState):
             event_handled = True
         # Check interaction with info bar
         elif pos[0] > 0 and self.sizer.top_margin > pos[1]:
+            self._handle_game_object_mouse_out(event)
             if gp.mouse_over[0] is not None and gp.mouse_over[0] != self.info:
                 gp.mouse_over[0].on_mouse_out()
             gp.mouse_over[0] = self.info
@@ -413,6 +427,10 @@ class GameState(BaseState):
                 self.game_board.level.next_board_load()
             else:
                 # Delegate to game_board's handle method for internal menu/game element interaction
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    self.mouse_down = True
+                if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+                    self.mouse_down = False
                 self.game_board.handle(event)
             if gp.mouse_over[0] is not None and gp.mouse_over[0] != gp.game_board:
                 gp.mouse_over[0].on_mouse_out()
@@ -434,6 +452,8 @@ class GameState(BaseState):
         if event.type == pygame.MOUSEBUTTONUP and gp.android is None:
             pygame.mouse.set_cursor(*pygame.cursors.arrow)
 
+        if not event_handled:
+            self.game_board.handle(event)
 
     def update(self):
         """Updates game logic for the GameState."""
