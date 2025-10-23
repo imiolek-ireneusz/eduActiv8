@@ -25,7 +25,7 @@ class Board(gd.BoardGame):
 
     def create_game_objects(self, level=1):
         self.allow_unit_animations = False
-        self.board.draw_grid = True
+        self.board.draw_grid = False
         hue = random.randrange(0, 225)
 
         card_font_color = ex.hsv_to_rgb(hue, 255, 140)
