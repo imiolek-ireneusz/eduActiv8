@@ -146,9 +146,9 @@ def reverse(s, lng):
 def rr2(from1, to1, from2, to2, step=1):
     x = random.choice([-1, 1])
     if x == -1:
-        a = random.randrange(from1, to1, step)
+        a = random.randrange(int(from1), int(to1), int(step))
     else:
-        a = random.randrange(from2, to2, step)
+        a = random.randrange(int(from2), int(to2), int(step))
     return a
 
 
