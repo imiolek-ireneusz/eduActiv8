@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.25.07\n"
+"Project-Id-Version: 4.25.10\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Last-Translator: ami.g <amihaygal@gmail.com>\n"
 "MIME-Version: 1.0\n"

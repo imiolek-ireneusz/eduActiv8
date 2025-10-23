@@ -6,7 +6,7 @@
 # From: https://invent.kde.org/education/gcompris/-/blob/master/src/activities/lang/resource/content-fi.json
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.25.07\n"
+"Project-Id-Version: 4.25.10\n"
 "Report-Msgid-Bugs-To: Ireneusz Imiolek <imiolek.i@gmail.com>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"

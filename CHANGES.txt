@@ -1,4 +1,10 @@
 Changelog:
+eduActiv8 - 4.25.10:
+    - Maintenance/Bug-fix release.
+    - #50 Adds support for apptainer
+    - #51 Fixes Fribidi support for Fedora 42 and other modern Linux distributions
+    - #52 Fixes erratic mouse-button event handling which caused draggable objects to get stuck
+    - Fixes a crash of Connect activities resulting from incorrect data type.
 eduActiv8 - 4.25.07:
     - Refactored main file and implemented state management for the login and game screens
     - Improved maintainability and readability of the code in the main file

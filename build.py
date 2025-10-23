@@ -6,7 +6,7 @@ import sys
 # === Configuration ===
 SCRIPT_NAME = "eduactiv8.py"
 PROJECT_NAME = "eduActiv8"
-VERSION = "4.25.07"
+VERSION = "4.25.10"
 ICON_PATH = Path("res/icon/eduactiv8.ico")
 VERSION_FILE = Path("version.txt")
 DIST_PATH = Path("dist")
